@@ -1,0 +1,73 @@
+import type { ReactNode } from 'react'
+import { Logo } from '../components/Logo'
+import type { TKey } from '../i18n'
+import { A, type Route } from './router'
+import { useApp } from './store'
+
+interface NavDef { to: string; icon: string; key: TKey; match: string }
+
+const MAIN: NavDef[] = [
+  { to: '/', icon: '🏠', key: 'nav_home', match: '' },
+  { to: '/learn', icon: '📚', key: 'nav_learn', match: 'learn' },
+  { to: '/practice', icon: '🎯', key: 'nav_practice', match: 'practice' },
+  { to: '/speak', icon: '🎙️', key: 'nav_speak', match: 'speak' },
+  { to: '/progress', icon: '📈', key: 'nav_progress', match: 'progress' },
+]
+const MORE: NavDef[] = [
+  { to: '/tutor', icon: '✨', key: 'nav_tutor', match: 'tutor' },
+  { to: '/vocabulary', icon: '🔤', key: 'nav_vocabulary', match: 'vocabulary' },
+  { to: '/grammar', icon: '🧪', key: 'nav_grammar', match: 'grammar' },
+  { to: '/profile', icon: '👤', key: 'nav_profile', match: 'profile' },
+]
+
+export function Layout({ route, children }: { route: Route; children: ReactNode }) {
+  const { t } = useApp()
+  const active = route.parts[0] ?? ''
+  return (
+    <div className="app">
+      <aside className="side" aria-label="Navigation">
+        <A to="/" aria-label="BilUp Deutsch">
+          <Logo />
+        </A>
+        {MAIN.map(n => (
+          <A key={n.to} to={n.to} className={`sidelink ${active === n.match ? 'is-active' : ''}`} aria-current={active === n.match ? 'page' : undefined}>
+            <span className="sidelink__icon" aria-hidden>{n.icon}</span>
+            {t(n.key)}
+          </A>
+        ))}
+        <div className="side__sep" />
+        {MORE.map(n => (
+          <A key={n.to} to={n.to} className={`sidelink ${active === n.match ? 'is-active' : ''}`} aria-current={active === n.match ? 'page' : undefined}>
+            <span className="sidelink__icon" aria-hidden>{n.icon}</span>
+            {t(n.key)}
+          </A>
+        ))}
+        <div className="side__foot">{t('tagline')}</div>
+      </aside>
+
+      <div className="content">
+        <header className="topbar">
+          <A to="/" aria-label="BilUp Deutsch">
+            <Logo compact />
+          </A>
+          <div className="topbar__actions">
+            <A to="/tutor" className="iconbtn" aria-label={t('nav_tutor')}>✨</A>
+            <A to="/profile" className="iconbtn" aria-label={t('nav_profile')}>👤</A>
+          </div>
+        </header>
+        <main className="main" id="main">
+          {children}
+        </main>
+      </div>
+
+      <nav className="bottomnav" aria-label="Navigation">
+        {MAIN.map(n => (
+          <A key={n.to} to={n.to} className={`navitem ${active === n.match ? 'is-active' : ''}`} aria-current={active === n.match ? 'page' : undefined}>
+            <span className="navitem__icon" aria-hidden>{n.icon}</span>
+            <span>{t(n.key)}</span>
+          </A>
+        ))}
+      </nav>
+    </div>
+  )
+}
