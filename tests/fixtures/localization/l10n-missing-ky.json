@@ -1,0 +1,8 @@
+{
+  "_note": "Synthetic test fixture: items 2 and 3 have no Kyrgyz text.",
+  "items": [
+    { "id": "item-1", "text": { "ru": "Один", "ky": "Бир" } },
+    { "id": "item-2", "text": { "ru": "Два" } },
+    { "id": "item-3", "text": { "ru": "Три", "de": "Drei" } }
+  ]
+}

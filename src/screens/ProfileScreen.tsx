@@ -1,3 +1,4 @@
+import { STORAGE_MESSAGES } from '../app/storage-messages'
 import { useApp } from '../app/store'
 import { Button, Card, PageHeader, Segmented } from '../components/ui'
 import { LogoMark } from '../components/Logo'
@@ -32,7 +33,7 @@ export function ProfileScreen() {
       </Card>
       <Card tone="yellow">
         <p className="small">{t('dataLocal')}</p>
-        <Button variant="ghost" size="sm" onClick={() => { if (window.confirm(t('resetConfirm'))) actions.reset() }}>{t('resetData')}</Button>
+        <Button variant="ghost" size="sm" onClick={() => { if (!window.confirm(t('resetConfirm'))) return; const out = actions.reset(); if (out === 'no-snapshot') window.alert(STORAGE_MESSAGES[state.lang].resetRefused); else if (out === 'upgrade-pending') window.alert(STORAGE_MESSAGES[state.lang].upgradePendingRefusal) }}>{t('resetData')}</Button>
       </Card>
     </div>
   )

@@ -1,0 +1,21 @@
+{
+  "name": "Aigerim",
+  "lang": "ky",
+  "theme": "dark",
+  "level": "A1",
+  "xp": 340,
+  "activeDates": ["2025-01-10", "2025-01-11", "2025-01-12"],
+  "studySeconds": 5400,
+  "completed": ["1:vocabulary", "1:grammar", "topic:artikel", "ex:listen-1"],
+  "mastery": {
+    "v-1": { "box": 2, "due": 1736500000000, "seen": 3, "wrong": 1 },
+    "v-2": { "box": 5, "due": 1740000000000, "seen": 9, "wrong": 0 }
+  },
+  "saved": ["v-1"],
+  "mistakes": [{ "at": 1736400000000, "kind": "article", "ref": "art-v-3", "concept": "artikel" }],
+  "scores": { "vocabulary": [80, 90], "grammar": [70], "listening": [], "reading": [], "writing": [60], "speaking": [75] },
+  "daily": { "2025-01-12": { "date": "2025-01-12", "vocab": [2, 3], "grammar": [1, 1], "listening": [0, 1], "speaking": true } },
+  "tests": [{ "id": "placement", "at": 1736300000000, "pct": 62, "weak": ["dativ"], "strong": ["artikel"] }],
+  "weeklyGoal": 4,
+  "tutor": { "messages": [{ "id": "m1", "role": "user", "text": "Was ist Akkusativ?" }] }
+}

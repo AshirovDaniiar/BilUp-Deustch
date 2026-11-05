@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { A } from '../../app/router'
-import { useApp } from '../../app/store'
+import { useApp, useAttempt } from '../../app/store'
 import { Button, Card, PageHeader } from '../../components/ui'
 import { SpeakButton } from '../../components/SpeakButton'
 import { REAL_LIFE, realLifeById } from '../../data/reallife'
@@ -27,6 +27,7 @@ export function RealLifeList() {
 
 export function RealLifeTopic({ id }: { id: string }) {
   const { actions, state, t, lang } = useApp()
+  const attempt = useAttempt()
   const topic = realLifeById.get(id)
   const [pick, setPick] = useState<number | null>(null)
   if (!topic) return <NotFound />
@@ -35,7 +36,8 @@ export function RealLifeTopic({ id }: { id: string }) {
   const answer = (i: number) => {
     if (done) return
     setPick(i)
-    if (i === ch.answer) { actions.addXp(10); actions.complete(`ex:real-${topic.id}`) } else actions.addMistake({ kind: 'vocabulary', ref: `real-${topic.id}` })
+    attempt.finish({ activityId: `ex:real-${topic.id}`, kind: 'real-life', score: { earned: i === ch.answer ? 1 : 0, possible: 1 } })
+    if (i !== ch.answer) actions.addMistake({ kind: 'vocabulary', ref: `real-${topic.id}` })
   }
   return (
     <div className="stack">

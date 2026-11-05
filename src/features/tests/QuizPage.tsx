@@ -5,7 +5,7 @@ import { Button, Card, Ring } from '../../components/ui'
 import { grammarById } from '../../data/grammar'
 import type { SkillName } from '../../data/types'
 import { pct, tr } from '../../utils/text'
-import { QuizRunner, type QuizResult } from './QuizRunner'
+import { QuizRunner, type QuizActivity, type QuizResult } from './QuizRunner'
 import type { Question } from './questions'
 
 const SKILL_TO_SCORE: Record<string, SkillName> = { grammar: 'grammar', vocabulary: 'vocabulary', listening: 'listening', reading: 'reading' }
@@ -72,7 +72,7 @@ export function ResultCard({ result, onRetry, children, backTo }: { result: Quiz
 }
 
 /** Runs a quiz, records the skill scores, then shows a result card. */
-export function QuizPage({ build, backTo, onFinished, extra }: { build: () => Question[]; backTo: string; onFinished?: (r: QuizResult) => void; extra?: (r: QuizResult) => ReactNode }) {
+export function QuizPage({ build, backTo, onFinished, extra, activity }: { build: () => Question[]; backTo: string; onFinished?: (r: QuizResult) => void; extra?: (r: QuizResult) => ReactNode; activity: QuizActivity }) {
   const { actions } = useApp()
   const [questions, setQuestions] = useState<Question[]>(build)
   const [result, setResult] = useState<QuizResult | null>(null)
@@ -101,5 +101,5 @@ export function QuizPage({ build, backTo, onFinished, extra }: { build: () => Qu
       </ResultCard>
     )
   }
-  return <QuizRunner key={questions.map(q => q.id).join('|')} questions={questions} onDone={done} />
+  return <QuizRunner key={questions.map(q => q.id).join('|')} questions={questions} onDone={done} activity={activity} />
 }

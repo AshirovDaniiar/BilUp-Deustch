@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { A } from '../app/router'
-import { useApp } from '../app/store'
+import { useApp, useAttempt } from '../app/store'
 import { Button, Card, PageHeader } from '../components/ui'
 import { SpeakButton } from '../components/SpeakButton'
 import { GRAMMAR, WHY_NOTES, grammarById } from '../data/grammar'
@@ -29,6 +29,8 @@ const STEPS: { id: string; key: TKey }[] = [
 /** The core learning model: DISCOVER → UNDERSTAND → PRACTICE → APPLY → SPEAK → TEST → REVIEW. */
 export function TopicScreen({ id }: { id: string }) {
   const { state, actions, t, lang } = useApp()
+  const attempt = useAttempt()
+  const speakAttempt = useAttempt()
   const concept = grammarById.get(id)
   const [step, setStep] = useState(0)
   const [practice, setPractice] = useState<QuizResult | null>(null)
@@ -45,18 +47,17 @@ export function TopicScreen({ id }: { id: string }) {
   const nextConcept = GRAMMAR[idx + 1]
 
   const finishTopic = () => {
-    actions.complete(`topic:${concept.id}`)
-    actions.addXp(20)
     const unitConcepts = unit?.grammarIds ?? []
     const doneAfter = unitConcepts.every(g => g === concept.id || state.completed.includes(`topic:${g}`))
-    if (unit && doneAfter) actions.complete(`${unit.id}:grammar`)
+    attempt.finish({ activityId: `topic:${concept.id}`, kind: 'lesson', completes: unit && doneAfter ? [`${unit.id}:grammar`] : [] })
   }
 
   const onSpeak = (text: string, conf: number | null) => {
     const sc = analyseSpeaking(text, { ai: '', aiRu: '', hints: [concept.speakPrompt.sample], keywords: concept.speakPrompt.keywords }, conf)
     setScore(sc)
     actions.addScore('speaking', (sc.grammar + sc.vocabulary + sc.naturalness) / 3)
-    actions.addXp(8)
+    speakAttempt.finish({ activityId: `topicspeak:${concept.id}`, kind: 'speaking-prompt', evidence: 'heuristic' })
+    speakAttempt.renew()
   }
 
   return (
@@ -123,7 +124,7 @@ export function TopicScreen({ id }: { id: string }) {
           practice ? (
             <Card><p className="h3">{pct(practice.correct, practice.total)}% · {practice.correct} / {practice.total}</p><Button onClick={() => go(3)} block size="lg">{t('step_apply')} →</Button></Card>
           ) : (
-            <QuizRunner questions={practiceQs} onDone={r => { setPractice(r); actions.addScore('grammar', pct(r.correct, r.total)) }} />
+            <QuizRunner questions={practiceQs} activity={{ id: `topic:${concept.id}:practice`, kind: 'quiz' }} onDone={r => { setPractice(r); actions.addScore('grammar', pct(r.correct, r.total)) }} />
           )
         )}
 
@@ -166,7 +167,7 @@ export function TopicScreen({ id }: { id: string }) {
           test ? (
             <Card><p className="h3">{pct(test.correct, test.total)}% · {test.correct} / {test.total}</p><Button onClick={() => go(6)} block size="lg">{t('step_review')} →</Button></Card>
           ) : (
-            <QuizRunner questions={testQs} onDone={r => { setTest(r); actions.addScore('grammar', pct(r.correct, r.total)) }} />
+            <QuizRunner questions={testQs} activity={{ id: `topic:${concept.id}:test`, kind: 'quiz' }} onDone={r => { setTest(r); actions.addScore('grammar', pct(r.correct, r.total)) }} />
           )
         )}
 

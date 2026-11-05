@@ -1,0 +1,36 @@
+{
+  "name": "Aizada",
+  "lang": "ky",
+  "theme": "light",
+  "level": "A1",
+  "xp": 412,
+  "activeDates": ["2025-02-01", "2025-02-02", "2025-02-03", "2025-02-05"],
+  "studySeconds": 7260,
+  "completed": [
+    "1:vocabulary",
+    "1:grammar",
+    "topic:articles",
+    "topic:sein-haben",
+    "speak:restaurant",
+    "ex:wr01",
+    "ex:real-wohnung",
+    "ex:somelistening-1",
+    "2:speaking"
+  ],
+  "mastery": {
+    "v1-1": { "box": 3, "due": 1738800000000, "seen": 5, "wrong": 1 },
+    "v1-2": { "box": 1, "due": 1738700000000, "seen": 1, "wrong": 1 },
+    "v1-3": { "box": 0, "due": 0, "seen": 0, "wrong": 0 }
+  },
+  "saved": ["v1-1"],
+  "mistakes": [{ "at": 1738600000000, "kind": "article", "ref": "art-v1-2", "concept": "articles" }],
+  "scores": { "vocabulary": [80, 90, 70], "grammar": [60], "listening": [], "reading": [], "writing": [75], "speaking": [65] },
+  "daily": {
+    "2025-02-03": { "date": "2025-02-03", "vocab": [2, 3], "grammar": [1, 1], "listening": [1, 1], "speaking": true },
+    "2025-02-05": { "date": "2025-02-05", "vocab": [1, 3], "grammar": [0, 1], "listening": [0, 1], "speaking": false }
+  },
+  "tests": [{ "id": "level-a1", "at": 1738500000000, "pct": 58, "weak": ["dativ"], "strong": ["articles"] }],
+  "weeklyGoal": 4,
+  "tutor": { "messages": [{ "id": "m1", "role": "user", "text": "Was ist der Akkusativ?" }] },
+  "someFutureField": { "keep": "me" }
+}

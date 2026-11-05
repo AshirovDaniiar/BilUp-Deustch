@@ -1,0 +1,7 @@
+{
+  "_note": "Synthetic test fixture. Kyrgyz strings are placeholders to exercise code paths and are NOT reviewed translations.",
+  "items": [
+    { "id": "item-1", "text": { "ru": "Привет", "ky": "Салам", "de": "Hallo" } },
+    { "id": "item-letters", "text": { "ru": "Это пример", "ky": "Бул мисал: ыйык, өң, үй", "de": "Das ist ein Beispiel" } }
+  ]
+}

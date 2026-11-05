@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { A } from '../app/router'
-import { useApp } from '../app/store'
+import { useApp, useAttempt } from '../app/store'
 import { Button, Card, PageHeader, ProgressBar } from '../components/ui'
 import { grammarById } from '../data/grammar'
 import { listeningForUnit } from '../data/listening'
@@ -65,7 +65,8 @@ export function UnitScreen({ id }: { id: number }) {
 
 /** Sequential study of a unit's words with rich cards. */
 export function VocabStudy({ id }: { id: number }) {
-  const { actions, t } = useApp()
+  const { t } = useApp()
+  const attempt = useAttempt()
   const unit = unitById(id)
   const words = vocabForUnit(id)
   const [i, setI] = useState(0)
@@ -76,7 +77,7 @@ export function VocabStudy({ id }: { id: number }) {
     const nextSeen = new Set(seen).add(n)
     setI(n)
     setSeen(nextSeen)
-    if (nextSeen.size >= words.length) actions.complete(`${id}:vocabulary`)
+    if (nextSeen.size >= words.length) attempt.finish({ activityId: `vocab-study:${id}`, kind: 'vocabulary-study', completes: [`${id}:vocabulary`] })
   }
   return (
     <div className="stack">

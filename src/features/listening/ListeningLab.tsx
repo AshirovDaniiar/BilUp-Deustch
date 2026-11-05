@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { A } from '../../app/router'
-import { useApp } from '../../app/store'
+import { useApp, useKeepActive } from '../../app/store'
 import { Button, Card, Chip, PageHeader, Segmented } from '../../components/ui'
 import { SpeakButton } from '../../components/SpeakButton'
 import { LISTENING, listeningById } from '../../data/listening'
@@ -49,6 +49,7 @@ export function ListeningPlayer({ id }: { id: string }) {
   const [current, setCurrent] = useState<number | null>(null)
   const [result, setResult] = useState<QuizResult | null>(null)
   const cancel = useRef<() => void>(() => undefined)
+  useKeepActive(current !== null) // the audio is playing: that is study time even without taps
   const qs = useMemo(() => (ex ? listeningQuestions(ex).map(q => ({ ...q, audio: undefined })) : []), [ex])
 
   useEffect(() => () => cancel.current(), [])
@@ -64,8 +65,6 @@ export function ListeningPlayer({ id }: { id: string }) {
   const onDone = (r: QuizResult) => {
     setResult(r)
     actions.addScore('listening', pct(r.correct, r.total))
-    actions.complete(`ex:${ex.id}`)
-    actions.complete(`${ex.unit}:listening`)
     setPhase('transcript')
   }
 
@@ -92,7 +91,7 @@ export function ListeningPlayer({ id }: { id: string }) {
         </Card>
       )}
 
-      {phase === 'questions' && <QuizRunner questions={qs} onDone={onDone} />}
+      {phase === 'questions' && <QuizRunner questions={qs} onDone={onDone} activity={{ id: `ex:${ex.id}`, kind: 'listening', completes: [`${ex.unit}:listening`] }} />}
 
       {phase === 'transcript' && (
         <div className="stack">

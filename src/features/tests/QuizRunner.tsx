@@ -1,10 +1,19 @@
 import { useMemo, useRef, useState } from 'react'
-import { useApp } from '../../app/store'
+import { useApp, useAttempt } from '../../app/store'
 import { Button, ProgressBar } from '../../components/ui'
 import { SpeakButton } from '../../components/SpeakButton'
 import { A } from '../../app/router'
 import { normalize, tr } from '../../utils/text'
+import type { ActivityKind } from '../../progress/types'
 import type { Question } from './questions'
+
+/** What a quiz IS, for the progress engine (03 §3). Every quiz must say; the engine decides XP and completion. */
+export interface QuizActivity {
+  id: string
+  kind: Extract<ActivityKind, 'quiz' | 'review' | 'assessment' | 'reading' | 'listening'>
+  /** completion keys satisfied when the quiz PASSES (e.g. the unit section `3:test`) */
+  completes?: string[]
+}
 
 export interface QuizResult {
   correct: number
@@ -20,11 +29,12 @@ interface Props {
   onDone: (r: QuizResult) => void
   /** optional section tag per question (used by the daily challenge) */
   sections?: string[]
-  xpPerCorrect?: number
+  activity: QuizActivity
 }
 
-export function QuizRunner({ questions, onDone, sections, xpPerCorrect = 5 }: Props) {
+export function QuizRunner({ questions, onDone, sections, activity }: Props) {
   const { actions, t, lang } = useApp()
+  const attempt = useAttempt()
   const [idx, setIdx] = useState(0)
   const [picked, setPicked] = useState<string | null>(null)
   const [order, setOrder] = useState<number[]>([])
@@ -42,7 +52,6 @@ export function QuizRunner({ questions, onDone, sections, xpPerCorrect = 5 }: Pr
     log.current.push({ q, ok, section: sections?.[idx] })
     if (q.vocabId) actions.answerVocab(q.vocabId, ok)
     if (!ok) actions.addMistake({ kind: q.kind, ref: q.id, concept: q.concept })
-    else actions.addXp(xpPerCorrect)
   }
 
   const choose = (opt: string) => {
@@ -72,7 +81,13 @@ export function QuizRunner({ questions, onDone, sections, xpPerCorrect = 5 }: Pr
         bump(bySection, section, ok)
       })
       const correct = log.current.filter(l => l.ok).length
-      actions.addXp(10)
+      attempt.finish({
+        activityId: activity.id,
+        kind: activity.kind,
+        completes: activity.completes,
+        items: log.current.map(l => ({ itemRef: `q:${l.q.id}`, outcome: l.ok ? ('correct' as const) : ('incorrect' as const) })),
+        score: { earned: correct, possible: Math.max(1, log.current.length) },
+      })
       onDone({ correct, total: log.current.length, wrong: log.current.filter(l => !l.ok).map(l => l.q), bySkill, byConcept, bySection })
       return
     }

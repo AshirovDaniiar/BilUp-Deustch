@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useApp } from '../../app/store'
+import { useApp, useAttempt } from '../../app/store'
 import { Button, Chip } from '../../components/ui'
 import { SpeakButton } from '../../components/SpeakButton'
 import type { VocabularyItem } from '../../data/types'
@@ -13,6 +13,7 @@ const stageTone = { new: 'neutral', learning: 'yellow', familiar: 'blue', strong
 /** Rich vocabulary card: article, forms, meaning in RU/KY, audio, example, relations, actions. */
 export function WordCard({ item, onPractice, onOpen }: { item: VocabularyItem; onPractice?: () => void; onOpen?: (id: string) => void }) {
   const { state, actions, t, lang } = useApp()
+  const attempt = useAttempt()
   const [heard, setHeard] = useState<{ text: string; ok: boolean } | null>(null)
   const [speaking, setSpeaking] = useState(false)
   const forms = caseForms(item)
@@ -23,7 +24,8 @@ export function WordCard({ item, onPractice, onOpen }: { item: VocabularyItem; o
   const onHeard = (text: string) => {
     const ok = normalize(text).includes(normalize(item.de))
     setHeard({ text, ok })
-    actions.addXp(ok ? 3 : 1)
+    attempt.finish({ activityId: `word-practice:${item.id}`, kind: 'word-practice', items: [{ itemRef: `word:${item.id}`, outcome: ok ? 'correct' : 'incorrect' }], evidence: 'heuristic' })
+    attempt.renew()
   }
 
   return (

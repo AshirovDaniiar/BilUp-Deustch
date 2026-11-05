@@ -58,8 +58,6 @@ export function ReadingView({ id }: { id: string }) {
   const onDone = (r: QuizResult) => {
     setResult(r)
     actions.addScore('reading', pct(r.correct, r.total))
-    actions.complete(`ex:${text.id}`)
-    actions.complete(`${text.unit}:reading`)
   }
 
   return (
@@ -80,7 +78,7 @@ export function ReadingView({ id }: { id: string }) {
       </Card>
 
       {reading && <Button variant="violet" size="lg" block onClick={() => setReading(false)}>{t('understandQ')} →</Button>}
-      {!reading && !result && <QuizRunner questions={qs} onDone={onDone} />}
+      {!reading && !result && <QuizRunner questions={qs} onDone={onDone} activity={{ id: `ex:${text.id}`, kind: 'reading', completes: [`${text.unit}:reading`] }} />}
       {result && (
         <Card tone="green">
           <b>{result.correct} / {result.total}</b>

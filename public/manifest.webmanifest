@@ -1,0 +1,18 @@
+{
+  "id": "/",
+  "name": "BilUp Deutsch",
+  "short_name": "BilUp",
+  "description": "German learning app (provisional identity — final name and icons pending brand approval, decision Q12).",
+  "lang": "ru",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#1e3a8a",
+  "background_color": "#f5f6fb",
+  "categories": ["education"],
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

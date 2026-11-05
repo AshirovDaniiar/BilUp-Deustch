@@ -44,7 +44,7 @@ export function HomeScreen() {
       <section className="hero">
         <div className="hero__text">
           <div className="eyebrow">{t('tagline')}</div>
-          <h1 className="h1">{t(greetingKey())}, {state.name} 👋</h1>
+          <h1 className="h1">{t(greetingKey())}{state.name ? `, ${state.name}` : ''} 👋</h1>
         </div>
         <div className="hero__stats">
           <div className="hstat"><span className="hstat__n">🔥 {st}</span><span className="hstat__l">{t('streak')} · {t('daysShort')}</span></div>

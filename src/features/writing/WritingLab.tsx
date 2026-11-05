@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { A } from '../../app/router'
-import { useApp } from '../../app/store'
+import { useApp, useAttempt } from '../../app/store'
 import { Button, Card, Chip, PageHeader, ScoreBar } from '../../components/ui'
 import { WRITING, writingById } from '../../data/writing'
 import { LEVELS, type LanguageLevel } from '../../data/types'
@@ -31,6 +31,7 @@ export function WritingList() {
 
 export function WritingEditor({ id }: { id: string }) {
   const { actions, t, lang } = useApp()
+  const attempt = useAttempt()
   const task = writingById.get(id)
   const [text, setText] = useState('')
   const [fb, setFb] = useState<WritingFeedback | null>(null)
@@ -44,9 +45,8 @@ export function WritingEditor({ id }: { id: string }) {
     const s = r.scores
     const avg = (s.grammar + s.vocabulary + s.wordorder + s.spelling + s.style + s.formality) / 6
     actions.addScore('writing', avg)
-    actions.addXp(15)
-    actions.complete(`ex:${task.id}`)
-    actions.complete(`${task.unit}:writing`)
+    attempt.finish({ activityId: `ex:${task.id}`, kind: 'writing', completes: [`${task.unit}:writing`], evidence: 'heuristic' })
+    attempt.renew() // the next analysis is a new attempt (its bonus is already taken)
     r.errors.forEach(e => actions.addMistake({ kind: 'writing', ref: task.id, concept: e.concept }))
   }
 

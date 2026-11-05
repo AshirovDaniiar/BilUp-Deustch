@@ -170,7 +170,13 @@ export type SkillName = 'vocabulary' | 'grammar' | 'listening' | 'reading' | 'wr
 
 export interface DailyResult { date: string; vocab: [number, number]; grammar: [number, number]; listening: [number, number]; speaking: boolean }
 
-export interface AIMessage { id: string; role: 'user' | 'ai'; text: string }
+export interface AIMessage {
+  id: string
+  role: 'user' | 'ai'
+  text: string
+  /** time the message was created (ms). Optional: older messages have none and get a deterministic position-based value when read. */
+  at?: number
+}
 export interface AIConversation { messages: AIMessage[] }
 
 export interface UserProgress {

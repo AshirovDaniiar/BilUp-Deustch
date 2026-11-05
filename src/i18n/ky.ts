@@ -4,6 +4,8 @@ import { ru } from './ru'
 /** Kyrgyz translation – best effort; untranslated keys fall back to Russian. Review with a native speaker. */
 export const ky: Dict = {
   ...ru,
+  // S2: the detailed attempt history is kept by a reset (STO-90). UNREVIEWED Kyrgyz — native review required before any Kyrgyz release.
+  resetConfirm: 'Бул түзмөктөгү жетишкендикти (XP, өтүлгөн темалар, сөздөр) тазалайсызбы? Аракеттериңиздин толук тарыхы сакталат — аны өзүнчө тастыкталган аракет менен гана өчүрүүгө болот.',
   nav_home: 'Башкы бет', nav_learn: 'Үйрөнүү', nav_practice: 'Практика', nav_speak: 'Сүйлөө', nav_progress: 'Жетишкендик',
   nav_tutor: 'AI-окутуучу', nav_vocabulary: 'Сөздөр', nav_grammar: 'Грамматика', nav_profile: 'Профиль',
   back: 'Артка', next: 'Улантуу', check: 'Текшерүү', continue: 'Улантуу', finish: 'Бүтүрүү', retry: 'Дагы бир жолу', close: 'Жабуу',

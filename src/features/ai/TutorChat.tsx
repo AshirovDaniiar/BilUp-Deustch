@@ -55,8 +55,8 @@ export function TutorChat() {
             {starters.map(s => <button key={s} type="button" className="hintbtn" onClick={() => ask(s)}>{s}</button>)}
           </div>
         )}
-        {msgs.map(m => (
-          <div key={m.id} className={`bubble bubble--${m.role === 'ai' ? 'ai' : 'user'}`}>
+        {msgs.map((m, i) => (
+          <div key={`${i}:${m.id}`} className={`bubble bubble--${m.role === 'ai' ? 'ai' : 'user'}`}>
             {m.role === 'ai' && <small className="bubble__who">BilUp AI</small>}
             <Rich text={m.text} />
           </div>

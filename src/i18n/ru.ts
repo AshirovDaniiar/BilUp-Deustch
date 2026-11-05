@@ -74,7 +74,7 @@ export const ru = {
   progressTitle: 'Ваш прогресс', overallLevel: 'Общий уровень', studyTime: 'Время обучения', masteredWords: 'Освоенные слова', completedTopics: 'Пройденные темы', skills: 'Навыки', vocabStages: 'Слова по стадиям',
   weekActivity: 'Активность недели', xp: 'XP', badges: 'Достижения', strongAreas: 'Сильные стороны', noData: 'Пока нет данных — пройдите первое упражнение.', hoursShort: 'ч', minutesShort: 'мин',
   // profile
-  profileTitle: 'Профиль', yourName: 'Ваше имя', interfaceLang: 'Язык интерфейса', theme: 'Тема', theme_auto: 'Авто', theme_light: 'Светлая', theme_dark: 'Тёмная', weeklyGoal: 'Цель на неделю (дней)', resetData: 'Сбросить прогресс', resetConfirm: 'Удалить весь прогресс на этом устройстве?', dataLocal: 'Данные хранятся только на этом устройстве.',
+  profileTitle: 'Профиль', yourName: 'Ваше имя', interfaceLang: 'Язык интерфейса', theme: 'Тема', theme_auto: 'Авто', theme_light: 'Светлая', theme_dark: 'Тёмная', weeklyGoal: 'Цель на неделю (дней)', resetData: 'Сбросить прогресс', resetConfirm: 'Сбросить прогресс на этом устройстве (XP, пройденные темы, слова)? Подробная история ваших попыток сохранится — удалить её можно только отдельным подтверждённым действием.', dataLocal: 'Данные хранятся только на этом устройстве.',
   // tutor
   tutorTitle: 'BilUp AI', tutorSub: 'Персональный репетитор: объясняет, проверяет и учитывает ваш уровень', tutorPlaceholder: 'Задайте вопрос о немецком…', tutorThinking: 'Думаю…', tutorMock: 'Демо-режим: ответы формируются по правилам. Интерфейс готов к подключению настоящей модели.',
   // badges

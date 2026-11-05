@@ -1,0 +1,75 @@
+/* Install / update notices (P0b). Layout follows the existing shells: below 1024px a bottom navigation bar is present
+   (--nav-h), from 1024px a sidebar replaces it. The notice sits above the bottom bar and respects the device safe area. */
+.pwa-note {
+  position: fixed;
+  z-index: 60;
+  left: 12px;
+  right: 12px;
+  bottom: calc(var(--nav-h, 68px) + env(safe-area-inset-bottom, 0px) + 12px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: var(--surface, #fff);
+  color: var(--ink, #111);
+  border: 1px solid var(--line, #d8dcec);
+  box-shadow: 0 10px 30px rgba(8, 14, 36, 0.25);
+}
+.pwa-note__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.pwa-note__text span {
+  font-size: 0.9rem;
+  color: var(--ink-2, #444);
+}
+.pwa-note__actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pwa-btn {
+  min-height: 44px; /* touch target, 06 §5 */
+  min-width: 44px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid var(--line, #d8dcec);
+  background: var(--surface-2, #f7f8fd);
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pwa-btn--primary {
+  background: var(--primary, #2447c9);
+  border-color: transparent;
+  color: var(--primary-ink, #fff);
+}
+.pwa-btn:focus-visible {
+  outline: 3px solid var(--primary, #2447c9);
+  outline-offset: 2px;
+}
+@media (min-width: 600px) {
+  .pwa-note {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1024px) {
+  .pwa-note {
+    left: auto;
+    right: 20px;
+    bottom: 20px;
+    margin: 0;
+    max-width: 420px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

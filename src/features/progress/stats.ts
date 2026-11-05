@@ -1,7 +1,10 @@
 import { GRAMMAR } from '../../data/grammar'
-import { UNITS } from '../../data/units'
+import { listeningForUnit } from '../../data/listening'
+import { readingForUnit } from '../../data/reading'
+import { SECTIONS, UNITS, UNIT_SPEAKING, type SectionId } from '../../data/units'
+import { writingById } from '../../data/writing'
 import type { MasteryStage, SkillName, UserProgress } from '../../data/types'
-import { VOCABULARY } from '../../data/vocabulary'
+import { VOCABULARY, vocabForUnit } from '../../data/vocabulary'
 import { isDue, stageOf, STAGES } from '../../services/srs'
 import { currentWeek, streakOf } from '../../utils/date'
 import { pct } from '../../utils/text'
@@ -34,18 +37,35 @@ export function articleConfusion(s: UserProgress) {
   return { count: recent.length, ids: recent.map(m => m.ref.replace('art-', '')), active: recent.length >= 3 }
 }
 
+/**
+ * Which sections a unit REQUIRES (V-06, 08 P1 scope (6)). Temporary stand-in for the course manifest (P2): a section is required only if
+ * the unit actually has content for it, so the denominator is truthful — unit 10 has no reading text and can still reach 100 %.
+ * Adding content (e.g. a unit-10 reading text) makes the section required automatically; nothing here hard-codes a count.
+ */
+const HAS_CONTENT: Record<SectionId, (unit: number) => boolean> = {
+  vocabulary: u => vocabForUnit(u).length > 0,
+  grammar: u => (UNITS.find(x => x.id === u)?.grammarIds.length ?? 0) > 0,
+  listening: u => listeningForUnit(u).length > 0,
+  reading: u => readingForUnit(u).length > 0,
+  speaking: u => UNIT_SPEAKING[u - 1] !== undefined,
+  writing: u => writingById.has(`wr${String(u).padStart(2, '0')}`),
+  review: u => vocabForUnit(u).length > 0,
+  test: () => true,
+}
+export const requiredSections = (unit: number): SectionId[] => SECTIONS.filter(sec => HAS_CONTENT[sec](unit))
+
 export const unitProgress = (s: UserProgress, unit: number) => {
-  const sections = ['vocabulary', 'grammar', 'listening', 'reading', 'speaking', 'writing', 'review', 'test']
+  const sections = requiredSections(unit)
   const done = sections.filter(sec => s.completed.includes(`${unit}:${sec}`)).length
   return { done, total: sections.length, pct: pct(done, sections.length) }
 }
 
 export const levelProgress = (s: UserProgress) => {
-  const done = UNITS.reduce((a, u) => a + unitProgress(s, u.id).done, 0)
-  return pct(done, UNITS.length * 8)
+  const parts = UNITS.map(u => unitProgress(s, u.id))
+  return pct(parts.reduce((a, p) => a + p.done, 0), parts.reduce((a, p) => a + p.total, 0))
 }
 
-export const currentUnit = (s: UserProgress) => UNITS.find(u => unitProgress(s, u.id).done < 8) ?? UNITS[UNITS.length - 1]
+export const currentUnit = (s: UserProgress) => UNITS.find(u => unitProgress(s, u.id).pct < 100) ?? UNITS[UNITS.length - 1]
 
 export const completedTopics = (s: UserProgress) => s.completed.filter(c => c.startsWith('topic:')).length
 
@@ -69,7 +89,7 @@ export function badges(s: UserProgress): Badge[] {
     { id: 'grammar5', key: 'badge_grammar5', icon: '🧪', earned: completedTopics(s) >= 5 },
     { id: 'speaker', key: 'badge_speaker', icon: '🎙️', earned: s.scores.speaking.length > 0 },
     { id: 'writer', key: 'badge_writer', icon: '✍️', earned: s.scores.writing.length > 0 },
-    { id: 'unit', key: 'badge_unit', icon: '🎓', earned: UNITS.some(u => unitProgress(s, u.id).done === 8) },
+    { id: 'unit', key: 'badge_unit', icon: '🎓', earned: UNITS.some(u => unitProgress(s, u.id).pct === 100) },
   ]
 }
 

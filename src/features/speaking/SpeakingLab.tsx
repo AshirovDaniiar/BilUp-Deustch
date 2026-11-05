@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { A } from '../../app/router'
-import { useApp } from '../../app/store'
+import { useApp, useAttempt } from '../../app/store'
 import { Button, Card, Chip, PageHeader } from '../../components/ui'
 import { SpeakButton } from '../../components/SpeakButton'
 import { SPEAKING, speakingById } from '../../data/speaking'
@@ -35,6 +35,7 @@ interface Msg { id: number; role: 'ai' | 'user'; text: string; ru?: string; scor
 
 export function SpeakingSession({ id }: { id: string }) {
   const { actions, t, lang } = useApp()
+  const attempt = useAttempt()
   const sc = speakingById.get(id)
   const [turn, setTurn] = useState(0)
   const [msgs, setMsgs] = useState<Msg[]>([])
@@ -87,10 +88,8 @@ export function SpeakingSession({ id }: { id: string }) {
     const all = scores.current
     const avg = (f: (s: SpeakingScore) => number) => all.reduce((a, s) => a + f(s), 0) / Math.max(1, all.length)
     actions.addScore('speaking', (avg(s => s.grammar) + avg(s => s.vocabulary) + avg(s => s.naturalness) + avg(s => s.fluency)) / 4)
-    actions.addXp(20)
-    actions.complete(`speak:${sc.id}`)
     const u = unitOfScenario(sc.id)
-    if (u > 0) actions.complete(`${u}:speaking`)
+    attempt.finish({ activityId: `speak:${sc.id}`, kind: 'speaking-scenario', completes: u > 0 ? [`${u}:speaking`] : [], evidence: 'heuristic' })
     all.forEach(s => s.corrections.length && s.grammar < 85 && actions.addMistake({ kind: 'grammar', ref: `speak-${sc.id}` }))
   }
 

@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { A } from '../app/router'
-import { useApp } from '../app/store'
+import { useApp, useAttempt } from '../app/store'
 import { Button, Card, Chip, PageHeader, Ring } from '../components/ui'
 import { SpeakButton } from '../components/SpeakButton'
 import { TESTS, testById } from '../data/reallife'
@@ -10,6 +10,7 @@ import { SpeakInput } from '../features/speaking/SpeakInput'
 import { analyseSpeaking, type SpeakingScore } from '../services/analysis'
 import { SpeakScoreCard } from '../features/speaking/ScoreCard'
 import { articleConfusion, dueWordIds } from '../features/progress/stats'
+import { PassNote } from '../features/tests/PassNote'
 import { QuizPage, summarise } from '../features/tests/QuizPage'
 import { QuizRunner, type QuizResult } from '../features/tests/QuizRunner'
 import { articleDrill, buildDaily, buildTest, unitReviewQuestions, vocabQuestion, type Question } from '../features/tests/questions'
@@ -49,7 +50,7 @@ export function PracticeHub() {
 }
 
 export function ReviewScreen({ unit }: { unit?: number }) {
-  const { state, actions, t } = useApp()
+  const { state, t } = useApp()
   const back = unit ? `/learn/unit/${unit}` : '/practice'
   const build = (): Question[] => {
     if (unit) return unitReviewQuestions(unit, 10)
@@ -63,7 +64,7 @@ export function ReviewScreen({ unit }: { unit?: number }) {
       {questions.length === 0 ? (
         <Card><p>{t('noDueWords')}</p><Button to="/vocabulary" variant="soft">{t('nav_vocabulary')}</Button></Card>
       ) : (
-        <QuizPage build={build} backTo={back} onFinished={() => unit && actions.complete(`${unit}:review`)} />
+        <QuizPage build={build} backTo={back} activity={unit ? { id: `${unit}:review`, kind: 'review', completes: [`${unit}:review`] } : { id: 'review:due', kind: 'quiz' }} extra={r => (unit ? <PassNote result={r} kind="review" completionKey={`${unit}:review`} /> : null)} />
       )}
     </div>
   )
@@ -75,7 +76,7 @@ export function ArticlesScreen() {
   return (
     <div className="stack">
       <PageHeader back="/practice" eyebrow="🔠" title={t('trainArticles')} sub={conf.active ? t('articleNoticeTitle') : t('articleNoticeBody')} />
-      <QuizPage build={() => articleDrill(10, conf.active ? conf.ids : undefined)} backTo="/practice" />
+      <QuizPage build={() => articleDrill(10, conf.active ? conf.ids : undefined)} backTo="/practice" activity={{ id: 'drill:articles', kind: 'quiz' }} />
     </div>
   )
 }
@@ -115,7 +116,6 @@ export function TestRunnerPage({ id }: { id: string }) {
   const finished = (r: QuizResult) => {
     const s = summarise(r)
     actions.addTest({ id, at: Date.now(), pct: s.pct, weak: s.weakConcepts, strong: s.strong })
-    if (def.unit) actions.complete(`${def.unit}:test`)
   }
   return (
     <div className="stack">
@@ -124,8 +124,11 @@ export function TestRunnerPage({ id }: { id: string }) {
         build={() => buildTest(def)}
         backTo={def.unit ? `/learn/unit/${def.unit}` : '/practice/tests'}
         onFinished={finished}
+        activity={{ id: `test:${def.id}`, kind: 'assessment', completes: def.unit ? [`${def.unit}:test`] : [] }}
         extra={r => def.kind === 'placement' ? (
           <Card tone="blue"><div className="eyebrow">{t('yourLevelIs')}</div><div className="h2">{pct(r.correct, r.total) < 35 ? 'A1 · start' : pct(r.correct, r.total) < 75 ? 'A1 · A2' : 'A2 →'}</div></Card>
+        ) : def.unit ? (
+          <PassNote result={r} kind="assessment" completionKey={`${def.unit}:test`} />
         ) : null}
       />
     </div>
@@ -136,6 +139,7 @@ type DailyPhase = 'quiz' | 'speak' | 'phrase' | 'result'
 
 export function DailyScreen() {
   const { state, actions, t, lang } = useApp()
+  const attempt = useAttempt()
   const date = dayKey()
   const daily = useMemo(() => buildDaily(date), [date])
   const questions = useMemo(() => [...daily.vocab, ...daily.grammar, ...daily.listening], [daily])
@@ -153,13 +157,13 @@ export function DailyScreen() {
     setScore(sc)
     actions.addScore('speaking', (sc.grammar + sc.vocabulary + sc.naturalness) / 3)
   }
-  const finish = () => { actions.setDaily(date, { speaking: true }); actions.addXp(25); setPhase('result') }
+  const finish = () => { actions.setDaily(date, { speaking: true }); attempt.finish({ activityId: `daily:${date}`, kind: 'daily' }); setPhase('result') }
   const res = state.daily[date]
 
   return (
     <div className="stack">
       <PageHeader back="/practice" eyebrow="📅" title={t('dailyTitle')} sub={date} />
-      {phase === 'quiz' && <QuizRunner questions={questions} sections={sections} onDone={done} />}
+      {phase === 'quiz' && <QuizRunner questions={questions} sections={sections} onDone={done} activity={{ id: `daily:${date}:quiz`, kind: 'quiz' }} />}
       {phase === 'speak' && (
         <div className="stack">
           <Card tone="violet"><div className="eyebrow">{t('dailySpeaking')}</div><p className="break">{tr(daily.speaking.prompt, lang)}</p>
