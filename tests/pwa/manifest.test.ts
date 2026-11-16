@@ -1,5 +1,5 @@
 // @vitest-environment node
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync, readFileSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 
@@ -46,14 +46,18 @@ describe('web app manifest', () => {
     }
   })
 
-  it('BRANDING IS PROVISIONAL (decision Q12 OPEN): identity equals what is already shipped, no new branded assets', () => {
+  it('icons: BilUp snow-leopard mascot PNG set (any + maskable) plus the vector favicon; name equals the page title', () => {
     const title = /<title>([^<]+)<\/title>/.exec(html)?.[1]
-    expect(manifest.name).toBe(title) // nothing renamed by P0b
-    expect(String(manifest.description)).toMatch(/provisional/i)
-    // only the existing favicon is referenced: no generated PNG set, no maskable icon until the brand is approved
-    expect(manifest.icons.map(i => i.src)).toEqual(['/favicon.svg'])
-    expect(manifest.icons.some(i => i.purpose?.includes('maskable'))).toBe(false)
-    expect(existsSync(join(root, 'public/icons'))).toBe(false)
+    expect(manifest.name).toBe(title)
+    const srcs = manifest.icons.map(i => i.src)
+    expect(srcs).toEqual(expect.arrayContaining(['/favicon.svg', '/brand/mascot/icon-192.png', '/brand/mascot/icon-512.png']))
+    expect(manifest.icons.some(i => i.purpose?.includes('maskable'))).toBe(true)
+    for (const i of manifest.icons.filter(i => i.src.endsWith('.png'))) {
+      const size = Number(i.sizes.split('x')[0])
+      expect(size === 192 || size === 512, i.src).toBe(true)
+      expect(statSync(join(root, 'public', i.src)).size, `${i.src} must stay small: it is precached`).toBeLessThan(200_000)
+    }
+    expect(html).toContain('rel="apple-touch-icon"')
   })
 
   it('does not declare features outside P0b scope', () => {

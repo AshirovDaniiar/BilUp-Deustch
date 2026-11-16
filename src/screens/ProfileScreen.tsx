@@ -1,7 +1,7 @@
 import { STORAGE_MESSAGES } from '../app/storage-messages'
 import { useApp } from '../app/store'
 import { Button, Card, PageHeader, Segmented } from '../components/ui'
-import { LogoMark } from '../components/Logo'
+import { Mascot } from '../components/Mascot'
 import type { Lang } from '../data/types'
 import { LANG_LABELS } from '../i18n'
 
@@ -11,7 +11,7 @@ export function ProfileScreen() {
     <div className="stack">
       <PageHeader eyebrow="👤" title={t('profileTitle')} />
       <Card>
-        <div className="row"><LogoMark size={52} /><div><div className="h3">BilUp Deutsch</div><div className="muted small">{t('tagline')}</div></div></div>
+        <div className="row"><Mascot size={72} /><div><div className="h3">BilUp Til</div><div className="muted small">{t('tagline')}</div></div></div>
       </Card>
       <Card className="stack">
         <label className="field">

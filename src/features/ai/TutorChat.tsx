@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useApp } from '../../app/store'
 import { Button, Card, PageHeader } from '../../components/ui'
+import { Mascot } from '../../components/Mascot'
 import type { AIMessage } from '../../data/types'
 import { tutor } from '../../services/tutor'
 
@@ -51,13 +52,13 @@ export function TutorChat() {
       <div className="chat chat--tutor" aria-live="polite">
         {msgs.length === 0 && (
           <div className="stack stack--sm">
-            <p className="muted">{t('nav_tutor')} · {state.level}</p>
+            <div className="tutor__welcome"><Mascot size={96} /><p className="muted">{t('nav_tutor')} · {state.level}</p></div>
             {starters.map(s => <button key={s} type="button" className="hintbtn" onClick={() => ask(s)}>{s}</button>)}
           </div>
         )}
         {msgs.map((m, i) => (
           <div key={`${i}:${m.id}`} className={`bubble bubble--${m.role === 'ai' ? 'ai' : 'user'}`}>
-            {m.role === 'ai' && <small className="bubble__who">BilUp AI</small>}
+            {m.role === 'ai' && <small className="bubble__who"><Mascot variant="avatar" size={24} decorative />BilUp AI</small>}
             <Rich text={m.text} />
           </div>
         ))}

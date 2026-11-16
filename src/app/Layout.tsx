@@ -26,7 +26,7 @@ export function Layout({ route, children }: { route: Route; children: ReactNode 
   return (
     <div className="app">
       <aside className="side" aria-label="Navigation">
-        <A to="/" aria-label="BilUp Deutsch">
+        <A to="/" aria-label="BilUp Til">
           <Logo />
         </A>
         {MAIN.map(n => (
@@ -47,7 +47,7 @@ export function Layout({ route, children }: { route: Route; children: ReactNode 
 
       <div className="content">
         <header className="topbar">
-          <A to="/" aria-label="BilUp Deutsch">
+          <A to="/" aria-label="BilUp Til">
             <Logo compact />
           </A>
           <div className="topbar__actions">

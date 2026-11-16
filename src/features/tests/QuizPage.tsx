@@ -2,6 +2,7 @@ import { useState, type ReactNode } from 'react'
 import { A } from '../../app/router'
 import { useApp } from '../../app/store'
 import { Button, Card, Ring } from '../../components/ui'
+import { Mascot } from '../../components/Mascot'
 import { grammarById } from '../../data/grammar'
 import type { SkillName } from '../../data/types'
 import { pct, tr } from '../../utils/text'
@@ -32,6 +33,7 @@ export function ResultCard({ result, onRetry, children, backTo }: { result: Quiz
           <div className="h2">{result.correct} / {result.total}</div>
           <p className="muted small">{s.pct >= 80 ? '🎉' : s.pct >= 60 ? '👍' : '🌱'}</p>
         </div>
+        <Mascot variant="avatar" size={56} decorative className="result__mascot" />
       </div>
 
       {s.strong.length > 0 && (

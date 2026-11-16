@@ -1,4 +1,4 @@
-﻿# BilUp Deutsch 🇩🇪
+﻿# BilUp Til 🇩🇪
 
 *Deutsch verstehen. Deutsch sprechen.* — an educational German-learning app (React + TypeScript + Vite).
 

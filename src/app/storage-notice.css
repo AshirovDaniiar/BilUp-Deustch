@@ -11,7 +11,7 @@
   flex-direction: column;
   gap: 10px;
   padding: 12px 14px;
-  border-radius: 14px;
+  border-radius: 20px;
   background: var(--yellow-50, #fff6dc);
   color: var(--ink, #111);
   border: 1px solid var(--yellow-500, #ffb703);
@@ -50,18 +50,8 @@
   color: var(--primary-ink, #fff);
 }
 .storage-btn:focus-visible {
-  outline: 3px solid var(--primary, #2447c9);
+  outline: 2px solid var(--primary, #2447c9);
   outline-offset: 2px;
-}
-:root[data-theme='dark'] .storage-note {
-  background: #3a2f10;
-  color: #fff;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) .storage-note {
-    background: #3a2f10;
-    color: #fff;
-  }
 }
 @media (min-width: 600px) {
   .storage-note {

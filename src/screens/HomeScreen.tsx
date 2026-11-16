@@ -1,6 +1,7 @@
 import { A } from '../app/router'
 import { useApp } from '../app/store'
 import { Button, Card, ProgressBar, Ring, SectionTitle } from '../components/ui'
+import { Mascot } from '../components/Mascot'
 import { LEVELS } from '../data/types'
 import { vocabForUnit } from '../data/vocabulary'
 import { grammarById } from '../data/grammar'
@@ -42,9 +43,12 @@ export function HomeScreen() {
   return (
     <div className="stack home">
       <section className="hero">
-        <div className="hero__text">
-          <div className="eyebrow">{t('tagline')}</div>
-          <h1 className="h1">{t(greetingKey())}{state.name ? `, ${state.name}` : ''} 👋</h1>
+        <div className="hero__top">
+          <div className="hero__text">
+            <div className="eyebrow">{t('tagline')}</div>
+            <h1 className="h1">{t(greetingKey())}{state.name ? `, ${state.name}` : ''} 👋</h1>
+          </div>
+          <Mascot size={112} eager className="hero__mascot" />
         </div>
         <div className="hero__stats">
           <div className="hstat"><span className="hstat__n">🔥 {st}</span><span className="hstat__l">{t('streak')} · {t('daysShort')}</span></div>
