@@ -1,4 +1,5 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { loadLevelContent } from '../data/catalog'
 import { ListeningList, ListeningPlayer } from '../features/listening/ListeningLab'
 import { ReadingList, ReadingView } from '../features/reading/ReadingLab'
 import { RealLifeList, RealLifeTopic } from '../features/reallife/RealLife'
@@ -16,6 +17,9 @@ import { TopicScreen } from '../screens/TopicScreen'
 import { UnitScreen, VocabStudy } from '../screens/UnitScreen'
 import { VocabularyScreen } from '../screens/VocabularyScreen'
 import { Layout } from './Layout'
+import { LevelLoadFailed, LevelLoading } from './LevelLoadStatus'
+import { isRouteAccessible, levelsToLoad } from './routeAccess'
+import { useApp } from './store'
 import { useRoute, type Route } from './router'
 
 function renderRoute(r: Route) {
@@ -59,10 +63,32 @@ function renderRoute(r: Route) {
 
 export function App() {
   const route = useRoute()
+  const { state } = useApp()
   useEffect(() => { window.scrollTo(0, 0) }, [route.path])
+  // Lazy level content (A2+): empty for every A1 route and every planned level, so A1 never waits and never loads a chunk.
+  const needed = levelsToLoad(route, state.lang, state.level)
+  const neededKey = needed.join()
+  const [attempt, setAttempt] = useState(0)
+  const [loadState, setLoadState] = useState<{ key: string; failed: boolean }>({ key: '', failed: false })
+  const runKey = `${neededKey}#${attempt}`
+  useEffect(() => {
+    if (!neededKey) return
+    let live = true
+    Promise.all(neededKey.split(',').map(l => loadLevelContent(l as (typeof needed)[number])))
+      .then(() => live && setLoadState({ key: runKey, failed: false }))
+      .catch(() => live && setLoadState({ key: runKey, failed: true }))
+    return () => { live = false }
+  }, [neededKey, attempt]) // eslint-disable-line react-hooks/exhaustive-deps -- runKey is derived from both
+  const failed = loadState.failed && loadState.key === runKey
+  // Retry = a new attempt of the same load, no application reload (the catalog forgets a failed load, so it is requested again).
+  const retry = () => setAttempt(n => n + 1)
   return (
     <Layout route={route}>
-      <div key={route.path} className="page">{renderRoute(route)}</div>
+      <div key={route.path} className="page" aria-busy={(needed.length > 0 && !failed) || undefined}>
+        {needed.length > 0 ? (
+          failed ? <LevelLoadFailed retried={attempt > 0} onRetry={retry} /> : <LevelLoading />
+        ) : isRouteAccessible(route, state.lang) ? renderRoute(route) : <NotFound />}
+      </div>
     </Layout>
   )
 }

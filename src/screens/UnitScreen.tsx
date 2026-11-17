@@ -1,13 +1,10 @@
 import { useState } from 'react'
 import { A } from '../app/router'
 import { useApp, useAttempt } from '../app/store'
+import { BetaNotice } from '../components/BetaNotice'
 import { Button, Card, PageHeader, ProgressBar } from '../components/ui'
-import { grammarById } from '../data/grammar'
-import { listeningForUnit } from '../data/listening'
-import { readingForUnit } from '../data/reading'
-import { UNIT_SPEAKING, SECTIONS, unitById, type SectionId } from '../data/units'
-import { vocabForUnit } from '../data/vocabulary'
-import { writingById } from '../data/writing'
+import { grammarIndex, listeningForUnit, readingForUnit, speakingForUnit, topicTestOfUnit, unitById, vocabularyForUnit, writingForUnit } from '../data/catalog'
+import { SECTIONS, type SectionId } from '../data/units'
 import { WordCard } from '../features/vocabulary/WordCard'
 import { unitProgress } from '../features/progress/stats'
 import { tr } from '../utils/text'
@@ -20,24 +17,26 @@ export function UnitScreen({ id }: { id: number }) {
   const unit = unitById(id)
   if (!unit) return <NotFound />
   const p = unitProgress(state, id)
-  const writing = writingById.get(`wr${String(id).padStart(2, '0')}`)
+  const writing = writingForUnit(id)[0] // the unit's writing task by its `unit` metadata, not by an id pattern
+  const unitTest = topicTestOfUnit(id) // the unit's final test and its size come from the test definition
   const listening = listeningForUnit(id)[0]
   const reading = readingForUnit(id)[0]
 
   const target: Record<SectionId, { to: string; sub: string }> = {
-    vocabulary: { to: `/learn/unit/${id}/vocabulary`, sub: `${vocabForUnit(id).length} ${t('words')}` },
-    grammar: { to: `/learn/topic/${unit.grammarIds[0]}`, sub: unit.grammarIds.map(g => { const c = grammarById.get(g); return c ? tr(c.title, lang) : g }).join(' · ') },
+    vocabulary: { to: `/learn/unit/${id}/vocabulary`, sub: `${vocabularyForUnit(id).length} ${t('words')}` },
+    grammar: { to: `/learn/topic/${unit.grammarIds[0]}`, sub: unit.grammarIds.map(g => { const c = grammarIndex.get(g); return c ? tr(c.title, lang) : g }).join(' · ') },
     listening: { to: listening ? `/practice/listening/${listening.id}` : '/practice/listening', sub: listening?.title ?? '' },
     reading: { to: reading ? `/practice/reading/${reading.id}` : '/practice/reading', sub: reading?.title ?? '' },
-    speaking: { to: `/speak/${UNIT_SPEAKING[id - 1]}`, sub: UNIT_SPEAKING[id - 1] },
+    speaking: { to: `/speak/${speakingForUnit(id)}`, sub: speakingForUnit(id) ?? '' },
     writing: { to: writing ? `/practice/writing/${writing.id}` : '/practice/writing', sub: writing?.title ?? '' },
     review: { to: `/practice/review?unit=${id}`, sub: t('lab_review_d') },
-    test: { to: `/practice/tests/unit-${id}`, sub: `8 ${t('questionsN')}` },
+    test: { to: unitTest ? `/practice/tests/${unitTest.id}` : '/practice/tests', sub: unitTest ? `${unitTest.size} ${t('questionsN')}` : '' },
   }
 
   return (
     <div className="stack">
       <PageHeader back="/learn" eyebrow={`${t('unit')} ${String(id).padStart(2, '0')} · ${unit.level}`} title={`${unit.icon} ${unit.title}`} sub={tr(unit.subtitle, lang)} />
+      <BetaNotice level={unit.level} />
       <Card>
         <div className="row row--between small"><span>{p.done} / {p.total} {t('unitProgress')}</span><b>{p.pct}%</b></div>
         <ProgressBar value={p.pct} tone={p.pct === 100 ? 'green' : 'blue'} />
@@ -68,7 +67,7 @@ export function VocabStudy({ id }: { id: number }) {
   const { t } = useApp()
   const attempt = useAttempt()
   const unit = unitById(id)
-  const words = vocabForUnit(id)
+  const words = vocabularyForUnit(id)
   const [i, setI] = useState(0)
   const [seen, setSeen] = useState<Set<number>>(new Set([0]))
   if (!unit) return <NotFound />

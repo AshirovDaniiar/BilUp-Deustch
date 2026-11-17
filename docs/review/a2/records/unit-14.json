@@ -1,0 +1,44 @@
+[
+  {
+    "schema": 1,
+    "unit": 14,
+    "title": "Gesundheit und Wohlbefinden",
+    "dimension": "de-cefr",
+    "status": "pending",
+    "reviewer": {
+      "name": "",
+      "qualification": ""
+    },
+    "reviewDate": "",
+    "reviewedFingerprint": "",
+    "findings": []
+  },
+  {
+    "schema": 1,
+    "unit": 14,
+    "title": "Gesundheit und Wohlbefinden",
+    "dimension": "ru-localization",
+    "status": "pending",
+    "reviewer": {
+      "name": "",
+      "qualification": ""
+    },
+    "reviewDate": "",
+    "reviewedFingerprint": "",
+    "findings": []
+  },
+  {
+    "schema": 1,
+    "unit": 14,
+    "title": "Gesundheit und Wohlbefinden",
+    "dimension": "ky-localization",
+    "status": "pending",
+    "reviewer": {
+      "name": "",
+      "qualification": ""
+    },
+    "reviewDate": "",
+    "reviewedFingerprint": "",
+    "findings": []
+  }
+]

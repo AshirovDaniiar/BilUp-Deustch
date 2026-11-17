@@ -23,3 +23,6 @@ export function shuffle<T>(arr: readonly T[], rnd: () => number = Math.random): 
 }
 
 export const pick = <T,>(arr: readonly T[], n: number, rnd: () => number = Math.random): T[] => shuffle(arr, rnd).slice(0, n)
+
+/** A fresh seed for one attempt at an activity (e.g. the answer order of its questions); 64 bits drawn from `rnd`, so a seeded `rnd` gives a reproducible seed. */
+export const newSeed = (rnd: () => number = Math.random): string => Math.floor(rnd() * 0x100000000).toString(36) + '.' + Math.floor(rnd() * 0x100000000).toString(36)

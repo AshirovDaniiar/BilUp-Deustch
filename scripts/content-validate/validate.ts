@@ -1,43 +1,31 @@
-// Content-validation SKELETON (P0). Checks id uniqueness and reference integrity of the CURRENT src/data only.
-// It is not the P3 content-validate CLI (04 §6): no manifests, no pack format, no release gates, no provenance.
-import type {
-  Exercise,
-  GrammarConcept,
-  L10n,
-  LearningUnit,
-  ListeningExercise,
-  ReadingText,
-  RealLifeTopic,
-  SpeakingScenario,
-  TestDef,
-  VocabularyItem,
-  WritingTask,
-} from '../../src/data/types'
+// Content validator.
+//   Core rules (P0, unchanged): id uniqueness and reference integrity of whatever bundle it is given.
+//   Stage 6A rules, in ./rules: localization (RU + KY independent), CEFR (structure + review flags), answers (structure + exact position
+//   test), references (cross-level + provenance), metadata (tests, final tests, minimums, release gates).
+// It is NOT the P3 pack validator (04 §6): no manifests, no pack format, no provenance database.
+//
+// Level policy: the legacy level (A1) is measured and reported but never failed by the strict rules; every other level is strict.
+// A bundle without a `course` is legacy as a whole — which is why the original A1 bundle validates exactly as before.
+import { makeContext } from './context'
+import { answerRules } from './rules/answers'
+import { assessmentRules } from './rules/assessment'
+import { cefrRules } from './rules/cefr'
+import { conventionRules, planRules } from './rules/identity'
+import { localizationRules } from './rules/localization'
+import { metadataRules } from './rules/metadata'
+import { referenceRules } from './rules/references'
+import { schemaRules } from './rules/schema'
+import { templateRules } from './rules/templates'
+import type { ContentBundle, Issue, Options } from './types'
+import type { L10n } from '../../src/data/types'
 
-export interface ContentBundle {
-  units: LearningUnit[]
-  vocabulary: VocabularyItem[]
-  grammar: GrammarConcept[]
-  exercises: Exercise[]
-  listening: ListeningExercise[]
-  reading: ReadingText[]
-  writing: WritingTask[]
-  speaking: SpeakingScenario[]
-  realLife: RealLifeTopic[]
-  tests: TestDef[]
-}
+export type { ContentBundle, Issue, Mode, Options, ReviewRecord, Severity } from './types'
 
-export interface Issue {
-  severity: 'error' | 'info'
-  rule: string
-  where: string
-  message: string
-}
+export function validateContent(c: ContentBundle, options: Options = {}): Issue[] {
+  const ctx = makeContext(c, options.mode ?? 'authoring')
+  const { issues, err } = ctx
 
-export function validateContent(c: ContentBundle): Issue[] {
-  const issues: Issue[] = []
-  const err = (rule: string, where: string, message: string) => issues.push({ severity: 'error', rule, where, message })
-
+  // ───────────── core rules (unchanged) ─────────────
   const dup = (name: string, ids: (string | number)[]) => {
     const seen = new Set<string | number>()
     for (const id of ids) {
@@ -92,10 +80,12 @@ export function validateContent(c: ContentBundle): Issue[] {
   }
   for (const v of c.vocabulary) {
     unitRef('vocabulary', v.id, v.unit)
-    for (const r of v.related) if (!vocabIds.has(r)) err('ref-vocab', `vocabulary:${v.id}`, `related id "${r}" does not exist`)
+    for (const r of Array.isArray(v.related) ? v.related : [])
+      if (!vocabIds.has(r)) err('ref-vocab', `vocabulary:${v.id}`, `related id "${r}" does not exist`)
   }
   for (const u of c.units)
-    for (const g of u.grammarIds) if (!grammarIds.has(g)) err('ref-grammar', `units:${u.id}`, `grammar id "${g}" does not exist`)
+    for (const g of Array.isArray(u.grammarIds) ? u.grammarIds : [])
+      if (!grammarIds.has(g)) err('ref-grammar', `units:${u.id}`, `grammar id "${g}" does not exist`)
   for (const g of c.grammar) unitRef('grammar', g.id, g.unit)
   for (const e of c.exercises) {
     unitRef('exercises', e.id, e.unit)
@@ -106,8 +96,8 @@ export function validateContent(c: ContentBundle): Issue[] {
       err('order-tokens', `exercises:${e.id}`, 'scrambled words do not match the answer sentence')
   }
   const qCheck = (name: string, id: string, qs: { options: string[]; answer: number }[]) =>
-    qs.forEach((q, i) => {
-      if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer >= q.options.length)
+    (Array.isArray(qs) ? qs : []).forEach((q, i) => {
+      if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer >= (q.options?.length ?? 0))
         err('answer-index', `${name}:${id}#${i}`, `answer index ${q.answer} out of range`)
     })
   for (const l of c.listening) {
@@ -127,10 +117,22 @@ export function validateContent(c: ContentBundle): Issue[] {
   }
   for (const t of c.tests) unitRef('tests', t.id, t.unit)
 
-  // Informational only: how much L10n content has no Kyrgyz text (current behaviour = silent Russian fallback, 02 §5).
+  // ───────────── Stage 6A rules ─────────────
+  planRules(ctx)
+  schemaRules(ctx)
+  conventionRules(ctx)
+  localizationRules(ctx)
+  cefrRules(ctx)
+  answerRules(ctx)
+  referenceRules(ctx)
+  metadataRules(ctx)
+  assessmentRules(ctx)
+  templateRules(ctx)
+
+  // Informational: how much LEGACY (non-strict) L10n content has no Kyrgyz text. Strict levels cannot have any (an error above).
   const l10ns: L10n[] = []
-  for (const g of c.grammar) l10ns.push(g.title, g.summary, g.discover, g.why, ...g.when)
-  for (const e of c.exercises) l10ns.push(e.why)
+  for (const g of c.grammar) if (!ctx.strict(ctx.levelOfUnit(g.unit))) l10ns.push(g.title, g.summary, g.discover, g.why, ...g.when)
+  for (const e of c.exercises) if (!ctx.strict(ctx.levelOfUnit(e.unit))) l10ns.push(e.why)
   const missingKy = l10ns.filter(x => !x.ky).length
   issues.push({
     severity: 'info',

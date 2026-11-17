@@ -1,0 +1,1111 @@
+{
+ "units": [
+  {
+   "id": 1,
+   "level": "A1",
+   "grammarIds": [
+    "articles",
+    "sein-haben",
+    "questions",
+    "nominativ"
+   ]
+  },
+  {
+   "id": 2,
+   "level": "A1",
+   "grammarIds": [
+    "plural",
+    "possessive"
+   ]
+  },
+  {
+   "id": 3,
+   "level": "A1",
+   "grammarIds": [
+    "regular-verbs",
+    "verb-position",
+    "separable"
+   ]
+  },
+  {
+   "id": 4,
+   "level": "A1",
+   "grammarIds": [
+    "akkusativ",
+    "negation",
+    "modal"
+   ]
+  },
+  {
+   "id": 5,
+   "level": "A1",
+   "grammarIds": [
+    "wechsel"
+   ]
+  },
+  {
+   "id": 6,
+   "level": "A1",
+   "grammarIds": [
+    "conjunctions"
+   ]
+  },
+  {
+   "id": 7,
+   "level": "A1",
+   "grammarIds": [
+    "dativ",
+    "dativ-prep"
+   ]
+  },
+  {
+   "id": 8,
+   "level": "A1",
+   "grammarIds": [
+    "time-order",
+    "perfekt"
+   ]
+  },
+  {
+   "id": 9,
+   "level": "A1",
+   "grammarIds": [
+    "akk-prep"
+   ]
+  },
+  {
+   "id": 10,
+   "level": "A1",
+   "grammarIds": [
+    "genitiv"
+   ]
+  }
+ ],
+ "unitSpeaking": [
+  "meeting",
+  "work",
+  "appointment",
+  "restaurant",
+  "viewing",
+  "interview",
+  "station",
+  "phone",
+  "supermarket",
+  "office"
+ ],
+ "sections": [
+  "vocabulary",
+  "grammar",
+  "listening",
+  "reading",
+  "speaking",
+  "writing",
+  "review",
+  "test"
+ ],
+ "vocabularyIds": [
+  "v1-1",
+  "v1-2",
+  "v1-3",
+  "v1-4",
+  "v1-5",
+  "v1-6",
+  "v1-7",
+  "v1-8",
+  "v1-9",
+  "v1-10",
+  "v1-11",
+  "v1-12",
+  "v1-13",
+  "v1-14",
+  "v1-15",
+  "v1-16",
+  "v1-17",
+  "v1-18",
+  "v1-19",
+  "v1-20",
+  "v1-21",
+  "v1-22",
+  "v1-23",
+  "v2-1",
+  "v2-2",
+  "v2-3",
+  "v2-4",
+  "v2-5",
+  "v2-6",
+  "v2-7",
+  "v2-8",
+  "v2-9",
+  "v2-10",
+  "v2-11",
+  "v2-12",
+  "v2-13",
+  "v2-14",
+  "v2-15",
+  "v2-16",
+  "v2-17",
+  "v2-18",
+  "v2-19",
+  "v2-20",
+  "v2-21",
+  "v2-22",
+  "v2-23",
+  "v3-1",
+  "v3-2",
+  "v3-3",
+  "v3-4",
+  "v3-5",
+  "v3-6",
+  "v3-7",
+  "v3-8",
+  "v3-9",
+  "v3-10",
+  "v3-11",
+  "v3-12",
+  "v3-13",
+  "v3-14",
+  "v3-15",
+  "v3-16",
+  "v3-17",
+  "v3-18",
+  "v3-19",
+  "v3-20",
+  "v3-21",
+  "v3-22",
+  "v4-1",
+  "v4-2",
+  "v4-3",
+  "v4-4",
+  "v4-5",
+  "v4-6",
+  "v4-7",
+  "v4-8",
+  "v4-9",
+  "v4-10",
+  "v4-11",
+  "v4-12",
+  "v4-13",
+  "v4-14",
+  "v4-15",
+  "v4-16",
+  "v4-17",
+  "v4-18",
+  "v4-19",
+  "v4-20",
+  "v4-21",
+  "v4-22",
+  "v4-23",
+  "v5-1",
+  "v5-2",
+  "v5-3",
+  "v5-4",
+  "v5-5",
+  "v5-6",
+  "v5-7",
+  "v5-8",
+  "v5-9",
+  "v5-10",
+  "v5-11",
+  "v5-12",
+  "v5-13",
+  "v5-14",
+  "v5-15",
+  "v5-16",
+  "v5-17",
+  "v5-18",
+  "v5-19",
+  "v5-20",
+  "v5-21",
+  "v5-22",
+  "v5-23",
+  "v6-1",
+  "v6-2",
+  "v6-3",
+  "v6-4",
+  "v6-5",
+  "v6-6",
+  "v6-7",
+  "v6-8",
+  "v6-9",
+  "v6-10",
+  "v6-11",
+  "v6-12",
+  "v6-13",
+  "v6-14",
+  "v6-15",
+  "v6-16",
+  "v6-17",
+  "v6-18",
+  "v6-19",
+  "v6-20",
+  "v6-21",
+  "v6-22",
+  "v7-1",
+  "v7-2",
+  "v7-3",
+  "v7-4",
+  "v7-5",
+  "v7-6",
+  "v7-7",
+  "v7-8",
+  "v7-9",
+  "v7-10",
+  "v7-11",
+  "v7-12",
+  "v7-13",
+  "v7-14",
+  "v7-15",
+  "v7-16",
+  "v7-17",
+  "v7-18",
+  "v7-19",
+  "v7-20",
+  "v7-21",
+  "v7-22",
+  "v8-1",
+  "v8-2",
+  "v8-3",
+  "v8-4",
+  "v8-5",
+  "v8-6",
+  "v8-7",
+  "v8-8",
+  "v8-9",
+  "v8-10",
+  "v8-11",
+  "v8-12",
+  "v8-13",
+  "v8-14",
+  "v8-15",
+  "v8-16",
+  "v8-17",
+  "v8-18",
+  "v8-19",
+  "v8-20",
+  "v8-21",
+  "v8-22",
+  "v9-1",
+  "v9-2",
+  "v9-3",
+  "v9-4",
+  "v9-5",
+  "v9-6",
+  "v9-7",
+  "v9-8",
+  "v9-9",
+  "v9-10",
+  "v9-11",
+  "v9-12",
+  "v9-13",
+  "v9-14",
+  "v9-15",
+  "v9-16",
+  "v9-17",
+  "v9-18",
+  "v9-19",
+  "v9-20",
+  "v9-21",
+  "v9-22",
+  "v9-23",
+  "v10-1",
+  "v10-2",
+  "v10-3",
+  "v10-4",
+  "v10-5",
+  "v10-6",
+  "v10-7",
+  "v10-8",
+  "v10-9",
+  "v10-10",
+  "v10-11",
+  "v10-12",
+  "v10-13",
+  "v10-14",
+  "v10-15",
+  "v10-16",
+  "v10-17",
+  "v10-18",
+  "v10-19",
+  "v10-20",
+  "v10-21",
+  "v10-22",
+  "v10-23"
+ ],
+ "vocabularyPerUnit": {
+  "1": 23,
+  "2": 23,
+  "3": 22,
+  "4": 23,
+  "5": 23,
+  "6": 22,
+  "7": 22,
+  "8": 22,
+  "9": 23,
+  "10": 23
+ },
+ "grammarIds": [
+  {
+   "id": "articles",
+   "unit": 1,
+   "level": "A1"
+  },
+  {
+   "id": "sein-haben",
+   "unit": 1,
+   "level": "A1"
+  },
+  {
+   "id": "questions",
+   "unit": 1,
+   "level": "A1"
+  },
+  {
+   "id": "nominativ",
+   "unit": 1,
+   "level": "A1"
+  },
+  {
+   "id": "plural",
+   "unit": 2,
+   "level": "A1"
+  },
+  {
+   "id": "possessive",
+   "unit": 2,
+   "level": "A1"
+  },
+  {
+   "id": "regular-verbs",
+   "unit": 3,
+   "level": "A1"
+  },
+  {
+   "id": "verb-position",
+   "unit": 3,
+   "level": "A1"
+  },
+  {
+   "id": "separable",
+   "unit": 3,
+   "level": "A1"
+  },
+  {
+   "id": "akkusativ",
+   "unit": 4,
+   "level": "A1"
+  },
+  {
+   "id": "negation",
+   "unit": 4,
+   "level": "A1"
+  },
+  {
+   "id": "modal",
+   "unit": 4,
+   "level": "A1"
+  },
+  {
+   "id": "wechsel",
+   "unit": 5,
+   "level": "A1"
+  },
+  {
+   "id": "conjunctions",
+   "unit": 6,
+   "level": "A1"
+  },
+  {
+   "id": "dativ",
+   "unit": 7,
+   "level": "A1"
+  },
+  {
+   "id": "dativ-prep",
+   "unit": 7,
+   "level": "A1"
+  },
+  {
+   "id": "time-order",
+   "unit": 8,
+   "level": "A1"
+  },
+  {
+   "id": "perfekt",
+   "unit": 8,
+   "level": "A1"
+  },
+  {
+   "id": "akk-prep",
+   "unit": 9,
+   "level": "A1"
+  },
+  {
+   "id": "genitiv",
+   "unit": 10,
+   "level": "A2"
+  }
+ ],
+ "exerciseIds": [
+  "ex001",
+  "ex002",
+  "ex003",
+  "ex004",
+  "ex005",
+  "ex006",
+  "ex007",
+  "ex008",
+  "ex009",
+  "ex010",
+  "ex011",
+  "ex012",
+  "ex013",
+  "ex014",
+  "ex015",
+  "ex016",
+  "ex017",
+  "ex018",
+  "ex019",
+  "ex020",
+  "ex021",
+  "ex022",
+  "ex023",
+  "ex024",
+  "ex025",
+  "ex026",
+  "ex027",
+  "ex028",
+  "ex029",
+  "ex030",
+  "ex031",
+  "ex032",
+  "ex033",
+  "ex034",
+  "ex035",
+  "ex036",
+  "ex037",
+  "ex038",
+  "ex039",
+  "ex040",
+  "ex041",
+  "ex042",
+  "ex043",
+  "ex044",
+  "ex045",
+  "ex046",
+  "ex047",
+  "ex048",
+  "ex049",
+  "ex050",
+  "ex051",
+  "ex052",
+  "ex053",
+  "ex054",
+  "ex055",
+  "ex056",
+  "ex057",
+  "ex058",
+  "ex059",
+  "ex060",
+  "ex061",
+  "ex062",
+  "ex063",
+  "ex064",
+  "ex065",
+  "ex066",
+  "ex067",
+  "art-v1-16",
+  "art-v1-17",
+  "art-v1-18",
+  "art-v2-1",
+  "art-v2-2",
+  "art-v2-3",
+  "art-v2-4",
+  "art-v2-5",
+  "art-v2-6",
+  "art-v2-7",
+  "art-v2-8",
+  "art-v2-9",
+  "art-v2-10",
+  "art-v2-11",
+  "art-v2-12",
+  "art-v2-13",
+  "art-v2-14",
+  "art-v2-15",
+  "art-v2-16",
+  "art-v2-17",
+  "art-v3-1",
+  "art-v3-2",
+  "art-v3-3",
+  "art-v3-4",
+  "art-v3-5",
+  "art-v4-1",
+  "art-v4-2",
+  "art-v4-3",
+  "art-v4-4",
+  "art-v4-5",
+  "art-v4-6",
+  "art-v4-7",
+  "art-v4-8",
+  "art-v4-9",
+  "art-v4-10",
+  "art-v4-11",
+  "art-v4-12",
+  "art-v4-13",
+  "art-v4-14",
+  "art-v4-15",
+  "art-v4-16",
+  "art-v5-1",
+  "art-v5-2",
+  "art-v5-3",
+  "art-v5-4",
+  "art-v5-5",
+  "art-v5-6",
+  "art-v5-7",
+  "art-v5-8",
+  "art-v5-9",
+  "art-v5-10",
+  "art-v5-11",
+  "art-v5-12",
+  "art-v5-13",
+  "art-v5-14",
+  "art-v5-15",
+  "art-v5-16",
+  "art-v5-17",
+  "art-v5-18",
+  "art-v5-19",
+  "art-v6-1",
+  "art-v6-2",
+  "art-v6-3",
+  "art-v6-4",
+  "art-v6-5",
+  "art-v6-6",
+  "art-v6-7",
+  "art-v6-8",
+  "art-v6-9",
+  "art-v6-10",
+  "art-v6-11",
+  "art-v6-12",
+  "art-v6-13",
+  "art-v6-14",
+  "art-v6-15",
+  "art-v6-16",
+  "art-v6-17",
+  "art-v6-18",
+  "art-v7-1",
+  "art-v7-2",
+  "art-v7-3",
+  "art-v7-4",
+  "art-v7-5",
+  "art-v7-6",
+  "art-v7-7",
+  "art-v7-8",
+  "art-v7-9",
+  "art-v7-10",
+  "art-v7-11",
+  "art-v7-12",
+  "art-v7-13",
+  "art-v7-14",
+  "art-v7-15",
+  "art-v8-1",
+  "art-v8-2",
+  "art-v8-3",
+  "art-v8-4",
+  "art-v8-5",
+  "art-v8-6",
+  "art-v8-7",
+  "art-v8-8",
+  "art-v8-9",
+  "art-v8-10",
+  "art-v8-11",
+  "art-v8-12",
+  "art-v8-13",
+  "art-v9-7",
+  "art-v9-8",
+  "art-v9-9",
+  "art-v9-10",
+  "art-v9-11",
+  "art-v9-12",
+  "art-v9-13",
+  "art-v9-14",
+  "art-v9-15",
+  "art-v9-16",
+  "art-v9-17",
+  "art-v9-18",
+  "art-v9-19",
+  "art-v9-20",
+  "art-v10-7",
+  "art-v10-8",
+  "art-v10-9",
+  "art-v10-10",
+  "art-v10-11",
+  "art-v10-12",
+  "art-v10-13",
+  "art-v10-14",
+  "art-v10-15",
+  "art-v10-16",
+  "art-v10-17",
+  "art-v10-18",
+  "art-v10-19",
+  "art-v10-20",
+  "art-v10-21"
+ ],
+ "handwrittenCount": 67,
+ "exercisesPerUnit": {
+  "1": 11,
+  "2": 24,
+  "3": 12,
+  "4": 23,
+  "5": 25,
+  "6": 24,
+  "7": 22,
+  "8": 20,
+  "9": 20,
+  "10": 21
+ },
+ "listeningIds": [
+  {
+   "id": "li01",
+   "unit": 1,
+   "level": "A1"
+  },
+  {
+   "id": "li02",
+   "unit": 1,
+   "level": "A1"
+  },
+  {
+   "id": "li03",
+   "unit": 2,
+   "level": "A1"
+  },
+  {
+   "id": "li04",
+   "unit": 2,
+   "level": "A1"
+  },
+  {
+   "id": "li05",
+   "unit": 3,
+   "level": "A1"
+  },
+  {
+   "id": "li06",
+   "unit": 3,
+   "level": "A1"
+  },
+  {
+   "id": "li07",
+   "unit": 4,
+   "level": "A1"
+  },
+  {
+   "id": "li08",
+   "unit": 4,
+   "level": "A1"
+  },
+  {
+   "id": "li09",
+   "unit": 5,
+   "level": "A1"
+  },
+  {
+   "id": "li10",
+   "unit": 5,
+   "level": "A1"
+  },
+  {
+   "id": "li11",
+   "unit": 6,
+   "level": "A1"
+  },
+  {
+   "id": "li12",
+   "unit": 6,
+   "level": "A1"
+  },
+  {
+   "id": "li13",
+   "unit": 7,
+   "level": "A1"
+  },
+  {
+   "id": "li14",
+   "unit": 7,
+   "level": "A1"
+  },
+  {
+   "id": "li15",
+   "unit": 8,
+   "level": "A1"
+  },
+  {
+   "id": "li16",
+   "unit": 8,
+   "level": "A2"
+  },
+  {
+   "id": "li17",
+   "unit": 9,
+   "level": "A1"
+  },
+  {
+   "id": "li18",
+   "unit": 9,
+   "level": "A2"
+  },
+  {
+   "id": "li19",
+   "unit": 10,
+   "level": "A1"
+  },
+  {
+   "id": "li20",
+   "unit": 10,
+   "level": "A2"
+  },
+  {
+   "id": "li21",
+   "unit": 10,
+   "level": "A1"
+  }
+ ],
+ "readingIds": [
+  {
+   "id": "re01",
+   "unit": 1,
+   "level": "A1"
+  },
+  {
+   "id": "re02",
+   "unit": 2,
+   "level": "A1"
+  },
+  {
+   "id": "re03",
+   "unit": 3,
+   "level": "A1"
+  },
+  {
+   "id": "re04",
+   "unit": 4,
+   "level": "A1"
+  },
+  {
+   "id": "re05",
+   "unit": 5,
+   "level": "A1"
+  },
+  {
+   "id": "re06",
+   "unit": 6,
+   "level": "A1"
+  },
+  {
+   "id": "re07",
+   "unit": 7,
+   "level": "A1"
+  },
+  {
+   "id": "re08",
+   "unit": 8,
+   "level": "A2"
+  },
+  {
+   "id": "re09",
+   "unit": 9,
+   "level": "A2"
+  },
+  {
+   "id": "re10",
+   "unit": 6,
+   "level": "B1"
+  }
+ ],
+ "writingIds": [
+  {
+   "id": "wr01",
+   "unit": 1,
+   "level": "A1"
+  },
+  {
+   "id": "wr02",
+   "unit": 2,
+   "level": "A1"
+  },
+  {
+   "id": "wr03",
+   "unit": 3,
+   "level": "A1"
+  },
+  {
+   "id": "wr04",
+   "unit": 4,
+   "level": "A1"
+  },
+  {
+   "id": "wr05",
+   "unit": 5,
+   "level": "A2"
+  },
+  {
+   "id": "wr06",
+   "unit": 6,
+   "level": "A2"
+  },
+  {
+   "id": "wr07",
+   "unit": 7,
+   "level": "A1"
+  },
+  {
+   "id": "wr08",
+   "unit": 8,
+   "level": "A2"
+  },
+  {
+   "id": "wr09",
+   "unit": 9,
+   "level": "A2"
+  },
+  {
+   "id": "wr10",
+   "unit": 10,
+   "level": "A2"
+  }
+ ],
+ "speakingIds": [
+  {
+   "id": "restaurant",
+   "level": "A1"
+  },
+  {
+   "id": "doctor",
+   "level": "A1"
+  },
+  {
+   "id": "supermarket",
+   "level": "A1"
+  },
+  {
+   "id": "work",
+   "level": "A1"
+  },
+  {
+   "id": "interview",
+   "level": "A2"
+  },
+  {
+   "id": "station",
+   "level": "A1"
+  },
+  {
+   "id": "viewing",
+   "level": "A2"
+  },
+  {
+   "id": "phone",
+   "level": "A2"
+  },
+  {
+   "id": "office",
+   "level": "A2"
+  },
+  {
+   "id": "appointment",
+   "level": "A1"
+  },
+  {
+   "id": "meeting",
+   "level": "A1"
+  }
+ ],
+ "realLifeIds": [
+  "wohnung",
+  "arbeit",
+  "bewerbung",
+  "arzt",
+  "apotheke",
+  "bank",
+  "post",
+  "supermarkt",
+  "bahn",
+  "behoerde",
+  "anmeldung",
+  "telefon",
+  "behoerden",
+  "universitaet",
+  "restaurant"
+ ],
+ "tests": [
+  {
+   "id": "placement",
+   "kind": "placement",
+   "level": "A1",
+   "unit": null,
+   "size": 12
+  },
+  {
+   "id": "level-a1",
+   "kind": "level",
+   "level": "A1",
+   "unit": null,
+   "size": 15
+  },
+  {
+   "id": "grammar",
+   "kind": "grammar",
+   "level": "A1",
+   "unit": null,
+   "size": 12
+  },
+  {
+   "id": "vocabulary",
+   "kind": "vocabulary",
+   "level": "A1",
+   "unit": null,
+   "size": 15
+  },
+  {
+   "id": "listening",
+   "kind": "listening",
+   "level": "A1",
+   "unit": null,
+   "size": 8
+  },
+  {
+   "id": "unit-1",
+   "kind": "topic",
+   "level": "A1",
+   "unit": 1,
+   "size": 8
+  },
+  {
+   "id": "unit-2",
+   "kind": "topic",
+   "level": "A1",
+   "unit": 2,
+   "size": 8
+  },
+  {
+   "id": "unit-3",
+   "kind": "topic",
+   "level": "A1",
+   "unit": 3,
+   "size": 8
+  },
+  {
+   "id": "unit-4",
+   "kind": "topic",
+   "level": "A1",
+   "unit": 4,
+   "size": 8
+  },
+  {
+   "id": "unit-5",
+   "kind": "topic",
+   "level": "A1",
+   "unit": 5,
+   "size": 8
+  },
+  {
+   "id": "unit-6",
+   "kind": "topic",
+   "level": "A1",
+   "unit": 6,
+   "size": 8
+  },
+  {
+   "id": "unit-7",
+   "kind": "topic",
+   "level": "A1",
+   "unit": 7,
+   "size": 8
+  },
+  {
+   "id": "unit-8",
+   "kind": "topic",
+   "level": "A1",
+   "unit": 8,
+   "size": 8
+  },
+  {
+   "id": "unit-9",
+   "kind": "topic",
+   "level": "A1",
+   "unit": 9,
+   "size": 8
+  },
+  {
+   "id": "unit-10",
+   "kind": "topic",
+   "level": "A1",
+   "unit": 10,
+   "size": 8
+  }
+ ],
+ "labsByItemLevel": {
+  "listening": {
+   "A1": [
+    "li01",
+    "li02",
+    "li03",
+    "li04",
+    "li05",
+    "li06",
+    "li07",
+    "li08",
+    "li09",
+    "li10",
+    "li11",
+    "li12",
+    "li13",
+    "li14",
+    "li15",
+    "li17",
+    "li19",
+    "li21"
+   ],
+   "A2": [
+    "li16",
+    "li18",
+    "li20"
+   ],
+   "B1": []
+  },
+  "reading": {
+   "A1": [
+    "re01",
+    "re02",
+    "re03",
+    "re04",
+    "re05",
+    "re06",
+    "re07"
+   ],
+   "A2": [
+    "re08",
+    "re09"
+   ],
+   "B1": [
+    "re10"
+   ]
+  },
+  "writing": {
+   "A1": [
+    "wr01",
+    "wr02",
+    "wr03",
+    "wr04",
+    "wr07"
+   ],
+   "A2": [
+    "wr05",
+    "wr06",
+    "wr08",
+    "wr09",
+    "wr10"
+   ],
+   "B1": []
+  }
+ }
+}

@@ -10,6 +10,11 @@ import type { Plugin } from 'vite'
 
 const NOT_PRECACHED = new Set(['sw.js', 'pwa-config.json'])
 const SKIP = /\.map$/i
+/**
+ * Lazy level-content chunks (`assets/a2-content-*.js`, see src/data/a2/a2-content.ts) are NOT part of the shell precache: a learner
+ * who cannot see the level must never download it. When a level is released, its caching strategy is decided in that release.
+ */
+const LAZY_CONTENT = /^assets\/a\d-content-[^/]*\.js$/
 
 function listFiles(dir: string, out: string[] = []): string[] {
   for (const name of readdirSync(dir)) {
@@ -23,19 +28,25 @@ function listFiles(dir: string, out: string[] = []): string[] {
 export interface ShellManifest {
   version: string
   precache: string[]
+  /** lazy content chunks: not precached, cached by the worker only after their first successful use */
+  lazy: string[]
 }
 
 /** Pure: list + version for a set of [relativePath, content] entries. The version changes iff any shell file changes. */
 export function buildShellManifest(files: { path: string; content: Uint8Array | string }[]): ShellManifest {
   const entries = files
-    .filter(f => !NOT_PRECACHED.has(f.path) && !SKIP.test(f.path))
+    .filter(f => !NOT_PRECACHED.has(f.path) && !SKIP.test(f.path) && !LAZY_CONTENT.test(f.path))
     .map(f => ({ path: f.path, hash: createHash('sha256').update(f.content).digest('hex') }))
     .sort((a, b) => (a.path < b.path ? -1 : 1))
   const version = createHash('sha256')
     .update(entries.map(e => `${e.path}:${e.hash}`).join('\n'))
     .digest('hex')
     .slice(0, 12)
-  return { version, precache: entries.map(e => e.path) }
+  const lazy = files
+    .filter(f => LAZY_CONTENT.test(f.path))
+    .map(f => f.path)
+    .sort()
+  return { version, precache: entries.map(e => e.path), lazy }
 }
 
 export function shellWorkerPlugin(opts: { kill?: boolean } = {}): Plugin {
@@ -60,7 +71,11 @@ export function shellWorkerPlugin(opts: { kill?: boolean } = {}): Plugin {
         format: 'iife',
         target: 'es2020',
         minify: true,
-        define: { __SHELL_VERSION__: JSON.stringify(manifest.version), __PRECACHE__: JSON.stringify(manifest.precache) },
+        define: {
+          __SHELL_VERSION__: JSON.stringify(manifest.version),
+          __PRECACHE__: JSON.stringify(manifest.precache),
+          __LAZY__: JSON.stringify(manifest.lazy),
+        },
         logLevel: 'silent',
       })
       mkdirSync(outDir, { recursive: true })
@@ -68,7 +83,7 @@ export function shellWorkerPlugin(opts: { kill?: boolean } = {}): Plugin {
       writeFileSync(join(outDir, 'pwa-config.json'), JSON.stringify({ enabled: !kill }) + '\n')
       writeFileSync(
         join(outDir, 'pwa-build.json'),
-        JSON.stringify({ kill, version: manifest.version, precache: manifest.precache }, null, 2) + '\n',
+        JSON.stringify({ kill, version: manifest.version, precache: manifest.precache, lazy: manifest.lazy }, null, 2) + '\n',
       )
     },
   }

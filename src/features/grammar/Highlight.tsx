@@ -3,9 +3,9 @@ import { A } from '../../app/router'
 import { useApp } from '../../app/store'
 import { Sheet } from '../../components/ui'
 import { SpeakButton } from '../../components/SpeakButton'
-import { grammarById } from '../../data/grammar'
+import { grammarIndex, levelOfUnit } from '../../data/catalog'
 import type { GrammarExample, WhyNote } from '../../data/types'
-import { tr } from '../../utils/text'
+import { locStrict, tr } from '../../utils/text'
 
 /** Wraps `focus` inside `text` with a <mark>. */
 export function Highlight({ text, focus }: { text: string; focus?: string }) {
@@ -21,7 +21,9 @@ export function Highlight({ text, focus }: { text: string; focus?: string }) {
   )
 }
 
-export function ExampleList({ items, withAudio = true }: { items: GrammarExample[]; withAudio?: boolean }) {
+/** `strict` = the examples belong to an authored A2 concept: the translation is shown in the learner's own language only. */
+export function ExampleList({ items, withAudio = true, strict = false }: { items: GrammarExample[]; withAudio?: boolean; strict?: boolean }) {
+  const { lang } = useApp()
   return (
     <ul className="examples">
       {items.map(e => (
@@ -30,7 +32,7 @@ export function ExampleList({ items, withAudio = true }: { items: GrammarExample
             <div className="de break">
               <Highlight text={e.de} focus={e.focus} />
             </div>
-            <div className="muted small break">{e.ru}</div>
+            <div className="muted small break">{strict ? locStrict(e.ru, e.ky, lang) : e.ru}</div>
           </div>
           {withAudio && <SpeakButton text={e.de} small />}
         </li>
@@ -43,7 +45,8 @@ export function ExampleList({ items, withAudio = true }: { items: GrammarExample
 export function WhyButton({ note, label }: { note: WhyNote; label?: string }) {
   const { t, lang } = useApp()
   const [open, setOpen] = useState(false)
-  const concept = grammarById.get(note.conceptId)
+  const concept = grammarIndex.get(note.conceptId)
+  const strict = !!concept && levelOfUnit(concept.unit) !== 'A1'
   return (
     <>
       <button type="button" className="whybtn" onClick={() => setOpen(true)}>
@@ -56,12 +59,12 @@ export function WhyButton({ note, label }: { note: WhyNote; label?: string }) {
               <Highlight text={note.sentence} focus={note.word} />
               <SpeakButton text={note.sentence} small />
             </div>
-            <div className="muted small break">{note.ru}</div>
+            <div className="muted small break">{strict ? locStrict(note.ru, note.ky, lang) : note.ru}</div>
           </div>
           <p className="break">{tr(note.reason, lang)}</p>
           <div>
             <div className="eyebrow">{t('examples')}</div>
-            <ExampleList items={note.more} />
+            <ExampleList items={note.more} strict={strict} />
           </div>
           {concept && (
             <A to={`/grammar/${concept.id}`} className="btn btn--soft btn--block" onClick={() => setOpen(false)}>

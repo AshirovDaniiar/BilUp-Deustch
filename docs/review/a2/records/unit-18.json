@@ -1,0 +1,44 @@
+[
+  {
+    "schema": 1,
+    "unit": 18,
+    "title": "Reisen, Urlaub und Mobilität",
+    "dimension": "de-cefr",
+    "status": "pending",
+    "reviewer": {
+      "name": "",
+      "qualification": ""
+    },
+    "reviewDate": "",
+    "reviewedFingerprint": "",
+    "findings": []
+  },
+  {
+    "schema": 1,
+    "unit": 18,
+    "title": "Reisen, Urlaub und Mobilität",
+    "dimension": "ru-localization",
+    "status": "pending",
+    "reviewer": {
+      "name": "",
+      "qualification": ""
+    },
+    "reviewDate": "",
+    "reviewedFingerprint": "",
+    "findings": []
+  },
+  {
+    "schema": 1,
+    "unit": 18,
+    "title": "Reisen, Urlaub und Mobilität",
+    "dimension": "ky-localization",
+    "status": "pending",
+    "reviewer": {
+      "name": "",
+      "qualification": ""
+    },
+    "reviewDate": "",
+    "reviewedFingerprint": "",
+    "findings": []
+  }
+]

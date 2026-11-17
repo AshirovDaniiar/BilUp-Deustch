@@ -4,6 +4,7 @@ import { Button, Card, PageHeader } from '../../components/ui'
 import { Mascot } from '../../components/Mascot'
 import type { AIMessage } from '../../data/types'
 import { tutor } from '../../services/tutor'
+import { activeLevel } from '../progress/stats'
 
 /** Render **bold** and newlines from tutor replies without dangerouslySetInnerHTML. */
 function Rich({ text }: { text: string }) {
@@ -27,7 +28,9 @@ export function TutorChat() {
   const endRef = useRef<HTMLDivElement>(null)
   const msgs = state.tutor.messages
 
-  useEffect(() => { endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' }) }, [msgs.length, busy])
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' })
+  }, [msgs.length, busy])
 
   const ask = async (q: string) => {
     const text = q.trim()
@@ -36,41 +39,101 @@ export function TutorChat() {
     actions.pushTutor([um])
     setInput('')
     setBusy(true)
-    const r = await tutor.reply(text, { lang, level: state.level, lastConceptId: lastConcept })
+    const r = await tutor.reply(text, { lang, level: activeLevel(state), lastConceptId: lastConcept })
     if (r.conceptId) setLastConcept(r.conceptId)
     setSuggestions(r.suggestions ?? [])
     actions.pushTutor([{ id: `a${Date.now()}`, role: 'ai', text: r.text }])
     setBusy(false)
   }
 
-  const starters = ['Почему здесь Dativ?', 'Объясни Akkusativ', 'В чём разница между wissen и kennen?', 'Исправь: Ich habe 25 Jahre', 'Проверь меня']
+  const starters = [
+    'Почему здесь Dativ?',
+    'Объясни Akkusativ',
+    'В чём разница между wissen и kennen?',
+    'Исправь: Ich habe 25 Jahre',
+    'Проверь меня',
+  ]
 
   return (
     <div className="stack tutor">
-      <PageHeader eyebrow="✨ AI" title={t('tutorTitle')} sub={t('tutorSub')} right={msgs.length > 0 ? <Button variant="ghost" size="sm" onClick={actions.clearTutor}>✕</Button> : undefined} />
-      <Card tone="violet"><p className="small">{t('tutorMock')}</p></Card>
+      <PageHeader
+        eyebrow="✨ AI"
+        title={t('tutorTitle')}
+        sub={t('tutorSub')}
+        right={
+          msgs.length > 0 ? (
+            <Button variant="ghost" size="sm" onClick={actions.clearTutor}>
+              ✕
+            </Button>
+          ) : undefined
+        }
+      />
+      <Card tone="violet">
+        <p className="small">{t('tutorMock')}</p>
+      </Card>
       <div className="chat chat--tutor" aria-live="polite">
         {msgs.length === 0 && (
           <div className="stack stack--sm">
-            <div className="tutor__welcome"><Mascot size={96} /><p className="muted">{t('nav_tutor')} · {state.level}</p></div>
-            {starters.map(s => <button key={s} type="button" className="hintbtn" onClick={() => ask(s)}>{s}</button>)}
+            <div className="tutor__welcome">
+              <Mascot size={96} />
+              <p className="muted">
+                {t('nav_tutor')} · {activeLevel(state)}
+              </p>
+            </div>
+            {starters.map(s => (
+              <button key={s} type="button" className="hintbtn" onClick={() => ask(s)}>
+                {s}
+              </button>
+            ))}
           </div>
         )}
         {msgs.map((m, i) => (
           <div key={`${i}:${m.id}`} className={`bubble bubble--${m.role === 'ai' ? 'ai' : 'user'}`}>
-            {m.role === 'ai' && <small className="bubble__who"><Mascot variant="avatar" size={24} decorative />BilUp AI</small>}
+            {m.role === 'ai' && (
+              <small className="bubble__who">
+                <Mascot variant="avatar" size={24} decorative />
+                BilUp AI
+              </small>
+            )}
             <Rich text={m.text} />
           </div>
         ))}
-        {busy && <div className="bubble bubble--ai"><span className="typing" aria-label={t('tutorThinking')}><i /><i /><i /></span></div>}
+        {busy && (
+          <div className="bubble bubble--ai">
+            <span className="typing" aria-label={t('tutorThinking')}>
+              <i />
+              <i />
+              <i />
+            </span>
+          </div>
+        )}
         <div ref={endRef} />
       </div>
       {!busy && suggestions.length > 0 && (
-        <div className="row">{suggestions.map(s => <button key={s} type="button" className="chip chip--violet" onClick={() => ask(s)}>{s}</button>)}</div>
+        <div className="row">
+          {suggestions.map(s => (
+            <button key={s} type="button" className="chip chip--violet" onClick={() => ask(s)}>
+              {s}
+            </button>
+          ))}
+        </div>
       )}
-      <form className="speakinput__type tutor__form" onSubmit={e => { e.preventDefault(); void ask(input) }}>
-        <input value={input} onChange={e => setInput(e.target.value)} placeholder={t('tutorPlaceholder')} aria-label={t('tutorPlaceholder')} />
-        <Button type="submit" variant="violet" disabled={busy || !input.trim()}>{t('send')}</Button>
+      <form
+        className="speakinput__type tutor__form"
+        onSubmit={e => {
+          e.preventDefault()
+          void ask(input)
+        }}
+      >
+        <input
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          placeholder={t('tutorPlaceholder')}
+          aria-label={t('tutorPlaceholder')}
+        />
+        <Button type="submit" variant="violet" disabled={busy || !input.trim()}>
+          {t('send')}
+        </Button>
       </form>
     </div>
   )

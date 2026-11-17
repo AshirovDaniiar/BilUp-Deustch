@@ -3,6 +3,7 @@ import { LISTENING } from '../data/listening'
 import { READING } from '../data/reading'
 import { TESTS } from '../data/reallife'
 import { WRITING } from '../data/writing'
+import { resolveActiveLevel } from '../data/course'
 import type { AIMessage, DailyResult, Lang, Mistake, SkillName, UserProgress } from '../data/types'
 import { makeT, type TFn } from '../i18n'
 import { ActiveTimeTracker } from '../progress/activeTime'
@@ -14,6 +15,7 @@ import { emptyActivity } from '../storage/activity'
 import { COURSE_ID, defaultProgress } from '../storage/defaults'
 import { localStorageKV, type KeyValueStore } from '../storage/kv'
 import { mergeCores } from '../storage/merge'
+import { capTests } from '../storage/validate'
 import {
   applyLegacyDrift,
   freshCore,
@@ -372,7 +374,7 @@ export function AppProvider({ children, kv }: { children: ReactNode; kv?: KeyVal
           const prev = s.daily[date] ?? { date, vocab: [0, 0], grammar: [0, 0], listening: [0, 0], speaking: false }
           return touchDay({ ...s, daily: { ...s.daily, [date]: { ...prev, ...patch } } })
         }),
-      addTest: t => setState(s => touchDay({ ...s, tests: [...s.tests, t].slice(-50) })),
+      addTest: t => setState(s => touchDay({ ...s, tests: capTests([...s.tests, t]) })),
       pushTutor: msgs =>
         setCore(c => {
           const now = Date.now()
@@ -542,7 +544,7 @@ export function useAttempt() {
   const cur = useRef<{ id: string; startedAt: number; activeStart: number } | null>(null)
   if (!cur.current) cur.current = { id: newResultId(), startedAt: Date.now(), activeStart: timer.mark() }
   const levelRef = useRef(state.level)
-  levelRef.current = state.level
+  levelRef.current = resolveActiveLevel(state.level, state.lang)
   return useMemo(() => {
     /** builds the full result for this attempt without recording it */
     const build = (r: AttemptReport): ActivityResult => {

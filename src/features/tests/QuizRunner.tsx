@@ -3,9 +3,10 @@ import { useApp, useAttempt } from '../../app/store'
 import { Button, ProgressBar } from '../../components/ui'
 import { SpeakButton } from '../../components/SpeakButton'
 import { A } from '../../app/router'
-import { normalize, tr } from '../../utils/text'
+import { audioAvailable } from '../../services/speech'
+import { normalize } from '../../utils/text'
 import type { ActivityKind } from '../../progress/types'
-import type { Question } from './questions'
+import { questionHint, questionWhy, type Question } from './questions'
 
 /** What a quiz IS, for the progress engine (03 §3). Every quiz must say; the engine decides XP and completion. */
 export interface QuizActivity {
@@ -97,6 +98,9 @@ export function QuizRunner({ questions, onDone, sections, activity }: Props) {
     setChecked(null)
   }
 
+  // authored A2 questions are shown strictly in the learner's own language (no Russian for a Kyrgyz learner); A1 questions keep their Russian hint
+  const hint = questionHint(q, lang)
+  const why = questionWhy(q, lang)
   const parts = q.type === 'fill' ? q.prompt.split('___') : null
   const optionStyle = q.type === 'article' ? 'quiz__options quiz__options--article' : 'quiz__options'
 
@@ -127,21 +131,39 @@ export function QuizRunner({ questions, onDone, sections, activity }: Props) {
           )}
           {q.audio && <SpeakButton text={q.audio} small />}
         </div>
-        {q.promptRu && <p className="muted small break">{q.promptRu}</p>}
+        {hint && <p className="muted small break">{hint}</p>}
+        {q.skill === 'listening' && q.audio && !audioAvailable() && (
+          <div className="feedback" role="note">
+            <p className="small">{t('audioUnavailable')}</p>
+            <p className="break">{q.audio}</p>
+          </div>
+        )}
 
         {q.type === 'order' ? (
           <>
             <div className={`orderline ${checked === null ? '' : checked ? 'orderline--ok' : 'orderline--bad'}`} aria-live="polite">
               {order.length === 0 && <span className="muted small">{t('tapBlock')}</span>}
               {order.map(i => (
-                <button key={i} type="button" className="wordchip wordchip--placed" disabled={checked !== null} onClick={() => setOrder(order.filter(x => x !== i))}>
+                <button
+                  key={i}
+                  type="button"
+                  className="wordchip wordchip--placed"
+                  disabled={checked !== null}
+                  onClick={() => setOrder(order.filter(x => x !== i))}
+                >
                   {pool.find(p => p.i === i)!.w}
                 </button>
               ))}
             </div>
             <div className="wordbank">
               {pool.map(p => (
-                <button key={p.i} type="button" className="wordchip" disabled={order.includes(p.i) || checked !== null} onClick={() => setOrder([...order, p.i])}>
+                <button
+                  key={p.i}
+                  type="button"
+                  className="wordchip"
+                  disabled={order.includes(p.i) || checked !== null}
+                  onClick={() => setOrder([...order, p.i])}
+                >
                   {p.w}
                 </button>
               ))}
@@ -174,7 +196,7 @@ export function QuizRunner({ questions, onDone, sections, activity }: Props) {
                 <b>{q.answer}</b>
               </div>
             )}
-            {q.why && <p className="break">{tr(q.why, lang)}</p>}
+            {why && <p className="break">{why}</p>}
             {!checked && q.concept && (
               <A to={`/grammar/${q.concept}`} className="feedback__link">
                 {t('why')} →

@@ -3,41 +3,47 @@ import { useApp } from '../app/store'
 import { Button, Card, ProgressBar, Ring, SectionTitle } from '../components/ui'
 import { Mascot } from '../components/Mascot'
 import { LEVELS } from '../data/types'
-import { vocabForUnit } from '../data/vocabulary'
-import { grammarById } from '../data/grammar'
-import { LISTENING } from '../data/listening'
-import { SPEAKING } from '../data/speaking'
-import { UNITS, UNIT_SPEAKING } from '../data/units'
-import { currentUnit, dueWordIds, levelProgress, recommendations, streak, weekDone } from '../features/progress/stats'
+import { grammarIndex, levelOfUnit, listeningForUnit, listeningOf, speakingForUnit, speakingIndex, speakingOf, topicTestOfUnit, unitsOfLevel, vocabularyForUnit } from '../data/catalog'
+import { DEFAULT_LEVEL, availableLevels } from '../data/course'
+import { NotFound } from './NotFound'
+import { activeLevel, currentUnit, dueWordIds, levelProgress, recommendations, streak, weekDone } from '../features/progress/stats'
 import { currentWeek, dayKey, greetingKey } from '../utils/date'
-import { tr } from '../utils/text'
+import { locStrict, tr } from '../utils/text'
 import type { TKey } from '../i18n'
 
 const DAY_LABELS = ['M', 'D', 'M', 'D', 'F', 'S', 'S']
 
 export function HomeScreen() {
   const { state, t, lang } = useApp()
-  const unit = currentUnit(state)
+  const level = activeLevel(state)
+  const levels = availableLevels(lang)
+  const unit = currentUnit(state, level)
+  if (!unit) return <NotFound /> // a visible level always has units; never render a half-empty dashboard
   const conceptId = unit.grammarIds[0]
-  const concept = grammarById.get(conceptId)
-  const listening = LISTENING.find(l => l.unit === unit.id) ?? LISTENING[0]
-  const scenario = SPEAKING.find(s => s.id === UNIT_SPEAKING[unit.id - 1]) ?? SPEAKING[0]
+  const concept = grammarIndex.get(conceptId)
+  const unitLevel = levelOfUnit(unit.id) ?? DEFAULT_LEVEL
+  const unitTest = topicTestOfUnit(unit.id)
+  const listening = listeningForUnit(unit.id)[0] ?? listeningOf(unitLevel)[0]
+  const scenario = speakingIndex.get(speakingForUnit(unit.id) ?? '') ?? speakingOf(unitLevel)[0]
   const st = streak(state)
   const week = weekDone(state)
   const week7 = currentWeek()
   const today = dayKey()
-  const recs = recommendations(state)
-  const due = dueWordIds(state).length
+  const recs = recommendations(state, level)
+  const due = dueWordIds(state, level).length
   const dailyDone = !!state.daily[today]?.speaking
-  const progress = levelProgress(state)
+  const progress = levelProgress(state, level)
 
-  const steps: { n: string; label: TKey; title: string; sub: string; to: string; done: boolean }[] = [
-    { n: '01', label: 'stepVocabulary', title: `${Math.min(10, vocabForUnit(unit.id).length)} ${t('newWords')}`, sub: unit.title, to: `/learn/unit/${unit.id}/vocabulary`, done: state.completed.includes(`${unit.id}:vocabulary`) },
+  type Step = { n: string; label: TKey; title: string; sub: string; to: string; done: boolean }
+  // A step whose content does not exist is left out (never a crash): every A1 unit has all five, so A1 is unchanged.
+  const draft: (Step | null)[] = [
+    { n: '01', label: 'stepVocabulary', title: `${Math.min(10, vocabularyForUnit(unit.id).length)} ${t('newWords')}`, sub: unit.title, to: `/learn/unit/${unit.id}/vocabulary`, done: state.completed.includes(`${unit.id}:vocabulary`) },
     { n: '02', label: 'stepGrammar', title: concept ? tr(concept.title, lang) : '—', sub: concept ? tr(concept.summary, lang).slice(0, 56) + '…' : '', to: `/learn/topic/${conceptId}`, done: state.completed.includes(`topic:${conceptId}`) },
-    { n: '03', label: 'stepListening', title: listening.title, sub: `${listening.level} · 🎧 ${listening.lines.length}`, to: `/practice/listening/${listening.id}`, done: state.completed.includes(`ex:${listening.id}`) },
-    { n: '04', label: 'stepSpeaking', title: scenario.title, sub: scenario.titleRu, to: `/speak/${scenario.id}`, done: state.completed.includes(`speak:${scenario.id}`) },
-    { n: '05', label: 'stepTest', title: `8 ${t('questionsN')}`, sub: `${t('unit')} ${unit.id}`, to: `/practice/tests/unit-${unit.id}`, done: state.completed.includes(`${unit.id}:test`) },
+    listening ? { n: '03', label: 'stepListening', title: listening.title, sub: `${unitLevel} · 🎧 ${listening.lines.length}`, to: `/practice/listening/${listening.id}`, done: state.completed.includes(`ex:${listening.id}`) } : null,
+    scenario ? { n: '04', label: 'stepSpeaking', title: scenario.title, sub: scenario.level !== 'A1' ? locStrict(scenario.titleRu, scenario.titleKy, lang) ?? '' : scenario.titleRu, to: `/speak/${scenario.id}`, done: state.completed.includes(`speak:${scenario.id}`) } : null,
+    { n: '05', label: 'stepTest', title: unitTest ? `${unitTest.size} ${t('questionsN')}` : t('testsTitle'), sub: `${t('unit')} ${unit.id}`, to: unitTest ? `/practice/tests/${unitTest.id}` : '/practice/tests', done: state.completed.includes(`${unit.id}:test`) },
   ]
+  const steps: Step[] = draft.filter((x): x is Step => x !== null).map((x, i) => ({ ...x, n: String(i + 1).padStart(2, '0') }))
   const next = steps.find(s => !s.done) ?? steps[0]
 
   return (
@@ -60,18 +66,20 @@ export function HomeScreen() {
       <Card className="journey">
         <div className="row row--between">
           <div className="eyebrow">{t('journey')}</div>
-          <span className="chip chip--blue">{t('currentLevel')}: {state.level}</span>
+          <span className="chip chip--blue">{t('currentLevel')}: {level}</span>
         </div>
-        <ol className="journey__track" aria-label={t('journey')}>
-          {LEVELS.map(l => (
-            <li key={l} className={`journey__node ${l === state.level ? 'is-current' : ''} ${l !== state.level && LEVELS.indexOf(l) < LEVELS.indexOf(state.level) ? 'is-done' : ''}`}>
-              <span className="journey__dot">{l === state.level ? '●' : ''}</span>
-              <span className="journey__label">{l}</span>
-            </li>
-          ))}
-        </ol>
-        <div className="row row--between small muted"><span>A1 · {UNITS.length} {t('unit').toLowerCase()}</span><b>{progress}%</b></div>
-        <ProgressBar value={progress} label="A1" />
+        {levels.length > 1 && (
+          <ol className="journey__track" aria-label={t('journey')}>
+            {levels.map(l => (
+              <li key={l} className={`journey__node ${l === level ? 'is-current' : ''} ${l !== level && LEVELS.indexOf(l) < LEVELS.indexOf(level) ? 'is-done' : ''}`}>
+                <span className="journey__dot">{l === level ? '●' : ''}</span>
+                <span className="journey__label">{l}</span>
+              </li>
+            ))}
+          </ol>
+        )}
+        <div className="row row--between small muted"><span>{level} · {unitsOfLevel(level).length} {t('unit').toLowerCase()}</span><b>{progress}%</b></div>
+        <ProgressBar value={progress} label={level} />
       </Card>
 
       <section>

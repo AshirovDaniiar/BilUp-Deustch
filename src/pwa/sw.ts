@@ -4,6 +4,7 @@ import { createShell } from './sw-core'
 
 declare const __SHELL_VERSION__: string
 declare const __PRECACHE__: string[]
+declare const __LAZY__: string[]
 
 interface WorkerScope {
   registration: { scope: string }
@@ -27,7 +28,7 @@ const sw = self as unknown as WorkerScope
 const shell = createShell({
   caches,
   fetch: input => fetch(input),
-  config: { version: __SHELL_VERSION__, precache: __PRECACHE__, scope: sw.registration.scope },
+  config: { version: __SHELL_VERSION__, precache: __PRECACHE__, lazy: __LAZY__, scope: sw.registration.scope },
 })
 
 // No skipWaiting() here: a new version waits until the user accepts the update prompt (avoids mid-lesson reloads).

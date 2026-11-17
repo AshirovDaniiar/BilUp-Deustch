@@ -1,0 +1,44 @@
+[
+  {
+    "schema": 1,
+    "unit": 13,
+    "title": "Wohnen und Nachbarschaft",
+    "dimension": "de-cefr",
+    "status": "pending",
+    "reviewer": {
+      "name": "",
+      "qualification": ""
+    },
+    "reviewDate": "",
+    "reviewedFingerprint": "",
+    "findings": []
+  },
+  {
+    "schema": 1,
+    "unit": 13,
+    "title": "Wohnen und Nachbarschaft",
+    "dimension": "ru-localization",
+    "status": "pending",
+    "reviewer": {
+      "name": "",
+      "qualification": ""
+    },
+    "reviewDate": "",
+    "reviewedFingerprint": "",
+    "findings": []
+  },
+  {
+    "schema": 1,
+    "unit": 13,
+    "title": "Wohnen und Nachbarschaft",
+    "dimension": "ky-localization",
+    "status": "pending",
+    "reviewer": {
+      "name": "",
+      "qualification": ""
+    },
+    "reviewDate": "",
+    "reviewedFingerprint": "",
+    "findings": []
+  }
+]

@@ -1,9 +1,9 @@
 import { A } from '../app/router'
 import { useApp } from '../app/store'
 import { Card, PageHeader, ProgressBar, Ring, ScoreBar, SectionTitle } from '../components/ui'
-import { grammarById } from '../data/grammar'
+import { grammarIndex } from '../data/catalog'
 import { STAGES } from '../services/srs'
-import { badges, completedTopics, levelProgress, masteredCount, SKILLS, skillPct, stageCounts, streak, weakConcepts, xpLevel } from '../features/progress/stats'
+import { activeLevel, badges, completedTopics, levelProgress, masteredCount, SKILLS, skillPct, stageCounts, streak, weakConcepts, xpLevel } from '../features/progress/stats'
 import { currentWeek } from '../utils/date'
 import { tr } from '../utils/text'
 
@@ -11,12 +11,13 @@ const DAY = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
 
 export function ProgressScreen() {
   const { state, t, lang } = useApp()
-  const lvl = levelProgress(state)
+  const level = activeLevel(state)
+  const lvl = levelProgress(state, level)
   const xp = xpLevel(state.xp)
-  const counts = stageCounts(state)
+  const counts = stageCounts(state, level)
   const totalWords = STAGES.reduce((a, s) => a + counts[s], 0)
   const mins = Math.round(state.studySeconds / 60)
-  const weak = weakConcepts(state, 1).slice(0, 4)
+  const weak = weakConcepts(state, 1, level).slice(0, 4)
   const strong = SKILLS.filter(k => (skillPct(state, k) ?? 0) >= 80)
   const week = currentWeek()
   const hasData = state.xp > 0 || state.activeDates.length > 0
@@ -28,10 +29,10 @@ export function ProgressScreen() {
       <div className="grid grid--2">
         <Card className="overall">
           <div className="row">
-            <Ring value={lvl} size={110} stroke={10}><span className="overall__lvl">{state.level}</span></Ring>
+            <Ring value={lvl} size={110} stroke={10}><span className="overall__lvl">{level}</span></Ring>
             <div className="grow">
               <div className="eyebrow">{t('overallLevel')}</div>
-              <div className="h2">A1 · {lvl}%</div>
+              <div className="h2">{level} · {lvl}%</div>
               <p className="muted small">XP {state.xp} · Lv {xp.level}</p>
               <ProgressBar value={xp.pct} tone="violet" label="XP" height={6} />
             </div>
@@ -40,7 +41,7 @@ export function ProgressScreen() {
         <div className="grid statgrid">
           <Card><div className="stat__n">🔥 {streak(state)}</div><div className="muted small">{t('streak')}</div></Card>
           <Card><div className="stat__n">{mins >= 60 ? `${Math.floor(mins / 60)} ${t('hoursShort')} ${mins % 60}` : mins} <small>{mins >= 60 ? t('minutesShort') : t('minutesShort')}</small></div><div className="muted small">{t('studyTime')}</div></Card>
-          <Card><div className="stat__n">{masteredCount(state)}</div><div className="muted small">{t('masteredWords')}</div></Card>
+          <Card><div className="stat__n">{masteredCount(state, level)}</div><div className="muted small">{t('masteredWords')}</div></Card>
           <Card><div className="stat__n">{completedTopics(state)}</div><div className="muted small">{t('completedTopics')}</div></Card>
         </div>
       </div>
@@ -78,7 +79,7 @@ export function ProgressScreen() {
           <div className="eyebrow">{t('weakAreas')}</div>
           {weak.length === 0 ? <p className="small">{t('noWeak')}</p> : (
             <div className="stack stack--sm" style={{ marginTop: 8 }}>
-              {weak.map(w => { const c = grammarById.get(w.id); return c ? <A key={w.id} to={`/learn/topic/${c.id}`} className="linkrow">🧪 {tr(c.title, lang)} · {w.n}× <span aria-hidden>→</span></A> : null })}
+              {weak.map(w => { const c = grammarIndex.get(w.id); return c ? <A key={w.id} to={`/learn/topic/${c.id}`} className="linkrow">🧪 {tr(c.title, lang)} · {w.n}× <span aria-hidden>→</span></A> : null })}
             </div>
           )}
         </Card>

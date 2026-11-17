@@ -17,7 +17,7 @@ import { compareKeys, pruneActivity, type ActivityState, type Completion, type S
 import { mergeResultLists, mergeResultsMeta } from './results'
 import type { CreditEntry } from './credit'
 import type { Core } from './core'
-import { LIMITS, stampTutorMessages } from './validate'
+import { LIMITS, capTests, stampTutorMessages } from './validate'
 
 /** JSON with object keys sorted, so equal values compare equal regardless of insertion order */
 const j = (v: unknown): string =>
@@ -194,9 +194,9 @@ function mergeProgress(a: Core, b: Core, xp: number): UserProgress {
       .slice(-LIMITS.mistakes),
     scores,
     daily,
-    tests: unionBy(x.tests, y.tests, t => `${t.id}|${t.at}`)
-      .sort((p, q) => p.at - q.at || (p.id < q.id ? -1 : 1))
-      .slice(-LIMITS.tests),
+    tests: capTests(
+      unionBy(x.tests, y.tests, t => `${t.id}|${t.at}`).sort((p, q) => p.at - q.at || (p.id < q.id ? -1 : 1)),
+    ),
     tutor: { messages: tutor.messages },
   }
 }

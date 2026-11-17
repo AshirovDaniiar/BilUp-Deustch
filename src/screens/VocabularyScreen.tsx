@@ -2,31 +2,34 @@ import { useMemo, useState } from 'react'
 import { A } from '../app/router'
 import { useApp } from '../app/store'
 import { Button, Card, Chip, PageHeader, Sheet } from '../components/ui'
-import { UNITS } from '../data/units'
-import { VOCABULARY, displayWord, vocabById } from '../data/vocabulary'
-import { articleConfusion, stageCounts } from '../features/progress/stats'
+import { displayWord } from '../data/vocabulary'
+import { levelOfUnit, unitsOfLevel, vocabularyIndex, vocabularyOf } from '../data/catalog'
+import { activeLevel, articleConfusion, stageCounts } from '../features/progress/stats'
 import { WordCard } from '../features/vocabulary/WordCard'
 import { stageOf, STAGES } from '../services/srs'
-import { normalize } from '../utils/text'
+import { locStrict, normalize } from '../utils/text'
 
 export function VocabularyScreen() {
-  const { state, t } = useApp()
+  const { state, t, lang } = useApp()
   const [q, setQ] = useState('')
   const [unit, setUnit] = useState<number | 'all' | 'saved'>('all')
   const [openId, setOpenId] = useState<string | null>(null)
-  const counts = stageCounts(state)
-  const conf = articleConfusion(state)
+  const level = activeLevel(state)
+  const counts = stageCounts(state, level)
+  const conf = articleConfusion(state, level)
+  const words = vocabularyOf(level)
+  const units = unitsOfLevel(level)
 
   const list = useMemo(() => {
     const nq = normalize(q)
-    return VOCABULARY.filter(v => {
+    return words.filter(v => {
       if (unit === 'saved' ? !state.saved.includes(v.id) : unit !== 'all' && v.unit !== unit) return false
       if (!nq) return true
       return normalize(v.de).includes(nq) || normalize(v.ru).includes(nq) || normalize(v.ky).includes(nq)
     })
-  }, [q, unit, state.saved])
+  }, [q, unit, state.saved, words])
 
-  const open = openId ? vocabById.get(openId) : undefined
+  const open = openId ? vocabularyIndex.get(openId) : undefined
   return (
     <div className="stack">
       <PageHeader eyebrow="📖" title={t('vocabTitle')} sub={t('vocabSub')} right={<Button to="/practice/review" variant="soft" size="sm">{t('reviewDue')}</Button>} />
@@ -50,9 +53,9 @@ export function VocabularyScreen() {
 
       <input className="search" type="search" value={q} onChange={e => setQ(e.target.value)} placeholder={t('search')} aria-label={t('search')} />
       <div className="row catchips">
-        <Chip active={unit === 'all'} tone="blue" onClick={() => setUnit('all')}>{t('allWords')} · {VOCABULARY.length}</Chip>
+        <Chip active={unit === 'all'} tone="blue" onClick={() => setUnit('all')}>{t('allWords')} · {words.length}</Chip>
         <Chip active={unit === 'saved'} tone="violet" onClick={() => setUnit('saved')}>★ {t('savedWords')} · {state.saved.length}</Chip>
-        {UNITS.map(u => <Chip key={u.id} active={unit === u.id} onClick={() => setUnit(u.id)}>{u.icon} {u.id}</Chip>)}
+        {units.map(u => <Chip key={u.id} active={unit === u.id} onClick={() => setUnit(u.id)}>{u.icon} {u.id}</Chip>)}
       </div>
 
       <div className="wordlist">
@@ -61,7 +64,7 @@ export function VocabularyScreen() {
           return (
             <button key={v.id} type="button" className="wordrow" onClick={() => setOpenId(v.id)}>
               <span className={`artbadge artbadge--sm ${v.article ? `art--${v.article}` : 'art--none'}`}>{v.article ?? '•'}</span>
-              <span className="grow wordrow__text"><b className="break">{v.de}</b><span className="muted small break">{v.ru}</span></span>
+              <span className="grow wordrow__text"><b className="break">{v.de}</b><span className="muted small break">{levelOfUnit(v.unit) !== 'A1' ? locStrict(v.ru, v.ky, lang) : v.ru}</span></span>
               <span className={`dot dot--${st}`} aria-label={st} />
             </button>
           )

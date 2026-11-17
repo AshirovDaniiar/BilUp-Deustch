@@ -4,6 +4,23 @@ export type Lang = 'ru' | 'ky' | 'de'
 export type LanguageLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1'
 export const LEVELS: LanguageLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1']
 
+/**
+ * Where an authored piece of educational material comes from. Optional in the types (A1 predates it); the content validator
+ * requires it for A2 reading texts, listening dialogues, grammar explanations, speaking scenarios and writing tasks.
+ * `authored` = written for BilUp Til; `adapted` / `external` must name their origin. References are never invented to satisfy a check.
+ */
+export interface ContentSource {
+  kind: 'authored' | 'adapted' | 'external'
+  /** who wrote it (kind `authored`) */
+  author?: string
+  /** bibliographic citation of the origin (required for `adapted` / `external`) */
+  citation?: string
+  /** http(s) link to the origin, if any */
+  url?: string
+  /** licence or permission under which the material is used (required for `adapted` / `external`) */
+  license?: string
+}
+
 /** Text in the interface languages. Kyrgyz / German fall back to Russian when missing. */
 export interface L10n {
   ru: string
@@ -16,6 +33,11 @@ export type PartOfSpeech = 'noun' | 'verb' | 'adj' | 'phrase' | 'other'
 
 export interface LearningUnit {
   id: number
+  /**
+   * Stable identifier that never changes even if the unit is renumbered or retitled (A2 units must have one; A1 predates it).
+   * The numeric `id` stays the key of progress, routes and storage.
+   */
+  key?: string
   level: LanguageLevel
   title: string
   subtitle: L10n
@@ -34,6 +56,8 @@ export interface VocabularyItem {
   ky: string
   example: string
   exampleRu: string
+  /** Kyrgyz translation of the example (required for A2; A1 has none) */
+  exampleKy?: string
   related: string[]
 }
 
@@ -43,7 +67,7 @@ export type GrammarCategory =
 
 export type GrammarVisual = 'cases' | 'verbpos' | 'conjugation' | 'separable' | 'timeline' | 'prepositions' | 'articles' | 'negation' | 'plural' | 'modal' | 'none'
 
-export interface GrammarExample { de: string; ru: string; focus?: string }
+export interface GrammarExample { de: string; ru: string; ky?: string; focus?: string }
 export interface GrammarMistake { wrong: string; right: string; note: L10n }
 
 export interface GrammarConcept {
@@ -60,12 +84,13 @@ export interface GrammarConcept {
   mistakes: GrammarMistake[]
   reallife: GrammarExample[]
   visual: GrammarVisual
-  dialogue: { speaker: string; text: string; ru: string }[]
+  dialogue: { speaker: string; text: string; ru: string; ky?: string }[]
   speakPrompt: { prompt: L10n; sample: string; keywords: string[] }
+  source?: ContentSource
 }
 
 /** Explains one word in one sentence – powers the "WHY?" button. */
-export interface WhyNote { sentence: string; ru: string; word: string; reason: L10n; conceptId: string; more: GrammarExample[] }
+export interface WhyNote { sentence: string; ru: string; ky?: string; word: string; reason: L10n; conceptId: string; more: GrammarExample[] }
 
 export type ExerciseType = 'choice' | 'fill' | 'order' | 'article'
 export interface Exercise {
@@ -75,6 +100,7 @@ export interface Exercise {
   concept?: string // GrammarConcept.id
   prompt: string // shown text; for fill: contains ___
   promptRu?: string
+  promptKy?: string
   options?: string[]
   answer: string // for order: the full correct sentence
   words?: string[] // order: scrambled tokens
@@ -86,23 +112,26 @@ export interface ListeningExercise {
   level: LanguageLevel
   unit: number
   title: string
-  lines: { speaker: string; text: string; ru: string }[]
+  lines: { speaker: string; text: string; ru: string; ky?: string }[]
   questions: { q: string; options: string[]; answer: number }[]
   keywords: string[]
+  source?: ContentSource
 }
 
-export interface SpeakingTurn { ai: string; aiRu: string; hints: string[]; keywords: string[] }
+export interface SpeakingTurn { ai: string; aiRu: string; aiKy?: string; hints: string[]; keywords: string[] }
 export interface SpeakingScenario {
   id: string
   title: string
   titleRu: string
+  titleKy?: string
   icon: string
   level: LanguageLevel
   goal: L10n
   turns: SpeakingTurn[]
+  source?: ContentSource
 }
 
-export interface ReadingGloss { word: string; ru: string; ky: string; example: string; grammar: string; related: string[] }
+export interface ReadingGloss { word: string; ru: string; ky: string; example: string; grammar: string; grammarKy?: string; related: string[] }
 export interface ReadingText {
   id: string
   level: LanguageLevel
@@ -111,6 +140,7 @@ export interface ReadingText {
   body: string[]
   gloss: ReadingGloss[]
   questions: { q: string; options: string[]; answer: number }[]
+  source?: ContentSource
 }
 
 export interface WritingTask {
@@ -124,6 +154,7 @@ export interface WritingTask {
   mustInclude: { label: string; patterns: string[] }[]
   model: string
   tips: L10n[]
+  source?: ContentSource
 }
 
 export interface RealLifeTopic {
@@ -136,6 +167,23 @@ export interface RealLifeTopic {
   dialogue: { speaker: string; text: string; ru: string }[]
   challenge: { q: string; options: string[]; answer: number; why: L10n }
   speakingScenarioId?: string
+}
+
+/**
+ * One stored test result. The first five fields are the original record; the rest are OPTIONAL (absent on every pre-existing record): `kind` says what
+ * the test was, so that placement and level results can be protected from eviction by ordinary tests; `parts` = [correct, total] per part of a level
+ * test; `outcome` = the placement / level outcome code; `blueprint` = the version of the test form. No field here awards XP or completes a unit.
+ */
+export interface TestResult {
+  id: string
+  at: number
+  pct: number
+  weak: string[]
+  strong: string[]
+  kind?: TestDef['kind']
+  parts?: Record<string, [number, number]>
+  outcome?: string
+  blueprint?: string
 }
 
 export interface TestDef {
@@ -151,6 +199,7 @@ export interface TestQuestion {
   id: string
   prompt: string
   promptRu?: string
+  promptKy?: string
   options: string[]
   answer: string
   skill: 'grammar' | 'vocabulary' | 'listening' | 'reading'
@@ -193,7 +242,7 @@ export interface UserProgress {
   mistakes: Mistake[]
   scores: Record<SkillName, number[]> // percent history, newest last
   daily: Record<string, DailyResult>
-  tests: { id: string; at: number; pct: number; weak: string[]; strong: string[] }[]
+  tests: TestResult[]
   weeklyGoal: number
   tutor: AIConversation
 }

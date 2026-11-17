@@ -1,0 +1,44 @@
+[
+  {
+    "schema": 1,
+    "unit": 17,
+    "title": "Schule, Ausbildung und Beruf",
+    "dimension": "de-cefr",
+    "status": "pending",
+    "reviewer": {
+      "name": "",
+      "qualification": ""
+    },
+    "reviewDate": "",
+    "reviewedFingerprint": "",
+    "findings": []
+  },
+  {
+    "schema": 1,
+    "unit": 17,
+    "title": "Schule, Ausbildung und Beruf",
+    "dimension": "ru-localization",
+    "status": "pending",
+    "reviewer": {
+      "name": "",
+      "qualification": ""
+    },
+    "reviewDate": "",
+    "reviewedFingerprint": "",
+    "findings": []
+  },
+  {
+    "schema": 1,
+    "unit": 17,
+    "title": "Schule, Ausbildung und Beruf",
+    "dimension": "ky-localization",
+    "status": "pending",
+    "reviewer": {
+      "name": "",
+      "qualification": ""
+    },
+    "reviewDate": "",
+    "reviewedFingerprint": "",
+    "findings": []
+  }
+]

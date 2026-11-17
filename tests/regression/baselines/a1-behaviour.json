@@ -1,0 +1,4530 @@
+{
+ "progress": {
+  "requiredSections": {
+   "1": [
+    "vocabulary",
+    "grammar",
+    "listening",
+    "reading",
+    "speaking",
+    "writing",
+    "review",
+    "test"
+   ],
+   "2": [
+    "vocabulary",
+    "grammar",
+    "listening",
+    "reading",
+    "speaking",
+    "writing",
+    "review",
+    "test"
+   ],
+   "3": [
+    "vocabulary",
+    "grammar",
+    "listening",
+    "reading",
+    "speaking",
+    "writing",
+    "review",
+    "test"
+   ],
+   "4": [
+    "vocabulary",
+    "grammar",
+    "listening",
+    "reading",
+    "speaking",
+    "writing",
+    "review",
+    "test"
+   ],
+   "5": [
+    "vocabulary",
+    "grammar",
+    "listening",
+    "reading",
+    "speaking",
+    "writing",
+    "review",
+    "test"
+   ],
+   "6": [
+    "vocabulary",
+    "grammar",
+    "listening",
+    "reading",
+    "speaking",
+    "writing",
+    "review",
+    "test"
+   ],
+   "7": [
+    "vocabulary",
+    "grammar",
+    "listening",
+    "reading",
+    "speaking",
+    "writing",
+    "review",
+    "test"
+   ],
+   "8": [
+    "vocabulary",
+    "grammar",
+    "listening",
+    "reading",
+    "speaking",
+    "writing",
+    "review",
+    "test"
+   ],
+   "9": [
+    "vocabulary",
+    "grammar",
+    "listening",
+    "reading",
+    "speaking",
+    "writing",
+    "review",
+    "test"
+   ],
+   "10": [
+    "vocabulary",
+    "grammar",
+    "listening",
+    "speaking",
+    "writing",
+    "review",
+    "test"
+   ]
+  },
+  "scenarios": {
+   "empty": {
+    "unitProgress": {
+     "1": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "2": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "3": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "4": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "5": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "6": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "7": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "8": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "9": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "10": {
+      "done": 0,
+      "total": 7,
+      "pct": 0
+     }
+    },
+    "levelProgress": 0,
+    "currentUnit": 1,
+    "badges": [],
+    "recommendations": [],
+    "stageCounts": {
+     "new": 226,
+     "learning": 0,
+     "familiar": 0,
+     "strong": 0,
+     "mastered": 0
+    },
+    "dueWordIds": [],
+    "masteredCount": 0,
+    "weakConcepts": [],
+    "articleConfusion": {
+     "count": 0,
+     "ids": [],
+     "active": false
+    },
+    "skills": {
+     "vocabulary": null,
+     "grammar": null,
+     "listening": null,
+     "reading": null,
+     "writing": null,
+     "speaking": null
+    },
+    "xpLevel": {
+     "level": 1,
+     "pct": 0,
+     "toNext": 60
+    }
+   },
+   "unit1": {
+    "unitProgress": {
+     "1": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "2": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "3": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "4": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "5": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "6": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "7": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "8": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "9": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "10": {
+      "done": 0,
+      "total": 7,
+      "pct": 0
+     }
+    },
+    "levelProgress": 10,
+    "currentUnit": 2,
+    "badges": [
+     "first",
+     "streak3",
+     "unit"
+    ],
+    "recommendations": [],
+    "stageCounts": {
+     "new": 226,
+     "learning": 0,
+     "familiar": 0,
+     "strong": 0,
+     "mastered": 0
+    },
+    "dueWordIds": [],
+    "masteredCount": 0,
+    "weakConcepts": [],
+    "articleConfusion": {
+     "count": 0,
+     "ids": [],
+     "active": false
+    },
+    "skills": {
+     "vocabulary": null,
+     "grammar": null,
+     "listening": null,
+     "reading": null,
+     "writing": null,
+     "speaking": null
+    },
+    "xpLevel": {
+     "level": 2,
+     "pct": 33,
+     "toNext": 120
+    }
+   },
+   "units1to9": {
+    "unitProgress": {
+     "1": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "2": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "3": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "4": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "5": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "6": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "7": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "8": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "9": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "10": {
+      "done": 0,
+      "total": 7,
+      "pct": 0
+     }
+    },
+    "levelProgress": 91,
+    "currentUnit": 10,
+    "badges": [
+     "first",
+     "unit"
+    ],
+    "recommendations": [],
+    "stageCounts": {
+     "new": 226,
+     "learning": 0,
+     "familiar": 0,
+     "strong": 0,
+     "mastered": 0
+    },
+    "dueWordIds": [],
+    "masteredCount": 0,
+    "weakConcepts": [],
+    "articleConfusion": {
+     "count": 0,
+     "ids": [],
+     "active": false
+    },
+    "skills": {
+     "vocabulary": null,
+     "grammar": null,
+     "listening": null,
+     "reading": null,
+     "writing": null,
+     "speaking": null
+    },
+    "xpLevel": {
+     "level": 4,
+     "pct": 86,
+     "toNext": 60
+    }
+   },
+   "allA1": {
+    "unitProgress": {
+     "1": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "2": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "3": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "4": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "5": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "6": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "7": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "8": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "9": {
+      "done": 8,
+      "total": 8,
+      "pct": 100
+     },
+     "10": {
+      "done": 7,
+      "total": 7,
+      "pct": 100
+     }
+    },
+    "levelProgress": 100,
+    "currentUnit": 10,
+    "badges": [
+     "first",
+     "speaker",
+     "writer",
+     "unit"
+    ],
+    "recommendations": [
+     "lis|/practice/listening|"
+    ],
+    "stageCounts": {
+     "new": 226,
+     "learning": 0,
+     "familiar": 0,
+     "strong": 0,
+     "mastered": 0
+    },
+    "dueWordIds": [],
+    "masteredCount": 0,
+    "weakConcepts": [],
+    "articleConfusion": {
+     "count": 0,
+     "ids": [],
+     "active": false
+    },
+    "skills": {
+     "vocabulary": 65,
+     "grammar": null,
+     "listening": 89,
+     "reading": null,
+     "writing": 70,
+     "speaking": 80
+    },
+    "xpLevel": {
+     "level": 7,
+     "pct": 31,
+     "toNext": 540
+    }
+   },
+   "mixed": {
+    "unitProgress": {
+     "1": {
+      "done": 2,
+      "total": 8,
+      "pct": 25
+     },
+     "2": {
+      "done": 1,
+      "total": 8,
+      "pct": 13
+     },
+     "3": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "4": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "5": {
+      "done": 1,
+      "total": 8,
+      "pct": 13
+     },
+     "6": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "7": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "8": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "9": {
+      "done": 0,
+      "total": 8,
+      "pct": 0
+     },
+     "10": {
+      "done": 0,
+      "total": 7,
+      "pct": 0
+     }
+    },
+    "levelProgress": 5,
+    "currentUnit": 1,
+    "badges": [
+     "first",
+     "grammar5"
+    ],
+    "recommendations": [
+     "articles|/practice/articles|",
+     "weak-dativ|/learn/topic/dativ|Dativ",
+     "due|/practice/review|3",
+     "lis|/practice/listening|"
+    ],
+    "stageCounts": {
+     "new": 220,
+     "learning": 2,
+     "familiar": 1,
+     "strong": 1,
+     "mastered": 2
+    },
+    "dueWordIds": [
+     "v1-1",
+     "v2-8",
+     "v3-15"
+    ],
+    "masteredCount": 3,
+    "weakConcepts": [
+     {
+      "id": "dativ",
+      "n": 2
+     }
+    ],
+    "articleConfusion": {
+     "count": 3,
+     "ids": [
+      "v1-1",
+      "v1-2",
+      "v1-3"
+     ],
+     "active": true
+    },
+    "skills": {
+     "vocabulary": 40,
+     "grammar": 55,
+     "listening": 91,
+     "reading": null,
+     "writing": null,
+     "speaking": null
+    },
+    "xpLevel": {
+     "level": 3,
+     "pct": 57,
+     "toNext": 130
+    }
+   }
+  }
+ },
+ "questions": {
+  "listeningAll": {
+   "li01": [
+    {
+     "id": "lq-li01-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 1,
+     "prompt": "Woher kommt Tim?",
+     "options": [
+      "Aus Berlin",
+      "Aus Polen",
+      "Aus Österreich"
+     ],
+     "answer": "Aus Österreich",
+     "audio": "Hallo, ich bin Anna. Und du? Hallo Anna, ich bin Tim. Freut mich! Woher kommst du, Tim? Ich komme aus Österreich. Und du? Ich komme aus Polen, aber ich wohne in Berlin.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Sich kennenlernen». Прочитайте текст и сравните."
+     }
+    },
+    {
+     "id": "lq-li01-1",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 1,
+     "prompt": "Wo wohnt Anna?",
+     "options": [
+      "In Berlin",
+      "In Polen",
+      "In Wien"
+     ],
+     "answer": "In Berlin",
+     "audio": "Hallo, ich bin Anna. Und du? Hallo Anna, ich bin Tim. Freut mich! Woher kommst du, Tim? Ich komme aus Österreich. Und du? Ich komme aus Polen, aber ich wohne in Berlin.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Sich kennenlernen». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li02": [
+    {
+     "id": "lq-li02-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 1,
+     "prompt": "Was bittet die Lehrerin?",
+     "options": [
+      "Daniiar soll Kaffee holen.",
+      "Daniiar soll den Namen buchstabieren.",
+      "Daniiar soll nach Hause gehen."
+     ],
+     "answer": "Daniiar soll den Namen buchstabieren.",
+     "audio": "Guten Morgen! Wie heißen Sie? Guten Morgen. Ich heiße Daniiar. Wie bitte? Können Sie das buchstabieren? D-A-N-I-I-A-R. Danke, Daniiar. Willkommen im Kurs!",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Im Deutschkurs». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li03": [
+    {
+     "id": "lq-li03-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 2,
+     "prompt": "Wie viele Brüder hat Daniiar?",
+     "options": [
+      "Drei",
+      "Einen",
+      "Zwei"
+     ],
+     "answer": "Zwei",
+     "audio": "Hast du Geschwister? Ja, ich habe eine Schwester und zwei Brüder. Wie alt ist deine Schwester? Sie ist zwölf Jahre alt.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Geschwister». Прочитайте текст и сравните."
+     }
+    },
+    {
+     "id": "lq-li03-1",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 2,
+     "prompt": "Wie alt ist die Schwester?",
+     "options": [
+      "Zehn",
+      "Zwanzig",
+      "Zwölf"
+     ],
+     "answer": "Zwölf",
+     "audio": "Hast du Geschwister? Ja, ich habe eine Schwester und zwei Brüder. Wie alt ist deine Schwester? Sie ist zwölf Jahre alt.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Geschwister». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li04": [
+    {
+     "id": "lq-li04-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 2,
+     "prompt": "Wer ist achtzig?",
+     "options": [
+      "Der Opa",
+      "Die Mutter",
+      "Die Oma"
+     ],
+     "answer": "Die Oma",
+     "audio": "Wer ist das auf dem Foto? Das ist meine Oma. Sie ist achtzig Jahre alt. Und der Mann neben ihr? Das ist mein Opa. Er kocht sehr gern.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Das Familienfoto». Прочитайте текст и сравните."
+     }
+    },
+    {
+     "id": "lq-li04-1",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 2,
+     "prompt": "Was macht der Opa gern?",
+     "options": [
+      "Kochen",
+      "Lesen",
+      "Schlafen"
+     ],
+     "answer": "Kochen",
+     "audio": "Wer ist das auf dem Foto? Das ist meine Oma. Sie ist achtzig Jahre alt. Und der Mann neben ihr? Das ist mein Opa. Er kocht sehr gern.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Das Familienfoto». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li05": [
+    {
+     "id": "lq-li05-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 3,
+     "prompt": "Wann steht Eva auf?",
+     "options": [
+      "Um 6:30 Uhr",
+      "Um 7:30 Uhr",
+      "Um 8:00 Uhr"
+     ],
+     "answer": "Um 6:30 Uhr",
+     "audio": "Wann stehst du auf? Um halb sieben. Dann dusche ich und frühstücke. Und wann fängt die Arbeit an? Um acht Uhr.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Mein Morgen». Прочитайте текст и сравните."
+     }
+    },
+    {
+     "id": "lq-li05-1",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 3,
+     "prompt": "Was macht Eva nach dem Aufstehen?",
+     "options": [
+      "Sie arbeitet.",
+      "Sie duscht und frühstückt.",
+      "Sie kauft ein."
+     ],
+     "answer": "Sie duscht und frühstückt.",
+     "audio": "Wann stehst du auf? Um halb sieben. Dann dusche ich und frühstücke. Und wann fängt die Arbeit an? Um acht Uhr.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Mein Morgen». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li06": [
+    {
+     "id": "lq-li06-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 3,
+     "prompt": "Wann geht Anna oft spazieren?",
+     "options": [
+      "Abends",
+      "Am Wochenende",
+      "Nie"
+     ],
+     "answer": "Am Wochenende",
+     "audio": "Was machst du abends? Ich koche und sehe manchmal fern. Gehst du nie spazieren? Doch, am Wochenende oft.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Nach der Arbeit». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li07": [
+    {
+     "id": "lq-li07-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 4,
+     "prompt": "Was bestellt der Gast zu trinken?",
+     "options": [
+      "Kaffee mit Milch",
+      "Tee",
+      "Wasser"
+     ],
+     "answer": "Kaffee mit Milch",
+     "audio": "Guten Tag. Was möchten Sie trinken? Ich möchte einen Kaffee mit Milch, bitte. Gern. Möchten Sie auch etwas essen? Ja, ein Käsebrötchen, bitte.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Im Café». Прочитайте текст и сравните."
+     }
+    },
+    {
+     "id": "lq-li07-1",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 4,
+     "prompt": "Was bestellt er zu essen?",
+     "options": [
+      "Ein Käsebrötchen",
+      "Eine Suppe",
+      "Einen Salat"
+     ],
+     "answer": "Ein Käsebrötchen",
+     "audio": "Guten Tag. Was möchten Sie trinken? Ich möchte einen Kaffee mit Milch, bitte. Gern. Möchten Sie auch etwas essen? Ja, ein Käsebrötchen, bitte.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Im Café». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li08": [
+    {
+     "id": "lq-li08-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 4,
+     "prompt": "Wie bezahlt der Gast?",
+     "options": [
+      "Gar nicht",
+      "Getrennt",
+      "Zusammen"
+     ],
+     "answer": "Zusammen",
+     "audio": "Die Rechnung, bitte. Zusammen oder getrennt? Zusammen, bitte. Das macht achtzehn Euro fünfzig.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Die Rechnung». Прочитайте текст и сравните."
+     }
+    },
+    {
+     "id": "lq-li08-1",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 4,
+     "prompt": "Wie viel kostet es?",
+     "options": [
+      "15,80 €",
+      "18,50 €",
+      "28,50 €"
+     ],
+     "answer": "18,50 €",
+     "audio": "Die Rechnung, bitte. Zusammen oder getrennt? Zusammen, bitte. Das macht achtzehn Euro fünfzig.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Die Rechnung». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li09": [
+    {
+     "id": "lq-li09-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 5,
+     "prompt": "Wie viele Zimmer hat die Wohnung?",
+     "options": [
+      "Drei",
+      "Eins",
+      "Zwei"
+     ],
+     "answer": "Zwei",
+     "audio": "Die Wohnung hat zwei Zimmer, eine Küche und ein Bad. Wie hoch ist die Miete? Sie kostet 650 Euro im Monat. Gibt es einen Balkon? Ja, einen kleinen Balkon.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Wohnungsbesichtigung». Прочитайте текст и сравните."
+     }
+    },
+    {
+     "id": "lq-li09-1",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 5,
+     "prompt": "Wie hoch ist die Miete?",
+     "options": [
+      "560 €",
+      "605 €",
+      "650 €"
+     ],
+     "answer": "650 €",
+     "audio": "Die Wohnung hat zwei Zimmer, eine Küche und ein Bad. Wie hoch ist die Miete? Sie kostet 650 Euro im Monat. Gibt es einen Balkon? Ja, einen kleinen Balkon.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Wohnungsbesichtigung». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li10": [
+    {
+     "id": "lq-li10-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 5,
+     "prompt": "Wohin kommt das Sofa?",
+     "options": [
+      "In die Küche",
+      "Ins Bad",
+      "Ins Wohnzimmer"
+     ],
+     "answer": "Ins Wohnzimmer",
+     "audio": "Wohin kommt das Sofa? Ins Wohnzimmer, bitte. Ans Fenster. Und der Tisch? Der steht in der Küche.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Der Umzug». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li11": [
+    {
+     "id": "lq-li11-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 6,
+     "prompt": "Wie lange arbeitet der Bewerber schon als Koch?",
+     "options": [
+      "Drei Jahre",
+      "Ein Jahr",
+      "Zwei Jahre"
+     ],
+     "answer": "Zwei Jahre",
+     "audio": "Haben Sie Erfahrung als Koch? Ja, ich habe zwei Jahre Erfahrung. Können Sie am Wochenende arbeiten? Ja, das ist kein Problem.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Im Vorstellungsgespräch». Прочитайте текст и сравните."
+     }
+    },
+    {
+     "id": "lq-li11-1",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 6,
+     "prompt": "Kann er am Wochenende arbeiten?",
+     "options": [
+      "Ja",
+      "Nein",
+      "Vielleicht"
+     ],
+     "answer": "Ja",
+     "audio": "Haben Sie Erfahrung als Koch? Ja, ich habe zwei Jahre Erfahrung. Können Sie am Wochenende arbeiten? Ja, das ist kein Problem.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Im Vorstellungsgespräch». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li12": [
+    {
+     "id": "lq-li12-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 6,
+     "prompt": "Wohin gehen die Kollegen?",
+     "options": [
+      "In die Kantine",
+      "Ins Büro",
+      "Nach Hause"
+     ],
+     "answer": "In die Kantine",
+     "audio": "Machen wir jetzt Pause? Gern. Ich habe Hunger. Wir können in die Kantine gehen. Gute Idee! Ich nehme eine Suppe.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Pause im Büro». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li13": [
+    {
+     "id": "lq-li13-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 7,
+     "prompt": "Wo muss der Tourist links abbiegen?",
+     "options": [
+      "Am Bahnhof",
+      "An der Ampel",
+      "An der Bank"
+     ],
+     "answer": "An der Ampel",
+     "audio": "Entschuldigung, wo ist der Bahnhof? Gehen Sie geradeaus bis zur Ampel. Dann links. Ist es weit? Nein, nur fünf Minuten zu Fuß.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Der Weg zum Bahnhof». Прочитайте текст и сравните."
+     }
+    },
+    {
+     "id": "lq-li13-1",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 7,
+     "prompt": "Wie weit ist es?",
+     "options": [
+      "Fünf Minuten",
+      "Fünfzehn Minuten",
+      "Fünfzig Minuten"
+     ],
+     "answer": "Fünf Minuten",
+     "audio": "Entschuldigung, wo ist der Bahnhof? Gehen Sie geradeaus bis zur Ampel. Dann links. Ist es weit? Nein, nur fünf Minuten zu Fuß.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Der Weg zum Bahnhof». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li14": [
+    {
+     "id": "lq-li14-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 7,
+     "prompt": "Wo ist die Apotheke?",
+     "options": [
+      "Neben dem Park",
+      "Neben der Bank",
+      "Neben der Post"
+     ],
+     "answer": "Neben der Bank",
+     "audio": "Entschuldigung, wo ist die Apotheke? Die Apotheke ist neben der Bank. Und wo ist die Bank? Dort rechts, an der Ecke.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Wo ist die Apotheke?». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li15": [
+    {
+     "id": "lq-li15-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 8,
+     "prompt": "Wann ist der Termin?",
+     "options": [
+      "Dienstag, 10 Uhr",
+      "Dienstag, 12 Uhr",
+      "Donnerstag, 10 Uhr"
+     ],
+     "answer": "Dienstag, 10 Uhr",
+     "audio": "Praxis Doktor Meier, guten Tag. Guten Tag. Ich möchte einen Termin vereinbaren. Haben Sie am Dienstag um zehn Uhr Zeit? Ja, das passt gut. Vielen Dank!",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Ein Arzttermin». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li16": [
+    {
+     "id": "lq-li16-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 8,
+     "prompt": "Warum ruft der Patient an?",
+     "options": [
+      "Er will bezahlen.",
+      "Er will den Termin verschieben.",
+      "Er will einen Arzt finden."
+     ],
+     "answer": "Er will den Termin verschieben.",
+     "audio": "Guten Tag, hier ist Daniiar. Ich habe einen Termin am Montag. Ja, Montag um neun Uhr. Leider bin ich krank. Kann ich den Termin verschieben? Natürlich. Geht es am Mittwoch um elf Uhr?",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Termin verschieben». Прочитайте текст и сравните."
+     }
+    },
+    {
+     "id": "lq-li16-1",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 8,
+     "prompt": "Welcher neue Termin wird vorgeschlagen?",
+     "options": [
+      "Freitag, 11 Uhr",
+      "Mittwoch, 11 Uhr",
+      "Montag, 9 Uhr"
+     ],
+     "answer": "Mittwoch, 11 Uhr",
+     "audio": "Guten Tag, hier ist Daniiar. Ich habe einen Termin am Montag. Ja, Montag um neun Uhr. Leider bin ich krank. Kann ich den Termin verschieben? Natürlich. Geht es am Mittwoch um elf Uhr?",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Termin verschieben». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li17": [
+    {
+     "id": "lq-li17-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 9,
+     "prompt": "Wie viel kostet das Brot?",
+     "options": [
+      "2,03 €",
+      "2,30 €",
+      "3,20 €"
+     ],
+     "answer": "2,30 €",
+     "audio": "Entschuldigung, wie viel kostet das Brot? Das Brot kostet zwei Euro dreißig. Gut, ich nehme es. Kann ich mit Karte zahlen? Ja, natürlich. An der Kasse bitte.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Im Supermarkt». Прочитайте текст и сравните."
+     }
+    },
+    {
+     "id": "lq-li17-1",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 9,
+     "prompt": "Wie möchte der Kunde zahlen?",
+     "options": [
+      "Bar",
+      "Gar nicht",
+      "Mit Karte"
+     ],
+     "answer": "Mit Karte",
+     "audio": "Entschuldigung, wie viel kostet das Brot? Das Brot kostet zwei Euro dreißig. Gut, ich nehme es. Kann ich mit Karte zahlen? Ja, natürlich. An der Kasse bitte.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Im Supermarkt». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li18": [
+    {
+     "id": "lq-li18-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 9,
+     "prompt": "Welche Größe sucht die Kundin?",
+     "options": [
+      "L",
+      "M",
+      "S"
+     ],
+     "answer": "M",
+     "audio": "Kann ich Ihnen helfen? Ja, ich suche eine Jacke in Größe M. Die Umkleide ist dort hinten. Die Jacke gefällt mir, aber sie ist zu teuer.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Eine Jacke anprobieren». Прочитайте текст и сравните."
+     }
+    },
+    {
+     "id": "lq-li18-1",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 9,
+     "prompt": "Was ist das Problem?",
+     "options": [
+      "Die Jacke ist zu klein.",
+      "Die Jacke ist zu lang.",
+      "Die Jacke ist zu teuer."
+     ],
+     "answer": "Die Jacke ist zu teuer.",
+     "audio": "Kann ich Ihnen helfen? Ja, ich suche eine Jacke in Größe M. Die Umkleide ist dort hinten. Die Jacke gefällt mir, aber sie ist zu teuer.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Eine Jacke anprobieren». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li19": [
+    {
+     "id": "lq-li19-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 10,
+     "prompt": "Von welchem Gleis fährt der Zug?",
+     "options": [
+      "Gleis 3",
+      "Gleis 5",
+      "Gleis 9"
+     ],
+     "answer": "Gleis 3",
+     "audio": "Eine Fahrkarte nach Hamburg, bitte. Der Zug fährt um neun Uhr fünfzehn auf Gleis drei ab. Muss ich umsteigen? Nein, der Zug fährt direkt.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Am Bahnhof». Прочитайте текст и сравните."
+     }
+    },
+    {
+     "id": "lq-li19-1",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 10,
+     "prompt": "Muss der Reisende umsteigen?",
+     "options": [
+      "Das weiß man nicht",
+      "Ja",
+      "Nein"
+     ],
+     "answer": "Nein",
+     "audio": "Eine Fahrkarte nach Hamburg, bitte. Der Zug fährt um neun Uhr fünfzehn auf Gleis drei ab. Muss ich umsteigen? Nein, der Zug fährt direkt.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Am Bahnhof». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li20": [
+    {
+     "id": "lq-li20-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 10,
+     "prompt": "Wie lange hat der Zug Verspätung?",
+     "options": [
+      "10 Minuten",
+      "20 Minuten",
+      "40 Minuten"
+     ],
+     "answer": "20 Minuten",
+     "audio": "Achtung auf Gleis vier. Der Zug nach München hat zwanzig Minuten Verspätung. Wir bitten um Entschuldigung. Oh nein, dann verpasse ich meinen Anschluss.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Durchsage: Verspätung». Прочитайте текст и сравните."
+     }
+    },
+    {
+     "id": "lq-li20-1",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 10,
+     "prompt": "Was befürchtet die Reisende?",
+     "options": [
+      "Sie hat Hunger.",
+      "Sie hat kein Ticket.",
+      "Sie verpasst den Anschluss."
+     ],
+     "answer": "Sie verpasst den Anschluss.",
+     "audio": "Achtung auf Gleis vier. Der Zug nach München hat zwanzig Minuten Verspätung. Wir bitten um Entschuldigung. Oh nein, dann verpasse ich meinen Anschluss.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Durchsage: Verspätung». Прочитайте текст и сравните."
+     }
+    }
+   ],
+   "li21": [
+    {
+     "id": "lq-li21-0",
+     "type": "choice",
+     "skill": "listening",
+     "kind": "listening",
+     "unit": 10,
+     "prompt": "Was zeigt der Reisende?",
+     "options": [
+      "Sein Hotel",
+      "Seine Fahrkarte",
+      "Seinen Pass"
+     ],
+     "answer": "Seinen Pass",
+     "audio": "Guten Tag. Haben Sie Ihren Pass dabei? Ja, hier bitte. Haben Sie einen Koffer? Ja, einen großen Koffer.",
+     "why": {
+      "ru": "Ключевая информация звучит в диалоге «Am Flughafen». Прочитайте текст и сравните."
+     }
+    }
+   ]
+  },
+  "readingAll": {
+   "re01": [
+    {
+     "id": "rq-re01-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Woher kommt Anna?",
+     "options": [
+      "Aus Deutschland",
+      "Aus England",
+      "Aus Polen"
+     ],
+     "answer": "Aus Polen",
+     "why": {
+      "ru": "Hallo! Mein Name ist Anna Kowalski. Ich bin 28 Jahre alt und komme aus Polen. Jetzt wohne ich in Berlin. Ich spreche Polnisch, Deutsch und ein bisschen Englisch. Ich lerne jeden Tag Deutsch, denn ich möchte hier arbeiten."
+     }
+    },
+    {
+     "id": "rq-re01-1",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Warum lernt Anna Deutsch?",
+     "options": [
+      "Sie hat Urlaub.",
+      "Sie mag Englisch nicht.",
+      "Sie möchte in Deutschland arbeiten."
+     ],
+     "answer": "Sie möchte in Deutschland arbeiten.",
+     "why": {
+      "ru": "Hallo! Mein Name ist Anna Kowalski. Ich bin 28 Jahre alt und komme aus Polen. Jetzt wohne ich in Berlin. Ich spreche Polnisch, Deutsch und ein bisschen Englisch. Ich lerne jeden Tag Deutsch, denn ich möchte hier arbeiten."
+     }
+    }
+   ],
+   "re02": [
+    {
+     "id": "rq-re02-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Was ist die Mutter von Beruf?",
+     "options": [
+      "Köchin",
+      "Lehrerin",
+      "Ärztin"
+     ],
+     "answer": "Ärztin",
+     "why": {
+      "ru": "Ich habe eine große Familie. Meine Eltern wohnen in Bischkek. Mein Vater ist Lehrer und meine Mutter ist Ärztin. Ich habe zwei Brüder und eine Schwester. Mein Bruder Aibek studiert in Hamburg. Meine Schwester ist erst zehn Jahre alt."
+     }
+    },
+    {
+     "id": "rq-re02-1",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wo studiert der Bruder?",
+     "options": [
+      "In Berlin",
+      "In Bischkek",
+      "In Hamburg"
+     ],
+     "answer": "In Hamburg",
+     "why": {
+      "ru": "Ich habe eine große Familie. Meine Eltern wohnen in Bischkek. Mein Vater ist Lehrer und meine Mutter ist Ärztin. Ich habe zwei Brüder und eine Schwester. Mein Bruder Aibek studiert in Hamburg. Meine Schwester ist erst zehn Jahre alt."
+     }
+    }
+   ],
+   "re03": [
+    {
+     "id": "rq-re03-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wann steht die Person auf?",
+     "options": [
+      "Um 6:30 Uhr",
+      "Um 7:00 Uhr",
+      "Um 8:00 Uhr"
+     ],
+     "answer": "Um 6:30 Uhr",
+     "why": {
+      "ru": "Ich stehe um halb sieben auf. Zuerst dusche ich, dann frühstücke ich. Ich trinke Tee und esse ein Brot mit Käse. Um acht Uhr fahre ich zur Arbeit. Abends koche ich, lese ein Buch oder lerne Deutsch."
+     }
+    },
+    {
+     "id": "rq-re03-1",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Was macht die Person abends?",
+     "options": [
+      "Sie fährt zur Arbeit.",
+      "Sie kocht, liest oder lernt.",
+      "Sie schläft sofort."
+     ],
+     "answer": "Sie kocht, liest oder lernt.",
+     "why": {
+      "ru": "Ich stehe um halb sieben auf. Zuerst dusche ich, dann frühstücke ich. Ich trinke Tee und esse ein Brot mit Käse. Um acht Uhr fahre ich zur Arbeit. Abends koche ich, lese ein Buch oder lerne Deutsch."
+     }
+    }
+   ],
+   "re04": [
+    {
+     "id": "rq-re04-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Was bestellt der Erzähler?",
+     "options": [
+      "Eine Suppe und ein Wasser",
+      "Einen Salat und einen Tee",
+      "Fleisch und Reis"
+     ],
+     "answer": "Eine Suppe und ein Wasser",
+     "why": {
+      "ru": "Heute essen wir im Restaurant. Die Kellnerin bringt die Speisekarte. Ich bestelle eine Suppe und ein Wasser. Mein Freund nimmt einen Salat und einen Tee. Das Essen ist lecker. Am Ende bezahlen wir zusammen."
+     }
+    }
+   ],
+   "re05": [
+    {
+     "id": "rq-re05-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie viele Zimmer hat die Wohnung?",
+     "options": [
+      "Drei",
+      "Vier",
+      "Zwei"
+     ],
+     "answer": "Zwei",
+     "why": {
+      "ru": "Ich habe eine neue Wohnung. Sie hat zwei Zimmer, eine kleine Küche und ein Bad. Die Miete ist nicht teuer. Im Wohnzimmer steht ein Sofa. Das Bett steht im Schlafzimmer. Von meinem Balkon sehe ich einen Park."
+     }
+    },
+    {
+     "id": "rq-re05-1",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Was sieht die Person vom Balkon?",
+     "options": [
+      "Die Küche",
+      "Ein Hotel",
+      "Einen Park"
+     ],
+     "answer": "Einen Park",
+     "why": {
+      "ru": "Ich habe eine neue Wohnung. Sie hat zwei Zimmer, eine kleine Küche und ein Bad. Die Miete ist nicht teuer. Im Wohnzimmer steht ein Sofa. Das Bett steht im Schlafzimmer. Von meinem Balkon sehe ich einen Park."
+     }
+    }
+   ],
+   "re06": [
+    {
+     "id": "rq-re06-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wann beginnt die Arbeit?",
+     "options": [
+      "Um 10 Uhr",
+      "Um 6 Uhr",
+      "Um 8 Uhr"
+     ],
+     "answer": "Um 10 Uhr",
+     "why": {
+      "ru": "Ich bin Koch von Beruf. Ich arbeite in einem Restaurant in der Stadtmitte. Meine Kollegen sind sehr nett. Die Arbeit beginnt um zehn Uhr und endet um sechs. Am Montag habe ich frei."
+     }
+    },
+    {
+     "id": "rq-re06-1",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wann hat die Person frei?",
+     "options": [
+      "Am Freitag",
+      "Am Montag",
+      "Am Sonntag"
+     ],
+     "answer": "Am Montag",
+     "why": {
+      "ru": "Ich bin Koch von Beruf. Ich arbeite in einem Restaurant in der Stadtmitte. Meine Kollegen sind sehr nett. Die Arbeit beginnt um zehn Uhr und endet um sechs. Am Montag habe ich frei."
+     }
+    }
+   ],
+   "re07": [
+    {
+     "id": "rq-re07-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wo ist die Apotheke?",
+     "options": [
+      "In der Schule",
+      "Neben dem Bahnhof",
+      "Neben der Bank"
+     ],
+     "answer": "Neben der Bank",
+     "why": {
+      "ru": "Ich wohne in einer kleinen Stadt. Es gibt einen Bahnhof, eine Schule und viele Geschäfte. Die Apotheke ist neben der Bank. Ich fahre mit dem Bus zur Arbeit. Die Haltestelle ist nur fünf Minuten von meiner Wohnung entfernt."
+     }
+    }
+   ],
+   "re08": [
+    {
+     "id": "rq-re08-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wann ist der Termin?",
+     "options": [
+      "Am Freitag um 11 Uhr",
+      "Am Mittwoch um 10:30 Uhr",
+      "Am Montag um 9 Uhr"
+     ],
+     "answer": "Am Mittwoch um 10:30 Uhr",
+     "why": {
+      "ru": "Gestern habe ich angerufen und einen Termin beim Arzt vereinbart. Die Ärztin hat am Mittwoch um halb elf Zeit. Ich muss pünktlich sein und meine Versichertenkarte mitbringen. Wenn ich nicht kommen kann, muss ich den Termin vorher absagen."
+     }
+    },
+    {
+     "id": "rq-re08-1",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Was soll man mitbringen?",
+     "options": [
+      "Den Mietvertrag",
+      "Die Versichertenkarte",
+      "Einen Koffer"
+     ],
+     "answer": "Die Versichertenkarte",
+     "why": {
+      "ru": "Gestern habe ich angerufen und einen Termin beim Arzt vereinbart. Die Ärztin hat am Mittwoch um halb elf Zeit. Ich muss pünktlich sein und meine Versichertenkarte mitbringen. Wenn ich nicht kommen kann, muss ich den Termin vorher absagen."
+     }
+    }
+   ],
+   "re09": [
+    {
+     "id": "rq-re09-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wo kauft die Person Gemüse?",
+     "options": [
+      "Am Bahnhof",
+      "Auf dem Markt",
+      "Im Büro"
+     ],
+     "answer": "Auf dem Markt",
+     "why": {
+      "ru": "Am Samstag gehe ich immer auf den Markt. Dort kaufe ich Gemüse, Obst und Käse. Das ist frisch und günstiger als im Supermarkt. Danach brauche ich noch eine neue Jacke. Im Geschäft probiere ich drei Jacken an, aber sie sind alle zu teuer."
+     }
+    },
+    {
+     "id": "rq-re09-1",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Warum kauft sie keine Jacke?",
+     "options": [
+      "Das Geschäft ist zu.",
+      "Die Jacken sind zu teuer.",
+      "Sie hat kein Geld dabei."
+     ],
+     "answer": "Die Jacken sind zu teuer.",
+     "why": {
+      "ru": "Am Samstag gehe ich immer auf den Markt. Dort kaufe ich Gemüse, Obst und Käse. Das ist frisch und günstiger als im Supermarkt. Danach brauche ich noch eine neue Jacke. Im Geschäft probiere ich drei Jacken an, aber sie sind alle zu teuer."
+     }
+    }
+   ],
+   "re10": [
+    {
+     "id": "rq-re10-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wo beantragt man die Arbeitserlaubnis?",
+     "options": [
+      "Bei der Ausländerbehörde",
+      "Bei der Post",
+      "In der Schule"
+     ],
+     "answer": "Bei der Ausländerbehörde",
+     "why": {
+      "ru": "Wer in Deutschland arbeiten möchte, braucht oft eine Arbeitserlaubnis. Menschen aus Ländern außerhalb der EU müssen diese bei der Ausländerbehörde beantragen. Außerdem ist es wichtig, dass die Berufsabschlüsse anerkannt werden. Deshalb lohnt es sich, schon früh Deutsch zu lernen und alle Dokumente zu sammeln."
+     }
+    },
+    {
+     "id": "rq-re10-1",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Was empfiehlt der Text?",
+     "options": [
+      "Früh Deutsch lernen und Dokumente sammeln",
+      "Nicht arbeiten",
+      "Sofort umziehen"
+     ],
+     "answer": "Früh Deutsch lernen und Dokumente sammeln",
+     "why": {
+      "ru": "Wer in Deutschland arbeiten möchte, braucht oft eine Arbeitserlaubnis. Menschen aus Ländern außerhalb der EU müssen diese bei der Ausländerbehörde beantragen. Außerdem ist es wichtig, dass die Berufsabschlüsse anerkannt werden. Deshalb lohnt es sich, schon früh Deutsch zu lernen und alle Dokumente zu sammeln."
+     }
+    }
+   ]
+  },
+  "dailySha": {
+   "2026-01-01": "3401ca1168d5f6ce15a714588a670553b583305ffcee2ebaa13a332fb339d5da",
+   "2026-02-14": "61083f69535423071e165c489432515de9ab009fb96e62969808d88ada1bf184",
+   "2026-03-31": "64fcb0c5b79bc1d0a4c5adb1918027f9d4e102e7795522712a4c3bf779a0cbc0",
+   "2026-07-04": "0764bfee9ede2e00c74d6d8a7a9d63fa380174bbbe748b36284dd711e22d631d",
+   "2026-11-16": "e427c8f618e0bbf9cd5c965727f625e9724a81d1cab12f1129b150e4d0c22123",
+   "2027-01-01": "b16aca2bf4a22248e994fb364eee5f23db29f56d31946dd39a2ecbc8386922af"
+  },
+  "dailyIds": {
+   "2026-01-01": [
+    "vq-v10-5-de",
+    "vq-v8-17-ru",
+    "vq-v10-6-de",
+    "ex008",
+    "lq-li20-0",
+    "modal",
+    "Ich habe einen Termin."
+   ],
+   "2026-02-14": [
+    "vq-v3-18-de",
+    "vq-v5-18-ru",
+    "vq-v1-20-de",
+    "ex044",
+    "lq-li10-0",
+    "akkusativ",
+    "Ich habe Kopfschmerzen."
+   ],
+   "2026-03-31": [
+    "vq-v1-13-de",
+    "vq-v6-7-ru",
+    "vq-v3-9-de",
+    "ex062",
+    "lq-li03-0",
+    "conjunctions",
+    "Brauchen Sie eine Tüte?"
+   ],
+   "2026-07-04": [
+    "vq-v2-15-de",
+    "vq-v5-23-ru",
+    "vq-v9-5-de",
+    "ex062",
+    "lq-li06-0",
+    "time-order",
+    "Wo finde ich die Milch?"
+   ],
+   "2026-11-16": [
+    "vq-v1-7-de",
+    "vq-v9-5-ru",
+    "vq-v10-15-de",
+    "ex065",
+    "lq-li13-0",
+    "akkusativ",
+    "Ich habe zwei Jahre Erfahrung."
+   ],
+   "2027-01-01": [
+    "vq-v6-1-de",
+    "vq-v7-3-ru",
+    "vq-v7-11-de",
+    "ex032",
+    "lq-li21-0",
+    "dativ-prep",
+    "Mit Karte, bitte."
+   ]
+  },
+  "tests": {
+   "placement#s1": {
+    "n": 12,
+    "ids": [
+     "ex020",
+     "ex024",
+     "ex013",
+     "ex009",
+     "ex039",
+     "ex035",
+     "ex044",
+     "ex037",
+     "ex060",
+     "ex056",
+     "ex052",
+     "ex063"
+    ],
+    "answers": [
+     "Morgen fahre ich nach Köln.",
+     "kein",
+     "die Frauen",
+     "Brüder",
+     "aber",
+     "Das Sofa steht im Wohnzimmer.",
+     "zum",
+     "Ich lerne Deutsch, weil ich hier arbeite.",
+     "Wie viel kostet das?",
+     "für",
+     "habe",
+     "der"
+    ],
+    "sha": "7eb61e62f97ff22abeb0006032c20f608b9532c3c58eeac53aeda2fb7b6a0375"
+   },
+   "placement#s2": {
+    "n": 12,
+    "ids": [
+     "ex029",
+     "ex021",
+     "ex018",
+     "ex025",
+     "ex048",
+     "ex031",
+     "ex042",
+     "ex036",
+     "ex060",
+     "ex067",
+     "ex058",
+     "ex059"
+    ],
+    "answers": [
+     "keinen",
+     "arbeitet",
+     "Heute lerne ich Deutsch.",
+     "bestellen",
+     "Ich fahre mit der U-Bahn.",
+     "die",
+     "der",
+     "weil",
+     "Wie viel kostet das?",
+     "Ich bin mit dem Zug gefahren.",
+     "mich",
+     "Wie viel kostet das?"
+    ],
+    "sha": "b8e8fec27ec8ed25816563f19d4b0f9992c72e7af86bb977fa43fab19f71fc9c"
+   },
+   "placement#s3": {
+    "n": 12,
+    "ids": [
+     "ex005",
+     "ex001",
+     "ex026",
+     "ex020",
+     "ex036",
+     "ex045",
+     "ex047",
+     "ex035",
+     "ex052",
+     "ex063",
+     "ex053",
+     "ex049"
+    ],
+    "answers": [
+     "Wo",
+     "der",
+     "Ich möchte einen Tee bestellen.",
+     "Morgen fahre ich nach Köln.",
+     "weil",
+     "zur",
+     "aus",
+     "Das Sofa steht im Wohnzimmer.",
+     "habe",
+     "der",
+     "bin",
+     "am"
+    ],
+    "sha": "7c2ac2be8745f64e3f0ad4eb7d3d16f6eda54bb33a7ff167413feae5413e74a6"
+   },
+   "level-a1#s1": {
+    "n": 15,
+    "ids": [
+     "vq-v8-20-ru",
+     "vq-v1-3-de",
+     "art-v7-8",
+     "ex055",
+     "ex026",
+     "vq-v10-2-de",
+     "vq-v10-7-de",
+     "art-v2-5",
+     "ex045",
+     "ex049",
+     "ex066",
+     "ex058",
+     "vq-v6-15-ru",
+     "ex048",
+     "ex037"
+    ],
+    "answers": [
+     "spät",
+     "добрый день",
+     "die",
+     "getrunken",
+     "Ich möchte einen Tee bestellen.",
+     "делать пересадку",
+     "поезд",
+     "der",
+     "zur",
+     "am",
+     "das Auto von meinem Vater",
+     "mich",
+     "die Bewerbung",
+     "Ich fahre mit der U-Bahn.",
+     "Ich lerne Deutsch, weil ich hier arbeite."
+    ],
+    "sha": "9a2d64ba93944d6ffe080f9d1d77fcb2b4eb3e344d79d5571af43267a376b620"
+   },
+   "level-a1#s2": {
+    "n": 15,
+    "ids": [
+     "art-v8-2",
+     "vq-v7-21-de",
+     "art-v8-7",
+     "vq-v8-18-ru",
+     "ex011",
+     "ex042",
+     "ex048",
+     "vq-v9-13-de",
+     "ex045",
+     "vq-v3-13-ru",
+     "ex050",
+     "ex014",
+     "ex022",
+     "ex023",
+     "vq-v4-12-de"
+    ],
+    "answers": [
+     "die",
+     "находить",
+     "der",
+     "pünktlich",
+     "meine",
+     "der",
+     "Ich fahre mit der U-Bahn.",
+     "предложение, акция",
+     "zur",
+     "lesen",
+     "um",
+     "ist",
+     "ein",
+     "einen",
+     "салат"
+    ],
+    "sha": "abd158f2bfc436ef21d955e3d7c148f82a9f70d61fb813ccfbef9fc6bd47cc11"
+   },
+   "level-a1#s3": {
+    "n": 15,
+    "ids": [
+     "vq-v1-19-de",
+     "ex057",
+     "ex002",
+     "ex024",
+     "vq-v1-21-de",
+     "ex029",
+     "vq-v4-18-ru",
+     "art-v4-2",
+     "vq-v5-14-de",
+     "ex032",
+     "ex036",
+     "ex017",
+     "art-v5-7",
+     "vq-v3-12-ru",
+     "ex016"
+    ],
+    "answers": [
+     "называться, зваться",
+     "ohne",
+     "Ich bin 25 Jahre alt.",
+     "kein",
+     "жить, проживать",
+     "keinen",
+     "trinken",
+     "das",
+     "дверь",
+     "dem",
+     "weil",
+     "sprichst",
+     "das",
+     "putzen",
+     "lerne"
+    ],
+    "sha": "6049f55646d3ce0c68f38ad69b5d9bad310f8eb90ebedbebc525a3991c64869a"
+   },
+   "grammar#s1": {
+    "n": 12,
+    "ids": [
+     "ex058",
+     "ex003",
+     "ex031",
+     "ex004",
+     "ex045",
+     "ex002",
+     "ex040",
+     "ex056",
+     "ex007",
+     "ex016",
+     "ex013",
+     "ex021"
+    ],
+    "answers": [
+     "mich",
+     "sind",
+     "die",
+     "Woher kommst du?",
+     "zur",
+     "Ich bin 25 Jahre alt.",
+     "Ich bleibe zu Hause, weil ich krank bin.",
+     "für",
+     "ein",
+     "lerne",
+     "die Frauen",
+     "arbeitet"
+    ],
+    "sha": "f485612e594fec3b5e2359a520658c4368f562a8cf4132b794ff82817d38b64b"
+   },
+   "grammar#s2": {
+    "n": 12,
+    "ids": [
+     "ex040",
+     "ex010",
+     "ex020",
+     "ex002",
+     "ex013",
+     "ex003",
+     "ex045",
+     "ex065",
+     "ex017",
+     "ex030",
+     "ex041",
+     "ex046"
+    ],
+    "answers": [
+     "Ich bleibe zu Hause, weil ich krank bin.",
+     "die Kinder",
+     "Morgen fahre ich nach Köln.",
+     "Ich bin 25 Jahre alt.",
+     "die Frauen",
+     "sind",
+     "zur",
+     "Der Zug fährt um acht Uhr ab.",
+     "sprichst",
+     "der",
+     "bei",
+     "mir"
+    ],
+    "sha": "ab691e527aaf98919cd1bc36f4e453dd55770314887e5ebe45b8136c3a04470a"
+   },
+   "grammar#s3": {
+    "n": 12,
+    "ids": [
+     "ex028",
+     "ex045",
+     "ex062",
+     "ex006",
+     "ex003",
+     "ex040",
+     "ex060",
+     "ex016",
+     "ex004",
+     "ex042",
+     "ex051",
+     "ex059"
+    ],
+    "answers": [
+     "nicht",
+     "zur",
+     "des",
+     "Sprichst du Deutsch?",
+     "sind",
+     "Ich bleibe zu Hause, weil ich krank bin.",
+     "Wie viel kostet das?",
+     "lerne",
+     "Woher kommst du?",
+     "der",
+     "Im",
+     "Wie viel kostet das?"
+    ],
+    "sha": "23d8f037f42e585f13a44fbd567deab4d1fdd11cecf34a3ac687d3f9d95b0df2"
+   },
+   "vocabulary#s1": {
+    "n": 15,
+    "ids": [
+     "vq-v7-14-de",
+     "art-v4-13",
+     "vq-v8-14-ru",
+     "vq-v7-8-de",
+     "art-v9-8",
+     "vq-v1-5-ru",
+     "vq-v8-11-de",
+     "vq-v8-10-ru",
+     "art-v9-20",
+     "vq-v9-2-de",
+     "vq-v6-4-de",
+     "art-v2-3",
+     "vq-v1-10-de",
+     "vq-v6-12-ru",
+     "vq-v2-5-ru"
+    ],
+    "answers": [
+     "светофор",
+     "die",
+     "vereinbaren",
+     "аптека",
+     "das",
+     "Tschüss",
+     "выходные",
+     "der Sonntag",
+     "der",
+     "стоить",
+     "врач (женщина)",
+     "der",
+     "как у вас дела?",
+     "der Kunde",
+     "der Bruder"
+    ],
+    "sha": "148d001899b7dfef2cc44f1f86d8cdc8645133fb33a5f759eec16754e70585db"
+   },
+   "vocabulary#s2": {
+    "n": 15,
+    "ids": [
+     "vq-v8-10-ru",
+     "vq-v9-1-de",
+     "art-v2-2",
+     "art-v5-7",
+     "art-v7-2",
+     "vq-v4-7-de",
+     "art-v4-14",
+     "vq-v4-15-de",
+     "vq-v10-7-ru",
+     "vq-v9-20-de",
+     "vq-v6-11-de",
+     "vq-v8-9-ru",
+     "vq-v9-3-ru",
+     "vq-v5-16-de",
+     "vq-v7-14-ru"
+    ],
+    "answers": [
+     "der Sonntag",
+     "покупать",
+     "die",
+     "das",
+     "die",
+     "мясо",
+     "das",
+     "меню",
+     "der Zug",
+     "чек",
+     "фирма, компания",
+     "der Samstag",
+     "brauchen",
+     "балкон",
+     "die Ampel"
+    ],
+    "sha": "ecd3763bbb648b49cb29bb922c1b3611b7d0c7369209bbe37a3941c1ff90f47f"
+   },
+   "vocabulary#s3": {
+    "n": 15,
+    "ids": [
+     "art-v8-4",
+     "vq-v9-4-ru",
+     "vq-v10-21-de",
+     "vq-v2-16-de",
+     "vq-v3-1-ru",
+     "art-v7-4",
+     "vq-v10-4-de",
+     "vq-v6-17-ru",
+     "art-v7-3",
+     "vq-v9-2-de",
+     "vq-v7-8-de",
+     "vq-v6-19-de",
+     "vq-v4-20-ru",
+     "vq-v7-9-ru",
+     "art-v2-9"
+    ],
+    "answers": [
+     "die",
+     "nehmen",
+     "велосипед",
+     "друг",
+     "der Tag",
+     "die",
+     "отправляться",
+     "die Pause",
+     "der",
+     "стоить",
+     "аптека",
+     "зарабатывать",
+     "möchten",
+     "die Bank",
+     "die"
+    ],
+    "sha": "765b598c5317ca74d54d333ff9e52b5ac3eedbfab737b9b1de08f509a5b30096"
+   },
+   "listening#s1": {
+    "n": 8,
+    "ids": [
+     "lq-li04-0",
+     "lq-li04-1",
+     "lq-li20-0",
+     "lq-li20-1",
+     "lq-li06-0",
+     "lq-li13-0",
+     "lq-li13-1",
+     "lq-li21-0"
+    ],
+    "answers": [
+     "Die Oma",
+     "Kochen",
+     "20 Minuten",
+     "Sie verpasst den Anschluss.",
+     "Am Wochenende",
+     "An der Ampel",
+     "Fünf Minuten",
+     "Seinen Pass"
+    ],
+    "sha": "5be4127ed87a0305986f9fc1f962747d30ecc99c37a9b9d1637f7ea9906e7d44"
+   },
+   "listening#s2": {
+    "n": 8,
+    "ids": [
+     "lq-li11-0",
+     "lq-li11-1",
+     "lq-li07-0",
+     "lq-li07-1",
+     "lq-li04-0",
+     "lq-li04-1",
+     "lq-li09-0",
+     "lq-li09-1"
+    ],
+    "answers": [
+     "Zwei Jahre",
+     "Ja",
+     "Kaffee mit Milch",
+     "Ein Käsebrötchen",
+     "Die Oma",
+     "Kochen",
+     "Zwei",
+     "650 €"
+    ],
+    "sha": "2b3581c50cc45808eec5c79ebd7b90e81c55dd7aa846cac5117f28a84528c801"
+   },
+   "listening#s3": {
+    "n": 8,
+    "ids": [
+     "lq-li12-0",
+     "lq-li11-0",
+     "lq-li11-1",
+     "lq-li17-0",
+     "lq-li17-1",
+     "lq-li19-0",
+     "lq-li19-1",
+     "lq-li15-0"
+    ],
+    "answers": [
+     "In die Kantine",
+     "Zwei Jahre",
+     "Ja",
+     "2,30 €",
+     "Mit Karte",
+     "Gleis 3",
+     "Nein",
+     "Dienstag, 10 Uhr"
+    ],
+    "sha": "079c36a5f55685ae0084dee670f791c6174d17ce2030d6533c83347768d40f9d"
+   },
+   "unit-1#s1": {
+    "n": 8,
+    "ids": [
+     "art-v1-17",
+     "ex001",
+     "vq-v1-4-ru",
+     "vq-v1-11-de",
+     "vq-v1-22-de",
+     "ex008",
+     "vq-v1-13-ru",
+     "art-v1-16"
+    ],
+    "answers": [
+     "das",
+     "der",
+     "Guten Abend",
+     "что, простите?",
+     "говорить",
+     "bist",
+     "Freut mich.",
+     "die"
+    ],
+    "sha": "fd70bf5eb63ca297d998bfd91377e3fb435f3245e2e9dfac1c3fa75aa7794785"
+   },
+   "unit-1#s2": {
+    "n": 8,
+    "ids": [
+     "vq-v1-5-de",
+     "ex007",
+     "vq-v1-22-ru",
+     "art-v1-18",
+     "ex008",
+     "vq-v1-14-de",
+     "art-v1-17",
+     "vq-v1-17-ru"
+    ],
+    "answers": [
+     "пока",
+     "ein",
+     "sprechen",
+     "der",
+     "bist",
+     "да",
+     "das",
+     "das Land"
+    ],
+    "sha": "8a9dbc51074bd14c54f50594d9039037d5d653e0d16b9949bd002ef4eb31d91b"
+   },
+   "unit-1#s3": {
+    "n": 8,
+    "ids": [
+     "vq-v1-21-de",
+     "vq-v1-9-de",
+     "ex007",
+     "art-v1-17",
+     "vq-v1-17-ru",
+     "art-v1-16",
+     "vq-v1-5-ru",
+     "ex001"
+    ],
+    "answers": [
+     "жить, проживать",
+     "извините",
+     "ein",
+     "das",
+     "das Land",
+     "die",
+     "Tschüss",
+     "der"
+    ],
+    "sha": "15877c2d55518e4858fab65e1fa0efb06bf530626d861955f0eb8f74c39fb1ee"
+   },
+   "unit-2#s1": {
+    "n": 8,
+    "ids": [
+     "art-v2-13",
+     "ex014",
+     "vq-v2-22-de",
+     "vq-v2-9-de",
+     "vq-v2-7-ru",
+     "art-v2-4",
+     "ex015",
+     "vq-v2-19-ru"
+    ],
+    "answers": [
+     "die",
+     "ist",
+     "большой, высокий",
+     "дочь",
+     "das Kind",
+     "die",
+     "Meine Eltern wohnen in Bischkek.",
+     "verheiratet"
+    ],
+    "sha": "4fdd5ab7c3b73512c680d8e8bbf9da48d6651b41039599c27e6bb961d1580432"
+   },
+   "unit-2#s2": {
+    "n": 8,
+    "ids": [
+     "ex015",
+     "art-v2-8",
+     "vq-v2-4-de",
+     "vq-v2-5-ru",
+     "ex012",
+     "vq-v2-13-de",
+     "art-v2-10",
+     "vq-v2-12-ru"
+    ],
+    "answers": [
+     "Meine Eltern wohnen in Bischkek.",
+     "der",
+     "родители",
+     "der Bruder",
+     "meinen",
+     "тётя",
+     "der",
+     "der Onkel"
+    ],
+    "sha": "f33c2f581b7a58514c12c047e41ce50c3a454fa689c23cda82d3d9bff21f28b3"
+   },
+   "unit-2#s3": {
+    "n": 8,
+    "ids": [
+     "vq-v2-16-de",
+     "vq-v2-14-de",
+     "ex009",
+     "art-v2-4",
+     "vq-v2-18-ru",
+     "ex013",
+     "art-v2-2",
+     "vq-v2-11-ru"
+    ],
+    "answers": [
+     "друг",
+     "муж",
+     "Brüder",
+     "die",
+     "haben",
+     "die Frauen",
+     "die",
+     "die Oma"
+    ],
+    "sha": "170b3a45c106a7ec71d601fccfab3d3f44d610894dfa8a191a85670b69376149"
+   },
+   "unit-3#s1": {
+    "n": 8,
+    "ids": [
+     "vq-v3-9-de",
+     "ex018",
+     "vq-v3-16-ru",
+     "art-v3-2",
+     "vq-v3-4-ru",
+     "art-v3-4",
+     "ex022",
+     "vq-v3-13-de"
+    ],
+    "answers": [
+     "учить, учиться",
+     "Heute lerne ich Deutsch.",
+     "heute",
+     "der",
+     "die Nacht",
+     "die",
+     "ein",
+     "читать"
+    ],
+    "sha": "1ac254e9695f06c882b575f68378446ae4892062c6e907b47330a30e53c435d7"
+   },
+   "unit-3#s2": {
+    "n": 8,
+    "ids": [
+     "art-v3-2",
+     "art-v3-5",
+     "vq-v3-21-de",
+     "vq-v3-17-ru",
+     "ex022",
+     "vq-v3-10-ru",
+     "vq-v3-22-de",
+     "ex021"
+    ],
+    "answers": [
+     "der",
+     "die",
+     "никогда",
+     "morgen",
+     "ein",
+     "schlafen",
+     "усталый",
+     "arbeitet"
+    ],
+    "sha": "c7f94b39135b6fbd34f471787f0fe09063a81801244a5c62d6510e62aea29943"
+   },
+   "unit-3#s3": {
+    "n": 8,
+    "ids": [
+     "vq-v3-11-ru",
+     "vq-v3-8-ru",
+     "vq-v3-6-de",
+     "ex017",
+     "ex018",
+     "vq-v3-21-de",
+     "art-v3-1",
+     "art-v3-5"
+    ],
+    "answers": [
+     "kochen",
+     "arbeiten",
+     "вставать",
+     "sprichst",
+     "Heute lerne ich Deutsch.",
+     "никогда",
+     "der",
+     "die"
+    ],
+    "sha": "45808a82ce45f9b61d14a6d10c734e1c9837b002d65901b818dcd3f3b9226c9d"
+   },
+   "unit-4#s1": {
+    "n": 8,
+    "ids": [
+     "art-v4-8",
+     "ex023",
+     "vq-v4-10-de",
+     "vq-v4-23-de",
+     "art-v4-7",
+     "vq-v4-14-ru",
+     "vq-v4-7-ru",
+     "ex029"
+    ],
+    "answers": [
+     "der",
+     "einen",
+     "рис",
+     "быть голодным",
+     "das",
+     "das Gemüse",
+     "das Fleisch",
+     "keinen"
+    ],
+    "sha": "e3936d64d47a71b8f10dceb1c5e22ae2ceb3f991437fdf37e803551d5a45788b"
+   },
+   "unit-4#s2": {
+    "n": 8,
+    "ids": [
+     "vq-v4-1-de",
+     "ex024",
+     "ex023",
+     "vq-v4-7-de",
+     "art-v4-4",
+     "art-v4-6",
+     "vq-v4-23-ru",
+     "vq-v4-4-ru"
+    ],
+    "answers": [
+     "хлеб",
+     "kein",
+     "einen",
+     "мясо",
+     "der",
+     "der",
+     "Hunger haben",
+     "der Tee"
+    ],
+    "sha": "1f2af01abb81f6660fa51a34c72ec4917f130a84ada01b89860f308d2d56c778"
+   },
+   "unit-4#s3": {
+    "n": 8,
+    "ids": [
+     "vq-v4-2-ru",
+     "vq-v4-7-de",
+     "ex024",
+     "vq-v4-11-de",
+     "art-v4-15",
+     "ex027",
+     "art-v4-1",
+     "vq-v4-16-ru"
+    ],
+    "answers": [
+     "das Wasser",
+     "мясо",
+     "kein",
+     "суп",
+     "die",
+     "den",
+     "das",
+     "die Rechnung"
+    ],
+    "sha": "ac2aa3257bcec05c90859d1e576ec8f02b3a2bbbf3b75c8fb259c664f3baf044"
+   },
+   "unit-5#s1": {
+    "n": 8,
+    "ids": [
+     "ex031",
+     "art-v5-17",
+     "vq-v5-22-de",
+     "ex032",
+     "vq-v5-10-de",
+     "art-v5-2",
+     "vq-v5-23-ru",
+     "vq-v5-1-ru"
+    ],
+    "answers": [
+     "die",
+     "der",
+     "недорогой, выгодный",
+     "dem",
+     "кровать",
+     "das",
+     "ruhig",
+     "die Wohnung"
+    ],
+    "sha": "69a6a88f35700cd728154b975d28e6fee2ab645249e14be541706054e9e8cadd"
+   },
+   "unit-5#s2": {
+    "n": 8,
+    "ids": [
+     "art-v5-8",
+     "ex032",
+     "vq-v5-16-ru",
+     "art-v5-13",
+     "vq-v5-20-de",
+     "vq-v5-15-ru",
+     "ex031",
+     "vq-v5-22-de"
+    ],
+    "answers": [
+     "der",
+     "dem",
+     "der Balkon",
+     "das",
+     "снимать, арендовать",
+     "der Schlüssel",
+     "die",
+     "недорогой, выгодный"
+    ],
+    "sha": "1bc551c768054f8cdb8048cbf1978150ddddfa6488559d7453daedbcdf203752"
+   },
+   "unit-5#s3": {
+    "n": 8,
+    "ids": [
+     "ex033",
+     "vq-v5-15-ru",
+     "art-v5-15",
+     "ex030",
+     "vq-v5-12-ru",
+     "art-v5-10",
+     "vq-v5-11-de",
+     "vq-v5-2-de"
+    ],
+    "answers": [
+     "den",
+     "der Schlüssel",
+     "der",
+     "der",
+     "der Schrank",
+     "das",
+     "диван",
+     "дом"
+    ],
+    "sha": "e9e5ff26657166554e226322d16af2288fd16e71185a9d9bb92cecfc12175dd4"
+   },
+   "unit-6#s1": {
+    "n": 8,
+    "ids": [
+     "art-v6-9",
+     "vq-v6-6-ru",
+     "art-v6-12",
+     "ex037",
+     "ex040",
+     "vq-v6-15-de",
+     "vq-v6-11-de",
+     "vq-v6-10-ru"
+    ],
+    "answers": [
+     "der",
+     "der Fahrer",
+     "der",
+     "Ich lerne Deutsch, weil ich hier arbeite.",
+     "Ich bleibe zu Hause, weil ich krank bin.",
+     "заявка на работу",
+     "фирма, компания",
+     "das Büro"
+    ],
+    "sha": "045b1763d75137feb6af818b0aa440c9f1a363dd3cba9392cb7c055a339f06d9"
+   },
+   "unit-6#s2": {
+    "n": 8,
+    "ids": [
+     "vq-v6-20-de",
+     "art-v6-14",
+     "vq-v6-13-de",
+     "vq-v6-12-ru",
+     "ex039",
+     "art-v6-18",
+     "vq-v6-16-ru",
+     "ex041"
+    ],
+    "answers": [
+     "искать",
+     "der",
+     "зарплата",
+     "der Kunde",
+     "aber",
+     "die",
+     "der Lebenslauf",
+     "bei"
+    ],
+    "sha": "b566369dcd963ce0c3e5fee35a9f21aec9d1c27eca1bad900f34e13c00bdf6dc"
+   },
+   "unit-6#s3": {
+    "n": 8,
+    "ids": [
+     "ex038",
+     "vq-v6-16-de",
+     "ex039",
+     "art-v6-15",
+     "vq-v6-15-ru",
+     "art-v6-6",
+     "vq-v6-3-de",
+     "vq-v6-2-ru"
+    ],
+    "answers": [
+     "oder",
+     "резюме",
+     "aber",
+     "die",
+     "die Bewerbung",
+     "der",
+     "врач",
+     "der Beruf"
+    ],
+    "sha": "79b72ad2bec8d5164afffa828356dba3818230999612f85aaf206f8185d87e18"
+   },
+   "unit-7#s1": {
+    "n": 8,
+    "ids": [
+     "art-v7-5",
+     "ex046",
+     "vq-v7-2-ru",
+     "vq-v7-6-de",
+     "ex042",
+     "vq-v7-18-ru",
+     "art-v7-10",
+     "vq-v7-11-de"
+    ],
+    "answers": [
+     "der",
+     "mir",
+     "die Straße",
+     "метро",
+     "der",
+     "geradeaus",
+     "die",
+     "супермаркет"
+    ],
+    "sha": "2240d5330b9e6acd12a36d66c943b2cebe5cf4146c92bcf86777d3faf173533d"
+   },
+   "unit-7#s2": {
+    "n": 8,
+    "ids": [
+     "vq-v7-4-de",
+     "art-v7-3",
+     "vq-v7-1-ru",
+     "art-v7-7",
+     "vq-v7-8-de",
+     "ex043",
+     "ex047",
+     "vq-v7-17-ru"
+    ],
+    "answers": [
+     "остановка",
+     "der",
+     "die Stadt",
+     "das",
+     "аптека",
+     "dem",
+     "aus",
+     "rechts"
+    ],
+    "sha": "eb4ddc45c0ecbcbdce1ba27d25bb03badf01b96c63c111e6447bee6fe025a8a4"
+   },
+   "unit-7#s3": {
+    "n": 8,
+    "ids": [
+     "vq-v7-1-de",
+     "ex046",
+     "art-v7-4",
+     "vq-v7-8-de",
+     "ex042",
+     "vq-v7-19-ru",
+     "vq-v7-20-ru",
+     "art-v7-13"
+    ],
+    "answers": [
+     "город",
+     "mir",
+     "die",
+     "аптека",
+     "der",
+     "weit",
+     "nah",
+     "die"
+    ],
+    "sha": "0abc03845c7232ab41e5c70d8a1ccd2d690f49785c7f51e8924dfab615c15b7a"
+   },
+   "unit-8#s1": {
+    "n": 8,
+    "ids": [
+     "ex049",
+     "art-v8-6",
+     "vq-v8-4-ru",
+     "vq-v8-19-de",
+     "ex051",
+     "art-v8-3",
+     "vq-v8-18-de",
+     "vq-v8-12-ru"
+    ],
+    "answers": [
+     "am",
+     "das",
+     "die Woche",
+     "рано",
+     "Im",
+     "die",
+     "пунктуальный, вовремя",
+     "der Termin"
+    ],
+    "sha": "f1aa98f193e4ec39f9e7f722f12e1581dc907899deabe060d8cb8772b5c0d984"
+   },
+   "unit-8#s2": {
+    "n": 8,
+    "ids": [
+     "vq-v8-11-de",
+     "art-v8-6",
+     "ex053",
+     "vq-v8-22-ru",
+     "art-v8-10",
+     "vq-v8-19-ru",
+     "ex055",
+     "vq-v8-21-de"
+    ],
+    "answers": [
+     "выходные",
+     "das",
+     "bin",
+     "Wie spät ist es?",
+     "der",
+     "früh",
+     "getrunken",
+     "когда"
+    ],
+    "sha": "644b67f3d3600b11935a633174cdc7afebad8c8366b1724643b3854691bd9893"
+   },
+   "unit-8#s3": {
+    "n": 8,
+    "ids": [
+     "ex051",
+     "art-v8-7",
+     "vq-v8-9-de",
+     "vq-v8-1-de",
+     "ex055",
+     "vq-v8-11-ru",
+     "art-v8-3",
+     "vq-v8-16-ru"
+    ],
+    "answers": [
+     "Im",
+     "der",
+     "суббота",
+     "часы; час (время)",
+     "getrunken",
+     "das Wochenende",
+     "die",
+     "absagen"
+    ],
+    "sha": "4193a90f9e4c5f1ec37903c87d62834ffab16af5b6b556270466a0f10313ec6c"
+   },
+   "unit-9#s1": {
+    "n": 8,
+    "ids": [
+     "art-v9-18",
+     "ex056",
+     "art-v9-20",
+     "vq-v9-19-de",
+     "vq-v9-2-de",
+     "vq-v9-4-ru",
+     "ex057",
+     "vq-v9-1-ru"
+    ],
+    "answers": [
+     "die",
+     "für",
+     "der",
+     "туфля, обувь",
+     "стоить",
+     "nehmen",
+     "ohne",
+     "kaufen"
+    ],
+    "sha": "d85716dedcbed577636d076b9e4656a5dc29d11364b5516cd9cb3ae3211af435"
+   },
+   "unit-9#s2": {
+    "n": 8,
+    "ids": [
+     "ex061",
+     "vq-v9-15-de",
+     "art-v9-14",
+     "vq-v9-1-ru",
+     "ex057",
+     "art-v9-12",
+     "vq-v9-21-ru",
+     "vq-v9-11-de"
+    ],
+    "answers": [
+     "meine",
+     "рынок",
+     "das",
+     "kaufen",
+     "ohne",
+     "die",
+     "bar",
+     "пакет"
+    ],
+    "sha": "20d428ca1ea3628ac5719306059b50493427207d3c6a13bb26f6a3496f8d5559"
+   },
+   "unit-9#s3": {
+    "n": 8,
+    "ids": [
+     "art-v9-15",
+     "vq-v9-3-ru",
+     "ex057",
+     "vq-v9-11-ru",
+     "vq-v9-18-de",
+     "ex060",
+     "art-v9-18",
+     "vq-v9-16-de"
+    ],
+    "answers": [
+     "der",
+     "brauchen",
+     "ohne",
+     "die Tüte",
+     "куртка",
+     "Wie viel kostet das?",
+     "die",
+     "размер"
+    ],
+    "sha": "35f7d3f3518a0fc081039db3a0b5aac7430d510f09b1ca73382a695c79fb4347"
+   },
+   "unit-10#s1": {
+    "n": 8,
+    "ids": [
+     "vq-v10-17-ru",
+     "art-v10-10",
+     "ex063",
+     "vq-v10-20-de",
+     "vq-v10-19-ru",
+     "vq-v10-6-de",
+     "ex067",
+     "art-v10-11"
+    ],
+    "answers": [
+     "das Hotel",
+     "die",
+     "der",
+     "машина",
+     "der Urlaub",
+     "лететь",
+     "Ich bin mit dem Zug gefahren.",
+     "die"
+    ],
+    "sha": "d85e16185ccf378564a4d61057c69ded77b22d4dd3607dc0a8600ac7d21c624f"
+   },
+   "unit-10#s2": {
+    "n": 8,
+    "ids": [
+     "art-v10-19",
+     "vq-v10-8-ru",
+     "ex065",
+     "vq-v10-14-ru",
+     "art-v10-12",
+     "vq-v10-5-de",
+     "ex067",
+     "vq-v10-6-de"
+    ],
+    "answers": [
+     "der",
+     "die Fahrkarte",
+     "Der Zug fährt um acht Uhr ab.",
+     "das Flugzeug",
+     "die",
+     "бронировать",
+     "Ich bin mit dem Zug gefahren.",
+     "лететь"
+    ],
+    "sha": "840c9959aa8588a3205cc69610d562dbdc11b7d5a937fdc797120bf5100e36a9"
+   },
+   "unit-10#s3": {
+    "n": 8,
+    "ids": [
+     "art-v10-17",
+     "vq-v10-2-de",
+     "vq-v10-8-ru",
+     "vq-v10-23-ru",
+     "ex066",
+     "ex062",
+     "vq-v10-16-de",
+     "art-v10-13"
+    ],
+    "answers": [
+     "das",
+     "делать пересадку",
+     "die Fahrkarte",
+     "verspätet",
+     "das Auto von meinem Vater",
+     "des",
+     "паспорт",
+     "der"
+    ],
+    "sha": "c24ce67d63420a6304a6252c3db575e38484ff23b7860bd213ad229f37cc9d76"
+   }
+  },
+  "unitReview": {
+   "unit1": {
+    "n": 10,
+    "ids": [
+     "ex004",
+     "vq-v1-2-ru",
+     "ex006",
+     "art-v1-16",
+     "ex002",
+     "vq-v1-13-de",
+     "vq-v1-7-ru",
+     "art-v1-18",
+     "vq-v1-20-de",
+     "vq-v1-12-de"
+    ],
+    "answers": [
+     "Woher kommst du?",
+     "Guten Morgen",
+     "Sprichst du Deutsch?",
+     "die",
+     "Ich bin 25 Jahre alt.",
+     "приятно познакомиться",
+     "Danke",
+     "der",
+     "приходить, происходить из",
+     "я не понимаю"
+    ],
+    "sha": "6f2d3918b9e6cd512d66dff4b60517a9f4915540cb4a779efd7ace700d89c6b1"
+   },
+   "unit2": {
+    "n": 10,
+    "ids": [
+     "vq-v2-13-de",
+     "ex009",
+     "vq-v2-8-ru",
+     "vq-v2-14-ru",
+     "ex014",
+     "vq-v2-12-de",
+     "vq-v2-5-de",
+     "ex013",
+     "art-v2-16",
+     "art-v2-17"
+    ],
+    "answers": [
+     "тётя",
+     "Brüder",
+     "der Sohn",
+     "der Ehemann",
+     "ist",
+     "дядя",
+     "брат",
+     "die Frauen",
+     "der",
+     "die"
+    ],
+    "sha": "f6a736dd39d3f36777ecc4bb0fcf71c7cf50c0e7cfc40e3aa105ab2423684c1e"
+   },
+   "unit3": {
+    "n": 10,
+    "ids": [
+     "vq-v3-18-de",
+     "ex018",
+     "ex021",
+     "vq-v3-11-ru",
+     "art-v3-1",
+     "vq-v3-13-de",
+     "vq-v3-10-de",
+     "ex020",
+     "art-v3-5",
+     "vq-v3-21-ru"
+    ],
+    "answers": [
+     "всегда",
+     "Heute lerne ich Deutsch.",
+     "arbeitet",
+     "kochen",
+     "der",
+     "читать",
+     "спать",
+     "Morgen fahre ich nach Köln.",
+     "die",
+     "nie"
+    ],
+    "sha": "16c5a9562cd240c17bc28072ec37c07833a6f1a9f8a0ac3d6ccb303fba7d8dfc"
+   },
+   "unit4": {
+    "n": 10,
+    "ids": [
+     "ex025",
+     "vq-v4-11-ru",
+     "art-v4-8",
+     "vq-v4-10-de",
+     "ex028",
+     "ex027",
+     "vq-v4-20-de",
+     "art-v4-9",
+     "vq-v4-18-ru",
+     "vq-v4-2-de"
+    ],
+    "answers": [
+     "bestellen",
+     "die Suppe",
+     "der",
+     "рис",
+     "nicht",
+     "den",
+     "хотеть (вежливо)",
+     "das",
+     "trinken",
+     "вода"
+    ],
+    "sha": "471eb4a4906c742135cc983463048d594c7097243552367ef67822dae77c76e2"
+   },
+   "unit5": {
+    "n": 10,
+    "ids": [
+     "art-v5-2",
+     "ex034",
+     "vq-v5-20-ru",
+     "ex033",
+     "vq-v5-11-de",
+     "vq-v5-13-de",
+     "vq-v5-6-de",
+     "vq-v5-7-ru",
+     "art-v5-3",
+     "ex030"
+    ],
+    "answers": [
+     "das",
+     "neben das",
+     "mieten",
+     "den",
+     "диван",
+     "окно",
+     "спальня",
+     "das Wohnzimmer",
+     "das",
+     "der"
+    ],
+    "sha": "4943435541f728ad25390db70e8ef54a6c29a8ada7a73a3db4aa4266cc045406"
+   },
+   "unit6": {
+    "n": 10,
+    "ids": [
+     "vq-v6-17-ru",
+     "art-v6-10",
+     "vq-v6-21-ru",
+     "vq-v6-14-de",
+     "ex039",
+     "ex037",
+     "vq-v6-16-de",
+     "ex041",
+     "art-v6-7",
+     "vq-v6-19-de"
+    ],
+    "answers": [
+     "die Pause",
+     "das",
+     "helfen",
+     "договор",
+     "aber",
+     "Ich lerne Deutsch, weil ich hier arbeite.",
+     "резюме",
+     "bei",
+     "der",
+     "зарабатывать"
+    ],
+    "sha": "b4fbb3cdde5a9579c7bef446ba7a13fd2ebc07395587fda996158307d83c07f5"
+   },
+   "unit7": {
+    "n": 10,
+    "ids": [
+     "vq-v7-16-ru",
+     "vq-v7-9-de",
+     "art-v7-2",
+     "vq-v7-15-de",
+     "vq-v7-6-ru",
+     "ex048",
+     "vq-v7-2-de",
+     "ex047",
+     "art-v7-13",
+     "ex042"
+    ],
+    "answers": [
+     "links",
+     "банк",
+     "die",
+     "угол",
+     "die U-Bahn",
+     "Ich fahre mit der U-Bahn.",
+     "улица",
+     "aus",
+     "die",
+     "der"
+    ],
+    "sha": "af08b73f27c9d5a97ce6e22d2a9c4c56ed677c4e96368e0765ee494b00751361"
+   },
+   "unit8": {
+    "n": 10,
+    "ids": [
+     "art-v8-4",
+     "ex054",
+     "vq-v8-11-ru",
+     "art-v8-10",
+     "vq-v8-2-de",
+     "vq-v8-6-de",
+     "ex055",
+     "vq-v8-10-de",
+     "ex051",
+     "vq-v8-3-ru"
+    ],
+    "answers": [
+     "die",
+     "Ich habe Deutsch gelernt.",
+     "das Wochenende",
+     "der",
+     "час (длительность)",
+     "год",
+     "getrunken",
+     "воскресенье",
+     "Im",
+     "die Minute"
+    ],
+    "sha": "ae06d2845808951a91f417086b5007300d53b2bb9d926d7fc51655764c328e6a"
+   },
+   "unit9": {
+    "n": 10,
+    "ids": [
+     "ex060",
+     "vq-v9-16-ru",
+     "ex056",
+     "ex058",
+     "art-v9-12",
+     "art-v9-8",
+     "vq-v9-10-ru",
+     "vq-v9-6-de",
+     "vq-v9-13-de",
+     "vq-v9-4-de"
+    ],
+    "answers": [
+     "Wie viel kostet das?",
+     "die Größe",
+     "für",
+     "mich",
+     "die",
+     "das",
+     "die Kasse",
+     "обменять",
+     "предложение, акция",
+     "брать"
+    ],
+    "sha": "112108dd7221151eba7507395d5dcade917e380122b40814e5f20e47f676f63c"
+   },
+   "unit10": {
+    "n": 10,
+    "ids": [
+     "vq-v10-15-de",
+     "ex062",
+     "art-v10-17",
+     "ex064",
+     "vq-v10-16-de",
+     "ex066",
+     "art-v10-8",
+     "vq-v10-13-ru",
+     "vq-v10-17-ru",
+     "vq-v10-3-de"
+    ],
+    "answers": [
+     "чемодан",
+     "des",
+     "das",
+     "an",
+     "паспорт",
+     "das Auto von meinem Vater",
+     "die",
+     "der Flughafen",
+     "das Hotel",
+     "прибывать"
+    ],
+    "sha": "7406927f5a5fc7055e8f4baa120c9ab017df9923a50b5794be2543fe609decab"
+   }
+  },
+  "conceptQuestions": {
+   "articles": {
+    "n": 5,
+    "ids": [
+     "ex001",
+     "ex029",
+     "ex041",
+     "ex011",
+     "ex052"
+    ],
+    "answers": [
+     "der",
+     "keinen",
+     "bei",
+     "meine",
+     "habe"
+    ],
+    "sha": "f8e964aaa83551b6bf10e2df44a41eb3002e7aa28018aadfc9a702c349b8e4a8"
+   },
+   "sein-haben": {
+    "n": 5,
+    "ids": [
+     "ex003",
+     "ex014",
+     "ex008",
+     "ex002",
+     "ex044"
+    ],
+    "answers": [
+     "sind",
+     "ist",
+     "bist",
+     "Ich bin 25 Jahre alt.",
+     "zum"
+    ],
+    "sha": "01776b8c9be7ae8d05341e8590bfe027f96e38fb4776dca3e752151772d94089"
+   },
+   "questions": {
+    "n": 5,
+    "ids": [
+     "ex060",
+     "ex006",
+     "ex004",
+     "ex005",
+     "ex038"
+    ],
+    "answers": [
+     "Wie viel kostet das?",
+     "Sprichst du Deutsch?",
+     "Woher kommst du?",
+     "Wo",
+     "oder"
+    ],
+    "sha": "dd3d6bc1c074e2e54909e901545ae38343fc11859aca3da9f3db84d276bbaca2"
+   },
+   "nominativ": {
+    "n": 5,
+    "ids": [
+     "ex007",
+     "ex015",
+     "ex050",
+     "ex063",
+     "ex004"
+    ],
+    "answers": [
+     "ein",
+     "Meine Eltern wohnen in Bischkek.",
+     "um",
+     "der",
+     "Woher kommst du?"
+    ],
+    "sha": "78afde761d02f3a67233805466d917ca80285eef4891cfc2c2b4ce4148982bd1"
+   },
+   "plural": {
+    "n": 5,
+    "ids": [
+     "ex013",
+     "ex009",
+     "ex010",
+     "ex050",
+     "ex001"
+    ],
+    "answers": [
+     "die Frauen",
+     "Brüder",
+     "die Kinder",
+     "um",
+     "der"
+    ],
+    "sha": "f6f4813f3709188076977af73dfc8f4b143d15c502502c7e2d348bf286584178"
+   },
+   "possessive": {
+    "n": 5,
+    "ids": [
+     "ex011",
+     "ex012",
+     "ex050",
+     "ex004",
+     "ex008"
+    ],
+    "answers": [
+     "meine",
+     "meinen",
+     "um",
+     "Woher kommst du?",
+     "bist"
+    ],
+    "sha": "78b167682e301402a9ae67d6e29ee7987ccc1b6455bcf1dc7ecdc70065c03360"
+   },
+   "regular-verbs": {
+    "n": 5,
+    "ids": [
+     "ex017",
+     "ex021",
+     "ex016",
+     "ex060",
+     "ex065"
+    ],
+    "answers": [
+     "sprichst",
+     "arbeitet",
+     "lerne",
+     "Wie viel kostet das?",
+     "Der Zug fährt um acht Uhr ab."
+    ],
+    "sha": "5f9844e33bdd69576a49ad6c5239ee4afb5f5042d6177ab220db7b2f33963302"
+   },
+   "verb-position": {
+    "n": 5,
+    "ids": [
+     "ex020",
+     "ex035",
+     "ex059",
+     "ex015",
+     "ex018"
+    ],
+    "answers": [
+     "Morgen fahre ich nach Köln.",
+     "Das Sofa steht im Wohnzimmer.",
+     "Wie viel kostet das?",
+     "Meine Eltern wohnen in Bischkek.",
+     "Heute lerne ich Deutsch."
+    ],
+    "sha": "018d893592f31a2db1f2cdc43856c81b47815082d98da19a82e18bac80391a59"
+   },
+   "separable": {
+    "n": 5,
+    "ids": [
+     "ex019",
+     "ex065",
+     "ex064",
+     "ex022",
+     "ex029"
+    ],
+    "answers": [
+     "Ich stehe um sieben Uhr auf.",
+     "Der Zug fährt um acht Uhr ab.",
+     "an",
+     "ein",
+     "keinen"
+    ],
+    "sha": "759e1d013c2608e70313cc1d4032fff69a8d4f510a60337967d8759a9736f3b1"
+   },
+   "akkusativ": {
+    "n": 5,
+    "ids": [
+     "ex027",
+     "ex023",
+     "ex019",
+     "ex035",
+     "ex029"
+    ],
+    "answers": [
+     "den",
+     "einen",
+     "Ich stehe um sieben Uhr auf.",
+     "Das Sofa steht im Wohnzimmer.",
+     "keinen"
+    ],
+    "sha": "7d06219853faafeebf55f2d06e51653c702dc133d71320f8270f9daf2b65c4a8"
+   },
+   "negation": {
+    "n": 5,
+    "ids": [
+     "ex024",
+     "ex029",
+     "ex028",
+     "ex020",
+     "ex059"
+    ],
+    "answers": [
+     "kein",
+     "keinen",
+     "nicht",
+     "Morgen fahre ich nach Köln.",
+     "Wie viel kostet das?"
+    ],
+    "sha": "4d40e16ebcb15a87b6d4c3a85527a83d48d2159cce3c55ca516ec8a0546fa3d1"
+   },
+   "modal": {
+    "n": 5,
+    "ids": [
+     "ex026",
+     "ex025",
+     "ex050",
+     "ex035",
+     "ex012"
+    ],
+    "answers": [
+     "Ich möchte einen Tee bestellen.",
+     "bestellen",
+     "um",
+     "Das Sofa steht im Wohnzimmer.",
+     "meinen"
+    ],
+    "sha": "91fe5afa7352c9283df5df3a339d7934e7b8e2979d195d54db43b64f75f64cde"
+   },
+   "wechsel": {
+    "n": 5,
+    "ids": [
+     "ex033",
+     "ex032",
+     "ex030",
+     "ex031",
+     "ex034"
+    ],
+    "answers": [
+     "den",
+     "dem",
+     "der",
+     "die",
+     "neben das"
+    ],
+    "sha": "ed05e8ca8b9199e4dbe99f122070636eb56f372eda855f16cd6cb072d0618b5a"
+   },
+   "conjunctions": {
+    "n": 5,
+    "ids": [
+     "ex039",
+     "ex036",
+     "ex040",
+     "ex037",
+     "ex038"
+    ],
+    "answers": [
+     "aber",
+     "weil",
+     "Ich bleibe zu Hause, weil ich krank bin.",
+     "Ich lerne Deutsch, weil ich hier arbeite.",
+     "oder"
+    ],
+    "sha": "5a4072bcd0534c12d57c23af3bd271525d038fd0e81250edad64aef8ca3a2c99"
+   },
+   "dativ": {
+    "n": 5,
+    "ids": [
+     "ex046",
+     "ex042",
+     "ex057",
+     "ex066",
+     "ex039"
+    ],
+    "answers": [
+     "mir",
+     "der",
+     "ohne",
+     "das Auto von meinem Vater",
+     "aber"
+    ],
+    "sha": "3f45b0454aa980a2673ef0135440bdc8556d55c1f6cdbd943327084e72a49458"
+   },
+   "dativ-prep": {
+    "n": 5,
+    "ids": [
+     "ex045",
+     "ex047",
+     "ex048",
+     "ex043",
+     "ex041"
+    ],
+    "answers": [
+     "zur",
+     "aus",
+     "Ich fahre mit der U-Bahn.",
+     "dem",
+     "bei"
+    ],
+    "sha": "09032e7ffa95d4c713c663ad349dc525404d1e348ce39405d63621aabf932428"
+   },
+   "time-order": {
+    "n": 5,
+    "ids": [
+     "ex049",
+     "ex051",
+     "ex050",
+     "ex014",
+     "ex022"
+    ],
+    "answers": [
+     "am",
+     "Im",
+     "um",
+     "ist",
+     "ein"
+    ],
+    "sha": "6bc57989787c49c8964c87b17bfec40ac9661bd789798f5f0cc7cb69706f9ba2"
+   },
+   "perfekt": {
+    "n": 5,
+    "ids": [
+     "ex055",
+     "ex052",
+     "ex053",
+     "ex067",
+     "ex054"
+    ],
+    "answers": [
+     "getrunken",
+     "habe",
+     "bin",
+     "Ich bin mit dem Zug gefahren.",
+     "Ich habe Deutsch gelernt."
+    ],
+    "sha": "80968033295e3d0567bce438c0f5448c7c79f9e5d3023bb47ada59eb28d00b9c"
+   },
+   "akk-prep": {
+    "n": 5,
+    "ids": [
+     "ex057",
+     "ex061",
+     "ex056",
+     "ex058",
+     "ex015"
+    ],
+    "answers": [
+     "ohne",
+     "meine",
+     "für",
+     "mich",
+     "Meine Eltern wohnen in Bischkek."
+    ],
+    "sha": "f0989ee1ef67a514c0edbf0d12a9f217a13dc0790ae0e700cf717f8142067a27"
+   },
+   "genitiv": {
+    "n": 5,
+    "ids": [
+     "ex066",
+     "ex062",
+     "ex063",
+     "ex053",
+     "ex012"
+    ],
+    "answers": [
+     "das Auto von meinem Vater",
+     "des",
+     "der",
+     "bin",
+     "meinen"
+    ],
+    "sha": "39d2798398700675514cd3c1fe68a14149fb33295e83ff0cbdee37aecd9e8e7f"
+   }
+  },
+  "articleDrill": {
+   "n": 10,
+   "ids": [
+    "art-v2-4",
+    "art-v7-12",
+    "art-v4-15",
+    "art-v4-12",
+    "art-v5-11",
+    "art-v8-13",
+    "art-v5-19",
+    "art-v7-7",
+    "art-v5-8",
+    "art-v9-15"
+   ],
+   "answers": [
+    "die",
+    "der",
+    "die",
+    "der",
+    "das",
+    "der",
+    "der",
+    "das",
+    "der",
+    "der"
+   ],
+   "sha": "dbceec604ff8fab3b433d6632c4c6dc4a4dbbe61cd9166261f6d4158f9eae570"
+  }
+ },
+ "tutor": {
+  "ru/A1": [
+   {
+    "q": "Привет",
+    "concept": null,
+    "suggestions": 4,
+    "len": 269,
+    "sha": "cb81189f5f1be1dec653d5db239937157eec248d3a83cadcef8f397cf85330e4",
+    "preview": "Я BilUp AI — ваш репетитор. Я знаю ваш уровень ("
+   },
+   {
+    "q": "Объясни Akkusativ",
+    "concept": "akkusativ",
+    "suggestions": 2,
+    "len": 465,
+    "sha": "b6527d977e7bba9f13ecc05d12d5198c81264acab2cd60731cbc127d89dab987",
+    "preview": "**Akkusativ — прямое дополнение**\nAkkusativ отве"
+   },
+   {
+    "q": "Почему здесь Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 495,
+    "sha": "78a64b0cdbe2c5dded5b22a6e9eff59748de185b0bfeafb6d26bdcbcf3a6f222",
+    "preview": "**Dativ — косвенное дополнение**\nDativ отвечает "
+   },
+   {
+    "q": "Дай пять примеров",
+    "concept": "dativ",
+    "suggestions": 0,
+    "len": 309,
+    "sha": "5487673e65de1072fcbc55775da731ca81ae6eae1dca32bd9805b49b3de7c056",
+    "preview": "Примеры по теме «Dativ — косвенное дополнение»:\n"
+   },
+   {
+    "q": "Расскажи про Perfekt",
+    "concept": "perfekt",
+    "suggestions": 2,
+    "len": 574,
+    "sha": "c9d9d091aaf39daa5fff433926c0c5ef06e908c37d7960107c83ca55b2516af6",
+    "preview": "**Perfekt — прошедшее время в разговоре**\nhaben/"
+   },
+   {
+    "q": "Что такое Konjunktiv II?",
+    "concept": null,
+    "suggestions": 4,
+    "len": 177,
+    "sha": "7084c68b2af880205ca5e68023b71d463b95d830dfb70c6ceff98448790faab3",
+    "preview": "Это тема уровня B1+. Konjunktiv II (B1): „Ich hä"
+   },
+   {
+    "q": "Объясни Passiv",
+    "concept": null,
+    "suggestions": 4,
+    "len": 150,
+    "sha": "75115b7820471e3a0ae4b90e250722de1a4699de905e7d08bb71bfbd55a7fd4c",
+    "preview": "Это тема уровня B1+. Passiv (B1): „Das Haus wird"
+   },
+   {
+    "q": "Relativsatz",
+    "concept": null,
+    "suggestions": 4,
+    "len": 159,
+    "sha": "803e3406f6ce5bb109b75b972e2b0b797601f253607d60a895a97014ced3de82",
+    "preview": "Это тема уровня B1+. Relativsätze (B1): „Das ist"
+   },
+   {
+    "q": "В чём разница между wissen и kennen?",
+    "concept": null,
+    "suggestions": 4,
+    "len": 296,
+    "sha": "326f220c3dfe4ce705ee148d37e888801ab338e530f0b26e62fd80a033050eb7",
+    "preview": "**wissen vs. kennen**\n• **wissen** — знать факт:"
+   },
+   {
+    "q": "Исправь: Ich habe 25 Jahre",
+    "concept": "sein-haben",
+    "suggestions": 1,
+    "len": 115,
+    "sha": "b012a086c187f4cabc0949783ffd61d9a5772a8ca05326ff2c269641e46f7dad",
+    "preview": "❌ Ich habe 25 Jahre\n✅ Ich bin 25 Jahre alt\n\n**По"
+   },
+   {
+    "q": "Исправь: Ich gehe in die Schule und ich bin nicht müde",
+    "concept": null,
+    "suggestions": 0,
+    "len": 128,
+    "sha": "3037c9caf03ed20057b860734f4ae65bc2a0cb11b97329e3ca0387fcaf2122f7",
+    "preview": "Я не вижу типичных ошибок в «Ich gehe in die Sch"
+   },
+   {
+    "q": "Проверь меня",
+    "concept": "dativ",
+    "suggestions": 0,
+    "len": 72,
+    "sha": "b7c1d641f36c09e95af9bbca43ead2807e9c28a084fc9d0147affb1248f71a27",
+    "preview": "Давайте проверим:\n\n**Die Jacke gefällt ___.**\nВа"
+   },
+   {
+    "q": "неверный ответ",
+    "concept": null,
+    "suggestions": 1,
+    "len": 56,
+    "sha": "ea329ba251925f901a91fa4c4cea39a53be78da31bc6022abb0318ccb9d7bf92",
+    "preview": "Почти. Правильный ответ: **mir**.\ngefallen + Dat"
+   },
+   {
+    "q": "Артикли der die das",
+    "concept": "articles",
+    "suggestions": 2,
+    "len": 525,
+    "sha": "1cf0d41a3271950d507808fcce66bf841bf2244d573016e524127d0dfde282a1",
+    "preview": "**Артикли der / die / das**\nКаждое существительн"
+   },
+   {
+    "q": "Plural",
+    "concept": "plural",
+    "suggestions": 2,
+    "len": 433,
+    "sha": "f80161e898dea090e6ed49e4b3bd5a51fca795cf23949257d642657fe0c22125",
+    "preview": "**Множественное число**\nВо множественном числе а"
+   },
+   {
+    "q": "weil",
+    "concept": "conjunctions",
+    "suggestions": 2,
+    "len": 627,
+    "sha": "030a4631fd59dfd41df3a7fbfd322db61cf839af1ed2a8aa418aa28dfe3bddfc",
+    "preview": "**Союзы und, aber, oder, denn, weil**\nund, aber,"
+   },
+   {
+    "q": "Модальные глаголы",
+    "concept": "modal",
+    "suggestions": 2,
+    "len": 510,
+    "sha": "35966e6eac18d407881eb9e95a4a7c94013b6fd7fa6a8a9fe7f8783a60712a15",
+    "preview": "**Модальные глаголы: möchten, können, müssen**\nМ"
+   },
+   {
+    "q": "Эмне үчүн Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 495,
+    "sha": "78a64b0cdbe2c5dded5b22a6e9eff59748de185b0bfeafb6d26bdcbcf3a6f222",
+    "preview": "**Dativ — косвенное дополнение**\nDativ отвечает "
+   },
+   {
+    "q": "Genitiv",
+    "concept": "genitiv",
+    "suggestions": 2,
+    "len": 543,
+    "sha": "8f8595ece6a1b6282c775c56267e3f8f16205bbe663ba396fa3ce013a9effae3",
+    "preview": "**Genitiv — принадлежность (обзор)**\nGenitiv отв"
+   },
+   {
+    "q": "Warum Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 495,
+    "sha": "78a64b0cdbe2c5dded5b22a6e9eff59748de185b0bfeafb6d26bdcbcf3a6f222",
+    "preview": "**Dativ — косвенное дополнение**\nDativ отвечает "
+   },
+   {
+    "q": "Wie funktioniert Perfekt?",
+    "concept": "perfekt",
+    "suggestions": 2,
+    "len": 574,
+    "sha": "c9d9d091aaf39daa5fff433926c0c5ef06e908c37d7960107c83ca55b2516af6",
+    "preview": "**Perfekt — прошедшее время в разговоре**\nhaben/"
+   }
+  ],
+  "ru/A2": [
+   {
+    "q": "Привет",
+    "concept": null,
+    "suggestions": 4,
+    "len": 269,
+    "sha": "9d1679136f66407dea8ff8a6a7f2ab522d722a469b6b33099a47f37178c77fab",
+    "preview": "Я BilUp AI — ваш репетитор. Я знаю ваш уровень ("
+   },
+   {
+    "q": "Объясни Akkusativ",
+    "concept": "akkusativ",
+    "suggestions": 2,
+    "len": 531,
+    "sha": "96967e5cac737bdbfe1b27f2a24b5592dc0fe00ea06afa37a264dc74c1bbc0d6",
+    "preview": "**Akkusativ — прямое дополнение**\nAkkusativ отве"
+   },
+   {
+    "q": "Почему здесь Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 543,
+    "sha": "5d3ced2befef6daa98dd112c5bb5b8009f1f0f4c4f9d1fe44d8c19f04d79366d",
+    "preview": "**Dativ — косвенное дополнение**\nDativ отвечает "
+   },
+   {
+    "q": "Дай пять примеров",
+    "concept": "dativ",
+    "suggestions": 0,
+    "len": 309,
+    "sha": "5487673e65de1072fcbc55775da731ca81ae6eae1dca32bd9805b49b3de7c056",
+    "preview": "Примеры по теме «Dativ — косвенное дополнение»:\n"
+   },
+   {
+    "q": "Расскажи про Perfekt",
+    "concept": "perfekt",
+    "suggestions": 2,
+    "len": 635,
+    "sha": "99acbf4db59c422961eb25f6da7b5e1d695e60b4ca45c488f8c0c8ee8bdfa3dd",
+    "preview": "**Perfekt — прошедшее время в разговоре**\nhaben/"
+   },
+   {
+    "q": "Что такое Konjunktiv II?",
+    "concept": null,
+    "suggestions": 4,
+    "len": 177,
+    "sha": "7084c68b2af880205ca5e68023b71d463b95d830dfb70c6ceff98448790faab3",
+    "preview": "Это тема уровня B1+. Konjunktiv II (B1): „Ich hä"
+   },
+   {
+    "q": "Объясни Passiv",
+    "concept": null,
+    "suggestions": 4,
+    "len": 150,
+    "sha": "75115b7820471e3a0ae4b90e250722de1a4699de905e7d08bb71bfbd55a7fd4c",
+    "preview": "Это тема уровня B1+. Passiv (B1): „Das Haus wird"
+   },
+   {
+    "q": "Relativsatz",
+    "concept": null,
+    "suggestions": 4,
+    "len": 159,
+    "sha": "803e3406f6ce5bb109b75b972e2b0b797601f253607d60a895a97014ced3de82",
+    "preview": "Это тема уровня B1+. Relativsätze (B1): „Das ist"
+   },
+   {
+    "q": "В чём разница между wissen и kennen?",
+    "concept": null,
+    "suggestions": 4,
+    "len": 296,
+    "sha": "326f220c3dfe4ce705ee148d37e888801ab338e530f0b26e62fd80a033050eb7",
+    "preview": "**wissen vs. kennen**\n• **wissen** — знать факт:"
+   },
+   {
+    "q": "Исправь: Ich habe 25 Jahre",
+    "concept": "sein-haben",
+    "suggestions": 1,
+    "len": 115,
+    "sha": "b012a086c187f4cabc0949783ffd61d9a5772a8ca05326ff2c269641e46f7dad",
+    "preview": "❌ Ich habe 25 Jahre\n✅ Ich bin 25 Jahre alt\n\n**По"
+   },
+   {
+    "q": "Исправь: Ich gehe in die Schule und ich bin nicht müde",
+    "concept": null,
+    "suggestions": 0,
+    "len": 128,
+    "sha": "3037c9caf03ed20057b860734f4ae65bc2a0cb11b97329e3ca0387fcaf2122f7",
+    "preview": "Я не вижу типичных ошибок в «Ich gehe in die Sch"
+   },
+   {
+    "q": "Проверь меня",
+    "concept": "questions",
+    "suggestions": 0,
+    "len": 63,
+    "sha": "436adab4f45994ae4bb0f83958b05594a7b9f0b0e80113d995e9d3de95b556f6",
+    "preview": "Давайте проверим:\n\n**___ wohnen Sie?**\nВарианты:"
+   },
+   {
+    "q": "неверный ответ",
+    "concept": null,
+    "suggestions": 1,
+    "len": 57,
+    "sha": "4ec454549dcad09b827423793992d40866cacc7f67939b2fba8c00d4cfeef9b2",
+    "preview": "Почти. Правильный ответ: **Wo**.\nСпрашиваем о ме"
+   },
+   {
+    "q": "Артикли der die das",
+    "concept": "articles",
+    "suggestions": 2,
+    "len": 572,
+    "sha": "e27abf20afc8b580074317e378a86c2c32eaf65455e2e7553d2805244e9e464a",
+    "preview": "**Артикли der / die / das**\nКаждое существительн"
+   },
+   {
+    "q": "Plural",
+    "concept": "plural",
+    "suggestions": 2,
+    "len": 474,
+    "sha": "fa03b70c9486d0aa9753f8389258b51666fd017127075ae94f99076f34bf2194",
+    "preview": "**Множественное число**\nВо множественном числе а"
+   },
+   {
+    "q": "weil",
+    "concept": "conjunctions",
+    "suggestions": 2,
+    "len": 681,
+    "sha": "f622c4e3e3e63bd76208eed4a2f1d245af3449a67df6bf70748bc29c55968959",
+    "preview": "**Союзы und, aber, oder, denn, weil**\nund, aber,"
+   },
+   {
+    "q": "Модальные глаголы",
+    "concept": "modal",
+    "suggestions": 2,
+    "len": 567,
+    "sha": "697ac01f42fcebaefeac040fcc4434ede65329075f0562dcdc91c42932d0c8c4",
+    "preview": "**Модальные глаголы: möchten, können, müssen**\nМ"
+   },
+   {
+    "q": "Эмне үчүн Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 543,
+    "sha": "5d3ced2befef6daa98dd112c5bb5b8009f1f0f4c4f9d1fe44d8c19f04d79366d",
+    "preview": "**Dativ — косвенное дополнение**\nDativ отвечает "
+   },
+   {
+    "q": "Genitiv",
+    "concept": "genitiv",
+    "suggestions": 2,
+    "len": 605,
+    "sha": "7f7642e9d3cd080212be68e255c11f969a8e1e77390332f2c8cba4bffc666366",
+    "preview": "**Genitiv — принадлежность (обзор)**\nGenitiv отв"
+   },
+   {
+    "q": "Warum Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 543,
+    "sha": "5d3ced2befef6daa98dd112c5bb5b8009f1f0f4c4f9d1fe44d8c19f04d79366d",
+    "preview": "**Dativ — косвенное дополнение**\nDativ отвечает "
+   },
+   {
+    "q": "Wie funktioniert Perfekt?",
+    "concept": "perfekt",
+    "suggestions": 2,
+    "len": 635,
+    "sha": "99acbf4db59c422961eb25f6da7b5e1d695e60b4ca45c488f8c0c8ee8bdfa3dd",
+    "preview": "**Perfekt — прошедшее время в разговоре**\nhaben/"
+   }
+  ],
+  "ky/A1": [
+   {
+    "q": "Привет",
+    "concept": null,
+    "suggestions": 4,
+    "len": 269,
+    "sha": "cb81189f5f1be1dec653d5db239937157eec248d3a83cadcef8f397cf85330e4",
+    "preview": "Я BilUp AI — ваш репетитор. Я знаю ваш уровень ("
+   },
+   {
+    "q": "Объясни Akkusativ",
+    "concept": "akkusativ",
+    "suggestions": 2,
+    "len": 293,
+    "sha": "f7c7ab36830632efeedc19d5ba38be1005b5697211e2abcb2a8874ee1756a0ab",
+    "preview": "**Akkusativ — туура толуктоочтук**\nAkkusativ «Ки"
+   },
+   {
+    "q": "Почему здесь Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 276,
+    "sha": "c2d7bd7941f950afad51fc8ae34fe8e4c838d82a13e0963e643e5c90e57f6f3a",
+    "preview": "**Dativ — кыйыр толуктоочтук**\nDativ «Кимге?» де"
+   },
+   {
+    "q": "Дай пять примеров",
+    "concept": "dativ",
+    "suggestions": 0,
+    "len": 307,
+    "sha": "f3f23da5070eb35d3f7d8521ca740981293a763e6309f374630c367bad76e061",
+    "preview": "Примеры по теме «Dativ — кыйыр толуктоочтук»:\n1."
+   },
+   {
+    "q": "Расскажи про Perfekt",
+    "concept": "perfekt",
+    "suggestions": 2,
+    "len": 287,
+    "sha": "ab37f918288ea53747dbbb49ed86d501ffa833b90f9f3d168f0bb3ddcf49908f",
+    "preview": "**Perfekt — өткөн чак**\nhaben/sein + Partizip II"
+   },
+   {
+    "q": "Что такое Konjunktiv II?",
+    "concept": null,
+    "suggestions": 4,
+    "len": 177,
+    "sha": "7084c68b2af880205ca5e68023b71d463b95d830dfb70c6ceff98448790faab3",
+    "preview": "Это тема уровня B1+. Konjunktiv II (B1): „Ich hä"
+   },
+   {
+    "q": "Объясни Passiv",
+    "concept": null,
+    "suggestions": 4,
+    "len": 150,
+    "sha": "75115b7820471e3a0ae4b90e250722de1a4699de905e7d08bb71bfbd55a7fd4c",
+    "preview": "Это тема уровня B1+. Passiv (B1): „Das Haus wird"
+   },
+   {
+    "q": "Relativsatz",
+    "concept": null,
+    "suggestions": 4,
+    "len": 159,
+    "sha": "803e3406f6ce5bb109b75b972e2b0b797601f253607d60a895a97014ced3de82",
+    "preview": "Это тема уровня B1+. Relativsätze (B1): „Das ist"
+   },
+   {
+    "q": "В чём разница между wissen и kennen?",
+    "concept": null,
+    "suggestions": 4,
+    "len": 296,
+    "sha": "326f220c3dfe4ce705ee148d37e888801ab338e530f0b26e62fd80a033050eb7",
+    "preview": "**wissen vs. kennen**\n• **wissen** — знать факт:"
+   },
+   {
+    "q": "Исправь: Ich habe 25 Jahre",
+    "concept": "sein-haben",
+    "suggestions": 1,
+    "len": 115,
+    "sha": "b012a086c187f4cabc0949783ffd61d9a5772a8ca05326ff2c269641e46f7dad",
+    "preview": "❌ Ich habe 25 Jahre\n✅ Ich bin 25 Jahre alt\n\n**По"
+   },
+   {
+    "q": "Исправь: Ich gehe in die Schule und ich bin nicht müde",
+    "concept": null,
+    "suggestions": 0,
+    "len": 128,
+    "sha": "3037c9caf03ed20057b860734f4ae65bc2a0cb11b97329e3ca0387fcaf2122f7",
+    "preview": "Я не вижу типичных ошибок в «Ich gehe in die Sch"
+   },
+   {
+    "q": "Проверь меня",
+    "concept": "perfekt",
+    "suggestions": 0,
+    "len": 79,
+    "sha": "e64c1aba65461f9d1c93f6e65b183ce1678523809a4469cedc5a705eeefb3427",
+    "preview": "Давайте проверим:\n\n**Ich ___ nach Berlin gefahre"
+   },
+   {
+    "q": "неверный ответ",
+    "concept": null,
+    "suggestions": 1,
+    "len": 59,
+    "sha": "b54d9b196aa7202973bcd452f76b8677b54daf530031337591d125ed1e7c95b4",
+    "preview": "Почти. Правильный ответ: **bin**.\nfahren — движе"
+   },
+   {
+    "q": "Артикли der die das",
+    "concept": "articles",
+    "suggestions": 2,
+    "len": 407,
+    "sha": "f425485417106a56317692ccfbf0a6c226b64087d461896c5228fc367fee857e",
+    "preview": "**der / die / das артикльдери**\nНемис тилиндеги "
+   },
+   {
+    "q": "Plural",
+    "concept": "plural",
+    "suggestions": 2,
+    "len": 231,
+    "sha": "1b29459569750d8bfff5362bdadb1dbc5f4b22eeae5651c5b48b0a152dfc87a6",
+    "preview": "**Көптүк сан**\nКөптүк санда артикль дайыма die.\n"
+   },
+   {
+    "q": "weil",
+    "concept": "conjunctions",
+    "suggestions": 2,
+    "len": 463,
+    "sha": "5ff9a6c0c0318e035734e8ada0197714bfb20a9cfaeb3aa7e2ff1f918de57e9d",
+    "preview": "**Бириктирүүчү сөздөр**\nund, aber, oder, denn сө"
+   },
+   {
+    "q": "Модальные глаголы",
+    "concept": "modal",
+    "suggestions": 2,
+    "len": 361,
+    "sha": "c5605cb0c01c6110601d69f7e3fd38ec0ff9c7bea8a8c58f170803e075c82943",
+    "preview": "**Модалдык этиштер**\nМодалдык этиш экинчи орунда"
+   },
+   {
+    "q": "Эмне үчүн Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 276,
+    "sha": "c2d7bd7941f950afad51fc8ae34fe8e4c838d82a13e0963e643e5c90e57f6f3a",
+    "preview": "**Dativ — кыйыр толуктоочтук**\nDativ «Кимге?» де"
+   },
+   {
+    "q": "Genitiv",
+    "concept": "genitiv",
+    "suggestions": 2,
+    "len": 270,
+    "sha": "d8ab33669f96b5a265c2eaa68dfb0ffdc7bc0b799be8f20723376ae07eba167c",
+    "preview": "**Genitiv — таандык**\nGenitiv «Кимдин?» деген су"
+   },
+   {
+    "q": "Warum Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 276,
+    "sha": "c2d7bd7941f950afad51fc8ae34fe8e4c838d82a13e0963e643e5c90e57f6f3a",
+    "preview": "**Dativ — кыйыр толуктоочтук**\nDativ «Кимге?» де"
+   },
+   {
+    "q": "Wie funktioniert Perfekt?",
+    "concept": "perfekt",
+    "suggestions": 2,
+    "len": 287,
+    "sha": "ab37f918288ea53747dbbb49ed86d501ffa833b90f9f3d168f0bb3ddcf49908f",
+    "preview": "**Perfekt — өткөн чак**\nhaben/sein + Partizip II"
+   }
+  ],
+  "ky/A2": [
+   {
+    "q": "Привет",
+    "concept": null,
+    "suggestions": 4,
+    "len": 269,
+    "sha": "9d1679136f66407dea8ff8a6a7f2ab522d722a469b6b33099a47f37178c77fab",
+    "preview": "Я BilUp AI — ваш репетитор. Я знаю ваш уровень ("
+   },
+   {
+    "q": "Объясни Akkusativ",
+    "concept": "akkusativ",
+    "suggestions": 2,
+    "len": 359,
+    "sha": "6a9b877f949832c9fd84c22f1e053810c8f5388bed39d014999aa5b144036cbd",
+    "preview": "**Akkusativ — туура толуктоочтук**\nAkkusativ «Ки"
+   },
+   {
+    "q": "Почему здесь Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 324,
+    "sha": "d9030a85c4246a58495a46100d34ac1e97e29ca55c418218e4bd430620c8de94",
+    "preview": "**Dativ — кыйыр толуктоочтук**\nDativ «Кимге?» де"
+   },
+   {
+    "q": "Дай пять примеров",
+    "concept": "dativ",
+    "suggestions": 0,
+    "len": 307,
+    "sha": "f3f23da5070eb35d3f7d8521ca740981293a763e6309f374630c367bad76e061",
+    "preview": "Примеры по теме «Dativ — кыйыр толуктоочтук»:\n1."
+   },
+   {
+    "q": "Расскажи про Perfekt",
+    "concept": "perfekt",
+    "suggestions": 2,
+    "len": 348,
+    "sha": "93bdceba26de2743d2ecd955d21d0e0120c102bafe0d27338d2e057cb405953b",
+    "preview": "**Perfekt — өткөн чак**\nhaben/sein + Partizip II"
+   },
+   {
+    "q": "Что такое Konjunktiv II?",
+    "concept": null,
+    "suggestions": 4,
+    "len": 177,
+    "sha": "7084c68b2af880205ca5e68023b71d463b95d830dfb70c6ceff98448790faab3",
+    "preview": "Это тема уровня B1+. Konjunktiv II (B1): „Ich hä"
+   },
+   {
+    "q": "Объясни Passiv",
+    "concept": null,
+    "suggestions": 4,
+    "len": 150,
+    "sha": "75115b7820471e3a0ae4b90e250722de1a4699de905e7d08bb71bfbd55a7fd4c",
+    "preview": "Это тема уровня B1+. Passiv (B1): „Das Haus wird"
+   },
+   {
+    "q": "Relativsatz",
+    "concept": null,
+    "suggestions": 4,
+    "len": 159,
+    "sha": "803e3406f6ce5bb109b75b972e2b0b797601f253607d60a895a97014ced3de82",
+    "preview": "Это тема уровня B1+. Relativsätze (B1): „Das ist"
+   },
+   {
+    "q": "В чём разница между wissen и kennen?",
+    "concept": null,
+    "suggestions": 4,
+    "len": 296,
+    "sha": "326f220c3dfe4ce705ee148d37e888801ab338e530f0b26e62fd80a033050eb7",
+    "preview": "**wissen vs. kennen**\n• **wissen** — знать факт:"
+   },
+   {
+    "q": "Исправь: Ich habe 25 Jahre",
+    "concept": "sein-haben",
+    "suggestions": 1,
+    "len": 115,
+    "sha": "b012a086c187f4cabc0949783ffd61d9a5772a8ca05326ff2c269641e46f7dad",
+    "preview": "❌ Ich habe 25 Jahre\n✅ Ich bin 25 Jahre alt\n\n**По"
+   },
+   {
+    "q": "Исправь: Ich gehe in die Schule und ich bin nicht müde",
+    "concept": null,
+    "suggestions": 0,
+    "len": 128,
+    "sha": "3037c9caf03ed20057b860734f4ae65bc2a0cb11b97329e3ca0387fcaf2122f7",
+    "preview": "Я не вижу типичных ошибок в «Ich gehe in die Sch"
+   },
+   {
+    "q": "Проверь меня",
+    "concept": "genitiv",
+    "suggestions": 0,
+    "len": 77,
+    "sha": "209e19d308bc67aab969a5db9b009ef68bc6de997d224fb587ac7fbaff7ba0d3",
+    "preview": "Давайте проверим:\n\n**Das ist die Tasche ___ Frau"
+   },
+   {
+    "q": "неверный ответ",
+    "concept": null,
+    "suggestions": 1,
+    "len": 66,
+    "sha": "d09727305436855bc189f66c2c489e2ccc1935674ad87c556750342823b547d0",
+    "preview": "Почти. Правильный ответ: **der**.\nGenitiv женско"
+   },
+   {
+    "q": "Артикли der die das",
+    "concept": "articles",
+    "suggestions": 2,
+    "len": 454,
+    "sha": "9b4c65677ab13d33bc27fad49b0dac6b7d4ffb5b9dd258712d63def3069229af",
+    "preview": "**der / die / das артикльдери**\nНемис тилиндеги "
+   },
+   {
+    "q": "Plural",
+    "concept": "plural",
+    "suggestions": 2,
+    "len": 272,
+    "sha": "7af84e08ad7bf8e12a67c56fa24a1ee57f70320497fad8f1df6ac77115382eb8",
+    "preview": "**Көптүк сан**\nКөптүк санда артикль дайыма die.\n"
+   },
+   {
+    "q": "weil",
+    "concept": "conjunctions",
+    "suggestions": 2,
+    "len": 517,
+    "sha": "91742a8d1182bc6a8aa46e2dfe90815f1ead20f1d79a78e0fd20b73f93ab407e",
+    "preview": "**Бириктирүүчү сөздөр**\nund, aber, oder, denn сө"
+   },
+   {
+    "q": "Модальные глаголы",
+    "concept": "modal",
+    "suggestions": 2,
+    "len": 418,
+    "sha": "bfc3098834530a75b491ea89d1a1e1eb31e1edc5eededf5a5290bda75de1a33b",
+    "preview": "**Модалдык этиштер**\nМодалдык этиш экинчи орунда"
+   },
+   {
+    "q": "Эмне үчүн Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 324,
+    "sha": "d9030a85c4246a58495a46100d34ac1e97e29ca55c418218e4bd430620c8de94",
+    "preview": "**Dativ — кыйыр толуктоочтук**\nDativ «Кимге?» де"
+   },
+   {
+    "q": "Genitiv",
+    "concept": "genitiv",
+    "suggestions": 2,
+    "len": 332,
+    "sha": "730c5947cfe34f6f24bf076e0994b0b5e2e086a91a6a20f653234b884f49de98",
+    "preview": "**Genitiv — таандык**\nGenitiv «Кимдин?» деген су"
+   },
+   {
+    "q": "Warum Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 324,
+    "sha": "d9030a85c4246a58495a46100d34ac1e97e29ca55c418218e4bd430620c8de94",
+    "preview": "**Dativ — кыйыр толуктоочтук**\nDativ «Кимге?» де"
+   },
+   {
+    "q": "Wie funktioniert Perfekt?",
+    "concept": "perfekt",
+    "suggestions": 2,
+    "len": 348,
+    "sha": "93bdceba26de2743d2ecd955d21d0e0120c102bafe0d27338d2e057cb405953b",
+    "preview": "**Perfekt — өткөн чак**\nhaben/sein + Partizip II"
+   }
+  ],
+  "de/A1": [
+   {
+    "q": "Привет",
+    "concept": null,
+    "suggestions": 4,
+    "len": 269,
+    "sha": "cb81189f5f1be1dec653d5db239937157eec248d3a83cadcef8f397cf85330e4",
+    "preview": "Я BilUp AI — ваш репетитор. Я знаю ваш уровень ("
+   },
+   {
+    "q": "Объясни Akkusativ",
+    "concept": "akkusativ",
+    "suggestions": 2,
+    "len": 276,
+    "sha": "9195f6452da6cdaedb2c3ec57b09fe658938ad9d849a78ff4dd22dd70e5f7c20",
+    "preview": "**Akkusativ**\nWen oder was? Nur Maskulinum änder"
+   },
+   {
+    "q": "Почему здесь Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 239,
+    "sha": "3b03a5625203c80e3cb6cc4207be1e427a2d515d83f368658d508975905e5451",
+    "preview": "**Dativ**\nWem? dem / der / dem / den.\n\nDer Adres"
+   },
+   {
+    "q": "Дай пять примеров",
+    "concept": "dativ",
+    "suggestions": 0,
+    "len": 286,
+    "sha": "15ddf574622f9f9de9570e8964bfb2ace5027191451eb034f1b566a776947b84",
+    "preview": "Примеры по теме «Dativ»:\n1. Ich helfe dem Mann. "
+   },
+   {
+    "q": "Расскажи про Perfekt",
+    "concept": "perfekt",
+    "suggestions": 2,
+    "len": 281,
+    "sha": "83eff5dcee6ae5a8206acb191aeab65dbef9406aa6dc65d82ae1e4308f19f7fe",
+    "preview": "**Das Perfekt**\nhaben/sein + Partizip II.\n\nIm Ge"
+   },
+   {
+    "q": "Что такое Konjunktiv II?",
+    "concept": null,
+    "suggestions": 4,
+    "len": 177,
+    "sha": "7084c68b2af880205ca5e68023b71d463b95d830dfb70c6ceff98448790faab3",
+    "preview": "Это тема уровня B1+. Konjunktiv II (B1): „Ich hä"
+   },
+   {
+    "q": "Объясни Passiv",
+    "concept": null,
+    "suggestions": 4,
+    "len": 150,
+    "sha": "75115b7820471e3a0ae4b90e250722de1a4699de905e7d08bb71bfbd55a7fd4c",
+    "preview": "Это тема уровня B1+. Passiv (B1): „Das Haus wird"
+   },
+   {
+    "q": "Relativsatz",
+    "concept": null,
+    "suggestions": 4,
+    "len": 159,
+    "sha": "803e3406f6ce5bb109b75b972e2b0b797601f253607d60a895a97014ced3de82",
+    "preview": "Это тема уровня B1+. Relativsätze (B1): „Das ist"
+   },
+   {
+    "q": "В чём разница между wissen и kennen?",
+    "concept": null,
+    "suggestions": 4,
+    "len": 296,
+    "sha": "326f220c3dfe4ce705ee148d37e888801ab338e530f0b26e62fd80a033050eb7",
+    "preview": "**wissen vs. kennen**\n• **wissen** — знать факт:"
+   },
+   {
+    "q": "Исправь: Ich habe 25 Jahre",
+    "concept": "sein-haben",
+    "suggestions": 1,
+    "len": 115,
+    "sha": "b012a086c187f4cabc0949783ffd61d9a5772a8ca05326ff2c269641e46f7dad",
+    "preview": "❌ Ich habe 25 Jahre\n✅ Ich bin 25 Jahre alt\n\n**По"
+   },
+   {
+    "q": "Исправь: Ich gehe in die Schule und ich bin nicht müde",
+    "concept": null,
+    "suggestions": 0,
+    "len": 128,
+    "sha": "3037c9caf03ed20057b860734f4ae65bc2a0cb11b97329e3ca0387fcaf2122f7",
+    "preview": "Я не вижу типичных ошибок в «Ich gehe in die Sch"
+   },
+   {
+    "q": "Проверь меня",
+    "concept": "separable",
+    "suggestions": 0,
+    "len": 74,
+    "sha": "4af46e5aaf51d4ff5b503f180d704be2bbe23b861009307015d18373ca59fafa",
+    "preview": "Давайте проверим:\n\n**Wir kaufen am Samstag ___.*"
+   },
+   {
+    "q": "неверный ответ",
+    "concept": null,
+    "suggestions": 1,
+    "len": 59,
+    "sha": "45624cd35104a0a579a54892ebe1801d8186b6406ca9779044a2f7891046d869",
+    "preview": "Почти. Правильный ответ: **ein**.\neinkaufen → ka"
+   },
+   {
+    "q": "Артикли der die das",
+    "concept": "articles",
+    "suggestions": 2,
+    "len": 344,
+    "sha": "25fe0f04ba42c3b28bf1ed4ea320f2b685fb07afa150dd7dd83a854332cf7368",
+    "preview": "**Der, die, das**\nJedes Nomen hat ein Genus. Ler"
+   },
+   {
+    "q": "Plural",
+    "concept": "plural",
+    "suggestions": 2,
+    "len": 222,
+    "sha": "d86eb8142e59e8576e33a5bd837549b7e27aa2951185fde4f8c0dadd8b14a031",
+    "preview": "**Der Plural**\nIm Plural ist der Artikel immer „"
+   },
+   {
+    "q": "weil",
+    "concept": "conjunctions",
+    "suggestions": 2,
+    "len": 432,
+    "sha": "093d5a908714e2a0ee13464934d5e830e4fb84baea73bcc28733102a835b371f",
+    "preview": "**Konjunktionen**\nund/aber/oder/denn: Position 0"
+   },
+   {
+    "q": "Модальные глаголы",
+    "concept": "modal",
+    "suggestions": 2,
+    "len": 346,
+    "sha": "1d8277a3d83f52e7970f55db960ac5d5026475671f6fdef6cb2d596f66995c6c",
+    "preview": "**Modalverben**\nModalverb auf Platz 2, Infinitiv"
+   },
+   {
+    "q": "Эмне үчүн Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 239,
+    "sha": "3b03a5625203c80e3cb6cc4207be1e427a2d515d83f368658d508975905e5451",
+    "preview": "**Dativ**\nWem? dem / der / dem / den.\n\nDer Adres"
+   },
+   {
+    "q": "Genitiv",
+    "concept": "genitiv",
+    "suggestions": 2,
+    "len": 288,
+    "sha": "1aa91860ee7875f299b43071185b8c410a616af834d0fe44998661b2cdb1d93f",
+    "preview": "**Genitiv (Überblick)**\nWessen? des Mannes, der "
+   },
+   {
+    "q": "Warum Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 239,
+    "sha": "3b03a5625203c80e3cb6cc4207be1e427a2d515d83f368658d508975905e5451",
+    "preview": "**Dativ**\nWem? dem / der / dem / den.\n\nDer Adres"
+   },
+   {
+    "q": "Wie funktioniert Perfekt?",
+    "concept": "perfekt",
+    "suggestions": 2,
+    "len": 281,
+    "sha": "83eff5dcee6ae5a8206acb191aeab65dbef9406aa6dc65d82ae1e4308f19f7fe",
+    "preview": "**Das Perfekt**\nhaben/sein + Partizip II.\n\nIm Ge"
+   }
+  ],
+  "de/A2": [
+   {
+    "q": "Привет",
+    "concept": null,
+    "suggestions": 4,
+    "len": 269,
+    "sha": "9d1679136f66407dea8ff8a6a7f2ab522d722a469b6b33099a47f37178c77fab",
+    "preview": "Я BilUp AI — ваш репетитор. Я знаю ваш уровень ("
+   },
+   {
+    "q": "Объясни Akkusativ",
+    "concept": "akkusativ",
+    "suggestions": 2,
+    "len": 342,
+    "sha": "e2f994000f7b66fff512b2a5b4eef69c223b77925a06a26516825bf637d0e91f",
+    "preview": "**Akkusativ**\nWen oder was? Nur Maskulinum änder"
+   },
+   {
+    "q": "Почему здесь Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 287,
+    "sha": "9f5d39cb5f6e4f1004fcb33d2111cc3e53bba59ca74ed8f0ee90138bbee3ee9c",
+    "preview": "**Dativ**\nWem? dem / der / dem / den.\n\nDer Adres"
+   },
+   {
+    "q": "Дай пять примеров",
+    "concept": "dativ",
+    "suggestions": 0,
+    "len": 286,
+    "sha": "15ddf574622f9f9de9570e8964bfb2ace5027191451eb034f1b566a776947b84",
+    "preview": "Примеры по теме «Dativ»:\n1. Ich helfe dem Mann. "
+   },
+   {
+    "q": "Расскажи про Perfekt",
+    "concept": "perfekt",
+    "suggestions": 2,
+    "len": 342,
+    "sha": "b8edd47e7c3ddc848ec1e7b92ab1da764ae2d9ba91a2bf69f434b8fae158e663",
+    "preview": "**Das Perfekt**\nhaben/sein + Partizip II.\n\nIm Ge"
+   },
+   {
+    "q": "Что такое Konjunktiv II?",
+    "concept": null,
+    "suggestions": 4,
+    "len": 177,
+    "sha": "7084c68b2af880205ca5e68023b71d463b95d830dfb70c6ceff98448790faab3",
+    "preview": "Это тема уровня B1+. Konjunktiv II (B1): „Ich hä"
+   },
+   {
+    "q": "Объясни Passiv",
+    "concept": null,
+    "suggestions": 4,
+    "len": 150,
+    "sha": "75115b7820471e3a0ae4b90e250722de1a4699de905e7d08bb71bfbd55a7fd4c",
+    "preview": "Это тема уровня B1+. Passiv (B1): „Das Haus wird"
+   },
+   {
+    "q": "Relativsatz",
+    "concept": null,
+    "suggestions": 4,
+    "len": 159,
+    "sha": "803e3406f6ce5bb109b75b972e2b0b797601f253607d60a895a97014ced3de82",
+    "preview": "Это тема уровня B1+. Relativsätze (B1): „Das ist"
+   },
+   {
+    "q": "В чём разница между wissen и kennen?",
+    "concept": null,
+    "suggestions": 4,
+    "len": 296,
+    "sha": "326f220c3dfe4ce705ee148d37e888801ab338e530f0b26e62fd80a033050eb7",
+    "preview": "**wissen vs. kennen**\n• **wissen** — знать факт:"
+   },
+   {
+    "q": "Исправь: Ich habe 25 Jahre",
+    "concept": "sein-haben",
+    "suggestions": 1,
+    "len": 115,
+    "sha": "b012a086c187f4cabc0949783ffd61d9a5772a8ca05326ff2c269641e46f7dad",
+    "preview": "❌ Ich habe 25 Jahre\n✅ Ich bin 25 Jahre alt\n\n**По"
+   },
+   {
+    "q": "Исправь: Ich gehe in die Schule und ich bin nicht müde",
+    "concept": null,
+    "suggestions": 0,
+    "len": 128,
+    "sha": "3037c9caf03ed20057b860734f4ae65bc2a0cb11b97329e3ca0387fcaf2122f7",
+    "preview": "Я не вижу типичных ошибок в «Ich gehe in die Sch"
+   },
+   {
+    "q": "Проверь меня",
+    "concept": "possessive",
+    "suggestions": 0,
+    "len": 74,
+    "sha": "7759b642d8af402f8d99bf24c0a3e3bdb25097607231d29f85db51e5493f717a",
+    "preview": "Давайте проверим:\n\n**Das ist ___ Mutter.**\nВариа"
+   },
+   {
+    "q": "неверный ответ",
+    "concept": null,
+    "suggestions": 1,
+    "len": 56,
+    "sha": "f0b56ae744ca32d7225033a3a0e9a5bbdab931ed175f793aaea33fcb8163c5bd",
+    "preview": "Почти. Правильный ответ: **meine**.\nЖенский род "
+   },
+   {
+    "q": "Артикли der die das",
+    "concept": "articles",
+    "suggestions": 2,
+    "len": 391,
+    "sha": "5107545adde9298c35d0c2e9d430706c2717d7b0ecbaf239fc379a948077e695",
+    "preview": "**Der, die, das**\nJedes Nomen hat ein Genus. Ler"
+   },
+   {
+    "q": "Plural",
+    "concept": "plural",
+    "suggestions": 2,
+    "len": 263,
+    "sha": "4b78a4768786011672dba25e5c42cd822a57f9feccbf3c0f459396a27a32830c",
+    "preview": "**Der Plural**\nIm Plural ist der Artikel immer „"
+   },
+   {
+    "q": "weil",
+    "concept": "conjunctions",
+    "suggestions": 2,
+    "len": 486,
+    "sha": "712a51b9aa2699c859f0889bb7fe1a17a618179cca78a6b499a0bb581804745f",
+    "preview": "**Konjunktionen**\nund/aber/oder/denn: Position 0"
+   },
+   {
+    "q": "Модальные глаголы",
+    "concept": "modal",
+    "suggestions": 2,
+    "len": 403,
+    "sha": "b642abe640bb585591476d0dde4d6d24a783012f089704f3801f8771d41745f2",
+    "preview": "**Modalverben**\nModalverb auf Platz 2, Infinitiv"
+   },
+   {
+    "q": "Эмне үчүн Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 287,
+    "sha": "9f5d39cb5f6e4f1004fcb33d2111cc3e53bba59ca74ed8f0ee90138bbee3ee9c",
+    "preview": "**Dativ**\nWem? dem / der / dem / den.\n\nDer Adres"
+   },
+   {
+    "q": "Genitiv",
+    "concept": "genitiv",
+    "suggestions": 2,
+    "len": 350,
+    "sha": "ef90fcf620ad8680af050d0121b0202741cc5581ae07bd32920ec783713b6559",
+    "preview": "**Genitiv (Überblick)**\nWessen? des Mannes, der "
+   },
+   {
+    "q": "Warum Dativ?",
+    "concept": "dativ",
+    "suggestions": 2,
+    "len": 287,
+    "sha": "9f5d39cb5f6e4f1004fcb33d2111cc3e53bba59ca74ed8f0ee90138bbee3ee9c",
+    "preview": "**Dativ**\nWem? dem / der / dem / den.\n\nDer Adres"
+   },
+   {
+    "q": "Wie funktioniert Perfekt?",
+    "concept": "perfekt",
+    "suggestions": 2,
+    "len": 342,
+    "sha": "b8edd47e7c3ddc848ec1e7b92ab1da764ae2d9ba91a2bf69f434b8fae158e663",
+    "preview": "**Das Perfekt**\nhaben/sein + Partizip II.\n\nIm Ge"
+   }
+  ]
+ }
+}

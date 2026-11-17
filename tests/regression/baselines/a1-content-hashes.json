@@ -1,0 +1,110 @@
+{
+ "semantic": {
+  "UNITS": {
+   "count": 10,
+   "sha256": "673e6466da413c62113f826a341d1ef5025e0be195dd08161a4f8985a5181e16"
+  },
+  "SECTIONS": {
+   "count": 8,
+   "sha256": "5c429822d585d65d9dcb0608506e64f9ca7704a686bf6ac1378825f06a7d8fd2"
+  },
+  "UNIT_SPEAKING": {
+   "count": 10,
+   "sha256": "80ee50b4f0c5ac9f7b73d51f188e8165123835ec95e3b7059ec49f36d70111a1"
+  },
+  "VOCABULARY": {
+   "count": 226,
+   "sha256": "173a3005dcb868bb992893990dbb3e24fc6f20598e2eaf9382ccbaaade99904c"
+  },
+  "GRAMMAR": {
+   "count": 20,
+   "sha256": "3eb7d5ee6d2583e59a61c6c10d8d05ed84c38f3050ef6005b55980f207923dba"
+  },
+  "WHY_NOTES": {
+   "count": 12,
+   "sha256": "2d0e6e58839668d90673c3054be6b75584c4b3efb5d609b6ba96c1afa2fbd816"
+  },
+  "EXERCISES": {
+   "count": 202,
+   "sha256": "dc2f1c1f988578f6da2b2368c7100180321cb4f0fa3292e221c747c7b3138a08"
+  },
+  "LISTENING": {
+   "count": 21,
+   "sha256": "61c753a9ef9ef7f97bad577e7fe97d814a63d2505c223077a6dc773a94203045"
+  },
+  "READING": {
+   "count": 10,
+   "sha256": "9bb05f3a4cf7c7f433e8db95381c4da248afad2ac1b4e07a109b081247e444bc"
+  },
+  "SPEAKING": {
+   "count": 11,
+   "sha256": "aea82e51527862aa92591337455afddb9d8830651556de8ca11a7c81ee61fe71"
+  },
+  "WRITING": {
+   "count": 10,
+   "sha256": "9ddc82552757c28dbb5e977dd05130ac693dd459cf1aa47658e277e7874ba9e2"
+  },
+  "REAL_LIFE": {
+   "count": 15,
+   "sha256": "3777ad405d2086e32048bea4360d2b51c71c3b4871dd5c4ad4197b99072d34d1"
+  },
+  "TESTS": {
+   "count": 15,
+   "sha256": "e09936ae92e1686174f12bc6e82921ad89a0a56b51d0ada5e65920663967b524"
+  },
+  "CASES": {
+   "count": null,
+   "sha256": "77d452e8ec2d8bc3b9718252cf341c884317bbc440df553fdfbab056e3481a08"
+  },
+  "CASE_BY_CONCEPT": {
+   "count": null,
+   "sha256": "c8d144bd0bacc2962dfedfd6ce44dca248695031a0e0d4509c287c1838ccc1ce"
+  },
+  "DEMO": {
+   "count": null,
+   "sha256": "d720b843b285e21970c92eec2d4488e016650aeb9b23e036a1226e016f6a0563"
+  },
+  "ERROR_PATTERNS": {
+   "count": 14,
+   "sha256": "42ad4b51ab0a77f3aae45e1f26e2e0e880b1282211f20528fd0d5f77634b6c65"
+  },
+  "SENTENCE_LABS": {
+   "count": null,
+   "sha256": "9ca820a62195548ba71a85d5ce2dee5dfba2167e2d044d0d936fe70a0f43995f"
+  },
+  "CONJ_LABS": {
+   "count": null,
+   "sha256": "0637f8c83567ef91d15d12debe30cfeceb4177a3d7f7ab043cbdbdcdf080e6ea"
+  },
+  "PLURAL_TYPES": {
+   "count": 5,
+   "sha256": "c6984860e67052362f9b88d266e90d7d57107790eefa1067e62159b2926332ae"
+  },
+  "PREP_POSITIONS": {
+   "count": 9,
+   "sha256": "ba12bf82ab6222e8813529fb7be065475780105d33cdc02aae70a235f45906b5"
+  },
+  "TIMELINE": {
+   "count": 3,
+   "sha256": "a0d383026d39b56e2c031f08cd77717757dd7332c4f02985af10bd746b086b8c"
+  },
+  "NEGATION_ITEMS": {
+   "count": 6,
+   "sha256": "e80de9da4fd54ebf3b0018f11a3e8ea8f75726253c93d4c484eff12bb7fe6297"
+  }
+ },
+ "files": {
+  "src/data/units.ts": "86d85eadc5881f6c8d187e8277abcf3a78e2facd72528d487c342807dcaa96e6",
+  "src/data/vocabulary.ts": "6dafeb8295df7b718b8d666b767f0e7d37312f4b6ba8ee69b4081859f2331d54",
+  "src/data/grammar.ts": "8e01319254305ac0c522acdfff0280b095d79110c857e753b881eb05af6efafc",
+  "src/data/exercises.ts": "5342a7f7d585e57fed7d46da067ee4d5ea79917cd87a04bef2af89a7ea377a11",
+  "src/data/listening.ts": "fe03ba2d7d5c213a9d62e1216284455a5b9691ca891ca90efec741f134a64d31",
+  "src/data/reading.ts": "12a7b06a4c28f4c99f4e1455cd9d8e013cc42c45e9a7bd7ab1b47cc23b3d5130",
+  "src/data/speaking.ts": "d2b407b91d85975518d1ae1bda2173ba066ae92238a6d1de26ed210fa7c20679",
+  "src/data/writing.ts": "af0c25db8527566ff8aca8fff83789759f5a076d4f3cf3d510fae67d980e507b",
+  "src/data/reallife.ts": "7ab40e910a49cf7c52dce1e78cc717ab27c78dfff1bf4f2efaf59a913114eb9f",
+  "src/data/cases.ts": "40d89e742d937262bc3921b1e73013e6b61c27cf3d1ae3e0cffb8d98404a4d44",
+  "src/data/visuals.ts": "1bcfcaffb72a4f32af5a80fe21119954ba5b2addb697df7f1d395e6a66d70df1",
+  "src/data/errorPatterns.ts": "89cd384f6257ef902cdeb9494589335186aa1c64a137a219b55cc650a066e0bf"
+ }
+}

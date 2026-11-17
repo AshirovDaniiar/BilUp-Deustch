@@ -9,7 +9,7 @@
  *  - Unknown top-level fields are preserved verbatim in `extras` (forward compatibility).
  *  - Idempotent: sanitising sanitised output yields identical output and no issues.
  */
-import { LEVELS, type Lang, type Mistake, type SkillName, type UserProgress } from '../data/types'
+import { LEVELS, type Lang, type Mistake, type SkillName, type TestResult, type UserProgress } from '../data/types'
 import { defaultProgress, emptyScores } from './defaults'
 
 export interface Issue {
@@ -28,6 +28,8 @@ export const LIMITS = {
   scoresPerSkill: 30,
   daily: 400,
   tests: 50,
+  /** results of placement and level tests that are kept per test id, in addition to the `tests` cap for ordinary results */
+  protectedTestsPerId: 10,
   tutorMessages: 60,
   tutorText: 4000,
   maxBox: 5,
@@ -240,6 +242,46 @@ function sanitizeDaily(c: Ctx, v: unknown): UserProgress['daily'] {
   return out
 }
 
+const TEST_KINDS = ['placement', 'level', 'topic', 'grammar', 'vocabulary', 'listening', 'speaking'] as const
+
+/** Placement and level results (by kind, or by the fixed ids when the kind is absent) are protected from eviction by ordinary test results. */
+export const isProtectedTest = (t: Pick<TestResult, 'id' | 'kind'>): boolean =>
+  t.kind === 'placement' || t.kind === 'level' || /^(placement|level-)/.test(t.id)
+
+/**
+ * Retention of test results (input in chronological order, output in the same order): the ordinary results keep the last `LIMITS.tests`; placement
+ * and level results are NOT counted against that cap, only the last `LIMITS.protectedTestsPerId` of each id are kept. With fewer than `LIMITS.tests`
+ * results nothing is removed, exactly as before.
+ */
+export function capTests<T extends Pick<TestResult, 'id' | 'kind'>>(list: readonly T[]): T[] {
+  const keep = new Set<T>()
+  const ordinary = list.filter(t => !isProtectedTest(t))
+  for (const t of ordinary.slice(-LIMITS.tests)) keep.add(t)
+  const perId = new Map<string, T[]>()
+  for (const t of list) if (isProtectedTest(t)) perId.set(t.id, [...(perId.get(t.id) ?? []), t])
+  for (const items of perId.values()) for (const t of items.slice(-LIMITS.protectedTestsPerId)) keep.add(t)
+  return list.filter(t => keep.has(t))
+}
+
+function sanitizeTestExtras(t: Record<string, unknown>): Partial<TestResult> {
+  const out: Partial<TestResult> = {}
+  if (typeof t.kind === 'string' && (TEST_KINDS as readonly string[]).includes(t.kind)) out.kind = t.kind as TestResult['kind']
+  if (typeof t.outcome === 'string' && t.outcome !== '' && t.outcome.length <= 40) out.outcome = t.outcome
+  if (typeof t.blueprint === 'string' && t.blueprint !== '' && t.blueprint.length <= 40) out.blueprint = t.blueprint
+  if (isPlainObject(t.parts)) {
+    const parts: Record<string, [number, number]> = {}
+    const entries = Object.entries(t.parts)
+    let ok = entries.length > 0 && entries.length <= 20
+    for (const [k, p] of entries) {
+      if (!ok) break
+      if (k.length > 40 || !Array.isArray(p) || p.length !== 2 || !isFiniteNumber(p[0]) || !isFiniteNumber(p[1]) || p[0] < 0 || p[1] < p[0] || p[1] > 500) ok = false
+      else parts[k] = [Math.round(p[0]), Math.round(p[1])]
+    }
+    if (ok) out.parts = parts
+  }
+  return out
+}
+
 function sanitizeTests(c: Ctx, v: unknown): UserProgress['tests'] {
   if (!Array.isArray(v)) {
     if (v !== undefined) note(c, 'tests', `expected array, got ${v === null ? 'null' : typeof v}`)
@@ -262,10 +304,10 @@ function sanitizeTests(c: Ctx, v: unknown): UserProgress['tests'] {
       dropped++
       continue
     }
-    out.push({ id: t.id, at: t.at, pct: Math.round(Math.max(0, Math.min(100, pct))), weak: ids(t.weak), strong: ids(t.strong) })
+    out.push({ id: t.id, at: t.at, pct: Math.round(Math.max(0, Math.min(100, pct))), weak: ids(t.weak), strong: ids(t.strong), ...sanitizeTestExtras(t) })
   }
   if (dropped) note(c, 'tests', `${dropped} invalid entr${dropped === 1 ? 'y' : 'ies'} dropped`)
-  return out.length > LIMITS.tests ? out.slice(-LIMITS.tests) : out
+  return capTests(out)
 }
 
 function sanitizeTutor(c: Ctx, v: unknown): UserProgress['tutor'] {

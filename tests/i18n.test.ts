@@ -16,8 +16,8 @@ const ru = dictionaries.ru as Record<string, string>
 const keys = Object.keys(ru) as TKey[]
 const identicalToRu = (lang: 'ky' | 'de') => keys.filter(k => (dictionaries[lang] as Record<string, string>)[k] === ru[k])
 
-/** Ratchet baselines measured at P0. Lower is better; raise only with a recorded reason. */
-const BASELINE = { kyIdenticalToRu: 173, deIdenticalToRu: 10, totalKeys: 280 }
+/** Ratchet baselines measured at P0. Lower is better; raise only with a recorded reason. totalKeys 280 → 283: Stage 7A.2 added levelLoading, levelLoadFailed, levelLoadFailedAgain (lazy A2 loading UX, ru + ky + de). 283 → 284: Stage 9B added audioUnavailable (listening fallback when no German speech voice exists, ru + ky + de). 284 → 288: Stage 9C added qMeaning, qGerman, qWordIs, qListenWhy (localized A2 vocabulary / listening question texts, ru + ky + de). 288 → 289: Stage Beta added betaNotice (the A2 Beta notice, ru + ky + de). kyIdenticalToRu 173 → 119: Stage 9C wrote Kyrgyz (UNREVIEWED AI draft) for the assessment, daily, review and result strings that were inherited from Russian. */
+const BASELINE = { kyIdenticalToRu: 119, deIdenticalToRu: 10, totalKeys: 289 }
 
 describe('UI dictionaries: structure', () => {
   it('ky and de define exactly the keys of ru (no missing, no extra)', () => {

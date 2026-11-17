@@ -1,6 +1,6 @@
 import { findErrors, type FoundError } from '../data/errorPatterns'
 import type { SpeakingTurn, WritingTask } from '../data/types'
-import { VOCABULARY } from '../data/vocabulary'
+import { allVocabulary } from '../data/catalog'
 import { clamp, normalize, words } from '../utils/text'
 
 /**
@@ -58,8 +58,16 @@ export interface WritingFeedback {
 }
 
 const AMBIGUOUS = new Set(['morgen', 'bar', 'essen'])
-const NOUNS = VOCABULARY.filter(v => v.pos === 'noun' && !AMBIGUOUS.has(v.de.toLowerCase()))
-const nounMap = new Map(NOUNS.map(n => [n.de.toLowerCase(), n.de]))
+// Built from the vocabulary of every LOADED level and rebuilt when a lazy level's words arrive (allVocabulary grows in place).
+let nounMapSize = -1
+let nounMapCache = new Map<string, string>()
+const nounMapOf = () => {
+  if (nounMapSize !== allVocabulary.length) {
+    nounMapSize = allVocabulary.length
+    nounMapCache = new Map(allVocabulary.filter(v => v.pos === 'noun' && !AMBIGUOUS.has(v.de.toLowerCase())).map(n => [n.de.toLowerCase(), n.de]))
+  }
+  return nounMapCache
+}
 
 export function analyseWriting(text: string, task: WritingTask): WritingFeedback {
   const lower = text.toLowerCase()
@@ -74,7 +82,7 @@ export function analyseWriting(text: string, task: WritingTask): WritingFeedback
   const spelling: { word: string; fix: string }[] = []
   for (const raw of toks) {
     const w = raw.replace(/[.,!?;:()"„“]/g, '')
-    const fix = nounMap.get(w.toLowerCase())
+    const fix = nounMapOf().get(w.toLowerCase())
     if (fix && w[0] === w[0].toLowerCase() && !spelling.some(s => s.word === w)) spelling.push({ word: w, fix })
   }
   const sentences = text.split(/(?<=[.!?])\s+/).filter(s => s.trim())

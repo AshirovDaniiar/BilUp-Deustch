@@ -3,22 +3,44 @@ import { A } from '../../app/router'
 import { useApp } from '../../app/store'
 import { Button, Card, Ring } from '../../components/ui'
 import { Mascot } from '../../components/Mascot'
-import { grammarById } from '../../data/grammar'
+import { grammarIndex } from '../../data/catalog'
 import type { SkillName } from '../../data/types'
 import { pct, tr } from '../../utils/text'
 import { QuizRunner, type QuizActivity, type QuizResult } from './QuizRunner'
 import type { Question } from './questions'
 
-const SKILL_TO_SCORE: Record<string, SkillName> = { grammar: 'grammar', vocabulary: 'vocabulary', listening: 'listening', reading: 'reading' }
+const SKILL_TO_SCORE: Record<string, SkillName> = {
+  grammar: 'grammar',
+  vocabulary: 'vocabulary',
+  listening: 'listening',
+  reading: 'reading',
+}
 
 export function summarise(r: QuizResult) {
-  const strong = Object.entries(r.bySkill).filter(([, [c, n]]) => n >= 2 && c / n >= 0.8).map(([k]) => k)
-  const weakConcepts = Object.entries(r.byConcept).filter(([, [c, n]]) => c < n).sort((a, b) => a[1][0] / a[1][1] - b[1][0] / b[1][1]).map(([k]) => k)
-  const weakSkills = Object.entries(r.bySkill).filter(([, [c, n]]) => n >= 2 && c / n < 0.6).map(([k]) => k)
+  const strong = Object.entries(r.bySkill)
+    .filter(([, [c, n]]) => n >= 2 && c / n >= 0.8)
+    .map(([k]) => k)
+  const weakConcepts = Object.entries(r.byConcept)
+    .filter(([, [c, n]]) => c < n)
+    .sort((a, b) => a[1][0] / a[1][1] - b[1][0] / b[1][1])
+    .map(([k]) => k)
+  const weakSkills = Object.entries(r.bySkill)
+    .filter(([, [c, n]]) => n >= 2 && c / n < 0.6)
+    .map(([k]) => k)
   return { strong, weakConcepts, weakSkills, pct: pct(r.correct, r.total) }
 }
 
-export function ResultCard({ result, onRetry, children, backTo }: { result: QuizResult; onRetry?: () => void; children?: ReactNode; backTo: string }) {
+export function ResultCard({
+  result,
+  onRetry,
+  children,
+  backTo,
+}: {
+  result: QuizResult
+  onRetry?: () => void
+  children?: ReactNode
+  backTo: string
+}) {
   const { t, lang } = useApp()
   const s = summarise(result)
   const tone = s.pct >= 80 ? 'green' : s.pct >= 60 ? 'blue' : 'yellow'
@@ -30,7 +52,9 @@ export function ResultCard({ result, onRetry, children, backTo }: { result: Quiz
         </Ring>
         <div className="grow">
           <div className="eyebrow">{t('result')}</div>
-          <div className="h2">{result.correct} / {result.total}</div>
+          <div className="h2">
+            {result.correct} / {result.total}
+          </div>
           <p className="muted small">{s.pct >= 80 ? '🎉' : s.pct >= 60 ? '👍' : '🌱'}</p>
         </div>
         <Mascot variant="avatar" size={56} decorative className="result__mascot" />
@@ -39,7 +63,13 @@ export function ResultCard({ result, onRetry, children, backTo }: { result: Quiz
       {s.strong.length > 0 && (
         <div>
           <div className="eyebrow">{t('strengths')}</div>
-          <div className="row" style={{ marginTop: 6 }}>{s.strong.map(k => <span key={k} className="chip chip--green">{t(`sk_${k}` as 'sk_grammar')}</span>)}</div>
+          <div className="row" style={{ marginTop: 6 }}>
+            {s.strong.map(k => (
+              <span key={k} className="chip chip--green">
+                {t(`sk_${k}` as 'sk_grammar')}
+              </span>
+            ))}
+          </div>
         </div>
       )}
       <div>
@@ -48,8 +78,19 @@ export function ResultCard({ result, onRetry, children, backTo }: { result: Quiz
           <p className="muted small">{t('noWeak')}</p>
         ) : (
           <div className="row" style={{ marginTop: 6 }}>
-            {s.weakSkills.map(k => <span key={k} className="chip chip--yellow">{t(`sk_${k}` as 'sk_grammar')}</span>)}
-            {s.weakConcepts.map(id => { const c = grammarById.get(id); return c ? <span key={id} className="chip chip--yellow">{tr(c.title, lang)}</span> : null })}
+            {s.weakSkills.map(k => (
+              <span key={k} className="chip chip--yellow">
+                {t(`sk_${k}` as 'sk_grammar')}
+              </span>
+            ))}
+            {s.weakConcepts.map(id => {
+              const c = grammarIndex.get(id)
+              return c ? (
+                <span key={id} className="chip chip--yellow">
+                  {tr(c.title, lang)}
+                </span>
+              ) : null
+            })}
           </div>
         )}
       </div>
@@ -58,15 +99,23 @@ export function ResultCard({ result, onRetry, children, backTo }: { result: Quiz
           <div className="eyebrow">{t('nextTopics')}</div>
           <div className="stack stack--sm" style={{ marginTop: 6 }}>
             {s.weakConcepts.slice(0, 3).map(id => {
-              const c = grammarById.get(id)
-              return c ? <A key={id} to={`/learn/topic/${id}`} className="linkrow">🧪 {tr(c.title, lang)} <span aria-hidden>→</span></A> : null
+              const c = grammarIndex.get(id)
+              return c ? (
+                <A key={id} to={`/learn/topic/${id}`} className="linkrow">
+                  🧪 {tr(c.title, lang)} <span aria-hidden>→</span>
+                </A>
+              ) : null
             })}
           </div>
         </div>
       )}
       {children}
       <div className="row">
-        {onRetry && <Button variant="soft" onClick={onRetry}>{t('retry')}</Button>}
+        {onRetry && (
+          <Button variant="soft" onClick={onRetry}>
+            {t('retry')}
+          </Button>
+        )}
         <Button to={backTo}>{t('continue')}</Button>
       </div>
     </Card>
@@ -74,7 +123,19 @@ export function ResultCard({ result, onRetry, children, backTo }: { result: Quiz
 }
 
 /** Runs a quiz, records the skill scores, then shows a result card. */
-export function QuizPage({ build, backTo, onFinished, extra, activity }: { build: () => Question[]; backTo: string; onFinished?: (r: QuizResult) => void; extra?: (r: QuizResult) => ReactNode; activity: QuizActivity }) {
+export function QuizPage({
+  build,
+  backTo,
+  onFinished,
+  extra,
+  activity,
+}: {
+  build: () => Question[]
+  backTo: string
+  onFinished?: (r: QuizResult) => void
+  extra?: (r: QuizResult) => ReactNode
+  activity: QuizActivity
+}) {
   const { actions } = useApp()
   const [questions, setQuestions] = useState<Question[]>(build)
   const [result, setResult] = useState<QuizResult | null>(null)

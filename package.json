@@ -16,9 +16,14 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "content:validate": "vite-node scripts/content-validate/cli.ts",
+    "content:validate:release": "vite-node scripts/content-validate/cli.ts --release",
     "boundaries:report": "node scripts/check-boundaries.mjs",
     "build:ci": "tsc --noEmit && vite build --outDir .tmp-build --emptyOutDir",
-    "check": "npm run typecheck && npm run lint && npm run test && npm run content:validate && npm run boundaries:report && npm run build:ci"
+    "check": "npm run typecheck && npm run lint && npm run test && npm run content:validate && npm run boundaries:report && npm run build:ci",
+    "review:package": "vite-node scripts/review/generate.ts",
+    "review:system": "vite-node scripts/review/generate-system.ts",
+    "review:validate": "vite-node scripts/review/validate-cli.ts",
+    "review:responses": "vite-node scripts/review/responses-cli.ts"
   },
   "dependencies": {
     "react": "^18.3.1",

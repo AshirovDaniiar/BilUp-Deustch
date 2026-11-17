@@ -1,0 +1,28 @@
+{
+  "note": "sizes in bytes; gzip/brotli are per-file compressed sizes",
+  "mainJs": {
+    "raw": 569721,
+    "gzip": 181501,
+    "brotli": 148584
+  },
+  "css": {
+    "raw": 42751,
+    "gzip": 9221,
+    "brotli": 8150
+  },
+  "jsFiles": [
+    "assets/index-D2DCy4R2.js"
+  ],
+  "precacheFiles": 13,
+  "precacheTotal": {
+    "raw": 1037650,
+    "gzip": 614102,
+    "brotli": 580083
+  },
+  "srcDataTs": {
+    "files": 13,
+    "raw": 207439,
+    "gzip": 72980,
+    "brotli": 63546
+  }
+}

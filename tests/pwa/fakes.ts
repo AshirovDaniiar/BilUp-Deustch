@@ -42,6 +42,12 @@ class FakeCache {
     this.puts.push(u)
     this.store.set(u, { body: await res.text(), status: res.status })
   }
+  async keys() {
+    return [...this.store.keys()].map(u => new Request(u))
+  }
+  async delete(req: Request | string) {
+    return this.store.delete(typeof req === 'string' ? req : req.url)
+  }
   async match(req: Request | string) {
     const u = typeof req === 'string' ? req : req.url
     const v = this.store.get(u)

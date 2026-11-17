@@ -1,0 +1,44 @@
+[
+  {
+    "schema": 1,
+    "unit": 12,
+    "title": "Familie, Freunde und Zusammenleben",
+    "dimension": "de-cefr",
+    "status": "pending",
+    "reviewer": {
+      "name": "",
+      "qualification": ""
+    },
+    "reviewDate": "",
+    "reviewedFingerprint": "",
+    "findings": []
+  },
+  {
+    "schema": 1,
+    "unit": 12,
+    "title": "Familie, Freunde und Zusammenleben",
+    "dimension": "ru-localization",
+    "status": "pending",
+    "reviewer": {
+      "name": "",
+      "qualification": ""
+    },
+    "reviewDate": "",
+    "reviewedFingerprint": "",
+    "findings": []
+  },
+  {
+    "schema": 1,
+    "unit": 12,
+    "title": "Familie, Freunde und Zusammenleben",
+    "dimension": "ky-localization",
+    "status": "pending",
+    "reviewer": {
+      "name": "",
+      "qualification": ""
+    },
+    "reviewDate": "",
+    "reviewedFingerprint": "",
+    "findings": []
+  }
+]
