@@ -1,4 +1,4 @@
-import type { TestDef, TestQuestion } from '../types'
+import type { LanguageLevel, TestDef, TestQuestion } from '../types'
 
 /**
  * Strict localised text for A2: Russian AND Kyrgyz are both required by the type, so an A2 field cannot even be written without
@@ -36,7 +36,8 @@ export interface A2TestQuestion extends Omit<TestQuestion, 'promptRu' | 'promptK
 export interface PlannedUnit {
   id: number
   key: string
-  level: 'A2'
+  /** the level that owns the unit (the plan type is shared by every strict level: A2, B1, …) */
+  level: LanguageLevel
   /** the approved German title; a defined unit's `title` must equal it */
   titleDe: string
 }

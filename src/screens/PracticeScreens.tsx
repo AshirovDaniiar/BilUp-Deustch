@@ -4,11 +4,13 @@ import { useApp, useAttempt } from '../app/store'
 import { Button, Card, Chip, PageHeader, Ring } from '../components/ui'
 import { SpeakButton } from '../components/SpeakButton'
 import { availableLevels } from '../data/course'
-import { testIndex, testsOf, vocabularyIndex } from '../data/catalog'
+import { levelAssessmentOf, testIndex, testsOf, vocabularyIndex } from '../data/catalog'
 import { SpeakInput } from '../features/speaking/SpeakInput'
 import { analyseSpeaking, type SpeakingScore } from '../services/analysis'
 import { SpeakScoreCard } from '../features/speaking/ScoreCard'
 import { activeLevel, articleConfusion, dueWordIds } from '../features/progress/stats'
+import { LevelResultCard } from '../features/tests/LevelResultCard'
+import { LEVEL_BLUEPRINT, evaluateLevel, levelOutcomeCode } from '../features/tests/levelAssessment'
 import { PassNote } from '../features/tests/PassNote'
 import { QuizPage, summarise } from '../features/tests/QuizPage'
 import { QuizRunner, type QuizResult } from '../features/tests/QuizRunner'
@@ -180,8 +182,16 @@ export function TestRunnerPage({ id }: { id: string }) {
   const nextLevelAvailable = availableLevels(lang).includes('A2') && testIndex.has('placement-a2')
   const def = testIndex.get(id)
   if (!def || !isTestAvailable(def)) return <NotFound />
+  // a level with an authored indicative assessment (B1): the parts, the provisional rule and the fixed statement come with the data
+  const assessment = def.kind === 'level' ? levelAssessmentOf(def.level) : undefined
   const finished = (r: QuizResult) => {
     const s = summarise(r)
+    if (assessment) {
+      const o = evaluateLevel(assessment, r.bySection)
+      const parts = Object.fromEntries(o.parts.filter(p => p.total > 0).map(p => [p.key, [p.correct, p.total] as [number, number]]))
+      actions.addTest({ id, at: Date.now(), pct: s.pct, weak: s.weakConcepts, strong: s.strong, kind: 'level', parts, outcome: levelOutcomeCode(o.band), blueprint: LEVEL_BLUEPRINT })
+      return
+    }
     actions.addTest({ id, at: Date.now(), pct: s.pct, weak: s.weakConcepts, strong: s.strong })
   }
   return (
@@ -192,8 +202,11 @@ export function TestRunnerPage({ id }: { id: string }) {
         backTo={def.unit ? `/learn/unit/${def.unit}` : '/practice/tests'}
         onFinished={finished}
         activity={{ id: `test:${def.id}`, kind: 'assessment', completes: def.unit ? [`${def.unit}:test`] : [] }}
+        sections={assessment?.questions.map(q => q.part)}
         extra={r =>
-          def.kind === 'placement' ? (
+          assessment ? (
+            <LevelResultCard assessment={assessment} result={r} />
+          ) : def.kind === 'placement' ? (
             <Card tone="blue">
               <div className="eyebrow">{t('yourLevelIs')}</div>
               <div className="h2">

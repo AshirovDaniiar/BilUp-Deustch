@@ -20,8 +20,9 @@
  *
  * Layering: `data` (rank 0) — imports only other `data` modules.
  */
-import type { A2Content } from './a2/a2-content'
 import { A2_UNIT_PLAN } from './a2/registry'
+import { B1_UNIT_PLAN } from './b1/registry'
+import type { B1LevelAssessment } from './b1/types'
 import type { A2FinalTest } from './a2/tests'
 import type { A2PlacementItem, LearnerInstruction, PlannedUnit, TutorTemplate } from './a2/types'
 import { COURSE, courseLevel, isLevelVisible, levelOfUnitId } from './course'
@@ -72,6 +73,8 @@ export interface LevelContent {
   instructions: readonly LearnerInstruction[]
   /** the approved unit plan of the level: stable identity only, never content */
   plan: readonly PlannedUnit[]
+  /** the authored indicative level assessment (`level-b1`, B1 only); absent for every other level */
+  levelTest?: B1LevelAssessment
 }
 
 const EMPTY: LevelContent = Object.freeze({
@@ -100,7 +103,20 @@ const emptyLive = (plan: readonly PlannedUnit[]): Live<LevelContent> => ({
   unitSpeaking: [], finalTests: [], placement: [], tutorTemplates: [], instructions: [], plan,
 })
 
-const A2_LIVE = emptyLive(A2_UNIT_PLAN)
+/**
+ * LAZY LEVELS (A2, B1, …): each has an EMPTY mutable slot (its plan only) and a loader that fetches the level's content module as a separate
+ * chunk. Adding a lazy level = one slot, one loader (a literal `import()` so the bundler gives it its own `<level>-content-*.js` chunk) and one
+ * course-registry entry; nothing else in this module names a level.
+ */
+type LazyLevel = 'A2' | 'B1'
+/** What a lazy level's content module exports: the level's collections (the plan is separate and stays in the entry bundle). */
+export type LevelPayload = Omit<Live<LevelContent>, 'plan'>
+const LIVE: Record<LazyLevel, Live<LevelContent>> = { A2: emptyLive(A2_UNIT_PLAN), B1: emptyLive(B1_UNIT_PLAN) }
+const LOADERS: Record<LazyLevel, () => Promise<LevelPayload>> = {
+  A2: () => import('./a2/a2-content').then(m => m.A2_CONTENT),
+  B1: () => import('./b1/b1-content').then(m => m.B1_CONTENT),
+}
+const isLazyLevel = (level: LanguageLevel): level is LazyLevel => Object.prototype.hasOwnProperty.call(LOADERS, level)
 
 const CONTENT: Partial<Record<LanguageLevel, LevelContent>> = {
   A1: {
@@ -121,7 +137,8 @@ const CONTENT: Partial<Record<LanguageLevel, LevelContent>> = {
     instructions: [],
     plan: [],
   },
-  A2: A2_LIVE,
+  A2: LIVE.A2,
+  B1: LIVE.B1,
 }
 
 
@@ -147,6 +164,8 @@ export const finalTestsOf = (level: LanguageLevel) => contentOf(level).finalTest
 export const placementOf = (level: LanguageLevel) => contentOf(level).placement
 export const tutorTemplatesOf = (level: LanguageLevel) => contentOf(level).tutorTemplates
 export const instructionsOf = (level: LanguageLevel) => contentOf(level).instructions
+/** The authored indicative level assessment of a level (B1 only); undefined when the level has none. */
+export const levelAssessmentOf = (level: LanguageLevel): B1LevelAssessment | undefined => contentOf(level).levelTest
 /** The approved unit plan of a level (identity only). Nothing in the application reads it; the validator does. */
 export const plannedUnitsOf = (level: LanguageLevel) => contentOf(level).plan
 
@@ -208,16 +227,16 @@ const loaded = new Set<LanguageLevel>(['A1'])
 const loading = new Map<LanguageLevel, Promise<void>>()
 
 /** True when the level's content is available to the selectors (A1 always; a lazy level after `loadLevelContent`/`registerLevelContent`). */
-export const isLevelContentLoaded = (level: LanguageLevel): boolean => loaded.has(level) || (CONTENT[level] === undefined && level !== 'A2')
+export const isLevelContentLoaded = (level: LanguageLevel): boolean => loaded.has(level) || !isLazyLevel(level)
 
 /**
  * Make a lazy level's content available: assign its collections (by reference) into the level's slot and add its items to the
  * cross-level indexes and lists. Idempotent. Used by `loadLevelContent` and by build tooling / tests that import the content statically;
  * the application itself only calls `loadLevelContent`. Never exposes a level: visibility is the course registry's business.
  */
-export function registerLevelContent(level: LanguageLevel, content: A2Content): void {
-  if (level !== 'A2' || loaded.has(level)) return
-  Object.assign(A2_LIVE, content)
+export function registerLevelContent(level: LanguageLevel, content: LevelPayload): void {
+  if (!isLazyLevel(level) || loaded.has(level)) return
+  Object.assign(LIVE[level], content)
   ;(allUnits as LearningUnit[]).push(...content.units)
   ;(allVocabulary as VocabularyItem[]).push(...content.vocabulary)
   for (const [map, items] of [
@@ -229,7 +248,7 @@ export function registerLevelContent(level: LanguageLevel, content: A2Content): 
     [writingMap, content.writing],
     [speakingMap, content.speaking],
     [testMap, content.tests],
-  ] as [Map<string, { id: string }>, { id: string }[]][])
+  ] as [Map<string, { id: string }>, readonly { id: string }[]][])
     for (const x of items) map.set(x.id, x)
   loaded.add(level)
 }
@@ -246,8 +265,8 @@ export function loadLevelContent(level: LanguageLevel, options: { preview?: bool
   if (pending) return pending
   const allowed = isLevelVisible(level) || (options.preview === true && import.meta.env.DEV)
   if (!allowed) return Promise.reject(new Error(`level ${level} is not available: it is planned and has not been released`))
-  const p = import('./a2/a2-content').then(m => {
-    registerLevelContent(level, m.A2_CONTENT)
+  const p = LOADERS[level as LazyLevel]().then(content => {
+    registerLevelContent(level, content)
   })
   loading.set(level, p)
   p.catch(() => loading.delete(level)) // a failed chunk load may be retried

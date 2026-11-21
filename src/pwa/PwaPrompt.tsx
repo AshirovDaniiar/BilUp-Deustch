@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { useApp } from '../app/store'
 import { PWA_MESSAGES } from './messages'
 import type { PwaHandle } from './register'
@@ -94,9 +94,32 @@ export function PwaPrompt({ handle }: { handle: Promise<PwaHandle> | null }) {
     write(DISMISS_KEY, '1')
   }
 
+  // The notice is position:fixed, so it floats over the bottom of the page. While it is visible the page reserves exactly its height at the bottom (CSS: `html.has-pwa-note .main`),
+  // so every control — quiz buttons, assessment buttons — can be scrolled above it. Nothing is hidden and no notice is dismissed on the learner's behalf; the class and the variable are removed with the notice.
+  const shown: 'update' | 'install' | 'ios' | null =
+    update && !updateDeferred ? 'update' : dismissed ? null : installEvent ? 'install' : ios ? 'ios' : null
+  const noteRef = useRef<HTMLDivElement>(null)
+  useLayoutEffect(() => {
+    const node = noteRef.current
+    if (!shown || !node) return
+    const root = document.documentElement
+    const apply = () => root.style.setProperty('--pwa-note-h', `${Math.ceil(node.getBoundingClientRect().height)}px`)
+    root.classList.add('has-pwa-note')
+    apply()
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(apply)
+    observer?.observe(node)
+    window.addEventListener('resize', apply)
+    return () => {
+      observer?.disconnect()
+      window.removeEventListener('resize', apply)
+      root.classList.remove('has-pwa-note')
+      root.style.removeProperty('--pwa-note-h')
+    }
+  }, [shown, lang])
+
   if (update && !updateDeferred) {
     return (
-      <div className="pwa-note" role="status" aria-live="polite" data-testid="pwa-update">
+      <div className="pwa-note" ref={noteRef} role="status" aria-live="polite" data-testid="pwa-update">
         <div className="pwa-note__text">
           <strong>{m.updateTitle}</strong>
           <span>{m.updateBody}</span>
@@ -117,7 +140,7 @@ export function PwaPrompt({ handle }: { handle: Promise<PwaHandle> | null }) {
 
   if (installEvent) {
     return (
-      <div className="pwa-note" role="status" aria-live="polite" data-testid="pwa-install">
+      <div className="pwa-note" ref={noteRef} role="status" aria-live="polite" data-testid="pwa-install">
         <div className="pwa-note__text">
           <strong>{m.installTitle}</strong>
           <span>{m.installBody}</span>
@@ -143,7 +166,7 @@ export function PwaPrompt({ handle }: { handle: Promise<PwaHandle> | null }) {
 
   if (ios) {
     return (
-      <div className="pwa-note" role="status" aria-live="polite" data-testid="pwa-ios">
+      <div className="pwa-note" ref={noteRef} role="status" aria-live="polite" data-testid="pwa-ios">
         <div className="pwa-note__text">
           <strong>{m.iosTitle}</strong>
           <span>{m.iosBody}</span>

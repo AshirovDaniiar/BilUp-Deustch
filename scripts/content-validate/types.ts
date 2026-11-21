@@ -1,4 +1,8 @@
 // Shared types of the content validator (Stage 6A). Pure data: no I/O, no randomness, no network.
+import type { B1UnitMeta } from '../../src/data/b1/meta'
+import type { B1LevelAssessment } from '../../src/data/b1/types'
+import type { B1Decision } from './b1/decisions'
+import type { B1Curriculum } from './b1/types'
 import type { A2FinalTest } from '../../src/data/a2/tests'
 import type { A2PlacementItem, LearnerInstruction, PlannedUnit, TutorTemplate } from '../../src/data/a2/types'
 import type {
@@ -93,6 +97,14 @@ export interface ContentBundle {
   instructions?: LearnerInstruction[]
   /** ids (vocabulary) whose Kyrgyz is intentionally identical to the Russian (loanwords, proper nouns, numbers) */
   sameAsRu?: readonly string[]
+  /** B1 unit metadata (objectives, productive/receptive classification, strands, revision sets): the data rules/b1.ts checks */
+  b1Meta?: readonly B1UnitMeta[]
+  /** the B1 curriculum configuration (provisional until the owner's approval is recorded) */
+  b1Curriculum?: B1Curriculum
+  /** the register of every open B1 curriculum decision (D-1…D-14 and the X-n items found while authoring) */
+  b1Decisions?: readonly B1Decision[]
+  /** the authored indicative B1 level assessment (items, parts, thresholds, notes), checked structurally */
+  b1LevelTest?: B1LevelAssessment
 }
 
 export interface Options {

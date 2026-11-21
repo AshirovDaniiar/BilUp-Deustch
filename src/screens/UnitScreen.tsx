@@ -17,7 +17,9 @@ export function UnitScreen({ id }: { id: number }) {
   const unit = unitById(id)
   if (!unit) return <NotFound />
   const p = unitProgress(state, id)
-  const writing = writingForUnit(id)[0] // the unit's writing task by its `unit` metadata, not by an id pattern
+  const writingTasks = writingForUnit(id)
+  const writing = writingTasks[0] // the unit's main writing task by its `unit` metadata, not by an id pattern
+  const extraWriting = writingTasks.slice(1) // further short tasks of the unit (B1 micro-tasks); A1/A2 units have exactly one task, so nothing extra is shown there
   const unitTest = topicTestOfUnit(id) // the unit's final test and its size come from the test definition
   const listening = listeningForUnit(id)[0]
   const reading = readingForUnit(id)[0]
@@ -58,6 +60,21 @@ export function UnitScreen({ id }: { id: number }) {
           )
         })}
       </div>
+      {extraWriting.length > 0 && (
+        <div className="sections" data-testid="extra-writing">
+          {extraWriting.map(w => (
+            <A key={w.id} to={`/practice/writing/${w.id}`} className="secrow card card--interactive">
+              <span className="secrow__num">+</span>
+              <span className="secrow__icon" aria-hidden>{ICONS.writing}</span>
+              <span className="grow">
+                <b>{t('sec_writing')}</b>
+                <span className="muted small break" style={{ display: 'block' }}>{w.title}</span>
+              </span>
+              <span aria-hidden>→</span>
+            </A>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

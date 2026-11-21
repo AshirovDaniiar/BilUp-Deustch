@@ -50,8 +50,50 @@ describe('built output', () => {
     expect(rec.precache.some((p: string) => /a2-content/.test(p))).toBe(false)
     expect(rec.precache.some((p: string) => /^assets\/index-.*\.js$/.test(p))).toBe(true)
     // …but the worker knows it as a LAZY file: cached only after its first successful use (see tests/pwa/lazy-cache.test.ts)
-    expect(rec.lazy).toHaveLength(1)
-    expect(rec.lazy[0].startsWith('assets/a2-content-')).toBe(true)
-    expect(read('sw.js')).toContain(rec.lazy[0])
+    const a2 = rec.lazy.filter((p: string) => p.startsWith('assets/a2-content-'))
+    expect(a2).toHaveLength(1)
+    expect(read('sw.js')).toContain(a2[0])
+  })
+
+  // B1 Stage 1: B1 has its own lazy chunk (empty today: no lesson exists). It must behave exactly like the A2 chunk — never precached, lazy-listed.
+  // B1 Unit 21 (Stage 3A): the learning material is in the B1 chunk and NOWHERE ELSE — a learner who cannot see B1 never downloads it.
+  it('the Unit 21 learning content is in the b1 chunk and NOT in the entry bundle or the A2 chunk', () => {
+    const entry = read(`assets/${assets.find(f => /^index-/.test(f) && f.endsWith('.js'))}`)
+    const b1 = read(`assets/${assets.find(f => /^b1-content-/.test(f))}`)
+    const a2 = read(`assets/${assets.find(f => /^a2-content-/.test(f))}`)
+    for (const text of [
+      'Meine erste Nacht in Deutschland',
+      'b1-ft-21-01',
+      'Zufällig getroffen',
+      'Ошол кечте биз көп күлдүк.',
+      'Erlebnisse und Erinnerungen erzählen',
+    ]) {
+      expect(b1.includes(text), `b1 chunk lacks "${text}"`).toBe(true)
+      expect(a2.includes(text), `a2 chunk contains "${text}"`).toBe(false)
+    }
+    // the unit TITLE is part of the plan and may live in the entry bundle; the lessons may not
+    for (const text of [
+      'Meine erste Nacht in Deutschland',
+      'b1-ft-21-01',
+      'Zufällig getroffen',
+      'Ошол кечте биз көп күлдүк.',
+      'Fixturewort',
+      'b1-praeteritum-erzaehlen',
+    ])
+      expect(entry.includes(text), `entry bundle contains "${text}"`).toBe(false)
+  })
+  it('has one separate B1 content chunk, referenced only by the entry bundle dynamic import (not by index.html)', () => {
+    expect(assets.filter(f => /^b1-content-.*\.js$/.test(f))).toHaveLength(1)
+    const entry = read(`assets/${assets.find(f => /^index-/.test(f) && f.endsWith('.js'))}`)
+    expect(entry).toMatch(/b1-content-[\w-]+\.js/)
+    expect(read('index.html')).not.toMatch(/b1-content/)
+  })
+  it('the B1 chunk is NOT precached (nobody downloads it while B1 is planned) and is listed as lazy next to A2; both are known to the worker', () => {
+    const rec = JSON.parse(read('pwa-build.json'))
+    expect(rec.precache.some((p: string) => /b1-content/.test(p))).toBe(false)
+    expect(rec.precache.some((p: string) => /a2-content/.test(p))).toBe(false)
+    expect(rec.lazy.filter((p: string) => p.startsWith('assets/b1-content-'))).toHaveLength(1)
+    expect(rec.lazy).toHaveLength(2)
+    for (const f of rec.lazy) expect(read('sw.js')).toContain(f)
   })
 })

@@ -52,7 +52,7 @@ describe('the A2 unit plan (registry)', () => {
   it('only units 11–20 are defined (all ten planned units); A2 is in controlled Beta for ru + ky only', () => {
     expect(A2_UNITS.map(u => u.id)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
     expect(COURSE.levels.find(l => l.id === 'A2')?.status).toBe('beta')
-    for (const lang of ['ru', 'ky'] as const) expect(availableLevels(lang)).toEqual(['A1', 'A2'])
+    for (const lang of ['ru', 'ky'] as const) expect(availableLevels(lang)).toEqual(['A1', 'A2', 'B1'])
     expect(availableLevels('de')).toEqual(['A1'])
   })
   it('the real plan passes the plan rules', () => {

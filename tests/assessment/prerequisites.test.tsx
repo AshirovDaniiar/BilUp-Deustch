@@ -83,7 +83,13 @@ describe('2 · direct A2 test links resolve their level before the content is lo
     expect(levelOfTestId('unit-11')).toBe('A2')
     expect(levelOfTestId('unit-20')).toBe('A2')
     expect(levelOfTestId('unit-3')).toBe('A1')
-    expect(levelOfTestId('unit-21')).toBeUndefined()
+    expect(levelOfTestId('unit-21')).toBe('B1') // B1 (planned) owns 21–32: ownership is static, visibility is the course registry's business
+    expect(levelOfTestId('unit-32')).toBe('B1')
+    expect(levelOfTestId('unit-33')).toBeUndefined()
+    expect(levelOfTestId('level-b1')).toBe('B1')
+    expect(levelOfTestId('placement-b1')).toBe('B1')
+    expect(levelOfTestId('level-b2')).toBeUndefined() // not a registered level
+    expect(levelOfTestId('placement-a1')).toBeUndefined()
     expect(levelOfTestId('unit-x')).toBeUndefined()
     expect(levelOfTestId('level-a2')).toBe('A2')
     expect(levelOfTestId('placement-a2')).toBe('A2')

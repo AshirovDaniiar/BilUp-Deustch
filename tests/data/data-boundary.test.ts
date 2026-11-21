@@ -149,11 +149,33 @@ describe('src/data layering', () => {
     }
   })
 
-  it('the catalog is the only module outside data/a2 that imports A2 modules', () => {
+  it('the catalog is the only module outside data/a2 and data/b1 that imports A2 modules (B1 may take TYPES from A2, never runtime code)', () => {
     const importers = sources
-      .filter(f => !norm(relative(src, f)).startsWith('data/a2/'))
+      .filter(f => !norm(relative(src, f)).startsWith('data/a2/') && !norm(relative(src, f)).startsWith('data/b1/'))
       .filter(f => importsOf(f).some(i => i.target.startsWith('data/a2/')))
     expect(importers.map(rel)).toEqual(['data/catalog.ts'])
+  })
+
+  it('B1 modules import only data types, sibling B1 modules and TYPE-ONLY A2 schema types — never A1 content, the catalog, the registry or A2 runtime code', () => {
+    const dir = join(src, 'data/b1')
+    for (const f of walk(dir).map(p => norm(relative(dir, p)))) {
+      for (const i of importsOf(join(dir, f))) {
+        const ok = i.target === 'data/types' || i.target.startsWith('data/b1/') || (i.target.startsWith('data/a2/') && i.typeOnly)
+        expect(ok, `data/b1/${f} imports ${i.spec}`).toBe(true)
+      }
+    }
+  })
+
+  it('B1 content stays LAZY like A2: the catalog statically imports only the B1 plan, and loads the content by dynamic import; nobody else imports it', () => {
+    const catalog = join(src, 'data/catalog.ts')
+    for (const i of importsOf(catalog).filter(i => i.target.startsWith('data/b1/')))
+      expect(i.typeOnly || i.target === 'data/b1/registry', `catalog statically imports ${i.spec}`).toBe(true)
+    expect(readFileSync(catalog, 'utf8')).toContain("import('./b1/b1-content')")
+    const offenders = sources
+      .filter(f => !norm(relative(src, f)).startsWith('data/b1/') && rel(f) !== 'data/catalog.ts')
+      .filter(f => readFileSync(f, 'utf8').includes('b1/b1-content'))
+      .map(rel)
+    expect(offenders).toEqual([])
   })
 
   it('A2 content stays LAZY: the catalog statically imports only the plan and types from A2, and loads the content by dynamic import', () => {

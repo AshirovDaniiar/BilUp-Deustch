@@ -151,7 +151,7 @@ export interface WritingTask {
   situation: L10n
   formal: boolean
   minWords: number
-  mustInclude: { label: string; patterns: string[] }[]
+  mustInclude: { label: string; patterns: string[]; /** what the item asks for, in the learner's language (B1 and above: required; shown next to the German label) */ explain?: L10n }[]
   model: string
   tips: L10n[]
   source?: ContentSource

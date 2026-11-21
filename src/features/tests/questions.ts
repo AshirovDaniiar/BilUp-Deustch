@@ -17,6 +17,7 @@ import {
   finalTestOfUnit,
   grammarIndex,
   grammarOf,
+  levelAssessmentOf,
   levelOfUnit,
   listeningOf,
   vocabularyForUnit,
@@ -97,6 +98,33 @@ export function finalTestQuestions(unit: number, questions: readonly TestQuestio
     kind: KIND_OF_SKILL[q.skill ?? 'grammar'],
     unit,
   }))
+}
+
+/**
+ * The authored indicative level assessment (`level-b1`) as quiz questions, in the authored order (parts A → E): the options of a choice item are shuffled per attempt,
+ * a word-order item carries its tokens. Texts and answers are exactly the authored ones; every question is strict (ru / ky only).
+ */
+export function levelAssessmentQuestions(level: LanguageLevel, attemptSeed: string = newSeed()): Question[] {
+  const a = levelAssessmentOf(level)
+  if (!a) return []
+  return a.questions.map(q => {
+    const ordering = (q.words?.length ?? 0) > 0
+    return {
+      id: q.id,
+      type: ordering ? ('order' as const) : q.prompt.includes('___') ? ('fill' as const) : ('choice' as const),
+      prompt: q.prompt,
+      promptRu: q.promptRu,
+      promptKy: q.promptKy,
+      strict: true,
+      ...(ordering ? { words: q.words } : { options: attemptOptions(q.options, attemptSeed, q.id) }),
+      answer: q.answer,
+      why: q.why,
+      concept: q.concept,
+      skill: q.skill ?? 'grammar',
+      kind: KIND_OF_SKILL[q.skill ?? 'grammar'],
+      unit: q.unit,
+    }
+  })
 }
 
 /** Fill `{name}` placeholders of an interface string. */
@@ -294,6 +322,8 @@ export function isTestAvailable(def: TestDef): boolean {
       return vocabularyOf(level).length > 0
     case 'listening':
       return listeningOf(level).length > 0
+    case 'level':
+      return levelAssessmentOf(level) !== undefined || handwrittenOf(level).length > 0
     default: // grammar, placement, level (and the unused 'speaking')
       return handwrittenOf(level).length > 0
   }
@@ -305,6 +335,15 @@ export function buildTest(def: TestDef, lang?: Lang): Question[] {
   const level = def.level
   const hand = handwrittenOf(level)
   const vq = (n: number) => pick(vocabularyOf(level), n, rnd).map((v, i) => vocabQuestion(v, i, rnd, lang))
+  const buildMixedLevelQuiz = () =>
+    shuffle(
+      [
+        ...pick(hand, Math.ceil(def.size * 0.5), rnd).map(fromExercise),
+        ...vq(Math.floor(def.size * 0.35)),
+        ...articleDrill(Math.max(1, def.size - Math.ceil(def.size * 0.5) - Math.floor(def.size * 0.35)), undefined, level),
+      ],
+      rnd,
+    ).slice(0, def.size)
   switch (def.kind) {
     case 'topic': {
       // a unit with an authored final test (A2) is tested with THOSE questions; a unit without one (A1) keeps the random review quiz
@@ -313,6 +352,10 @@ export function buildTest(def: TestDef, lang?: Lang): Question[] {
         ? finalTestQuestions(def.unit as number, authored.questions, newSeed(rnd))
         : unitReviewQuestions(def.unit as number, def.size, lang)
     }
+    case 'level':
+      // a level with an authored indicative assessment (B1) is tested with THOSE questions; any other level keeps the mixed quiz below
+      if (levelAssessmentOf(level)) return levelAssessmentQuestions(level, newSeed(rnd))
+      return buildMixedLevelQuiz()
     case 'grammar':
       return pick(hand, def.size, rnd).map(fromExercise)
     case 'vocabulary':

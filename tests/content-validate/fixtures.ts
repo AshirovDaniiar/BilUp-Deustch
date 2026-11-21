@@ -275,7 +275,7 @@ export const clone = <T>(x: T): T => structuredClone(x)
  * on (or collide with) the real A2 content that is authored unit by unit. The real content is validated by the production tests.
  */
 export function emptyA2Bundle(): ContentBundle {
-  const b = structuredClone(fullBundle())
+  const b = withoutB1Content(structuredClone(fullBundle()))
   const range = b.course?.find(c => c.id === 'A2')?.unitIdRange ?? [11, 20]
   const outside = (unit: number) => unit < range[0] || unit > range[1]
   const a2Concepts = new Set(b.grammar.filter(g => !outside(g.unit)).map(g => g.id))
@@ -304,5 +304,40 @@ export function emptyA2Bundle(): ContentBundle {
     instructions: [],
     unitSpeaking: { ...b.unitSpeaking, A2: [] },
     speakingLevels: Object.fromEntries(Object.entries(b.speakingLevels ?? {}).filter(([id]) => !a2Scenarios.has(id))),
+  }
+}
+
+/**
+ * The bundle with every AUTHORED B1 item removed (units, vocabulary, grammar, exercises, texts, tests, final tests, why-notes, unit metadata): what the
+ * validator saw before B1 Unit 21 existed. Synthetic worlds for the A2 and B1 rule tests are built on this, so they never depend on (or collide with)
+ * the real B1 content, which is validated by its own tests. The B1 unit PLAN, the course registry and the curriculum configuration stay.
+ */
+export function withoutB1Content(b: ContentBundle): ContentBundle {
+  const range = b.course?.find(c => c.id === 'B1')?.unitIdRange ?? [21, 32]
+  const outside = (unit: number) => unit < range[0] || unit > range[1]
+  const b1Concepts = new Set(b.grammar.filter(g => !outside(g.unit)).map(g => g.id))
+  const b1Scenarios = new Set(
+    Object.entries(b.speakingLevels ?? {})
+      .filter(([, level]) => level === 'B1')
+      .map(([id]) => id),
+  )
+  return {
+    ...b,
+    // B1 with NO authored unit: a level without units cannot be visible (the production registry says beta, since the B1 Beta launch)
+    course: b.course?.map(c => (c.id === 'B1' ? { ...c, status: 'planned' as const, releasedLocales: [] } : c)),
+    units: b.units.filter(u => outside(u.id)),
+    vocabulary: b.vocabulary.filter(v => outside(v.unit)),
+    grammar: b.grammar.filter(g => outside(g.unit)),
+    exercises: b.exercises.filter(e => outside(e.unit)),
+    listening: b.listening.filter(x => outside(x.unit)),
+    reading: b.reading.filter(x => outside(x.unit)),
+    writing: b.writing.filter(x => outside(x.unit)),
+    speaking: b.speaking.filter(s => !b1Scenarios.has(s.id)),
+    tests: b.tests.filter(t => t.level !== 'B1'),
+    finalTests: (b.finalTests ?? []).filter(f => outside(f.unit)),
+    whyNotes: (b.whyNotes ?? []).filter(n => !b1Concepts.has(n.conceptId)),
+    unitSpeaking: { ...b.unitSpeaking, B1: [] },
+    speakingLevels: Object.fromEntries(Object.entries(b.speakingLevels ?? {}).filter(([id]) => !b1Scenarios.has(id))),
+    b1Meta: [],
   }
 }

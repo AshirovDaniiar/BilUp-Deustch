@@ -4,7 +4,7 @@ import type { LanguageLevel } from '../data/types'
 import { Card } from './ui'
 
 /**
- * Disclosure shown on the screens of a level whose status is `beta` (A2 today): the content is still under expert review and translations may change.
+ * Disclosure shown on the screens of a level whose status is `beta` (A2 today; B1 when it is released as a Beta). The text names the ACTIVE level (placeholder {level}); for A2 it is word for word the original notice: the content is still under expert review and translations may change.
  * It claims no CEFR or native-language approval. Renders nothing for released levels.
  */
 export function BetaNotice({ level }: { level: LanguageLevel }) {
@@ -13,7 +13,7 @@ export function BetaNotice({ level }: { level: LanguageLevel }) {
   return (
     <Card tone="yellow" className="betanotice">
       <p className="small break">
-        <b>{level} · Beta.</b> {t('betaNotice')}
+        <b>{level} · Beta.</b> {t('betaNoticeLevel').replace('{level}', level)}
       </p>
     </Card>
   )

@@ -73,3 +73,14 @@
     align-items: stretch;
   }
 }
+
+/* P2: while a notice is visible the page reserves its height (measured by PwaPrompt into --pwa-note-h) at the bottom of the main column, so quiz and assessment buttons can always be scrolled
+   above the fixed notice. Below 1024px the bottom navigation is already reserved (--nav-h); from 1024px the notice sits in the bottom-right corner. */
+html.has-pwa-note .main {
+  padding-bottom: calc(var(--nav-h, 68px) + 28px + env(safe-area-inset-bottom, 0px) + var(--pwa-note-h, 0px) + 12px);
+}
+@media (min-width: 1024px) {
+  html.has-pwa-note .main {
+    padding-bottom: calc(60px + var(--pwa-note-h, 0px) + 20px);
+  }
+}

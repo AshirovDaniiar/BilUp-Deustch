@@ -38,6 +38,9 @@ export const COURSE: Course = {
     // A2: units 11–20. CONTROLLED BETA for Russian and Kyrgyz (explicit owner approval): visible with a Beta notice; human CEFR / native-language reviews
     // and the level test are still pending (reported by the content validator as Beta flags, blocking a full release). Not offered to the German interface.
     { id: 'A2', status: 'beta', unitIdRange: [11, 20], releasedLocales: ['ru', 'ky'] },
+    // B1: units 21–32. BETA for the Russian and Kyrgyz explanation languages (owner approval for all learners, B1 Beta launch). A Beta is not a stable release: the formal release gate
+    // (`content:validate:release`) stays closed until the human CEFR / native-speaker reviews are recorded. The German interface is not offered B1 (only released levels are).
+    { id: 'B1', status: 'beta', unitIdRange: [21, 32], releasedLocales: ['ru', 'ky'] },
   ],
 }
 
@@ -57,7 +60,11 @@ export const isLevelVisible = (level: LanguageLevel): boolean => {
  */
 export const availableLevels = (lang: Lang): LanguageLevel[] =>
   COURSE.levels
-    .filter(l => isLevelVisible(l.id) && (lang === 'de' ? l.status === 'released' && l.releasedLocales.length > 0 : l.releasedLocales.includes(lang)))
+    .filter(
+      l =>
+        isLevelVisible(l.id) &&
+        (lang === 'de' ? l.status === 'released' && l.releasedLocales.length > 0 : l.releasedLocales.includes(lang)),
+    )
     .map(l => l.id)
 
 export const isLevelReleasedFor = (level: LanguageLevel, locale: ExplanationLocale): boolean =>

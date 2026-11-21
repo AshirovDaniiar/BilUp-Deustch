@@ -12,52 +12,13 @@
 // therefore covered by the sign-off only.
 import type { LanguageLevel } from '../../../src/data/types'
 import type { Ctx } from '../context'
+import { LISTENING_WORDS_MAX, READING_WORDS, SENTENCE_WORDS_MAX, B1_PLUS_PATTERNS, profileOf, type Pattern } from '../profile'
+
+// Re-exported unchanged: the A2 calibration (tests import these names from here).
+export { B1_PLUS_PATTERNS, LISTENING_WORDS_MAX, READING_WORDS, SENTENCE_WORDS_MAX, type Pattern }
 
 const ORDER: LanguageLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1']
 const rank = (l: LanguageLevel) => ORDER.indexOf(l)
-
-/** German constructions curricula treat as B1 or above. Heuristic regexes on lower-cased text: they over- and under-match by design. */
-export interface Pattern {
-  id: string
-  label: string
-  re: RegExp
-  /** match against the text as written (German capitalises nouns) instead of the lower-cased text */
-  caseSensitive?: true
-}
-export const B1_PLUS_PATTERNS: Pattern[] = [
-  { id: 'passiv', label: 'Passiv (B1)', re: /\b(wird|werden|wurde|wurden|worden)\b[^.!?;]{0,40}\b(ge\w{3,}(?:t|en)|\w{3,}iert)\b/ },
-  {
-    id: 'konj-b1',
-    label: 'Konjunktion obwohl/damit/falls/nachdem/sobald/solange/indem/sodass/sofern (B1)',
-    re: /\b(obwohl|damit|falls|nachdem|sobald|solange|indem|sodass|sofern)\b/,
-  },
-  { id: 'trotzdem', label: 'trotzdem (B1)', re: /\btrotzdem\b/ },
-  {
-    id: 'relativsatz',
-    label: 'possible Relativsatz "Nomen, der/die/das …" (B1)',
-    // a capitalised noun directly before the comma separates "Der Mann, der hier wohnt" from "Ja, die Wohnung ist frei"
-    // (measured on real A1 German: the looser form flagged 7 of 10 units; the remaining false positives were the interjections excluded here)
-    re: /\b(?!(?:Ja|Nein|Doch|Danke|Bitte|Hallo|Gut|Okay|Also|Na|Oh|Ach)\b)[A-ZÄÖÜ][a-zäöüß]+,\s+(der|die|das|den|dem|dessen|deren)\s+[a-zäöüß]+/,
-    caseSensitive: true,
-  },
-  {
-    id: 'plusquam',
-    label: 'Plusquamperfekt hatte/war + Partizip II (B1)',
-    re: /\b(hatte|hatten|hattest|hattet|war|waren|warst|wart)\b[^.!?;]{0,40}\bge\w{3,}(?:t|en)\b/,
-  },
-  {
-    id: 'konj2-past',
-    label: 'Konjunktiv II der Vergangenheit hätte/wäre + Partizip II (B1)',
-    re: /\b(hätte|hätten|wäre|wären)\b[^.!?;]{0,40}\bge\w{3,}(?:t|en)\b/,
-  },
-  { id: 'genitiv', label: 'Genitiv des/eines + Nomen auf -s (B1)', re: /\b(des|eines)\s+\w+s\b/ },
-  { id: 'futur2', label: 'Futur II (B2)', re: /\bwird\b[^.!?;]{0,40}\bge\w{3,}(?:t|en)\s+(haben|sein)\b/ },
-]
-
-/** Sentence/text length bounds that typical A2 reading material stays within. Outside them: a review flag, not an error. */
-export const READING_WORDS = { min: 30, max: 180 }
-export const SENTENCE_WORDS_MAX = 22
-export const LISTENING_WORDS_MAX = 140
 
 const words = (s: string) => s.split(/\s+/).filter(Boolean).length
 const sentences = (s: string) => s.split(/(?<=[.!?])\s+/).filter(x => x.trim() !== '')
@@ -144,34 +105,31 @@ export function cefrRules(ctx: Ctx): void {
       items.push({ where: `finalTests:unit${ft.unit}/${q.id}`, unit: ft.unit, texts: [{ field: 'prompt', text: q.prompt }] })
 
   for (const it of items) {
-    if (!ctx.strict(ctx.levelOfUnit(it.unit))) continue
+    const itemLevel = ctx.levelOfUnit(it.unit)
+    if (!ctx.strict(itemLevel)) continue
+    const prof = profileOf(itemLevel)
     const hit = new Set<string>()
     for (const { field, text } of it.texts) {
       const lower = text.toLowerCase()
-      for (const p of B1_PLUS_PATTERNS) {
+      for (const p of prof.patterns) {
         if (hit.has(p.id) || !p.re.test(p.caseSensitive ? text : lower)) continue
         hit.add(p.id)
-        ctx.add(
-          'review',
-          `cefr-structure-${p.id}`,
-          `${it.where}#${field}`,
-          `possible B1+ construction: ${p.label}. Heuristic — a CEFR reviewer must decide`,
-        )
+        ctx.add('review', `cefr-structure-${p.id}`, `${it.where}#${field}`, prof.patternMessage(p))
       }
-      for (const s of sentences(text)) {
+      for (const s of prof.textChecks === 'generic' ? sentences(text) : []) {
         const n = words(s)
         if (n > SENTENCE_WORDS_MAX)
           ctx.add(
             'review',
             'cefr-sentence-length',
             `${it.where}#${field}`,
-            `a sentence of ${n} words (> ${SENTENCE_WORDS_MAX}): long for A2 — review`,
+            `a sentence of ${n} words (> ${SENTENCE_WORDS_MAX}): long for ${prof.label} — review`,
           )
       }
     }
   }
   for (const r of bundle.reading) {
-    if (!ctx.strict(ctx.levelOfUnit(r.unit))) continue
+    if (!ctx.strict(ctx.levelOfUnit(r.unit)) || profileOf(ctx.levelOfUnit(r.unit)).textChecks !== 'generic') continue
     const n = (Array.isArray(r.body) ? r.body : []).reduce((a, p) => a + words(p), 0)
     if (n < READING_WORDS.min || n > READING_WORDS.max)
       ctx.add(
@@ -182,7 +140,7 @@ export function cefrRules(ctx: Ctx): void {
       )
   }
   for (const l of bundle.listening) {
-    if (!ctx.strict(ctx.levelOfUnit(l.unit))) continue
+    if (!ctx.strict(ctx.levelOfUnit(l.unit)) || profileOf(ctx.levelOfUnit(l.unit)).textChecks !== 'generic') continue
     const n = (l.lines ?? []).reduce((a, x) => a + words(x.text), 0)
     if (n > LISTENING_WORDS_MAX)
       ctx.add('review', 'cefr-text-length', `listening:${l.id}`, `${n} words of dialogue (> ${LISTENING_WORDS_MAX}) — review`)

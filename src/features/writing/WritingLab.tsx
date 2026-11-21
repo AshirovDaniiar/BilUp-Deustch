@@ -7,7 +7,9 @@ import { levelOfUnit, writingIndex, writingOf } from '../../data/catalog'
 import { DEFAULT_LEVEL } from '../../data/course'
 import { activeLevel } from '../progress/stats'
 import { analyseWriting, type WritingFeedback } from '../../services/analysis'
-import { tr } from '../../utils/text'
+import { usesChecklistFeedback } from '../../services/feedback-mode'
+import { WritingSelfAssessment } from '../feedback/SelfAssessment'
+import { locStrict, tr } from '../../utils/text'
 import { NotFound } from '../../screens/NotFound'
 
 export function WritingList() {
@@ -44,12 +46,19 @@ export function WritingEditor({ id }: { id: string }) {
   const [text, setText] = useState('')
   const [fb, setFb] = useState<WritingFeedback | null>(null)
   if (!task) return <NotFound />
+  // B1 and above: a transparent checklist + self-assessment, never the automated numeric scores (services/feedback-mode.ts)
+  const checklist = usesChecklistFeedback(levelOfUnit(task.unit))
   const words = text.split(/\s+/).filter(Boolean).length
 
   const analyse = () => {
     if (words < 3) return
     const r = analyseWriting(text, task)
     setFb(r)
+    if (checklist) {
+      attempt.finish({ activityId: `ex:${task.id}`, kind: 'writing', completes: [`${task.unit}:writing`], evidence: 'self-reported' })
+      attempt.renew()
+      return // no numeric score is recorded and no analyser error is stored for a checklist level
+    }
     const s = r.scores
     const avg = (s.grammar + s.vocabulary + s.wordorder + s.spelling + s.style + s.formality) / 6
     actions.addScore('writing', avg)
@@ -70,7 +79,10 @@ export function WritingEditor({ id }: { id: string }) {
         <p className="break">{tr(task.situation, lang)}</p>
         <ul className="bullets small">
           {task.mustInclude.map(m => (
-            <li key={m.label}>{m.label}</li>
+            <li key={m.label}>
+              {m.label}
+              {m.explain && <span className="muted"> — {locStrict(m.explain.ru, m.explain.ky, lang)}</span>}
+            </li>
           ))}
         </ul>
       </Card>
@@ -102,7 +114,46 @@ export function WritingEditor({ id }: { id: string }) {
         {words > 0 && words < 3 && <p className="muted small">{t('needMore')}</p>}
       </Card>
 
-      {fb && (
+      {fb && checklist && (
+        <div className="stack">
+          <Card>
+            <div className="eyebrow">{t('fb_autoChecks')}</div>
+            <ul className="checks">
+              <li className={words >= task.minWords ? 'ok' : 'no'}>
+                {words >= task.minWords ? '✓' : '✗'} {t(words >= task.minWords ? 'fb_lengthOk' : 'fb_lengthShort')} ({words} /{' '}
+                {task.minWords})
+              </li>
+              {task.mustInclude.map(m => (
+                <li key={m.label} className={fb.met.includes(m.label) ? 'ok' : 'no'}>
+                  {fb.met.includes(m.label) ? '✓' : '✗'} {m.label}
+                  {m.explain && <span className="muted"> — {locStrict(m.explain.ru, m.explain.ky, lang)}</span>}
+                </li>
+              ))}
+            </ul>
+            <p className="muted small break">{t('fb_autoNote')}</p>
+          </Card>
+          <WritingSelfAssessment />
+          <Card tone="green">
+            <div className="eyebrow">{t('betterVersion')}</div>
+            <p className="break pre de">{task.model}</p>
+          </Card>
+          <Card>
+            <div className="eyebrow">💡</div>
+            <ul className="bullets">
+              {task.tips.map(x => (
+                <li key={x.ru} className="break">
+                  {tr(x, lang)}
+                </li>
+              ))}
+            </ul>
+          </Card>
+          <Button to="/practice/writing" variant="soft">
+            {t('continue')}
+          </Button>
+        </div>
+      )}
+
+      {fb && !checklist && (
         <div className="stack">
           <Card>
             <div className="eyebrow">{t('analyse')}</div>

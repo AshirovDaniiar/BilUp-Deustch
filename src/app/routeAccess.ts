@@ -1,4 +1,4 @@
-import { availableLevels, resolveActiveLevel } from '../data/course'
+import { availableLevels, courseLevel, resolveActiveLevel } from '../data/course'
 import {
   levelOfConceptId,
   levelOfListeningId,
@@ -20,7 +20,10 @@ import type { Route } from './router'
 export function levelOfTestId(id: string): LanguageLevel | undefined {
   const m = /^unit-(\d+)$/.exec(id)
   if (m) return levelOfUnit(Number(m[1]))
-  if (id === 'level-a2' || id === 'placement-a2') return 'A2'
+  // fixed level-wide ids of a non-A1 course level (`level-a2`, `placement-a2`, `level-b1`, …): static, so a direct link can trigger the level's chunk
+  const lv = /^(?:level|placement)-([a-z]\d)$/.exec(id)
+  const owner = lv ? courseLevel(lv[1].toUpperCase() as LanguageLevel)?.id : undefined
+  if (owner && owner !== 'A1') return owner
   return testIndex.get(id)?.level
 }
 

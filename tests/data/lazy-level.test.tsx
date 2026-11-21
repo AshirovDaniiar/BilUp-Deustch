@@ -80,7 +80,7 @@ describe('the route gate requests nothing for A1 or for a planned level', () => 
   })
   it('even a visible A2 is not requested by an A1 route or the A1 dashboard', () => {
     release('beta', ['ru'])
-    expect(availableLevels('ru')).toEqual(['A1', 'A2'])
+    expect(availableLevels('ru')).toEqual(['A1', 'A2', 'B1'])
     expect(levelsToLoad(route('/learn/unit/3'), 'ru', 'A1')).toEqual([])
     expect(levelsToLoad(route('/grammar/articles'), 'ru', 'A1')).toEqual([])
     expect(levelsToLoad(route('/practice/tests/unit-2'), 'ru', 'A1')).toEqual([])
@@ -88,7 +88,7 @@ describe('the route gate requests nothing for A1 or for a planned level', () => 
     expect(levelsToLoad(route('/vocabulary'), 'ru', 'A1')).toEqual([])
     // …but an A2 unit route, an unknown-id route and an A2 learner are
     expect(levelsToLoad(route('/learn/unit/11'), 'ru', 'A1')).toEqual(['A2'])
-    expect(levelsToLoad(route('/grammar/a2-perfekt-erfahrungen'), 'ru', 'A1')).toEqual(['A2'])
+    expect(levelsToLoad(route('/grammar/a2-perfekt-erfahrungen'), 'ru', 'A1')).toEqual(['A2', 'B1']) // a grammar id is not resolved statically: every visible non-A1 level may own it (B1 is a Beta since the launch)
     expect(levelsToLoad(route('/vocabulary'), 'ru', 'A2')).toEqual(['A2'])
     // a language the level is not released for never requests it
     expect(levelsToLoad(route('/learn/unit/11'), 'ky', 'A1')).toEqual([])

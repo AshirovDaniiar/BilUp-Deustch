@@ -33,12 +33,17 @@ import {
   writingOf,
 } from '../../src/data/catalog'
 import { A2_CONTENT } from '../../src/data/a2/a2-content'
+import { B1_CONTENT } from '../../src/data/b1/b1-content'
+import { B1_META } from '../../src/data/b1/meta'
+import { B1_CURRICULUM } from './b1/curriculum'
+import { B1_DECISIONS } from './b1/decisions'
 import { A2_REVIEWS, SAME_AS_RU } from './reviews'
 import type { ContentBundle } from './types'
 import type { LanguageLevel } from '../../src/data/types'
 
 // The validator checks ALL content, so it loads the lazy A2 content statically (build tooling; nothing here ships).
 registerLevelContent('A2', A2_CONTENT)
+registerLevelContent('B1', B1_CONTENT)
 
 export const currentBundle = () => ({
   units: UNITS,
@@ -79,5 +84,9 @@ export function fullBundle(): ContentBundle {
     speakingLevels,
     reviews: A2_REVIEWS,
     sameAsRu: SAME_AS_RU,
+    b1Meta: B1_META,
+    b1Curriculum: B1_CURRICULUM,
+    b1Decisions: B1_DECISIONS,
+    b1LevelTest: B1_CONTENT.levelTest,
   }
 }

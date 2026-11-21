@@ -133,3 +133,45 @@ describe('new deployments cannot keep serving an old chunk', () => {
     expect(caches.names).toEqual([])
   })
 })
+
+describe('two lazy levels (A2 and B1): each is cached on its own first use, none is precached, both are pruned per deployment', () => {
+  const B1 = 'assets/b1-content-333.js'
+  const B1_NEXT = 'assets/b1-content-444.js'
+  const two = () => setup([CHUNK, B1], { [SCOPE + B1]: js('b1-v1'), [SCOPE + B1_NEXT]: js('b1-v2') })
+  it('install fetches neither chunk; both are classified lazy', async () => {
+    const { shell, net } = two()
+    await shell.install()
+    expect(net.calls.some(u => u.includes('-content-'))).toBe(false)
+    expect(shell.precacheUrls.some(u => u.includes('-content-'))).toBe(false)
+    expect(shell.classify(req(SCOPE + CHUNK))).toBe('lazy')
+    expect(shell.classify(req(SCOPE + B1))).toBe('lazy')
+  })
+  it('using A2 never fetches or stores B1 (an A2 learner who cannot see B1 does not download it)', async () => {
+    const { shell, net, caches } = two()
+    await get(shell)
+    expect(net.calls.some(u => u.includes('b1-content'))).toBe(false)
+    expect(caches.cache(LAZY_CACHE).puts).toEqual([SCOPE + CHUNK])
+  })
+  it('B1 is stored after its own first successful use and then served from the cache', async () => {
+    const { shell, net, caches } = two()
+    expect(await (await get(shell, B1))!.text()).toBe('b1-v1')
+    expect(caches.cache(LAZY_CACHE).puts).toEqual([SCOPE + B1])
+    net.calls.length = 0
+    net.offline = true
+    expect(await (await get(shell, B1))!.text()).toBe('b1-v1')
+    expect(net.calls).toEqual([])
+  })
+  it('activation of a new build prunes the old hashed chunk of BOTH levels', async () => {
+    const { caches, net } = two()
+    const old = make(caches, net, 'v1', [CHUNK, B1])
+    await old.install()
+    await get(old)
+    await get(old, B1)
+    const next = make(caches, net, 'v2', [NEXT, B1_NEXT])
+    await next.install()
+    await get(next, NEXT)
+    await get(next, B1_NEXT)
+    await next.activate()
+    expect([...caches.cache(LAZY_CACHE).store.keys()].sort()).toEqual([SCOPE + NEXT, SCOPE + B1_NEXT].sort())
+  })
+})

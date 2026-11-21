@@ -13,6 +13,8 @@ import { locStrict, tr } from '../../utils/text'
 import { NotFound } from '../../screens/NotFound'
 import { SpeakInput } from './SpeakInput'
 import { SpeakScoreCard } from './ScoreCard'
+import { usesChecklistFeedback } from '../../services/feedback-mode'
+import { SpeakingSelfAssessment } from '../feedback/SelfAssessment'
 
 export function SpeakingList() {
   const { state, t, lang } = useApp()
@@ -50,6 +52,8 @@ interface Msg {
   ru?: string
   ky?: string
   score?: SpeakingScore
+  /** checklist levels: [expected words used, expected words] — shown instead of a score */
+  expected?: [number, number]
 }
 
 export function SpeakingSession({ id }: { id: string }) {
@@ -57,6 +61,8 @@ export function SpeakingSession({ id }: { id: string }) {
   const attempt = useAttempt()
   const sc = speakingIndex.get(id)
   // an authored A2 scenario shows the translation of an AI turn in the learner's own language only (A1 keeps the Russian translation)
+  // B1 and above: expected-word coverage + checklist + self-assessment instead of the automated numeric scores (services/feedback-mode.ts)
+  const checklist = !!sc && usesChecklistFeedback(levelOfScenarioId(sc.id))
   const turnText = (m: Msg) => (sc && sc.level !== 'A1' ? locStrict(m.ru, m.ky, lang) : m.ru)
   const [turn, setTurn] = useState(0)
   const [msgs, setMsgs] = useState<Msg[]>([])
@@ -89,6 +95,14 @@ export function SpeakingSession({ id }: { id: string }) {
     const current = sc.turns[turn]
     const score = analyseSpeaking(text, current, conf)
     scores.current.push(score)
+    if (checklist) {
+      const low = text.toLowerCase()
+      const used = current.keywords.filter(k => low.includes(k.toLowerCase())).length
+      setMsgs(m => [...m, { id: m.length, role: 'user', text, expected: [used, current.keywords.length] }])
+      setAwaitingNext(true)
+      setShowHints(false)
+      return
+    }
     setMsgs(m => [...m, { id: m.length, role: 'user', text, score }])
     setAwaitingNext(true)
     setShowHints(false)
@@ -109,6 +123,16 @@ export function SpeakingSession({ id }: { id: string }) {
   const finish = () => {
     setDone(true)
     const all = scores.current
+    if (checklist) {
+      const u0 = unitOfScenario(sc.id)
+      attempt.finish({
+        activityId: `speak:${sc.id}`,
+        kind: 'speaking-scenario',
+        completes: u0 > 0 ? [`${u0}:speaking`] : [],
+        evidence: 'self-reported',
+      })
+      return // no numeric score is recorded and no analyser mistake is stored for a checklist level
+    }
     const avg = (f: (s: SpeakingScore) => number) => all.reduce((a, s) => a + f(s), 0) / Math.max(1, all.length)
     actions.addScore('speaking', (avg(s => s.grammar) + avg(s => s.vocabulary) + avg(s => s.naturalness) + avg(s => s.fluency)) / 4)
     const u = unitOfScenario(sc.id)
@@ -144,9 +168,14 @@ export function SpeakingSession({ id }: { id: string }) {
               {m.text} {m.role === 'ai' && <SpeakButton text={m.text} small />}
             </div>
             {m.role === 'ai' && turnText(m) && showRu && <div className="muted small break">{turnText(m)}</div>}
-            {m.score && (
+            {m.score && !checklist && (
               <div className="bubble__score">
                 <SpeakScoreCard score={m.score} />
+              </div>
+            )}
+            {m.expected && (
+              <div className="bubble__score small muted">
+                {t('fb_expectedWords')}: {m.expected[0]} {t('of')} {m.expected[1]}
               </div>
             )}
           </div>
@@ -154,25 +183,38 @@ export function SpeakingSession({ id }: { id: string }) {
         {done && (
           <Card tone="green" className="result">
             <div className="eyebrow">{t('scenarioDone')}</div>
-            <div className="scorecard__grid">
-              {[
-                ['sk_pronunciation', avgOf(s => s.pronunciation)],
-                ['sk_grammar', avgOf(s => s.grammar)],
-                ['sk_vocabulary', avgOf(s => s.vocabulary)],
-                ['sk_fluency', avgOf(s => s.fluency)],
-                ['sk_naturalness', avgOf(s => s.naturalness)],
-              ].map(([k, v]) => (
-                <div key={String(k)} className="scorebar">
-                  <div className="scorebar__top">
-                    <span>{t(k as 'sk_grammar')}</span>
-                    <strong>{v == null ? '—' : `${v}%`}</strong>
+            {checklist ? (
+              <div className="stack stack--sm">
+                <p className="muted small break">
+                  {t('fb_expectedWords')}: {msgs.reduce((a, m) => a + (m.expected?.[0] ?? 0), 0)} {t('of')}{' '}
+                  {msgs.reduce((a, m) => a + (m.expected?.[1] ?? 0), 0)}
+                </p>
+                <p className="muted small break">{t('fb_autoNote')}</p>
+                <SpeakingSelfAssessment />
+              </div>
+            ) : (
+              <div className="scorecard__grid">
+                {[
+                  ['sk_pronunciation', avgOf(s => s.pronunciation)],
+                  ['sk_grammar', avgOf(s => s.grammar)],
+                  ['sk_vocabulary', avgOf(s => s.vocabulary)],
+                  ['sk_fluency', avgOf(s => s.fluency)],
+                  ['sk_naturalness', avgOf(s => s.naturalness)],
+                ].map(([k, v]) => (
+                  <div key={String(k)} className="scorebar">
+                    <div className="scorebar__top">
+                      <span>{t(k as 'sk_grammar')}</span>
+                      <strong>{v == null ? '—' : `${v}%`}</strong>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-            <p className="muted small">
-              {total} / {sc.turns.length} · {t('analysisDisclaimer')}
-            </p>
+                ))}
+              </div>
+            )}
+            {!checklist && (
+              <p className="muted small">
+                {total} / {sc.turns.length} · {t('analysisDisclaimer')}
+              </p>
+            )}
             <div className="row">
               <Button to="/speak">{t('backToScenarios')}</Button>
               <Button variant="soft" onClick={() => window.location.reload()}>

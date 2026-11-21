@@ -6,6 +6,7 @@
  * Konjunktiv II, no ordinals, no adjectives), formal register and the no-legal-advice rule, exercise and test structure, separation of revision and final test, the
  * reading-question rule, answer-position balance, the objective→assessment matrix, and the stage boundaries (Units 11–18 unchanged, A2 planned and invisible).
  */
+import { withoutB1Content } from './fixtures'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
@@ -60,7 +61,8 @@ const notes = whyNotesOf('A2').filter(n => grammarIndex.get(n.conceptId)?.unit =
 const instructions = A2_INSTRUCTIONS.filter(i => i.unit === U)
 const norm = (s: string) => s.trim().replace(/\s+/g, ' ').toLowerCase()
 const words = (s: string) => s.split(/\s+/).filter(Boolean).length
-const issues = (mode?: 'release') => validateContent(fullBundle(), { mode })
+// The A2 world (A1 + A2 + registry): B1 content is excluded, because these tests describe A2's own validation state; B1 has its own tests (b1-profile, b1-unit-21).
+const issues = (mode?: 'release') => validateContent(withoutB1Content(fullBundle()), { mode })
 const lemma = (s: string) =>
   s
     .replace(/\((R|Pl\.)\)/g, '')
@@ -763,7 +765,7 @@ describe('unit 19 — stage boundaries', () => {
   })
   it('release validation still REJECTS A2 (the level test, the sign-offs)', () => {
     const errors = issues('release').filter(i => i.severity === 'error')
-    expect(errors.some(e => e.rule === 'unit-missing')).toBe(false) // all ten planned units are authored
+    expect(errors.some(e => e.rule === 'unit-missing' && /^units:(1[0-9]|20)$/.test(e.where))).toBe(false) // all ten planned A2 units are authored (B1, still planned, legitimately reports its own)
     expect(errors.some(e => e.rule === 'cefr-signoff-missing' && e.where === 'units:19')).toBe(true)
     expect(errors.some(e => e.rule === 'unit-missing' && e.where === 'units:19')).toBe(false)
   })

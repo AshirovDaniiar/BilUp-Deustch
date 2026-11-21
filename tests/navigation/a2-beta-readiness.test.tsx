@@ -4,6 +4,7 @@
  * `beta` INSIDE the test only (restored afterwards). Checks: every direct route resolves (no "not found"), no runtime error is logged, the German interface
  * still does not see A2, A2 progress and saved words persist, A1 is unaffected. No human CEFR / native-language approval is implied by this test.
  */
+import { withoutB1Content } from '../content-validate/fixtures'
 import { act, cleanup, render } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { App } from '../../src/app/App'
@@ -128,8 +129,9 @@ describe('navigation, levels and the German interface', () => {
   })
   it('production state: A2 is in controlled Beta for ru + ky and not offered to German', () => {
     expect(a2()).toMatchObject({ status: 'beta', releasedLocales: ['ru', 'ky'] })
-    expect(availableLevels('ru')).toEqual(['A1', 'A2'])
-    expect(availableLevels('ky')).toEqual(['A1', 'A2'])
+    // B1 is a Beta for ru + ky as well since the B1 launch
+    expect(availableLevels('ru')).toEqual(['A1', 'A2', 'B1'])
+    expect(availableLevels('ky')).toEqual(['A1', 'A2', 'B1'])
     expect(availableLevels('de')).toEqual(['A1'])
   })
 })
@@ -176,8 +178,8 @@ describe('the Beta notice', () => {
 })
 
 describe('release gate policy: Beta flags, full release blocks', () => {
-  const authoring = () => validateContent(fullBundle(), { mode: 'authoring' })
-  const release_ = () => validateContent(fullBundle(), { mode: 'release' })
+  const authoring = () => validateContent(withoutB1Content(fullBundle()), { mode: 'authoring' })
+  const release_ = () => validateContent(withoutB1Content(fullBundle()), { mode: 'release' })
   it('Beta: no error and no warning; the missing human reviews and the level test are explicit flags', () => {
     const i = authoring()
     expect(i.filter(x => x.severity === 'error' || x.severity === 'warning')).toEqual([])

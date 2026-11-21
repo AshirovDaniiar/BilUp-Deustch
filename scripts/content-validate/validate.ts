@@ -9,6 +9,7 @@
 import { makeContext } from './context'
 import { answerRules } from './rules/answers'
 import { assessmentRules } from './rules/assessment'
+import { b1Rules } from './rules/b1'
 import { cefrRules } from './rules/cefr'
 import { conventionRules, planRules } from './rules/identity'
 import { localizationRules } from './rules/localization'
@@ -128,6 +129,7 @@ export function validateContent(c: ContentBundle, options: Options = {}): Issue[
   metadataRules(ctx)
   assessmentRules(ctx)
   templateRules(ctx)
+  b1Rules(ctx) // B1 profile (Stage 2C): silent for a bundle without B1 content
 
   // Informational: how much LEGACY (non-strict) L10n content has no Kyrgyz text. Strict levels cannot have any (an error above).
   const l10ns: L10n[] = []

@@ -86,7 +86,7 @@ export function ResultCard({
             {s.weakConcepts.map(id => {
               const c = grammarIndex.get(id)
               return c ? (
-                <span key={id} className="chip chip--yellow">
+                <span key={id} className="chip chip--yellow chip--wrap">
                   {tr(c.title, lang)}
                 </span>
               ) : null
@@ -129,12 +129,15 @@ export function QuizPage({
   onFinished,
   extra,
   activity,
+  sections,
 }: {
   build: () => Question[]
   backTo: string
   onFinished?: (r: QuizResult) => void
   extra?: (r: QuizResult) => ReactNode
   activity: QuizActivity
+  /** optional section tag per question (parts of a level assessment); reported back in `QuizResult.bySection` */
+  sections?: string[]
 }) {
   const { actions } = useApp()
   const [questions, setQuestions] = useState<Question[]>(build)
@@ -164,5 +167,5 @@ export function QuizPage({
       </ResultCard>
     )
   }
-  return <QuizRunner key={questions.map(q => q.id).join('|')} questions={questions} onDone={done} activity={activity} />
+  return <QuizRunner key={questions.map(q => q.id).join('|')} questions={questions} onDone={done} activity={activity} sections={sections} />
 }

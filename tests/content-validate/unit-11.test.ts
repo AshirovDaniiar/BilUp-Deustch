@@ -5,6 +5,7 @@
  * Russian/Kyrgyz independence, exercise structure, separation of revision and final test, answer-position distribution, and the
  * boundaries of the stage (A2 is in controlled Beta (ru + ky), units 12–20 stay empty, no human sign-off is invented).
  */
+import { withoutB1Content } from './fixtures'
 import { describe, expect, it } from 'vitest'
 import { fullBundle } from '../../scripts/content-validate/bundle'
 import { conventions } from '../../scripts/content-validate/conventions'
@@ -62,7 +63,8 @@ const final = finalTestOfUnit(U)!
 const scenario = speakingIndex.get(speakingForUnit(U) ?? '')!
 const norm = (s: string) => s.trim().replace(/\s+/g, ' ').toLowerCase()
 const words = (s: string) => s.split(/\s+/).filter(Boolean).length
-const issues = (mode?: 'release') => validateContent(fullBundle(), { mode })
+// The A2 world (A1 + A2 + registry): B1 content is excluded, because these tests describe A2's own validation state; B1 has its own tests (b1-profile, b1-unit-21).
+const issues = (mode?: 'release') => validateContent(withoutB1Content(fullBundle()), { mode })
 // since Stage 7C the A2 level also holds unit 12: these tests look at unit 11's own notes and instructions
 const notes11 = whyNotesOf('A2').filter(n => grammarIndex.get(n.conceptId)?.unit === U)
 const instructions11 = A2_INSTRUCTIONS.filter(i => i.unit === U)
@@ -503,7 +505,7 @@ describe('unit 11 — release gates and the stage boundary', () => {
   it('release validation still REJECTS incomplete A2: the level test, and the missing sign-offs of units 11–20', () => {
     const errors = issues('release').filter(i => i.severity === 'error')
     expect(errors.length).toBeGreaterThan(0)
-    expect(errors.some(e => e.rule === 'unit-missing')).toBe(false) // all ten planned units are authored
+    expect(errors.some(e => e.rule === 'unit-missing' && /^units:(1[0-9]|20)$/.test(e.where))).toBe(false) // all ten planned A2 units are authored (B1, still planned, legitimately reports its own)
     expect(errors.some(e => e.rule === 'unit-minimum' && /level test/.test(e.message))).toBe(true)
     expect(errors.some(e => e.rule === 'cefr-signoff-missing' && e.where === 'units:11')).toBe(true)
     expect(errors.some(e => e.rule === 'unit-missing' && e.where === 'units:11')).toBe(false)
@@ -535,7 +537,7 @@ describe('unit 11 — release gates and the stage boundary', () => {
       'unit-19',
       'unit-20',
     ])
-    expect(allUnits.filter(u => u.id >= 21)).toEqual([])
+    expect(allUnits.filter(u => u.id >= 21 && u.level !== 'B1')).toEqual([]) // no A2 unit beyond 20 (B1 owns 21–32)
   })
   it('A2 stays planned and invisible; no placement, level test or tutor content was added', () => {
     const a2 = COURSE.levels.find(l => l.id === 'A2')!

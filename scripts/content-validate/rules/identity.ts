@@ -16,7 +16,8 @@ export function planRules(ctx: Ctx): void {
     if (!ctx.strict(level.id)) continue
     const mine = plan.filter(p => p.level === level.id)
     if (mine.length === 0) {
-      if (plan.length > 0 || bundle.units.some(u => ctx.levelOfUnit(u.id) === level.id))
+      // a PLANNED level that has no units yet (not started) needs no plan; a level that is visible, or that already holds units, does
+      if (bundle.units.some(u => ctx.levelOfUnit(u.id) === level.id) || (plan.length > 0 && ctx.statusOf(level.id) !== 'planned'))
         ctx.err('plan-missing', level.id, `${level.id} has units but no approved unit plan`)
       continue
     }

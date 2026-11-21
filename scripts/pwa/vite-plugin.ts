@@ -11,10 +11,10 @@ import type { Plugin } from 'vite'
 const NOT_PRECACHED = new Set(['sw.js', 'pwa-config.json'])
 const SKIP = /\.map$/i
 /**
- * Lazy level-content chunks (`assets/a2-content-*.js`, see src/data/a2/a2-content.ts) are NOT part of the shell precache: a learner
+ * Lazy level-content chunks (`assets/<level>-content-*.js`, e.g. src/data/a2/a2-content.ts, src/data/b1/b1-content.ts) are NOT part of the shell precache: a learner
  * who cannot see the level must never download it. When a level is released, its caching strategy is decided in that release.
  */
-const LAZY_CONTENT = /^assets\/a\d-content-[^/]*\.js$/
+const LAZY_CONTENT = /^assets\/[a-z]\d-content-[^/]*\.js$/
 
 function listFiles(dir: string, out: string[] = []): string[] {
   for (const name of readdirSync(dir)) {

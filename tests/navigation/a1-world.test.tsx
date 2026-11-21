@@ -13,6 +13,11 @@ __planned(() => {
     __COURSE.levels.find(l => l.id === 'A2')!,
     { status: 'planned', releasedLocales: [] },
   )
+  // B1 is a Beta since the B1 launch; these A1/A2 worlds describe the course WITHOUT it (B1 has its own tests)
+  Object.assign(
+    __COURSE.levels.find(l => l.id === 'B1')!,
+    { status: 'planned', releasedLocales: [] },
+  )
 })
 
 import { App } from '../../src/app/App'

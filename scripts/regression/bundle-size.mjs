@@ -22,7 +22,7 @@ const sum = list =>
 
 const files = walk(OUT).map(p => ({ path: relative(OUT, p).split(sep).join('/'), ...size(readFileSync(p)) }))
 // lazy level-content chunks (assets/a2-content-*.js) are reported separately: not part of the entry bundle or the precache
-const LAZY = /^assets\/a\d-content-[^/]*\.js$/
+const LAZY = /^assets\/[a-z]\d-content-[^/]*\.js$/
 const js = files.filter(f => /\.js$/.test(f.path) && f.path.startsWith('assets/') && !LAZY.test(f.path))
 const lazy = files.filter(f => LAZY.test(f.path))
 const css = files.filter(f => /\.css$/.test(f.path))
@@ -51,8 +51,8 @@ const line = (label, cur, old) =>
     ? `   Δ raw ${((cur.raw - old.raw) / 1024).toFixed(1)} kB (${(((cur.raw - old.raw) / old.raw) * 100).toFixed(1)} %), gzip ${((cur.gzip - old.gzip) / 1024).toFixed(1)} kB`
     : '')
 console.log(line('main JS', report.mainJs, base?.mainJs))
-console.log(line('lazy chunks (A2)', report.lazyJs, undefined))
-console.log(line('main + lazy (A2 on)', sum([report.mainJs, report.lazyJs]), base?.mainJs))
+console.log(line('lazy chunks (A2 + B1)', report.lazyJs, undefined))
+console.log(line('main + lazy (all lazy levels on)', sum([report.mainJs, report.lazyJs]), base?.mainJs))
 console.log(line('CSS', report.css, base?.css))
 console.log(line('precache total', report.precacheTotal, base?.precacheTotal))
 console.log(line('src/data/*.ts (source)', report.srcDataTs, base?.srcDataTs))

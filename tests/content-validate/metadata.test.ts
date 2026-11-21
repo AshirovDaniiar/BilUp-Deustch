@@ -56,8 +56,8 @@ describe('identity is metadata, not a naming pattern', () => {
 
   it("the unit id must lie in its level's range", () => {
     const b = validA2Bundle()
-    b.units.push({ ...b.units.find(u => u.id === 11)!, id: 25 })
-    expect(has(errs(b), 'unit-id-range', 'units:25')).toBe(true)
+    b.units.push({ ...b.units.find(u => u.id === 11)!, id: 99 })
+    expect(has(errs(b), 'unit-id-range', 'units:99')).toBe(true)
   })
 })
 
@@ -243,10 +243,11 @@ describe('the empty, planned A2 is safe and invisible', () => {
     expect(topicTestOfUnit(18)?.id).toBe('unit-18')
     expect(topicTestOfUnit(19)?.id).toBe('unit-19')
     expect(topicTestOfUnit(20)?.id).toBe('unit-20')
-    for (const u of [21, 99]) expect(topicTestOfUnit(u)).toBeUndefined()
+    for (const u of [33, 99]) expect(topicTestOfUnit(u)).toBeUndefined()
+    expect(topicTestOfUnit(21)?.level ?? 'B1').toBe('B1') // unit 21 belongs to B1, never to A2
     expect(isLevelVisible('A2')).toBe(true) // controlled Beta
-    expect(availableLevels('ru')).toEqual(['A1', 'A2'])
-    expect(availableLevels('ky')).toEqual(['A1', 'A2'])
+    expect(availableLevels('ru')).toEqual(['A1', 'A2', 'B1'])
+    expect(availableLevels('ky')).toEqual(['A1', 'A2', 'B1'])
     expect(availableLevels('de')).toEqual(['A1']) // not offered to the German interface
   })
 

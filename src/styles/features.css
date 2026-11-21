@@ -293,3 +293,8 @@
 .bubble__who { display: inline-flex; align-items: center; gap: 8px; }
 .result__mascot { margin-left: auto; }
 @media (max-width: 359px) { .result__mascot { display: none; } }
+
+/* B1 self-assessment (features/feedback): the chips hold sentences, so they must wrap instead of forcing a horizontal scroll on phones */
+.selfcheck .chip { white-space: normal; text-align: left; border-radius: 14px; max-width: 100%; }
+/* long concept titles (B1) on the test result: wrap instead of forcing a horizontal scroll on phones (found in the Unit 22 browser QA) */
+.chip--wrap { white-space: normal; text-align: left; border-radius: 14px; max-width: 100%; }

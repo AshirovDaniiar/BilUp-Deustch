@@ -268,19 +268,30 @@ describe('A2 selectors return only A2 data (and are empty until content is autho
     expect(unitById(20)?.title).toBe('Pläne, Einladungen und gemeinsame Entscheidungen')
     expect(speakingForUnit(20)).toBe('a2-sp-20-01')
     expect(finalTestOfUnit(20)?.questions).toHaveLength(15)
-    for (const u of [0, -1, 21, 99, 1.5]) {
+    for (const u of [0, -1, 33, 99, 1.5]) {
       expect(levelOfUnit(u)).toBeUndefined()
       expect(vocabularyForUnit(u)).toEqual([])
       expect(speakingForUnit(u)).toBeUndefined()
     }
   })
 
-  it('levels without a content module (B1, B2, C1) are empty and shared by reference-free empties', () => {
-    for (const l of ['B1', 'B2', 'C1'] as const) {
+  it('levels without a content module (B2, C1) are empty and shared by reference-free empties', () => {
+    for (const l of ['B2', 'C1'] as const) {
       const c = contentOf(l)
       for (const v of Object.values(c)) expect(v).toHaveLength(0)
     }
-    expect(Object.isFrozen(contentOf('B1'))).toBe(true)
+    expect(Object.isFrozen(contentOf('B2'))).toBe(true)
+  })
+
+  it('B1 is a registered LAZY level: a mutable slot holding the approved unit PLAN (12 identities) but no content — never frozen-shared with B2', () => {
+    const c = contentOf('B1')
+    for (const [k, v] of Object.entries(c)) expect(v, k).toHaveLength(k === 'plan' ? 12 : 0)
+    expect(Object.isFrozen(c)).toBe(false)
+    expect(contentOf('B1')).not.toBe(contentOf('B2'))
+    expect(contentOf('B1')).not.toBe(contentOf('A2'))
+    expect(catalog.isLevelContentLoaded('B1')).toBe(false)
+    expect(unitsOfLevel('B1')).toEqual([])
+    expect(allUnits.some(u => u.id > 20)).toBe(false)
   })
 
   it('allUnits is the A1 units followed by the A2 units; no unit is shared between levels', () => {
@@ -416,7 +427,8 @@ describe('course registry', () => {
     expect(isLevelReleasedFor('A2', 'ru')).toBe(true)
     expect(isLevelReleasedFor('A2', 'ky')).toBe(true)
     expect(isLevelReleasedFor('A1', 'ru')).toBe(true)
-    expect(isLevelVisible('B1')).toBe(false)
+    expect(isLevelVisible('B1')).toBe(true) // B1 Beta (ru, ky) since the B1 launch
+    expect(courseLevel('B1')).toMatchObject({ status: 'beta', releasedLocales: ['ru', 'ky'] })
   })
 
   it('unit id ranges: A1 = 1–10 (matches UNITS exactly), A2 = 11–20, contiguous and non-overlapping', () => {
@@ -429,7 +441,10 @@ describe('course registry', () => {
     expect(levelOfUnitId(10)).toBe('A1')
     expect(levelOfUnitId(11)).toBe('A2')
     expect(levelOfUnitId(20)).toBe('A2')
-    expect(levelOfUnitId(21)).toBeUndefined()
+    expect(courseLevel('B1')?.unitIdRange).toEqual([21, 32])
+    expect(levelOfUnitId(21)).toBe('B1')
+    expect(levelOfUnitId(32)).toBe('B1')
+    expect(levelOfUnitId(33)).toBeUndefined()
   })
 
   it('the course id equals the storage course id', () => {
