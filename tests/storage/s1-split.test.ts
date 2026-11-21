@@ -85,7 +85,16 @@ describe('layout: the course record no longer holds preferences or tutor (STO-01
   it('the slices are self-describing and carry the epoch of their core', () => {
     const kv = memoryKV()
     saveProgress(kv, { ...learner(), epoch: 7 }, NOW)
-    expect(parse(kv, KEYS.prefs)).toMatchObject({ record: 'prefs', v: 1, epoch: 7, updatedAt: 5000, name: 'Mira', lang: 'ky', theme: 'dark', weeklyGoal: 3 })
+    expect(parse(kv, KEYS.prefs)).toMatchObject({
+      record: 'prefs',
+      v: 1,
+      epoch: 7,
+      updatedAt: 5000,
+      name: 'Mira',
+      lang: 'ky',
+      theme: 'dark',
+      weeklyGoal: 3,
+    })
     expect(parse(kv, KEYS.tutor)).toMatchObject({ record: 'tutor', v: 1, epoch: 7, updatedAt: 1001, clearedAt: 0 })
     expect(parse(kv, KEYS.tutor).messages).toEqual(MSGS)
   })
@@ -122,7 +131,11 @@ describe('write isolation (STO-02, the S1 acceptance requirement)', () => {
   it('a tutor change writes ONLY the tutor record', () => {
     const kv = saved()
     const c = learner()
-    save(kv, { ...c, progress: { ...c.progress, tutor: { messages: [...MSGS, { id: 'u2', role: 'user', text: 'Danke', at: 1002 }] } }, tutorAt: 1002 })
+    save(kv, {
+      ...c,
+      progress: { ...c.progress, tutor: { messages: [...MSGS, { id: 'u2', role: 'user', text: 'Danke', at: 1002 }] } },
+      tutorAt: 1002,
+    })
     expect(writes(kv)).toEqual([KEYS.tutor])
   })
 
@@ -179,7 +192,9 @@ describe('each preferences / tutor record is its own failure domain (STO-06, S1 
           const r = loadProgress(kv, opts())
           expect(r.report.status).toBe('ok') // never the recovery screen
           expect(r.report.writesDisabled).toBe(false)
-          expect(r.report.sliceNotices).toEqual([{ slice: s.name, kind: 'damaged', quarantineKey: expect.stringContaining(KEYS.quarantine) }])
+          expect(r.report.sliceNotices).toEqual([
+            { slice: s.name, kind: 'damaged', quarantineKey: expect.stringContaining(KEYS.quarantine) },
+          ])
           expect(quarantined(kv)).toContain(bad) // the exact bytes
           expect(kv.get(KEYS.current)).toBe(coreBefore) // the course record is byte-identical
           expect(r.core.progress.xp).toBe(20)
@@ -195,12 +210,17 @@ describe('each preferences / tutor record is its own failure domain (STO-06, S1 
       it('needs repairs (invalid values): the original bytes are kept and the sanitised record is written', () => {
         const kv = healthy()
         const rec = parse(kv, s.key)
-        const bad = JSON.stringify(s.name === 'prefs' ? { ...rec, theme: 'neon', weeklyGoal: 99 } : { ...rec, messages: [...rec.messages, { id: 'x', role: 'robot', text: 'bad' }] })
+        const bad = JSON.stringify(
+          s.name === 'prefs'
+            ? { ...rec, theme: 'neon', weeklyGoal: 99 }
+            : { ...rec, messages: [...rec.messages, { id: 'x', role: 'robot', text: 'bad' }] },
+        )
         kv.m.set(s.key, bad)
         const r = loadProgress(kv, opts())
         expect(r.report.sliceNotices).toHaveLength(1)
         expect(quarantined(kv)).toContain(bad)
-        if (s.name === 'prefs') expect(r.core.progress.name).toBe('Mira') // the valid part is kept
+        if (s.name === 'prefs')
+          expect(r.core.progress.name).toBe('Mira') // the valid part is kept
         else expect(r.core.progress.tutor.messages).toEqual(MSGS)
         expect(loadProgress(kv, opts()).report.sliceNotices).toEqual([])
       })
@@ -420,7 +440,10 @@ describe('monolith -> split upgrade of a development profile (STO-05, S1 design 
   describe('precedence when slices already exist (a crash between U2/U3 and U4)', () => {
     it('a NEWER preferences slice wins over the monolith value', () => {
       const kv = monolith()
-      kv.m.set(KEYS.prefs, serializePrefs({ ...learner(), settingsAt: 9000, progress: { ...learner().progress, theme: 'light', name: 'Newer' } }))
+      kv.m.set(
+        KEYS.prefs,
+        serializePrefs({ ...learner(), settingsAt: 9000, progress: { ...learner().progress, theme: 'light', name: 'Newer' } }),
+      )
       const r = loadProgress(kv, opts())
       expect(r.core.progress.name).toBe('Newer')
       expect(r.core.progress.theme).toBe('light')
@@ -436,13 +459,19 @@ describe('monolith -> split upgrade of a development profile (STO-05, S1 design 
     it('an existing tutor slice is MERGED with the monolith transcript: no message is lost', () => {
       const kv = monolith()
       const extra = { id: 'u9', role: 'user' as const, text: 'Nur im Slice', at: 2000 }
-      kv.m.set(KEYS.tutor, serializeTutor({ ...learner(), progress: { ...learner().progress, tutor: { messages: [MSGS[0]!, extra] } }, tutorAt: 2000 }))
+      kv.m.set(
+        KEYS.tutor,
+        serializeTutor({ ...learner(), progress: { ...learner().progress, tutor: { messages: [MSGS[0]!, extra] } }, tutorAt: 2000 }),
+      )
       const r = loadProgress(kv, opts())
       expect(r.core.progress.tutor.messages.map(m => m.id)).toEqual(['u1', 'a1', 'u9'])
     })
     it('a slice from an older epoch than the monolith is ignored', () => {
       const kv = monolithKV(learner({ epoch: 4 }))
-      kv.m.set(KEYS.prefs, serializePrefs({ ...learner({ epoch: 1 }), progress: { ...learner().progress, name: 'Stale' }, settingsAt: 99999 }))
+      kv.m.set(
+        KEYS.prefs,
+        serializePrefs({ ...learner({ epoch: 1 }), progress: { ...learner().progress, name: 'Stale' }, settingsAt: 99999 }),
+      )
       const r = loadProgress(kv, opts())
       expect(r.core.progress.name).toBe('Mira')
     })
@@ -462,7 +491,10 @@ describe('monolith -> split upgrade of a development profile (STO-05, S1 design 
     saveProgress(kv, learner(), NOW)
     // the older build knows nothing about slices: it reads the record (defaults for the missing fields) and writes it back as a monolith
     const old = loadProgress(kv, opts()).core
-    const rewritten = serialize({ ...old, progress: { ...old.progress, name: '', lang: 'ru', theme: 'auto', tutor: { messages: [] } }, settingsAt: 0, tutorAt: 0 }, NOW + 1)
+    const rewritten = serialize(
+      { ...old, progress: { ...old.progress, name: '', lang: 'ru', theme: 'auto', tutor: { messages: [] } }, settingsAt: 0, tutorAt: 0 },
+      NOW + 1,
+    )
     kv.m.set(KEYS.current, rewritten)
     const r = loadProgress(kv, opts(NOW + 2))
     expect(r.core.progress.name).toBe('Mira')
@@ -699,7 +731,9 @@ describe('replacements and stale slices (S1 design §6, §7 W5–W7)', () => {
     const stale = learner() // epoch 0, as a tab that missed the reset would hold
     startFresh(kv, opts(NOW + 1)) // another tab resets: epoch > 0
     const after = kv.snapshot()
-    const res = saveProgress(kv, { ...stale, progress: { ...stale.progress, name: 'Stale edit' }, settingsAt: NOW + 9 }, NOW + 9, { replace: true })
+    const res = saveProgress(kv, { ...stale, progress: { ...stale.progress, name: 'Stale edit' }, settingsAt: NOW + 9 }, NOW + 9, {
+      replace: true,
+    })
     expect(res.ok && res.conflict).toBe(true)
     // nothing of the stale tab reached storage
     for (const k of [KEYS.current, KEYS.prefs, KEYS.tutor]) expect(kv.get(k)).toBe(after[k])
@@ -745,7 +779,12 @@ describe('stale-shell compatibility (S1 design §6)', () => {
       progress: {
         ...first.core.progress,
         name: 'Current name',
-        tutor: { messages: [{ id: 'k1', role: 'user' as const, text: 'one', at: 5_000 }, { id: 'k2', role: 'ai' as const, text: 'two', at: 5_001 }] },
+        tutor: {
+          messages: [
+            { id: 'k1', role: 'user' as const, text: 'one', at: 5_000 },
+            { id: 'k2', role: 'ai' as const, text: 'two', at: 5_001 },
+          ],
+        },
       },
       settingsAt: NOW,
       tutorAt: 5_001,
@@ -759,7 +798,13 @@ describe('stale-shell compatibility (S1 design §6)', () => {
         ...v1,
         name: 'Stale name',
         xp: v1.xp + 10,
-        tutor: { messages: [{ id: 'k1', role: 'user', text: 'one' }, { id: 'k2', role: 'ai', text: 'two' }, { id: 'k3', role: 'user', text: 'three from stale' }] },
+        tutor: {
+          messages: [
+            { id: 'k1', role: 'user', text: 'one' },
+            { id: 'k2', role: 'ai', text: 'two' },
+            { id: 'k3', role: 'user', text: 'three from stale' },
+          ],
+        },
       }),
     )
     const r = loadProgress(kv, opts(NOW + 1))
@@ -783,9 +828,21 @@ describe('stale-shell compatibility (S1 design §6)', () => {
     const kv = memoryKV()
     const origin = { from: 'legacy-v1' as const, migratedAt: 1, backupKey: 'k', legacyFingerprint: 'old' }
     const c = learner({ origin })
-    const stale = JSON.stringify({ xp: 5, tutor: { messages: [{ id: 'u1', role: 'user', text: 'Hallo' }, { id: 'zz', role: 'ai', text: 'new' }] } })
+    const stale = JSON.stringify({
+      xp: 5,
+      tutor: {
+        messages: [
+          { id: 'u1', role: 'user', text: 'Hallo' },
+          { id: 'zz', role: 'ai', text: 'new' },
+        ],
+      },
+    })
     const d = applyLegacyDrift(kv, c, stale, NOW)
-    expect(d.core.progress.tutor.messages.map(m => [m.id, m.at])).toEqual([['u1', 1000], ['a1', 1001], ['zz', 1002]])
+    expect(d.core.progress.tutor.messages.map(m => [m.id, m.at])).toEqual([
+      ['u1', 1000],
+      ['a1', 1001],
+      ['zz', 1002],
+    ])
   })
 })
 
@@ -845,7 +902,9 @@ describe('merge rules: preferences and tutor (STO-11, STO-18)', () => {
     })
     expect(comparePrefs(p({ epoch: 2 }), p({ epoch: 1, settingsAt: 99 }))).toBeGreaterThan(0)
     expect(comparePrefs(p({ settingsAt: 10 }), p({ settingsAt: 9 }))).toBeGreaterThan(0)
-    expect(comparePrefs(p({ settingsAt: 10 }, 'dark'), p({ settingsAt: 10 }, 'light'))).toBe(-comparePrefs(p({ settingsAt: 10 }, 'light'), p({ settingsAt: 10 }, 'dark')))
+    expect(comparePrefs(p({ settingsAt: 10 }, 'dark'), p({ settingsAt: 10 }, 'light'))).toBe(
+      -comparePrefs(p({ settingsAt: 10 }, 'light'), p({ settingsAt: 10 }, 'dark')),
+    )
     expect(comparePrefs(p({ settingsAt: 10 }), p({ settingsAt: 10 }))).toBe(0)
   })
 
@@ -870,7 +929,10 @@ describe('reading the stored state', () => {
     expect(readPrefs('{').state).toBe('damaged')
     expect(readTutor('{"record":"tutor","v":1,"messages":"x"}').state).toBe('damaged')
     expect(readTutor('{"record":"tutor","v":9,"messages":[]}').state).toBe('future')
-    expect(readTutor('{"record":"tutor","v":1,"epoch":0,"messages":[{"id":"a","role":"user","text":"t"}]}')).toMatchObject({ state: 'ok', rec: { messages: [{ at: 1 }] } })
+    expect(readTutor('{"record":"tutor","v":1,"epoch":0,"messages":[{"id":"a","role":"user","text":"t"}]}')).toMatchObject({
+      state: 'ok',
+      rec: { messages: [{ at: 1 }] },
+    })
   })
 
   it('a preferences/tutor record is never offered as a restorable progress copy', async () => {

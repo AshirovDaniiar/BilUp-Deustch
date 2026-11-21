@@ -396,7 +396,21 @@ describe('bounded raw-results buffer, summaries and reproducibility (05 ยง4.4, ย
     const c = apply(freshCore(), big).core
     expect(c.activity.results[0].items).toHaveLength(RETENTION.itemsPerResult)
     expect(Object.keys(c.activity.results[0]).sort()).toEqual(
-      ['activityId', 'assisted', 'activeMs', 'evidence', 'finishedAt', 'items', 'kind', 'levelId', 'passed', 'resultId', 'score', 'startedAt', 'xp'].sort(), // S2: startedAt/levelId/evidence are kept (STO-82)
+      [
+        'activityId',
+        'assisted',
+        'activeMs',
+        'evidence',
+        'finishedAt',
+        'items',
+        'kind',
+        'levelId',
+        'passed',
+        'resultId',
+        'score',
+        'startedAt',
+        'xp',
+      ].sort(), // S2: startedAt/levelId/evidence are kept (STO-82)
     )
   })
 

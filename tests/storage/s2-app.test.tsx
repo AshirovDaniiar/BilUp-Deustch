@@ -24,12 +24,14 @@ const mount = (kv?: Parameters<typeof AppProvider>[0]['kv']) =>
     </AppProvider>,
   )
 const R = STORAGE_MESSAGES.ru
-const lesson = (id: string) => mkResult({ resultId: id, activityId: `topic:${id}`, kind: 'lesson', startedAt: Date.now() - 100, finishedAt: Date.now() })
+const lesson = (id: string) =>
+  mkResult({ resultId: id, activityId: `topic:${id}`, kind: 'lesson', startedAt: Date.now() - 100, finishedAt: Date.now() })
 const record = (id: string) => act(() => void ctx.actions.record(lesson(id)))
 const closeBtn = () => screen.queryByRole('button', { name: R.close })
 const retryBtn = () => screen.queryByTestId('notice-retry')
 const kindNow = () => screen.queryByTestId('storage-notice')?.getAttribute('data-kind') ?? null
-const results = (kv: { get(k: string): string | null }) => (kv.get(KEYS.results) === null ? [] : (JSON.parse(kv.get(KEYS.results)!).results as { resultId: string }[]).map(r => r.resultId))
+const results = (kv: { get(k: string): string | null }) =>
+  kv.get(KEYS.results) === null ? [] : (JSON.parse(kv.get(KEYS.results)!).results as { resultId: string }[]).map(r => r.resultId)
 
 beforeEach(() => {
   // the fixtures' default language is Russian
@@ -61,7 +63,9 @@ describe('failure notices are persistent; informational notices are dismissible 
     expect(ctx.storage.historyPending).toBe(2)
     expect(results(base)).toEqual(['ok1']) // nothing was lost from the stored history, nothing pretended
     // credit is saved by the core regardless (STO-80)
-    expect(JSON.parse(base.get(KEYS.current)!).activity.tombstones.map((t: { resultId: string }) => t.resultId)).toEqual(expect.arrayContaining(['pend1', 'pend2']))
+    expect(JSON.parse(base.get(KEYS.current)!).activity.tombstones.map((t: { resultId: string }) => t.resultId)).toEqual(
+      expect.arrayContaining(['pend1', 'pend2']),
+    )
     failResults = false
     act(() => void fireEvent.click(retryBtn()!))
     expect(kindNow()).toBeNull()
@@ -142,7 +146,7 @@ describe('best-effort flush (STO-97)', () => {
 })
 
 describe('stale-epoch conflict notice (STO-95)', () => {
-  it('a tab whose unsaved attempt was discarded by another tab\'s replacement says: kept in history, XP not part of current progress', () => {
+  it("a tab whose unsaved attempt was discarded by another tab's replacement says: kept in history, XP not part of current progress", () => {
     const kv = memoryKV()
     mount(kv)
     record('s0') // persisted

@@ -103,7 +103,12 @@ function mergeActivity(a: ActivityState, b: ActivityState, now: number): Activit
     (x, y) => (x.at <= y.at ? x : y),
   ).sort((x, y) => (x.resultId < y.resultId ? -1 : 1))
   // reserved/inactive: merged by max, never decided on
-  const pt = a.prunedThrough && b.prunedThrough ? (compareKeys(a.prunedThrough, b.prunedThrough) >= 0 ? a.prunedThrough : b.prunedThrough) : (a.prunedThrough ?? b.prunedThrough)
+  const pt =
+    a.prunedThrough && b.prunedThrough
+      ? compareKeys(a.prunedThrough, b.prunedThrough) >= 0
+        ? a.prunedThrough
+        : b.prunedThrough
+      : (a.prunedThrough ?? b.prunedThrough)
   // tombstone expiry (unchanged rule) is the only thing pruneActivity does
   return pruneActivity(
     { completions, results, tombstones, summaries: mergeSummaries(a.summaries, b.summaries), ...(pt ? { prunedThrough: pt } : {}) },
@@ -176,7 +181,10 @@ function mergeProgress(a: Core, b: Core, xp: number): UserProgress {
     scores[k] = s1.length !== s2.length ? (s1.length > s2.length ? s1 : s2) : byJson(s1, s2)
   }
   const completed = [...new Set([...x.completed, ...y.completed])].sort() // no ordering semantics: sorted for a canonical form
-  const tutor = mergeTutor({ messages: x.tutor.messages, clearedAt: a.tutorClearedAt }, { messages: y.tutor.messages, clearedAt: b.tutorClearedAt })
+  const tutor = mergeTutor(
+    { messages: x.tutor.messages, clearedAt: a.tutorClearedAt },
+    { messages: y.tutor.messages, clearedAt: b.tutorClearedAt },
+  )
   return {
     name: settings.name,
     lang: settings.lang,
@@ -194,9 +202,7 @@ function mergeProgress(a: Core, b: Core, xp: number): UserProgress {
       .slice(-LIMITS.mistakes),
     scores,
     daily,
-    tests: capTests(
-      unionBy(x.tests, y.tests, t => `${t.id}|${t.at}`).sort((p, q) => p.at - q.at || (p.id < q.id ? -1 : 1)),
-    ),
+    tests: capTests(unionBy(x.tests, y.tests, t => `${t.id}|${t.at}`).sort((p, q) => p.at - q.at || (p.id < q.id ? -1 : 1))),
     tutor: { messages: tutor.messages },
   }
 }

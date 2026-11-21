@@ -274,7 +274,17 @@ function sanitizeTestExtras(t: Record<string, unknown>): Partial<TestResult> {
     let ok = entries.length > 0 && entries.length <= 20
     for (const [k, p] of entries) {
       if (!ok) break
-      if (k.length > 40 || !Array.isArray(p) || p.length !== 2 || !isFiniteNumber(p[0]) || !isFiniteNumber(p[1]) || p[0] < 0 || p[1] < p[0] || p[1] > 500) ok = false
+      if (
+        k.length > 40 ||
+        !Array.isArray(p) ||
+        p.length !== 2 ||
+        !isFiniteNumber(p[0]) ||
+        !isFiniteNumber(p[1]) ||
+        p[0] < 0 ||
+        p[1] < p[0] ||
+        p[1] > 500
+      )
+        ok = false
       else parts[k] = [Math.round(p[0]), Math.round(p[1])]
     }
     if (ok) out.parts = parts
@@ -304,7 +314,14 @@ function sanitizeTests(c: Ctx, v: unknown): UserProgress['tests'] {
       dropped++
       continue
     }
-    out.push({ id: t.id, at: t.at, pct: Math.round(Math.max(0, Math.min(100, pct))), weak: ids(t.weak), strong: ids(t.strong), ...sanitizeTestExtras(t) })
+    out.push({
+      id: t.id,
+      at: t.at,
+      pct: Math.round(Math.max(0, Math.min(100, pct))),
+      weak: ids(t.weak),
+      strong: ids(t.strong),
+      ...sanitizeTestExtras(t),
+    })
   }
   if (dropped) note(c, 'tests', `${dropped} invalid entr${dropped === 1 ? 'y' : 'ies'} dropped`)
   return capTests(out)
@@ -323,7 +340,11 @@ function sanitizeTutor(c: Ctx, v: unknown): UserProgress['tutor'] {
       dropped++
       continue
     }
-    const msg: UserProgress['tutor']['messages'][number] = { id: m.id.slice(0, LIMITS.id), role: m.role, text: m.text.slice(0, LIMITS.tutorText) }
+    const msg: UserProgress['tutor']['messages'][number] = {
+      id: m.id.slice(0, LIMITS.id),
+      role: m.role,
+      text: m.text.slice(0, LIMITS.tutorText),
+    }
     if (isFiniteNumber(m.at) && m.at >= 0) msg.at = Math.floor(m.at)
     messages.push(msg)
   }

@@ -202,7 +202,9 @@ export function AppProvider({ children, kv }: { children: ReactNode; kv?: KeyVal
     }
     // STO-95: another tab replaced the state (higher epoch) while this tab held credit that was never persisted — say so, never silently
     if (seen.core.epoch > coreRef.current.epoch) {
-      const lostCredit = coreRef.current.credit.entries.some(e => !persistedIds.current.has(e.id) && !seen.core.credit.entries.some(x => x.id === e.id))
+      const lostCredit = coreRef.current.credit.entries.some(
+        e => !persistedIds.current.has(e.id) && !seen.core.credit.entries.some(x => x.id === e.id),
+      )
       if (lostCredit) {
         setReplacedNotice(true)
         armNotice()
@@ -229,7 +231,10 @@ export function AppProvider({ children, kv }: { children: ReactNode; kv?: KeyVal
     if (res.ok) {
       lastRaws.current = { core: res.raw, prefs: res.rawPrefs, tutor: res.rawTutor, results: res.rawResults }
       // STO-95: the merge adopted another tab's REPLACEMENT (higher epoch) and the credit this tab had earned is not part of it
-      if (res.core.epoch > core.epoch && core.credit.entries.some(e => !persistedIds.current.has(e.id) && !res.core.credit.entries.some(x => x.id === e.id))) {
+      if (
+        res.core.epoch > core.epoch &&
+        core.credit.entries.some(e => !persistedIds.current.has(e.id) && !res.core.credit.entries.some(x => x.id === e.id))
+      ) {
         setReplacedNotice(true)
         armNotice()
       }
@@ -241,8 +246,8 @@ export function AppProvider({ children, kv }: { children: ReactNode; kv?: KeyVal
       applySave(res)
       if (res.future) setReadOnly(true) // a newer app version owns the record: never write
     }
-  // syncFromStorage only touches refs and setCore (stable)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // syncFromStorage only touches refs and setCore (stable)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [core, readOnly, store])
 
   // theme + document language
@@ -315,7 +320,15 @@ export function AppProvider({ children, kv }: { children: ReactNode; kv?: KeyVal
   useEffect(() => {
     const onStorage = (e: StorageEvent) => {
       if (readOnlyRef.current) return
-      if (e.key !== null && e.key !== KEYS.current && e.key !== KEYS.prefs && e.key !== KEYS.tutor && e.key !== KEYS.results && e.key !== KEYS.legacy) return
+      if (
+        e.key !== null &&
+        e.key !== KEYS.current &&
+        e.key !== KEYS.prefs &&
+        e.key !== KEYS.tutor &&
+        e.key !== KEYS.results &&
+        e.key !== KEYS.legacy
+      )
+        return
       const now = Date.now()
       // only the record that changed is merged: a change to one never drags in another group of the other tab's state
       const groups = new Set<Group>()
@@ -334,7 +347,7 @@ export function AppProvider({ children, kv }: { children: ReactNode; kv?: KeyVal
     }
     window.addEventListener('storage', onStorage)
     return () => window.removeEventListener('storage', onStorage)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [store])
 
   // progress-only update; returning the same object keeps identity (no re-render, no write)
@@ -483,7 +496,10 @@ export function AppProvider({ children, kv }: { children: ReactNode; kv?: KeyVal
           // F2 / STO-95: same stale-epoch detection as the save effect — the merge adopted another tab's replacement and the credit
           // this tab had earned is not part of it. Detected once: persistedIds is refreshed below, so a second Retry cannot re-raise it.
           const mine = coreRef.current
-          if (res.core.epoch > mine.epoch && mine.credit.entries.some(e => !persistedIds.current.has(e.id) && !res.core.credit.entries.some(x => x.id === e.id))) {
+          if (
+            res.core.epoch > mine.epoch &&
+            mine.credit.entries.some(e => !persistedIds.current.has(e.id) && !res.core.credit.entries.some(x => x.id === e.id))
+          ) {
             if (!replacedNotice) armNotice() // no duplicate notice for the same replacement
             setReplacedNotice(true)
           }

@@ -16,7 +16,11 @@ const NOW = 1_740_000_000_000
 const T0 = 1_738_000_000_000 // when the stale v1 app wrote its chat
 const opts = (now = NOW) => ({ now, ids: { writing: new Set<string>(), quizLike: new Set<string>(), testByUnit: {} } })
 const v1 = (tutor: object[], extra: object = {}) =>
-  JSON.stringify({ ...JSON.parse(readFileSync(join(__dirname, '../fixtures/legacy/v1-full.json'), 'utf8')), tutor: { messages: tutor }, ...extra })
+  JSON.stringify({
+    ...JSON.parse(readFileSync(join(__dirname, '../fixtures/legacy/v1-full.json'), 'utf8')),
+    tutor: { messages: tutor },
+    ...extra,
+  })
 const M = (id: string, role: 'user' | 'ai' = 'user', text = id) => ({ id, role, text })
 const ids = (c: Core) => c.progress.tutor.messages.map(m => m.id)
 const writes = (kv: MemKV) => kv.log.filter(l => l.startsWith('set:')).map(l => l.slice(4))
@@ -67,7 +71,8 @@ describe('A. legacy tutor ordering (position-based stamps)', () => {
 
   it('equal timestamps: every permutation of the inputs gives the same order', () => {
     const msgs: Msg[] = ['p', 'q', 'r', 's'].map(id => ({ ...M(id), at: 50 }))
-    const perms = (xs: Msg[]): Msg[][] => (xs.length < 2 ? [xs] : xs.flatMap((x, i) => perms([...xs.slice(0, i), ...xs.slice(i + 1)]).map(p => [x, ...p])))
+    const perms = (xs: Msg[]): Msg[][] =>
+      xs.length < 2 ? [xs] : xs.flatMap((x, i) => perms([...xs.slice(0, i), ...xs.slice(i + 1)]).map(p => [x, ...p]))
     const outs = perms(msgs).map(p => JSON.stringify(mergeTutor(T(p), T([])).messages))
     expect(new Set(outs).size).toBe(1)
   })
@@ -76,7 +81,11 @@ describe('A. legacy tutor ordering (position-based stamps)', () => {
     const kv = memoryKV({ [KEYS.legacy]: v1([M('t1'), M('t2')]) })
     const c = loadProgress(kv, opts()).core
     const last = Math.max(...c.progress.tutor.messages.map(m => m.at ?? 0))
-    const pushed: Core = { ...c, progress: { ...c.progress, tutor: { messages: [...c.progress.tutor.messages, { ...M('u9'), at: NOW }] } }, tutorAt: NOW }
+    const pushed: Core = {
+      ...c,
+      progress: { ...c.progress, tutor: { messages: [...c.progress.tutor.messages, { ...M('u9'), at: NOW }] } },
+      tutorAt: NOW,
+    }
     saveProgress(kv, pushed, NOW)
     expect(last).toBeLessThan(NOW)
     expect(ids(loadProgress(kv, opts(NOW + 1)).core)).toEqual(['t1', 't2', 'u9'])
@@ -107,30 +116,58 @@ describe('B. duplicate tutor ids', () => {
   it('merging the result again never adds duplicates', () => {
     const all = mergeTutor(T(pool), T([]))
     expect(mergeTutor(all, T(pool))).toEqual(all)
-    expect(all.messages.filter(m => m.id === 'a').map(m => m.text).sort()).toEqual(['one', 'two']) // both survive; 'one' once
+    expect(
+      all.messages
+        .filter(m => m.id === 'a')
+        .map(m => m.text)
+        .sort(),
+    ).toEqual(['one', 'two']) // both survive; 'one' once
   })
 
   it('both survive serialization and reload with their original ids', () => {
     const kv = memoryKV()
-    const c: Core = { ...freshCore(), progress: { ...freshCore().progress, tutor: { messages: [{ ...M('a', 'user', 'one'), at: 5 }, { ...M('a', 'user', 'two'), at: 5 }] } } }
+    const c: Core = {
+      ...freshCore(),
+      progress: {
+        ...freshCore().progress,
+        tutor: {
+          messages: [
+            { ...M('a', 'user', 'one'), at: 5 },
+            { ...M('a', 'user', 'two'), at: 5 },
+          ],
+        },
+      },
+    }
     saveProgress(kv, c, NOW)
     const back = loadProgress(kv, opts()).core.progress.tutor.messages
-    expect(back.map(m => [m.id, m.text])).toEqual([['a', 'one'], ['a', 'two']])
+    expect(back.map(m => [m.id, m.text])).toEqual([
+      ['a', 'one'],
+      ['a', 'two'],
+    ])
   })
 
   afterEach(() => vi.restoreAllMocks())
   it('the chat renders two bubbles for two same-id messages without a React key collision', () => {
     const kv = memoryKV()
-    const c: Core = { ...freshCore(), progress: { ...freshCore().progress, tutor: { messages: [{ ...M('a', 'user', 'first text'), at: 5 }, { ...M('a', 'user', 'second text'), at: 5 }] } } }
+    const c: Core = {
+      ...freshCore(),
+      progress: {
+        ...freshCore().progress,
+        tutor: {
+          messages: [
+            { ...M('a', 'user', 'first text'), at: 5 },
+            { ...M('a', 'user', 'second text'), at: 5 },
+          ],
+        },
+      },
+    }
     saveProgress(kv, c, NOW)
     Element.prototype.scrollIntoView = vi.fn()
     const err = vi.spyOn(console, 'error').mockImplementation(() => {})
     render(
-      
-        <AppProvider kv={kv}>
-          <TutorChat />
-        </AppProvider>
-      ,
+      <AppProvider kv={kv}>
+        <TutorChat />
+      </AppProvider>,
     )
     expect(screen.getByText('first text')).toBeTruthy()
     expect(screen.getByText('second text')).toBeTruthy()
@@ -257,7 +294,20 @@ describe('C2. any save that moves the drift marker writes the records it summari
   it('slices before the course record, so a crash can only repeat the merge', () => {
     const kv = memoryKV({ [KEYS.legacy]: v1([M('t1')]) })
     const c = loadProgress(kv, opts()).core
-    const moved: Core = { ...c, origin: { ...c.origin!, legacyFingerprint: 'changed' }, progress: { ...c.progress, tutor: { messages: [{ ...M('t1'), at: 1 }, { ...M('t9'), at: NOW }] } }, tutorAt: NOW }
+    const moved: Core = {
+      ...c,
+      origin: { ...c.origin!, legacyFingerprint: 'changed' },
+      progress: {
+        ...c.progress,
+        tutor: {
+          messages: [
+            { ...M('t1'), at: 1 },
+            { ...M('t9'), at: NOW },
+          ],
+        },
+      },
+      tutorAt: NOW,
+    }
     kv.log.length = 0
     saveProgress(kv, moved, NOW + 1)
     expect(writes(kv)).toEqual([KEYS.tutor, KEYS.current])
@@ -278,7 +328,12 @@ describe('D. the epoch guards (core guard and slice guard)', () => {
     const stored = kv.snapshot()
     kv.log.length = 0
     for (const replace of [true, false]) {
-      const res = saveProgress(kv, { ...stale, progress: { ...stale.progress, name: 'Stale', theme: 'dark' }, settingsAt: NOW + 9 }, NOW + 9, { replace })
+      const res = saveProgress(
+        kv,
+        { ...stale, progress: { ...stale.progress, name: 'Stale', theme: 'dark' }, settingsAt: NOW + 9 },
+        NOW + 9,
+        { replace },
+      )
       if (res.ok) expect(res.conflict || res.core.epoch > 0).toBe(true)
     }
     expect(writes(kv)).toEqual([]) // not a single setItem
@@ -290,7 +345,12 @@ describe('D. the epoch guards (core guard and slice guard)', () => {
     const kv = split()
     const odd = serializePrefs({ ...freshCore(), epoch: 9, settingsAt: 99, progress: { ...freshCore().progress, name: 'Anomalous' } })
     kv.m.set(KEYS.prefs, odd)
-    const res = saveProgress(kv, { ...freshCore(), progress: { ...freshCore().progress, name: 'Mira', theme: 'dark' }, settingsAt: NOW }, NOW + 1, { replace: true })
+    const res = saveProgress(
+      kv,
+      { ...freshCore(), progress: { ...freshCore().progress, name: 'Mira', theme: 'dark' }, settingsAt: NOW },
+      NOW + 1,
+      { replace: true },
+    )
     expect(res.ok && res.conflict).toBe(true)
     expect(kv.get(KEYS.prefs)).toBe(odd)
   })

@@ -77,14 +77,25 @@ export function StorageNotice() {
   return (
     <>
       {kind && (isFailure || !storage.noticeDismissed) && (
-        <div className="storage-note" role="alert" data-testid="storage-notice" data-kind={kind} data-persistent={isFailure ? 'true' : 'false'}>
+        <div
+          className="storage-note"
+          role="alert"
+          data-testid="storage-notice"
+          data-kind={kind}
+          data-persistent={isFailure ? 'true' : 'false'}
+        >
           <div className="storage-note__text">
             <strong>{m.titles[kind]}</strong>
             <span>{m.bodies[kind].replace('{n}', String(storage.historyPending))}</span>
           </div>
           <div className="storage-note__actions">
             {isFailure && (
-              <button type="button" className="storage-btn storage-btn--primary" data-testid="notice-retry" onClick={() => storage.retrySave()}>
+              <button
+                type="button"
+                className="storage-btn storage-btn--primary"
+                data-testid="notice-retry"
+                onClick={() => storage.retrySave()}
+              >
                 {m.retry}
               </button>
             )}

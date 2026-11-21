@@ -74,8 +74,7 @@ export const STORAGE_MESSAGES: Record<Lang, StorageMessages> = {
         'Не сохранено записей истории: {n}. Прогресс (XP) сохранён. Несохранённая история может быть потеряна при закрытии или перезагрузке вкладки. Нажмите «Повторить».',
       'history-readonly':
         'История попыток в этой версии не записывается, чтобы её не повредить. Новые записи хранятся только в памяти и могут быть потеряны при закрытии или перезагрузке вкладки.',
-      replaced:
-        'Другое окно заменило ваш прогресс. Ваша последняя попытка сохранена в истории, но её XP не входит в текущий прогресс.',
+      replaced: 'Другое окно заменило ваш прогресс. Ваша последняя попытка сохранена в истории, но её XP не входит в текущий прогресс.',
       'upgrade-pending':
         'Обновление хранилища не завершилось. Ваши данные не изменены; сброс, новое начало и восстановление пока недоступны. Приложение повторит попытку.',
     },
@@ -83,8 +82,7 @@ export const STORAGE_MESSAGES: Record<Lang, StorageMessages> = {
     close: 'Закрыть',
     options: 'Варианты',
     retry: 'Повторить',
-    resetRefused:
-      'Сброс не выполнен: не удалось сохранить резервную копию текущих данных (возможно, нет места). Ничего не изменено.',
+    resetRefused: 'Сброс не выполнен: не удалось сохранить резервную копию текущих данных (возможно, нет места). Ничего не изменено.',
     upgradePendingRefusal: 'Операция не выполнена: сначала должно завершиться обновление хранилища. Ничего не изменено.',
     slice: {
       names: { prefs: 'Настройки', tutor: 'Чат с тьютором', results: 'История попыток' },
@@ -179,7 +177,8 @@ export const STORAGE_MESSAGES: Record<Lang, StorageMessages> = {
     retry: 'Erneut versuchen',
     resetRefused:
       'Zurücksetzen nicht durchgeführt: Von den aktuellen Daten konnte keine Sicherung erstellt werden (vielleicht ist der Speicher voll). Nichts wurde geändert.',
-    upgradePendingRefusal: 'Vorgang nicht durchgeführt: Zuerst muss die Speicher-Aktualisierung abgeschlossen werden. Nichts wurde geändert.',
+    upgradePendingRefusal:
+      'Vorgang nicht durchgeführt: Zuerst muss die Speicher-Aktualisierung abgeschlossen werden. Nichts wurde geändert.',
     slice: {
       names: { prefs: 'Einstellungen', tutor: 'Tutor-Chat', results: 'Versuchsverlauf' },
       damaged: '{name}: Daten nicht lesbar, auf Standardwerte zurückgesetzt. Eine Kopie des Originals liegt auf diesem Gerät.',

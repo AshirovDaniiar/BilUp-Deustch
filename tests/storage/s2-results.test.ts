@@ -30,7 +30,8 @@ import { faultyKV, memoryKV, SimulatedCrash, type MemKV } from './fakes'
  */
 const NOW = 1_760_000_000_000
 /** a valid ActivityResult in the test's simulated time (startedAt just before finishedAt) */
-const mk = (over: Parameters<typeof mkResult>[0] = {}) => mkResult({ startedAt: ((over?.finishedAt as number | undefined) ?? NOW) - 100, finishedAt: NOW, ...over })
+const mk = (over: Parameters<typeof mkResult>[0] = {}) =>
+  mkResult({ startedAt: ((over?.finishedAt as number | undefined) ?? NOW) - 100, finishedAt: NOW, ...over })
 const DAY = 86_400_000
 const opts = (now = NOW) => ({ now, ids: { writing: new Set<string>(), quizLike: new Set<string>(), testByUnit: {} } })
 const writes = (kv: MemKV) => kv.log.filter(l => l.startsWith('set:')).map(l => l.slice(4))
@@ -53,12 +54,28 @@ const entry = (id: string, at = NOW, over: Partial<StoredResult> = {}): StoredRe
 function learner(n = 3, startAt = NOW - n * 1000): Core {
   let c = freshCore()
   c = { ...c, progress: { ...c.progress, name: 'Mira', lang: 'ky', theme: 'dark' }, settingsAt: 5000 }
-  for (let i = 0; i < n; i++) c = recordResult(c, mk({ resultId: `r${i}`, activityId: `topic:t${i}`, kind: 'lesson', finishedAt: startAt + i * 1000, startedAt: startAt + i * 1000 - 400 }), startAt + i * 1000).core
+  for (let i = 0; i < n; i++)
+    c = recordResult(
+      c,
+      mk({
+        resultId: `r${i}`,
+        activityId: `topic:t${i}`,
+        kind: 'lesson',
+        finishedAt: startAt + i * 1000,
+        startedAt: startAt + i * 1000 - 400,
+      }),
+      startAt + i * 1000,
+    ).core
   return c
 }
 /** an S1 (layout 1) profile: the history is INSIDE the course record */
 const layout1KV = (core: Core, extra: Record<string, string> = {}) =>
-  memoryKV({ [KEYS.current]: serializeCoreLayout1(core, NOW), [KEYS.prefs]: serializePrefs(core), [KEYS.tutor]: serializeTutor(core), ...extra })
+  memoryKV({
+    [KEYS.current]: serializeCoreLayout1(core, NOW),
+    [KEYS.prefs]: serializePrefs(core),
+    [KEYS.tutor]: serializeTutor(core),
+    ...extra,
+  })
 /** an S2 (layout 2) profile */
 const layout2KV = (core: Core) => {
   const kv = memoryKV()
@@ -100,7 +117,21 @@ describe('A. the history record (STO-70, STO-82)', () => {
   it('new entries carry the accepted attempt-level fields (startedAt, levelId, evidence) and NO free text', () => {
     const kv = layout2KV(learner(1))
     const e = parse(kv, KEYS.results).results[0]
-    expect(Object.keys(e).sort()).toEqual(['activeMs', 'activityId', 'assisted', 'evidence', 'finishedAt', 'items', 'kind', 'levelId', 'passed', 'resultId', 'score', 'startedAt', 'xp'])
+    expect(Object.keys(e).sort()).toEqual([
+      'activeMs',
+      'activityId',
+      'assisted',
+      'evidence',
+      'finishedAt',
+      'items',
+      'kind',
+      'levelId',
+      'passed',
+      'resultId',
+      'score',
+      'startedAt',
+      'xp',
+    ])
     expect(e.items).toEqual([]) // lessons have no items; items would only hold itemRef/outcome
   })
 
@@ -112,7 +143,15 @@ describe('A. the history record (STO-70, STO-82)', () => {
       epoch: 0,
       updatedAt: 1,
       futureRecordField: { keep: 'me' },
-      results: [{ ...entry('x1'), entrySchema: 2, given: 'tippe', futureField: [1, 2], items: [{ itemRef: 'q:a', outcome: 'correct', expected: 'der' }] }],
+      results: [
+        {
+          ...entry('x1'),
+          entrySchema: 2,
+          given: 'tippe',
+          futureField: [1, 2],
+          items: [{ itemRef: 'q:a', outcome: 'correct', expected: 'der' }],
+        },
+      ],
     }
     kv.m.set(KEYS.results, JSON.stringify(future))
     kv.m.set(KEYS.current, serializeCore(freshCore(), NOW))
@@ -140,7 +179,9 @@ describe('A. the history record (STO-70, STO-82)', () => {
   })
 
   it('a higher entrySchema and invalid optional values are tolerated without invention', () => {
-    const rd = readResults(JSON.stringify({ record: 'results', v: 1, results: [{ ...entry('a'), entrySchema: 7, startedAt: 'bad', evidence: 'nonsense' }] }))
+    const rd = readResults(
+      JSON.stringify({ record: 'results', v: 1, results: [{ ...entry('a'), entrySchema: 7, startedAt: 'bad', evidence: 'nonsense' }] }),
+    )
     expect(rd.state).toBe('ok')
     if (rd.state === 'ok') {
       expect(rd.results[0]).toMatchObject({ entrySchema: 7 })
@@ -177,14 +218,22 @@ describe('B. write isolation and independence from the core (STO-81, STO-90)', (
     const other = recordResult(learner(0), mk({ resultId: 'tabB', activityId: 'topic:b', kind: 'lesson', finishedAt: NOW }), NOW).core
     const res = saveProgress(kv, other, NOW + 1)
     expect(res.ok).toBe(true)
-    expect(parse(kv, KEYS.results).results.map((r: StoredResult) => r.resultId).sort()).toEqual(['r0', 'r1', 'tabB'])
+    expect(
+      parse(kv, KEYS.results)
+        .results.map((r: StoredResult) => r.resultId)
+        .sort(),
+    ).toEqual(['r0', 'r1', 'tabB'])
   })
 
   it('a stale tab (older core epoch) cannot write the core, but its new attempt is NOT dropped from the history', () => {
     const kv = layout2KV(learner(1))
     startFresh(kv, opts(NOW + 1)) // another tab replaced the core: epoch > 0
     kv.log.length = 0
-    const stale = recordResult(learner(1), mk({ resultId: 'late', activityId: 'topic:l', kind: 'lesson', finishedAt: NOW + 9 }), NOW + 9).core
+    const stale = recordResult(
+      learner(1),
+      mk({ resultId: 'late', activityId: 'topic:l', kind: 'lesson', finishedAt: NOW + 9 }),
+      NOW + 9,
+    ).core
     const res = saveProgress(kv, stale, NOW + 9, { replace: true })
     expect(res.ok && res.conflict).toBe(true)
     expect(writes(kv)).not.toContain(KEYS.current) // zero core writes
@@ -228,7 +277,9 @@ describe('C. missing, damaged and newer-version history (STO-75)', () => {
       const r = loadProgress(kv, opts())
       expect(r.report.status).toBe('ok')
       expect(r.report.writesDisabled).toBe(false)
-      expect(r.report.sliceNotices).toEqual([{ slice: 'results', kind: 'damaged', quarantineKey: expect.stringContaining(KEYS.quarantine) }])
+      expect(r.report.sliceNotices).toEqual([
+        { slice: 'results', kind: 'damaged', quarantineKey: expect.stringContaining(KEYS.quarantine) },
+      ])
       expect(kv.keys(KEYS.quarantine).map(k => kv.get(k))).toContain(bytes)
       expect(kv.get(KEYS.current)).toBe(coreBefore)
       expect(r.core.progress.xp).toBe(40)
@@ -320,7 +371,11 @@ describe('D. S1 → S2 upgrade (STO-78): R1 exact-bytes pinned backup, R2 merge,
     const kv = layout1KV(learner(2), { [KEYS.results]: serializeResults([entry('already-there')], { ext: {} }, 0, NOW) })
     const r = loadProgress(kv, opts())
     expect(ids(r.core).sort()).toEqual(['already-there', 'r0', 'r1'])
-    expect(parse(kv, KEYS.results).results.map((e: StoredResult) => e.resultId).sort()).toEqual(['already-there', 'r0', 'r1'])
+    expect(
+      parse(kv, KEYS.results)
+        .results.map((e: StoredResult) => e.resultId)
+        .sort(),
+    ).toEqual(['already-there', 'r0', 'r1'])
   })
 
   it('a monolith (layout 0) is upgraded straight to layout 2', () => {
@@ -454,7 +509,11 @@ describe('E. Reset, Start Fresh, Core Restore and Rollback never touch the histo
   const profile = () => {
     const c = learner(3)
     const kv = memoryKV({ [KEYS.legacy]: '{"xp":3,"name":"V1","lang":"ru","tutor":{"messages":[]}}' })
-    saveProgress(kv, { ...c, progress: { ...c.progress, tutor: { messages: [{ id: 'u1', role: 'user', text: 'Hallo', at: 10 }] } }, tutorAt: 10 }, NOW)
+    saveProgress(
+      kv,
+      { ...c, progress: { ...c.progress, tutor: { messages: [{ id: 'u1', role: 'user', text: 'Hallo', at: 10 }] } }, tutorAt: 10 },
+      NOW,
+    )
     return kv
   }
 
@@ -497,19 +556,35 @@ describe('E. Reset, Start Fresh, Core Restore and Rollback never touch the histo
     expect(snap.credit.entries.length).toBeGreaterThan(0)
     // the snapshot's size does not grow with the history
     const small = kv.get(res.key!)!.length
-    kv.m.set(KEYS.results, serializeResults([...readResultsOf(kv), ...Array.from({ length: 300 }, (_, i) => entry(`pad${i}`, NOW + i))], { ext: {} }, 0, NOW))
+    kv.m.set(
+      KEYS.results,
+      serializeResults([...readResultsOf(kv), ...Array.from({ length: 300 }, (_, i) => entry(`pad${i}`, NOW + i))], { ext: {} }, 0, NOW),
+    )
     const big = snapshotComposite(kv, NOW + 2)
     expect(kv.get(big.key!)!.length).toBe(small)
   })
 
   it('STO-92: restoring a CORE-ONLY copy (the pinned S1 backup) restores the Core and KEEPS the current preferences and tutor; its history is merged', () => {
     // S1 profile → upgrade (pins the layout-1 bytes) → the learner edits preferences, chats and records more
-    const kv = layout1KV({ ...learner(2), progress: { ...learner(2).progress, tutor: { messages: [{ id: 'old', role: 'user' as const, text: 'old chat', at: 1 }] } } })
+    const kv = layout1KV({
+      ...learner(2),
+      progress: { ...learner(2).progress, tutor: { messages: [{ id: 'old', role: 'user' as const, text: 'old chat', at: 1 }] } },
+    })
     loadProgress(kv, opts())
     const pin = parse(kv, KEYS.current).upgrade.backupKey as string
     const cur = loadProgress(kv, opts(NOW + 1)).core
     const after = recordResult(
-      { ...cur, progress: { ...cur.progress, name: 'CURRENT NAME', theme: 'light', tutor: { messages: [{ id: 'new', role: 'user' as const, text: 'current chat', at: 99 }] } }, settingsAt: NOW + 5, tutorAt: 99 },
+      {
+        ...cur,
+        progress: {
+          ...cur.progress,
+          name: 'CURRENT NAME',
+          theme: 'light',
+          tutor: { messages: [{ id: 'new', role: 'user' as const, text: 'current chat', at: 99 }] },
+        },
+        settingsAt: NOW + 5,
+        tutorAt: 99,
+      },
       mk({ resultId: 'post', activityId: 'topic:post', kind: 'lesson', finishedAt: NOW + 6 }),
       NOW + 6,
     ).core
@@ -538,12 +613,25 @@ describe('E. Reset, Start Fresh, Core Restore and Rollback never touch the histo
   describe('F1 (real-browser finding): the DAMAGED-core Restore path keeps the current preferences and tutor', () => {
     const setup = () => {
       const base = learner(2)
-      const kv = layout1KV({ ...base, progress: { ...base.progress, tutor: { messages: [{ id: 'old', role: 'user' as const, text: 'old chat', at: 1 }] } } })
+      const kv = layout1KV({
+        ...base,
+        progress: { ...base.progress, tutor: { messages: [{ id: 'old', role: 'user' as const, text: 'old chat', at: 1 }] } },
+      })
       loadProgress(kv, opts())
       const pin = parse(kv, KEYS.current).upgrade.backupKey as string
       const cur = loadProgress(kv, opts(NOW + 1)).core
       const after = recordResult(
-        { ...cur, progress: { ...cur.progress, name: 'CURRENT NAME', theme: 'light', tutor: { messages: [{ id: 'new', role: 'user' as const, text: 'current chat', at: 99 }] } }, settingsAt: NOW + 5, tutorAt: 99 },
+        {
+          ...cur,
+          progress: {
+            ...cur.progress,
+            name: 'CURRENT NAME',
+            theme: 'light',
+            tutor: { messages: [{ id: 'new', role: 'user' as const, text: 'current chat', at: 99 }] },
+          },
+          settingsAt: NOW + 5,
+          tutorAt: 99,
+        },
         mk({ resultId: 'post', activityId: 'topic:post', kind: 'lesson', finishedAt: NOW + 6 }),
         NOW + 6,
       ).core
@@ -628,7 +716,11 @@ describe('E. Reset, Start Fresh, Core Restore and Rollback never touch the histo
     kv.m.set(made.key, made.raw)
     const r = restoreFrom(kv, made.key, opts(NOW + 60))
     expect(r.report.status).toBe('recovered')
-    expect(parse(kv, KEYS.results).results.map((e: StoredResult) => e.resultId).sort()).toEqual(['live-only', 'r0', 'r1', 'r2'])
+    expect(
+      parse(kv, KEYS.results)
+        .results.map((e: StoredResult) => e.resultId)
+        .sort(),
+    ).toEqual(['live-only', 'r0', 'r1', 'r2'])
   })
 
   it('Rollback to legacy removes ONLY the core, preferences and tutor keys — never the history', () => {
@@ -711,7 +803,10 @@ describe('G. no automatic deletion; folding disabled; tombstone expiry unchanged
   it('existing S1 summaries are preserved and merged exactly as before (per-field max)', () => {
     const s = { '2026-01-01': { results: 5, correct: 3, total: 9, activeMs: 1000, xp: 40 } }
     const a = { ...freshCore(), activity: { ...freshCore().activity, summaries: s } }
-    const b = { ...freshCore(), activity: { ...freshCore().activity, summaries: { '2026-01-01': { results: 7, correct: 1, total: 9, activeMs: 10, xp: 10 } } } }
+    const b = {
+      ...freshCore(),
+      activity: { ...freshCore().activity, summaries: { '2026-01-01': { results: 7, correct: 1, total: 9, activeMs: 10, xp: 10 } } },
+    }
     expect(mergeCores(a, b, NOW).activity.summaries['2026-01-01']).toEqual({ results: 7, correct: 3, total: 9, activeMs: 1000, xp: 40 })
   })
 
@@ -724,13 +819,18 @@ describe('G. no automatic deletion; folding disabled; tombstone expiry unchanged
     kv.m.set(KEYS.results, JSON.stringify({ ...rec, deletions: { 'de-general': { throughKey: { finishedAt: 1, resultId: 'a' }, at: 5 } } }))
     const r = loadProgress(kv, opts())
     expect(r.core.activity.results).toHaveLength(2) // inactive: the marker removes nothing
-    saveProgress(kv, recordResult(r.core, mk({ resultId: 'x', activityId: 'topic:x', kind: 'lesson', finishedAt: NOW + 1 }), NOW + 1).core, NOW + 1)
+    saveProgress(
+      kv,
+      recordResult(r.core, mk({ resultId: 'x', activityId: 'topic:x', kind: 'lesson', finishedAt: NOW + 1 }), NOW + 1).core,
+      NOW + 1,
+    )
     expect(parse(kv, KEYS.results).deletions['de-general'].throughKey).toEqual({ finishedAt: 1, resultId: 'a' })
   })
 })
 
 describe('H. Results/Core write combinations (design §12): no XP without the Core, nothing lost silently', () => {
-  const attempt = () => recordResult(learner(1), mk({ resultId: 'new', activityId: 'topic:n', kind: 'lesson', finishedAt: NOW + 5 }), NOW + 5).core
+  const attempt = () =>
+    recordResult(learner(1), mk({ resultId: 'new', activityId: 'topic:n', kind: 'lesson', finishedAt: NOW + 5 }), NOW + 5).core
 
   it('1 — Results ok / Core ok: both durable', () => {
     const kv = layout2KV(learner(1))

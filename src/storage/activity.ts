@@ -71,7 +71,8 @@ export interface OrderKey {
   finishedAt: number
   resultId: string
 }
-export const compareKeys = (a: OrderKey, b: OrderKey): number => a.finishedAt - b.finishedAt || (a.resultId < b.resultId ? -1 : a.resultId > b.resultId ? 1 : 0)
+export const compareKeys = (a: OrderKey, b: OrderKey): number =>
+  a.finishedAt - b.finishedAt || (a.resultId < b.resultId ? -1 : a.resultId > b.resultId ? 1 : 0)
 
 export interface Tombstone {
   resultId: string
@@ -140,7 +141,22 @@ export function sanitizeCompletions(input: unknown, issues: Issue[]): Record<str
   return out
 }
 
-const KNOWN_ENTRY = new Set(['resultId', 'activityId', 'kind', 'finishedAt', 'activeMs', 'assisted', 'score', 'passed', 'xp', 'items', 'startedAt', 'levelId', 'evidence', 'entrySchema'])
+const KNOWN_ENTRY = new Set([
+  'resultId',
+  'activityId',
+  'kind',
+  'finishedAt',
+  'activeMs',
+  'assisted',
+  'score',
+  'passed',
+  'xp',
+  'items',
+  'startedAt',
+  'levelId',
+  'evidence',
+  'entrySchema',
+])
 const KNOWN_ITEM = new Set(['itemRef', 'outcome'])
 const EVIDENCE = ['measured', 'heuristic', 'self-reported'] as const
 const unknownKeys = (o: Record<string, unknown>, known: Set<string>): Record<string, unknown> =>

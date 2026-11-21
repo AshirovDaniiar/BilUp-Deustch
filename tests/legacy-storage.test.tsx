@@ -24,7 +24,10 @@ describe('legacy store: valid shapes', () => {
     const app = mountApp()
     const original = JSON.parse(fixture('legacy/v1-full.json'))
     // S1: tutor messages without a time are stamped by position when read (the only difference from the legacy bytes)
-    const stamp = (p: { tutor: { messages: object[] } }) => ({ ...p, tutor: { messages: p.tutor.messages.map((m, i) => ({ ...m, at: i + 1 })) } })
+    const stamp = (p: { tutor: { messages: object[] } }) => ({
+      ...p,
+      tutor: { messages: p.tutor.messages.map((m, i) => ({ ...m, at: i + 1 })) },
+    })
     expect(app.ctx.state).toEqual({ ...defaultState(), ...stamp(original) })
     expect(app.ctx.storage.report.status).toBe('migrated')
     expect(localStorage.getItem(KEY)).toBe(before)

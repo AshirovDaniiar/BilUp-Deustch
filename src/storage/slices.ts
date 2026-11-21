@@ -87,7 +87,8 @@ function envelope(raw: string | null, record: SliceName): { ok: true; o: Record<
   const o = parse(raw)
   if (!isPlainObject(o)) return { ok: false, read: { state: 'damaged', reason: 'not a JSON object' } }
   if (o.record !== record) return { ok: false, read: { state: 'damaged', reason: `not a ${record} record` } }
-  if (typeof o.v !== 'number' || !Number.isInteger(o.v) || o.v < 1) return { ok: false, read: { state: 'damaged', reason: 'missing version' } }
+  if (typeof o.v !== 'number' || !Number.isInteger(o.v) || o.v < 1)
+    return { ok: false, read: { state: 'damaged', reason: 'missing version' } }
   if (o.v > SLICE_VERSION) return { ok: false, read: { state: 'future' } }
   return { ok: true, o }
 }
@@ -158,7 +159,11 @@ export const defaultPrefs = (): PrefsFields => {
 
 export function withPrefs(c: Core, p: PrefsRecord | null): Core {
   const f = p ?? { ...defaultPrefs(), updatedAt: 0 }
-  return { ...c, progress: { ...c.progress, name: f.name, lang: f.lang, theme: f.theme, level: f.level, weeklyGoal: f.weeklyGoal }, settingsAt: p ? p.updatedAt : 0 }
+  return {
+    ...c,
+    progress: { ...c.progress, name: f.name, lang: f.lang, theme: f.theme, level: f.level, weeklyGoal: f.weeklyGoal },
+    settingsAt: p ? p.updatedAt : 0,
+  }
 }
 
 export function withTutor(c: Core, t: TutorRecord | null): Core {
@@ -194,7 +199,10 @@ export function pickGroups(remote: Core, ours: Core, changed: ReadonlySet<Group>
 }
 
 /** Total order for two preference states (S1 design §3.1): epoch, then updatedAt, then canonical JSON. > 0 when `a` wins. */
-export function comparePrefs(a: { epoch: number; updatedAt: number; fields: PrefsFields }, b: { epoch: number; updatedAt: number; fields: PrefsFields }): number {
+export function comparePrefs(
+  a: { epoch: number; updatedAt: number; fields: PrefsFields },
+  b: { epoch: number; updatedAt: number; fields: PrefsFields },
+): number {
   if (a.epoch !== b.epoch) return a.epoch - b.epoch
   if (a.updatedAt !== b.updatedAt) return a.updatedAt - b.updatedAt
   const ja = JSON.stringify(PREF_KEYS.map(k => a.fields[k]))

@@ -22,7 +22,16 @@ import { COURSE_ID, LEGACY_PLACEHOLDER_NAME } from './defaults'
 import { fingerprint } from './hash'
 import { setVerified, StorageError, type KeyValueStore } from './kv'
 import { canonicalJson, mergeCores, mergeTutor } from './merge'
-import { emptyResultsMeta, mergeResultLists, mergeResultsMeta, readResults, sameResultsRecord, serializeResults, type ResultsMeta, type ResultsRead } from './results'
+import {
+  emptyResultsMeta,
+  mergeResultLists,
+  mergeResultsMeta,
+  readResults,
+  sameResultsRecord,
+  serializeResults,
+  type ResultsMeta,
+  type ResultsRead,
+} from './results'
 import {
   comparePrefs,
   LAYOUT,
@@ -537,7 +546,13 @@ function compose(
 }
 
 /** Which groups of a stored state are meaningful to merge: slices that are absent, stale, damaged or from a newer version are not. */
-function mergeableGroups(c: Composed, coreChanged: boolean, prefsChanged: boolean, tutorChanged: boolean, resultsChanged: boolean): Set<Group> {
+function mergeableGroups(
+  c: Composed,
+  coreChanged: boolean,
+  prefsChanged: boolean,
+  tutorChanged: boolean,
+  resultsChanged: boolean,
+): Set<Group> {
   const g = new Set<Group>()
   if (coreChanged) g.add('core')
   const usable = (s: SliceStatus) => s === 'applied' || s === 'repaired'
@@ -757,7 +772,13 @@ function upgradeToLayout2(kv: KeyValueStore, raw: string, core: Core, layout: 0 
     const prefs = readPrefs(rawPrefs)
     const tutor = readTutor(rawTutor)
     if (prefs.state === 'future' || tutor.state === 'future')
-      return { core, mode: compat, upgraded: false, notices: [], blocked: 'a stored preferences or tutor record was written by a newer version of the app' }
+      return {
+        core,
+        mode: compat,
+        upgraded: false,
+        notices: [],
+        blocked: 'a stored preferences or tutor record was written by a newer version of the app',
+      }
     merged = mergeMonolithWithSlices(core, prefs, tutor)
     for (const [name, rawS, read] of [
       ['prefs', rawPrefs, prefs],
@@ -774,7 +795,13 @@ function upgradeToLayout2(kv: KeyValueStore, raw: string, core: Core, layout: 0 
   const rawResults = kv.get(KEYS.results)
   const res = readResults(rawResults)
   if (res.state === 'future')
-    return { core: merged, mode: compat, upgraded: false, notices: [...notices, { slice: 'results', kind: 'newer', quarantineKey: null }], historyReadonly: true }
+    return {
+      core: merged,
+      mode: compat,
+      upgraded: false,
+      notices: [...notices, { slice: 'results', kind: 'newer', quarantineKey: null }],
+      historyReadonly: true,
+    }
   if (res.state === 'damaged' || (res.state === 'ok' && res.issues.length > 0)) {
     const q = quarantine(kv, rawResults!, now) // exact bytes first; R2 then writes a valid record containing everything that is known
     notices.push({ slice: 'results', kind: q === null ? 'unsafe' : 'damaged', quarantineKey: q })
@@ -875,7 +902,11 @@ interface Written {
  * record is quarantined before it is replaced; a record from a newer version is never touched. Never throws (STO-80: a history failure must
  * not block the credit): the failure is returned.
  */
-function writeResultsRecord(kv: KeyValueStore, core: Core, now: number): { raw: string | null; error?: Error; readonly?: boolean; pending: number } {
+function writeResultsRecord(
+  kv: KeyValueStore,
+  core: Core,
+  now: number,
+): { raw: string | null; error?: Error; readonly?: boolean; pending: number } {
   let stored: string | null = null
   try {
     stored = kv.get(KEYS.results)
@@ -896,7 +927,11 @@ function writeResultsRecord(kv: KeyValueStore, core: Core, now: number): { raw: 
     return { raw: next, pending: 0 }
   } catch (e) {
     const have = new Set(readResultsIds(stored))
-    return { raw: stored, error: e instanceof Error ? e : new Error(String(e)), pending: core.activity.results.filter(r => !have.has(r.resultId)).length }
+    return {
+      raw: stored,
+      error: e instanceof Error ? e : new Error(String(e)),
+      pending: core.activity.results.filter(r => !have.has(r.resultId)).length,
+    }
   }
 }
 type StoredResultList = Core['activity']['results']
@@ -913,7 +948,14 @@ const readResultsIds = (raw: string | null): string[] => {
  * of an older layout is preserved byte-for-byte before a newer layout replaces it. Compatibility modes keep the old record forms.
  */
 function writeChanged(kv: KeyValueStore, core: Core, now: number, mode: WriteMode, slicesFirst = false): Written {
-  const out: Written = { core: null, prefs: kv.get(KEYS.prefs), tutor: kv.get(KEYS.tutor), results: kv.get(KEYS.results), conflict: false, pending: 0 }
+  const out: Written = {
+    core: null,
+    prefs: kv.get(KEYS.prefs),
+    tutor: kv.get(KEYS.tutor),
+    results: kv.get(KEYS.results),
+    conflict: false,
+    pending: 0,
+  }
   if (mode === 'split') {
     const r = writeResultsRecord(kv, core, now)
     out.results = r.raw
@@ -943,7 +985,8 @@ function writeChanged(kv: KeyValueStore, core: Core, now: number, mode: WriteMod
     }
     if (storedCore !== null) {
       const p = parseJson(storedCore)
-      if (p.ok && isPlainObject(p.value) && detectSchema(p.value) === 'v2' && layoutOf(p.value) < outLayout) ensureCopy(kv, KEYS.backup, storedCore, now) // throws: nothing is overwritten
+      if (p.ok && isPlainObject(p.value) && detectSchema(p.value) === 'v2' && layoutOf(p.value) < outLayout)
+        ensureCopy(kv, KEYS.backup, storedCore, now) // throws: nothing is overwritten
     }
     setVerified(kv, KEYS.current, nextCore)
     out.core = nextCore
@@ -1062,7 +1105,11 @@ function settleLoaded(kv: KeyValueStore, res: LoadResult, now: number): LoadResu
   if (s.notices.length === 0 && !s.historyReadonly && s.core === res.core) return res
   return {
     core: s.core,
-    report: { ...res.report, sliceNotices: [...res.report.sliceNotices, ...s.notices], historyReadonly: res.report.historyReadonly || s.historyReadonly },
+    report: {
+      ...res.report,
+      sliceNotices: [...res.report.sliceNotices, ...s.notices],
+      historyReadonly: res.report.historyReadonly || s.historyReadonly,
+    },
   }
 }
 
@@ -1570,7 +1617,13 @@ export function readStored(
     const rawPrefs = kv.get(KEYS.prefs)
     const rawTutor = kv.get(KEYS.tutor)
     const rawResults = kv.get(KEYS.results)
-    return { core: compose(p.value as Record<string, unknown>, rawPrefs, rawTutor, rawResults, now).core, raw, rawPrefs, rawTutor, rawResults }
+    return {
+      core: compose(p.value as Record<string, unknown>, rawPrefs, rawTutor, rawResults, now).core,
+      raw,
+      rawPrefs,
+      rawTutor,
+      rawResults,
+    }
   } catch {
     return null
   }
@@ -1632,7 +1685,9 @@ const BLOCKED_REASON = 'the storage upgrade must finish first; nothing was chang
 /** The stored history (read-only), or an empty list. Used to keep the history independent of every core replacement (STO-90). */
 function storedHistory(kv: KeyValueStore): { results: Core['activity']['results']; meta: ResultsMeta; state: ResultsRead['state'] } {
   const read = readResults(kv.get(KEYS.results))
-  return read.state === 'ok' ? { results: read.results, meta: read.meta, state: 'ok' } : { results: [], meta: emptyResultsMeta(), state: read.state }
+  return read.state === 'ok'
+    ? { results: read.results, meta: read.meta, state: 'ok' }
+    : { results: [], meta: emptyResultsMeta(), state: read.state }
 }
 
 /**
@@ -1651,11 +1706,16 @@ export function restoreFrom(kv: KeyValueStore, key: string, opts: LoadOptions): 
     if (key !== KEYS.legacy && !isContentAddressed(key)) return fail('not a recoverable copy')
     const ev = evaluateRaw(raw, opts)
     if (!ev) return fail('copy is not usable; not restored')
-    if (replacementBlocked(kv) !== null) return { ...fail(BLOCKED_REASON), report: report('unwritable', { writesDisabled: true, reason: BLOCKED_REASON, blocked: 'upgrade-pending' }) }
+    if (replacementBlocked(kv) !== null)
+      return {
+        ...fail(BLOCKED_REASON),
+        report: report('unwritable', { writesDisabled: true, reason: BLOCKED_REASON, blocked: 'upgrade-pending' }),
+      }
     let quarantineKey: string | null = null
     if (kv.get(KEYS.current) !== raw) {
       const kept = preserveCurrent(kv, opts.now, KEYS.quarantine)
-      if (!kept.ok) return fail(`a safe copy of the current data could not be made; nothing was replaced (${kept.error ?? 'unknown error'})`)
+      if (!kept.ok)
+        return fail(`a safe copy of the current data could not be made; nothing was replaced (${kept.error ?? 'unknown error'})`)
       quarantineKey = kept.key
     }
     const epoch = nextEpoch(storedEpoch(kv), opts.now)
@@ -1690,7 +1750,17 @@ export function restoreFrom(kv: KeyValueStore, key: string, opts: LoadOptions): 
         const t = readTutor(kv.get(KEYS.tutor))
         if (p.state === 'ok') core = withPrefs(core, { ...p.rec, epoch })
         if (t.state === 'ok') core = withTutor(core, { ...t.rec, epoch })
-      } else core = { ...withTutor(withPrefs(core, { ...prefsOfCore(cur.core), record: 'prefs', v: 1, epoch, updatedAt: cur.core.settingsAt }), { record: 'tutor', v: 1, epoch, updatedAt: cur.core.tutorAt, clearedAt: cur.core.tutorClearedAt, messages: cur.core.progress.tutor.messages }) }
+      } else
+        core = {
+          ...withTutor(withPrefs(core, { ...prefsOfCore(cur.core), record: 'prefs', v: 1, epoch, updatedAt: cur.core.settingsAt }), {
+            record: 'tutor',
+            v: 1,
+            epoch,
+            updatedAt: cur.core.tutorAt,
+            clearedAt: cur.core.tutorClearedAt,
+            messages: cur.core.progress.tutor.messages,
+          }),
+        }
     }
     try {
       commitSplit(kv, core, opts.now, 'core-first')
@@ -1706,7 +1776,13 @@ export function restoreFrom(kv: KeyValueStore, key: string, opts: LoadOptions): 
   }
 }
 
-const prefsOfCore = (c: Core) => ({ name: c.progress.name, lang: c.progress.lang, theme: c.progress.theme, level: c.progress.level, weeklyGoal: c.progress.weeklyGoal })
+const prefsOfCore = (c: Core) => ({
+  name: c.progress.name,
+  lang: c.progress.lang,
+  theme: c.progress.theme,
+  level: c.progress.level,
+  weeklyGoal: c.progress.weeklyGoal,
+})
 const withHistoryList = (c: Core, results: Core['activity']['results']): Core => ({ ...c, activity: { ...c.activity, results } })
 
 /** Kept for existing callers/tests. */
@@ -1718,16 +1794,23 @@ export const restoreFromBackup = restoreFrom
  */
 export function startFresh(kv: KeyValueStore, opts: LoadOptions): LoadResult {
   try {
-    if (replacementBlocked(kv) !== null) return memoryResult(freshCore(), report('unwritable', { writesDisabled: true, reason: BLOCKED_REASON, blocked: 'upgrade-pending' }))
+    if (replacementBlocked(kv) !== null)
+      return memoryResult(freshCore(), report('unwritable', { writesDisabled: true, reason: BLOCKED_REASON, blocked: 'upgrade-pending' }))
     const kept = preserveCurrent(kv, opts.now, KEYS.quarantine)
     if (!kept.ok)
       return memoryResult(
         freshCore(),
-        report('unwritable', { writesDisabled: true, reason: `a safe copy could not be made, so nothing was replaced (${kept.error ?? 'unknown error'})` }),
+        report('unwritable', {
+          writesDisabled: true,
+          reason: `a safe copy could not be made, so nothing was replaced (${kept.error ?? 'unknown error'})`,
+        }),
       )
     // the history is independent of the core (STO-90): the fresh core carries the STORED history; the history record is not written here
     const hist = storedHistory(kv)
-    const core: Core = withHistoryList({ ...freshCore(), epoch: nextEpoch(storedEpoch(kv), opts.now), resultsMeta: hist.meta }, hist.results)
+    const core: Core = withHistoryList(
+      { ...freshCore(), epoch: nextEpoch(storedEpoch(kv), opts.now), resultsMeta: hist.meta },
+      hist.results,
+    )
     commitSplit(kv, core, opts.now, 'core-first')
     return memoryResult(core, report('fresh', { quarantineKey: kept.key, historyReadonly: hist.state === 'future' }))
   } catch (e) {

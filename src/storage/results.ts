@@ -46,7 +46,14 @@ function sanitizeDeletions(v: unknown): Deletions | undefined {
   if (!isPlainObject(v)) return undefined
   const out: Deletions = {}
   for (const [scope, d] of Object.entries(v)) {
-    if (!isPlainObject(d) || !isPlainObject(d.throughKey) || !isNum(d.throughKey.finishedAt) || typeof d.throughKey.resultId !== 'string' || !isNum(d.at)) continue
+    if (
+      !isPlainObject(d) ||
+      !isPlainObject(d.throughKey) ||
+      !isNum(d.throughKey.finishedAt) ||
+      typeof d.throughKey.resultId !== 'string' ||
+      !isNum(d.at)
+    )
+      continue
     out[scope] = { throughKey: { finishedAt: d.throughKey.finishedAt, resultId: d.throughKey.resultId }, at: d.at }
   }
   return Object.keys(out).length ? out : undefined
