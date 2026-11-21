@@ -60,7 +60,13 @@ The learner flow was driven by clicking: Learn → level tab **B1** → each uni
 Before any Git operation the state was recorded; the 15 staged Storage/app/test files were set aside and never touched. A path-scoped commit (`git commit -m … -- <explicit paths>`) was used, so the index entries of the 15 staged files and their staged diff stayed byte-identical.
 
 ## 8. Commit
-*Filled in after the commit.*
+* **Hash:** `9815e82c57415a2dd14ac7758810551acbe8b2c1` (short `9815e82`), message `feat(b1): launch B1 beta for all learners`, on top of `92a1917` (A2 Beta). Author as configured in the repository. **Not pushed.**
+* **Content:** 207 files — 158 added, 49 modified, **0 deleted**; 46,136 insertions, 163 deletions. Added: `src/data/b1/**` (12 unit folders, registry, content module, metadata, level test, glossary, vocabulary review), `scripts/content-validate/b1/**`, `profile.ts`, `rules/b1.ts`, `src/features/tests/{LevelResultCard,levelAssessment}`, `src/features/feedback/SelfAssessment.tsx`, `src/services/feedback-mode.ts`, `tests/b1/**` (32 files), `tests/content-validate/b1-*`, `tests/pwa/reserve-space.test.tsx`, `docs/b1/**` and `docs/implementation/B1_*.md` (22 reports incl. this one). Modified (49): the course registry (the Beta switch), catalog/loader/route access, the Beta notice, quiz/writing/speaking screens, i18n (ru/ky/de strings), PWA prompt + CSS (notice no longer covers controls), validator wiring, bundle-size/PWA build scripts, and the tests that pinned the old state.
+* **Path-scoped:** the commit was made with explicit paths (`git commit -F msg -- <207 paths>`); I verified afterwards that it contains exactly those paths, **no** path of the 15 staged files, and no deletion.
+* This section was written after the commit and is recorded in a small follow-up docs-only commit (a file cannot contain the hash of the commit that adds it).
 
-## 9. Confirmations
-The 15 previously staged files remain staged and unchanged; no `git reset`, `restore`, `stash` or unstaging was used; nothing was pushed; A1/A2 learning content and Storage/Persistence were not modified; no unit was rewritten for the launch; P3 and a new audit were not started.
+## 9. The 15 staged files (verified after the commit)
+`src/app/StorageNotice.tsx`, `src/app/storage-messages.ts`, `src/app/store.tsx`, `src/storage/{activity,merge,persistence,results,slices,validate}.ts`, `tests/legacy-storage.test.tsx`, `tests/progress/engine.test.ts`, `tests/storage/{s1-split.test.ts,s1-verification.test.tsx,s2-app.test.tsx,s2-results.test.ts}` — **still staged; the staged file list and the staged diff are byte-identical to the copies recorded before any Git operation (15 files, 513 insertions, 103 deletions); none is part of the commit.** No `git reset`, `restore`, `stash` or unstaging was used.
+
+## 10. Final confirmations
+No push was performed. A1/A2 learning content and Storage/Persistence were not modified (the A1/A2 test files that changed only describe the course without B1 or list B1 where the real registry is meant). No unit was rewritten for the launch. P3 and a new audit were not started. Untracked `.playwright-mcp/` (browser-tool logs) was deliberately left out of the commit.
