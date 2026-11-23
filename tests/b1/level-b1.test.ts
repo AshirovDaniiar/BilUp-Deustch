@@ -75,7 +75,7 @@ describe('structure', () => {
 
 describe('DEFECT 1 (audit: only 13 of 29 concepts tagged) — every concept of Units 21–32 is examined by at least one item', () => {
   const real = fullBundle()
-    .grammar.filter(g => g.unit >= 21)
+    .grammar.filter(g => g.unit >= 21 && g.unit < 100) // the legacy lessons; the 36 v2 lessons (units 301–336) have their own tests
     .map(g => g.id)
   it('all 29 concepts of the B1 bundle (27 of Units 21–31 + the 2 revision concepts of Unit 32) are tagged on a scored item', () => {
     expect(real).toHaveLength(29)

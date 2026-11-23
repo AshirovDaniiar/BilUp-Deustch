@@ -61,7 +61,7 @@ async function show(path: string, lang: Lang, level: 'A1' | 'B1' = 'A1') {
   return document.body.textContent ?? ''
 }
 
-const unit = B1_CONTENT.units.find(u => u.id === 23)!
+const unit = B1_CONTENT.legacyUnits.find(u => u.id === 23)!
 const grammar = B1_CONTENT.grammar.filter(g => g.unit === 23)
 const writing = B1_CONTENT.writing.find(w => w.unit === 23)!
 const speaking = B1_CONTENT.speaking.find(s => s.id === 'b1-sp-23-01')!

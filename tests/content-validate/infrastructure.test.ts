@@ -4,11 +4,12 @@
  * references, automatic inclusion of every A2 module in the validated bundle, and the guarantee that an empty A2 cannot be released.
  */
 import { spawnSync } from 'node:child_process'
+import { A2_GRAMMAR_TOPICS, A2_LEGACY_UNITS } from '../../src/data/a2/curriculum'
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { A2_UNIT_PLAN } from '../../src/data/a2/registry'
 import { A2_UNITS } from '../../src/data/a2/units'
-import { contentOf } from '../../src/data/catalog'
+import { allUnits, contentOf } from '../../src/data/catalog'
 import { COURSE, availableLevels } from '../../src/data/course'
 import { trStrict } from '../../src/utils/text'
 import { conventions } from '../../scripts/content-validate/conventions'
@@ -300,7 +301,10 @@ describe('every A2 module is part of the validated bundle automatically', () => 
   const content = contentOf('A2') as unknown as Record<string, readonly unknown[]>
 
   it('every array exported by a src/data/a2 module is one of the catalog values the validator reads', () => {
-    const catalogArrays = new Set(Object.values(content))
+    // the hidden legacy units are not a LevelContent collection, but they ARE validated (they are part of `allUnits`, which the bundle reads)
+    for (const u of A2_UNITS) expect(allUnits).toContain(u) // every authored unit is in `allUnits` (listed or hidden legacy), which the bundle validates
+    // A2_GRAMMAR_TOPICS is the approved topic → existing-lesson table of the curriculum (metadata that references lessons by id), not content
+    const catalogArrays = new Set([...Object.values(content), A2_LEGACY_UNITS, A2_UNITS, A2_GRAMMAR_TOPICS])
     const missing: string[] = []
     for (const [file, mod] of Object.entries(modules))
       for (const [name, value] of Object.entries(mod))

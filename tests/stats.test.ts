@@ -7,6 +7,7 @@ import {
   currentUnit,
   dueWordIds,
   levelProgress,
+  requiredSections,
   masteredCount,
   recommendations,
   skillPct,
@@ -15,6 +16,7 @@ import {
   weakConcepts,
   xpLevel,
 } from '../src/features/progress/stats'
+import { A1_UNITS } from '../src/data/a1-curriculum'
 import { UNITS } from '../src/data/units'
 import { VOCABULARY } from '../src/data/vocabulary'
 import type { Mistake, UserProgress } from '../src/data/types'
@@ -45,18 +47,20 @@ describe('progress/stats: units and completion keys', () => {
     expect(unitProgress(s, 3).done).toBe(0)
   })
 
-  it('levelProgress is completed sections over (units × 8)', () => {
+  it('levelProgress is completed required sections over all required sections of the listed A1 units', () => {
     expect(levelProgress(state())).toBe(0)
-    const all = UNITS.flatMap(u =>
-      ['vocabulary', 'grammar', 'listening', 'reading', 'speaking', 'writing', 'review', 'test'].map(x => `${u.id}:${x}`),
-    )
+    const all = A1_UNITS.flatMap(u => requiredSections(u.id).map(x => `${u.id}:${x}`))
     expect(levelProgress(state({ completed: all }))).toBe(100)
+    // unit 1 alone (8 sections) out of 8 + 16 grammar-only units = 8/24
+    const first = ['vocabulary', 'grammar', 'listening', 'reading', 'speaking', 'writing', 'review', 'test'].map(x => `1:${x}`)
+    expect(levelProgress(state({ completed: first }))).toBe(Math.round((8 / 24) * 100))
   })
 
-  it('currentUnit is the first unfinished unit, else the last unit', () => {
+  it('currentUnit is the first unfinished authored unit, else the last authored unit', () => {
     expect(currentUnit(state()).id).toBe(UNITS[0].id)
     const first = ['vocabulary', 'grammar', 'listening', 'reading', 'speaking', 'writing', 'review', 'test'].map(x => `${UNITS[0].id}:${x}`)
-    expect(currentUnit(state({ completed: first })).id).toBe(UNITS[1].id)
+    // A1 v2: unit 1 is the only authored A1 unit; empty containers are never "current", so it stays current once complete
+    expect(currentUnit(state({ completed: first })).id).toBe(UNITS[0].id)
   })
 
   it('completedTopics counts only "topic:" keys', () => {

@@ -9,6 +9,7 @@ import { LISTENING } from '../../src/data/listening'
 import { READING } from '../../src/data/reading'
 import { REAL_LIFE, TESTS } from '../../src/data/reallife'
 import { SPEAKING } from '../../src/data/speaking'
+import { isPlaceholderUnit } from '../../src/data/curriculum'
 import { UNITS } from '../../src/data/units'
 import { VOCABULARY } from '../../src/data/vocabulary'
 import { WRITING } from '../../src/data/writing'
@@ -27,7 +28,7 @@ import {
   testsOf,
   tutorTemplatesOf,
   unitSpeakingOf,
-  unitsOfLevel,
+  allUnits,
   vocabularyOf,
   whyNotesOf,
   writingOf,
@@ -63,7 +64,9 @@ export function fullBundle(): ContentBundle {
   const speakingLevels: Record<string, LanguageLevel> = {}
   for (const l of levels) for (const s of speakingOf(l)) speakingLevels[s.id] = l
   return {
-    units: levels.flatMap(l => [...unitsOfLevel(l)]),
+    // authored units only: empty curriculum-v2 containers carry no content to validate; hidden legacy units (in `allUnits`) are validated
+    units: allUnits.filter(u => !isPlaceholderUnit(u)),
+    containerUnitIds: allUnits.filter(isPlaceholderUnit).map(u => u.id),
     vocabulary: levels.flatMap(l => [...vocabularyOf(l)]),
     grammar: levels.flatMap(l => [...grammarOf(l)]),
     exercises: levels.flatMap(l => [...exercisesOf(l)]),
@@ -79,7 +82,7 @@ export function fullBundle(): ContentBundle {
     placementItems: levels.flatMap(l => [...placementOf(l)]),
     tutorTemplates: levels.flatMap(l => [...tutorTemplatesOf(l)]),
     instructions: levels.flatMap(l => [...instructionsOf(l)]),
-    course: COURSE.levels.map(l => ({ id: l.id, status: l.status, unitIdRange: l.unitIdRange, releasedLocales: l.releasedLocales })),
+    course: COURSE.levels.map(l => ({ id: l.id, status: l.status, unitIdRange: l.unitIdRange, extraUnitIdRanges: l.extraUnitIdRanges, releasedLocales: l.releasedLocales })),
     unitSpeaking: Object.fromEntries(levels.map(l => [l, [...unitSpeakingOf(l)]])),
     speakingLevels,
     reviews: A2_REVIEWS,

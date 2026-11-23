@@ -19,6 +19,11 @@ const find = (is: Issue[], rule: string, where?: string) =>
 const meta = (b: ContentBundle) => b.b1Meta![0] as B1UnitMeta
 const t3 = (de: string, ru: string, ky: string) => ({ de, ru, ky })
 const D5 = new Set([
+  // B1 v2, unit 324 (Konjunktiv I, receptive only) — B2 heuristic review flags
+  'cefr-structure-konjunktiv1 exercises:b1-ex-324-05#answer',
+  'cefr-structure-konjunktiv1 exercises:b1-ex-324-07#answer',
+  'cefr-structure-konjunktiv1 exercises:b1-ex-324-08#answer',
+  'cefr-structure-konjunktiv1 grammar:b1-konjunktiv-1-einfuehrung#examples[0].de',
   'cefr-structure-passiv-perfekt reading:b1-re-24-02#body[2]',
   'b1-expert-review-pending grammar:b1-passiv-praesens',
   'b1-expert-review-pending grammar:b1-lassen',
@@ -40,7 +45,8 @@ describe('regression: A1 and A2 validation is unchanged', () => {
     const flags = is.filter(i => i.severity === 'review')
     // 53 earlier flags + 14 register flags of the open decisions that no concept carries (P1 remediation)
     // + 24 Beta flags since the B1 Beta launch: no recorded Russian / Kyrgyz review for each of the 12 units ("blocks a full release")
-    expect(flags).toHaveLength(91)
+    // + 4 flags of the B1 v2 Konjunktiv I lesson (unit 324, B2 heuristic: receptive-only, to be confirmed by the CEFR reviewer)
+    expect(flags).toHaveLength(95)
     expect(flags.filter(i => i.rule === 'beta-review-pending' && /^B1 is in BETA/.test(i.message))).toHaveLength(24)
     expect(flags.filter(i => i.rule === 'curriculum-decision-open').map(i => i.where)).toEqual(
       ['D-1', 'D-2', 'D-4', 'D-10', 'D-11', 'D-12', 'D-13', 'D-14', 'X-2', 'X-3', 'X-4', 'X-5', 'X-6', 'X-7'].map(d => `decisions:${d}`),

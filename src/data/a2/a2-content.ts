@@ -1,4 +1,5 @@
 import type { Exercise, GrammarConcept, LearningUnit, ListeningExercise, ReadingText, SpeakingScenario, VocabularyItem, WhyNote, WritingTask } from '../types'
+import { A2_LEGACY_UNITS, A2_VISIBLE_UNITS } from './curriculum'
 import { A2_EXERCISES } from './exercises'
 import { A2_GRAMMAR, A2_WHY_NOTES } from './grammar'
 import { A2_INSTRUCTIONS } from './instructions'
@@ -9,7 +10,7 @@ import { A2_SPEAKING } from './speaking'
 import { A2_FINAL_TESTS, A2_TESTS, type A2FinalTest } from './tests'
 import { A2_TUTOR_TEMPLATES } from './tutor'
 import type { A2PlacementItem, A2TestDef, LearnerInstruction, TutorTemplate } from './types'
-import { A2_UNITS, A2_UNIT_SPEAKING } from './units'
+import { A2_UNIT_SPEAKING } from './units'
 import { A2_VOCABULARY } from './vocabulary'
 import { A2_WRITING } from './writing'
 
@@ -22,6 +23,8 @@ import { A2_WRITING } from './writing'
  */
 export interface A2Content {
   units: LearningUnit[]
+  /** pre-v2 units kept hidden (not listed) but addressable by id */
+  legacyUnits: LearningUnit[]
   vocabulary: VocabularyItem[]
   grammar: GrammarConcept[]
   whyNotes: WhyNote[]
@@ -39,7 +42,8 @@ export interface A2Content {
 }
 
 export const A2_CONTENT: A2Content = {
-  units: A2_UNITS,
+  units: A2_VISIBLE_UNITS,
+  legacyUnits: A2_LEGACY_UNITS,
   vocabulary: A2_VOCABULARY,
   grammar: A2_GRAMMAR,
   whyNotes: A2_WHY_NOTES,

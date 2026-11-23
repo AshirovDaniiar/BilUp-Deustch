@@ -6,6 +6,7 @@
  * Konjunktiv II, no ordinals, no adjectives), formal register and the no-legal-advice rule, exercise and test structure, separation of revision and final test, the
  * reading-question rule, answer-position balance, the objective→assessment matrix, and the stage boundaries (Units 11–18 unchanged, A2 planned and invisible).
  */
+import { a2AuthoredUnits } from '../a2-authored'
 import { withoutB1Content } from './fixtures'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
@@ -36,7 +37,6 @@ import {
   testsOf,
   topicTestOfUnit,
   unitById,
-  unitsOfLevel,
   vocabularyForUnit,
   whyNotesOf,
   writingForUnit,
@@ -770,7 +770,7 @@ describe('unit 19 — stage boundaries', () => {
     expect(errors.some(e => e.rule === 'unit-missing' && e.where === 'units:19')).toBe(false)
   })
   it('all ten planned units are authored; A2 is in controlled Beta (ru + ky); no placement, level test or tutor content', () => {
-    expect(unitsOfLevel('A2').map(u => u.id)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+    expect(a2AuthoredUnits().map(u => u.id)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
     expect(testsOf('A2').map(t => t.id)).toEqual([
       'unit-11',
       'unit-12',

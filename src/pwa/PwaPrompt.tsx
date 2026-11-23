@@ -1,4 +1,5 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactElement } from 'react'
+import { createPortal } from 'react-dom'
 import { useApp } from '../app/store'
 import { PWA_MESSAGES } from './messages'
 import type { PwaHandle } from './register'
@@ -45,6 +46,16 @@ const isIosSafari = () => {
  * Install + update notices. Purely additive UI rendered next to <App/>; it reads only the interface language from the store and
  * never writes learner progress. Two notices at most; the update notice has priority.
  */
+/** Below 1024px (bottom-navigation layout) the notice lives in the page flow; from 1024px it is the fixed corner card. */
+const NARROW = '(max-width: 1023.98px)'
+const isNarrow = () => {
+  try {
+    return typeof window.matchMedia === 'function' && window.matchMedia(NARROW).matches
+  } catch {
+    return false
+  }
+}
+
 export function PwaPrompt({ handle }: { handle: Promise<PwaHandle> | null }) {
   const { lang } = useApp()
   const m = PWA_MESSAGES[lang]
@@ -54,6 +65,14 @@ export function PwaPrompt({ handle }: { handle: Promise<PwaHandle> | null }) {
   const [installEvent, setInstallEvent] = useState<InstallEvent | null>(null)
   const [dismissed, setDismissed] = useState(() => read(DISMISS_KEY) === '1')
   const ios = useMemo(() => isIosSafari() && !isStandalone(), [])
+  const [narrow, setNarrow] = useState(isNarrow)
+  useEffect(() => {
+    if (typeof window.matchMedia !== 'function') return
+    const mq = window.matchMedia(NARROW)
+    const on = () => setNarrow(mq.matches)
+    mq.addEventListener?.('change', on)
+    return () => mq.removeEventListener?.('change', on)
+  }, [])
 
   useEffect(() => {
     let off = () => {}
@@ -99,9 +118,13 @@ export function PwaPrompt({ handle }: { handle: Promise<PwaHandle> | null }) {
   const shown: 'update' | 'install' | 'ios' | null =
     update && !updateDeferred ? 'update' : dismissed ? null : installEvent ? 'install' : ios ? 'ios' : null
   const noteRef = useRef<HTMLDivElement>(null)
+  // in the layout's slot (narrow screens) the notice takes its own room in the page flow, so nothing has to be reserved; otherwise it floats and the page reserves its height
+  const slot = narrow && typeof document !== 'undefined' ? document.getElementById('pwa-slot') : null
+  const place = (el: ReactElement) => (slot ? createPortal(el, slot) : el)
+  const noteClass = slot ? 'pwa-note pwa-note--inline' : 'pwa-note'
   useLayoutEffect(() => {
     const node = noteRef.current
-    if (!shown || !node) return
+    if (!shown || !node || slot) return
     const root = document.documentElement
     const apply = () => root.style.setProperty('--pwa-note-h', `${Math.ceil(node.getBoundingClientRect().height)}px`)
     root.classList.add('has-pwa-note')
@@ -115,11 +138,11 @@ export function PwaPrompt({ handle }: { handle: Promise<PwaHandle> | null }) {
       root.classList.remove('has-pwa-note')
       root.style.removeProperty('--pwa-note-h')
     }
-  }, [shown, lang])
+  }, [shown, lang, slot])
 
   if (update && !updateDeferred) {
-    return (
-      <div className="pwa-note" ref={noteRef} role="status" aria-live="polite" data-testid="pwa-update">
+    return place(
+      <div className={noteClass} ref={noteRef} role="status" aria-live="polite" data-testid="pwa-update">
         <div className="pwa-note__text">
           <strong>{m.updateTitle}</strong>
           <span>{m.updateBody}</span>
@@ -139,8 +162,8 @@ export function PwaPrompt({ handle }: { handle: Promise<PwaHandle> | null }) {
   if (dismissed) return null
 
   if (installEvent) {
-    return (
-      <div className="pwa-note" ref={noteRef} role="status" aria-live="polite" data-testid="pwa-install">
+    return place(
+      <div className={noteClass} ref={noteRef} role="status" aria-live="polite" data-testid="pwa-install">
         <div className="pwa-note__text">
           <strong>{m.installTitle}</strong>
           <span>{m.installBody}</span>
@@ -165,8 +188,8 @@ export function PwaPrompt({ handle }: { handle: Promise<PwaHandle> | null }) {
   }
 
   if (ios) {
-    return (
-      <div className="pwa-note" ref={noteRef} role="status" aria-live="polite" data-testid="pwa-ios">
+    return place(
+      <div className={noteClass} ref={noteRef} role="status" aria-live="polite" data-testid="pwa-ios">
         <div className="pwa-note__text">
           <strong>{m.iosTitle}</strong>
           <span>{m.iosBody}</span>

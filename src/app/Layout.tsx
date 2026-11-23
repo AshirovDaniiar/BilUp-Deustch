@@ -74,6 +74,8 @@ export function Layout({ route, children }: { route: Route; children: ReactNode 
           </div>
         </header>
         <main className="main" id="main">
+          {/* below 1024px the install / update notice is rendered HERE (in the page flow) so it can never cover the page's own buttons */}
+          <div id="pwa-slot" />
           {children}
         </main>
       </div>

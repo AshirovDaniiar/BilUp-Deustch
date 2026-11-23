@@ -28,7 +28,8 @@ export function HomeScreen() {
       .catch(() => undefined) // the map still works; the mascot simply waits
     return () => { live = false }
   }, [state.lang])
-  const unit = currentUnit(state, level)
+  // a level whose units are all still empty containers has nothing to continue: Continue Learning then uses the default level's unit
+  const unit = currentUnit(state, level) ?? currentUnit(state, DEFAULT_LEVEL)
   if (!unit) return <NotFound /> // a visible level always has units; never render a half-empty dashboard
   const conceptId = unit.grammarIds[0]
   const concept = grammarIndex.get(conceptId)
@@ -73,7 +74,7 @@ export function HomeScreen() {
 
       <Card as="section" className="resume">
         <div className="eyebrow">{tr(JOURNEY_TEXT.resumeTitle, lang)}</div>
-        <div className="resume__where">{level} · {t('unit')} {unit.id} · {uProg.done}/{uProg.total}</div>
+        <div className="resume__where">{unit.level} · {t('unit')} {unit.id} · {uProg.done}/{uProg.total}</div>
         <h2 className="h2 resume__title">{unit.title}</h2>
         <p className="resume__step muted">{t(next.label)} · {next.title}</p>
         {next.sub && <p className="resume__step muted small break">{next.sub}</p>}

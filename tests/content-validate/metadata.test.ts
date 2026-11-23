@@ -3,13 +3,14 @@
  * Stage 6A — metadata rules: identity and shape come from explicit metadata, never from an id pattern or an array position;
  * the A2 minimums; the release gates; and the empty, planned A2 stays safe.
  */
+import { a2AuthoredUnits } from '../a2-authored'
 import { describe, expect, it } from 'vitest'
 import { UNIT_MINIMUMS } from '../../scripts/content-validate/rules/metadata'
 import type { ContentBundle, Issue } from '../../scripts/content-validate/types'
 import { validateContent } from '../../scripts/content-validate/validate'
 import { A2_TESTS } from '../../src/data/a2/tests'
 import { availableLevels, isLevelVisible } from '../../src/data/course'
-import { testsOf, topicTestOfUnit, unitsOfLevel } from '../../src/data/catalog'
+import { testsOf, topicTestOfUnit } from '../../src/data/catalog'
 import { emptyA2Bundle, validA2Bundle } from './fixtures'
 
 const run = (b: ContentBundle, mode: 'authoring' | 'release' = 'authoring'): Issue[] => validateContent(b, { mode })
@@ -232,7 +233,7 @@ describe('the empty, planned A2 is safe and invisible', () => {
       'unit-20',
     ])
     expect(testsOf('A2')).toEqual(A2_TESTS)
-    expect(unitsOfLevel('A2').map(u => u.id)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+    expect(a2AuthoredUnits().map(u => u.id)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
     expect(topicTestOfUnit(11)?.id).toBe('unit-11')
     expect(topicTestOfUnit(12)?.id).toBe('unit-12')
     expect(topicTestOfUnit(13)?.id).toBe('unit-13')

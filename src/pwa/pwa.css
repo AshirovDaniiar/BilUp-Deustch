@@ -84,3 +84,21 @@ html.has-pwa-note .main {
     padding-bottom: calc(60px + var(--pwa-note-h, 0px) + 20px);
   }
 }
+
+/* Below 1024px the notice is rendered in the page flow (Layout's #pwa-slot, at the top of <main>): it takes its own room, so it can never cover a button, and the dismiss action stays
+   where it is read. It is a normal block there — not fixed — so no space has to be reserved. */
+.pwa-note--inline {
+  position: static;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  max-width: none;
+  margin: 0 0 14px;
+  z-index: auto;
+  box-shadow: 0 4px 14px rgba(8, 14, 36, 0.12);
+}
+@media (min-width: 1024px) {
+  #pwa-slot:empty {
+    display: none;
+  }
+}

@@ -4,7 +4,7 @@
  * the four labs are scoped by the PARENT UNIT's level (so legacy A2-tagged fragments stay A1), labels/counts come from metadata.
  */
 import { act, cleanup, render } from '@testing-library/react'
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 // These tests describe the world in which A2 is PLANNED (hidden). The production registry now says Beta, so they set that world up explicitly.
 import { beforeEach as __planned } from 'vitest'
 import { COURSE as __COURSE } from '../../src/data/course'
@@ -40,7 +40,7 @@ import { LISTENING } from '../../src/data/listening'
 import { READING } from '../../src/data/reading'
 import { SPEAKING } from '../../src/data/speaking'
 import type { Lang, UserProgress } from '../../src/data/types'
-import { UNITS } from '../../src/data/units'
+import { A1_UNITS, unitNumber } from '../../src/data/a1-curriculum'
 import { WRITING } from '../../src/data/writing'
 import { defaultProgress } from '../../src/storage/defaults'
 import { KEY } from '../helpers'
@@ -155,14 +155,88 @@ describe('A2 cannot be reached by URL', () => {
 describe('A1 navigation and lists are unchanged', () => {
   it('Learn lists exactly the A1 units, in order, with their own level label and word counts; no level tabs', async () => {
     const { container } = await show('/learn?level=A1')
-    expect(hrefs(container, '#/learn/unit/')).toEqual(UNITS.map(u => `#/learn/unit/${u.id}`))
-    expect(container.querySelectorAll('a.unitcard')).toHaveLength(10)
+    expect(hrefs(container, '#/learn/unit/')).toEqual(A1_UNITS.map(u => `#/learn/unit/${u.id}`))
+    expect(container.querySelectorAll('a.unitcard')).toHaveLength(38) // A1 curriculum v2
     expect(container.querySelector('.levels')).toBeNull() // a single available level needs no switch
     const cards = [...container.querySelectorAll('a.unitcard')]
-    UNITS.forEach((u, i) => {
-      expect(cards[i].querySelector('.eyebrow')?.textContent).toBe(`ЮНИТ ${String(u.id).padStart(2, '0')} · A1`)
-      expect(cards[i].textContent).toContain(`${vocabularyForUnit(u.id).length} слов`)
+    A1_UNITS.forEach((u, i) => {
+      expect(cards[i].querySelector('.eyebrow')?.textContent).toBe(`ЮНИТ ${String(unitNumber(u)).padStart(2, '0')} · A1`)
+      expect(cards[i].querySelector('h3')?.textContent).toBe(u.title)
+      // units with content keep their word count; empty A1 v2 containers show the placeholder instead (asserted below)
+      if (vocabularyForUnit(u.id).length > 0) expect(cards[i].textContent).toContain(`${vocabularyForUnit(u.id).length} слов`)
     })
+  })
+
+  it('an empty A1 v2 unit shows its title and exactly eight section cards, all with the empty state; a populated unit has none', async () => {
+    const empty = await show('/learn/unit/102')
+    expect(text()).toContain('Wer bin ich?')
+    expect(empty.container.querySelectorAll('.sections .secrow')).toHaveLength(8)
+    expect(empty.container.querySelectorAll('[data-empty-section]')).toHaveLength(8)
+    expect(text()).toContain('Контент будет добавлен позже.')
+    expect(text()).not.toMatch(/0 ?\/ ?0|%/) // no misleading 0/0 or 0% on an empty unit
+    cleanup()
+    const full = await show('/learn/unit/1')
+    expect(full.container.querySelectorAll('.sections .secrow')).toHaveLength(8)
+    expect(full.container.querySelectorAll('[data-empty-section]')).toHaveLength(0)
+  })
+
+  it('empty A1 unit cards show the placeholder instead of 0 words / 0/0 / a progress bar; unit 1 keeps its statistics', async () => {
+    const { container } = await show('/learn?level=A1')
+    const cards = [...container.querySelectorAll('a.unitcard')]
+    expect(cards[0].textContent).toContain('слов')
+    expect(cards[0].querySelector('[role="progressbar"], .progress')).not.toBeNull()
+    const emptyIdx = A1_UNITS.map((u, i) => (u.grammarIds.length === 0 && i > 0 ? i : -1)).filter(i => i > 0)
+    expect(emptyIdx).toHaveLength(21)
+    for (const c of emptyIdx.map(i => cards[i])) {
+      expect(c.textContent).toContain('Контент будет добавлен позже.')
+      expect(c.textContent).not.toMatch(/слов|0\/0/)
+      expect(c.querySelector('[role="progressbar"], .progress')).toBeNull()
+    }
+  })
+
+  it('a unit with a REUSED grammar lesson links to it with its own unit context (back button, label); its other sections stay empty', async () => {
+    const unit = await show('/learn/unit/114')
+    const rows = [...unit.container.querySelectorAll('.sections .secrow')]
+    expect(rows).toHaveLength(8)
+    expect(unit.container.querySelectorAll('[data-empty-section]')).toHaveLength(7)
+    expect(rows[1].hasAttribute('data-empty-section')).toBe(false)
+    expect(rows[1].getAttribute('href')).toBe('#/learn/topic/plural?unit=114')
+    cleanup()
+    const topic = await show('/learn/topic/plural?unit=114')
+    expect(text()).toContain('Юнит 14 · A1')
+    // the header back button leads to the NEW unit, never to the hidden legacy unit
+    const back = (c: HTMLElement) => {
+      vi.spyOn(window.history, 'length', 'get').mockReturnValue(1) // no history: the button navigates to its fallback
+      act(() => { (c.querySelector('.pagehead__back') as HTMLButtonElement).click() })
+      vi.restoreAllMocks()
+      return window.location.hash
+    }
+    expect(back(topic.container)).toBe('#/learn/unit/114')
+    cleanup()
+    const direct = await show('/learn/topic/plural') // the legacy route is unchanged: back goes to the legacy unit
+    expect(back(direct.container)).toBe('#/learn/unit/2')
+  })
+
+  it('Unit 27 shows its reused modal lesson as PARTIAL coverage (möchte, kann, muss) — in the unit and on the lesson page; full matches show no such note', async () => {
+    const unit = await show('/learn/unit/127')
+    const grammar = unit.container.querySelectorAll('.sections .secrow')[1]
+    expect(grammar.hasAttribute('data-empty-section')).toBe(false)
+    expect(grammar.textContent).toContain('Модальные глаголы')
+    expect(grammar.textContent).toContain('Частично охвачено: möchte, kann, muss')
+    expect(grammar.textContent).not.toMatch(/wollen|dürfen/)
+    expect(grammar.getAttribute('href')).toBe('#/learn/topic/modal?unit=127')
+    cleanup()
+    await show('/learn/topic/modal?unit=127')
+    expect(document.querySelector('[data-testid="partial-note"]')?.textContent).toContain('möchte, kann, muss')
+    cleanup()
+    await show('/learn/topic/modal') // legacy route: no unit context, no note
+    expect(document.querySelector('[data-testid="partial-note"]')).toBeNull()
+    cleanup()
+    const full = await show('/learn/unit/114')
+    expect(full.container.querySelectorAll('.sections .secrow')[1].textContent).not.toContain('Частично')
+    cleanup()
+    const six = await show('/learn/unit/106') // Satzstellung: Verbposition 2 — a full (semantic) match
+    expect(six.container.querySelectorAll('.sections .secrow')[1].getAttribute('href')).toBe('#/learn/topic/verb-position?unit=106')
   })
 
   it('Learn shows the six summit folders: A1 opens, A2 … C2 are locked and are not links', async () => {
@@ -175,7 +249,7 @@ describe('A1 navigation and lists are unchanged', () => {
   it('Vocabulary offers the A1 units only', async () => {
     const { container } = await show('/vocabulary')
     const chips = [...container.querySelectorAll('.catchips .chip')].map(c => c.textContent ?? '')
-    expect(chips.filter(c => /^\S+ \d+$/.test(c.trim()))).toHaveLength(UNITS.length)
+    expect(chips.filter(c => /^\S+ \d+$/.test(c.trim()))).toHaveLength(A1_UNITS.length)
     expect(text()).toContain(`${vocabularyOf('A1').length}`) // "all words" counts the A1 vocabulary only
   })
 
@@ -185,7 +259,7 @@ describe('A1 navigation and lists are unchanged', () => {
     // six milestones in order; only A1 is enterable while A2 and B1 are planned
     expect([...container.querySelectorAll('.jm__lvl')].map(e => e.textContent)).toEqual(['A1', 'A2', 'B1', 'B2', 'C1', 'C2'])
     expect(container.querySelectorAll('.jm button')).toHaveLength(1)
-    expect(unitsOfLevel('A1')).toHaveLength(10)
+    expect(unitsOfLevel('A1')).toHaveLength(38)
   })
 
   it('Tests: the A1 level test and the unit tests are offered; no other level', async () => {

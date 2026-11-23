@@ -5,6 +5,7 @@
  * Russian/Kyrgyz independence, exercise structure, separation of revision and final test, answer-position distribution, and the
  * boundaries of the stage (A2 is in controlled Beta (ru + ky), units 12–20 stay empty, no human sign-off is invented).
  */
+import { a2AuthoredUnits } from '../a2-authored'
 import { withoutB1Content } from './fixtures'
 import { describe, expect, it } from 'vitest'
 import { fullBundle } from '../../scripts/content-validate/bundle'
@@ -26,7 +27,6 @@ import {
   speakingIndex,
   topicTestOfUnit,
   unitById,
-  unitsOfLevel,
   vocabularyForUnit,
   vocabularyIndex,
   whyNotesOf,
@@ -515,7 +515,7 @@ describe('unit 11 — release gates and the stage boundary', () => {
     expect(errors.some(e => e.rule === 'cefr-signoff-missing' && e.where === 'units:13')).toBe(true)
   })
   it('all ten planned units 11–20 are authored', () => {
-    expect(unitsOfLevel('A2').map(u => u.id)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+    expect(a2AuthoredUnits().map(u => u.id)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
     for (const x of [
       ...vocabularyOf('A2'),
       ...grammarOf('A2'),
@@ -537,7 +537,7 @@ describe('unit 11 — release gates and the stage boundary', () => {
       'unit-19',
       'unit-20',
     ])
-    expect(allUnits.filter(u => u.id >= 21 && u.level !== 'B1')).toEqual([]) // no A2 unit beyond 20 (B1 owns 21–32)
+    expect(allUnits.filter(u => u.id >= 21 && u.id < 100 && u.level !== 'B1')).toEqual([]) // no A2 unit beyond 20 (B1 owns 21–32; 100+ are A1 v2 units)
   })
   it('A2 stays planned and invisible; no placement, level test or tutor content was added', () => {
     const a2 = COURSE.levels.find(l => l.id === 'A2')!

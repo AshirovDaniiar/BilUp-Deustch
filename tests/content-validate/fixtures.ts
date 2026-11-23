@@ -314,7 +314,7 @@ export function emptyA2Bundle(): ContentBundle {
  */
 export function withoutB1Content(b: ContentBundle): ContentBundle {
   const range = b.course?.find(c => c.id === 'B1')?.unitIdRange ?? [21, 32]
-  const outside = (unit: number) => unit < range[0] || unit > range[1]
+  const outside = (unit: number) => (unit < range[0] || unit > range[1]) && !(unit >= 301 && unit <= 336) // 301–336: the B1 curriculum v2 lessons (extra id range)
   const b1Concepts = new Set(b.grammar.filter(g => !outside(g.unit)).map(g => g.id))
   const b1Scenarios = new Set(
     Object.entries(b.speakingLevels ?? {})

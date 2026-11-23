@@ -4,9 +4,10 @@ import { useApp, useAttempt } from '../app/store'
 import { BetaNotice } from '../components/BetaNotice'
 import { Button, Card, PageHeader, ProgressBar } from '../components/ui'
 import { grammarIndex, listeningForUnit, readingForUnit, speakingForUnit, topicTestOfUnit, unitById, vocabularyForUnit, writingForUnit } from '../data/catalog'
+import { isPlaceholderUnit, unitNumber } from '../data/curriculum'
 import { SECTIONS, type SectionId } from '../data/units'
 import { WordCard } from '../features/vocabulary/WordCard'
-import { unitProgress } from '../features/progress/stats'
+import { requiredSections, unitHasContent, unitProgress } from '../features/progress/stats'
 import { tr } from '../utils/text'
 import { NotFound } from './NotFound'
 
@@ -26,7 +27,7 @@ export function UnitScreen({ id }: { id: number }) {
 
   const target: Record<SectionId, { to: string; sub: string }> = {
     vocabulary: { to: `/learn/unit/${id}/vocabulary`, sub: `${vocabularyForUnit(id).length} ${t('words')}` },
-    grammar: { to: `/learn/topic/${unit.grammarIds[0]}`, sub: unit.grammarIds.map(g => { const c = grammarIndex.get(g); return c ? tr(c.title, lang) : g }).join(' · ') },
+    grammar: { to: `/learn/topic/${unit.grammarIds[0]}${isPlaceholderUnit(unit) ? `?unit=${id}` : ''}`, sub: unit.grammarIds.map(g => { const c = grammarIndex.get(g); const part = unit.grammarPartial?.[g]; return (c ? tr(c.title, lang) : g) + (part ? ` · ${t('grammarPartial')}: ${part}` : '') }).join(' · ') },
     listening: { to: listening ? `/practice/listening/${listening.id}` : '/practice/listening', sub: listening?.title ?? '' },
     reading: { to: reading ? `/practice/reading/${reading.id}` : '/practice/reading', sub: reading?.title ?? '' },
     speaking: { to: `/speak/${speakingForUnit(id)}`, sub: speakingForUnit(id) ?? '' },
@@ -35,18 +36,35 @@ export function UnitScreen({ id }: { id: number }) {
     test: { to: unitTest ? `/practice/tests/${unitTest.id}` : '/practice/tests', sub: unitTest ? `${unitTest.size} ${t('questionsN')}` : '' },
   }
 
+  // A1 curriculum v2: a section without authored content is shown as an inert card with the empty state, never a link to nothing
+  const gated = unit.level === 'A1' || isPlaceholderUnit(unit) // A2 units with authored content keep their existing behaviour
+  const empty = (s: SectionId) => gated && !(s === 'test' ? !!unitTest : requiredSections(id).includes(s))
+
   return (
     <div className="stack">
-      <PageHeader back="/learn" eyebrow={`${t('unit')} ${String(id).padStart(2, '0')} · ${unit.level}`} title={`${unit.icon} ${unit.title}`} sub={tr(unit.subtitle, lang)} />
+      <PageHeader back="/learn" eyebrow={`${t('unit')} ${String(unitNumber(unit)).padStart(2, '0')} · ${unit.level}`} title={`${unit.icon} ${unit.title}`} sub={tr(unit.subtitle, lang)} />
       <BetaNotice level={unit.level} />
-      <Card>
-        <div className="row row--between small"><span>{p.done} / {p.total} {t('unitProgress')}</span><b>{p.pct}%</b></div>
-        <ProgressBar value={p.pct} tone={p.pct === 100 ? 'green' : 'blue'} />
-      </Card>
+      {unitHasContent(id) && (
+        <Card>
+          <div className="row row--between small"><span>{p.done} / {p.total} {t('unitProgress')}</span><b>{p.pct}%</b></div>
+          <ProgressBar value={p.pct} tone={p.pct === 100 ? 'green' : 'blue'} />
+        </Card>
+      )}
       <div className="sections">
         {SECTIONS.map((s, i) => {
           const done = state.completed.includes(`${id}:${s}`)
           const tg = target[s]
+          if (empty(s))
+            return (
+              <div key={s} className="secrow card" data-empty-section={s} aria-disabled="true">
+                <span className="secrow__num">{i + 1}</span>
+                <span className="secrow__icon" aria-hidden>{ICONS[s]}</span>
+                <span className="grow">
+                  <b>{t(`sec_${s}` as 'sec_vocabulary')}</b>
+                  <span className="muted small break" style={{ display: 'block' }}>{t('sec_empty')}</span>
+                </span>
+              </div>
+            )
           return (
             <A key={s} to={tg.to} className={`secrow card card--interactive ${done ? 'is-done' : ''}`}>
               <span className="secrow__num">{done ? '✓' : i + 1}</span>

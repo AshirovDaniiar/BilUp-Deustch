@@ -115,7 +115,7 @@ describe('progress for an empty A2 is explicit and isolated from A1', () => {
   it('A1 progress is unaffected by anything done in A1 being "also" visible to A2', () => {
     expect(levelProgress(doneEverythingInA1, 'A1')).toBe(100)
     expect(levelProgress(doneEverythingInA1)).toBe(100) // legacy call style = A1
-    expect(currentUnit(doneEverythingInA1).id).toBe(unitsOfLevel('A1').at(-1)?.id)
+    expect(currentUnit(doneEverythingInA1).id).toBe(1) // A1 v2: unit 1 is the last AUTHORED unit; empty containers are never current
   })
 
   it('A2 word stages are all zero and nothing is due — even when every A1 word is mastered/due', () => {

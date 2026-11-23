@@ -1,5 +1,6 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest'
+import { A1_UNITS } from '../../src/data/a1-curriculum'
 import { badges, currentUnit, levelProgress, requiredSections, unitProgress } from '../../src/features/progress/stats'
 import { listeningForUnit } from '../../src/data/listening'
 import { readingForUnit } from '../../src/data/reading'
@@ -41,17 +42,25 @@ describe('unit progress denominators are derived from content (V-06)', () => {
 
   it('level progress is completed required sections over all required sections, and reaches 100 % when everything required is done', () => {
     expect(levelProgress(withCompleted([]))).toBe(0)
-    const everything = UNITS.flatMap(u => requiredSections(u.id).map(s => `${u.id}:${s}`))
+    const everything = A1_UNITS.flatMap(u => requiredSections(u.id).map(s => `${u.id}:${s}`))
     expect(levelProgress(withCompleted(everything))).toBe(100)
-    const total = UNITS.reduce((a, u) => a + requiredSections(u.id).length, 0)
+    const total = A1_UNITS.reduce((a, u) => a + requiredSections(u.id).length, 0)
     expect(levelProgress(withCompleted(everything.slice(0, 1)))).toBe(Math.round((1 / total) * 100))
   })
 
-  it('the current unit advances only when a unit is complete in terms of ITS requirements; the "unit" badge likewise', () => {
-    const last = UNITS[UNITS.length - 1].id
-    const through = UNITS.slice(0, -1).flatMap(u => requiredSections(u.id).map(s => `${u.id}:${s}`))
+  it('empty A1 v2 containers require nothing: they neither dilute level progress nor become the current unit; the "unit" badge likewise', () => {
+    const empty = A1_UNITS.filter(u => u.id >= 100 && u.grammarIds.length === 0)
+    expect(empty).toHaveLength(21)
+    for (const u of empty) expect(requiredSections(u.id)).toEqual([])
+    // a unit that only REFERENCES an existing grammar lesson requires just that section (it has no test and no words)
+    for (const u of A1_UNITS.filter(u => u.id >= 100 && u.grammarIds.length > 0)) expect(requiredSections(u.id)).toEqual(['grammar'])
+    const authored = A1_UNITS.filter(u => u.id < 100) // units with words: the only ones Continue Learning may point at
+    const last = authored[authored.length - 1].id
+    expect(currentUnit(withCompleted([])).id).toBe(authored[0].id)
+    const through = authored.slice(0, -1).flatMap(u => requiredSections(u.id).map(s => `${u.id}:${s}`))
     expect(currentUnit(withCompleted(through)).id).toBe(last)
     const all = [...through, ...requiredSections(last).map(s => `${last}:${s}`)]
+    expect(currentUnit(withCompleted(all)).id).toBe(last)
     expect(badges(withCompleted(all)).find(b => b.id === 'unit')?.earned).toBe(true)
     expect(badges(withCompleted([])).find(b => b.id === 'unit')?.earned).toBe(false)
   })

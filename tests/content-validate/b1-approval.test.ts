@@ -51,7 +51,7 @@ describe('B1 is a Beta for the Russian and Kyrgyz explanation languages (owner a
     expect(COURSE.levels.map(l => l.id)).toEqual(['A1', 'A2', 'B1'])
   })
   it('only Units 21–28 are authored: the other collections are empty, and B1 is still planned (no learner can reach it)', () => {
-    expect(B1_CONTENT.units.map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
+    expect(B1_CONTENT.legacyUnits.map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
     for (const k of ['placement', 'tutorTemplates', 'instructions'] as const) expect(B1_CONTENT[k]).toHaveLength(0)
     expect(B1_META.map(m => m.unit)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
   })

@@ -99,6 +99,9 @@ const F = vi.hoisted(() => {
 vi.mock('../../src/data/a2/vocabulary', () => ({ A2_VOCABULARY: F.vocab }))
 vi.mock('../../src/data/a2/exercises', () => ({ A2_EXERCISES: [...F.handwritten, ...F.articles] }))
 vi.mock('../../src/data/a2/units', () => ({ A2_UNITS: F.units, A2_UNIT_SPEAKING: [] }))
+// These tests pin LEVEL SCOPING of progress with a level whose units are authored and listed (the pre-v2 shape), independent of the
+// curriculum-v2 container structure (covered by tests/data/a2-curriculum.test.ts).
+vi.mock('../../src/data/a2/curriculum', () => ({ A2_VISIBLE_UNITS: F.units, A2_LEGACY_UNITS: [] }))
 vi.mock('../../src/data/a2/grammar', () => ({ A2_GRAMMAR: [F.concept], A2_WHY_NOTES: [] }))
 vi.mock('../../src/data/a2/listening', () => ({ A2_LISTENING: F.listening }))
 

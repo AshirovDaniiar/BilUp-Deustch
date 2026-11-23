@@ -17,6 +17,8 @@ export interface CourseLevel {
   status: LevelStatus
   /** Inclusive range of unit ids owned by this level. Ids are global and never reused (progress keys are `${unit}:${section}`). */
   unitIdRange: readonly [number, number]
+  /** Further inclusive id ranges owned by the level (A1 curriculum v2: new units are numbered 100 + their position, outside the legacy 1–10). */
+  extraUnitIdRanges?: readonly (readonly [number, number])[]
   /**
    * Locales for which the level may be offered. A locale is listed only after its coverage gate passes (04 §7.3);
    * a level that is not released for the selected locale must never fall back to Russian instruction text.
@@ -34,13 +36,13 @@ export const COURSE: Course = {
   id: 'de-general',
   levels: [
     // Kyrgyz is selectable for A1 today (disclosed legacy behaviour); recorded as-is, not as a quality claim.
-    { id: 'A1', status: 'released', unitIdRange: [1, 10], releasedLocales: ['ru', 'ky'] },
+    { id: 'A1', status: 'released', unitIdRange: [1, 10], extraUnitIdRanges: [[102, 138]], releasedLocales: ['ru', 'ky'] },
     // A2: units 11–20. CONTROLLED BETA for Russian and Kyrgyz (explicit owner approval): visible with a Beta notice; human CEFR / native-language reviews
     // and the level test are still pending (reported by the content validator as Beta flags, blocking a full release). Not offered to the German interface.
-    { id: 'A2', status: 'beta', unitIdRange: [11, 20], releasedLocales: ['ru', 'ky'] },
+    { id: 'A2', status: 'beta', unitIdRange: [11, 20], extraUnitIdRanges: [[201, 243]], releasedLocales: ['ru', 'ky'] },
     // B1: units 21–32. BETA for the Russian and Kyrgyz explanation languages (owner approval for all learners, B1 Beta launch). A Beta is not a stable release: the formal release gate
     // (`content:validate:release`) stays closed until the human CEFR / native-speaker reviews are recorded. The German interface is not offered B1 (only released levels are).
-    { id: 'B1', status: 'beta', unitIdRange: [21, 32], releasedLocales: ['ru', 'ky'] },
+    { id: 'B1', status: 'beta', unitIdRange: [21, 32], extraUnitIdRanges: [[301, 336]], releasedLocales: ['ru', 'ky'] },
   ],
 }
 
@@ -72,7 +74,9 @@ export const isLevelReleasedFor = (level: LanguageLevel, locale: ExplanationLoca
 
 /** Level that owns a unit id, from the unit id ranges (works before any unit of the level exists). */
 export const levelOfUnitId = (unit: number): LanguageLevel | undefined =>
-  Number.isInteger(unit) ? COURSE.levels.find(l => unit >= l.unitIdRange[0] && unit <= l.unitIdRange[1])?.id : undefined
+  Number.isInteger(unit)
+    ? COURSE.levels.find(l => [l.unitIdRange, ...(l.extraUnitIdRanges ?? [])].some(([lo, hi]) => unit >= lo && unit <= hi))?.id
+    : undefined
 
 /**
  * The level a learner is in when nothing else is known: the first RELEASED level (A1). Used as the explicit default of the

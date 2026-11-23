@@ -25,7 +25,7 @@ const TEST_KINDS = new Set(['placement', 'level', 'topic', 'grammar', 'vocabular
 export function metadataRules(ctx: Ctx): void {
   const { bundle } = ctx
   const courseLevels = bundle.course ?? []
-  const unitIds = new Set(bundle.units.map(u => u.id))
+  const unitIds = new Set([...bundle.units.map(u => u.id), ...(bundle.containerUnitIds ?? [])])
 
   // ───── units: ids inside their level's range ─────
   const seenUnit = new Set<number>()

@@ -4,6 +4,7 @@
  * concepts, vocabulary (38–42, nothing already taught in A1/A2), text sizes, productive vs receptive scope, RU/KY completeness, assessment honesty, and the
  * catalog integration. B1 stays `planned` and invisible; no CEFR approval of any kind is implied (the content is an unreviewed AI-assisted draft).
  */
+import { b1AuthoredUnits } from '../b1-authored'
 import { describe, expect, it } from 'vitest'
 import { fullBundle } from '../../scripts/content-validate/bundle'
 import { lemmaKeys } from '../../scripts/content-validate/b1/lemma'
@@ -25,7 +26,6 @@ import {
   registerLevelContent,
   speakingForUnit,
   topicTestOfUnit,
-  unitsOfLevel,
   vocabularyForUnit,
 } from '../../src/data/catalog'
 
@@ -62,7 +62,7 @@ describe('identity and integration (B1 is a Beta for ru and ky)', () => {
     expect(UNIT_21.grammarIds).toEqual(CONCEPTS)
   })
   it('the content module holds Unit 21 (and Unit 22), wired into the metadata, the tests and the speaking list', () => {
-    expect(B1_CONTENT.units.map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
+    expect(B1_CONTENT.legacyUnits.map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
     expect(B1_META.map(m => m.unit)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
     expect(B1_CONTENT.tests[0]).toEqual(UNIT_21_TEST)
     expect(B1_CONTENT.unitSpeaking[0]).toBe('b1-sp-21-01')
@@ -76,7 +76,7 @@ describe('identity and integration (B1 is a Beta for ru and ky)', () => {
   it('registered in the catalog, the unit is reachable through the standard selectors (and only through B1)', () => {
     registerLevelContent('B1', B1_CONTENT) // idempotent: the validator bundle has already registered it in this process
     expect(isLevelContentLoaded('B1')).toBe(true)
-    expect(unitsOfLevel('B1').map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
+    expect(b1AuthoredUnits().map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
     expect(vocabularyForUnit(21)).toHaveLength(40)
     expect(grammarForUnit(21).map(g => g.id)).toEqual(CONCEPTS)
     expect(finalTestOfUnit(21)?.questions).toHaveLength(15)

@@ -39,6 +39,7 @@ export function validateContent(c: ContentBundle, options: Options = {}): Issue[
     'units',
     c.units.map(u => u.id),
   )
+  for (const id of c.containerUnitIds ?? []) unitIds.add(id) // content that lives in a curriculum-v2 container (e.g. its grammar lesson) references an existing unit
   const vocabIds = dup(
     'vocabulary',
     c.vocabulary.map(v => v.id),

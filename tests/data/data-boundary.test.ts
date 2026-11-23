@@ -143,7 +143,8 @@ describe('src/data layering', () => {
     const dir = join(src, 'data/a2')
     for (const f of walk(dir).map(p => norm(relative(dir, p)))) {
       for (const i of importsOf(join(dir, f))) {
-        const ok = i.target === 'data/types' || (i.target.startsWith('data/a2/') && !i.target.includes('..'))
+        // `data/curriculum` is the shared, content-free curriculum-v2 builder (the same one A1 uses)
+        const ok = i.target === 'data/types' || i.target === 'data/curriculum' || (i.target.startsWith('data/a2/') && !i.target.includes('..'))
         expect(ok, `data/a2/${f} imports ${i.spec}`).toBe(true)
       }
     }
@@ -160,7 +161,8 @@ describe('src/data layering', () => {
     const dir = join(src, 'data/b1')
     for (const f of walk(dir).map(p => norm(relative(dir, p)))) {
       for (const i of importsOf(join(dir, f))) {
-        const ok = i.target === 'data/types' || i.target.startsWith('data/b1/') || (i.target.startsWith('data/a2/') && i.typeOnly)
+        // `data/curriculum` is the shared, content-free curriculum-v2 builder (the same one A1 and A2 use)
+        const ok = i.target === 'data/types' || i.target === 'data/curriculum' || i.target.startsWith('data/b1/') || (i.target.startsWith('data/a2/') && i.typeOnly)
         expect(ok, `data/b1/${f} imports ${i.spec}`).toBe(true)
       }
     }

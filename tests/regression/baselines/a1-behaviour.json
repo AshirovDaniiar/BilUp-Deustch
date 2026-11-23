@@ -241,8 +241,8 @@
       "pct": 0
      }
     },
-    "levelProgress": 10,
-    "currentUnit": 2,
+    "levelProgress": 33,
+    "currentUnit": 1,
     "badges": [
      "first",
      "streak3",
@@ -331,8 +331,8 @@
       "pct": 0
      }
     },
-    "levelProgress": 91,
-    "currentUnit": 10,
+    "levelProgress": 33,
+    "currentUnit": 1,
     "badges": [
      "first",
      "unit"
@@ -420,8 +420,8 @@
       "pct": 100
      }
     },
-    "levelProgress": 100,
-    "currentUnit": 10,
+    "levelProgress": 33,
+    "currentUnit": 1,
     "badges": [
      "first",
      "speaker",
@@ -513,7 +513,7 @@
       "pct": 0
      }
     },
-    "levelProgress": 5,
+    "levelProgress": 8,
     "currentUnit": 1,
     "badges": [
      "first",

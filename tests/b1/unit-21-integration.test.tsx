@@ -62,7 +62,7 @@ async function show(path: string, lang: Lang, level: 'A1' | 'B1' = 'A1') {
   return document.body.textContent ?? ''
 }
 
-const unit = B1_CONTENT.units[0]
+const unit = B1_CONTENT.legacyUnits[0]
 const grammar = B1_CONTENT.grammar
 const ROUTES = (lang: Lang): [string, string][] => [
   [`/learn/unit/21`, unit.title],

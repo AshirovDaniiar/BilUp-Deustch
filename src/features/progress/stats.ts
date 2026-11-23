@@ -7,6 +7,7 @@ import {
   listeningForUnit,
   readingForUnit,
   speakingForUnit,
+  topicTestOfUnit,
   unitById,
   unitsOfLevel,
   vocabularyForUnit,
@@ -95,9 +96,13 @@ const HAS_CONTENT: Record<SectionId, (unit: number) => boolean> = {
   speaking: u => speakingForUnit(u) !== undefined,
   writing: u => writingForUnit(u).length > 0, // by the task's `unit` metadata, not an id pattern
   review: u => vocabularyForUnit(u).length > 0,
-  test: () => true,
+  // a unit's test is required only when the unit HAS one (every authored unit does; a unit with just a grammar reference does not)
+  test: u => topicTestOfUnit(u) !== undefined,
 }
-export const requiredSections = (unit: number): SectionId[] => SECTIONS.filter(sec => HAS_CONTENT[sec](unit))
+/** True when the unit has authored content in at least one section other than the (always-present) test. */
+export const unitHasContent = (unit: number): boolean => SECTIONS.some(sec => sec !== 'test' && HAS_CONTENT[sec](unit))
+/** A unit that is only an empty container (A1 curriculum v2) requires nothing, so it neither adds to nor dilutes level progress. */
+export const requiredSections = (unit: number): SectionId[] => (unitHasContent(unit) ? SECTIONS.filter(sec => HAS_CONTENT[sec](unit)) : [])
 
 export const unitProgress = (s: UserProgress, unit: number) => {
   const sections = requiredSections(unit)
@@ -122,7 +127,10 @@ export function currentUnit(s: UserProgress): LearningUnit
 export function currentUnit(s: UserProgress, level: LanguageLevel): LearningUnit | undefined
 export function currentUnit(s: UserProgress, level: LanguageLevel = DEFAULT_LEVEL): LearningUnit | undefined {
   const units = unitsOfLevel(level)
-  return units.find(u => unitProgress(s, u.id).pct < 100) ?? units[units.length - 1]
+  // empty containers (A1 curriculum v2) are never "the current unit": there is nothing to continue in them
+  const authored = units.filter(u => vocabularyForUnit(u.id).length > 0) // Continue Learning needs a full unit (words come first); a grammar-only unit is reachable from the Learn page
+  // undefined when the level has no authored unit yet (e.g. A2 v2 before its content is written)
+  return authored.find(u => unitProgress(s, u.id).pct < 100) ?? authored[authored.length - 1]
 }
 
 export const completedTopics = (s: UserProgress) => s.completed.filter(c => c.startsWith('topic:')).length

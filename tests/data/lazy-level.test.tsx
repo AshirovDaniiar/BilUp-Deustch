@@ -3,9 +3,11 @@
  * which the catalog is in its shipped initial state (A2 slot empty, plan only), and proves the loader and the route gate.
  * The test-only visibility switch (COURSE mutation) is restored after every test; nothing here changes production data.
  */
+import { a2AuthoredUnits } from '../a2-authored'
 import { act, cleanup, render } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { App } from '../../src/app/App'
+import { A1_LEGACY_UNITS, A1_UNITS } from '../../src/data/a1-curriculum'
 import { levelsToLoad } from '../../src/app/routeAccess'
 import { AppProvider } from '../../src/app/store'
 import {
@@ -50,7 +52,7 @@ describe('initial (shipped) state: A2 is not loaded', () => {
     expect(plannedUnitsOf('A2')).toHaveLength(10)
     expect(vocabularyOf('A1')).toBe(VOCABULARY)
     expect(allVocabulary).toHaveLength(VOCABULARY.length)
-    expect(allUnits.every(u => u.id <= 10)).toBe(true)
+    expect(allUnits.every(u => u.id <= 10 || u.id >= 100)).toBe(true) // 100+ = A1 v2 units
   })
   it('a planned level cannot be loaded without the development preview flag, and stays empty', async () => {
     expect(isLevelVisible('A2')).toBe(false)
@@ -142,9 +144,12 @@ describe('rendering the real App', () => {
     expect(isLevelContentLoaded('A2')).toBe(true)
     expect(text()).toContain('Über mich und meine Erfahrungen')
     // the loaded content is in the level's own slot; A1 is untouched
-    expect(unitsOfLevel('A2').map(u => u.id)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+    expect(a2AuthoredUnits().map(u => u.id)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
     expect(vocabularyOf('A1')).toBe(VOCABULARY)
-    expect(allUnits.map(u => u.id)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+    // A1 (38 listed + 9 hidden), then A2 (43 listed containers 201–243 + the 10 authored units, hidden)
+    expect(allUnits.map(u => u.id)).toEqual(
+      [...A1_UNITS, ...A1_LEGACY_UNITS].map(u => u.id).concat(Array.from({ length: 43 }, (_, i) => 201 + i), [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]),
+    )
   })
 
   it('loading is idempotent and a second request resolves immediately', async () => {

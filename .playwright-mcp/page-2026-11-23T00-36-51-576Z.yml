@@ -1,0 +1,181 @@
+- generic [ref=f3e2]:
+  - generic [ref=f3e3]:
+    - generic [ref=f3e4]:
+      - banner [ref=f3e5]:
+        - link "BilUp Til" [ref=f3e6] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=f3e9]:
+          - link "AI-репетитор" [ref=f3e10] [cursor=pointer]:
+            - /url: "#/tutor"
+            - text: ✨
+          - link "Профиль" [ref=f3e11] [cursor=pointer]:
+            - /url: "#/profile"
+            - text: 👤
+      - main [ref=f3e12]:
+        - generic [ref=f3e149]:
+          - generic [ref=f3e151]:
+            - heading "Учебный путь" [level=1] [ref=f3e152]
+            - paragraph [ref=f3e153]: "Каждый юнит: слова → грамматика → аудирование → чтение → речь → письмо → повторение → тест"
+          - generic [ref=f3e154]:
+            - link "📖 Слова Каждое слово — с артиклем, формами, примером и связями" [ref=f3e155] [cursor=pointer]:
+              - /url: "#/vocabulary"
+              - text: 📖
+              - generic [ref=f3e156]: Слова
+              - generic [ref=f3e157]: Каждое слово — с артиклем, формами, примером и связями
+            - 'link "🧪 Grammar Lab Лаборатория грамматики: нажимайте, двигайте, смотрите, как работает язык" [ref=f3e158] [cursor=pointer]':
+              - /url: "#/grammar"
+              - text: 🧪
+              - generic [ref=f3e159]: Grammar Lab
+              - generic [ref=f3e160]: "Лаборатория грамматики: нажимайте, двигайте, смотрите, как работает язык"
+            - link "🇩🇪 Немецкий в жизни Банк, врач, Ausländerbehörde, Deutsche Bahn…" [ref=f3e161] [cursor=pointer]:
+              - /url: "#/practice/real"
+              - text: 🇩🇪
+              - generic [ref=f3e162]: Немецкий в жизни
+              - generic [ref=f3e163]: Банк, врач, Ausländerbehörde, Deutsche Bahn…
+          - tablist "Уровень" [ref=f3e164]:
+            - button "A1" [pressed] [ref=f3e165] [cursor=pointer]
+            - button "A2" [ref=f3e166] [cursor=pointer]
+            - button "B1" [ref=f3e167] [cursor=pointer]
+          - generic [ref=f3e168]:
+            - link "ЮНИТ 01 · A1 Hallo & Ich Знакомство, приветствия, первые фразы 23 слов · 8/8 пройдено 100" [ref=f3e169] [cursor=pointer]:
+              - /url: "#/learn/unit/1"
+              - generic [aria-hidden] [ref=f3e170]: 👋
+              - generic [ref=f3e171]:
+                - generic [ref=f3e172]: ЮНИТ 01 · A1
+                - heading "Hallo & Ich" [level=3] [ref=f3e173]
+                - paragraph [ref=f3e174]: Знакомство, приветствия, первые фразы
+                - generic [ref=f3e175]:
+                  - generic [ref=f3e176]: 23 слов
+                  - text: ·
+                  - generic [ref=f3e177]: 8/8 пройдено
+                - progressbar "Hallo & Ich" [ref=f3e178]
+            - link "ЮНИТ 02 · A1 Meine Familie Семья, люди, описание 23 слов · 8/8 пройдено 100" [ref=f3e180] [cursor=pointer]:
+              - /url: "#/learn/unit/2"
+              - generic [aria-hidden] [ref=f3e181]: 👨‍👩‍👧
+              - generic [ref=f3e182]:
+                - generic [ref=f3e183]: ЮНИТ 02 · A1
+                - heading "Meine Familie" [level=3] [ref=f3e184]
+                - paragraph [ref=f3e185]: Семья, люди, описание
+                - generic [ref=f3e186]:
+                  - generic [ref=f3e187]: 23 слов
+                  - text: ·
+                  - generic [ref=f3e188]: 8/8 пройдено
+                - progressbar "Meine Familie" [ref=f3e189]
+            - link "ЮНИТ 03 · A1 Mein Alltag Распорядок дня и привычки 22 слов · 8/8 пройдено 100" [ref=f3e191] [cursor=pointer]:
+              - /url: "#/learn/unit/3"
+              - generic [aria-hidden] [ref=f3e192]: ⏰
+              - generic [ref=f3e193]:
+                - generic [ref=f3e194]: ЮНИТ 03 · A1
+                - heading "Mein Alltag" [level=3] [ref=f3e195]
+                - paragraph [ref=f3e196]: Распорядок дня и привычки
+                - generic [ref=f3e197]:
+                  - generic [ref=f3e198]: 22 слов
+                  - text: ·
+                  - generic [ref=f3e199]: 8/8 пройдено
+                - progressbar "Mein Alltag" [ref=f3e200]
+            - link "ЮНИТ 04 · A1 Essen & Trinken Еда, кафе, заказ 23 слов · 8/8 пройдено 100" [ref=f3e202] [cursor=pointer]:
+              - /url: "#/learn/unit/4"
+              - generic [aria-hidden] [ref=f3e203]: 🍞
+              - generic [ref=f3e204]:
+                - generic [ref=f3e205]: ЮНИТ 04 · A1
+                - heading "Essen & Trinken" [level=3] [ref=f3e206]
+                - paragraph [ref=f3e207]: Еда, кафе, заказ
+                - generic [ref=f3e208]:
+                  - generic [ref=f3e209]: 23 слов
+                  - text: ·
+                  - generic [ref=f3e210]: 8/8 пройдено
+                - progressbar "Essen & Trinken" [ref=f3e211]
+            - link "ЮНИТ 05 · A1 Meine Wohnung Жильё, мебель, аренда 23 слов · 8/8 пройдено 100" [ref=f3e213] [cursor=pointer]:
+              - /url: "#/learn/unit/5"
+              - generic [aria-hidden] [ref=f3e214]: 🏠
+              - generic [ref=f3e215]:
+                - generic [ref=f3e216]: ЮНИТ 05 · A1
+                - heading "Meine Wohnung" [level=3] [ref=f3e217]
+                - paragraph [ref=f3e218]: Жильё, мебель, аренда
+                - generic [ref=f3e219]:
+                  - generic [ref=f3e220]: 23 слов
+                  - text: ·
+                  - generic [ref=f3e221]: 8/8 пройдено
+                - progressbar "Meine Wohnung" [ref=f3e222]
+            - link "ЮНИТ 06 · A1 Arbeit & Beruf Профессии, офис, заявление 22 слов · 8/8 пройдено 100" [ref=f3e224] [cursor=pointer]:
+              - /url: "#/learn/unit/6"
+              - generic [aria-hidden] [ref=f3e225]: 💼
+              - generic [ref=f3e226]:
+                - generic [ref=f3e227]: ЮНИТ 06 · A1
+                - heading "Arbeit & Beruf" [level=3] [ref=f3e228]
+                - paragraph [ref=f3e229]: Профессии, офис, заявление
+                - generic [ref=f3e230]:
+                  - generic [ref=f3e231]: 22 слов
+                  - text: ·
+                  - generic [ref=f3e232]: 8/8 пройдено
+                - progressbar "Arbeit & Beruf" [ref=f3e233]
+            - link "ЮНИТ 07 · A1 In der Stadt Ориентирование и места в городе 22 слов · 8/8 пройдено 100" [ref=f3e235] [cursor=pointer]:
+              - /url: "#/learn/unit/7"
+              - generic [aria-hidden] [ref=f3e236]: 🏙️
+              - generic [ref=f3e237]:
+                - generic [ref=f3e238]: ЮНИТ 07 · A1
+                - heading "In der Stadt" [level=3] [ref=f3e239]
+                - paragraph [ref=f3e240]: Ориентирование и места в городе
+                - generic [ref=f3e241]:
+                  - generic [ref=f3e242]: 22 слов
+                  - text: ·
+                  - generic [ref=f3e243]: 8/8 пройдено
+                - progressbar "In der Stadt" [ref=f3e244]
+            - link "ЮНИТ 08 · A1 Zeit & Termine Время, дни недели, записи на приём 22 слов · 8/8 пройдено 100" [ref=f3e246] [cursor=pointer]:
+              - /url: "#/learn/unit/8"
+              - generic [aria-hidden] [ref=f3e247]: 📅
+              - generic [ref=f3e248]:
+                - generic [ref=f3e249]: ЮНИТ 08 · A1
+                - heading "Zeit & Termine" [level=3] [ref=f3e250]
+                - paragraph [ref=f3e251]: Время, дни недели, записи на приём
+                - generic [ref=f3e252]:
+                  - generic [ref=f3e253]: 22 слов
+                  - text: ·
+                  - generic [ref=f3e254]: 8/8 пройдено
+                - progressbar "Zeit & Termine" [ref=f3e255]
+            - link "ЮНИТ 09 · A1 Einkaufen Покупки, цены, оплата 23 слов · 8/8 пройдено 100" [ref=f3e257] [cursor=pointer]:
+              - /url: "#/learn/unit/9"
+              - generic [aria-hidden] [ref=f3e258]: 🛍️
+              - generic [ref=f3e259]:
+                - generic [ref=f3e260]: ЮНИТ 09 · A1
+                - heading "Einkaufen" [level=3] [ref=f3e261]
+                - paragraph [ref=f3e262]: Покупки, цены, оплата
+                - generic [ref=f3e263]:
+                  - generic [ref=f3e264]: 23 слов
+                  - text: ·
+                  - generic [ref=f3e265]: 8/8 пройдено
+                - progressbar "Einkaufen" [ref=f3e266]
+            - link "ЮНИТ 10 · A1 Unterwegs Поездки, вокзал, аэропорт 23 слов · 7/7 пройдено 100" [ref=f3e268] [cursor=pointer]:
+              - /url: "#/learn/unit/10"
+              - generic [aria-hidden] [ref=f3e269]: 🚆
+              - generic [ref=f3e270]:
+                - generic [ref=f3e271]: ЮНИТ 10 · A1
+                - heading "Unterwegs" [level=3] [ref=f3e272]
+                - paragraph [ref=f3e273]: Поездки, вокзал, аэропорт
+                - generic [ref=f3e274]:
+                  - generic [ref=f3e275]: 23 слов
+                  - text: ·
+                  - generic [ref=f3e276]: 7/7 пройдено
+                - progressbar "Unterwegs" [ref=f3e277]
+    - navigation "Navigation" [ref=f3e130]:
+      - link "Главная" [ref=f3e131] [cursor=pointer]:
+        - /url: "#/"
+      - link "Учиться" [ref=f3e136] [cursor=pointer]:
+        - /url: "#/learn"
+        - generic [aria-hidden] [ref=f3e137]: 📚
+      - link "Практика" [ref=f3e139] [cursor=pointer]:
+        - /url: "#/practice"
+        - generic [aria-hidden] [ref=f3e140]: 🎯
+      - link "Говорить" [ref=f3e142] [cursor=pointer]:
+        - /url: "#/speak"
+        - generic [aria-hidden] [ref=f3e143]: 🎙️
+      - link "Прогресс" [ref=f3e145] [cursor=pointer]:
+        - /url: "#/progress"
+        - generic [aria-hidden] [ref=f3e146]: 📈
+  - status [ref=f3e279]:
+    - generic [ref=f3e280]:
+      - strong [ref=f3e281]: Доступна новая версия
+      - generic [ref=f3e282]: Обновите приложение, когда будете готовы. Ваш прогресс сохранится.
+    - generic [ref=f3e283]:
+      - button "Обновить" [ref=f3e284] [cursor=pointer]
+      - button "Позже" [ref=f3e285] [cursor=pointer]

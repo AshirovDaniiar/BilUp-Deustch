@@ -1,0 +1,80 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - link "BilUp Til" [ref=e6] [cursor=pointer]:
+        - /url: "#/"
+      - generic [ref=e9]:
+        - link "AI-репетитор" [ref=e10] [cursor=pointer]:
+          - /url: "#/tutor"
+          - text: ✨
+        - link "Профиль" [ref=e11] [cursor=pointer]:
+          - /url: "#/profile"
+          - text: 👤
+    - main [ref=e12]:
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - generic [ref=e16]: DEUTSCH SPRECHEN.
+          - heading "Доброе утро 👋" [level=1] [ref=e17]
+        - generic [ref=e18]:
+          - generic [ref=e19]: Продолжить обучение
+          - generic [ref=e20]: A1 · Юнит 1 · 0/8
+          - heading "Hallo & Ich" [level=2] [ref=e21]
+          - paragraph [ref=e22]: Слова · 10 новых слов
+          - paragraph [ref=e23]: Начните с первого урока.
+          - link "Начать →" [ref=e25] [cursor=pointer]:
+            - /url: "#/learn/unit/1/vocabulary"
+        - generic [ref=e26]:
+          - heading "Мой путь в немецком" [level=2] [ref=e27]
+          - generic [ref=e28]:
+            - list "Мой путь в немецком":
+              - listitem [ref=e48]:
+                - button "A1 · Начальный · Открыт" [ref=e49] [cursor=pointer]:
+                  - generic [ref=e55]:
+                    - generic [ref=e56]: A1
+                    - generic [ref=e57]: Начальный
+                    - generic [ref=e58]: Открыт
+              - listitem [ref=e59]:
+                - button "A2 · Элементарный · Открыт" [ref=e60] [cursor=pointer]:
+                  - generic [ref=e66]:
+                    - generic [ref=e67]: A2
+                    - generic [ref=e68]: Элементарный
+                    - generic [ref=e69]: Открыт
+              - listitem [ref=e70]:
+                - button "B1 · Средний · Открыт" [ref=e71] [cursor=pointer]:
+                  - generic [ref=e77]:
+                    - generic [ref=e78]: B1
+                    - generic [ref=e79]: Средний
+                    - generic [ref=e80]: Открыт
+              - listitem [ref=e81]:
+                - img "B2 · Выше среднего · 🔒 Скоро" [ref=e82]:
+                  - generic [ref=e88]:
+                    - generic [ref=e89]: B2
+                    - generic [ref=e90]: Выше среднего
+                    - generic [ref=e91]: 🔒 Скоро
+              - listitem [ref=e92]:
+                - img "C1 · Продвинутый · 🔒 Скоро" [ref=e93]:
+                  - generic [ref=e99]:
+                    - generic [ref=e100]: C1
+                    - generic [ref=e101]: Продвинутый
+                    - generic [ref=e102]: 🔒 Скоро
+              - listitem [ref=e103]:
+                - img "C2 · Профессиональный · 🔒 Скоро" [ref=e104]:
+                  - generic [ref=e111]:
+                    - generic [ref=e112]: C2
+                    - generic [ref=e113]: Профессиональный
+                    - generic [ref=e114]: 🔒 Скоро
+  - navigation "Navigation" [ref=e115]:
+    - link "Главная" [ref=e116] [cursor=pointer]:
+      - /url: "#/"
+    - link "Учиться" [ref=e121] [cursor=pointer]:
+      - /url: "#/learn"
+      - generic [aria-hidden] [ref=e122]: 📚
+    - link "Практика" [ref=e124] [cursor=pointer]:
+      - /url: "#/practice"
+      - generic [aria-hidden] [ref=e125]: 🎯
+    - link "Говорить" [ref=e127] [cursor=pointer]:
+      - /url: "#/speak"
+      - generic [aria-hidden] [ref=e128]: 🎙️
+    - link "Прогресс" [ref=e130] [cursor=pointer]:
+      - /url: "#/progress"
+      - generic [aria-hidden] [ref=e131]: 📈

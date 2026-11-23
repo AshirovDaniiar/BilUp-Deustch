@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react'
-import { A } from '../app/router'
+import { A, useRoute } from '../app/router'
 import { useApp, useAttempt } from '../app/store'
 import { Button, Card, PageHeader } from '../components/ui'
 import { SpeakButton } from '../components/SpeakButton'
 import { grammarIndex, levelOfUnit, neighbourConcepts, unitById, whyNotesForConcept } from '../data/catalog'
 import { DEFAULT_LEVEL } from '../data/course'
+import { unitNumber } from '../data/curriculum'
 import { ExampleList, WhyButton, Highlight } from '../features/grammar/Highlight'
 import { ConceptVisual } from '../features/grammar/Labs'
 import { SpeakInput } from '../features/speaking/SpeakInput'
@@ -32,6 +33,7 @@ export function TopicScreen({ id }: { id: string }) {
   const attempt = useAttempt()
   const speakAttempt = useAttempt()
   const concept = grammarIndex.get(id)
+  const route = useRoute()
   const strictC = !!concept && levelOfUnit(concept.unit) !== 'A1' // authored A2 concept: translations in the learner's own language only
   const [step, setStep] = useState(0)
   const [practice, setPractice] = useState<QuizResult | null>(null)
@@ -42,7 +44,9 @@ export function TopicScreen({ id }: { id: string }) {
   if (!concept) return <NotFound />
 
   const why = whyNotesForConcept(concept.id)[0]
-  const unit = unitById(concept.unit)
+  // A lesson REUSED by a curriculum-v2 unit is opened with `?unit=<that unit>`: back link, label and completion then belong to that unit.
+  const via = unitById(Number(route.query.get('unit')))
+  const unit = via && via.grammarIds.includes(concept.id) ? via : unitById(concept.unit)
   const go = (n: number) => {
     setStep(n)
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -71,9 +75,14 @@ export function TopicScreen({ id }: { id: string }) {
     <div className="stack">
       <PageHeader
         back={unit ? `/learn/unit/${unit.id}` : '/grammar'}
-        eyebrow={`${t('unit')} ${concept.unit} · ${levelOfUnit(concept.unit) ?? DEFAULT_LEVEL}`}
+        eyebrow={`${t('unit')} ${unit ? unitNumber(unit) : concept.unit} · ${levelOfUnit(concept.unit) ?? DEFAULT_LEVEL}`}
         title={tr(concept.title, lang)}
       />
+      {unit?.grammarPartial?.[concept.id] && (
+        <Card>
+          <p className="small" data-testid="partial-note"><b>{t('grammarPartial')}:</b> {unit.grammarPartial[concept.id]}</p>
+        </Card>
+      )}
       <ol className="steps" aria-label="steps">
         {STEPS.map((s, i) => (
           <li key={s.id} className={`step ${i === step ? 'is-current' : ''} ${i < step ? 'is-done' : ''}`}>

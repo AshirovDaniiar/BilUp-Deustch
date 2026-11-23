@@ -19,6 +19,8 @@ export const de: Dict = {
   dueWords: 'Wörter zur Wiederholung', noDueWords: 'Heute nichts zu wiederholen',
   currentLevel: 'Aktuelles Niveau', daysShort: 'Tage',
   learnTitle: 'Gipfel',
+  grammarPartial: 'Teilweise abgedeckt',
+  sec_empty: 'Der Inhalt wird später ergänzt.',
   sec_vocabulary: 'Wortschatz', sec_grammar: 'Grammatik', sec_listening: 'Hören', sec_reading: 'Lesen', sec_speaking: 'Sprechen', sec_writing: 'Schreiben', sec_review: 'Wiederholen', sec_test: 'Abschlusstest',
   unitProgress: 'geschafft', startUnit: 'Einheit öffnen', levelLocked: 'Die Niveaus A2–C1 folgen in späteren Versionen.',
   step_discover: 'Entdecken', step_understand: 'Verstehen', step_practice: 'Üben', step_apply: 'Anwenden', step_speak: 'Sprechen', step_test: 'Testen', step_review: 'Rückblick',

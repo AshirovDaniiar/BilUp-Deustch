@@ -58,6 +58,7 @@ export interface CourseLevelInfo {
   id: LanguageLevel
   status: 'planned' | 'beta' | 'released'
   unitIdRange: readonly [number, number]
+  extraUnitIdRanges?: readonly (readonly [number, number])[]
   releasedLocales: readonly string[]
 }
 
@@ -105,6 +106,8 @@ export interface ContentBundle {
   b1Decisions?: readonly B1Decision[]
   /** the authored indicative B1 level assessment (items, parts, thresholds, notes), checked structurally */
   b1LevelTest?: B1LevelAssessment
+  /** ids of curriculum-v2 container units (A1 102–138, A2 201–243, B1 301–336): they exist for reference checks but are not audited as authored units */
+  containerUnitIds?: readonly number[]
 }
 
 export interface Options {

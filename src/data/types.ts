@@ -38,11 +38,17 @@ export interface LearningUnit {
    * The numeric `id` stays the key of progress, routes and storage.
    */
   key?: string
+  /** Display position within the level when it differs from `id` (A1 curriculum v2); absent means `id`. */
+  number?: number
   level: LanguageLevel
   title: string
   subtitle: L10n
   icon: string
   grammarIds: string[]
+  /** curriculum v2: a referenced lesson that covers its topic only in part — concept id → the forms it actually covers (shown to the learner) */
+  grammarPartial?: Record<string, string>
+  /** curriculum v2 (B1): the approved GRAMMAR TOPIC of the unit — planning metadata only, never a lesson; no lesson exists until content is mapped or authored */
+  grammarTopic?: string
 }
 
 export interface VocabularyItem {

@@ -17,6 +17,7 @@ import { A2_READING } from '../../src/data/a2/reading'
 import { A2_SPEAKING } from '../../src/data/a2/speaking'
 import { A2_FINAL_TESTS, A2_TESTS, type A2FinalTest } from '../../src/data/a2/tests'
 import type { A2TestDef } from '../../src/data/a2/types'
+import { A2_LEGACY_UNITS, A2_VISIBLE_UNITS } from '../../src/data/a2/curriculum'
 import { A2_UNITS, A2_UNIT_SPEAKING } from '../../src/data/a2/units'
 import { A2_VOCABULARY } from '../../src/data/a2/vocabulary'
 import { A2_WRITING } from '../../src/data/a2/writing'
@@ -74,6 +75,7 @@ import type {
   WhyNote,
   WritingTask,
 } from '../../src/data/types'
+import { A1_LEGACY_UNITS, A1_UNITS } from '../../src/data/a1-curriculum'
 import { UNITS, UNIT_SPEAKING, unitById as legacyUnitById } from '../../src/data/units'
 import { VOCABULARY, vocabById, vocabForUnit } from '../../src/data/vocabulary'
 import { WRITING, writingById } from '../../src/data/writing'
@@ -85,9 +87,11 @@ const baseline = JSON.parse(readFileSync(join(__dirname, '../regression/baseline
 >
 
 describe('A1 parity: catalog selectors return exactly the original A1 data', () => {
-  it('unitsOfLevel(A1) is UNITS (same array, same order)', () => {
-    expect(unitsOfLevel('A1')).toBe(UNITS)
-    expect(unitsOfLevel('A1')).toEqual(UNITS)
+  it('unitsOfLevel(A1) is the 38-unit A1 curriculum; every legacy unit is either reused in it or kept as hidden legacy (nothing dropped)', () => {
+    expect(unitsOfLevel('A1')).toBe(A1_UNITS)
+    expect(unitsOfLevel('A1')).toHaveLength(38)
+    expect(UNITS.every(u => A1_UNITS.includes(u) || A1_LEGACY_UNITS.includes(u))).toBe(true)
+    expect(A1_UNITS.filter(u => UNITS.includes(u)).every(u => u.title === 'Hallo & Ich')).toBe(true)
   })
 
   it.each([
@@ -137,7 +141,7 @@ describe('A1 parity: catalog selectors return exactly the original A1 data', () 
 
   it('matches the Stage-0 selector baseline (ids, per-unit counts, units, speaking map, tests)', () => {
     const map = <T extends { id: string }>(xs: readonly T[], f: (x: T) => unknown) => xs.map(f)
-    expect(unitsOfLevel('A1').map(u => ({ id: u.id, level: u.level, grammarIds: u.grammarIds }))).toEqual(baseline.units)
+    expect(allUnits.filter(u => UNITS.includes(u)).sort((a, b) => a.id - b.id).map(u => ({ id: u.id, level: u.level, grammarIds: u.grammarIds }))).toEqual(baseline.units)
     expect([...unitSpeakingOf('A1')]).toEqual(baseline.unitSpeaking)
     expect(map(vocabularyOf('A1'), v => v.id)).toEqual(baseline.vocabularyIds)
     expect(map(grammarOf('A1'), g => ({ id: g.id, unit: g.unit, level: g.level }))).toEqual(baseline.grammarIds)
@@ -166,7 +170,9 @@ describe('A1 parity: catalog selectors return exactly the original A1 data', () 
 
 describe('A2 selectors return only A2 data (and are empty until content is authored)', () => {
   it('each A2 selector returns its own A2 module (same reference)', () => {
-    expect(unitsOfLevel('A2')).toBe(A2_UNITS)
+    expect(unitsOfLevel('A2')).toBe(A2_VISIBLE_UNITS) // the 43 curriculum-v2 units; the ten authored units are hidden legacy
+    expect(unitsOfLevel('A2')).toHaveLength(43)
+    expect(A2_LEGACY_UNITS).toEqual(A2_UNITS)
     expect(vocabularyOf('A2')).toBe(A2_VOCABULARY)
     expect(grammarOf('A2')).toBe(A2_GRAMMAR)
     expect(whyNotesOf('A2')).toBe(A2_WHY_NOTES)
@@ -215,8 +221,7 @@ describe('A2 selectors return only A2 data (and are empty until content is autho
   })
 
   it('A2 content, whenever it exists, must satisfy the level rules (vacuously true today)', () => {
-    const [lo, hi] = courseLevel('A2')!.unitIdRange
-    const inRange = (u: number) => u >= lo && u <= hi
+    const inRange = (u: number) => levelOfUnitId(u) === 'A2'
     for (const u of unitsOfLevel('A2')) {
       expect(u.level).toBe('A2')
       expect(inRange(u.id)).toBe(true)
@@ -291,17 +296,17 @@ describe('A2 selectors return only A2 data (and are empty until content is autho
     expect(contentOf('B1')).not.toBe(contentOf('A2'))
     expect(catalog.isLevelContentLoaded('B1')).toBe(false)
     expect(unitsOfLevel('B1')).toEqual([])
-    expect(allUnits.some(u => u.id > 20)).toBe(false)
+    expect(allUnits.some(u => u.id > 20 && u.id < 100)).toBe(false)
   })
 
   it('allUnits is the A1 units followed by the A2 units; no unit is shared between levels', () => {
-    expect(allUnits).toEqual([...UNITS, ...A2_UNITS])
+    expect(allUnits).toEqual([...A1_UNITS, ...A1_LEGACY_UNITS, ...A2_VISIBLE_UNITS, ...A2_LEGACY_UNITS])
   })
 })
 
 describe('isolation: nothing flows between levels, even once A2 has content', () => {
   it('a temporary A2 item shows up only in A2 selectors; A1 selectors (and the legacy exports) are unaffected', () => {
-    const a1Before = { v: [...VOCABULARY], e: [...EXERCISES], l: [...LISTENING], u: [...UNITS] }
+    const a1Before = { v: [...VOCABULARY], e: [...EXERCISES], l: [...LISTENING], u: [...A1_UNITS] }
     const vocab = {
       id: 'v20-999',
       unit: 20,
@@ -330,15 +335,15 @@ describe('isolation: nothing flows between levels, even once A2 has content', ()
       v: A2_VOCABULARY.length,
       e: A2_EXERCISES.length,
       l: A2_LISTENING.length,
-      u: A2_UNITS.length,
+      u: A2_VISIBLE_UNITS.length,
       s: A2_UNIT_SPEAKING.length,
     }
-    const pilotUnits = [...A2_UNITS]
+    const pilotUnits = [...A2_VISIBLE_UNITS]
     const real = { v: vocabularyForUnit(20), e: exercisesForUnit(20), l: listeningForUnit(20), s: speakingForUnit(20) }
     A2_VOCABULARY.push(vocab)
     A2_EXERCISES.push(ex)
     A2_LISTENING.push(lis)
-    A2_UNITS.push(unit)
+    A2_VISIBLE_UNITS.push(unit)
     A2_UNIT_SPEAKING.push('some-scenario')
     try {
       expect(vocabularyOf('A2')).toContain(vocab)
@@ -362,7 +367,7 @@ describe('isolation: nothing flows between levels, even once A2 has content', ()
       A2_VOCABULARY.length = before.v
       A2_EXERCISES.length = before.e
       A2_LISTENING.length = before.l
-      A2_UNITS.length = before.u
+      A2_VISIBLE_UNITS.length = before.u
       A2_UNIT_SPEAKING.length = before.s
     }
     expect(A2_VOCABULARY).toHaveLength(before.v)

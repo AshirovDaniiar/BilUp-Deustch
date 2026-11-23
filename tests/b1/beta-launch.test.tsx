@@ -10,7 +10,7 @@ import { App } from '../../src/app/App'
 import { AppProvider } from '../../src/app/store'
 import { B1_CONTENT } from '../../src/data/b1/b1-content'
 import { B1_UNIT_PLAN } from '../../src/data/b1/registry'
-import { isLevelContentLoaded } from '../../src/data/catalog'
+import { isLevelContentLoaded, unitsOfLevel } from '../../src/data/catalog'
 import { COURSE, availableLevels, courseLevel, isLevelReleasedFor, isLevelVisible } from '../../src/data/course'
 import type { Lang } from '../../src/data/types'
 import { dictionaries } from '../../src/i18n'
@@ -69,7 +69,7 @@ describe('the shipped registry: B1 is a Beta, not a release', () => {
       expect(isLevelReleasedFor('B1', lang)).toBe(true)
     }
     expect(availableLevels('de')).toEqual(['A1'])
-    expect(Object.keys(courseLevel('B1')!).sort()).toEqual(['id', 'releasedLocales', 'status', 'unitIdRange'])
+    expect(Object.keys(courseLevel('B1')!).sort()).toEqual(['extraUnitIdRanges', 'id', 'releasedLocales', 'status', 'unitIdRange'])
   })
   it('the registry holds exactly the 12 approved permanent units 21–32 and all of them are wired into the content module', () => {
     const ids = B1_UNIT_PLAN.map(p => p.id)
@@ -88,7 +88,7 @@ describe('the shipped registry: B1 is a Beta, not a release', () => {
       'b1-behoerden-recht',
       'b1-rueckblick-pruefung',
     ])
-    expect(B1_CONTENT.units.map(u => [u.id, u.key])).toEqual(B1_UNIT_PLAN.map(p => [p.id, p.key]))
+    expect(B1_CONTENT.legacyUnits.map(u => [u.id, u.key])).toEqual(B1_UNIT_PLAN.map(p => [p.id, p.key]))
     expect(B1_CONTENT.tests.filter(t => t.kind === 'topic').map(t => t.id)).toEqual(ids.map(i => `unit-${i}`))
     expect(B1_CONTENT.tests.some(t => t.id === 'level-b1' && t.size === 60)).toBe(true)
     expect(B1_CONTENT.levelTest.questions).toHaveLength(60)
@@ -106,12 +106,14 @@ describe('the learner experience with NO test-only switch (jsdom; the real-brows
       const text = await show('/learn?level=B1', lang)
       expect(errors).toEqual([])
       const links = [...document.querySelectorAll('a')].map(a => a.getAttribute('href') ?? '')
-      for (let u = 21; u <= 32; u++)
+      // curriculum v2: the folder lists the 36 new units (ids 301–336); the twelve authored units 21–32 are hidden legacy
+      for (let u = 301; u <= 336; u++)
         expect(
           links.some(h => h.endsWith(`/learn/unit/${u}`)),
           `unit ${u}`,
         ).toBe(true)
-      for (const u of B1_CONTENT.units) expect(text, u.title).toContain(u.title)
+      for (let u = 21; u <= 32; u++) expect(links.some(h => h.endsWith(`/learn/unit/${u}`)), `legacy unit ${u} is not listed`).toBe(false)
+      for (const u of unitsOfLevel('B1')) expect(text, u.title).toContain(u.title)
       expect(document.querySelectorAll('.betanotice')).toHaveLength(1)
       expect(document.querySelector('.betanotice')!.textContent).toContain('B1')
       expect(document.querySelector('.betanotice')!.textContent).toMatch(lang === 'ru' ? /бета-версии/ : /бета-версияда/)
@@ -156,10 +158,10 @@ describe('the learner experience with NO test-only switch (jsdom; the real-brows
     }
   }, 60_000)
 
-  it('an A1 learner on the Russian interface is unchanged: A1 units 1–10 are listed and no B1 unit appears on the A1 Learn page', async () => {
+  it('an A1 learner on the Russian interface is unchanged: the 38 A1 units are listed and no B1 unit appears on the A1 Learn page', async () => {
     const text = await show('/learn?level=A1', 'ru', 'A1')
     const links = [...document.querySelectorAll('a')].map(a => a.getAttribute('href') ?? '')
-    for (let u = 1; u <= 10; u++)
+    for (const u of [1, ...Array.from({ length: 37 }, (_, i) => 102 + i)])
       expect(
         links.some(h => h.endsWith(`/learn/unit/${u}`)),
         `A1 unit ${u}`,

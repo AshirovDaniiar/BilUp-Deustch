@@ -8,7 +8,7 @@ import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import '../load-a2'
 import { AppProvider } from '../../src/app/store'
-import { grammarIndex, listeningForUnit, listeningOf, speakingIndex, unitsOfLevel, vocabularyOf, whyNotesForConcept } from '../../src/data/catalog'
+import { grammarIndex, speakingIndex, vocabularyOf, whyNotesForConcept } from '../../src/data/catalog'
 import { COURSE } from '../../src/data/course'
 import { VOCABULARY } from '../../src/data/vocabulary'
 import { WordCard } from '../../src/features/vocabulary/WordCard'
@@ -150,18 +150,14 @@ describe('A2 speaking lab', () => {
 })
 
 describe('home screen', () => {
-  it('A2 scenario subtitle in the learner language only', async () => {
+  it('A2 active (curriculum v2: only empty containers): Continue Learning shows the A1 unit and no A2 scenario or foreign-language subtitle', async () => {
     Object.assign(a2(), { status: 'beta', releasedLocales: ['ru', 'ky'] })
     for (const lang of ['ky', 'ru'] as const) {
       cleanup()
-      // the home screen shows ONE next step: finish vocabulary, grammar and listening so the speaking scenario is the one shown
-      const u = unitsOfLevel('A2')[0]
-      const lis = listeningForUnit(u.id)[0] ?? listeningOf('A2')[0]
-      show(<HomeScreen />, lang, 'A2', [`${u.id}:vocabulary`, `topic:${u.grammarIds[0]}`, ...(lis ? [`ex:${lis.id}`] : [])])
+      show(<HomeScreen />, lang, 'A2')
       await act(async () => {})
-      const sc = [...speakingIndex.values()].filter(s => s.level === 'A2').find(s => text().includes(s.title))
-      expect(sc, 'an A2 scenario step is shown on the A2 home screen').toBeDefined()
-      only(lang === 'ky' ? sc!.titleKy! : sc!.titleRu, lang === 'ky' ? sc!.titleRu : sc!.titleKy!)
+      expect(text()).toContain('A1 ·')
+      expect([...speakingIndex.values()].filter(s => s.level === 'A2').some(s => text().includes(s.title))).toBe(false)
     }
   })
   it('A1 home screen keeps the Russian scenario subtitle for a Kyrgyz learner (unchanged)', async () => {

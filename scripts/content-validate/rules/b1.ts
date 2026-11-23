@@ -42,7 +42,9 @@ const letters = (s: string) => (s.match(/\p{L}/gu) ?? []).length
 export function b1Rules(ctx: Ctx): void {
   const { bundle } = ctx
   if (!bundle.course?.some(l => l.id === LEVEL)) return
-  const owned = (unit: number) => ctx.levelOfUnit(unit) === LEVEL
+  // the LEGACY B1 curriculum (units 21–32, the approved 12-unit plan) is what this file audits; the curriculum-v2 units (301–336) are checked by the generic rules
+  const legacyRange = bundle.course?.find(l => l.id === LEVEL)?.unitIdRange
+  const owned = (unit: number) => ctx.levelOfUnit(unit) === LEVEL && !!legacyRange && unit >= legacyRange[0] && unit <= legacyRange[1]
   const b1Units: LearningUnit[] = bundle.units.filter(u => owned(u.id))
   const metas = (bundle.b1Meta ?? []).slice()
   const hasItems =
@@ -518,7 +520,8 @@ function checkLevelTest(ctx: Ctx, a: { hard: Hard; authored: boolean }): void {
   }
   if (Q.filter(q => q.words).length < 3)
     a.hard('b1-level-test', 'tests', 'the level assessment needs at least 3 word-order items', 'add word-order items')
-  const concepts = ctx.bundle.grammar.filter(g => ctx.levelOfUnit(g.unit) === LEVEL).map(g => g.id)
+  const legacy = ctx.bundle.course?.find(l => l.id === LEVEL)?.unitIdRange
+  const concepts = ctx.bundle.grammar.filter(g => ctx.levelOfUnit(g.unit) === LEVEL && !!legacy && g.unit >= legacy[0] && g.unit <= legacy[1]).map(g => g.id)
   const tagged = new Set(Q.flatMap(q => (q.concept ? [q.concept] : [])))
   for (const c of concepts)
     if (!tagged.has(c)) a.hard('b1-level-test', `grammar:${c}`, `no level-test item examines the concept "${c}"`, 'tag an item with it')

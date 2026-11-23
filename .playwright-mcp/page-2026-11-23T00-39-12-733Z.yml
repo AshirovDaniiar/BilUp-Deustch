@@ -1,0 +1,91 @@
+- generic [ref=f7e2]:
+  - generic [ref=f7e3]:
+    - generic [ref=f7e4]:
+      - banner [ref=f7e5]:
+        - link "BilUp Til" [ref=f7e6] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=f7e9]:
+          - link "AI-репетитор" [ref=f7e10] [cursor=pointer]:
+            - /url: "#/tutor"
+            - text: ✨
+          - link "Профиль" [ref=f7e11] [cursor=pointer]:
+            - /url: "#/profile"
+            - text: 👤
+      - main [ref=f7e12]:
+        - generic [ref=f7e14]:
+          - generic [ref=f7e16]:
+            - heading "Практика" [level=1] [ref=f7e17]
+            - paragraph [ref=f7e18]: Закрепляйте, слушайте, читайте, пишите и проверяйте себя
+          - generic [ref=f7e19]:
+            - link "Задание дня Пять коротких блоков на сегодня" [ref=f7e20] [cursor=pointer]:
+              - /url: "#/practice/daily"
+              - generic [aria-hidden] [ref=f7e22]: 📅
+              - generic [ref=f7e23]: Задание дня
+              - generic [ref=f7e24]: Пять коротких блоков на сегодня
+            - link "Умное повторение Слова, которые пора повторить" [ref=f7e25] [cursor=pointer]:
+              - /url: "#/practice/review"
+              - generic [aria-hidden] [ref=f7e27]: 🔁
+              - generic [ref=f7e28]: Умное повторение
+              - generic [ref=f7e29]: Слова, которые пора повторить
+            - link "Listening Lab Диалоги, замедление, повтор по предложениям" [ref=f7e30] [cursor=pointer]:
+              - /url: "#/practice/listening"
+              - generic [aria-hidden] [ref=f7e32]: 🎧
+              - generic [ref=f7e33]: Listening Lab
+              - generic [ref=f7e34]: Диалоги, замедление, повтор по предложениям
+            - link "Reading Lab Тексты с кликабельными словами" [ref=f7e35] [cursor=pointer]:
+              - /url: "#/practice/reading"
+              - generic [aria-hidden] [ref=f7e37]: 📖
+              - generic [ref=f7e38]: Reading Lab
+              - generic [ref=f7e39]: Тексты с кликабельными словами
+            - link "Writing Lab Письма и сообщения с разбором ошибок" [ref=f7e40] [cursor=pointer]:
+              - /url: "#/practice/writing"
+              - generic [aria-hidden] [ref=f7e42]: ✍️
+              - generic [ref=f7e43]: Writing Lab
+              - generic [ref=f7e44]: Письма и сообщения с разбором ошибок
+            - link "Слова Каждое слово — с артиклем, формами, примером и связями" [ref=f7e45] [cursor=pointer]:
+              - /url: "#/vocabulary"
+              - generic [aria-hidden] [ref=f7e47]: 📖
+              - generic [ref=f7e48]: Слова
+              - generic [ref=f7e49]: Каждое слово — с артиклем, формами, примером и связями
+            - 'link "Grammar Lab Лаборатория грамматики: нажимайте, двигайте, смотрите, как работает язык" [ref=f7e50] [cursor=pointer]':
+              - /url: "#/grammar"
+              - generic [aria-hidden] [ref=f7e52]: 🧪
+              - generic [ref=f7e53]: Grammar Lab
+              - generic [ref=f7e54]: "Лаборатория грамматики: нажимайте, двигайте, смотрите, как работает язык"
+            - link "Немецкий в жизни Банк, врач, Ausländerbehörde, Deutsche Bahn…" [ref=f7e55] [cursor=pointer]:
+              - /url: "#/practice/real"
+              - generic [aria-hidden] [ref=f7e57]: 🇩🇪
+              - generic [ref=f7e58]: Немецкий в жизни
+              - generic [ref=f7e59]: Банк, врач, Ausländerbehörde, Deutsche Bahn…
+            - 'link "Артикли: тренировка Немного целевой практики с der / die / das быстро это исправит." [ref=f7e60] [cursor=pointer]':
+              - /url: "#/practice/articles"
+              - generic [aria-hidden] [ref=f7e62]: 🔠
+              - generic [ref=f7e63]: "Артикли: тренировка"
+              - generic [ref=f7e64]: Немного целевой практики с der / die / das быстро это исправит.
+            - link "Тесты Определение уровня, темы, грамматика, лексика" [ref=f7e65] [cursor=pointer]:
+              - /url: "#/practice/tests"
+              - generic [aria-hidden] [ref=f7e67]: 🏁
+              - generic [ref=f7e68]: Тесты
+              - generic [ref=f7e69]: Определение уровня, темы, грамматика, лексика
+    - navigation "Navigation" [ref=f7e70]:
+      - link "Главная" [ref=f7e71] [cursor=pointer]:
+        - /url: "#/"
+      - link "Учиться" [ref=f7e76] [cursor=pointer]:
+        - /url: "#/learn"
+        - generic [aria-hidden] [ref=f7e77]: 📚
+      - link "Практика" [ref=f7e79] [cursor=pointer]:
+        - /url: "#/practice"
+        - generic [aria-hidden] [ref=f7e80]: 🎯
+      - link "Говорить" [ref=f7e82] [cursor=pointer]:
+        - /url: "#/speak"
+        - generic [aria-hidden] [ref=f7e83]: 🎙️
+      - link "Прогресс" [ref=f7e85] [cursor=pointer]:
+        - /url: "#/progress"
+        - generic [aria-hidden] [ref=f7e86]: 📈
+  - status [ref=f7e88]:
+    - generic [ref=f7e89]:
+      - strong [ref=f7e90]: Установить приложение
+      - generic [ref=f7e91]: Быстрый доступ с домашнего экрана. Уроки по-прежнему требуют подключения к интернету.
+    - generic [ref=f7e92]:
+      - button "Установить" [ref=f7e93] [cursor=pointer]
+      - button "Позже" [ref=f7e94] [cursor=pointer]

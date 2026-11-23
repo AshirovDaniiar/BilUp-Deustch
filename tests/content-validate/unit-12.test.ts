@@ -4,6 +4,7 @@
  * Russian/Kyrgyz independence, exercise and test structure, separation of revision and final test, the reading-question rule, the imperative
  * whitelist, receptive vocabulary, the objective→assessment matrix, and the stage boundaries (Unit 11 unchanged, A2 planned and invisible).
  */
+import { a2AuthoredUnits } from '../a2-authored'
 import { withoutB1Content } from './fixtures'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
@@ -34,7 +35,6 @@ import {
   testsOf,
   topicTestOfUnit,
   unitById,
-  unitsOfLevel,
   vocabularyForUnit,
   whyNotesOf,
   writingForUnit,
@@ -545,7 +545,7 @@ describe('unit 12 — stage boundaries', () => {
     expect(errors.some(e => e.rule === 'unit-missing' && e.where === 'units:12')).toBe(false)
   })
   it('all ten planned units are authored; A2 is in controlled Beta (ru + ky); no placement, level test or tutor content', () => {
-    expect(unitsOfLevel('A2').map(u => u.id)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+    expect(a2AuthoredUnits().map(u => u.id)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
     expect(testsOf('A2').map(t => t.id)).toEqual([
       'unit-11',
       'unit-12',

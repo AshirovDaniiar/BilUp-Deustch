@@ -45,7 +45,8 @@ import type {
   WhyNote,
   WritingTask,
 } from './types'
-import { UNITS, UNIT_SPEAKING } from './units'
+import { A1_LEGACY_UNITS, A1_UNITS } from './a1-curriculum'
+import { UNIT_SPEAKING } from './units'
 import { VOCABULARY } from './vocabulary'
 import { WRITING } from './writing'
 
@@ -110,7 +111,7 @@ const emptyLive = (plan: readonly PlannedUnit[]): Live<LevelContent> => ({
  */
 type LazyLevel = 'A2' | 'B1'
 /** What a lazy level's content module exports: the level's collections (the plan is separate and stays in the entry bundle). */
-export type LevelPayload = Omit<Live<LevelContent>, 'plan'>
+export type LevelPayload = Omit<Live<LevelContent>, 'plan'> & { legacyUnits?: readonly LearningUnit[] }
 const LIVE: Record<LazyLevel, Live<LevelContent>> = { A2: emptyLive(A2_UNIT_PLAN), B1: emptyLive(B1_UNIT_PLAN) }
 const LOADERS: Record<LazyLevel, () => Promise<LevelPayload>> = {
   A2: () => import('./a2/a2-content').then(m => m.A2_CONTENT),
@@ -120,7 +121,7 @@ const isLazyLevel = (level: LanguageLevel): level is LazyLevel => Object.prototy
 
 const CONTENT: Partial<Record<LanguageLevel, LevelContent>> = {
   A1: {
-    units: UNITS,
+    units: A1_UNITS,
     vocabulary: VOCABULARY,
     grammar: GRAMMAR,
     whyNotes: WHY_NOTES,
@@ -200,7 +201,8 @@ const buildIndex = <T extends { id: string }>(pick: Pick<T>): Map<string, T> =>
   new Map(CONTENT_LEVELS.flatMap(l => pick(contentOf(l))).map(x => [x.id, x]))
 
 // The indexes and flat lists below are exported read-only, but a level that is loaded later adds its items IN PLACE (same objects).
-export const allUnits: readonly LearningUnit[] = CONTENT_LEVELS.flatMap(l => contentOf(l).units)
+// (hidden pre-v2 A1 units stay addressable by id so old links and saved progress keep resolving; they are not listed by `unitsOfLevel`)
+export const allUnits: readonly LearningUnit[] = CONTENT_LEVELS.flatMap(l => [...contentOf(l).units, ...(l === 'A1' ? A1_LEGACY_UNITS : [])])
 export const unitById = (id: number): LearningUnit | undefined => allUnits.find(u => u.id === id)
 const vocabularyMap = buildIndex(c => c.vocabulary)
 const grammarMap = buildIndex(c => c.grammar)
@@ -236,8 +238,9 @@ export const isLevelContentLoaded = (level: LanguageLevel): boolean => loaded.ha
  */
 export function registerLevelContent(level: LanguageLevel, content: LevelPayload): void {
   if (!isLazyLevel(level) || loaded.has(level)) return
-  Object.assign(LIVE[level], content)
-  ;(allUnits as LearningUnit[]).push(...content.units)
+  const { legacyUnits, ...slot } = content
+  Object.assign(LIVE[level], slot)
+  ;(allUnits as LearningUnit[]).push(...content.units, ...(legacyUnits ?? []))
   ;(allVocabulary as VocabularyItem[]).push(...content.vocabulary)
   for (const [map, items] of [
     [vocabularyMap, content.vocabulary],

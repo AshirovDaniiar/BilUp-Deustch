@@ -5,6 +5,8 @@
  * own slot), the PWA/bundle tooling and the compatibility with unit ids and assessment ids. The test-only visibility switch mutates COURSE
  * and is restored after every test (as in tests/data/lazy-level.test.tsx); nothing here changes production data.
  */
+import { b1AuthoredUnits } from '../b1-authored'
+import { a2AuthoredUnits } from '../a2-authored'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
@@ -69,7 +71,7 @@ describe('B1 registry', () => {
     expect(plannedUnitsOf('B1').map(p => p.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
     expect(unitsOfLevel('B1')).toEqual([]) // not loaded: the lazy slot is empty
     expect(vocabularyOf('B1')).toEqual([])
-    expect(B1_CONTENT.units.map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
+    expect(B1_CONTENT.legacyUnits.map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
     expect(B1_CONTENT.vocabulary).toHaveLength(480)
     for (const k of ['placement', 'tutorTemplates', 'instructions'] as const) expect(B1_CONTENT[k]).toHaveLength(0)
   })
@@ -145,10 +147,10 @@ describe('lazy loading: generalised loader (A2 exactly as before, B1 its own slo
     expect(isLevelContentLoaded('A2')).toBe(false)
     await loadLevelContent('A2')
     expect(isLevelContentLoaded('A2')).toBe(true)
-    expect(unitsOfLevel('A2').map(u => u.id)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+    expect(a2AuthoredUnits().map(u => u.id)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
     expect(isLevelContentLoaded('B1')).toBe(false)
     expect(unitsOfLevel('B1')).toEqual([])
-    expect(allUnits.every(u => u.id <= 20)).toBe(true)
+    expect(allUnits.every(u => u.id <= 20 || u.id >= 100)).toBe(true) // 100+ = A1 v2 units
     await loadLevelContent('A2') // idempotent
   })
   it('a visible B1 is requested (only) for its own routes, its own active level, and only for the languages it is released for', () => {
@@ -167,10 +169,11 @@ describe('lazy loading: generalised loader (A2 exactly as before, B1 its own slo
     setB1('beta', ['ru', 'ky'])
     await loadLevelContent('B1')
     expect(isLevelContentLoaded('B1')).toBe(true)
-    expect(unitsOfLevel('B1').map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
-    expect(unitsOfLevel('A2')).toHaveLength(10)
-    expect(allUnits.filter(u => u.id > 20).map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
-    expect(allUnits.filter(u => u.id <= 20).every(u => u.level !== 'B1')).toBe(true)
+    expect(b1AuthoredUnits().map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
+    expect(a2AuthoredUnits()).toHaveLength(10)
+    expect(allUnits.filter(u => u.id > 20 && u.id < 100).map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
+    expect(allUnits.filter(u => u.id <= 20 || (u.id >= 100 && u.id < 300)).every(u => u.level !== 'B1')).toBe(true) // 301–336 are the B1 v2 containers
+    expect(allUnits.filter(u => u.level === 'B1' && u.id >= 301)).toHaveLength(36)
     await loadLevelContent('B1')
   })
 })

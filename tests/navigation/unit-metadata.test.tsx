@@ -67,6 +67,8 @@ const F = vi.hoisted(() => {
 })
 vi.mock('../../src/data/a2/vocabulary', () => ({ A2_VOCABULARY: F.vocab }))
 vi.mock('../../src/data/a2/units', () => ({ A2_UNITS: F.units, A2_UNIT_SPEAKING: [] }))
+// this file pins unit-METADATA driven screens with an authored, listed A2 unit (the pre-v2 shape); the v2 containers are covered by tests/data/a2-curriculum.test.ts
+vi.mock('../../src/data/a2/curriculum', () => ({ A2_VISIBLE_UNITS: F.units, A2_LEGACY_UNITS: [] }))
 vi.mock('../../src/data/a2/grammar', () => ({ A2_GRAMMAR: F.grammar, A2_WHY_NOTES: [] }))
 vi.mock('../../src/data/a2/tests', () => ({ A2_TESTS: F.tests, A2_FINAL_TESTS: [] }))
 vi.mock('../../src/data/a2/writing', () => ({ A2_WRITING: F.writing }))

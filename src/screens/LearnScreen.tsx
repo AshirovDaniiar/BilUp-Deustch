@@ -5,9 +5,10 @@ import { BetaNotice } from '../components/BetaNotice'
 import { PageHeader, ProgressBar } from '../components/ui'
 import { unitsOfLevel, vocabularyForUnit } from '../data/catalog'
 import { availableLevels } from '../data/course'
+import { unitNumber } from '../data/curriculum'
 import type { LanguageLevel } from '../data/types'
 import { JOURNEY_LEVELS, LEVEL_NAMES, type JourneyLevel } from '../features/progress/journey'
-import { activeLevel, unitProgress } from '../features/progress/stats'
+import { activeLevel, unitHasContent, unitProgress } from '../features/progress/stats'
 import { tr } from '../utils/text'
 
 /** A small snow-capped peak. Pure decoration (the level and its name are the text next to it). */
@@ -70,17 +71,24 @@ function LevelUnits({ level }: { level: LanguageLevel }) {
       <div className="curriculum">
         {units.map(u => {
           const p = unitProgress(state, u.id)
+          const empty = !unitHasContent(u.id) // A1 v2 container without content: no word count, no 0/0 progress
           return (
             <A key={u.id} to={`/learn/unit/${u.id}`} className="unitcard card card--interactive">
               <div className="unitcard__icon" aria-hidden>{u.icon}</div>
               <div className="grow">
-                <div className="eyebrow">{t('unit').toUpperCase()} {String(u.id).padStart(2, '0')} · {u.level}</div>
+                <div className="eyebrow">{t('unit').toUpperCase()} {String(unitNumber(u)).padStart(2, '0')} · {u.level}</div>
                 <h3 className="h3">{u.title}</h3>
-                <p className="muted small break">{tr(u.subtitle, lang)}</p>
-                <div className="row small muted" style={{ marginTop: 8 }}>
-                  <span>{vocabularyForUnit(u.id).length} {t('words')}</span>·<span>{p.done}/{p.total} {t('unitProgress')}</span>
-                </div>
-                <ProgressBar value={p.pct} tone={p.pct === 100 ? 'green' : 'blue'} label={u.title} height={6} />
+                {empty ? (
+                  <p className="muted small break">{t('sec_empty')}</p>
+                ) : (
+                  <>
+                    <p className="muted small break">{tr(u.subtitle, lang)}</p>
+                    <div className="row small muted" style={{ marginTop: 8 }}>
+                      {vocabularyForUnit(u.id).length > 0 && <><span>{vocabularyForUnit(u.id).length} {t('words')}</span>·</>}<span>{p.done}/{p.total} {t('unitProgress')}</span>
+                    </div>
+                    <ProgressBar value={p.pct} tone={p.pct === 100 ? 'green' : 'blue'} label={u.title} height={6} />
+                  </>
+                )}
               </div>
             </A>
           )

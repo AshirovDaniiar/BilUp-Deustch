@@ -155,7 +155,7 @@ describe('identity and integration (B1 is a Beta for ru and ky)', () => {
     expect(UNIT_28.grammarIds).toEqual(CONCEPTS)
   })
   it('the content module holds Unit 28 after Units 21–27, wired into the metadata, the tests, the final tests and the speaking list', () => {
-    expect(B1_CONTENT.units.map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
+    expect(B1_CONTENT.legacyUnits.map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
     expect(B1_META.map(m => m.unit)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
     expect(B1_CONTENT.tests).toContainEqual(UNIT_28_TEST)
     expect(B1_CONTENT.unitSpeaking.slice(0, 8).at(-1)).toBe('b1-sp-28-01')

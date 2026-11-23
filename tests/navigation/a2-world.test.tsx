@@ -317,32 +317,47 @@ describe('A2 visible and released for Russian only', () => {
     expect(JSON.parse(localStorage.getItem(KEY) as string).level).toBe('A2')
   })
 
-  it('Learn: the summit folders open A1 and A2; the A2 folder shows only the A2 unit, the A1 folder the 10 A1 units', async () => {
+  it('Learn: the summit folders open A1 and A2; the A2 folder shows its 43 curriculum units (the authored unit is hidden legacy), the A1 folder the 38 A1 units', async () => {
     const { container } = await show('/learn', 'ru')
     expect([...container.querySelectorAll('a.peakcard .peakcard__lvl')].map(c => c.textContent)).toEqual(['A1', 'A2'])
     expect(hrefs(container, '#/learn/unit/')).toHaveLength(0) // the folders list no units themselves
     cleanup()
 
     const a2 = await show('/learn?level=A2', 'ru')
-    expect(hrefs(a2.container, '#/learn/unit/')).toEqual(['#/learn/unit/11'])
-    expect(a2.container.querySelector('a.unitcard .eyebrow')?.textContent).toBe('ЮНИТ 11 · A2')
-    expect(text()).toContain('ZZA2 Einheit')
+    expect(hrefs(a2.container, '#/learn/unit/')).toEqual(Array.from({ length: 43 }, (_, i) => `#/learn/unit/${201 + i}`))
+    expect(a2.container.querySelector('a.unitcard .eyebrow')?.textContent).toBe('ЮНИТ 01 · A2')
+    expect(text()).not.toContain('ZZA2 Einheit') // the authored unit (id 11) is hidden legacy
     cleanup()
 
     const a1 = await show('/learn?level=A1', 'ru')
-    expect(hrefs(a1.container, '#/learn/unit/')).toHaveLength(10)
+    expect(hrefs(a1.container, '#/learn/unit/')).toHaveLength(38)
     expect(text()).not.toContain('ZZA2')
   })
 
-  it('Home follows the level: A2 → "A2 · 1 юнит" from the metadata, a two-level journey, A2 current unit; A1 untouched', async () => {
+  it('an empty A2 unit shows its title, exactly eight section cards and the placeholder — no 0/0, no %, no progress bar; its list card shows no statistics', async () => {
+    const list = await show('/learn?level=A2', 'ru')
+    const card = list.container.querySelectorAll('a.unitcard')[1]
+    expect(card.textContent).toContain('Besondere Erlebnisse und Erinnerungen')
+    expect(card.textContent).toContain('Контент будет добавлен позже.')
+    expect(card.textContent).not.toMatch(/слов|0\/0/)
+    expect(card.querySelector('[role="progressbar"]')).toBeNull()
+    cleanup()
+    const unit = await show('/learn/unit/202', 'ru')
+    expect(unit.container.querySelectorAll('.sections .secrow')).toHaveLength(8)
+    expect(unit.container.querySelectorAll('[data-empty-section]')).toHaveLength(8)
+    expect(unit.container.querySelector('[role="progressbar"]')).toBeNull()
+    expect(text()).not.toMatch(/0 ?\/ ?0|%/)
+  })
+
+  it('Home with A2 active: A2 has only empty containers, so Continue Learning uses the A1 unit; two-level journey with A2 current; A1 untouched', async () => {
     const { container } = await show('/', 'ru', { level: 'A2' })
-    expect(text()).toMatch(/A2 · Юнит 11 ·/)
+    expect(text()).toMatch(/A1 · Юнит 1 ·/)
     // the journey: A1 and A2 are enterable (buttons), the current milestone is A2
     expect(container.querySelectorAll('.jm button')).toHaveLength(2)
     expect(container.querySelector('.jm--current .jm__lvl')?.textContent).toBe('A2')
     const unitLinks = hrefs(container, '#/learn/unit/')
     expect(unitLinks.length).toBeGreaterThan(0)
-    for (const h of unitLinks) expect(h).toMatch(/^#\/learn\/unit\/11\b/) // the continue card links only into the A2 unit
+    for (const h of unitLinks) expect(h).toMatch(/^#\/learn\/unit\/1\b/) // the continue card never links into an empty container
     cleanup()
     await show('/', 'ru', { level: 'A1' })
     expect(text()).toMatch(/A1 · Юнит 1 ·/)

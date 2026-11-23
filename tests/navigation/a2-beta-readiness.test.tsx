@@ -63,7 +63,7 @@ async function show(path: string, lang: Lang) {
 
 /** every direct route of one unit, with a marker that must appear on the page */
 function routesOf(unit: number, lang: Lang): [string, string][] {
-  const u = A2_CONTENT.units.find(x => x.id === unit)!
+  const u = A2_CONTENT.legacyUnits.find(x => x.id === unit)! // curriculum v2: units 11–20 are hidden legacy, still reachable by direct route
   const out: [string, string][] = [
     [`/learn/unit/${unit}`, u.title],
     [`/learn/unit/${unit}/vocabulary`, A2_CONTENT.vocabulary.find(v => v.unit === unit)!.de],
@@ -208,7 +208,8 @@ describe('A2 progress and saved words', () => {
     const base = defaultProgress()
     const done = { ...base, completed: ['11:vocabulary', '11:grammar', '12:vocabulary', 'topic:a2-perfekt-erfahrungen'] }
     expect(unitProgress(done, 11).done).toBeGreaterThan(unitProgress(base, 11).done)
-    expect(levelProgress(done, 'A2')).not.toEqual(levelProgress(base, 'A2'))
+    // curriculum v2: units 11–20 are hidden legacy, so their records are kept (unitProgress above) but do not move the level's progress
+    expect(levelProgress(done, 'A2')).toEqual(levelProgress(base, 'A2'))
     expect(levelProgress(done, 'A1')).toEqual(levelProgress(base, 'A1'))
   })
   it('saved A2 words and A2 completion keys survive validation (the storage round trip)', () => {
@@ -221,5 +222,43 @@ describe('A2 progress and saved words', () => {
     const out = sanitizeProgress(JSON.parse(JSON.stringify(p)))!.value
     expect(out.saved).toEqual(words)
     expect(out.completed).toEqual(['20:test', '11:vocabulary', 'ex:a2-li-11-01'])
+  })
+})
+
+describe('A2 curriculum v2: a unit with a REUSED grammar lesson (real A2 content)', () => {
+  const backFrom = () => {
+    vi.spyOn(window.history, 'length', 'get').mockReturnValue(1) // no history: the back button navigates to its fallback
+    act(() => {
+      ;(document.querySelector('.pagehead__back') as HTMLButtonElement).click()
+    })
+    return window.location.hash
+  }
+  it('Unit 01 (Mein letztes Jahr) shows the existing Perfekt lesson in its Grammar card; the other seven sections are empty', async () => {
+    release('beta', ['ru', 'ky'])
+    await show('/learn/unit/201', 'ru')
+    const rows = [...document.querySelectorAll('.sections .secrow')]
+    expect(rows).toHaveLength(8)
+    expect(document.querySelectorAll('[data-empty-section]')).toHaveLength(7)
+    expect(rows[1].hasAttribute('data-empty-section')).toBe(false)
+    expect(rows[1].getAttribute('href')).toBe('#/learn/topic/a2-perfekt-erfahrungen?unit=201')
+    expect(errors).toEqual([])
+  })
+  it('the lesson opens with the new unit as its context (label, back button) and its original content', async () => {
+    release('beta', ['ru', 'ky'])
+    const text = await show('/learn/topic/a2-perfekt-erfahrungen?unit=201', 'ru')
+    expect(text).toContain('Юнит 1 · A2')
+    expect(text).toContain('Perfekt')
+    expect(backFrom()).toBe('#/learn/unit/201')
+    cleanup()
+    await show('/learn/topic/a2-perfekt-erfahrungen', 'ru') // the legacy route is unchanged: back goes to the hidden legacy unit
+    expect(backFrom()).toBe('#/learn/unit/11')
+  })
+  it('a partial-match topic (02) and a cross-level topic (16) stay completely empty', async () => {
+    release('beta', ['ru', 'ky'])
+    for (const id of [202, 216]) {
+      await show(`/learn/unit/${id}`, 'ru')
+      expect(document.querySelectorAll('[data-empty-section]')).toHaveLength(8)
+      cleanup()
+    }
   })
 })

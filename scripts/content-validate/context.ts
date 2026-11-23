@@ -33,7 +33,7 @@ export function makeContext(bundle: ContentBundle, mode: Mode): Ctx {
   const add: Ctx['add'] = (severity, rule, where, message) => issues.push({ severity, rule, where, message })
   const levelOfUnit: Ctx['levelOfUnit'] = unit => {
     if (unit === undefined || !Number.isInteger(unit) || !bundle.course) return undefined
-    return bundle.course.find(l => unit >= l.unitIdRange[0] && unit <= l.unitIdRange[1])?.id
+    return bundle.course.find(l => [l.unitIdRange, ...(l.extraUnitIdRanges ?? [])].some(([lo, hi]) => unit >= lo && unit <= hi))?.id
   }
   const statusOf: Ctx['statusOf'] = level => bundle.course?.find(l => l.id === level)?.status
   const strict: Ctx['strict'] = level => level !== undefined && !LEGACY_LEVELS.includes(level)
