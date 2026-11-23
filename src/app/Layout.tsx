@@ -4,10 +4,28 @@ import type { TKey } from '../i18n'
 import { A, type Route } from './router'
 import { useApp } from './store'
 
-interface NavDef { to: string; icon: string; key: TKey; match: string }
+interface NavDef { to: string; icon: ReactNode; key: TKey; match: string }
+
+function MountainIcon({ size = 20 }: { size?: number | string }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      style={{ display: 'inline-block', verticalAlign: 'middle' }}
+    >
+      <path d="m8 3 4 8 5-5 5 15H2z" />
+    </svg>
+  )
+}
 
 const MAIN: NavDef[] = [
-  { to: '/', icon: '🏠', key: 'nav_home', match: '' },
+  { to: '/', icon: <MountainIcon />, key: 'nav_home', match: '' },
   { to: '/learn', icon: '📚', key: 'nav_learn', match: 'learn' },
   { to: '/practice', icon: '🎯', key: 'nav_practice', match: 'practice' },
   { to: '/speak', icon: '🎙️', key: 'nav_speak', match: 'speak' },
@@ -48,7 +66,7 @@ export function Layout({ route, children }: { route: Route; children: ReactNode 
       <div className="content">
         <header className="topbar">
           <A to="/" aria-label="BilUp Til">
-            <Logo compact />
+            <Logo compact showMascot={false} />
           </A>
           <div className="topbar__actions">
             <A to="/tutor" className="iconbtn" aria-label={t('nav_tutor')}>✨</A>

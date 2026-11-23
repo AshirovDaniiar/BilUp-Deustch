@@ -97,9 +97,13 @@ describe('the shipped registry: B1 is a Beta, not a release', () => {
 
 describe('the learner experience with NO test-only switch (jsdom; the real-browser QA is separate)', () => {
   it.each(['ru', 'ky'] as const)(
-    '%s: Learn offers the level tabs A1 / A2 / B1 and, for a B1 learner, lists all 12 units in order with one Beta notice naming B1',
+    '%s: Learn offers the six summit folders (A1 / A2 / B1 open, B2 / C1 / C2 locked) and the B1 folder lists all 12 units in order with one Beta notice naming B1',
     async lang => {
-      const text = await show('/learn', lang)
+      await show('/learn', lang)
+      expect([...document.querySelectorAll('a.peakcard')].map(a => a.getAttribute('href'))).toEqual(['#/learn?level=A1', '#/learn?level=A2', '#/learn?level=B1'])
+      expect(document.querySelectorAll('.peakcard.is-locked')).toHaveLength(3)
+      cleanup()
+      const text = await show('/learn?level=B1', lang)
       expect(errors).toEqual([])
       const links = [...document.querySelectorAll('a')].map(a => a.getAttribute('href') ?? '')
       for (let u = 21; u <= 32; u++)
@@ -108,8 +112,6 @@ describe('the learner experience with NO test-only switch (jsdom; the real-brows
           `unit ${u}`,
         ).toBe(true)
       for (const u of B1_CONTENT.units) expect(text, u.title).toContain(u.title)
-      const tabs = [...document.querySelectorAll('[role="tab"], .leveltab, button')].map(b => b.textContent ?? '')
-      expect(tabs.some(t => /\bB1\b/.test(t))).toBe(true)
       expect(document.querySelectorAll('.betanotice')).toHaveLength(1)
       expect(document.querySelector('.betanotice')!.textContent).toContain('B1')
       expect(document.querySelector('.betanotice')!.textContent).toMatch(lang === 'ru' ? /бета-версии/ : /бета-версияда/)
@@ -155,7 +157,7 @@ describe('the learner experience with NO test-only switch (jsdom; the real-brows
   }, 60_000)
 
   it('an A1 learner on the Russian interface is unchanged: A1 units 1–10 are listed and no B1 unit appears on the A1 Learn page', async () => {
-    const text = await show('/learn', 'ru', 'A1')
+    const text = await show('/learn?level=A1', 'ru', 'A1')
     const links = [...document.querySelectorAll('a')].map(a => a.getAttribute('href') ?? '')
     for (let u = 1; u <= 10; u++)
       expect(

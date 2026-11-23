@@ -1,6 +1,6 @@
 /** Russian is the source of truth for the dictionary shape. */
 export const ru = {
-  tagline: 'Deutsch verstehen. Deutsch sprechen.',
+  tagline: 'DEUTSCH SPRECHEN.',
   // navigation
   nav_home: 'Главная', nav_learn: 'Учиться', nav_practice: 'Практика', nav_speak: 'Говорить', nav_progress: 'Прогресс',
   nav_tutor: 'AI-репетитор', nav_vocabulary: 'Слова', nav_grammar: 'Грамматика', nav_profile: 'Профиль',
@@ -21,7 +21,7 @@ export const ru = {
   dueWords: 'слов на повторение', noDueWords: 'Повторений на сегодня нет',
   currentLevel: 'Текущий уровень', daysShort: 'дней',
   // learn
-  learnTitle: 'Учебный путь', learnSub: 'Каждый юнит: слова → грамматика → аудирование → чтение → речь → письмо → повторение → тест',
+  learnTitle: 'Вершины',
   sec_vocabulary: 'Слова', sec_grammar: 'Грамматика', sec_listening: 'Аудирование', sec_reading: 'Чтение', sec_speaking: 'Говорение', sec_writing: 'Письмо', sec_review: 'Повторение', sec_test: 'Итоговый тест',
   unitProgress: 'пройдено', startUnit: 'Открыть юнит', levelLocked: 'Уровни A2–C1 появятся в следующих версиях.',
   // core model

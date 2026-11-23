@@ -20,7 +20,7 @@ export const ky: Dict = {
   stepVocabulary: 'Сөздөр', stepGrammar: 'Грамматика', stepListening: 'Угуу', stepSpeaking: 'Сүйлөө', stepTest: 'Кыска тест',
   dailyChallenge: 'Күндүн тапшырмасы',
   currentLevel: 'Азыркы деңгээл', daysShort: 'күн',
-  learnTitle: 'Окуу жолу',
+  learnTitle: 'Чокулар',
   sec_vocabulary: 'Сөздөр', sec_grammar: 'Грамматика', sec_listening: 'Угуу', sec_reading: 'Окуу', sec_speaking: 'Сүйлөө', sec_writing: 'Жазуу', sec_review: 'Кайталоо', sec_test: 'Жыйынтык тест',
   step_discover: 'Ачуу', step_understand: 'Түшүнүү', step_practice: 'Көнүгүү', step_apply: 'Колдонуу', step_speak: 'Айтуу', step_test: 'Текшерүү', step_review: 'Жыйынтык',
   grammarLab: 'Grammar Lab', whyLabel: 'ЭМНЕ ҮЧҮН?',
@@ -120,7 +120,6 @@ export const ky: Dict = {
   fb_spkUnexpected: 'Күтүлбөгөн суроодон кийин улантып кете алдым',
 
   // B1 Stage 3C: Kyrgyz for UI strings that were still inherited from Russian on the B1 screens. UNREVIEWED AI-assisted draft — native review required.
-  learnSub: 'Ар бир бөлүм: сөздөр → грамматика → угуу → окуу → сүйлөө → жазуу → кайталоо → тест',
   unitProgress: 'өтүлдү',
   startUnit: 'Бөлүмдү ачуу',
   learnerGoal: 'Эмнени түшүнөсүз',

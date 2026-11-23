@@ -47,6 +47,8 @@ export function PracticeHub() {
     { to: '/practice/listening', icon: '🎧', title: 'lab_listening', desc: 'lab_listening_d' },
     { to: '/practice/reading', icon: '📖', title: 'lab_reading', desc: 'lab_reading_d' },
     { to: '/practice/writing', icon: '✍️', title: 'lab_writing', desc: 'lab_writing_d' },
+    { to: '/vocabulary', icon: '🔤', title: 'nav_vocabulary', desc: 'vocabSub' },
+    { to: '/grammar', icon: '🧪', title: 'grammarLab', desc: 'grammarLabSub' },
     { to: '/practice/real', icon: '🇩🇪', title: 'lab_real', desc: 'lab_real_d' },
     { to: '/practice/articles', icon: '🔠', title: 'lab_articles', desc: 'articleNoticeBody' },
     { to: '/practice/tests', icon: '🏁', title: 'lab_tests', desc: 'lab_tests_d' },

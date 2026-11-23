@@ -271,7 +271,10 @@ describe('A2 PLANNED: invisible and unreachable although its content exists', ()
     ]) {
       const { container } = await show(url)
       expect(text(), url).not.toContain('ZZA2')
-      expect(text(), url).not.toMatch(/\bA2\b/)
+      // the home journey is the one place that names the planned A2 — as a locked, non-clickable milestone
+      // (the Learn page is the other: its summit cards show the planned A2 as a locked card, never a link)
+      if (url !== '/' && url !== '/learn') expect(text(), url).not.toMatch(/\bA2\b/)
+      else expect(container.querySelector('.jm--locked button, a[href="#/learn?level=A2"]'), url).toBeNull()
       expect(container.querySelector('.levels'), url).toBeNull()
       cleanup()
     }
@@ -302,46 +305,47 @@ describe('A2 visible and released for Russian only', () => {
     }
     const { container } = await show('/learn', 'ky')
     expect(container.querySelector('.levels')).toBeNull()
-    expect(text()).not.toMatch(/\bA2\b/)
+    // A2 is not released for Kyrgyz here: its summit card is locked and is not a link
+    expect(container.querySelector('a[href="#/learn?level=A2"]')).toBeNull()
+    expect(container.querySelectorAll('.peakcard.is-locked')).toHaveLength(5)
   })
 
   it('a Kyrgyz learner whose stored preference is A2 is shown A1 (and the preference is untouched)', async () => {
     await show('/', 'ky', { level: 'A2' })
-    expect(text()).toContain('A1 · 10')
+    expect(text()).toMatch(/A1 · \S+ 1 ·/)
     expect(text()).not.toContain('ZZA2')
     expect(JSON.parse(localStorage.getItem(KEY) as string).level).toBe('A2')
   })
 
-  it('Learn: level tabs list A1 and A2; choosing A2 shows only the A2 unit, choosing A1 brings back the 10 A1 units', async () => {
+  it('Learn: the summit folders open A1 and A2; the A2 folder shows only the A2 unit, the A1 folder the 10 A1 units', async () => {
     const { container } = await show('/learn', 'ru')
-    const tabs = [...container.querySelectorAll('.levels .chip')].map(c => c.textContent)
-    expect(tabs).toEqual(['A1', 'A2'])
-    expect(hrefs(container, '#/learn/unit/')).toHaveLength(10)
+    expect([...container.querySelectorAll('a.peakcard .peakcard__lvl')].map(c => c.textContent)).toEqual(['A1', 'A2'])
+    expect(hrefs(container, '#/learn/unit/')).toHaveLength(0) // the folders list no units themselves
+    cleanup()
 
-    fireEvent.click(screen.getByRole('button', { name: 'A2' }))
-    await act(async () => {})
-    expect(hrefs(container, '#/learn/unit/')).toEqual(['#/learn/unit/11'])
-    expect(container.querySelector('a.unitcard .eyebrow')?.textContent).toBe('ЮНИТ 11 · A2')
+    const a2 = await show('/learn?level=A2', 'ru')
+    expect(hrefs(a2.container, '#/learn/unit/')).toEqual(['#/learn/unit/11'])
+    expect(a2.container.querySelector('a.unitcard .eyebrow')?.textContent).toBe('ЮНИТ 11 · A2')
     expect(text()).toContain('ZZA2 Einheit')
+    cleanup()
 
-    fireEvent.click(screen.getByRole('button', { name: 'A1' }))
-    await act(async () => {})
-    expect(hrefs(container, '#/learn/unit/')).toHaveLength(10)
+    const a1 = await show('/learn?level=A1', 'ru')
+    expect(hrefs(a1.container, '#/learn/unit/')).toHaveLength(10)
     expect(text()).not.toContain('ZZA2')
   })
 
   it('Home follows the level: A2 → "A2 · 1 юнит" from the metadata, a two-level journey, A2 current unit; A1 untouched', async () => {
     const { container } = await show('/', 'ru', { level: 'A2' })
-    expect(text()).toContain('A2 · 1 юнит')
-    expect(text()).toContain('Текущий уровень: A2')
-    expect([...container.querySelectorAll('.journey__label')].map(e => e.textContent)).toEqual(['A1', 'A2'])
-    expect(container.querySelector('.journey__node.is-current .journey__label')?.textContent).toBe('A2')
+    expect(text()).toMatch(/A2 · Юнит 11 ·/)
+    // the journey: A1 and A2 are enterable (buttons), the current milestone is A2
+    expect(container.querySelectorAll('.jm button')).toHaveLength(2)
+    expect(container.querySelector('.jm--current .jm__lvl')?.textContent).toBe('A2')
     const unitLinks = hrefs(container, '#/learn/unit/')
     expect(unitLinks.length).toBeGreaterThan(0)
-    for (const h of unitLinks) expect(h).toMatch(/^#\/learn\/unit\/11\b/) // the dashboard links only into the A2 unit
+    for (const h of unitLinks) expect(h).toMatch(/^#\/learn\/unit\/11\b/) // the continue card links only into the A2 unit
     cleanup()
     await show('/', 'ru', { level: 'A1' })
-    expect(text()).toContain('A1 · 10 юнит')
+    expect(text()).toMatch(/A1 · Юнит 1 ·/)
     expect(text()).not.toContain('ZZA2')
   })
 })

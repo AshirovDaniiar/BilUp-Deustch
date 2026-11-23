@@ -1,25 +1,72 @@
-import { A } from '../app/router'
+import { useEffect } from 'react'
+import { A, navigate, useRoute } from '../app/router'
 import { useApp } from '../app/store'
+import { BetaNotice } from '../components/BetaNotice'
 import { PageHeader, ProgressBar } from '../components/ui'
-import { LevelTabs } from '../components/LevelTabs'
 import { unitsOfLevel, vocabularyForUnit } from '../data/catalog'
+import { availableLevels } from '../data/course'
+import type { LanguageLevel } from '../data/types'
+import { JOURNEY_LEVELS, LEVEL_NAMES, type JourneyLevel } from '../features/progress/journey'
 import { activeLevel, unitProgress } from '../features/progress/stats'
 import { tr } from '../utils/text'
 
-export function LearnScreen() {
-  const { state, t, lang } = useApp()
-  const units = unitsOfLevel(activeLevel(state))
+/** A small snow-capped peak. Pure decoration (the level and its name are the text next to it). */
+function PeakIcon() {
   return (
-    <div className="stack">
-      <PageHeader title={t('learnTitle')} sub={t('learnSub')} />
-      <div className="grid grid--3 quicklinks">
-        <A to="/vocabulary" className="card card--interactive tilecard">📖 <b>{t('nav_vocabulary')}</b><span className="muted small">{t('vocabSub')}</span></A>
-        <A to="/grammar" className="card card--interactive tilecard">🧪 <b>{t('grammarLab')}</b><span className="muted small">{t('grammarLabSub')}</span></A>
-        <A to="/practice/real" className="card card--interactive tilecard">🇩🇪 <b>{t('lab_real')}</b><span className="muted small">{t('lab_real_d')}</span></A>
-      </div>
+    <svg className="peakcard__icon" viewBox="0 0 64 48" aria-hidden focusable="false">
+      <path className="peakcard__back" d="M30 46 L48 18 L62 46 Z" />
+      <path className="peakcard__main" d="M2 46 L26 6 L58 46 Z" />
+      <path className="peakcard__snow" d="M26 6 L18 20 L23 17 L27 22 L32 17 L37 20 Z" />
+    </svg>
+  )
+}
 
-      <LevelTabs />
+/** The six CEFR summits. Only levels the learner may enter (course registry + interface language) open; the rest are locked, never links. */
+function LevelFolders() {
+  const { state, actions, lang } = useApp()
+  const open = availableLevels(lang)
+  return (
+    <div className="peaks">
+      {JOURNEY_LEVELS.map(level => {
+        const name = tr(LEVEL_NAMES[level], lang)
+        const body = (
+          <>
+            <PeakIcon />
+            <span className="peakcard__text">
+              <span className="peakcard__lvl">{level}</span>
+              <span className="peakcard__name">{name}</span>
+            </span>
+            <span className="peakcard__go" aria-hidden>{open.includes(level as LanguageLevel) ? '▶' : '🔒'}</span>
+          </>
+        )
+        return open.includes(level as LanguageLevel) ? (
+          <A
+            key={level}
+            to={`/learn?level=${level}`}
+            className={`card card--interactive peakcard ${level === activeLevel(state) ? 'is-active' : ''}`}
+            aria-label={`${level} · ${name}`}
+            onClick={() => actions.setProfile({ level: level as LanguageLevel })}
+          >
+            {body}
+          </A>
+        ) : (
+          <div key={level} className="card peakcard is-locked" role="img" aria-label={`🔒 ${level} · ${name}`}>
+            {body}
+          </div>
+        )
+      })}
+    </div>
+  )
+}
 
+/** The units of ONE level — the existing unit cards, unchanged, from the catalog and the saved progress. */
+function LevelUnits({ level }: { level: LanguageLevel }) {
+  const { state, t, lang } = useApp()
+  const units = unitsOfLevel(level)
+  return (
+    <>
+      <PageHeader title={`${level} · ${tr(LEVEL_NAMES[level], lang)}`} eyebrow={<A to="/learn">← {t('learnTitle')}</A>} />
+      <BetaNotice level={level} />
       <div className="curriculum">
         {units.map(u => {
           const p = unitProgress(state, u.id)
@@ -39,6 +86,23 @@ export function LearnScreen() {
           )
         })}
       </div>
-    </div>
+    </>
   )
+}
+
+export function LearnScreen() {
+  const { state, actions, t, lang } = useApp()
+  const route = useRoute()
+  const wanted = route.query.get('level') as JourneyLevel | null
+  // a folder opens only for a level this learner may enter; any other value (locked, unknown) shows the six summits
+  const folder = wanted && availableLevels(lang).includes(wanted as LanguageLevel) ? (wanted as LanguageLevel) : null
+  const active = activeLevel(state)
+  // a direct link to a folder makes it the working level (the same stored preference the level tabs used to set)
+  useEffect(() => {
+    if (folder && folder !== active) actions.setProfile({ level: folder })
+  }, [folder, active]) // eslint-disable-line react-hooks/exhaustive-deps -- actions is stable
+  useEffect(() => {
+    if (wanted && !folder) navigate('/learn')
+  }, [wanted, folder])
+  return <div className="stack">{folder ? <LevelUnits level={folder} /> : (<><PageHeader title={t('learnTitle')} /><LevelFolders /></>)}</div>
 }

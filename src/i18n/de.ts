@@ -1,7 +1,7 @@
 import type { Dict } from './ru'
 
 export const de: Dict = {
-  tagline: 'Deutsch verstehen. Deutsch sprechen.',
+  tagline: 'DEUTSCH SPRECHEN.',
   nav_home: 'Start', nav_learn: 'Lernen', nav_practice: 'Üben', nav_speak: 'Sprechen', nav_progress: 'Fortschritt',
   nav_tutor: 'KI-Tutor', nav_vocabulary: 'Wortschatz', nav_grammar: 'Grammatik', nav_profile: 'Profil',
   back: 'Zurück', next: 'Weiter', check: 'Prüfen', continue: 'Weiter', finish: 'Beenden', retry: 'Nochmal', close: 'Schließen',
@@ -18,7 +18,7 @@ export const de: Dict = {
   whatNow: 'Was jetzt?', dailyChallenge: 'Tagesaufgabe', dailyChallengeDesc: 'Wörter, Grammatik, Hören, Sprechen und Satz des Tages',
   dueWords: 'Wörter zur Wiederholung', noDueWords: 'Heute nichts zu wiederholen',
   currentLevel: 'Aktuelles Niveau', daysShort: 'Tage',
-  learnTitle: 'Lernpfad', learnSub: 'Jede Einheit: Wortschatz → Grammatik → Hören → Lesen → Sprechen → Schreiben → Wiederholen → Test',
+  learnTitle: 'Gipfel',
   sec_vocabulary: 'Wortschatz', sec_grammar: 'Grammatik', sec_listening: 'Hören', sec_reading: 'Lesen', sec_speaking: 'Sprechen', sec_writing: 'Schreiben', sec_review: 'Wiederholen', sec_test: 'Abschlusstest',
   unitProgress: 'geschafft', startUnit: 'Einheit öffnen', levelLocked: 'Die Niveaus A2–C1 folgen in späteren Versionen.',
   step_discover: 'Entdecken', step_understand: 'Verstehen', step_practice: 'Üben', step_apply: 'Anwenden', step_speak: 'Sprechen', step_test: 'Testen', step_review: 'Rückblick',

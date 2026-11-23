@@ -8,7 +8,7 @@ import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import '../load-a2'
 import { AppProvider } from '../../src/app/store'
-import { grammarIndex, speakingIndex, vocabularyOf, whyNotesForConcept } from '../../src/data/catalog'
+import { grammarIndex, listeningForUnit, listeningOf, speakingIndex, unitsOfLevel, vocabularyOf, whyNotesForConcept } from '../../src/data/catalog'
 import { COURSE } from '../../src/data/course'
 import { VOCABULARY } from '../../src/data/vocabulary'
 import { WordCard } from '../../src/features/vocabulary/WordCard'
@@ -26,9 +26,9 @@ const a2 = () => COURSE.levels.find(l => l.id === 'A2') as unknown as { status: 
 const WORD = vocabularyOf('A2').find(v => v.ru !== v.ky && v.exampleRu !== v.exampleKy && !v.ky.includes(v.ru) && !v.ru.includes(v.ky))!
 const CONCEPT = grammarIndex.get('a2-vorschlaege-verabredungen')!
 const SCENARIO = speakingIndex.get('a2-sp-20-01')!
-const show = (node: React.ReactNode, lang: 'ru' | 'ky', level: 'A1' | 'A2' = 'A1') => {
+const show = (node: React.ReactNode, lang: 'ru' | 'ky', level: 'A1' | 'A2' = 'A1', completed: string[] = []) => {
   localStorage.clear()
-  localStorage.setItem(KEY, JSON.stringify({ ...defaultProgress(), lang, level }))
+  localStorage.setItem(KEY, JSON.stringify({ ...defaultProgress(), lang, level, completed }))
   return render(<AppProvider>{node}</AppProvider>)
 }
 const text = () => document.body.textContent ?? ''
@@ -154,7 +154,10 @@ describe('home screen', () => {
     Object.assign(a2(), { status: 'beta', releasedLocales: ['ru', 'ky'] })
     for (const lang of ['ky', 'ru'] as const) {
       cleanup()
-      show(<HomeScreen />, lang, 'A2')
+      // the home screen shows ONE next step: finish vocabulary, grammar and listening so the speaking scenario is the one shown
+      const u = unitsOfLevel('A2')[0]
+      const lis = listeningForUnit(u.id)[0] ?? listeningOf('A2')[0]
+      show(<HomeScreen />, lang, 'A2', [`${u.id}:vocabulary`, `topic:${u.grammarIds[0]}`, ...(lis ? [`ex:${lis.id}`] : [])])
       await act(async () => {})
       const sc = [...speakingIndex.values()].filter(s => s.level === 'A2').find(s => text().includes(s.title))
       expect(sc, 'an A2 scenario step is shown on the A2 home screen').toBeDefined()

@@ -111,17 +111,22 @@ describe('A2 does not exist in the UI (all interface languages)', () => {
   it.each(['ru', 'ky', 'de'] as Lang[])('%s: no A2 label, no locked level, no placeholder on any A1 route', async lang => {
     for (const route of A1_ROUTES) {
       await show(route, lang)
-      expect(text(), `${lang} ${route}`).not.toMatch(/\bA2\b/)
-      expect(text(), `${lang} ${route}`).not.toContain('🔒')
+      // The home screen is the one exception: its journey map shows the future milestones (A2 … C2) as locked, never as enterable content.
+      if (route !== '/' && route !== '/learn') {
+        expect(text(), `${lang} ${route}`).not.toMatch(/\bA2\b/)
+        expect(text(), `${lang} ${route}`).not.toContain('🔒')
+      }
       cleanup()
     }
   })
 
   it('a stored preference for the planned A2 level is ignored by the UI (and left untouched in storage)', async () => {
     const { container } = await show('/', 'ru', { level: 'A2' })
-    expect(text()).not.toMatch(/\bA2\b/)
-    expect(text()).toContain('A1 · 10') // dashboard is A1
-    expect(container.querySelector('.journey__track')).toBeNull()
+    expect(text()).toContain('A1 · Юнит 1') // the continue card is A1
+    // the journey shows A2 as a locked, non-clickable milestone (planned level): no A2 content, no link, no button
+    expect([...container.querySelectorAll('.jm--current .jm__lvl')].map(e => e.textContent)).toEqual(['A1'])
+    expect(container.querySelector('.jm--locked button')).toBeNull()
+    expect(container.querySelectorAll('.jm button')).toHaveLength(1)
     expect(JSON.parse(localStorage.getItem(KEY) as string).level).toBe('A2')
   })
 
@@ -149,7 +154,7 @@ describe('A2 cannot be reached by URL', () => {
 
 describe('A1 navigation and lists are unchanged', () => {
   it('Learn lists exactly the A1 units, in order, with their own level label and word counts; no level tabs', async () => {
-    const { container } = await show('/learn')
+    const { container } = await show('/learn?level=A1')
     expect(hrefs(container, '#/learn/unit/')).toEqual(UNITS.map(u => `#/learn/unit/${u.id}`))
     expect(container.querySelectorAll('a.unitcard')).toHaveLength(10)
     expect(container.querySelector('.levels')).toBeNull() // a single available level needs no switch
@@ -158,6 +163,13 @@ describe('A1 navigation and lists are unchanged', () => {
       expect(cards[i].querySelector('.eyebrow')?.textContent).toBe(`ЮНИТ ${String(u.id).padStart(2, '0')} · A1`)
       expect(cards[i].textContent).toContain(`${vocabularyForUnit(u.id).length} слов`)
     })
+  })
+
+  it('Learn shows the six summit folders: A1 opens, A2 … C2 are locked and are not links', async () => {
+    const { container } = await show('/learn')
+    expect([...container.querySelectorAll('.peakcard .peakcard__lvl')].map(e => e.textContent)).toEqual(['A1', 'A2', 'B1', 'B2', 'C1', 'C2'])
+    expect([...container.querySelectorAll('a.peakcard')].map(a => a.getAttribute('href'))).toEqual(['#/learn?level=A1'])
+    expect(container.querySelectorAll('.peakcard.is-locked')).toHaveLength(5)
   })
 
   it('Vocabulary offers the A1 units only', async () => {
@@ -169,9 +181,11 @@ describe('A1 navigation and lists are unchanged', () => {
 
   it('Home: level, unit count and progress label come from the course metadata', async () => {
     const { container } = await show('/')
-    expect(text()).toContain(`A1 · ${unitsOfLevel('A1').length} юнит`)
-    expect(text()).toContain('Текущий уровень: A1')
-    expect(container.querySelector('.journey__track')).toBeNull()
+    expect(text()).toContain('A1 · Юнит 1')
+    // six milestones in order; only A1 is enterable while A2 and B1 are planned
+    expect([...container.querySelectorAll('.jm__lvl')].map(e => e.textContent)).toEqual(['A1', 'A2', 'B1', 'B2', 'C1', 'C2'])
+    expect(container.querySelectorAll('.jm button')).toHaveLength(1)
+    expect(unitsOfLevel('A1')).toHaveLength(10)
   })
 
   it('Tests: the A1 level test and the unit tests are offered; no other level', async () => {

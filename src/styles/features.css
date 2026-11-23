@@ -285,10 +285,6 @@
 .row > .segmented { flex: 0 1 auto; min-width: 0; }
 
 /* ---------- mascot placements ---------- */
-.hero__top { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
-.hero__text { min-width: 0; }
-.hero__mascot { width: 88px; height: 88px; position: relative; z-index: 1; }
-@media (min-width: 700px) { .hero__mascot { width: 112px; height: 112px; } }
 .tutor__welcome { display: flex; align-items: center; gap: 14px; }
 .bubble__who { display: inline-flex; align-items: center; gap: 8px; }
 .result__mascot { margin-left: auto; }
@@ -298,3 +294,74 @@
 .selfcheck .chip { white-space: normal; text-align: left; border-radius: 14px; max-width: 100%; }
 /* long concept titles (B1) on the test result: wrap instead of forcing a horizontal scroll on phones (found in the Unit 22 browser QA) */
 .chip--wrap { white-space: normal; text-align: left; border-radius: 14px; max-width: 100%; }
+
+/* ---------- home: continue + learning journey (existing tokens only) ---------- */
+.hero__top { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.hero__text { min-width: 0; }
+.hero__mascot { width: 76px; height: auto; position: relative; z-index: 1; }
+@media (min-width: 700px) { .hero__mascot { width: 96px; } }
+.resume { display: grid; gap: 2px; padding: 14px 18px; }
+.resume .eyebrow { color: var(--primary); }
+.resume__where { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; color: var(--ink-3); }
+.resume__title { margin: 0; }
+.resume__step { margin: 0; }
+.resume .btn { margin-top: 6px; }
+.jmap { padding: 20px 16px 8px; }
+.jmap__title { margin: 0 0 4px 4px; }
+.jmap__stage { position: relative; width: 100%; max-width: 480px; margin: 0 auto; }
+.jmap__road { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.jmap__road path { fill: none; stroke-linecap: round; }
+.jmap__bed { stroke: var(--surface-2); stroke-width: 22; }
+.jmap__dash { stroke: var(--line); stroke-width: 2.5; stroke-dasharray: 2 9; }
+.jmap__lit { stroke: var(--primary); stroke-width: 7; }
+.jmap__list { list-style: none; margin: 0; padding: 0; }
+.jm { position: absolute; left: 0; right: 0; }
+.jm__hit { position: absolute; inset: 0; display: block; width: 100%; padding: 0; border: 0; background: none; font: inherit; color: inherit; text-align: left; border-radius: 16px; }
+button.jm__hit { cursor: pointer; }
+button.jm__hit:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.jm__peakbox { position: absolute; bottom: 0; transform: translateX(-50%); transition: transform 0.2s ease; }
+button.jm__hit:hover .jm__peakbox { transform: translateX(-50%) translateY(-2px); }
+.jm__peak { display: block; width: 100%; height: auto; overflow: visible; }
+.jm__peak path { stroke-linejoin: round; }
+.jm__back { fill: var(--line); opacity: 0.6; }
+.jm__main { fill: var(--line); stroke: var(--muted); stroke-width: 1.5; }
+.jm__snow { fill: #fff; opacity: 0.88; }
+.jm__flag { fill: var(--primary); stroke: var(--primary); stroke-width: 1.5; stroke-linecap: round; }
+.jm__peak--open .jm__main { fill: var(--surface-2); stroke: var(--primary); }
+.jm__peak--current .jm__main { fill: var(--primary); stroke: var(--primary); }
+.jm__peak--current .jm__back { fill: var(--primary); opacity: 0.35; }
+.jm__peak--completed .jm__main { fill: var(--green-500); stroke: var(--green-500); }
+.jm__peak--completed .jm__back { fill: var(--green-500); opacity: 0.35; }
+.jm__peak--locked { opacity: 0.8; }
+.jm__peak--locked .jm__snow { opacity: 0.7; }
+.jm__label { position: absolute; bottom: 4px; display: grid; gap: 1px; max-width: 46%; }
+.jm__label--l { left: 2%; text-align: left; }
+.jm__label--r { right: 2%; text-align: right; }
+.jm__lvl { font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; line-height: 1.1; color: var(--ink); }
+.jm__name { font-size: 0.8rem; font-weight: 600; color: var(--ink-2); overflow-wrap: anywhere; }
+.jm__meta { font-size: 0.72rem; font-weight: 700; color: var(--ink-3); }
+.jm--current .jm__lvl, .jm--current .jm__meta { color: var(--primary); }
+.jm--completed .jm__meta { color: var(--green-700); }
+.jm--locked .jm__lvl, .jm--locked .jm__name { color: var(--ink-3); }
+.jmap__rider { position: absolute; width: 17.5%; transform: translate(-50%, -94%); pointer-events: none; z-index: 2; transition: left 0.8s ease, top 0.8s ease; }
+.jmap__rider .mascot { width: 100%; height: auto; }
+
+/* ---------- learn: six CEFR summit cards (existing tokens only) ---------- */
+.peaks { display: grid; gap: 14px; }
+@media (min-width: 700px) { .peaks { grid-template-columns: repeat(2, 1fr); } }
+.peakcard { display: flex; align-items: center; gap: 16px; min-height: 112px; padding: 20px 22px; border-radius: 28px; color: inherit; text-decoration: none; }
+.peakcard.is-active { border-color: var(--primary); }
+.peakcard__icon { flex: none; width: 64px; height: 48px; overflow: visible; }
+.peakcard__icon path { stroke-linejoin: round; }
+.peakcard__back { fill: var(--line); opacity: 0.6; }
+.peakcard__main { fill: var(--primary); }
+.peakcard__snow { fill: #fff; opacity: 0.88; }
+.peakcard__text { flex: 1; min-width: 0; display: grid; gap: 4px; }
+.peakcard__lvl { justify-self: start; padding: 3px 12px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); color: var(--primary); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.04em; }
+.peakcard__name { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.05rem, 4.6vw, 1.3rem); line-height: 1.15; color: var(--ink); overflow-wrap: anywhere; }
+.peakcard__go { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--line); color: var(--primary); font-size: 0.85rem; }
+.peakcard.is-locked { opacity: 0.7; }
+.peakcard.is-locked .peakcard__main { fill: var(--line); }
+.peakcard.is-locked .peakcard__name { color: var(--ink-3); }
+.peakcard.is-locked .peakcard__lvl { color: var(--ink-3); }
+.peakcard.is-locked .peakcard__go { color: var(--ink-3); }

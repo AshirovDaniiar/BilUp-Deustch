@@ -1,4 +1,4 @@
-import { MASCOT, MASCOT_NAME, type MascotPose, type MascotVariant } from '../brand/mascot'
+import { CUTOUT_RATIO, MASCOT, MASCOT_NAME, type MascotPose, type MascotVariant } from '../brand/mascot'
 import { useApp } from '../app/store'
 import { tr } from '../utils/text'
 
@@ -27,7 +27,7 @@ export function Mascot({ pose = 'welcome', variant = 'illustration', size, decor
       srcSet={`${url(a.small)} ${a.smallPx}w, ${url(a.large)} ${a.largePx}w`}
       sizes={`${size}px`}
       width={size}
-      height={size}
+      height={variant === 'cutout' ? Math.round(size / CUTOUT_RATIO) : size}
       alt={alt}
       loading={eager ? 'eager' : 'lazy'}
       decoding="async"

@@ -170,7 +170,6 @@ describe('A2/A3 — the Kyrgyz interface of the B1 screens contains no Russian c
   )
   it('every UI string the B1 flow shows in Kyrgyz is Kyrgyz: none of the formerly Russian keys is identical to Russian any more', () => {
     for (const k of [
-      'learnSub',
       'unitProgress',
       'startUnit',
       'learnerGoal',

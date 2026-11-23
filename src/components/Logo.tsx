@@ -11,10 +11,10 @@ export function LogoMark({ size = 36 }: { size?: number }) {
   )
 }
 
-export function Logo({ compact = false }: { compact?: boolean }) {
+export function Logo({ compact = false, showMascot = true }: { compact?: boolean; showMascot?: boolean }) {
   return (
     <div className="logo">
-      <Mascot variant="avatar" size={compact ? 34 : 40} decorative eager className="logo__mascot" />
+      {showMascot && <Mascot variant="avatar" size={compact ? 34 : 40} decorative eager className="logo__mascot" />}
       <span className="logo__bil">
         Bil<b>Up</b> <span className="logo__til">Til</span>
       </span>

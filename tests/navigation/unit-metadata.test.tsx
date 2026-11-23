@@ -73,7 +73,7 @@ vi.mock('../../src/data/a2/writing', () => ({ A2_WRITING: F.writing }))
 
 import { App } from '../../src/app/App'
 import { AppProvider } from '../../src/app/store'
-import { topicTestOfUnit, writingForUnit } from '../../src/data/catalog'
+import { listeningForUnit, listeningOf, speakingForUnit, speakingIndex, speakingOf, topicTestOfUnit, unitById, writingForUnit } from '../../src/data/catalog'
 import { COURSE } from '../../src/data/course'
 import { TESTS } from '../../src/data/reallife'
 import type { Lang, UserProgress } from '../../src/data/types'
@@ -82,6 +82,13 @@ import { WRITING } from '../../src/data/writing'
 import { requiredSections } from '../../src/features/progress/stats'
 import { defaultProgress } from '../../src/storage/defaults'
 import { KEY } from '../helpers'
+
+/** Completion keys of every home step EXCEPT the unit test, so the home screen's "next step" is the test step (the one these tests are about). */
+const allButTest = (unit: number, level: 'A1' | 'A2') => {
+  const l = listeningForUnit(unit)[0] ?? listeningOf(level)[0]
+  const sc = speakingIndex.get(speakingForUnit(unit) ?? '') ?? speakingOf(level)[0]
+  return [`${unit}:vocabulary`, `topic:${unitById(unit)!.grammarIds[0]}`, ...(l ? [`ex:${l.id}`] : []), ...(sc ? [`speak:${sc.id}`] : [])]
+}
 
 const a2 = () => COURSE.levels.find(l => l.id === 'A2') as unknown as { status: string; releasedLocales: string[] }
 
@@ -137,7 +144,7 @@ describe('A1: the metadata reproduces exactly what the old assumptions produced'
   })
 
   it('A1 Home: the test step shows 8 questions and links to the unit test', async () => {
-    const { container } = await show('/')
+    const { container } = await show('/', 'ru', { completed: allButTest(1, 'A1') })
     expect(container.textContent).toContain('8 вопросов')
     expect(hrefOf(container, '#/practice/tests/')).toEqual(['#/practice/tests/unit-1'])
   })
@@ -169,7 +176,7 @@ describe('A2 world: ids follow no pattern, the test has its own size', () => {
 
   it('Home (A2) takes the test step from the same metadata', async () => {
     Object.assign(a2(), { status: 'beta', releasedLocales: ['ru'] })
-    const { container } = await show('/', 'ru', { level: 'A2' })
+    const { container } = await show('/', 'ru', { level: 'A2', completed: allButTest(11, 'A2') })
     expect(hrefOf(container, '#/practice/tests/')).toEqual(['#/practice/tests/abschluss-elf'])
     expect(container.textContent).toContain('15 вопросов')
   })

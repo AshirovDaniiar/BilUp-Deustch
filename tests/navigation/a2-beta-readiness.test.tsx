@@ -140,7 +140,7 @@ describe('the Beta notice', () => {
   for (const lang of ['ru', 'ky'] as const)
     it(`${lang}: shown on the A2 screens (learn, a unit page), says Beta / expert review pending / translations may change / feedback welcome, claims no approval`, async () => {
       for (const [path, level] of [
-        ['/learn', 'A2'],
+        ['/learn?level=A2', 'A2'],
         ['/learn/unit/11', 'A2'],
       ] as const) {
         cleanup()

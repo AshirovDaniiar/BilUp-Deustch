@@ -14,13 +14,15 @@ import type { L10n } from '../data/types'
  * `welcome` for any pose without its own files.
  */
 export type MascotPose = 'welcome'
-export type MascotVariant = 'illustration' | 'avatar'
+export type MascotVariant = 'illustration' | 'avatar' | 'cutout'
 
 interface PoseAssets {
   /** full character, square. 1x / 2x */
   illustration: { small: string; large: string; smallPx: number; largePx: number }
   /** head + kalpak crop, square — for small UI (header, chat, result) where the full figure would be illegible */
   avatar: { small: string; large: string; smallPx: number; largePx: number }
+  /** full character on a transparent background (424:531 portrait, not square) — sits directly on the page */
+  cutout: { small: string; large: string; smallPx: number; largePx: number }
   alt: L10n
 }
 
@@ -30,6 +32,7 @@ export const MASCOT: Record<MascotPose, PoseAssets> = {
   welcome: {
     illustration: { small: `${DIR}snow-leopard-320.webp`, large: `${DIR}snow-leopard-640.webp`, smallPx: 320, largePx: 640 },
     avatar: { small: `${DIR}avatar-96.webp`, large: `${DIR}avatar-192.webp`, smallPx: 96, largePx: 192 },
+    cutout: { small: `${DIR}snow-leopard-cutout-212.webp`, large: `${DIR}snow-leopard-cutout-424.webp`, smallPx: 212, largePx: 424 },
     alt: {
       ru: 'Снежный барс BilUp — маскот и спутник в обучении: в калпаке, бирюзовой толстовке, с книгой',
       ky: 'BilUp илбирси — окууда жолдош маскот: калпак кийген, бирюза худиде, китеп кармап',
@@ -39,4 +42,7 @@ export const MASCOT: Record<MascotPose, PoseAssets> = {
 }
 
 /** Short accessible name for the avatar when it is the only content of a control (not needed when next to the wordmark). */
+/** width / height of the cutout artwork */
+export const CUTOUT_RATIO = 424 / 531
+
 export const MASCOT_NAME: L10n = { ru: 'Снежный барс BilUp', ky: 'BilUp илбирси', de: 'BilUp-Schneeleopard' }
