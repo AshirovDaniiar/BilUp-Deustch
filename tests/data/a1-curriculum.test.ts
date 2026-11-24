@@ -5,7 +5,7 @@ import { levelOfUnitId } from '../../src/data/course'
 import { SECTIONS, UNITS } from '../../src/data/units'
 import { requiredSections } from '../../src/features/progress/stats'
 
-describe('A1 curriculum v2: 38 units × 8 sections', () => {
+describe('A1 curriculum v2: 38 units × 9 sections', () => {
   it('lists exactly the 38 approved titles, in order, numbered 1–38', () => {
     expect(A1_UNITS).toHaveLength(38)
     expect(A1_UNITS.map(u => u.title)).toEqual([...A1_CURRICULUM_TITLES])
@@ -34,13 +34,16 @@ describe('A1 curriculum v2: 38 units × 8 sections', () => {
     expect(levelOfUnitId(21)).toBe('B1')
     expect(levelOfUnitId(101)).toBeUndefined()
   })
-  it('there are exactly 8 standard sections; empty containers require none and carry no invented content', () => {
-    expect(SECTIONS).toEqual(['vocabulary', 'grammar', 'listening', 'reading', 'speaking', 'writing', 'review', 'test'])
+  it('there are exactly 9 standard sections with Merksätze after Grammar; empty containers require no invented content', () => {
+    expect(SECTIONS).toEqual(['vocabulary', 'grammar', 'merksaetze', 'listening', 'reading', 'speaking', 'writing', 'review', 'test'])
+    expect(SECTIONS.indexOf('merksaetze')).toBe(2)
+    expect(A1_UNITS).toHaveLength(38)
+    expect(A1_UNITS.length * SECTIONS.length).toBe(342)
     for (const u of A1_UNITS.slice(1)) {
       // no invented content: a unit either references one EXISTING grammar lesson or is completely empty
-      expect(requiredSections(u.id)).toEqual(u.grammarIds.length ? ['grammar'] : [])
+      expect(requiredSections(u.id)).toEqual(u.grammarIds.length ? ['grammar', 'merksaetze', 'reading'] : ['merksaetze', 'reading'])
       expect(u.grammarIds.length).toBeLessThanOrEqual(1)
     }
-    expect(requiredSections(1)).toHaveLength(8)
+    expect(requiredSections(1)).toHaveLength(9)
   })
 })

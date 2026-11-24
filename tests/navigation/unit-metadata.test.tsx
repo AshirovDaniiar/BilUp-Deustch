@@ -154,6 +154,20 @@ describe('A1: the metadata reproduces exactly what the old assumptions produced'
   it('A1 progress: a unit requires a writing section exactly because a task has that unit (units 1–10 all do)', () => {
     for (const u of UNITS) expect(requiredSections(u.id)).toContain('writing')
   })
+
+  it('A1 unit pages expose Merksätze as position 3 and render approved sentences', async () => {
+    const { container } = await show('/learn/unit/1', 'ru')
+    const links = [...container.querySelectorAll<HTMLAnchorElement>('a[href]')]
+    const merksaetze = links.find(link => link.getAttribute('href') === '#/learn/unit/1/merksaetze')
+    expect(merksaetze).toBeDefined()
+    expect(merksaetze?.textContent).toContain('Merksätze')
+    cleanup()
+    const empty = await show('/learn/unit/1/merksaetze', 'ru')
+    expect(empty.container.textContent).toContain('Merksätze')
+    expect(empty.container.textContent).toContain('Hallo!')
+    expect(empty.container.textContent).toContain('Привет!')
+    cleanup()
+  })
 })
 
 describe('A2 world: ids follow no pattern, the test has its own size', () => {

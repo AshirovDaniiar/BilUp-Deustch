@@ -52,7 +52,7 @@ const SUPPLIED: [string, string][] = [
   ['Worauf kommt es an?', 'Präpositionaladverbien: Vertiefung'],
 ]
 
-describe('B1 curriculum v2: 36 units × 8 sections (structure only)', () => {
+describe('B1 curriculum v2: 36 units × 9 sections (structure only)', () => {
   it('exactly 36 new units, in the supplied order, with the exact titles', () => {
     expect(B1_VISIBLE_UNITS).toHaveLength(36)
     expect(B1_VISIBLE_UNITS.map(u => u.title)).toEqual(SUPPLIED.map(r => r[0]))
@@ -78,13 +78,15 @@ describe('B1 curriculum v2: 36 units × 8 sections (structure only)', () => {
     })
     expect(B1_CURRICULUM.map(r => r.grammarTopic)).toEqual(SUPPLIED.map(r => r[1]))
   })
-  it('8 standard sections in the standard order; every section except Grammar is an empty container (36 × 7 = 252)', () => {
-    expect(SECTIONS).toEqual(['vocabulary', 'grammar', 'listening', 'reading', 'speaking', 'writing', 'review', 'test'])
-    expect(B1_VISIBLE_UNITS.length * SECTIONS.length).toBe(288)
+  it('9 standard sections with Merksätze after Grammar; every content section except Grammar is an empty container', () => {
+    expect(SECTIONS).toEqual(['vocabulary', 'grammar', 'merksaetze', 'listening', 'reading', 'speaking', 'writing', 'review', 'test'])
+    expect(SECTIONS.indexOf('merksaetze')).toBe(2)
+    expect(B1_VISIBLE_UNITS).toHaveLength(36)
+    expect(B1_VISIBLE_UNITS.length * SECTIONS.length).toBe(324)
     for (const u of B1_VISIBLE_UNITS) {
       expect(isPlaceholderUnit(u)).toBe(true)
       // only the Grammar section can hold content (its lesson); a unit without a lesson requires nothing
-      expect(requiredSections(u.id)).toEqual(u.grammarIds.length ? ['grammar'] : [])
+      expect(requiredSections(u.id)).toEqual(u.grammarIds.length ? ['grammar', 'merksaetze', 'reading'] : ['merksaetze', 'reading'])
       expect(unitHasContent(u.id)).toBe(u.grammarIds.length > 0)
     }
   })

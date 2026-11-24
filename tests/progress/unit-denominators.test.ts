@@ -22,9 +22,9 @@ describe('unit progress denominators are derived from content (V-06)', () => {
     }
   })
 
-  it('a unit with all eight kinds of content still needs all eight', () => {
+  it('a unit with all existing content kinds still needs all nine required sections', () => {
     expect(requiredSections(1)).toEqual([...SECTIONS])
-    expect(unitProgress(withCompleted(allKeys(1)), 1)).toEqual({ done: 8, total: 8, pct: 100 })
+    expect(unitProgress(withCompleted(allKeys(1)), 1)).toEqual({ done: 9, total: 9, pct: 100 })
   })
 
   it('UNIT 10 CAN REACH 100 %: the section without content (reading) is not required', () => {
@@ -51,9 +51,9 @@ describe('unit progress denominators are derived from content (V-06)', () => {
   it('empty A1 v2 containers require nothing: they neither dilute level progress nor become the current unit; the "unit" badge likewise', () => {
     const empty = A1_UNITS.filter(u => u.id >= 100 && u.grammarIds.length === 0)
     expect(empty).toHaveLength(21)
-    for (const u of empty) expect(requiredSections(u.id)).toEqual([])
+    for (const u of empty) expect(requiredSections(u.id)).toEqual(['merksaetze', 'reading'])
     // a unit that only REFERENCES an existing grammar lesson requires just that section (it has no test and no words)
-    for (const u of A1_UNITS.filter(u => u.id >= 100 && u.grammarIds.length > 0)) expect(requiredSections(u.id)).toEqual(['grammar'])
+    for (const u of A1_UNITS.filter(u => u.id >= 100 && u.grammarIds.length > 0)) expect(requiredSections(u.id)).toEqual(['grammar', 'merksaetze', 'reading'])
     const authored = A1_UNITS.filter(u => u.id < 100) // units with words: the only ones Continue Learning may point at
     const last = authored[authored.length - 1].id
     expect(currentUnit(withCompleted([])).id).toBe(authored[0].id)

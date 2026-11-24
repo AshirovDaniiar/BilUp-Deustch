@@ -5,6 +5,7 @@ import type {
   GrammarConcept,
   LearningUnit,
   ListeningExercise,
+  MerksatzUnit,
   ReadingText,
   SpeakingScenario,
   VocabularyItem,
@@ -76,6 +77,8 @@ import { UNIT_32_SPEAKING_ID } from './unit32/unit'
 import { UNIT_32_VOCABULARY } from './unit32/vocabulary'
 import { LEVEL_B1_ASSESSMENT, LEVEL_B1_TEST } from './level-test'
 import type { B1LevelAssessment } from './types'
+import { B1_MERKSATZE } from './b1-merksaetze'
+import { B1_LESETEXTE } from './b1-lesetexte'
 
 /**
  * The LOADABLE B1 content: every B1 collection in one module, so the bundler puts all of it (and only it) into ONE separate chunk
@@ -97,6 +100,7 @@ export interface B1Content {
   reading: ReadingText[]
   speaking: SpeakingScenario[]
   writing: WritingTask[]
+  merksaetze: MerksatzUnit[]
   tests: B1TestDef[]
   unitSpeaking: string[]
   finalTests: A2FinalTest[]
@@ -115,9 +119,10 @@ export const B1_CONTENT: B1Content = {
   whyNotes: [...UNIT_21_WHY_NOTES, ...UNIT_22_WHY_NOTES, ...UNIT_23_WHY_NOTES, ...UNIT_24_WHY_NOTES, ...UNIT_25_WHY_NOTES, ...UNIT_26_WHY_NOTES, ...UNIT_27_WHY_NOTES, ...UNIT_28_WHY_NOTES, ...UNIT_29_WHY_NOTES, ...UNIT_30_WHY_NOTES, ...UNIT_31_WHY_NOTES, ...UNIT_32_WHY_NOTES],
   exercises: [...UNIT_21_EXERCISES, ...UNIT_22_EXERCISES, ...UNIT_23_EXERCISES, ...UNIT_24_EXERCISES, ...UNIT_25_EXERCISES, ...UNIT_26_EXERCISES, ...UNIT_27_EXERCISES, ...UNIT_28_EXERCISES, ...UNIT_29_EXERCISES, ...UNIT_30_EXERCISES, ...UNIT_31_EXERCISES, ...UNIT_32_EXERCISES, ...B1_V2_EXERCISES],
   listening: [...UNIT_21_LISTENING, ...UNIT_22_LISTENING, ...UNIT_23_LISTENING, ...UNIT_24_LISTENING, ...UNIT_25_LISTENING, ...UNIT_26_LISTENING, ...UNIT_27_LISTENING, ...UNIT_28_LISTENING, ...UNIT_29_LISTENING, ...UNIT_30_LISTENING, ...UNIT_31_LISTENING, ...UNIT_32_LISTENING],
-  reading: [...UNIT_21_READING, ...UNIT_22_READING, ...UNIT_23_READING, ...UNIT_24_READING, ...UNIT_25_READING, ...UNIT_26_READING, ...UNIT_27_READING, ...UNIT_28_READING, ...UNIT_29_READING, ...UNIT_30_READING, ...UNIT_31_READING, ...UNIT_32_READING],
+  reading: [...UNIT_21_READING, ...UNIT_22_READING, ...UNIT_23_READING, ...UNIT_24_READING, ...UNIT_25_READING, ...UNIT_26_READING, ...UNIT_27_READING, ...UNIT_28_READING, ...UNIT_29_READING, ...UNIT_30_READING, ...UNIT_31_READING, ...UNIT_32_READING, ...B1_LESETEXTE],
   speaking: [...UNIT_21_SPEAKING, ...UNIT_22_SPEAKING, ...UNIT_23_SPEAKING, ...UNIT_24_SPEAKING, ...UNIT_25_SPEAKING, ...UNIT_26_SPEAKING, ...UNIT_27_SPEAKING, ...UNIT_28_SPEAKING, ...UNIT_29_SPEAKING, ...UNIT_30_SPEAKING, ...UNIT_31_SPEAKING, ...UNIT_32_SPEAKING],
   writing: [...UNIT_21_WRITING, ...UNIT_22_WRITING, ...UNIT_23_WRITING, ...UNIT_24_WRITING, ...UNIT_25_WRITING, ...UNIT_26_WRITING, ...UNIT_27_WRITING, ...UNIT_28_WRITING, ...UNIT_29_WRITING, ...UNIT_30_WRITING, ...UNIT_31_WRITING, ...UNIT_32_WRITING],
+  merksaetze: B1_MERKSATZE,
   tests: [UNIT_21_TEST, UNIT_22_TEST, UNIT_23_TEST, UNIT_24_TEST, UNIT_25_TEST, UNIT_26_TEST, UNIT_27_TEST, UNIT_28_TEST, UNIT_29_TEST, UNIT_30_TEST, UNIT_31_TEST, UNIT_32_TEST, LEVEL_B1_TEST],
   /** speaking scenario per B1 unit; index 0 = Unit 21, index 1 = Unit 22, index 2 = Unit 23, index 3 = Unit 24, index 4 = Unit 25, index 5 = Unit 26, index 6 = Unit 27, index 7 = Unit 28, index 8 = Unit 29, index 9 = Unit 30, index 10 = Unit 31, index 11 = Unit 32 */
   unitSpeaking: [UNIT_21_SPEAKING_ID, UNIT_22_SPEAKING_ID, UNIT_23_SPEAKING_ID, UNIT_24_SPEAKING_ID, UNIT_25_SPEAKING_ID, UNIT_26_SPEAKING_ID, UNIT_27_SPEAKING_ID, UNIT_28_SPEAKING_ID, UNIT_29_SPEAKING_ID, UNIT_30_SPEAKING_ID, UNIT_31_SPEAKING_ID, UNIT_32_SPEAKING_ID],

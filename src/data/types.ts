@@ -144,8 +144,23 @@ export interface ReadingText {
   unit: number
   title: string
   body: string[]
+  wordCount?: number
   gloss: ReadingGloss[]
   questions: { q: string; options: string[]; answer: number }[]
+  source?: ContentSource
+}
+
+export interface MerksatzSentence {
+  de: string
+  ru: string
+}
+
+export interface MerksatzUnit {
+  level: LanguageLevel
+  unit: number
+  title: string
+  topic: string | null
+  sentences: MerksatzSentence[]
   source?: ContentSource
 }
 

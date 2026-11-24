@@ -24,7 +24,7 @@ export const ru = {
   learnTitle: 'Вершины',
   grammarPartial: 'Частично охвачено',
   sec_empty: 'Контент будет добавлен позже.',
-  sec_vocabulary: 'Слова', sec_grammar: 'Грамматика', sec_listening: 'Аудирование', sec_reading: 'Чтение', sec_speaking: 'Говорение', sec_writing: 'Письмо', sec_review: 'Повторение', sec_test: 'Итоговый тест',
+  sec_vocabulary: 'Слова', sec_grammar: 'Грамматика', sec_merksaetze: 'Merksätze', sec_listening: 'Аудирование', sec_reading: 'Чтение', sec_speaking: 'Говорение', sec_writing: 'Письмо', sec_review: 'Повторение', sec_test: 'Итоговый тест',
   unitProgress: 'пройдено', startUnit: 'Открыть юнит', levelLocked: 'Уровни A2–C1 появятся в следующих версиях.',
   // core model
   step_discover: 'Открыть', step_understand: 'Понять', step_practice: 'Практика', step_apply: 'Применить', step_speak: 'Сказать', step_test: 'Проверка', step_review: 'Итог',

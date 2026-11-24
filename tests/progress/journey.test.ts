@@ -41,7 +41,7 @@ describe('learning journey (derived from saved progress, nothing stored)', () =>
     expect(j.milestones[1].status).toBe('current')
   })
 
-  it('partial progress moves the mascot part of the way, and only forward (A1 v2: unit 1 is the only authored A1 unit, 8 sections)', () => {
+  it('partial progress moves the mascot part of the way, and only forward (A1 v2: unit 1 is the only authored A1 unit, 9 sections)', () => {
     const some = finishA1().slice(0, 3)
     const a = buildJourney(state({ completed: some })).position
     const b = buildJourney(state({ completed: finishA1().slice(0, 6) })).position

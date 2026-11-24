@@ -167,16 +167,17 @@ describe('A1 navigation and lists are unchanged', () => {
     })
   })
 
-  it('an empty A1 v2 unit shows its title and exactly eight section cards, all with the empty state; a populated unit has none', async () => {
+  it('an A1 v2 unit shows its title and exactly nine section cards with Merksätze after Grammar', async () => {
     const empty = await show('/learn/unit/102')
     expect(text()).toContain('Wer bin ich?')
-    expect(empty.container.querySelectorAll('.sections .secrow')).toHaveLength(8)
-    expect(empty.container.querySelectorAll('[data-empty-section]')).toHaveLength(8)
+    expect(empty.container.querySelectorAll('.sections .secrow')).toHaveLength(9)
+    expect(empty.container.querySelectorAll('[data-empty-section]')).toHaveLength(7)
+    expect(empty.container.querySelectorAll('.secrow')[2].textContent).toContain('Merksätze')
     expect(text()).toContain('Контент будет добавлен позже.')
     expect(text()).not.toMatch(/0 ?\/ ?0|%/) // no misleading 0/0 or 0% on an empty unit
     cleanup()
     const full = await show('/learn/unit/1')
-    expect(full.container.querySelectorAll('.sections .secrow')).toHaveLength(8)
+    expect(full.container.querySelectorAll('.sections .secrow')).toHaveLength(9)
     expect(full.container.querySelectorAll('[data-empty-section]')).toHaveLength(0)
   })
 

@@ -13401,3 +13401,915 @@
 [67535995ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
 [67556341ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
 [67556447ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
+[70507662ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5199/@vite/client:560
+[71355995ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/:1
+[71359632ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
+[71359881ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
+[82066652ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795476414687:393:17)
+    at App (http://localhost:5199/src/app/App.tsx?t=1795476414666:212:21)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82066753ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82066753ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82066773ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795476414687:393:17)
+    at App (http://localhost:5199/src/app/App.tsx?t=1795476414666:212:21)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82066773ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82066773ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82066651ms] [ERROR] The above error occurred in the <App> component:
+
+    at App (http://localhost:5199/src/app/App.tsx?t=1795476414666:211:17)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795476414275:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[82066651ms] [ERROR] The above error occurred in the <StorageNotice> component:
+
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx:26:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795476414275:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[82066651ms] [ERROR] The above error occurred in the <PwaPrompt> component:
+
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx:57:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795476414275:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[82067052ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795476414687:393:17)
+    at App (http://localhost:5199/src/app/App.tsx?t=1795476414666:212:21)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19751:22)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+    at workLoopSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19135:13)
+    at renderRootSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19114:15)
+    at recoverFromConcurrentError (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:18734:28)
+[82073066ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
+[82073463ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
+[82268828ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795476414687:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795476414687:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82268830ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795476414687:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795476414687:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82268834ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795476414687:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795476414687:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82268835ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795476414687:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795476414687:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82268840ms] [ERROR] The above error occurred in the <StorageNotice> component:
+
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795476414687:26:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795476621007:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[82268840ms] [ERROR] The above error occurred in the <PwaPrompt> component:
+
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795476414687:57:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795476621007:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[82268854ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795476414687:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795476414687:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19751:22)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+    at workLoopSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19135:13)
+    at renderRootSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19114:15)
+    at recoverFromConcurrentError (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:18734:28)
+[82271770ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
+[82271889ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
+[82610050ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5199/@vite/client:560
+[82707458ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/:1
+[82712740ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
+[82713742ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
+[82722588ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477072787:393:17)
+    at App (http://localhost:5199/src/app/App.tsx?t=1795477072346:212:21)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82722592ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795476621007:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795476621007:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82722593ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795476621007:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795476621007:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82722594ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477072787:393:17)
+    at App (http://localhost:5199/src/app/App.tsx?t=1795477072346:212:21)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82722595ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795476621007:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795476621007:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82722599ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795476621007:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795476621007:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82722603ms] [ERROR] The above error occurred in the <App> component:
+
+    at App (http://localhost:5199/src/app/App.tsx?t=1795477072346:211:17)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795477072346:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[82722603ms] [ERROR] The above error occurred in the <StorageNotice> component:
+
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795476621007:26:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795477072346:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[82722605ms] [ERROR] The above error occurred in the <PwaPrompt> component:
+
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795476621007:57:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795477072346:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[82722638ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477072787:393:17)
+    at App (http://localhost:5199/src/app/App.tsx?t=1795477072346:212:21)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19751:22)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+    at workLoopSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19135:13)
+    at renderRootSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19114:15)
+    at recoverFromConcurrentError (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:18734:28)
+[82728662ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
+[82729731ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
+[82952720ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477072787:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795477072787:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82952829ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477072787:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795477072787:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82952830ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477072787:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795477072787:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82952830ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477072787:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795477072787:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[82948467ms] [ERROR] The above error occurred in the <StorageNotice> component:
+
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795477072787:26:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795477294523:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[82948467ms] [ERROR] The above error occurred in the <PwaPrompt> component:
+
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795477072787:57:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795477294523:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[82952860ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477072787:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795477072787:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19751:22)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+    at workLoopSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19135:13)
+    at renderRootSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19114:15)
+    at recoverFromConcurrentError (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:18734:28)
+[82967261ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
+[82969021ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
+[83407289ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477294523:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795477294523:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[83407306ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477294523:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795477294523:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[83407316ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477294523:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795477294523:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[83407318ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477294523:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795477294523:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[83407342ms] [ERROR] The above error occurred in the <StorageNotice> component:
+
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795477294523:26:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795477756477:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[83407343ms] [ERROR] The above error occurred in the <PwaPrompt> component:
+
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795477294523:57:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795477756477:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[83407363ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477294523:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795477294523:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19751:22)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+    at workLoopSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19135:13)
+    at renderRootSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19114:15)
+    at recoverFromConcurrentError (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:18734:28)
+[83421676ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
+[83422534ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
+[84178712ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478516293:393:17)
+    at App (http://localhost:5199/src/app/App.tsx?t=1795478512003:212:21)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[84178789ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477756477:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795477756477:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[84179134ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477756477:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795477756477:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[84179135ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478516293:393:17)
+    at App (http://localhost:5199/src/app/App.tsx?t=1795478512003:212:21)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[84179136ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477756477:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795477756477:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[84179136ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795477756477:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795477756477:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[84177028ms] [ERROR] The above error occurred in the <App> component:
+
+    at App (http://localhost:5199/src/app/App.tsx?t=1795478512003:211:17)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795478511713:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[84177028ms] [ERROR] The above error occurred in the <StorageNotice> component:
+
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795477756477:26:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795478511713:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[84177029ms] [ERROR] The above error occurred in the <PwaPrompt> component:
+
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795477756477:57:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795478511713:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[84179141ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478516293:393:17)
+    at App (http://localhost:5199/src/app/App.tsx?t=1795478512003:212:21)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19751:22)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+    at workLoopSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19135:13)
+    at renderRootSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19114:15)
+    at recoverFromConcurrentError (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:18734:28)
+[84190135ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
+[84191405ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
+[84317409ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84317419ms] [ERROR] [hmr] Failed to reload /src/features/grammar/Highlight.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84317420ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84317421ms] [ERROR] [hmr] Failed to reload /src/app/store.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84317794ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84317795ms] [ERROR] [hmr] Failed to reload /src/screens/ProgressScreen.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84317798ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84317799ms] [ERROR] [hmr] Failed to reload /src/screens/HomeScreen.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84317801ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84317802ms] [ERROR] [hmr] Failed to reload /src/features/ai/TutorChat.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84317803ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84317803ms] [ERROR] [hmr] Failed to reload /src/features/progress/JourneyMap.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84317827ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84317827ms] [ERROR] [hmr] Failed to reload /src/screens/GrammarScreen.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84317829ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84317830ms] [ERROR] [hmr] Failed to reload /src/features/vocabulary/WordCard.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84317831ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84317832ms] [ERROR] [hmr] Failed to reload /src/screens/VocabularyScreen.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84318010ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84318011ms] [ERROR] [hmr] Failed to reload /src/screens/UnitScreen.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84318012ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84318013ms] [ERROR] [hmr] Failed to reload /src/screens/LearnScreen.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84318014ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84318016ms] [ERROR] [hmr] Failed to reload /src/features/writing/WritingLab.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84318018ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84318019ms] [ERROR] [hmr] Failed to reload /src/features/speaking/SpeakingLab.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84318075ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84318075ms] [ERROR] [hmr] Failed to reload /src/features/tests/QuizPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84318076ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84318076ms] [ERROR] [hmr] Failed to reload /src/features/listening/ListeningLab.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84318077ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84318078ms] [ERROR] [hmr] Failed to reload /src/features/reading/ReadingLab.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84318078ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84318078ms] [ERROR] [hmr] Failed to reload /src/screens/TopicScreen.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84318081ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84318082ms] [ERROR] [hmr] Failed to reload /src/features/tests/QuizRunner.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84318263ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84318277ms] [ERROR] [hmr] Failed to reload /src/app/App.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84318277ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478668691:100:24 @ http://localhost:5199/@vite/client:174
+[84318278ms] [ERROR] [hmr] Failed to reload /src/screens/PracticeScreens.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84323914ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84323914ms] [ERROR] [hmr] Failed to reload /src/app/store.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84323926ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84323927ms] [ERROR] [hmr] Failed to reload /src/features/grammar/Highlight.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84323981ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84323982ms] [ERROR] [hmr] Failed to reload /src/screens/ProgressScreen.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84323983ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84323983ms] [ERROR] [hmr] Failed to reload /src/features/ai/TutorChat.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324057ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324057ms] [ERROR] [hmr] Failed to reload /src/screens/UnitScreen.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324058ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324059ms] [ERROR] [hmr] Failed to reload /src/screens/VocabularyScreen.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324060ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324061ms] [ERROR] [hmr] Failed to reload /src/features/vocabulary/WordCard.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324062ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324063ms] [ERROR] [hmr] Failed to reload /src/features/writing/WritingLab.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324064ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324064ms] [ERROR] [hmr] Failed to reload /src/features/speaking/SpeakingLab.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324065ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324065ms] [ERROR] [hmr] Failed to reload /src/features/listening/ListeningLab.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324066ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324066ms] [ERROR] [hmr] Failed to reload /src/features/reading/ReadingLab.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324066ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324071ms] [ERROR] [hmr] Failed to reload /src/features/tests/QuizPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324071ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324072ms] [ERROR] [hmr] Failed to reload /src/screens/PracticeScreens.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324077ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324078ms] [ERROR] [hmr] Failed to reload /src/features/tests/QuizRunner.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324286ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324288ms] [ERROR] [hmr] Failed to reload /src/screens/GrammarScreen.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324289ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324290ms] [ERROR] [hmr] Failed to reload /src/screens/TopicScreen.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324295ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324296ms] [ERROR] [hmr] Failed to reload /src/screens/HomeScreen.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324297ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324298ms] [ERROR] [hmr] Failed to reload /src/app/App.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324298ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324299ms] [ERROR] [hmr] Failed to reload /src/screens/LearnScreen.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84324301ms] [ERROR] ReferenceError: Cannot access 'A1_LESETEXTE' before initialization
+    at http://localhost:5199/src/data/reading.ts?t=1795478674893:100:24 @ http://localhost:5199/@vite/client:174
+[84324302ms] [ERROR] [hmr] Failed to reload /src/features/progress/JourneyMap.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5199/@vite/client:176
+[84443201ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478516293:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795478516293:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[84443383ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478516293:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795478516293:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[84443519ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478516293:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795478516293:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[84443525ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478516293:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795478516293:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[84443546ms] [ERROR] The above error occurred in the <StorageNotice> component:
+
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795478516293:26:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795478794919:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[84443547ms] [ERROR] The above error occurred in the <PwaPrompt> component:
+
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795478516293:57:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795478794919:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[84443691ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478516293:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795478516293:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19751:22)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+    at workLoopSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19135:13)
+    at renderRootSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19114:15)
+    at recoverFromConcurrentError (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:18734:28)
+[84449681ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
+[84450519ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
+[85127007ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478794919:393:17)
+    at App (http://localhost:5199/src/app/App.tsx?t=1795479477343:212:21)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[85127022ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478794919:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795478794919:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[85127023ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478794919:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795478794919:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[85127023ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478794919:393:17)
+    at App (http://localhost:5199/src/app/App.tsx?t=1795479477343:212:21)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[85127023ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478794919:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795478794919:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[85127023ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478794919:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795478794919:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[85127040ms] [ERROR] The above error occurred in the <App> component:
+
+    at App (http://localhost:5199/src/app/App.tsx?t=1795479477343:211:17)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795479477490:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[85127041ms] [ERROR] The above error occurred in the <StorageNotice> component:
+
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795478794919:26:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795479477490:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[85127041ms] [ERROR] The above error occurred in the <PwaPrompt> component:
+
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795478794919:57:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795479477490:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[85127133ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478794919:393:17)
+    at App (http://localhost:5199/src/app/App.tsx?t=1795479477343:212:21)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19751:22)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+    at workLoopSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19135:13)
+    at renderRootSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19114:15)
+    at recoverFromConcurrentError (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:18734:28)
+[85130131ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478794919:393:17)
+    at App (http://localhost:5199/src/app/App.tsx?t=1795479477343:212:21)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[85130134ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478794919:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795478794919:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[85130135ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478794919:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795478794919:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[85130140ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478794919:393:17)
+    at App (http://localhost:5199/src/app/App.tsx?t=1795479477343:212:21)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[85130142ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478794919:393:17)
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795478794919:26:29)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[85130145ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478794919:393:17)
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795478794919:59:20)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3697:24)
+    at invokeGuardedCallback (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:3731:39)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19763:15)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+[85130144ms] [ERROR] The above error occurred in the <App> component:
+
+    at App (http://localhost:5199/src/app/App.tsx?t=1795479477343:211:17)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795479477490:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[85130145ms] [ERROR] The above error occurred in the <StorageNotice> component:
+
+    at StorageNotice (http://localhost:5199/src/app/StorageNotice.tsx?t=1795478794919:26:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795479477490:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[85130145ms] [ERROR] The above error occurred in the <PwaPrompt> component:
+
+    at PwaPrompt (http://localhost:5199/src/pwa/PwaPrompt.tsx?t=1795478794919:57:29)
+    at AppProvider (http://localhost:5199/src/app/store.tsx?t=1795479477490:68:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14030
+[85130151ms] Error: useApp must be used inside AppProvider
+    at useApp (http://localhost:5199/src/app/store.tsx?t=1795478794919:393:17)
+    at App (http://localhost:5199/src/app/App.tsx?t=1795479477343:212:21)
+    at renderWithHooks (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:11546:26)
+    at mountIndeterminateComponent (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:14924:21)
+    at beginWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:15912:22)
+    at beginWork$1 (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19751:22)
+    at performUnitOfWork (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19196:20)
+    at workLoopSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19135:13)
+    at renderRootSync (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:19114:15)
+    at recoverFromConcurrentError (http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:18734:28)
+[85135604ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
+[85136312ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
+[88016593ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
+[88017996ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1

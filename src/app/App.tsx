@@ -14,7 +14,7 @@ import { ArticlesScreen, DailyScreen, PracticeHub, ReviewScreen, TestRunnerPage,
 import { ProfileScreen } from '../screens/ProfileScreen'
 import { ProgressScreen } from '../screens/ProgressScreen'
 import { TopicScreen } from '../screens/TopicScreen'
-import { UnitScreen, VocabStudy } from '../screens/UnitScreen'
+import { MerksaetzeScreen, UnitScreen, VocabStudy } from '../screens/UnitScreen'
 import { VocabularyScreen } from '../screens/VocabularyScreen'
 import { Layout } from './Layout'
 import { LevelLoadFailed, LevelLoading } from './LevelLoadStatus'
@@ -28,7 +28,11 @@ function renderRoute(r: Route) {
     case undefined:
       return <HomeScreen />
     case 'learn':
-      if (b === 'unit' && c) return d === 'vocabulary' ? <VocabStudy id={Number(c)} /> : <UnitScreen id={Number(c)} />
+      if (b === 'unit' && c) {
+        if (d === 'vocabulary') return <VocabStudy id={Number(c)} />
+        if (d === 'merksaetze') return <MerksaetzeScreen id={Number(c)} />
+        return d ? <NotFound /> : <UnitScreen id={Number(c)} />
+      }
       if (b === 'topic' && c) return <TopicScreen id={c} />
       return b ? <NotFound /> : <LearnScreen />
     case 'practice':

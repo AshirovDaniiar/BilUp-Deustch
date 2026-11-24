@@ -78,22 +78,23 @@ describe('B1 list and unit pages', () => {
       cleanup()
     }
   })
-  it('a unit page has exactly 8 section cards in the standard order; the sections without content show the empty state (KY / RU)', async () => {
+  it('a unit page has exactly 9 section cards with Merksätze after Grammar; the sections without content show the empty state (KY / RU)', async () => {
     for (const lang of ['ru', 'ky'] as const) {
       await show('/learn/unit/301', lang)
       const rows = [...document.querySelectorAll('.sections .secrow')]
-      expect(rows).toHaveLength(8)
+      expect(rows).toHaveLength(9)
       expect(rows.map(r => r.querySelector('b')?.textContent)).toEqual(
-        (['vocabulary', 'grammar', 'listening', 'reading', 'speaking', 'writing', 'review', 'test'] as const).map(
+        (['vocabulary', 'grammar', 'merksaetze', 'listening', 'reading', 'speaking', 'writing', 'review', 'test'] as const).map(
           s => dictionaries[lang][`sec_${s}` as 'sec_vocabulary'],
         ),
       )
-      // unit 301 has its Grammar lesson; the other seven sections are empty containers with the localized placeholder
-      expect(document.querySelectorAll('[data-empty-section]')).toHaveLength(7)
+      // unit 301 has Grammar and reading content; the remaining sections show their localized placeholders
+      expect(document.querySelectorAll('[data-empty-section]')).toHaveLength(6)
       expect(rows[1].hasAttribute('data-empty-section')).toBe(false)
+      expect(rows[4].hasAttribute('data-empty-section')).toBe(false)
       expect(rows[1].getAttribute('href')).toBe(`#/learn/topic/${B1_V2_LESSON_OF_UNIT[1]}?unit=301`)
       rows.forEach((r, i) => {
-        if (i !== 1) expect(r.textContent).toContain(EMPTY[lang])
+        if (i !== 1 && i !== 4) expect(r.textContent).toContain(EMPTY[lang])
       })
       expect(document.body.textContent).not.toMatch(/0\s*\/\s*0/)
       cleanup()

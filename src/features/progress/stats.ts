@@ -5,6 +5,7 @@ import {
   grammarIndex,
   levelOfUnit,
   listeningForUnit,
+  merksaetzeForUnit,
   readingForUnit,
   speakingForUnit,
   topicTestOfUnit,
@@ -91,6 +92,7 @@ export function articleConfusion(s: UserProgress, level: LanguageLevel = DEFAULT
 const HAS_CONTENT: Record<SectionId, (unit: number) => boolean> = {
   vocabulary: u => vocabularyForUnit(u).length > 0,
   grammar: u => (unitById(u)?.grammarIds.length ?? 0) > 0,
+  merksaetze: u => merksaetzeForUnit(u).length > 0,
   listening: u => listeningForUnit(u).length > 0,
   reading: u => readingForUnit(u).length > 0,
   speaking: u => speakingForUnit(u) !== undefined,

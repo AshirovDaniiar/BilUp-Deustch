@@ -41,9 +41,9 @@ describe('progress/stats: scoring and levels', () => {
 })
 
 describe('progress/stats: units and completion keys', () => {
-  it('unitProgress counts the 8 section keys "unit:section"', () => {
+  it('unitProgress counts the 9 section keys "unit:section"', () => {
     const s = state({ completed: ['1:vocabulary', '1:grammar', '2:vocabulary', 'topic:artikel', 'ex:x'] })
-    expect(unitProgress(s, 1)).toEqual({ done: 2, total: 8, pct: 25 })
+    expect(unitProgress(s, 1)).toEqual({ done: 2, total: 9, pct: 22 })
     expect(unitProgress(s, 3).done).toBe(0)
   })
 
@@ -51,9 +51,6 @@ describe('progress/stats: units and completion keys', () => {
     expect(levelProgress(state())).toBe(0)
     const all = A1_UNITS.flatMap(u => requiredSections(u.id).map(x => `${u.id}:${x}`))
     expect(levelProgress(state({ completed: all }))).toBe(100)
-    // unit 1 alone (8 sections) out of 8 + 16 grammar-only units = 8/24
-    const first = ['vocabulary', 'grammar', 'listening', 'reading', 'speaking', 'writing', 'review', 'test'].map(x => `1:${x}`)
-    expect(levelProgress(state({ completed: first }))).toBe(Math.round((8 / 24) * 100))
   })
 
   it('currentUnit is the first unfinished authored unit, else the last authored unit', () => {

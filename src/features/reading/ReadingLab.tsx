@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { readingQuestions } from '../tests/questions'
 import { newSeed } from '../../utils/random'
 import { A } from '../../app/router'
-import { useApp } from '../../app/store'
+import { useApp, useAttempt } from '../../app/store'
 import { Button, Card, Chip, PageHeader, Sheet } from '../../components/ui'
 import { SpeakButton } from '../../components/SpeakButton'
 import { LevelTabs } from '../../components/LevelTabs'
@@ -54,6 +54,7 @@ function lookup(text: ReadingText, word: string): { gloss?: ReadingGloss; vocabI
 
 export function ReadingView({ id }: { id: string }) {
   const { actions, t, lang } = useApp()
+  const attempt = useAttempt()
   const text = readingIndex.get(id)
   // authored A2 texts: meanings, notes and examples in the learner's OWN language only (A1 keeps its Russian + Kyrgyz display)
   const a2 = !!text && levelOfUnit(text.unit) !== 'A1'
@@ -82,6 +83,9 @@ export function ReadingView({ id }: { id: string }) {
         sub={t('tapWord')}
       />
       <Card className="reader">
+        <div className="row row--between">
+          <Chip tone="blue">{text.wordCount ?? text.body.join(' ').trim().split(/\s+/).length} {t('wordCount')}</Chip>
+        </div>
         {text.body.map((p, i) => (
           <p key={i} className="reader__p">
             {p.split(' ').map((w, k) => {
@@ -97,12 +101,39 @@ export function ReadingView({ id }: { id: string }) {
         ))}
       </Card>
 
-      {reading && (
+      {reading && qs.length > 0 && (
         <Button variant="violet" size="lg" block onClick={() => setReading(false)}>
           {t('understandQ')} →
         </Button>
       )}
-      {!reading && !result && (
+      {reading && qs.length === 0 && (
+        <Button
+          variant="violet"
+          size="lg"
+          block
+          onClick={() => {
+            attempt.finish({
+              activityId: `ex:${text.id}`,
+              kind: 'reading',
+              completes: [`${text.unit}:reading`],
+              score: { earned: 1, possible: 1 },
+            })
+            actions.addScore('reading', 100)
+            setReading(false)
+            setResult({
+              correct: 1,
+              total: 1,
+              wrong: [],
+              bySkill: {},
+              byConcept: {},
+              bySection: {},
+            })
+          }}
+        >
+          {t('understandQ')} →
+        </Button>
+      )}
+      {!reading && !result && qs.length > 0 && (
         <QuizRunner
           questions={qs}
           onDone={onDone}

@@ -23,7 +23,7 @@ export const ky: Dict = {
   learnTitle: 'Чокулар',
   grammarPartial: 'Жарым-жартылай камтылган',
   sec_empty: 'Контент кийинчерээк кошулат.',
-  sec_vocabulary: 'Сөздөр', sec_grammar: 'Грамматика', sec_listening: 'Угуу', sec_reading: 'Окуу', sec_speaking: 'Сүйлөө', sec_writing: 'Жазуу', sec_review: 'Кайталоо', sec_test: 'Жыйынтык тест',
+  sec_vocabulary: 'Сөздөр', sec_grammar: 'Грамматика', sec_merksaetze: 'Merksätze', sec_listening: 'Угуу', sec_reading: 'Окуу', sec_speaking: 'Сүйлөө', sec_writing: 'Жазуу', sec_review: 'Кайталоо', sec_test: 'Жыйынтык тест',
   step_discover: 'Ачуу', step_understand: 'Түшүнүү', step_practice: 'Көнүгүү', step_apply: 'Колдонуу', step_speak: 'Айтуу', step_test: 'Текшерүү', step_review: 'Жыйынтык',
   grammarLab: 'Grammar Lab', whyLabel: 'ЭМНЕ ҮЧҮН?',
   vocabTitle: 'Сөздүк', search: 'Издөө…',

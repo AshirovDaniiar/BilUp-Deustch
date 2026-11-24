@@ -12,6 +12,7 @@ import type {
   LanguageLevel,
   LearningUnit,
   ListeningExercise,
+  MerksatzUnit,
   ReadingText,
   RealLifeTopic,
   SpeakingScenario,
@@ -70,6 +71,7 @@ export interface ContentBundle {
   listening: ListeningExercise[]
   reading: ReadingText[]
   writing: WritingTask[]
+  merksaetze: MerksatzUnit[]
   speaking: SpeakingScenario[]
   realLife: RealLifeTopic[]
   tests: TestDef[]

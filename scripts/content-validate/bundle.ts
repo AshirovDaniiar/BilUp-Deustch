@@ -13,6 +13,7 @@ import { isPlaceholderUnit } from '../../src/data/curriculum'
 import { UNITS } from '../../src/data/units'
 import { VOCABULARY } from '../../src/data/vocabulary'
 import { WRITING } from '../../src/data/writing'
+import { A1_MERKSATZE } from '../../src/data/a1-merksaetze'
 import {
   registerLevelContent,
   CONTENT_LEVELS,
@@ -32,6 +33,7 @@ import {
   vocabularyOf,
   whyNotesOf,
   writingOf,
+  merksaetzeOf,
 } from '../../src/data/catalog'
 import { A2_CONTENT } from '../../src/data/a2/a2-content'
 import { B1_CONTENT } from '../../src/data/b1/b1-content'
@@ -54,6 +56,7 @@ export const currentBundle = () => ({
   listening: LISTENING,
   reading: READING,
   writing: WRITING,
+  merksaetze: A1_MERKSATZE,
   speaking: SPEAKING,
   realLife: REAL_LIFE,
   tests: TESTS,
@@ -73,6 +76,7 @@ export function fullBundle(): ContentBundle {
     listening: levels.flatMap(l => [...listeningOf(l)]),
     reading: levels.flatMap(l => [...readingOf(l)]),
     writing: levels.flatMap(l => [...writingOf(l)]),
+    merksaetze: levels.flatMap(l => [...merksaetzeOf(l)]),
     speaking: levels.flatMap(l => [...speakingOf(l)]),
     realLife: REAL_LIFE,
     tests: levels.flatMap(l => [...testsOf(l)]),

@@ -1,4 +1,5 @@
 import type { ReadingText } from '../types'
+import { A2_LESETEXTE } from './a2-lesetexte'
 import { UNIT_11_SOURCE } from './provenance'
 import { UNIT_12_READING } from './unit12/texts'
 import { UNIT_13_READING } from './unit13/texts'
@@ -62,4 +63,16 @@ const UNIT_11_A2_READING: ReadingText[] = [
 ]
 
 /** Unit 11 (pilot, unchanged) followed by Unit 12 (Stage 7C). */
-export const A2_READING: ReadingText[] = [...UNIT_11_A2_READING, ...UNIT_12_READING, ...UNIT_13_READING, ...UNIT_14_READING, ...UNIT_15_READING, ...UNIT_16_READING, ...UNIT_17_READING, ...UNIT_18_READING, ...UNIT_19_READING, ...UNIT_20_READING]
+export const A2_READING: ReadingText[] = [
+  ...UNIT_11_A2_READING,
+  ...UNIT_12_READING,
+  ...UNIT_13_READING,
+  ...UNIT_14_READING,
+  ...UNIT_15_READING,
+  ...UNIT_16_READING,
+  ...UNIT_17_READING,
+  ...UNIT_18_READING,
+  ...UNIT_19_READING,
+  ...UNIT_20_READING,
+  ...A2_LESETEXTE,
+]

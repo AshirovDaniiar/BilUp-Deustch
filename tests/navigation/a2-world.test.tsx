@@ -334,7 +334,7 @@ describe('A2 visible and released for Russian only', () => {
     expect(text()).not.toContain('ZZA2')
   })
 
-  it('an empty A2 unit shows its title, exactly eight section cards and the placeholder — no 0/0, no %, no progress bar; its list card shows no statistics', async () => {
+  it('an empty A2 unit shows its title, exactly nine section cards and the Merksätze placeholder — no 0/0, no %, no progress bar; its list card shows no statistics', async () => {
     const list = await show('/learn?level=A2', 'ru')
     const card = list.container.querySelectorAll('a.unitcard')[1]
     expect(card.textContent).toContain('Besondere Erlebnisse und Erinnerungen')
@@ -343,8 +343,9 @@ describe('A2 visible and released for Russian only', () => {
     expect(card.querySelector('[role="progressbar"]')).toBeNull()
     cleanup()
     const unit = await show('/learn/unit/202', 'ru')
-    expect(unit.container.querySelectorAll('.sections .secrow')).toHaveLength(8)
-    expect(unit.container.querySelectorAll('[data-empty-section]')).toHaveLength(8)
+    expect(unit.container.querySelectorAll('.sections .secrow')).toHaveLength(9)
+    expect(unit.container.querySelectorAll('[data-empty-section]')).toHaveLength(7)
+    expect(unit.container.querySelectorAll('.secrow')[2].textContent).toContain('Merksätze')
     expect(unit.container.querySelector('[role="progressbar"]')).toBeNull()
     expect(text()).not.toMatch(/0 ?\/ ?0|%/)
   })

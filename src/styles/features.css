@@ -217,6 +217,12 @@
 .tapword--known { border-bottom: 2px dotted var(--primary); }
 .reader { display: grid; gap: 14px; }
 .reader__p { font-size: 1.15rem; line-height: 1.9; margin: 0; }
+.merksaetze { display: grid; gap: 10px; }
+.merksatz { display: grid; grid-template-columns: 34px minmax(0, 1fr); align-items: start; gap: 10px; }
+.merksatz__number { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--blue-50); color: var(--primary); font-weight: 800; }
+.merksatz__text { min-width: 0; display: grid; gap: 5px; }
+.merksatz__de { font-size: 1.08rem; line-height: 1.45; }
+.merksatz__ru { margin: 0; color: var(--ink-2); line-height: 1.45; }
 .player { display: grid; gap: 16px; justify-items: center; text-align: center; }
 .player__wave { font-size: 3rem; }
 .pdot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--surface-2); margin: 0 3px; }

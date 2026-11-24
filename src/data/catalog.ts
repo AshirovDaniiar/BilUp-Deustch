@@ -38,6 +38,7 @@ import type {
   LanguageLevel,
   LearningUnit,
   ListeningExercise,
+  MerksatzUnit,
   ReadingText,
   SpeakingScenario,
   TestDef,
@@ -49,6 +50,7 @@ import { A1_LEGACY_UNITS, A1_UNITS } from './a1-curriculum'
 import { UNIT_SPEAKING } from './units'
 import { VOCABULARY } from './vocabulary'
 import { WRITING } from './writing'
+import { A1_MERKSATZE } from './a1-merksaetze'
 
 export interface LevelContent {
   units: readonly LearningUnit[]
@@ -61,6 +63,7 @@ export interface LevelContent {
   reading: readonly ReadingText[]
   speaking: readonly SpeakingScenario[]
   writing: readonly WritingTask[]
+  merksaetze: readonly MerksatzUnit[]
   tests: readonly TestDef[]
   /** speaking scenario id per unit; index 0 = first unit of the level */
   unitSpeaking: readonly string[]
@@ -88,6 +91,7 @@ const EMPTY: LevelContent = Object.freeze({
   reading: [],
   speaking: [],
   writing: [],
+  merksaetze: [],
   tests: [],
   unitSpeaking: [],
   finalTests: [],
@@ -100,7 +104,7 @@ const EMPTY: LevelContent = Object.freeze({
 type Live<T> = { -readonly [K in keyof T]: T[K] }
 /** An empty, MUTABLE level slot (the loader assigns the level's collections into it). */
 const emptyLive = (plan: readonly PlannedUnit[]): Live<LevelContent> => ({
-  units: [], vocabulary: [], grammar: [], whyNotes: [], exercises: [], listening: [], reading: [], speaking: [], writing: [], tests: [],
+  units: [], vocabulary: [], grammar: [], whyNotes: [], exercises: [], listening: [], reading: [], speaking: [], writing: [], merksaetze: [], tests: [],
   unitSpeaking: [], finalTests: [], placement: [], tutorTemplates: [], instructions: [], plan,
 })
 
@@ -130,6 +134,7 @@ const CONTENT: Partial<Record<LanguageLevel, LevelContent>> = {
     reading: READING,
     speaking: SPEAKING,
     writing: WRITING,
+    merksaetze: A1_MERKSATZE,
     tests: TESTS,
     unitSpeaking: UNIT_SPEAKING,
     finalTests: [],
@@ -159,6 +164,7 @@ export const listeningOf = (level: LanguageLevel) => contentOf(level).listening
 export const readingOf = (level: LanguageLevel) => contentOf(level).reading
 export const speakingOf = (level: LanguageLevel) => contentOf(level).speaking
 export const writingOf = (level: LanguageLevel) => contentOf(level).writing
+export const merksaetzeOf = (level: LanguageLevel) => contentOf(level).merksaetze
 export const testsOf = (level: LanguageLevel) => contentOf(level).tests
 export const unitSpeakingOf = (level: LanguageLevel) => contentOf(level).unitSpeaking
 export const finalTestsOf = (level: LanguageLevel) => contentOf(level).finalTests
@@ -186,6 +192,7 @@ export const exercisesForUnit = (unit: number) => unitContent(unit).exercises.fi
 export const listeningForUnit = (unit: number) => unitContent(unit).listening.filter(e => e.unit === unit)
 export const readingForUnit = (unit: number) => unitContent(unit).reading.filter(t => t.unit === unit)
 export const writingForUnit = (unit: number) => unitContent(unit).writing.filter(w => w.unit === unit)
+export const merksaetzeForUnit = (unit: number) => unitContent(unit).merksaetze.filter(m => m.unit === unit)
 export const finalTestOfUnit = (unit: number) => unitContent(unit).finalTests.find(t => t.unit === unit)
 
 /** Speaking scenario id for a unit. Replaces `UNIT_SPEAKING[unit - 1]`, which cannot address A2 unit ids. */

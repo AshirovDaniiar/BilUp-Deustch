@@ -3,7 +3,7 @@ import { A } from '../app/router'
 import { useApp, useAttempt } from '../app/store'
 import { BetaNotice } from '../components/BetaNotice'
 import { Button, Card, PageHeader, ProgressBar } from '../components/ui'
-import { grammarIndex, listeningForUnit, readingForUnit, speakingForUnit, topicTestOfUnit, unitById, vocabularyForUnit, writingForUnit } from '../data/catalog'
+import { grammarIndex, listeningForUnit, merksaetzeForUnit, readingForUnit, speakingForUnit, topicTestOfUnit, unitById, vocabularyForUnit, writingForUnit } from '../data/catalog'
 import { isPlaceholderUnit, unitNumber } from '../data/curriculum'
 import { SECTIONS, type SectionId } from '../data/units'
 import { WordCard } from '../features/vocabulary/WordCard'
@@ -11,7 +11,7 @@ import { requiredSections, unitHasContent, unitProgress } from '../features/prog
 import { tr } from '../utils/text'
 import { NotFound } from './NotFound'
 
-const ICONS: Record<SectionId, string> = { vocabulary: '🔤', grammar: '🧪', listening: '🎧', reading: '📖', speaking: '🎙️', writing: '✍️', review: '🔁', test: '🏁' }
+const ICONS: Record<SectionId, string> = { vocabulary: '🔤', grammar: '🧪', merksaetze: '💡', listening: '🎧', reading: '📖', speaking: '🎙️', writing: '✍️', review: '🔁', test: '🏁' }
 
 export function UnitScreen({ id }: { id: number }) {
   const { state, t, lang } = useApp()
@@ -28,6 +28,7 @@ export function UnitScreen({ id }: { id: number }) {
   const target: Record<SectionId, { to: string; sub: string }> = {
     vocabulary: { to: `/learn/unit/${id}/vocabulary`, sub: `${vocabularyForUnit(id).length} ${t('words')}` },
     grammar: { to: `/learn/topic/${unit.grammarIds[0]}${isPlaceholderUnit(unit) ? `?unit=${id}` : ''}`, sub: unit.grammarIds.map(g => { const c = grammarIndex.get(g); const part = unit.grammarPartial?.[g]; return (c ? tr(c.title, lang) : g) + (part ? ` · ${t('grammarPartial')}: ${part}` : '') }).join(' · ') },
+    merksaetze: { to: `/learn/unit/${id}/merksaetze`, sub: merksaetzeForUnit(id)[0] ? `${merksaetzeForUnit(id)[0].sentences.length} ${t('examples')}` : t('sec_empty') },
     listening: { to: listening ? `/practice/listening/${listening.id}` : '/practice/listening', sub: listening?.title ?? '' },
     reading: { to: reading ? `/practice/reading/${reading.id}` : '/practice/reading', sub: reading?.title ?? '' },
     speaking: { to: `/speak/${speakingForUnit(id)}`, sub: speakingForUnit(id) ?? '' },
@@ -38,7 +39,7 @@ export function UnitScreen({ id }: { id: number }) {
 
   // A1 curriculum v2: a section without authored content is shown as an inert card with the empty state, never a link to nothing
   const gated = unit.level === 'A1' || isPlaceholderUnit(unit) // A2 units with authored content keep their existing behaviour
-  const empty = (s: SectionId) => gated && !(s === 'test' ? !!unitTest : requiredSections(id).includes(s))
+  const empty = (s: SectionId) => s !== 'merksaetze' && gated && !(s === 'test' ? !!unitTest : requiredSections(id).includes(s))
 
   return (
     <div className="stack">
@@ -92,6 +93,59 @@ export function UnitScreen({ id }: { id: number }) {
             </A>
           ))}
         </div>
+      )}
+    </div>
+  )
+}
+
+/** Approved Merksätze for a unit, with German and Russian sentence pairs. */
+export function MerksaetzeScreen({ id }: { id: number }) {
+  const { t, lang } = useApp()
+  const attempt = useAttempt()
+  const unit = unitById(id)
+  if (!unit) return <NotFound />
+  const content = merksaetzeForUnit(id)[0]
+  return (
+    <div className="stack">
+      <PageHeader
+        back={`/learn/unit/${id}`}
+        eyebrow={`${t('unit')} ${String(unitNumber(unit)).padStart(2, '0')} · ${unit.level}`}
+        title={`💡 ${t('sec_merksaetze')}`}
+        sub={tr(unit.subtitle, lang)}
+      />
+      {content ? (
+        <>
+          {content.topic && <Card tone="blue"><b>{content.topic}</b></Card>}
+          <div className="merksaetze">
+            {content.sentences.map((sentence, index) => (
+              <Card key={`${sentence.de}-${index}`} className="merksatz">
+                <div className="merksatz__number">{index + 1}</div>
+                <div className="merksatz__text">
+                  <b className="de merksatz__de">{sentence.de}</b>
+                  <p className="merksatz__ru">{sentence.ru}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+          <Button
+            variant="violet"
+            size="lg"
+            block
+            onClick={() => attempt.finish({
+              activityId: `merksaetze:${id}`,
+              kind: 'lesson',
+              completes: [`${id}:merksaetze`],
+              items: content.sentences.map((_sentence, index) => ({ itemRef: `merksatz:${id}:${index + 1}`, outcome: 'correct' as const })),
+              score: { earned: content.sentences.length, possible: content.sentences.length },
+            })}
+          >
+            {t('finish')}
+          </Button>
+        </>
+      ) : (
+        <Card>
+          <p className="muted">{t('sec_empty')}</p>
+        </Card>
       )}
     </div>
   )

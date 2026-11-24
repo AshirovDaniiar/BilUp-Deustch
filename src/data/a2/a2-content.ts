@@ -1,4 +1,4 @@
-import type { Exercise, GrammarConcept, LearningUnit, ListeningExercise, ReadingText, SpeakingScenario, VocabularyItem, WhyNote, WritingTask } from '../types'
+import type { Exercise, GrammarConcept, LearningUnit, ListeningExercise, MerksatzUnit, ReadingText, SpeakingScenario, VocabularyItem, WhyNote, WritingTask } from '../types'
 import { A2_LEGACY_UNITS, A2_VISIBLE_UNITS } from './curriculum'
 import { A2_EXERCISES } from './exercises'
 import { A2_GRAMMAR, A2_WHY_NOTES } from './grammar'
@@ -13,6 +13,7 @@ import type { A2PlacementItem, A2TestDef, LearnerInstruction, TutorTemplate } fr
 import { A2_UNIT_SPEAKING } from './units'
 import { A2_VOCABULARY } from './vocabulary'
 import { A2_WRITING } from './writing'
+import { A2_MERKSATZE } from './a2-merksaetze'
 
 /**
  * The LOADABLE A2 content: every A2 collection in one module, so the bundler puts all of it (and only it) into ONE separate chunk
@@ -33,6 +34,7 @@ export interface A2Content {
   reading: ReadingText[]
   speaking: SpeakingScenario[]
   writing: WritingTask[]
+  merksaetze: MerksatzUnit[]
   tests: A2TestDef[]
   unitSpeaking: string[]
   finalTests: A2FinalTest[]
@@ -52,6 +54,7 @@ export const A2_CONTENT: A2Content = {
   reading: A2_READING,
   speaking: A2_SPEAKING,
   writing: A2_WRITING,
+  merksaetze: A2_MERKSATZE,
   tests: A2_TESTS,
   unitSpeaking: A2_UNIT_SPEAKING,
   finalTests: A2_FINAL_TESTS,

@@ -13,7 +13,7 @@ export const UNITS: LearningUnit[] = [
   { id: 10, level: 'A1', title: 'Unterwegs', icon: '🚆', subtitle: { ru: 'Поездки, вокзал, аэропорт', ky: 'Саякат, вокзал, аэропорт', de: 'Reisen, Bahnhof, Flughafen' }, grammarIds: ['genitiv'] },
 ]
 
-export const SECTIONS = ['vocabulary', 'grammar', 'listening', 'reading', 'speaking', 'writing', 'review', 'test'] as const
+export const SECTIONS = ['vocabulary', 'grammar', 'merksaetze', 'listening', 'reading', 'speaking', 'writing', 'review', 'test'] as const
 export type SectionId = (typeof SECTIONS)[number]
 export const unitById = (id: number) => UNITS.find(u => u.id === id)
 
