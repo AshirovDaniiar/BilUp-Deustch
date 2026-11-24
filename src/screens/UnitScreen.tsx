@@ -1,3 +1,4 @@
+import { UnitIcon } from '../components/UnitIcon'
 import { useState } from 'react'
 import { A } from '../app/router'
 import { useApp, useAttempt } from '../app/store'
@@ -43,7 +44,7 @@ export function UnitScreen({ id }: { id: number }) {
 
   return (
     <div className="stack">
-      <PageHeader back="/learn" eyebrow={`${t('unit')} ${String(unitNumber(unit)).padStart(2, '0')} · ${unit.level}`} title={`${unit.icon} ${unit.title}`} sub={tr(unit.subtitle, lang)} />
+      <PageHeader back="/learn" eyebrow={`${t('unit')} ${String(unitNumber(unit)).padStart(2, '0')} · ${unit.level}`} title={<><UnitIcon /> {unit.title}</>} sub={tr(unit.subtitle, lang)} />
       <BetaNotice level={unit.level} />
       {unitHasContent(id) && (
         <Card>
@@ -169,7 +170,7 @@ export function VocabStudy({ id }: { id: number }) {
   }
   return (
     <div className="stack">
-      <PageHeader back={`/learn/unit/${id}`} eyebrow={`${t('unit')} ${id}`} title={`${unit.icon} ${t('sec_vocabulary')}`} sub={`${i + 1} / ${words.length}`} />
+      <PageHeader back={`/learn/unit/${id}`} eyebrow={`${t('unit')} ${id}`} title={<><UnitIcon /> {t('sec_vocabulary')}</>} sub={`${i + 1} / ${words.length}`} />
       <ProgressBar value={((i + 1) / words.length) * 100} />
       <div key={w.id} className="slide-in">
         <WordCard item={w} onOpen={rid => { const n = words.findIndex(x => x.id === rid); if (n >= 0) go(n) }} />

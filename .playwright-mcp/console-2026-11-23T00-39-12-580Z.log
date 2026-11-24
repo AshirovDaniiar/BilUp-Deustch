@@ -14313,3 +14313,26 @@ Visit https://reactjs.org/link/error-boundaries to learn more about error bounda
 [85136312ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
 [88016593ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
 [88017996ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
+[89253121ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5199/@vite/client:560
+[89255453ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
+[89256512ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
+[89258106ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5199/@vite/client:560
+[96479234ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
+[96479539ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1
+[96479708ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5199/@vite/client:560
+[96479762ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/:1
+[96479765ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/src/data/b1/grammar-v2/builder.ts:1
+[96479765ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/src/data/b1/grammar-v2/derived-01.ts:1
+[96479765ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/src/data/b1/grammar-v2/derived-02.ts:1
+[96479765ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/src/data/b1/grammar-v2/derived-03.ts:1
+[96479765ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/src/data/b1/grammar-v2/derived-04.ts:1
+[96479765ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/src/data/b1/grammar-v2/legacy.ts:1
+[96479766ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/src/data/b1/grammar-v2/lessons-01.ts:1
+[96479766ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/src/data/b1/grammar-v2/lessons-02.ts:1
+[96479766ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/src/data/b1/grammar-v2/lessons-03.ts:1
+[96479775ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/src/data/b1/grammar-v2/lessons-04.ts:1
+[96479775ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/src/data/b1/grammar-v2/lessons-05.ts:1
+[96479775ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/src/data/b1/grammar-v2/lessons-06.ts:1
+[96479775ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5199/src/data/b1/grammar-v2/lessons-07.ts:1
+[113893879ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-373CG7ZK.js?v=45aa6668:21549
+[113894419ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://localhost:5199/#/:1

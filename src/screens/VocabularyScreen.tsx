@@ -1,3 +1,4 @@
+import { UnitIcon } from '../components/UnitIcon'
 import { useMemo, useState } from 'react'
 import { A } from '../app/router'
 import { useApp } from '../app/store'
@@ -56,7 +57,7 @@ export function VocabularyScreen() {
       <div className="row catchips">
         <Chip active={unit === 'all'} tone="blue" onClick={() => setUnit('all')}>{t('allWords')} · {words.length}</Chip>
         <Chip active={unit === 'saved'} tone="violet" onClick={() => setUnit('saved')}>★ {t('savedWords')} · {state.saved.length}</Chip>
-        {units.map(u => <Chip key={u.id} active={unit === u.id} onClick={() => setUnit(u.id)}>{u.icon} {unitNumber(u)}</Chip>)}
+        {units.map(u => <Chip key={u.id} active={unit === u.id} onClick={() => setUnit(u.id)}><UnitIcon /> {unitNumber(u)}</Chip>)}
       </div>
 
       <div className="wordlist">

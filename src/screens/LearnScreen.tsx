@@ -1,3 +1,4 @@
+import { UnitIcon } from '../components/UnitIcon'
 import { useEffect } from 'react'
 import { A, navigate, useRoute } from '../app/router'
 import { useApp } from '../app/store'
@@ -74,7 +75,7 @@ function LevelUnits({ level }: { level: LanguageLevel }) {
           const empty = !unitHasContent(u.id) // A1 v2 container without content: no word count, no 0/0 progress
           return (
             <A key={u.id} to={`/learn/unit/${u.id}`} className="unitcard card card--interactive">
-              <div className="unitcard__icon" aria-hidden>{u.icon}</div>
+              <div className="unitcard__icon" aria-hidden><UnitIcon /></div>
               <div className="grow">
                 <div className="eyebrow">{t('unit').toUpperCase()} {String(unitNumber(u)).padStart(2, '0')} · {u.level}</div>
                 <h3 className="h3">{u.title}</h3>

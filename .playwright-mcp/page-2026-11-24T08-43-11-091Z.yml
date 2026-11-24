@@ -1,0 +1,32 @@
+- generic [ref=f152e3]:
+  - generic [ref=f152e4]:
+    - banner [ref=f152e5]:
+      - link "BilUp Til" [ref=f152e6] [cursor=pointer]:
+        - /url: "#/"
+      - generic [ref=f152e9]:
+        - link "AI-репетитор" [ref=f152e10] [cursor=pointer]:
+          - /url: "#/tutor"
+          - text: ✨
+        - link "Профиль" [ref=f152e11] [cursor=pointer]:
+          - /url: "#/profile"
+          - text: 👤
+    - main [ref=f152e12]:
+      - generic [ref=f152e14]:
+        - heading "Страница не найдена" [level=1] [ref=f152e15]
+        - link "На главную" [ref=f152e16] [cursor=pointer]:
+          - /url: "#/"
+  - navigation "Navigation" [ref=f152e17]:
+    - link "Главная" [ref=f152e18] [cursor=pointer]:
+      - /url: "#/"
+    - link "Учиться" [ref=f152e23] [cursor=pointer]:
+      - /url: "#/learn"
+      - generic [aria-hidden] [ref=f152e24]: 📚
+    - link "Практика" [ref=f152e26] [cursor=pointer]:
+      - /url: "#/practice"
+      - generic [aria-hidden] [ref=f152e27]: 🎯
+    - link "Говорить" [ref=f152e29] [cursor=pointer]:
+      - /url: "#/speak"
+      - generic [aria-hidden] [ref=f152e30]: 🎙️
+    - link "Прогресс" [ref=f152e32] [cursor=pointer]:
+      - /url: "#/progress"
+      - generic [aria-hidden] [ref=f152e33]: 📈
