@@ -10,13 +10,14 @@ import '../load-a2'
 import { AppProvider } from '../../src/app/store'
 import { grammarIndex, speakingIndex, vocabularyOf, whyNotesForConcept } from '../../src/data/catalog'
 import { COURSE } from '../../src/data/course'
-import { VOCABULARY } from '../../src/data/vocabulary'
+import { VOCABULARY, vocabForUnit } from '../../src/data/vocabulary'
 import { WordCard } from '../../src/features/vocabulary/WordCard'
 import { SpeakingList, SpeakingSession } from '../../src/features/speaking/SpeakingLab'
 import { dictionaries } from '../../src/i18n'
 import { GrammarDetail } from '../../src/screens/GrammarScreen'
 import { HomeScreen } from '../../src/screens/HomeScreen'
 import { TopicScreen } from '../../src/screens/TopicScreen'
+import { VocabStudy } from '../../src/screens/UnitScreen'
 import { VocabularyScreen } from '../../src/screens/VocabularyScreen'
 import { defaultProgress } from '../../src/storage/defaults'
 import { locStrict } from '../../src/utils/text'
@@ -70,6 +71,27 @@ describe('A2 word card', () => {
     show(<WordCard item={a1} />, 'ky')
     expect(text()).toContain(a1.ru)
     expect(text()).toContain(a1.ky)
+  })
+  it('A1 curriculum word keeps Russian as the primary example translation and exposes Kyrgyz below it', () => {
+    const word = vocabForUnit(102)[0]
+    show(<WordCard item={word} />, 'ky')
+
+    expect(text()).toContain(word.exampleRu)
+    expect(text()).toContain(word.exampleKy)
+    expect(text().indexOf(word.exampleRu)).toBeLessThan(text().indexOf(word.exampleKy!))
+  })
+})
+
+describe('A1 curriculum vocabulary study', () => {
+  it('uses the unit vocabulary count for progress and next-word navigation', () => {
+    const words = vocabForUnit(102)
+    show(<VocabStudy id={102} />, 'ru')
+    expect(text()).toContain('1 / 25')
+    expect(text()).toContain(words[0].de)
+
+    fireEvent.click(screen.getByRole('button', { name: /Дальше/ }))
+    expect(text()).toContain('2 / 25')
+    expect(text()).toContain(words[1].de)
   })
 })
 

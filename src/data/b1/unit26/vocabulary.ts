@@ -2,7 +2,7 @@ import type { Article, PartOfSpeech, VocabularyItem } from '../../types'
 
 /**
  * Unit 26 vocabulary — Medien, Technik und Nachrichten (B1). 40 NEW productive items (target 38–42), none of them an A1/A2 or earlier B1 headword
- * (checked by the validator rule `b1-vocab-repeats-earlier-level`). Themes: Nachrichten und Quellen · Daten und Technik · Buch und Film · Adjektive · Verben.
+ * (legacy rule: cross-level lemma repeats are rejected by `b1-vocab-repeats-earlier-level`; v2 Units 301–336 allow reuse across units/levels and reject only same-unit duplicates — see `docs/b1/B1_ID_CONVENTIONS.md`). Themes: Nachrichten und Quellen · Daten und Technik · Buch und Film · Adjektive · Verben.
  * A2 Unit 16 already taught the basic media words (Nachricht, Zeitung, Internet, Handy, App, Fernseher, Foto, herunterladen …) and Unit 25 empfehlen; they are
  * REUSED in the texts as revision but not listed again. Wortbildung strand: -ung (Meldung, Handlung, Werbung), -er (Leser, Nutzer, Schauspieler),
  * compounds (Datenschutz, Bildschirm, Passwort, Kundendienst), un- (unseriös). No verb needs a prepositional object (Unit 28). All example sentences are about

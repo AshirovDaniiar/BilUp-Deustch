@@ -88,7 +88,7 @@ Key: **P** productive (required in tasks/tests) · **P-lim** productive on a clo
 
 ### 5.1 Vocabulary
 * **38–42 new productive items per unit** (A2 actual 36–40, measured), ≈ 480 for B1; cumulative productive ≈ 603 (A1 226 + A2 377) + 480 ≈ **1 080**: a **partial B1 lexical syllabus** (⚑ conventional B1 inventories are of the order of 2 400 cumulative); to be disclosed (B-10); receptive glosses reported separately.
-* No A1/A2 lemma as "new" (validator check pending, B-11).
+* Lemmas may be reused across Units and CEFR levels; only duplicate lemmas within one Unit are rejected by the validator.
 * **Spaced revision:** (1) existing Leitner SRS for all B1 words; (2) authored expanding-interval recycling in each unit's review set (≥ 4 items from N−1, ≥ 2 from N−3, ≥ 2 from A2 in Units 21–24) and *Wiederholungsblöcke* in Units 24, 28, 32; (3) ≥ 2 ↻ items per unit test and a full sample in `level-b1`. **Limitation:** SRS/review are level-scoped (`dueWordIds(level)`), so A2 words are *not* revised automatically in B1 — layer 2 is authored; automatic cross-level revision needs a code decision (B-12).
 
 ### 5.2 Text, speaking and writing lengths (progressive)

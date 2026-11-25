@@ -5,6 +5,7 @@ import { badges, currentUnit, levelProgress, requiredSections, unitProgress } fr
 import { listeningForUnit } from '../../src/data/listening'
 import { readingForUnit } from '../../src/data/reading'
 import { SECTIONS, UNITS } from '../../src/data/units'
+import { vocabularyForUnit } from '../../src/data/catalog'
 import { defaultProgress } from '../../src/storage/defaults'
 
 const withCompleted = (completed: string[]) => ({ ...defaultProgress(), completed })
@@ -48,13 +49,14 @@ describe('unit progress denominators are derived from content (V-06)', () => {
     expect(levelProgress(withCompleted(everything.slice(0, 1)))).toBe(Math.round((1 / total) * 100))
   })
 
-  it('empty A1 v2 containers require nothing: they neither dilute level progress nor become the current unit; the "unit" badge likewise', () => {
-    const empty = A1_UNITS.filter(u => u.id >= 100 && u.grammarIds.length === 0)
-    expect(empty).toHaveLength(21)
+  it('A1 v2 units without vocabulary still count authored content but never become current units', () => {
+    const empty = A1_UNITS.filter(u => u.id >= 100 && u.grammarIds.length === 0 && vocabularyForUnit(u.id).length === 0)
+    expect(empty).toHaveLength(16)
     for (const u of empty) expect(requiredSections(u.id)).toEqual(['merksaetze', 'reading'])
-    // a unit that only REFERENCES an existing grammar lesson requires just that section (it has no test and no words)
-    for (const u of A1_UNITS.filter(u => u.id >= 100 && u.grammarIds.length > 0)) expect(requiredSections(u.id)).toEqual(['grammar', 'merksaetze', 'reading'])
-    const authored = A1_UNITS.filter(u => u.id < 100) // units with words: the only ones Continue Learning may point at
+    // a grammar-only unit requires its reused lesson and any authored reading or Merksätze, but no vocabulary review
+    for (const u of A1_UNITS.filter(u => u.id >= 100 && u.grammarIds.length > 0 && vocabularyForUnit(u.id).length === 0))
+      expect(requiredSections(u.id)).toEqual(['grammar', 'merksaetze', 'reading'])
+    const authored = A1_UNITS.filter(u => vocabularyForUnit(u.id).length > 0)
     const last = authored[authored.length - 1].id
     expect(currentUnit(withCompleted([])).id).toBe(authored[0].id)
     const through = authored.slice(0, -1).flatMap(u => requiredSections(u.id).map(s => `${u.id}:${s}`))

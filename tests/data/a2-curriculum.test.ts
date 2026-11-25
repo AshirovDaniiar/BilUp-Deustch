@@ -35,16 +35,22 @@ describe('A2 curriculum v2: 43 units × 9 sections', () => {
     for (const u of [...A2_VISIBLE_UNITS, ...A2_LEGACY_UNITS]) expect(levelOfUnitId(u.id)).toBe('A2')
     expect(levelOfUnitId(244)).toBeUndefined()
   })
-  it('containers carry no invented content: they either reference one EXISTING grammar lesson (only the Grammar section is required) or are empty; never the current unit', () => {
+  it('curriculum containers expose their authored sections without changing progress behavior', () => {
     expect(SECTIONS).toEqual(['vocabulary', 'grammar', 'merksaetze', 'listening', 'reading', 'speaking', 'writing', 'review', 'test'])
     expect(SECTIONS.indexOf('merksaetze')).toBe(2)
     expect(A2_VISIBLE_UNITS).toHaveLength(43)
     expect(A2_VISIBLE_UNITS.length * SECTIONS.length).toBe(387)
     for (const u of A2_VISIBLE_UNITS) {
-      expect(requiredSections(u.id)).toEqual(u.grammarIds.length ? ['grammar', 'merksaetze', 'reading'] : ['merksaetze', 'reading'])
+      expect(requiredSections(u.id)).toEqual([
+        ...(u.id <= 243 ? ['vocabulary'] : []),
+        ...(u.grammarIds.length ? ['grammar'] : []),
+        'merksaetze',
+        'reading',
+        ...(u.id <= 243 ? ['review'] : []),
+      ])
       expect(u.grammarIds.length).toBeLessThanOrEqual(1)
       expect(unitHasContent(u.id)).toBe(true)
     }
-    expect(currentUnit(defaultProgress(), 'A2')).toBeUndefined()
+    expect(currentUnit(defaultProgress(), 'A2')?.id).toBe(201)
   })
 })

@@ -17,7 +17,7 @@ import { A2_REVIEWS } from '../../scripts/content-validate/reviews'
 import { positionCounts } from '../../scripts/content-validate/rules/answers'
 import { UNIT_MINIMUMS } from '../../scripts/content-validate/rules/metadata'
 import { validateContent } from '../../scripts/content-validate/validate'
-import { BETA_FLAG_RULES, EXPECTED_BETA_FLAGS } from './beta-flags'
+import { EXPECTED_BETA_FLAGS, EXPECTED_REVIEW_FLAGS } from './beta-flags'
 import { cefrPackage, kyPackage } from '../../scripts/review/unit-package'
 import { A2_INSTRUCTIONS } from '../../src/data/a2/instructions'
 import { A2_PLACEMENT_ITEMS } from '../../src/data/a2/placement'
@@ -385,7 +385,7 @@ describe('unit 20 — identity, ownership and conventions', () => {
 describe('unit 20 — Russian and Kyrgyz are independent, complete and never a fallback', () => {
   it('the validator reports no error and no warning for the real bundle (RU/KY parity, schema, conventions, provenance, CEFR heuristics, answer distribution)', () => {
     expect(issues().filter(i => i.severity === 'error' || i.severity === 'warning')).toEqual([])
-    expect(issues().filter(i => i.severity === 'review' && !BETA_FLAG_RULES.includes(i.rule))).toEqual([])
+    expect(issues().filter(i => i.severity === 'review' && !EXPECTED_REVIEW_FLAGS.has(`${i.rule} ${i.where}`))).toEqual([])
   })
   it('every Russian/Kyrgyz pair is non-empty and different (checked directly, independent of the validator)', () => {
     const pairs: [string, string | undefined, string | undefined][] = []

@@ -2,7 +2,7 @@ import type { Article, PartOfSpeech, VocabularyItem } from '../../types'
 
 /**
  * Unit 31 vocabulary — Behörden, Verträge und Alltagsprobleme (B1). 40 NEW productive items (target 38–42), none of them an A1/A2 or earlier B1 headword
- * (checked by the validator rule `b1-vocab-repeats-earlier-level`). Themes: Behörde und Verfahren (Behörde, Bescheid, Zuständigkeit, Sachbearbeiter, Aktenzeichen, Nachweis,
+ * (legacy rule: cross-level lemma repeats are rejected by `b1-vocab-repeats-earlier-level`; v2 Units 301–336 allow reuse across units/levels and reject only same-unit duplicates — see `docs/b1/B1_ID_CONVENTIONS.md`). Themes: Behörde und Verfahren (Behörde, Bescheid, Zuständigkeit, Sachbearbeiter, Aktenzeichen, Nachweis,
  * Vollmacht, Genehmigung, Rückfrage, Ansprechpartner, Anlage, Betreff …) · Vertrag und Anbieter (Laufzeit, Vertragsbedingung, Anbieter, Tarif, Mahnung, Zahlungsfrist, Anliegen) ·
  * Schaden und Polizei (Schaden, Versicherung, Polizei, Zeuge, Diebstahl, melden) · Verben und Adjektive des formellen Umgangs. The established administrative words of A2 Unit 19 and of
  * Units 22–27 (Amt, Antrag, Formular, Frist, Unterlagen, Widerspruch, Vertrag, Kündigung, Anzeige, Termin, Gebühr, einreichen, verlängern, vereinbaren …) are REUSED in the texts as

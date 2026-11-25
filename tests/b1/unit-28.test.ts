@@ -387,7 +387,7 @@ describe('vocabulary: 40 new items, none already taught', () => {
     expect(UNIT_28_VOCABULARY.every(v => v.unit === 28)).toBe(true)
     const ids = B1_CONTENT.vocabulary.map(v => v.id)
     expect(new Set(ids).size).toBe(ids.length)
-    expect(ids).toHaveLength(480)
+    expect(ids).toHaveLength(1380)
   })
   it('no lemma repeats an A1, A2 or earlier B1 headword (the basic education words are NOT repeated), and none is listed twice', () => {
     const keys = UNIT_28_VOCABULARY.flatMap(v => lemmaKeys(v.de))
@@ -982,7 +982,7 @@ describe('validator and assessment honesty', () => {
     expect(
       is.filter(
         i =>
-          /^(grammar:b1-(falls|verben)|reading:b1-re-28|listening:b1-li-28|writing:b1-wr-28|vocabulary:v28)/.test(i.where) &&
+          /^(grammar:b1-(falls|verben)|reading:b1-re-28-\d{2}|listening:b1-li-28-\d{2}|writing:b1-wr-28-\d{2}|vocabulary:v28-\d+)(?:#|$)/.test(i.where) &&
           i.severity === 'review',
       ),
     ).toEqual([])

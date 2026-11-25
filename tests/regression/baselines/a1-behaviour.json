@@ -4,6 +4,7 @@
    "1": [
     "vocabulary",
     "grammar",
+    "merksaetze",
     "listening",
     "reading",
     "speaking",
@@ -15,7 +16,6 @@
     "vocabulary",
     "grammar",
     "listening",
-    "reading",
     "speaking",
     "writing",
     "review",
@@ -25,7 +25,6 @@
     "vocabulary",
     "grammar",
     "listening",
-    "reading",
     "speaking",
     "writing",
     "review",
@@ -35,7 +34,6 @@
     "vocabulary",
     "grammar",
     "listening",
-    "reading",
     "speaking",
     "writing",
     "review",
@@ -45,7 +43,6 @@
     "vocabulary",
     "grammar",
     "listening",
-    "reading",
     "speaking",
     "writing",
     "review",
@@ -55,7 +52,6 @@
     "vocabulary",
     "grammar",
     "listening",
-    "reading",
     "speaking",
     "writing",
     "review",
@@ -65,7 +61,6 @@
     "vocabulary",
     "grammar",
     "listening",
-    "reading",
     "speaking",
     "writing",
     "review",
@@ -75,7 +70,6 @@
     "vocabulary",
     "grammar",
     "listening",
-    "reading",
     "speaking",
     "writing",
     "review",
@@ -85,7 +79,6 @@
     "vocabulary",
     "grammar",
     "listening",
-    "reading",
     "speaking",
     "writing",
     "review",
@@ -106,47 +99,47 @@
     "unitProgress": {
      "1": {
       "done": 0,
-      "total": 8,
+      "total": 9,
       "pct": 0
      },
      "2": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "3": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "4": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "5": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "6": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "7": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "8": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "9": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "10": {
@@ -160,7 +153,7 @@
     "badges": [],
     "recommendations": [],
     "stageCounts": {
-     "new": 226,
+     "new": 1151,
      "learning": 0,
      "familiar": 0,
      "strong": 0,
@@ -191,48 +184,48 @@
    "unit1": {
     "unitProgress": {
      "1": {
-      "done": 8,
-      "total": 8,
+      "done": 9,
+      "total": 9,
       "pct": 100
      },
      "2": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "3": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "4": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "5": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "6": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "7": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "8": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "9": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "10": {
@@ -241,8 +234,8 @@
       "pct": 0
      }
     },
-    "levelProgress": 33,
-    "currentUnit": 1,
+    "levelProgress": 5,
+    "currentUnit": 102,
     "badges": [
      "first",
      "streak3",
@@ -250,7 +243,7 @@
     ],
     "recommendations": [],
     "stageCounts": {
-     "new": 226,
+     "new": 1151,
      "learning": 0,
      "familiar": 0,
      "strong": 0,
@@ -281,48 +274,48 @@
    "units1to9": {
     "unitProgress": {
      "1": {
-      "done": 8,
-      "total": 8,
+      "done": 9,
+      "total": 9,
       "pct": 100
      },
      "2": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "3": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "4": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "5": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "6": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "7": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "8": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "9": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "10": {
@@ -331,15 +324,15 @@
       "pct": 0
      }
     },
-    "levelProgress": 33,
-    "currentUnit": 1,
+    "levelProgress": 5,
+    "currentUnit": 102,
     "badges": [
      "first",
      "unit"
     ],
     "recommendations": [],
     "stageCounts": {
-     "new": 226,
+     "new": 1151,
      "learning": 0,
      "familiar": 0,
      "strong": 0,
@@ -370,48 +363,48 @@
    "allA1": {
     "unitProgress": {
      "1": {
-      "done": 8,
-      "total": 8,
+      "done": 9,
+      "total": 9,
       "pct": 100
      },
      "2": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "3": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "4": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "5": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "6": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "7": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "8": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "9": {
-      "done": 8,
-      "total": 8,
+      "done": 7,
+      "total": 7,
       "pct": 100
      },
      "10": {
@@ -420,8 +413,8 @@
       "pct": 100
      }
     },
-    "levelProgress": 33,
-    "currentUnit": 1,
+    "levelProgress": 5,
+    "currentUnit": 102,
     "badges": [
      "first",
      "speaker",
@@ -432,7 +425,7 @@
      "lis|/practice/listening|"
     ],
     "stageCounts": {
-     "new": 226,
+     "new": 1151,
      "learning": 0,
      "familiar": 0,
      "strong": 0,
@@ -464,47 +457,47 @@
     "unitProgress": {
      "1": {
       "done": 2,
-      "total": 8,
-      "pct": 25
+      "total": 9,
+      "pct": 22
      },
      "2": {
       "done": 1,
-      "total": 8,
-      "pct": 13
+      "total": 7,
+      "pct": 14
      },
      "3": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "4": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "5": {
       "done": 1,
-      "total": 8,
-      "pct": 13
+      "total": 7,
+      "pct": 14
      },
      "6": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "7": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "8": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "9": {
       "done": 0,
-      "total": 8,
+      "total": 7,
       "pct": 0
      },
      "10": {
@@ -513,7 +506,7 @@
       "pct": 0
      }
     },
-    "levelProgress": 8,
+    "levelProgress": 1,
     "currentUnit": 1,
     "badges": [
      "first",
@@ -526,7 +519,7 @@
      "lis|/practice/listening|"
     ],
     "stageCounts": {
-     "new": 220,
+     "new": 1145,
      "learning": 2,
      "familiar": 1,
      "strong": 1,
@@ -1251,31 +1244,15 @@
      "type": "choice",
      "skill": "reading",
      "kind": "grammar",
-     "prompt": "Woher kommt Anna?",
+     "prompt": "Wie lautet der Titel dieses Textes?",
      "options": [
-      "Aus Deutschland",
-      "Aus England",
-      "Aus Polen"
+      "Hallo & Ich",
+      "Unterwegs in der Stadt",
+      "Wer bin ich?"
      ],
-     "answer": "Aus Polen",
+     "answer": "Hallo & Ich",
      "why": {
-      "ru": "Hallo! Mein Name ist Anna Kowalski. Ich bin 28 Jahre alt und komme aus Polen. Jetzt wohne ich in Berlin. Ich spreche Polnisch, Deutsch und ein bisschen Englisch. Ich lerne jeden Tag Deutsch, denn ich möchte hier arbeiten."
-     }
-    },
-    {
-     "id": "rq-re01-1",
-     "type": "choice",
-     "skill": "reading",
-     "kind": "grammar",
-     "prompt": "Warum lernt Anna Deutsch?",
-     "options": [
-      "Sie hat Urlaub.",
-      "Sie mag Englisch nicht.",
-      "Sie möchte in Deutschland arbeiten."
-     ],
-     "answer": "Sie möchte in Deutschland arbeiten.",
-     "why": {
-      "ru": "Hallo! Mein Name ist Anna Kowalski. Ich bin 28 Jahre alt und komme aus Polen. Jetzt wohne ich in Berlin. Ich spreche Polnisch, Deutsch und ein bisschen Englisch. Ich lerne jeden Tag Deutsch, denn ich möchte hier arbeiten."
+      "ru": "Hallo! Ich heiße Aibek und komme aus Kirgisistan. Ich bin neunzehn Jahre alt und wohne mit meiner Familie in Bischkek. Heute ist mein erster Tag in einem Deutschkurs. Am Morgen stehe ich früh auf, ziehe mein blaues Hemd an und esse mit meiner Mutter Frühstück. Sie macht Tee und Brot mit Käse. Mein Vater fragt: „Bist du schon fertig?“ Ich lache und sage: „Ja, fast!“ Dann nehme ich meinen Rucksack und gehe zur Bushaltestelle."
      }
     }
    ],
@@ -1285,31 +1262,15 @@
      "type": "choice",
      "skill": "reading",
      "kind": "grammar",
-     "prompt": "Was ist die Mutter von Beruf?",
+     "prompt": "Wie lautet der Titel dieses Textes?",
      "options": [
-      "Köchin",
-      "Lehrerin",
-      "Ärztin"
+      "Hallo & Ich",
+      "Mein Tagesablauf",
+      "Wer bin ich?"
      ],
-     "answer": "Ärztin",
+     "answer": "Wer bin ich?",
      "why": {
-      "ru": "Ich habe eine große Familie. Meine Eltern wohnen in Bischkek. Mein Vater ist Lehrer und meine Mutter ist Ärztin. Ich habe zwei Brüder und eine Schwester. Mein Bruder Aibek studiert in Hamburg. Meine Schwester ist erst zehn Jahre alt."
-     }
-    },
-    {
-     "id": "rq-re02-1",
-     "type": "choice",
-     "skill": "reading",
-     "kind": "grammar",
-     "prompt": "Wo studiert der Bruder?",
-     "options": [
-      "In Berlin",
-      "In Bischkek",
-      "In Hamburg"
-     ],
-     "answer": "In Hamburg",
-     "why": {
-      "ru": "Ich habe eine große Familie. Meine Eltern wohnen in Bischkek. Mein Vater ist Lehrer und meine Mutter ist Ärztin. Ich habe zwei Brüder und eine Schwester. Mein Bruder Aibek studiert in Hamburg. Meine Schwester ist erst zehn Jahre alt."
+      "ru": "Ich heiße Meerim, bin zwanzig Jahre alt und wohne in Osch. Viele Menschen fragen mich: „Wer bist du?“ Das ist eine einfache Frage, aber ich kann viel darüber erzählen. Ich bin Studentin und lerne an einer Universität. Meine Lieblingsfächer sind Sprachen und Geschichte. Ich spreche Kirgisisch und Russisch. Jetzt lerne ich Deutsch, weil ich später in Deutschland studieren möchte."
      }
     }
    ],
@@ -1319,31 +1280,15 @@
      "type": "choice",
      "skill": "reading",
      "kind": "grammar",
-     "prompt": "Wann steht die Person auf?",
+     "prompt": "Wie lautet der Titel dieses Textes?",
      "options": [
-      "Um 6:30 Uhr",
-      "Um 7:00 Uhr",
-      "Um 8:00 Uhr"
+      "Familie und Freunde",
+      "Mein Tagesablauf",
+      "Wer bin ich?"
      ],
-     "answer": "Um 6:30 Uhr",
+     "answer": "Mein Tagesablauf",
      "why": {
-      "ru": "Ich stehe um halb sieben auf. Zuerst dusche ich, dann frühstücke ich. Ich trinke Tee und esse ein Brot mit Käse. Um acht Uhr fahre ich zur Arbeit. Abends koche ich, lese ein Buch oder lerne Deutsch."
-     }
-    },
-    {
-     "id": "rq-re03-1",
-     "type": "choice",
-     "skill": "reading",
-     "kind": "grammar",
-     "prompt": "Was macht die Person abends?",
-     "options": [
-      "Sie fährt zur Arbeit.",
-      "Sie kocht, liest oder lernt.",
-      "Sie schläft sofort."
-     ],
-     "answer": "Sie kocht, liest oder lernt.",
-     "why": {
-      "ru": "Ich stehe um halb sieben auf. Zuerst dusche ich, dann frühstücke ich. Ich trinke Tee und esse ein Brot mit Käse. Um acht Uhr fahre ich zur Arbeit. Abends koche ich, lese ein Buch oder lerne Deutsch."
+      "ru": "Mein Name ist Nurbek. Ich bin achtzehn Jahre alt und wohne in einer kleinen Wohnung in Bischkek. Mein Alltag ist meistens ähnlich, aber jeder Tag bringt etwas Neues. Unter der Woche stehe ich um sieben Uhr auf. Zuerst mache ich mein Bett und gehe ins Badezimmer. Danach dusche ich, putze meine Zähne und ziehe mich an. Um halb acht frühstücke ich mit meinem Vater."
      }
     }
    ],
@@ -1353,15 +1298,15 @@
      "type": "choice",
      "skill": "reading",
      "kind": "grammar",
-     "prompt": "Was bestellt der Erzähler?",
+     "prompt": "Wie lautet der Titel dieses Textes?",
      "options": [
-      "Eine Suppe und ein Wasser",
-      "Einen Salat und einen Tee",
-      "Fleisch und Reis"
+      "Familie und Freunde",
+      "Ich stelle mich vor",
+      "Mein Tagesablauf"
      ],
-     "answer": "Eine Suppe und ein Wasser",
+     "answer": "Familie und Freunde",
      "why": {
-      "ru": "Heute essen wir im Restaurant. Die Kellnerin bringt die Speisekarte. Ich bestelle eine Suppe und ein Wasser. Mein Freund nimmt einen Salat und einen Tee. Das Essen ist lecker. Am Ende bezahlen wir zusammen."
+      "ru": "Meine Familie ist nicht sehr groß, aber wir verbringen viel Zeit miteinander. Ich heiße Aizada und wohne mit meinen Eltern und meinem kleinen Bruder in Karakol. Meine Mutter heißt Gulnara. Sie arbeitet in einer Bäckerei und steht jeden Morgen sehr früh auf. Mein Vater heißt Marat und ist Busfahrer. Mein Bruder Timur ist zehn Jahre alt und geht in die vierte Klasse."
      }
     }
    ],
@@ -1371,31 +1316,15 @@
      "type": "choice",
      "skill": "reading",
      "kind": "grammar",
-     "prompt": "Wie viele Zimmer hat die Wohnung?",
+     "prompt": "Wie lautet der Titel dieses Textes?",
      "options": [
-      "Drei",
-      "Vier",
-      "Zwei"
+      "Familie und Freunde",
+      "Ich stelle mich vor",
+      "Mein Leben in Deutschland"
      ],
-     "answer": "Zwei",
+     "answer": "Ich stelle mich vor",
      "why": {
-      "ru": "Ich habe eine neue Wohnung. Sie hat zwei Zimmer, eine kleine Küche und ein Bad. Die Miete ist nicht teuer. Im Wohnzimmer steht ein Sofa. Das Bett steht im Schlafzimmer. Von meinem Balkon sehe ich einen Park."
-     }
-    },
-    {
-     "id": "rq-re05-1",
-     "type": "choice",
-     "skill": "reading",
-     "kind": "grammar",
-     "prompt": "Was sieht die Person vom Balkon?",
-     "options": [
-      "Die Küche",
-      "Ein Hotel",
-      "Einen Park"
-     ],
-     "answer": "Einen Park",
-     "why": {
-      "ru": "Ich habe eine neue Wohnung. Sie hat zwei Zimmer, eine kleine Küche und ein Bad. Die Miete ist nicht teuer. Im Wohnzimmer steht ein Sofa. Das Bett steht im Schlafzimmer. Von meinem Balkon sehe ich einen Park."
+      "ru": "Guten Tag! Mein Name ist Elina Sadykova. Ich bin zweiundzwanzig Jahre alt und komme aus Talas in Kirgisistan. Seit zwei Jahren wohne ich in Bischkek. Hier studiere ich Wirtschaft an der Universität. Ich studiere im dritten Jahr. Ich spreche Kirgisisch und Russisch. Seit sechs Monaten lerne ich Deutsch. Am Anfang war die Aussprache schwierig, aber jetzt verstehe ich schon viele einfache Gespräche."
      }
     }
    ],
@@ -1405,31 +1334,15 @@
      "type": "choice",
      "skill": "reading",
      "kind": "grammar",
-     "prompt": "Wann beginnt die Arbeit?",
+     "prompt": "Wie lautet der Titel dieses Textes?",
      "options": [
-      "Um 10 Uhr",
-      "Um 6 Uhr",
-      "Um 8 Uhr"
+      "Ich stelle mich vor",
+      "Mein Leben in Deutschland",
+      "Neue Bekanntschaften"
      ],
-     "answer": "Um 10 Uhr",
+     "answer": "Mein Leben in Deutschland",
      "why": {
-      "ru": "Ich bin Koch von Beruf. Ich arbeite in einem Restaurant in der Stadtmitte. Meine Kollegen sind sehr nett. Die Arbeit beginnt um zehn Uhr und endet um sechs. Am Montag habe ich frei."
-     }
-    },
-    {
-     "id": "rq-re06-1",
-     "type": "choice",
-     "skill": "reading",
-     "kind": "grammar",
-     "prompt": "Wann hat die Person frei?",
-     "options": [
-      "Am Freitag",
-      "Am Montag",
-      "Am Sonntag"
-     ],
-     "answer": "Am Montag",
-     "why": {
-      "ru": "Ich bin Koch von Beruf. Ich arbeite in einem Restaurant in der Stadtmitte. Meine Kollegen sind sehr nett. Die Arbeit beginnt um zehn Uhr und endet um sechs. Am Montag habe ich frei."
+      "ru": "Seit drei Monaten lebt Bakyt in Deutschland. Er kommt aus Kirgisistan und wohnt jetzt in Leipzig. Am Anfang war vieles neu für ihn. Die Straßen waren anders, die Häuser sahen anders aus und die Menschen sprachen sehr schnell. Zum Glück besucht Bakyt einen Deutschkurs. Dort lernt er jeden Vormittag neue Wörter und übt kleine Gespräche. Seine Lehrerin heißt Frau Schneider. Sie erklärt langsam und hilft, wenn jemand eine Frage hat."
      }
     }
    ],
@@ -1439,15 +1352,15 @@
      "type": "choice",
      "skill": "reading",
      "kind": "grammar",
-     "prompt": "Wo ist die Apotheke?",
+     "prompt": "Wie lautet der Titel dieses Textes?",
      "options": [
-      "In der Schule",
-      "Neben dem Bahnhof",
-      "Neben der Bank"
+      "Fragen über mich",
+      "Mein Leben in Deutschland",
+      "Neue Bekanntschaften"
      ],
-     "answer": "Neben der Bank",
+     "answer": "Neue Bekanntschaften",
      "why": {
-      "ru": "Ich wohne in einer kleinen Stadt. Es gibt einen Bahnhof, eine Schule und viele Geschäfte. Die Apotheke ist neben der Bank. Ich fahre mit dem Bus zur Arbeit. Die Haltestelle ist nur fünf Minuten von meiner Wohnung entfernt."
+      "ru": "Am ersten Tag im Sprachkurs sitzt Aijan neben einem Mädchen mit kurzen braunen Haaren. Das Mädchen lächelt und sagt: „Hallo, ich bin Sophie. Wie heißt du?“ Aijan stellt sich vor und erzählt, dass sie aus Kirgisistan kommt. Sophie kommt aus Österreich und wohnt seit einem Jahr in der Stadt. Beide lernen Deutsch, weil sie später eine Ausbildung machen möchten. In der Pause gehen sie zusammen in die Cafeteria."
      }
     }
    ],
@@ -1457,31 +1370,15 @@
      "type": "choice",
      "skill": "reading",
      "kind": "grammar",
-     "prompt": "Wann ist der Termin?",
+     "prompt": "Wie lautet der Titel dieses Textes?",
      "options": [
-      "Am Freitag um 11 Uhr",
-      "Am Mittwoch um 10:30 Uhr",
-      "Am Montag um 9 Uhr"
+      "Fragen über mich",
+      "Neue Bekanntschaften",
+      "Was machst du gern?"
      ],
-     "answer": "Am Mittwoch um 10:30 Uhr",
+     "answer": "Fragen über mich",
      "why": {
-      "ru": "Gestern habe ich angerufen und einen Termin beim Arzt vereinbart. Die Ärztin hat am Mittwoch um halb elf Zeit. Ich muss pünktlich sein und meine Versichertenkarte mitbringen. Wenn ich nicht kommen kann, muss ich den Termin vorher absagen."
-     }
-    },
-    {
-     "id": "rq-re08-1",
-     "type": "choice",
-     "skill": "reading",
-     "kind": "grammar",
-     "prompt": "Was soll man mitbringen?",
-     "options": [
-      "Den Mietvertrag",
-      "Die Versichertenkarte",
-      "Einen Koffer"
-     ],
-     "answer": "Die Versichertenkarte",
-     "why": {
-      "ru": "Gestern habe ich angerufen und einen Termin beim Arzt vereinbart. Die Ärztin hat am Mittwoch um halb elf Zeit. Ich muss pünktlich sein und meine Versichertenkarte mitbringen. Wenn ich nicht kommen kann, muss ich den Termin vorher absagen."
+      "ru": "In unserem Deutschkurs machen wir heute ein Kennenlernspiel. Jeder bekommt eine Karte mit Fragen. Ich heiße Emir und sitze mit meiner Partnerin Alina zusammen. Sie liest die erste Frage vor: „Woher kommst du?“ Ich antworte, dass ich aus Bischkek komme. Dann fragt sie: „Wo wohnst du jetzt?“ Ich erzähle, dass ich mit meinem Cousin in einer kleinen Wohnung wohne. Danach sprechen wir über unsere Familien. Alina hat zwei Schwestern und einen Bruder."
      }
     }
    ],
@@ -1491,31 +1388,15 @@
      "type": "choice",
      "skill": "reading",
      "kind": "grammar",
-     "prompt": "Wo kauft die Person Gemüse?",
+     "prompt": "Wie lautet der Titel dieses Textes?",
      "options": [
-      "Am Bahnhof",
-      "Auf dem Markt",
-      "Im Büro"
+      "Dinge und Gegenstände",
+      "Fragen über mich",
+      "Was machst du gern?"
      ],
-     "answer": "Auf dem Markt",
+     "answer": "Was machst du gern?",
      "why": {
-      "ru": "Am Samstag gehe ich immer auf den Markt. Dort kaufe ich Gemüse, Obst und Käse. Das ist frisch und günstiger als im Supermarkt. Danach brauche ich noch eine neue Jacke. Im Geschäft probiere ich drei Jacken an, aber sie sind alle zu teuer."
-     }
-    },
-    {
-     "id": "rq-re09-1",
-     "type": "choice",
-     "skill": "reading",
-     "kind": "grammar",
-     "prompt": "Warum kauft sie keine Jacke?",
-     "options": [
-      "Das Geschäft ist zu.",
-      "Die Jacken sind zu teuer.",
-      "Sie hat kein Geld dabei."
-     ],
-     "answer": "Die Jacken sind zu teuer.",
-     "why": {
-      "ru": "Am Samstag gehe ich immer auf den Markt. Dort kaufe ich Gemüse, Obst und Käse. Das ist frisch und günstiger als im Supermarkt. Danach brauche ich noch eine neue Jacke. Im Geschäft probiere ich drei Jacken an, aber sie sind alle zu teuer."
+      "ru": "Mein Freund Nursultan hat viele Interessen. Er macht gern Sport und spielt dreimal pro Woche Fußball. Am liebsten trainiert er mit seinen Freunden auf dem Platz neben der Schule. Wenn das Wetter schlecht ist, bleibt er zu Hause und sieht sich ein Fußballspiel im Fernsehen an. Seine Lieblingsmannschaft spielt in Europa. Ich bin anders als Nursultan. Ich lese gern und höre oft Musik. Besonders mag ich ruhige Musik, wenn ich lerne oder mit dem Bus fahre."
      }
     }
    ],
@@ -1525,97 +1406,585 @@
      "type": "choice",
      "skill": "reading",
      "kind": "grammar",
-     "prompt": "Wo beantragt man die Arbeitserlaubnis?",
+     "prompt": "Wie lautet der Titel dieses Textes?",
      "options": [
-      "Bei der Ausländerbehörde",
-      "Bei der Post",
-      "In der Schule"
+      "Dinge und Gegenstände",
+      "In meinem Zimmer",
+      "Was machst du gern?"
      ],
-     "answer": "Bei der Ausländerbehörde",
+     "answer": "Dinge und Gegenstände",
      "why": {
-      "ru": "Wer in Deutschland arbeiten möchte, braucht oft eine Arbeitserlaubnis. Menschen aus Ländern außerhalb der EU müssen diese bei der Ausländerbehörde beantragen. Außerdem ist es wichtig, dass die Berufsabschlüsse anerkannt werden. Deshalb lohnt es sich, schon früh Deutsch zu lernen und alle Dokumente zu sammeln."
+      "ru": "In meinem Alltag benutze ich viele Dinge. Morgens brauche ich zuerst meinen Wecker, damit ich pünktlich aufstehe. Im Badezimmer liegen meine Zahnbürste, Zahnpasta und ein Handtuch. Danach ziehe ich meine Kleidung an und packe meine Tasche. In meiner Tasche sind mein Schlüssel, mein Handy, ein Heft und zwei Stifte. Für den Deutschkurs brauche ich ein Buch und ein Wörterbuch. Das Buch ist ziemlich dick, aber die Übungen sind interessant."
      }
-    },
+    }
+   ],
+   "re11": [
     {
-     "id": "rq-re10-1",
+     "id": "rq-re11-0",
      "type": "choice",
      "skill": "reading",
      "kind": "grammar",
-     "prompt": "Was empfiehlt der Text?",
+     "prompt": "Wie lautet der Titel dieses Textes?",
      "options": [
-      "Früh Deutsch lernen und Dokumente sammeln",
-      "Nicht arbeiten",
-      "Sofort umziehen"
+      "Dinge und Gegenstände",
+      "In meinem Zimmer",
+      "Was ist das?"
      ],
-     "answer": "Früh Deutsch lernen und Dokumente sammeln",
+     "answer": "In meinem Zimmer",
      "why": {
-      "ru": "Wer in Deutschland arbeiten möchte, braucht oft eine Arbeitserlaubnis. Menschen aus Ländern außerhalb der EU müssen diese bei der Ausländerbehörde beantragen. Außerdem ist es wichtig, dass die Berufsabschlüsse anerkannt werden. Deshalb lohnt es sich, schon früh Deutsch zu lernen und alle Dokumente zu sammeln."
+      "ru": "Mein Zimmer ist nicht sehr groß, aber ich fühle mich dort wohl. Ich wohne mit meinen Eltern und meiner Schwester in einer Wohnung in Bischkek. Mein Zimmer liegt neben dem Wohnzimmer. Wenn man hineinkommt, steht links ein großes Bett. Daneben ist ein kleiner Nachttisch mit einer Lampe. Am Morgen schalte ich die Lampe aus und mache das Fenster auf. Gegenüber vom Bett steht mein Schreibtisch. Dort mache ich meine Hausaufgaben und lerne Deutsch."
+     }
+    }
+   ],
+   "re12": [
+    {
+     "id": "rq-re12-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Frühstück und Mahlzeiten",
+      "In meinem Zimmer",
+      "Was ist das?"
+     ],
+     "answer": "Was ist das?",
+     "why": {
+      "ru": "Heute hilft Amina ihrer Großmutter beim Aufräumen. Im Wohnzimmer stehen viele alte Sachen, und einige davon kennt Amina nicht. Sie nimmt einen kleinen Gegenstand aus einer Schublade und fragt: „Oma, was ist das?“ Ihre Großmutter lächelt. „Das ist ein Kompass. Dein Großvater hat ihn früher auf Reisen benutzt.“ Amina findet auch eine runde Dose aus Metall. Darin liegen alte Fotos. Auf einem Bild sieht sie ihre Mutter als kleines Kind."
+     }
+    }
+   ],
+   "re13": [
+    {
+     "id": "rq-re13-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Frühstück und Mahlzeiten",
+      "Meine Haustiere und Tiere",
+      "Was ist das?"
+     ],
+     "answer": "Frühstück und Mahlzeiten",
+     "why": {
+      "ru": "Bei uns beginnt der Tag meistens mit einem gemeinsamen Frühstück. Meine Mutter steht früh auf und bereitet den Tisch vor. Es gibt Brot, Butter, Käse und manchmal Eier. Mein Vater trinkt schwarzen Tee, meine kleine Schwester trinkt lieber Milch. Ich esse gern Haferflocken mit einem Apfel. Am Wochenende haben wir mehr Zeit und machen manchmal Pfannkuchen. Mittags esse ich oft in der Universität. In der Mensa gibt es verschiedene Gerichte."
+     }
+    }
+   ],
+   "re14": [
+    {
+     "id": "rq-re14-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Frühstück und Mahlzeiten",
+      "Meine Haustiere und Tiere",
+      "Zusammengesetzte Wörter im Alltag"
+     ],
+     "answer": "Meine Haustiere und Tiere",
+     "why": {
+      "ru": "Bei meiner Familie lebt eine Katze. Sie heißt Momo und ist drei Jahre alt. Meine kleine Schwester hat den Namen ausgesucht, weil die Katze sehr freundlich ist. Momo ist grau und hat weiße Pfoten. Am Morgen wartet sie oft vor der Küchentür. Wenn meine Mutter ihr Futter gibt, läuft sie sofort zum Napf. Nach dem Frühstück schläft Momo gern auf dem Sofa. Manchmal liegt sie auch auf meinem Schreibtisch, obwohl ich dort lernen möchte."
+     }
+    }
+   ],
+   "re15": [
+    {
+     "id": "rq-re15-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Meine Familie und meine Sachen",
+      "Meine Haustiere und Tiere",
+      "Zusammengesetzte Wörter im Alltag"
+     ],
+     "answer": "Zusammengesetzte Wörter im Alltag",
+     "why": {
+      "ru": "Wenn ich Deutsch lerne, entdecke ich oft lange Wörter. Am Anfang sehen sie schwierig aus, aber viele bestehen aus zwei oder mehr kleinen Wörtern. Zum Beispiel ist ein Wörterbuch ein Buch mit Wörtern. Eine Haustür ist die Tür von einem Haus. Wenn ich diese Teile erkenne, kann ich die Bedeutung leichter verstehen. Heute gehe ich mit meinem Bruder zum Bahnhof. Wir brauchen eine Fahrkarte für den Zug."
+     }
+    }
+   ],
+   "re16": [
+    {
+     "id": "rq-re16-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Fragen beim Einkaufen",
+      "Meine Familie und meine Sachen",
+      "Zusammengesetzte Wörter im Alltag"
+     ],
+     "answer": "Meine Familie und meine Sachen",
+     "why": {
+      "ru": "Bei uns zu Hause hat jeder seine eigenen Sachen. Meine Mutter hat eine große Tasche für die Arbeit. Darin sind ihr Portemonnaie, ein Schlüssel und ein kleines Notizbuch. Mein Vater trägt oft eine Uhr und hat immer sein Handy dabei. Meine Schwester Aijan besitzt viele Bücher und bunte Stifte. Sie legt ihre Schulsachen meistens ordentlich auf den Schreibtisch. Ich habe einen Rucksack, einen Laptop und ein Fahrrad. Mein Rucksack ist schon alt, aber er gehört mir und ist sehr praktisch."
+     }
+    }
+   ],
+   "re17": [
+    {
+     "id": "rq-re17-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Fragen beim Einkaufen",
+      "Meine Familie und meine Sachen",
+      "Menschen und Dinge beschreiben"
+     ],
+     "answer": "Fragen beim Einkaufen",
+     "why": {
+      "ru": "Am Samstag geht Aizada mit ihrer Mutter auf den Markt. Sie brauchen Obst, Gemüse und einige Dinge für das Abendessen. Zuerst bleiben sie an einem Stand mit Äpfeln stehen. Aizada fragt den Verkäufer: „Wie viel kostet ein Kilo Äpfel?“ Der Mann antwortet: „Hundert Som.“ Ihre Mutter nimmt ein Kilo und bittet ihn um zwei große Tomaten. Danach gehen sie zu einem Stand mit Kleidung. Aizada sucht ein T-Shirt für ihren Bruder. Sie findet ein blaues T-Shirt und fragt die Verkäuferin: „Haben Sie das auch in Größe M?“ Die Verkäuferin schaut nach und bringt ein anderes T-Shirt."
+     }
+    }
+   ],
+   "re18": [
+    {
+     "id": "rq-re18-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Fragen beim Einkaufen",
+      "Menschen und Dinge beschreiben",
+      "Was mache ich nicht?"
+     ],
+     "answer": "Menschen und Dinge beschreiben",
+     "why": {
+      "ru": "Mein Cousin Azamat ist ein freundlicher und hilfsbereiter Mensch. Er ist mittelgroß, hat kurze dunkle Haare und trägt meistens eine Brille. Seine Augen sind braun. Er lacht oft und spricht gern mit anderen Menschen. Wenn jemand Hilfe braucht, ist Azamat sofort da. Manchmal ist er ein bisschen unordentlich, aber auf ihn kann man sich verlassen. Meine Freundin Elvira sieht ganz anders aus. Sie ist groß und hat lange schwarze Haare. Sie trägt gern helle Kleidung und bequeme Schuhe."
+     }
+    }
+   ],
+   "re19": [
+    {
+     "id": "rq-re19-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Menschen und Dinge beschreiben",
+      "Was habe ich nicht?",
+      "Was mache ich nicht?"
+     ],
+     "answer": "Was mache ich nicht?",
+     "why": {
+      "ru": "Ich versuche, gesund zu leben, aber natürlich mache ich nicht alles perfekt. Zum Beispiel trinke ich keinen Kaffee am Abend, weil ich dann schlecht schlafe. Ich esse auch nicht jeden Tag Süßigkeiten. Früher habe ich oft Schokolade gekauft, aber jetzt nehme ich lieber Obst mit zur Universität. Das klappt nicht immer, doch ich gebe mir Mühe. Am Wochenende stehe ich nicht so früh auf wie an den anderen Tagen. Trotzdem bleibe ich nicht lange im Bett."
+     }
+    }
+   ],
+   "re20": [
+    {
+     "id": "rq-re20-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Was habe ich nicht?",
+      "Was mache ich nicht?",
+      "Wer oder was?"
+     ],
+     "answer": "Was habe ich nicht?",
+     "why": {
+      "ru": "Heute möchte ich meine Tasche für einen Ausflug packen. Morgen fahre ich mit meiner Klasse an den Issyk-Kul. Ich habe schon eine Wasserflasche, ein T-Shirt und eine Sonnenbrille eingepackt. Aber ich habe noch keine Sonnencreme. Meine Mutter sagt, dass ich auch eine Mütze mitnehmen soll. Zum Glück habe ich eine blaue Mütze im Schrank. Ich suche außerdem meine Kamera, aber ich finde sie nicht. Vielleicht liegt sie bei meinem Bruder. Er hat manchmal meine Sachen, ohne mich zu fragen."
+     }
+    }
+   ],
+   "re21": [
+    {
+     "id": "rq-re21-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Was habe ich nicht?",
+      "Was kaufe und esse ich?",
+      "Wer oder was?"
+     ],
+     "answer": "Wer oder was?",
+     "why": {
+      "ru": "Am Sonntag besucht Nurlan mit seiner Schwester einen kleinen Flohmarkt. Dort gibt es viele interessante Dinge: alte Bücher, Kleidung, Geschirr und Spielzeug. An einem Stand sieht Aijan eine kleine Holzfigur. Sie fragt ihren Bruder: „Was ist das?“ Nurlan antwortet, dass es wahrscheinlich ein traditionelles Pferd ist. Der Verkäufer erklärt, dass die Figur aus Kirgisistan kommt und von Hand gemacht wurde. Danach entdecken sie eine Kiste mit alten Büchern. Aijan nimmt ein Buch heraus und fragt: „Wer hat das geschrieben?“ Der Verkäufer zeigt auf den Namen der Autorin."
+     }
+    }
+   ],
+   "re22": [
+    {
+     "id": "rq-re22-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Meine täglichen Aktivitäten",
+      "Was kaufe und esse ich?",
+      "Wer oder was?"
+     ],
+     "answer": "Was kaufe und esse ich?",
+     "why": {
+      "ru": "Nach dem Deutschkurs gehe ich oft in den Supermarkt. Heute möchte ich etwas für das Abendessen kaufen. Zu Hause sind nur noch wenige Lebensmittel im Kühlschrank. Ich brauche Kartoffeln, Karotten, Zwiebeln und etwas Fleisch. Außerdem möchte ich Brot und Joghurt kaufen. Meine Mutter hat mir eine Einkaufsliste geschickt, damit ich nichts vergesse. Im Gemüsebereich nehme ich zuerst ein Kilo Kartoffeln. Die Karotten sehen frisch aus, deshalb kaufe ich auch einige davon. Danach gehe ich zur Fleischtheke."
+     }
+    }
+   ],
+   "re23": [
+    {
+     "id": "rq-re23-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Meine täglichen Aktivitäten",
+      "Was kaufe und esse ich?",
+      "Wem gehört das?"
+     ],
+     "answer": "Meine täglichen Aktivitäten",
+     "why": {
+      "ru": "Mein Tag ist oft voll, denn ich habe viele Aufgaben. Ich stehe um sieben Uhr auf und bereite mich auf den Unterricht vor. Zuerst wasche ich mich, ziehe mich an und frühstücke. Danach gehe ich zur Bushaltestelle. Während der Fahrt höre ich manchmal deutsche Podcasts. So kann ich neue Wörter lernen und die Aussprache üben. Am Vormittag besuche ich die Universität. Ich habe Vorlesungen, mache Notizen und spreche mit meinen Kommilitonen. In der Mittagspause esse ich in der Mensa."
+     }
+    }
+   ],
+   "re24": [
+    {
+     "id": "rq-re24-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Geschenke für Freunde",
+      "Meine täglichen Aktivitäten",
+      "Wem gehört das?"
+     ],
+     "answer": "Wem gehört das?",
+     "why": {
+      "ru": "Im Deutschkurs finden wir heute nach der Pause ein schwarzes Handy auf einem Stuhl. Niemand weiß, wem es gehört. Unsere Lehrerin nimmt es nicht sofort mit, sondern fragt zuerst die Gruppe: „Wem gehört dieses Handy?“ Alle sehen sich um. Aibek sagt, dass es nicht seins ist. Amina schaut in ihre Tasche und findet ihr eigenes Telefon. Dann entdeckt Timur eine kleine blaue Tasche neben dem Fenster. Er fragt: „Gehört die Tasche jemandem?“ Die Lehrerin öffnet sie nicht, denn persönliche Sachen soll man nicht ohne Erlaubnis durchsuchen."
+     }
+    }
+   ],
+   "re25": [
+    {
+     "id": "rq-re25-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Freunde und Geschenke",
+      "Geschenke für Freunde",
+      "Wem gehört das?"
+     ],
+     "answer": "Geschenke für Freunde",
+     "why": {
+      "ru": "Am Freitag hat meine Freundin Amina Geburtstag. Ich möchte ihr ein schönes Geschenk kaufen, aber ich weiß noch nicht genau, was sie braucht. Amina liest gern und interessiert sich für Kunst. Deshalb gehe ich nach der Universität in eine Buchhandlung. Dort sehe ich ein Buch über Malerei. Die Bilder sind sehr schön, und der Preis ist nicht zu hoch. Ich frage den Verkäufer, ob er das Buch als Geschenk einpacken kann. Er legt es in eine blaue Papiertüte und macht eine Schleife darum."
+     }
+    }
+   ],
+   "re26": [
+    {
+     "id": "rq-re26-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Freunde und Geschenke",
+      "Geschenke für Freunde",
+      "Was kann und muss ich?"
+     ],
+     "answer": "Freunde und Geschenke",
+     "why": {
+      "ru": "Am Freitag treffe ich meine Freunde in einem kleinen Café. Meine Freundin Dana hat bald Geburtstag, und wir möchten eine Überraschung für sie vorbereiten. Nurlan bringt eine Karte mit, Elvira kauft Blumen und ich suche ein passendes Geschenk. Wir kennen Dana schon seit vielen Jahren. Sie mag Bücher, Musik und schöne Dinge für ihre Wohnung. Zuerst gehen wir in ein Geschäft für Haushaltswaren. Dort sehen wir eine Tasse mit einem Bild von Bergen."
+     }
+    }
+   ],
+   "re27": [
+    {
+     "id": "rq-re27-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Freunde und Geschenke",
+      "Meine Wünsche und Möglichkeiten",
+      "Was kann und muss ich?"
+     ],
+     "answer": "Was kann und muss ich?",
+     "why": {
+      "ru": "In meiner Familie hat jeder bestimmte Aufgaben. Ich kann gut kochen und meiner Mutter in der Küche helfen. Mein Bruder kann sehr gut Fahrrad fahren, aber er kann nicht besonders gut kochen. Meine kleine Schwester kann schon allein ihre Schultasche packen. Sie muss aber noch daran denken, ihre Hausaufgaben rechtzeitig zu machen. Am Montag muss ich früh aufstehen, denn mein Unterricht beginnt um acht Uhr. Vor dem Unterricht muss ich frühstücken und meine Bücher einpacken."
+     }
+    }
+   ],
+   "re28": [
+    {
+     "id": "rq-re28-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Mein Morgen und mein Alltag",
+      "Meine Wünsche und Möglichkeiten",
+      "Was kann und muss ich?"
+     ],
+     "answer": "Meine Wünsche und Möglichkeiten",
+     "why": {
+      "ru": "Jeder Mensch hat Wünsche. Ich möchte zum Beispiel gut Deutsch sprechen und später in Deutschland studieren. Dafür brauche ich Zeit, Geduld und einen guten Lernplan. Im Moment besuche ich einen Sprachkurs und lerne jeden Abend zu Hause. Ich kann nicht jeden Tag mehrere Stunden lernen, weil ich auch arbeite und meiner Familie helfe. Trotzdem versuche ich, regelmäßig zu üben. Meine Freundin Aizada hat andere Wünsche. Sie möchte eine eigene kleine Bäckerei eröffnen."
+     }
+    }
+   ],
+   "re29": [
+    {
+     "id": "rq-re29-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Im Restaurant und zu Hause",
+      "Mein Morgen und mein Alltag",
+      "Meine Wünsche und Möglichkeiten"
+     ],
+     "answer": "Mein Morgen und mein Alltag",
+     "why": {
+      "ru": "Mein Morgen beginnt normalerweise um sechs Uhr dreißig. Wenn der Wecker klingelt, stehe ich auf und öffne das Fenster. Zuerst gehe ich ins Badezimmer, wasche mein Gesicht und putze meine Zähne. Danach ziehe ich mich an und mache mein Bett. Ich versuche, mein Handy am Morgen nicht sofort zu benutzen, damit ich ruhig in den Tag starten kann. Um sieben Uhr frühstücke ich. Meistens esse ich Brot mit Käse oder ein Ei. Dazu trinke ich schwarzen Tee. Während ich frühstücke, spreche ich kurz mit meiner Mutter."
+     }
+    }
+   ],
+   "re30": [
+    {
+     "id": "rq-re30-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Im Restaurant und zu Hause",
+      "Mein Morgen und mein Alltag",
+      "Meine Freizeit und Hobbys"
+     ],
+     "answer": "Im Restaurant und zu Hause",
+     "why": {
+      "ru": "Am Samstag möchte meine Familie nicht kochen. Deshalb gehen wir am Abend in ein kleines Restaurant in unserer Nähe. Mein Vater reserviert einen Tisch für fünf Personen. Als wir ankommen, begrüßt uns ein Kellner und zeigt uns einen Platz am Fenster. Er bringt die Speisekarten und fragt, ob wir schon etwas trinken möchten. Meine Mutter bestellt schwarzen Tee, mein Vater nimmt Wasser. Meine Schwester möchte eine Limonade. Ich lese die Speisekarte und entscheide mich für Lagman. Mein Bruder bestellt Manty."
+     }
+    }
+   ],
+   "re31": [
+    {
+     "id": "rq-re31-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Im Restaurant und zu Hause",
+      "Meine Freizeit und Hobbys",
+      "Uhrzeit, Tage und Termine"
+     ],
+     "answer": "Meine Freizeit und Hobbys",
+     "why": {
+      "ru": "In meiner Freizeit mache ich gern verschiedene Dinge. Unter der Woche habe ich nicht viel Zeit, weil ich studiere und am Abend Deutsch lerne. Trotzdem versuche ich, jeden Tag eine kleine Pause zu machen. Manchmal höre ich Musik, lese ein Buch oder gehe eine Runde spazieren. Wenn das Wetter schön ist, treffe ich meine Freunde im Park. Mein bester Freund heißt Ermek. Er spielt gern Basketball und trainiert zweimal pro Woche. Am Wochenende gehen wir manchmal zusammen auf den Sportplatz."
+     }
+    }
+   ],
+   "re32": [
+    {
+     "id": "rq-re32-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Meine Freizeit und Hobbys",
+      "Uhrzeit, Tage und Termine",
+      "Wohin gehe ich?"
+     ],
+     "answer": "Uhrzeit, Tage und Termine",
+     "why": {
+      "ru": "Am Montag beginnt meine Woche früh. Um sieben Uhr stehe ich auf und frühstücke. Um acht Uhr fährt mein Bus zur Universität. Der Unterricht beginnt um halb neun und endet meistens um zwei Uhr. Am Dienstag habe ich zusätzlich einen Deutschkurs. Er beginnt um sechzehn Uhr und dauert bis halb sechs. Am Mittwoch treffe ich meine Freundin Aizada. Wir haben einen Termin in der Bibliothek, weil wir gemeinsam für eine Prüfung lernen möchten. Wir treffen uns um Viertel nach drei vor dem Eingang."
+     }
+    }
+   ],
+   "re33": [
+    {
+     "id": "rq-re33-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Uhrzeit, Tage und Termine",
+      "Wo bin ich?",
+      "Wohin gehe ich?"
+     ],
+     "answer": "Wohin gehe ich?",
+     "why": {
+      "ru": "Heute habe ich mehrere Dinge zu erledigen. Zuerst gehe ich zur Universität, denn am Vormittag habe ich eine Vorlesung. Danach möchte ich in die Bibliothek gehen, um ein Buch zurückzugeben. Meine Freundin Amina kommt mit. Sie muss dort für eine Prüfung lernen. Wir bleiben ungefähr eine Stunde und gehen dann zusammen in die Mensa. Nach dem Mittagessen fahre ich ins Stadtzentrum. Ich möchte ein Geschenk für meinen Vater kaufen. In einem Geschäft suche ich eine warme Mütze. Danach gehe ich zur Post, weil ich ein Paket an meine Tante schicken muss."
+     }
+    }
+   ],
+   "re34": [
+    {
+     "id": "rq-re34-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Meine Wohnung und Möbel",
+      "Wo bin ich?",
+      "Wohin gehe ich?"
+     ],
+     "answer": "Wo bin ich?",
+     "why": {
+      "ru": "Wenn ich in einer neuen Stadt bin, muss ich zuerst herausfinden, wo wichtige Orte liegen. Letzte Woche war ich zum ersten Mal in Osch. Ich bin mit dem Bus angekommen und wusste nicht genau, wo mein Hotel ist. Deshalb habe ich eine Frau an der Haltestelle gefragt: „Entschuldigung, wo ist das Stadtzentrum?“ Sie hat mir freundlich den Weg erklärt. Das Hotel lag in einer ruhigen Straße, nicht weit vom Markt entfernt. Neben dem Hotel gab es eine Bäckerei und gegenüber einen kleinen Park."
+     }
+    }
+   ],
+   "re35": [
+    {
+     "id": "rq-re35-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Früher und heute",
+      "Meine Wohnung und Möbel",
+      "Wo bin ich?"
+     ],
+     "answer": "Meine Wohnung und Möbel",
+     "why": {
+      "ru": "Wir wohnen in einer gemütlichen Wohnung im dritten Stock. Sie ist nicht sehr groß, aber für unsere Familie reicht sie aus. Es gibt ein Wohnzimmer, zwei Schlafzimmer, eine Küche und ein Badezimmer. Im Wohnzimmer stehen ein großes Sofa und zwei Sessel. Vor dem Sofa liegt ein Teppich. An der Wand hängt ein Fernseher, und neben dem Fenster steht eine grüne Pflanze. Die Küche ist klein, aber praktisch. Neben dem Kühlschrank steht der Herd. Über dem Tisch hängen zwei Lampen."
+     }
+    }
+   ],
+   "re36": [
+    {
+     "id": "rq-re36-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Früher und heute",
+      "Meine Wohnung und Möbel",
+      "Was habe ich gemacht?"
+     ],
+     "answer": "Früher und heute",
+     "why": {
+      "ru": "Als mein Vater jung war, sah sein Alltag ganz anders aus als heute. Er wohnte mit seinen Eltern und vier Geschwistern in einem Dorf in der Nähe von Naryn. Das Haus war klein, aber die Familie hatte einen großen Garten. Mein Vater ging jeden Morgen zu Fuß zur Schule. Einen Bus gab es in seinem Dorf damals nicht. Nach dem Unterricht half er seinen Eltern bei der Arbeit und spielte draußen mit seinen Freunden. Heute ist vieles einfacher."
+     }
+    }
+   ],
+   "re37": [
+    {
+     "id": "rq-re37-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Früher und heute",
+      "Unterwegs in der Stadt",
+      "Was habe ich gemacht?"
+     ],
+     "answer": "Was habe ich gemacht?",
+     "why": {
+      "ru": "Gestern hatte ich einen sehr aktiven Tag. Am Morgen bin ich um sieben Uhr aufgestanden und habe zuerst gefrühstückt. Danach habe ich meine Tasche gepackt und bin zur Universität gefahren. In der ersten Vorlesung haben wir über Wirtschaft gesprochen. Ich habe viele Notizen gemacht, weil das Thema für die Prüfung wichtig ist. In der Mittagspause habe ich mit meinem Freund Bekzat in der Mensa gegessen. Wir haben Suppe und Brot genommen und über unsere Pläne für das Wochenende gesprochen."
+     }
+    }
+   ],
+   "re38": [
+    {
+     "id": "rq-re38-0",
+     "type": "choice",
+     "skill": "reading",
+     "kind": "grammar",
+     "prompt": "Wie lautet der Titel dieses Textes?",
+     "options": [
+      "Hallo & Ich",
+      "Unterwegs in der Stadt",
+      "Was habe ich gemacht?"
+     ],
+     "answer": "Unterwegs in der Stadt",
+     "why": {
+      "ru": "Heute fahre ich mit meiner Cousine Meerim ins Stadtzentrum. Wir möchten einige Besorgungen machen und danach einen Kaffee trinken. Zuerst gehen wir zur Bushaltestelle. Der Bus kommt nach fünf Minuten, und wir steigen ein. Während der Fahrt schauen wir aus dem Fenster. Auf den Straßen sind viele Autos und Menschen unterwegs. Wir steigen am zentralen Platz aus. Dort steht ein großes Denkmal, und gegenüber befindet sich ein Einkaufszentrum. Meerim möchte ein neues Notizbuch kaufen. Wir gehen in einen Schreibwarenladen und suchen ein Heft mit einem schönen Umschlag."
      }
     }
    ]
   },
   "dailySha": {
-   "2026-01-01": "3401ca1168d5f6ce15a714588a670553b583305ffcee2ebaa13a332fb339d5da",
-   "2026-02-14": "61083f69535423071e165c489432515de9ab009fb96e62969808d88ada1bf184",
-   "2026-03-31": "64fcb0c5b79bc1d0a4c5adb1918027f9d4e102e7795522712a4c3bf779a0cbc0",
-   "2026-07-04": "0764bfee9ede2e00c74d6d8a7a9d63fa380174bbbe748b36284dd711e22d631d",
-   "2026-11-16": "e427c8f618e0bbf9cd5c965727f625e9724a81d1cab12f1129b150e4d0c22123",
-   "2027-01-01": "b16aca2bf4a22248e994fb364eee5f23db29f56d31946dd39a2ecbc8386922af"
+   "2026-01-01": "d864fe5f6ce58296d0cb3f787f286232fc0562f3cd7f3dc611671d34c361622e",
+   "2026-02-14": "709deaa74d7bb567912360f0eb53d84f8a2640232aedb288a472ac2dd6af4f95",
+   "2026-03-31": "cd4aba81470bdc5696098382f11b8fed3b99c07d0d05f3e1b081506945e80be4",
+   "2026-07-04": "c05a419e8c912da1f71756d5d6e7a192c8d2faf3da0b04ec459e481d49dad7e6",
+   "2026-11-16": "5000e0303ab4209420bd92d38eb4ee815114496480a58a04a7f429b4145501b7",
+   "2027-01-01": "5a093c742d662601467f79f062c74b19761cb4ed5f415e0b44b5b51ea43a1c0e"
   },
   "dailyIds": {
    "2026-01-01": [
-    "vq-v10-5-de",
-    "vq-v8-17-ru",
-    "vq-v10-6-de",
-    "ex008",
-    "lq-li20-0",
-    "modal",
-    "Ich habe einen Termin."
-   ],
-   "2026-02-14": [
-    "vq-v3-18-de",
-    "vq-v5-18-ru",
-    "vq-v1-20-de",
-    "ex044",
-    "lq-li10-0",
-    "akkusativ",
-    "Ich habe Kopfschmerzen."
-   ],
-   "2026-03-31": [
-    "vq-v1-13-de",
-    "vq-v6-7-ru",
-    "vq-v3-9-de",
-    "ex062",
-    "lq-li03-0",
-    "conjunctions",
-    "Brauchen Sie eine Tüte?"
-   ],
-   "2026-07-04": [
-    "vq-v2-15-de",
-    "vq-v5-23-ru",
-    "vq-v9-5-de",
-    "ex062",
+    "vq-v103-8-de",
+    "vq-v113-10-ru",
+    "vq-v127-3-de",
+    "ex007",
     "lq-li06-0",
     "time-order",
-    "Wo finde ich die Milch?"
+    "Können Sie mir helfen, das Formular auszufüllen?"
+   ],
+   "2026-02-14": [
+    "vq-v124-14-de",
+    "vq-v3-4-ru",
+    "vq-v118-4-de",
+    "ex066",
+    "lq-li09-0",
+    "verb-position",
+    "Ich schreibe nächste Woche eine Prüfung."
+   ],
+   "2026-03-31": [
+    "vq-v113-21-de",
+    "vq-v136-3-ru",
+    "vq-v113-3-de",
+    "ex024",
+    "lq-li19-0",
+    "akkusativ",
+    "Ich rufe später noch einmal an."
+   ],
+   "2026-07-04": [
+    "vq-v9-14-de",
+    "vq-v109-3-ru",
+    "vq-v126-4-de",
+    "ex022",
+    "lq-li16-0",
+    "modal",
+    "Wo muss ich unterschreiben?"
    ],
    "2026-11-16": [
-    "vq-v1-7-de",
-    "vq-v9-5-ru",
-    "vq-v10-15-de",
+    "vq-v5-8-de",
+    "vq-v136-21-ru",
+    "vq-v138-11-de",
     "ex065",
-    "lq-li13-0",
-    "akkusativ",
-    "Ich habe zwei Jahre Erfahrung."
+    "lq-li01-0",
+    "verb-position",
+    "Haben Sie etwas gegen Kopfschmerzen?"
    ],
    "2027-01-01": [
-    "vq-v6-1-de",
-    "vq-v7-3-ru",
-    "vq-v7-11-de",
-    "ex032",
-    "lq-li21-0",
-    "dativ-prep",
-    "Mit Karte, bitte."
+    "vq-v127-2-de",
+    "vq-v117-19-ru",
+    "vq-v6-9-de",
+    "ex014",
+    "lq-li02-0",
+    "akkusativ",
+    "Ich habe zwei Jahre Erfahrung."
    ]
   },
   "tests": {
@@ -1718,116 +2087,116 @@
    "level-a1#s1": {
     "n": 15,
     "ids": [
-     "vq-v8-20-ru",
-     "vq-v1-3-de",
-     "art-v7-8",
+     "vq-v6-13-de",
      "ex055",
-     "ex026",
-     "vq-v10-2-de",
-     "vq-v10-7-de",
-     "art-v2-5",
-     "ex045",
+     "art-v106-2",
      "ex049",
-     "ex066",
      "ex058",
-     "vq-v6-15-ru",
+     "vq-v122-23-ru",
+     "ex037",
+     "art-v136-13",
+     "vq-v134-20-de",
      "ex048",
-     "ex037"
+     "vq-v119-12-de",
+     "ex026",
+     "vq-v103-11-ru",
+     "ex066",
+     "ex045"
     ],
     "answers": [
-     "spät",
-     "добрый день",
-     "die",
+     "зарплата",
      "getrunken",
-     "Ich möchte einen Tee bestellen.",
-     "делать пересадку",
-     "поезд",
-     "der",
-     "zur",
+     "die",
      "am",
-     "das Auto von meinem Vater",
      "mich",
-     "die Bewerbung",
+     "nehmen",
+     "Ich lerne Deutsch, weil ich hier arbeite.",
+     "das",
+     "друг",
      "Ich fahre mit der U-Bahn.",
-     "Ich lerne Deutsch, weil ich hier arbeite."
+     "гулять; ходить на прогулку",
+     "Ich möchte einen Tee bestellen.",
+     "trinken",
+     "das Auto von meinem Vater",
+     "zur"
     ],
-    "sha": "9a2d64ba93944d6ffe080f9d1d77fcb2b4eb3e344d79d5571af43267a376b620"
+    "sha": "209b9bba1a71dab2f7d7cb4a591718e0c645fdab3642069b0fa59eda1f8b566d"
    },
    "level-a1#s2": {
     "n": 15,
     "ids": [
-     "art-v8-2",
-     "vq-v7-21-de",
-     "art-v8-7",
-     "vq-v8-18-ru",
-     "ex011",
-     "ex042",
-     "ex048",
-     "vq-v9-13-de",
-     "ex045",
-     "vq-v3-13-ru",
      "ex050",
-     "ex014",
-     "ex022",
+     "ex045",
      "ex023",
-     "vq-v4-12-de"
+     "art-v125-9",
+     "vq-v116-2-de",
+     "vq-v131-5-de",
+     "ex042",
+     "vq-v104-3-ru",
+     "vq-v7-18-de",
+     "ex022",
+     "vq-v130-25-ru",
+     "ex014",
+     "ex048",
+     "art-v122-20",
+     "ex011"
     ],
     "answers": [
-     "die",
-     "находить",
-     "der",
-     "pünktlich",
-     "meine",
-     "der",
-     "Ich fahre mit der U-Bahn.",
-     "предложение, акция",
-     "zur",
-     "lesen",
      "um",
-     "ist",
-     "ein",
+     "zur",
      "einen",
-     "салат"
+     "das",
+     "моя мать",
+     "фильм",
+     "der",
+     "der Vater",
+     "прямо",
+     "ein",
+     "sofort",
+     "ist",
+     "Ich fahre mit der U-Bahn.",
+     "das",
+     "meine"
     ],
-    "sha": "abd158f2bfc436ef21d955e3d7c148f82a9f70d61fb813ccfbef9fc6bd47cc11"
+    "sha": "1cc4205339c019435b84ec1466f2d4c9dd7cc4a56b61beedb8a7e4d0a3709c01"
    },
    "level-a1#s3": {
     "n": 15,
     "ids": [
-     "vq-v1-19-de",
-     "ex057",
+     "vq-v5-23-de",
      "ex002",
-     "ex024",
-     "vq-v1-21-de",
+     "ex016",
+     "vq-v114-18-de",
+     "art-v112-25",
      "ex029",
-     "vq-v4-18-ru",
-     "art-v4-2",
-     "vq-v5-14-de",
+     "vq-v135-19-ru",
+     "ex024",
+     "art-v106-4",
+     "vq-v118-12-de",
      "ex032",
+     "vq-v107-14-ru",
      "ex036",
-     "ex017",
-     "art-v5-7",
-     "vq-v3-12-ru",
-     "ex016"
+     "ex057",
+     "ex017"
     ],
     "answers": [
-     "называться, зваться",
-     "ohne",
+     "тихий",
      "Ich bin 25 Jahre alt.",
-     "kein",
-     "жить, проживать",
+     "lerne",
+     "слон",
+     "das",
      "keinen",
-     "trinken",
-     "das",
-     "дверь",
+     "die Schublade",
+     "kein",
+     "die",
+     "маленький",
      "dem",
+     "die Telefonnummer",
      "weil",
-     "sprichst",
-     "das",
-     "putzen",
-     "lerne"
+     "ohne",
+     "sprichst"
     ],
-    "sha": "6049f55646d3ce0c68f38ad69b5d9bad310f8eb90ebedbebc525a3991c64869a"
+    "sha": "c1ae4a4170446956a154f3f5f195412d11852cff0855dadec151e534f8b63d09"
    },
    "grammar#s1": {
     "n": 12,
@@ -1928,116 +2297,116 @@
    "vocabulary#s1": {
     "n": 15,
     "ids": [
-     "vq-v7-14-de",
-     "art-v4-13",
-     "vq-v8-14-ru",
-     "vq-v7-8-de",
-     "art-v9-8",
-     "vq-v1-5-ru",
-     "vq-v8-11-de",
-     "vq-v8-10-ru",
-     "art-v9-20",
-     "vq-v9-2-de",
-     "vq-v6-4-de",
-     "art-v2-3",
-     "vq-v1-10-de",
-     "vq-v6-12-ru",
-     "vq-v2-5-ru"
+     "vq-v4-6-de",
+     "art-v10-15",
+     "vq-v136-7-ru",
+     "vq-v120-20-de",
+     "art-v120-7",
+     "vq-v131-2-ru",
+     "vq-v6-20-ru",
+     "vq-v110-7-de",
+     "art-v2-10",
+     "vq-v103-13-ru",
+     "vq-v134-5-de",
+     "vq-v6-9-ru",
+     "vq-v7-6-de",
+     "vq-v118-7-de",
+     "art-v113-20"
     ],
     "answers": [
-     "светофор",
-     "die",
-     "vereinbaren",
-     "аптека",
+     "яблоко",
+     "der",
+     "die Jugend",
+     "возможность",
      "das",
-     "Tschüss",
-     "выходные",
-     "der Sonntag",
+     "der Sport",
+     "suchen",
+     "часы",
      "der",
-     "стоить",
-     "врач (женщина)",
-     "der",
-     "как у вас дела?",
-     "der Kunde",
-     "der Bruder"
+     "duschen",
+     "на рынке",
+     "der Kollege",
+     "метро",
+     "этот стул",
+     "der"
     ],
-    "sha": "148d001899b7dfef2cc44f1f86d8cdc8645133fb33a5f759eec16754e70585db"
+    "sha": "aaf148a8b67c82d30a8a3f8ab488d631d79d061f6bc9b6008f857c865408b6e3"
    },
    "vocabulary#s2": {
     "n": 15,
     "ids": [
-     "vq-v8-10-ru",
-     "vq-v9-1-de",
-     "art-v2-2",
-     "art-v5-7",
-     "art-v7-2",
-     "vq-v4-7-de",
-     "art-v4-14",
-     "vq-v4-15-de",
-     "vq-v10-7-ru",
-     "vq-v9-20-de",
-     "vq-v6-11-de",
-     "vq-v8-9-ru",
-     "vq-v9-3-ru",
-     "vq-v5-16-de",
-     "vq-v7-14-ru"
+     "vq-v123-8-de",
+     "vq-v102-5-ru",
+     "vq-v105-4-ru",
+     "art-v121-4",
+     "art-v132-13",
+     "vq-v119-10-de",
+     "vq-v10-10-ru",
+     "vq-v127-12-ru",
+     "art-v110-22",
+     "art-v102-13",
+     "vq-v112-2-de",
+     "vq-v133-13-de",
+     "vq-v118-19-de",
+     "vq-v135-11-ru",
+     "vq-v110-2-de"
     ],
     "answers": [
-     "der Sonntag",
-     "покупать",
+     "их (мн. ч.)",
+     "es",
+     "das Geburtsdatum",
      "die",
-     "das",
      "die",
-     "мясо",
-     "das",
-     "меню",
-     "der Zug",
-     "чек",
-     "фирма, компания",
-     "der Samstag",
-     "brauchen",
-     "балкон",
-     "die Ampel"
+     "чистить; убирать",
+     "die Abfahrt",
+     "die Regel",
+     "der",
+     "die",
+     "карандаш",
+     "кинотеатр; кино",
+     "дешёвый",
+     "das Sofa",
+     "стул"
     ],
-    "sha": "ecd3763bbb648b49cb29bb922c1b3611b7d0c7369209bbe37a3941c1ff90f47f"
+    "sha": "591d747219e5398f2a84d09cd6532a65da3f0332516e2e8be63a6ed171ce3308"
    },
    "vocabulary#s3": {
     "n": 15,
     "ids": [
-     "art-v8-4",
-     "vq-v9-4-ru",
-     "vq-v10-21-de",
-     "vq-v2-16-de",
-     "vq-v3-1-ru",
-     "art-v7-4",
-     "vq-v10-4-de",
-     "vq-v6-17-ru",
-     "art-v7-3",
-     "vq-v9-2-de",
-     "vq-v7-8-de",
-     "vq-v6-19-de",
-     "vq-v4-20-ru",
-     "vq-v7-9-ru",
-     "art-v2-9"
+     "vq-v109-10-de",
+     "art-v125-17",
+     "vq-v112-12-de",
+     "vq-v3-10-ru",
+     "vq-v131-7-de",
+     "vq-v118-11-ru",
+     "art-v102-18",
+     "vq-v132-25-de",
+     "art-v114-21",
+     "vq-v113-13-ru",
+     "vq-v102-8-ru",
+     "vq-v119-15-de",
+     "vq-v127-21-de",
+     "art-v134-15",
+     "vq-v106-7-ru"
     ],
     "answers": [
+     "носить",
+     "das",
+     "бутылка",
+     "schlafen",
+     "музей",
+     "groß",
      "die",
-     "nehmen",
-     "велосипед",
-     "друг",
-     "der Tag",
-     "die",
-     "отправляться",
-     "die Pause",
+     "пунктуальный; вовремя",
+     "das",
+     "das Gemüse",
+     "sie (Plural)",
+     "забывать",
+     "пунктуальный; вовремя",
      "der",
-     "стоить",
-     "аптека",
-     "зарабатывать",
-     "möchten",
-     "die Bank",
-     "die"
+     "die Wohnung"
     ],
-    "sha": "765b598c5317ca74d54d333ff9e52b5ac3eedbfab737b9b1de08f509a5b30096"
+    "sha": "7ce2ec3654bd9d34bac7bb8121cf2f7bab75fd365a2ccc515e390438336a5fc8"
    },
    "listening#s1": {
     "n": 8,
@@ -2114,1004 +2483,1004 @@
    "unit-1#s1": {
     "n": 8,
     "ids": [
-     "art-v1-17",
-     "ex001",
-     "vq-v1-4-ru",
+     "art-v1-18",
+     "art-v1-16",
+     "ex003",
+     "ex005",
+     "vq-v1-13-ru",
      "vq-v1-11-de",
      "vq-v1-22-de",
-     "ex008",
-     "vq-v1-13-ru",
-     "art-v1-16"
+     "vq-v1-4-ru"
     ],
     "answers": [
-     "das",
      "der",
-     "Guten Abend",
+     "die",
+     "sind",
+     "Wo",
+     "Freut mich.",
      "что, простите?",
      "говорить",
-     "bist",
-     "Freut mich.",
-     "die"
+     "Guten Abend"
     ],
-    "sha": "fd70bf5eb63ca297d998bfd91377e3fb435f3245e2e9dfac1c3fa75aa7794785"
+    "sha": "5483d740856bc02c451f9de0fda23ab6af30a39fc5fd21f9c6620914097046a5"
    },
    "unit-1#s2": {
     "n": 8,
     "ids": [
-     "vq-v1-5-de",
-     "ex007",
+     "ex001",
+     "vq-v1-14-de",
+     "vq-v1-17-ru",
      "vq-v1-22-ru",
      "art-v1-18",
-     "ex008",
-     "vq-v1-14-de",
-     "art-v1-17",
-     "vq-v1-17-ru"
+     "ex007",
+     "vq-v1-5-de",
+     "art-v1-16"
     ],
     "answers": [
-     "пока",
-     "ein",
+     "der",
+     "да",
+     "das Land",
      "sprechen",
      "der",
-     "bist",
-     "да",
-     "das",
-     "das Land"
+     "ein",
+     "пока",
+     "die"
     ],
-    "sha": "8a9dbc51074bd14c54f50594d9039037d5d653e0d16b9949bd002ef4eb31d91b"
+    "sha": "ad92d97fe68f03f95dec2f7caaf161a6783eba700b8756e2fbb05efccb8a271a"
    },
    "unit-1#s3": {
     "n": 8,
     "ids": [
+     "art-v1-17",
+     "art-v1-18",
+     "vq-v1-5-ru",
+     "vq-v1-17-ru",
      "vq-v1-21-de",
      "vq-v1-9-de",
-     "ex007",
-     "art-v1-17",
-     "vq-v1-17-ru",
-     "art-v1-16",
-     "vq-v1-5-ru",
-     "ex001"
+     "ex005",
+     "ex002"
     ],
     "answers": [
+     "das",
+     "der",
+     "Tschüss",
+     "das Land",
      "жить, проживать",
      "извините",
-     "ein",
-     "das",
-     "das Land",
-     "die",
-     "Tschüss",
-     "der"
+     "Wo",
+     "Ich bin 25 Jahre alt."
     ],
-    "sha": "15877c2d55518e4858fab65e1fa0efb06bf530626d861955f0eb8f74c39fb1ee"
+    "sha": "ce07d7fd9f56ab89b980881e1a24179a67acf5e444869047561024add95f15c6"
    },
    "unit-2#s1": {
     "n": 8,
     "ids": [
-     "art-v2-13",
-     "ex014",
-     "vq-v2-22-de",
+     "art-v2-12",
+     "ex009",
      "vq-v2-9-de",
-     "vq-v2-7-ru",
-     "art-v2-4",
      "ex015",
-     "vq-v2-19-ru"
+     "vq-v2-7-ru",
+     "vq-v2-19-ru",
+     "vq-v2-22-de",
+     "art-v2-6"
     ],
     "answers": [
-     "die",
-     "ist",
-     "большой, высокий",
+     "der",
+     "Brüder",
      "дочь",
-     "das Kind",
-     "die",
      "Meine Eltern wohnen in Bischkek.",
-     "verheiratet"
+     "das Kind",
+     "verheiratet",
+     "большой, высокий",
+     "die"
     ],
-    "sha": "4fdd5ab7c3b73512c680d8e8bbf9da48d6651b41039599c27e6bb961d1580432"
+    "sha": "c469b5207dbc0ed314218a4b8aeefcf378b791a5cddeab4b25fb3ee70f7a7abb"
    },
    "unit-2#s2": {
     "n": 8,
     "ids": [
+     "art-v2-11",
+     "vq-v2-12-ru",
      "ex015",
-     "art-v2-8",
-     "vq-v2-4-de",
      "vq-v2-5-ru",
-     "ex012",
-     "vq-v2-13-de",
-     "art-v2-10",
-     "vq-v2-12-ru"
+     "ex013",
+     "vq-v2-4-de",
+     "art-v2-15",
+     "vq-v2-13-de"
     ],
     "answers": [
+     "die",
+     "der Onkel",
      "Meine Eltern wohnen in Bischkek.",
-     "der",
-     "родители",
      "der Bruder",
-     "meinen",
-     "тётя",
-     "der",
-     "der Onkel"
+     "die Frauen",
+     "родители",
+     "die",
+     "тётя"
     ],
-    "sha": "f33c2f581b7a58514c12c047e41ce50c3a454fa689c23cda82d3d9bff21f28b3"
+    "sha": "2b884b0390c9fe1c353940f36ab7059b056076f2645db53ea794660cd675c1f1"
    },
    "unit-2#s3": {
     "n": 8,
     "ids": [
      "vq-v2-16-de",
+     "vq-v2-11-ru",
+     "ex015",
      "vq-v2-14-de",
-     "ex009",
-     "art-v2-4",
+     "art-v2-13",
      "vq-v2-18-ru",
-     "ex013",
-     "art-v2-2",
-     "vq-v2-11-ru"
+     "art-v2-11",
+     "ex011"
     ],
     "answers": [
      "друг",
+     "die Oma",
+     "Meine Eltern wohnen in Bischkek.",
      "муж",
-     "Brüder",
      "die",
      "haben",
-     "die Frauen",
      "die",
-     "die Oma"
+     "meine"
     ],
-    "sha": "170b3a45c106a7ec71d601fccfab3d3f44d610894dfa8a191a85670b69376149"
+    "sha": "6f0c2f154ef39d38987954ee95f5c85d2b76276abad8d2c57e55d610a8fea8fa"
    },
    "unit-3#s1": {
     "n": 8,
     "ids": [
-     "vq-v3-9-de",
-     "ex018",
      "vq-v3-16-ru",
-     "art-v3-2",
-     "vq-v3-4-ru",
-     "art-v3-4",
-     "ex022",
-     "vq-v3-13-de"
+     "ex020",
+     "vq-v3-9-de",
+     "ex021",
+     "art-v3-1",
+     "art-v3-5",
+     "vq-v3-13-de",
+     "vq-v3-4-ru"
     ],
     "answers": [
-     "учить, учиться",
-     "Heute lerne ich Deutsch.",
      "heute",
+     "Morgen fahre ich nach Köln.",
+     "учить, учиться",
+     "arbeitet",
      "der",
-     "die Nacht",
      "die",
-     "ein",
-     "читать"
+     "читать",
+     "die Nacht"
     ],
-    "sha": "1ac254e9695f06c882b575f68378446ae4892062c6e907b47330a30e53c435d7"
+    "sha": "29b15fb9cbcad03c1dce18c44f5be386abe2d352b04f9330ee1228ce357345c7"
    },
    "unit-3#s2": {
     "n": 8,
     "ids": [
-     "art-v3-2",
-     "art-v3-5",
-     "vq-v3-21-de",
-     "vq-v3-17-ru",
-     "ex022",
-     "vq-v3-10-ru",
      "vq-v3-22-de",
-     "ex021"
+     "art-v3-3",
+     "vq-v3-10-ru",
+     "art-v3-4",
+     "ex016",
+     "ex020",
+     "vq-v3-21-de",
+     "vq-v3-17-ru"
     ],
     "answers": [
-     "der",
-     "die",
-     "никогда",
-     "morgen",
-     "ein",
-     "schlafen",
      "усталый",
-     "arbeitet"
+     "der",
+     "schlafen",
+     "die",
+     "lerne",
+     "Morgen fahre ich nach Köln.",
+     "никогда",
+     "morgen"
     ],
-    "sha": "c7f94b39135b6fbd34f471787f0fe09063a81801244a5c62d6510e62aea29943"
+    "sha": "387e85d7050c969d2352b426647462a73c09e5301af864f9a2180831ad511539"
    },
    "unit-3#s3": {
     "n": 8,
     "ids": [
      "vq-v3-11-ru",
-     "vq-v3-8-ru",
      "vq-v3-6-de",
-     "ex017",
-     "ex018",
      "vq-v3-21-de",
-     "art-v3-1",
+     "art-v3-3",
+     "ex022",
+     "vq-v3-8-ru",
+     "ex016",
      "art-v3-5"
     ],
     "answers": [
      "kochen",
-     "arbeiten",
      "вставать",
-     "sprichst",
-     "Heute lerne ich Deutsch.",
      "никогда",
      "der",
+     "ein",
+     "arbeiten",
+     "lerne",
      "die"
     ],
-    "sha": "45808a82ce45f9b61d14a6d10c734e1c9837b002d65901b818dcd3f3b9226c9d"
+    "sha": "a9b97cd61309a77d15bea820062b6956248c8d02626da965c4a80865d456aa43"
    },
    "unit-4#s1": {
     "n": 8,
     "ids": [
-     "art-v4-8",
-     "ex023",
-     "vq-v4-10-de",
-     "vq-v4-23-de",
-     "art-v4-7",
-     "vq-v4-14-ru",
+     "ex027",
      "vq-v4-7-ru",
-     "ex029"
+     "vq-v4-10-de",
+     "art-v4-14",
+     "vq-v4-14-ru",
+     "ex028",
+     "art-v4-12",
+     "vq-v4-23-de"
     ],
     "answers": [
-     "der",
-     "einen",
+     "den",
+     "das Fleisch",
      "рис",
-     "быть голодным",
      "das",
      "das Gemüse",
-     "das Fleisch",
-     "keinen"
+     "nicht",
+     "der",
+     "быть голодным"
     ],
-    "sha": "e3936d64d47a71b8f10dceb1c5e22ae2ceb3f991437fdf37e803551d5a45788b"
+    "sha": "7282a77db263334bb15387477dbb5675bec4e4211a3b17eb69f2b74c5434cc93"
    },
    "unit-4#s2": {
     "n": 8,
     "ids": [
      "vq-v4-1-de",
-     "ex024",
-     "ex023",
      "vq-v4-7-de",
-     "art-v4-4",
-     "art-v4-6",
+     "art-v4-14",
+     "art-v4-9",
+     "ex027",
      "vq-v4-23-ru",
+     "ex026",
      "vq-v4-4-ru"
     ],
     "answers": [
      "хлеб",
-     "kein",
-     "einen",
      "мясо",
-     "der",
-     "der",
+     "das",
+     "das",
+     "den",
      "Hunger haben",
+     "Ich möchte einen Tee bestellen.",
      "der Tee"
     ],
-    "sha": "1f2af01abb81f6660fa51a34c72ec4917f130a84ada01b89860f308d2d56c778"
+    "sha": "13a0f5233b516f980262c9de67b8da9d4d76f716a36295fa4ef4277879237640"
    },
    "unit-4#s3": {
     "n": 8,
     "ids": [
-     "vq-v4-2-ru",
+     "ex028",
+     "vq-v4-16-ru",
      "vq-v4-7-de",
-     "ex024",
-     "vq-v4-11-de",
-     "art-v4-15",
-     "ex027",
      "art-v4-1",
-     "vq-v4-16-ru"
+     "ex024",
+     "art-v4-5",
+     "vq-v4-11-de",
+     "vq-v4-2-ru"
     ],
     "answers": [
-     "das Wasser",
+     "nicht",
+     "die Rechnung",
      "мясо",
-     "kein",
-     "суп",
-     "die",
-     "den",
      "das",
-     "die Rechnung"
+     "kein",
+     "die",
+     "суп",
+     "das Wasser"
     ],
-    "sha": "ac2aa3257bcec05c90859d1e576ec8f02b3a2bbbf3b75c8fb259c664f3baf044"
+    "sha": "0b9e8cd18d899f1cf47da79c598fbb0afa69f23ce0dd7dbd6e3da04ca957ad78"
    },
    "unit-5#s1": {
     "n": 8,
     "ids": [
-     "ex031",
-     "art-v5-17",
-     "vq-v5-22-de",
-     "ex032",
-     "vq-v5-10-de",
-     "art-v5-2",
+     "ex034",
+     "art-v5-10",
      "vq-v5-23-ru",
-     "vq-v5-1-ru"
+     "vq-v5-10-de",
+     "ex031",
+     "vq-v5-22-de",
+     "vq-v5-1-ru",
+     "art-v5-3"
     ],
     "answers": [
-     "die",
-     "der",
-     "недорогой, выгодный",
-     "dem",
-     "кровать",
+     "neben das",
      "das",
      "ruhig",
-     "die Wohnung"
+     "кровать",
+     "die",
+     "недорогой, выгодный",
+     "die Wohnung",
+     "das"
     ],
-    "sha": "69a6a88f35700cd728154b975d28e6fee2ab645249e14be541706054e9e8cadd"
+    "sha": "b356bc374c3554a7056363a2306086fd3e2ae06a11b9bf197b313436f6a18da4"
    },
    "unit-5#s2": {
     "n": 8,
     "ids": [
-     "art-v5-8",
-     "ex032",
-     "vq-v5-16-ru",
-     "art-v5-13",
      "vq-v5-20-de",
+     "ex032",
+     "vq-v5-22-de",
+     "art-v5-3",
+     "vq-v5-16-ru",
+     "art-v5-16",
      "vq-v5-15-ru",
-     "ex031",
-     "vq-v5-22-de"
+     "ex034"
     ],
     "answers": [
-     "der",
-     "dem",
-     "der Balkon",
-     "das",
      "снимать, арендовать",
+     "dem",
+     "недорогой, выгодный",
+     "das",
+     "der Balkon",
+     "der",
      "der Schlüssel",
-     "die",
-     "недорогой, выгодный"
+     "neben das"
     ],
-    "sha": "1bc551c768054f8cdb8048cbf1978150ddddfa6488559d7453daedbcdf203752"
+    "sha": "be770aba9b970ff569f37441de64620dd58a8a381ca6486a5c607abe1dadc602"
    },
    "unit-5#s3": {
     "n": 8,
     "ids": [
-     "ex033",
-     "vq-v5-15-ru",
-     "art-v5-15",
      "ex030",
+     "vq-v5-2-de",
      "vq-v5-12-ru",
-     "art-v5-10",
      "vq-v5-11-de",
-     "vq-v5-2-de"
+     "art-v5-6",
+     "ex032",
+     "art-v5-3",
+     "vq-v5-15-ru"
     ],
     "answers": [
-     "den",
-     "der Schlüssel",
      "der",
-     "der",
+     "дом",
      "der Schrank",
-     "das",
      "диван",
-     "дом"
+     "das",
+     "dem",
+     "das",
+     "der Schlüssel"
     ],
-    "sha": "e9e5ff26657166554e226322d16af2288fd16e71185a9d9bb92cecfc12175dd4"
+    "sha": "38ffb172c38baa4fd7fd543367ed8ceb0dba77e6d0b4d2bfde12b9147ae15869"
    },
    "unit-6#s1": {
     "n": 8,
     "ids": [
-     "art-v6-9",
+     "art-v6-18",
      "vq-v6-6-ru",
-     "art-v6-12",
-     "ex037",
-     "ex040",
-     "vq-v6-15-de",
      "vq-v6-11-de",
-     "vq-v6-10-ru"
+     "vq-v6-15-de",
+     "art-v6-7",
+     "ex037",
+     "vq-v6-10-ru",
+     "ex036"
     ],
     "answers": [
-     "der",
+     "die",
      "der Fahrer",
+     "фирма, компания",
+     "заявка на работу",
      "der",
      "Ich lerne Deutsch, weil ich hier arbeite.",
-     "Ich bleibe zu Hause, weil ich krank bin.",
-     "заявка на работу",
-     "фирма, компания",
-     "das Büro"
+     "das Büro",
+     "weil"
     ],
-    "sha": "045b1763d75137feb6af818b0aa440c9f1a363dd3cba9392cb7c055a339f06d9"
+    "sha": "b0adc36ca4f76b49ec3022fe6c43b00adf8a15a2ebce8db91b5d343263ff22a6"
    },
    "unit-6#s2": {
     "n": 8,
     "ids": [
      "vq-v6-20-de",
-     "art-v6-14",
      "vq-v6-13-de",
+     "ex038",
      "vq-v6-12-ru",
-     "ex039",
-     "art-v6-18",
+     "art-v6-5",
      "vq-v6-16-ru",
-     "ex041"
+     "ex039",
+     "art-v6-9"
     ],
     "answers": [
      "искать",
-     "der",
      "зарплата",
+     "oder",
      "der Kunde",
-     "aber",
-     "die",
+     "der",
      "der Lebenslauf",
-     "bei"
+     "aber",
+     "der"
     ],
-    "sha": "b566369dcd963ce0c3e5fee35a9f21aec9d1c27eca1bad900f34e13c00bdf6dc"
+    "sha": "04ed667b1c746d89b1f9e12b3c1b8898cd19727c68b84525512f0647f61339eb"
    },
    "unit-6#s3": {
     "n": 8,
     "ids": [
-     "ex038",
+     "vq-v6-2-ru",
+     "ex040",
      "vq-v6-16-de",
-     "ex039",
      "art-v6-15",
+     "art-v6-7",
+     "ex039",
      "vq-v6-15-ru",
-     "art-v6-6",
-     "vq-v6-3-de",
-     "vq-v6-2-ru"
+     "vq-v6-3-de"
     ],
     "answers": [
-     "oder",
+     "der Beruf",
+     "Ich bleibe zu Hause, weil ich krank bin.",
      "резюме",
-     "aber",
      "die",
-     "die Bewerbung",
      "der",
-     "врач",
-     "der Beruf"
+     "aber",
+     "die Bewerbung",
+     "врач"
     ],
-    "sha": "79b72ad2bec8d5164afffa828356dba3818230999612f85aaf206f8185d87e18"
+    "sha": "2471f9510fb42072c534148d4d6414dc28580ad0086dae872fd37228f7b83a14"
    },
    "unit-7#s1": {
     "n": 8,
     "ids": [
-     "art-v7-5",
-     "ex046",
-     "vq-v7-2-ru",
+     "art-v7-7",
      "vq-v7-6-de",
-     "ex042",
+     "vq-v7-2-ru",
      "vq-v7-18-ru",
-     "art-v7-10",
-     "vq-v7-11-de"
+     "vq-v7-11-de",
+     "ex042",
+     "art-v7-11",
+     "ex043"
     ],
     "answers": [
-     "der",
-     "mir",
-     "die Straße",
+     "das",
      "метро",
-     "der",
+     "die Straße",
      "geradeaus",
-     "die",
-     "супермаркет"
+     "супермаркет",
+     "der",
+     "der",
+     "dem"
     ],
-    "sha": "2240d5330b9e6acd12a36d66c943b2cebe5cf4146c92bcf86777d3faf173533d"
+    "sha": "d8736b540ff8205ebbe95f4a5d1ce50b223397bebbbbf6f18e01febbd694c228"
    },
    "unit-7#s2": {
     "n": 8,
     "ids": [
-     "vq-v7-4-de",
-     "art-v7-3",
-     "vq-v7-1-ru",
-     "art-v7-7",
+     "vq-v7-17-ru",
+     "art-v7-4",
      "vq-v7-8-de",
-     "ex043",
-     "ex047",
-     "vq-v7-17-ru"
+     "ex045",
+     "vq-v7-4-de",
+     "vq-v7-1-ru",
+     "art-v7-8",
+     "ex046"
     ],
     "answers": [
-     "остановка",
-     "der",
-     "die Stadt",
-     "das",
+     "rechts",
+     "die",
      "аптека",
-     "dem",
-     "aus",
-     "rechts"
+     "zur",
+     "остановка",
+     "die Stadt",
+     "die",
+     "mir"
     ],
-    "sha": "eb4ddc45c0ecbcbdce1ba27d25bb03badf01b96c63c111e6447bee6fe025a8a4"
+    "sha": "e931862718c25c8c9c114b77fc248b6777a33bccc6fe0ef81cf79164d72694d3"
    },
    "unit-7#s3": {
     "n": 8,
     "ids": [
-     "vq-v7-1-de",
-     "ex046",
-     "art-v7-4",
-     "vq-v7-8-de",
-     "ex042",
      "vq-v7-19-ru",
      "vq-v7-20-ru",
-     "art-v7-13"
+     "art-v7-5",
+     "vq-v7-8-de",
+     "ex047",
+     "ex046",
+     "vq-v7-1-de",
+     "art-v7-12"
     ],
     "answers": [
-     "город",
-     "mir",
-     "die",
-     "аптека",
-     "der",
      "weit",
      "nah",
-     "die"
+     "der",
+     "аптека",
+     "aus",
+     "mir",
+     "город",
+     "der"
     ],
-    "sha": "0abc03845c7232ab41e5c70d8a1ccd2d690f49785c7f51e8924dfab615c15b7a"
+    "sha": "36f56707b46ff808481beabe68032206f481f86325c629fae56416b9412bfd0d"
    },
    "unit-8#s1": {
     "n": 8,
     "ids": [
-     "ex049",
-     "art-v8-6",
-     "vq-v8-4-ru",
-     "vq-v8-19-de",
-     "ex051",
-     "art-v8-3",
+     "art-v8-8",
+     "ex055",
      "vq-v8-18-de",
-     "vq-v8-12-ru"
+     "vq-v8-4-ru",
+     "vq-v8-12-ru",
+     "art-v8-9",
+     "vq-v8-19-de",
+     "ex050"
     ],
     "answers": [
-     "am",
-     "das",
-     "die Woche",
-     "рано",
-     "Im",
-     "die",
+     "der",
+     "getrunken",
      "пунктуальный, вовремя",
-     "der Termin"
+     "die Woche",
+     "der Termin",
+     "der",
+     "рано",
+     "um"
     ],
-    "sha": "f1aa98f193e4ec39f9e7f722f12e1581dc907899deabe060d8cb8772b5c0d984"
+    "sha": "eb958ed90d7ffc2eef9c94f0ac4d8811971d2cf8fe71aeea9aba03a6879e913c"
    },
    "unit-8#s2": {
     "n": 8,
     "ids": [
-     "vq-v8-11-de",
-     "art-v8-6",
-     "ex053",
      "vq-v8-22-ru",
-     "art-v8-10",
+     "ex053",
+     "art-v8-3",
+     "vq-v8-21-de",
+     "vq-v8-11-de",
      "vq-v8-19-ru",
-     "ex055",
-     "vq-v8-21-de"
+     "art-v8-4",
+     "ex051"
     ],
     "answers": [
-     "выходные",
-     "das",
-     "bin",
      "Wie spät ist es?",
-     "der",
+     "bin",
+     "die",
+     "когда",
+     "выходные",
      "früh",
-     "getrunken",
-     "когда"
+     "die",
+     "Im"
     ],
-    "sha": "644b67f3d3600b11935a633174cdc7afebad8c8366b1724643b3854691bd9893"
+    "sha": "9d8b84f3c0c67868ca47957354b21ce865f2e66061878d7ec1bca337d8bb8ab6"
    },
    "unit-8#s3": {
     "n": 8,
     "ids": [
-     "ex051",
-     "art-v8-7",
-     "vq-v8-9-de",
+     "art-v8-10",
      "vq-v8-1-de",
-     "ex055",
+     "vq-v8-9-de",
+     "vq-v8-16-ru",
+     "ex052",
+     "art-v8-4",
      "vq-v8-11-ru",
-     "art-v8-3",
-     "vq-v8-16-ru"
+     "ex054"
     ],
     "answers": [
-     "Im",
      "der",
-     "суббота",
      "часы; час (время)",
-     "getrunken",
-     "das Wochenende",
+     "суббота",
+     "absagen",
+     "habe",
      "die",
-     "absagen"
+     "das Wochenende",
+     "Ich habe Deutsch gelernt."
     ],
-    "sha": "4193a90f9e4c5f1ec37903c87d62834ffab16af5b6b556270466a0f10313ec6c"
+    "sha": "7f680427b8e78314180fb444b732879c5b6d53422be7409f30305014ac56777b"
    },
    "unit-9#s1": {
     "n": 8,
     "ids": [
+     "ex059",
      "art-v9-18",
-     "ex056",
-     "art-v9-20",
-     "vq-v9-19-de",
-     "vq-v9-2-de",
+     "vq-v9-1-ru",
+     "ex060",
      "vq-v9-4-ru",
-     "ex057",
-     "vq-v9-1-ru"
+     "vq-v9-2-de",
+     "vq-v9-19-de",
+     "art-v9-15"
     ],
     "answers": [
+     "Wie viel kostet das?",
      "die",
-     "für",
-     "der",
-     "туфля, обувь",
-     "стоить",
+     "kaufen",
+     "Wie viel kostet das?",
      "nehmen",
-     "ohne",
-     "kaufen"
+     "стоить",
+     "туфля, обувь",
+     "der"
     ],
-    "sha": "d85716dedcbed577636d076b9e4656a5dc29d11364b5516cd9cb3ae3211af435"
+    "sha": "c5bc570158410f54263490bd92e32a6f149f2650bbf58605547c575c39df5f77"
    },
    "unit-9#s2": {
     "n": 8,
     "ids": [
+     "vq-v9-21-ru",
+     "vq-v9-1-ru",
      "ex061",
      "vq-v9-15-de",
-     "art-v9-14",
-     "vq-v9-1-ru",
-     "ex057",
+     "ex059",
      "art-v9-12",
-     "vq-v9-21-ru",
-     "vq-v9-11-de"
+     "vq-v9-11-de",
+     "art-v9-16"
     ],
     "answers": [
+     "bar",
+     "kaufen",
      "meine",
      "рынок",
-     "das",
-     "kaufen",
-     "ohne",
+     "Wie viel kostet das?",
      "die",
-     "bar",
-     "пакет"
+     "пакет",
+     "die"
     ],
-    "sha": "20d428ca1ea3628ac5719306059b50493427207d3c6a13bb26f6a3496f8d5559"
+    "sha": "d849f2c87f39d070251bbb46585223d191a568beb908ffd4145322ca316211d2"
    },
    "unit-9#s3": {
     "n": 8,
     "ids": [
-     "art-v9-15",
-     "vq-v9-3-ru",
-     "ex057",
+     "ex056",
      "vq-v9-11-ru",
-     "vq-v9-18-de",
-     "ex060",
      "art-v9-18",
+     "vq-v9-18-de",
+     "art-v9-12",
+     "ex061",
+     "vq-v9-3-ru",
      "vq-v9-16-de"
     ],
     "answers": [
-     "der",
-     "brauchen",
-     "ohne",
+     "für",
      "die Tüte",
-     "куртка",
-     "Wie viel kostet das?",
      "die",
+     "куртка",
+     "die",
+     "meine",
+     "brauchen",
      "размер"
     ],
-    "sha": "35f7d3f3518a0fc081039db3a0b5aac7430d510f09b1ca73382a695c79fb4347"
+    "sha": "70b7caf64396d5de7b34a1f646e09f2e8084f6b4424dd4285cf568daa4543c2a"
    },
    "unit-10#s1": {
     "n": 8,
     "ids": [
-     "vq-v10-17-ru",
-     "art-v10-10",
-     "ex063",
-     "vq-v10-20-de",
      "vq-v10-19-ru",
-     "vq-v10-6-de",
      "ex067",
-     "art-v10-11"
+     "art-v10-9",
+     "vq-v10-20-de",
+     "vq-v10-17-ru",
+     "art-v10-16",
+     "vq-v10-6-de",
+     "ex062"
     ],
     "answers": [
-     "das Hotel",
-     "die",
-     "der",
-     "машина",
      "der Urlaub",
-     "лететь",
      "Ich bin mit dem Zug gefahren.",
-     "die"
+     "das",
+     "машина",
+     "das Hotel",
+     "der",
+     "лететь",
+     "des"
     ],
-    "sha": "d85e16185ccf378564a4d61057c69ded77b22d4dd3607dc0a8600ac7d21c624f"
+    "sha": "50003e6171b927563225ae41cfdfa0848c5b5eaa76cc249c135e2313fe5791bf"
    },
    "unit-10#s2": {
     "n": 8,
     "ids": [
-     "art-v10-19",
-     "vq-v10-8-ru",
-     "ex065",
      "vq-v10-14-ru",
-     "art-v10-12",
+     "vq-v10-8-ru",
+     "vq-v10-6-de",
+     "ex062",
+     "art-v10-18",
      "vq-v10-5-de",
-     "ex067",
-     "vq-v10-6-de"
+     "art-v10-17",
+     "ex067"
     ],
     "answers": [
-     "der",
-     "die Fahrkarte",
-     "Der Zug fährt um acht Uhr ab.",
      "das Flugzeug",
+     "die Fahrkarte",
+     "лететь",
+     "des",
      "die",
      "бронировать",
-     "Ich bin mit dem Zug gefahren.",
-     "лететь"
+     "das",
+     "Ich bin mit dem Zug gefahren."
     ],
-    "sha": "840c9959aa8588a3205cc69610d562dbdc11b7d5a937fdc797120bf5100e36a9"
+    "sha": "1bbee26218b45e0320d741c2b4f9813075290320a587db22411b5a351502fdeb"
    },
    "unit-10#s3": {
     "n": 8,
     "ids": [
-     "art-v10-17",
-     "vq-v10-2-de",
-     "vq-v10-8-ru",
+     "art-v10-19",
      "vq-v10-23-ru",
-     "ex066",
-     "ex062",
      "vq-v10-16-de",
-     "art-v10-13"
+     "art-v10-15",
+     "vq-v10-8-ru",
+     "ex065",
+     "ex063",
+     "vq-v10-2-de"
     ],
     "answers": [
-     "das",
-     "делать пересадку",
-     "die Fahrkarte",
+     "der",
      "verspätet",
-     "das Auto von meinem Vater",
-     "des",
      "паспорт",
-     "der"
+     "der",
+     "die Fahrkarte",
+     "Der Zug fährt um acht Uhr ab.",
+     "der",
+     "делать пересадку"
     ],
-    "sha": "c24ce67d63420a6304a6252c3db575e38484ff23b7860bd213ad229f37cc9d76"
+    "sha": "e5443d7431ea2adddd1a8444c69d90a9abf59997411e1eeb707e24b7cf26293e"
    }
   },
   "unitReview": {
    "unit1": {
     "n": 10,
     "ids": [
-     "ex004",
      "vq-v1-2-ru",
-     "ex006",
      "art-v1-16",
-     "ex002",
-     "vq-v1-13-de",
-     "vq-v1-7-ru",
-     "art-v1-18",
+     "ex006",
+     "vq-v1-12-de",
+     "ex004",
+     "ex007",
      "vq-v1-20-de",
-     "vq-v1-12-de"
+     "art-v1-17",
+     "vq-v1-13-de",
+     "vq-v1-7-ru"
     ],
     "answers": [
-     "Woher kommst du?",
      "Guten Morgen",
-     "Sprichst du Deutsch?",
      "die",
-     "Ich bin 25 Jahre alt.",
-     "приятно познакомиться",
-     "Danke",
-     "der",
+     "Sprichst du Deutsch?",
+     "я не понимаю",
+     "Woher kommst du?",
+     "ein",
      "приходить, происходить из",
-     "я не понимаю"
+     "das",
+     "приятно познакомиться",
+     "Danke"
     ],
-    "sha": "6f2d3918b9e6cd512d66dff4b60517a9f4915540cb4a779efd7ace700d89c6b1"
+    "sha": "0e64cb82e691367df08bb4cb5d21f2a6ae3869b5a0ddc4fd311a9f3f7d3f6b92"
    },
    "unit2": {
     "n": 10,
     "ids": [
-     "vq-v2-13-de",
-     "ex009",
-     "vq-v2-8-ru",
      "vq-v2-14-ru",
-     "ex014",
-     "vq-v2-12-de",
+     "vq-v2-8-ru",
      "vq-v2-5-de",
-     "ex013",
-     "art-v2-16",
-     "art-v2-17"
+     "ex010",
+     "art-v2-1",
+     "ex009",
+     "ex014",
+     "vq-v2-13-de",
+     "vq-v2-12-de",
+     "art-v2-12"
     ],
     "answers": [
-     "тётя",
-     "Brüder",
-     "der Sohn",
      "der Ehemann",
-     "ist",
-     "дядя",
+     "der Sohn",
      "брат",
-     "die Frauen",
-     "der",
-     "die"
+     "die Kinder",
+     "die",
+     "Brüder",
+     "ist",
+     "тётя",
+     "дядя",
+     "der"
     ],
-    "sha": "f6a736dd39d3f36777ecc4bb0fcf71c7cf50c0e7cfc40e3aa105ab2423684c1e"
+    "sha": "c1344fb6348f2e7caba19c7616842b5fdd8bce7b3f025849f657b12d4ced589e"
    },
    "unit3": {
     "n": 10,
     "ids": [
-     "vq-v3-18-de",
-     "ex018",
-     "ex021",
+     "ex016",
      "vq-v3-11-ru",
-     "art-v3-1",
+     "ex021",
+     "art-v3-4",
      "vq-v3-13-de",
+     "ex022",
      "vq-v3-10-de",
-     "ex020",
+     "vq-v3-18-de",
      "art-v3-5",
      "vq-v3-21-ru"
     ],
     "answers": [
-     "всегда",
-     "Heute lerne ich Deutsch.",
-     "arbeitet",
+     "lerne",
      "kochen",
-     "der",
+     "arbeitet",
+     "die",
      "читать",
+     "ein",
      "спать",
-     "Morgen fahre ich nach Köln.",
+     "всегда",
      "die",
      "nie"
     ],
-    "sha": "16c5a9562cd240c17bc28072ec37c07833a6f1a9f8a0ac3d6ccb303fba7d8dfc"
+    "sha": "4ee22864bc0872940275f7af685155355ed2261122ba311b12f209b723fd6e01"
    },
    "unit4": {
     "n": 10,
     "ids": [
-     "ex025",
-     "vq-v4-11-ru",
      "art-v4-8",
      "vq-v4-10-de",
-     "ex028",
+     "ex023",
      "ex027",
+     "vq-v4-2-de",
+     "vq-v4-11-ru",
      "vq-v4-20-de",
-     "art-v4-9",
      "vq-v4-18-ru",
-     "vq-v4-2-de"
+     "art-v4-15",
+     "ex024"
     ],
     "answers": [
-     "bestellen",
-     "die Suppe",
      "der",
      "рис",
-     "nicht",
+     "einen",
      "den",
+     "вода",
+     "die Suppe",
      "хотеть (вежливо)",
-     "das",
      "trinken",
-     "вода"
+     "die",
+     "kein"
     ],
-    "sha": "471eb4a4906c742135cc983463048d594c7097243552367ef67822dae77c76e2"
+    "sha": "828fff8ce81c933aeaed64077a76f517bf49bb8d6559b4a6b1027f52b0b83e62"
    },
    "unit5": {
     "n": 10,
     "ids": [
-     "art-v5-2",
-     "ex034",
+     "ex030",
      "vq-v5-20-ru",
-     "ex033",
      "vq-v5-11-de",
-     "vq-v5-13-de",
-     "vq-v5-6-de",
      "vq-v5-7-ru",
-     "art-v5-3",
-     "ex030"
+     "ex033",
+     "art-v5-15",
+     "vq-v5-6-de",
+     "ex034",
+     "vq-v5-13-de",
+     "art-v5-2"
     ],
     "answers": [
-     "das",
-     "neben das",
+     "der",
      "mieten",
-     "den",
      "диван",
-     "окно",
-     "спальня",
      "das Wohnzimmer",
-     "das",
-     "der"
+     "den",
+     "der",
+     "спальня",
+     "neben das",
+     "окно",
+     "das"
     ],
-    "sha": "4943435541f728ad25390db70e8ef54a6c29a8ada7a73a3db4aa4266cc045406"
+    "sha": "bc3bedd870fcfe9e948d62d821a433548b237dd72561093081afbe0aee7f2c1b"
    },
    "unit6": {
     "n": 10,
     "ids": [
+     "vq-v6-14-de",
+     "ex038",
+     "ex040",
+     "vq-v6-16-de",
+     "vq-v6-21-ru",
+     "ex039",
+     "vq-v6-19-de",
      "vq-v6-17-ru",
      "art-v6-10",
-     "vq-v6-21-ru",
-     "vq-v6-14-de",
-     "ex039",
-     "ex037",
-     "vq-v6-16-de",
-     "ex041",
-     "art-v6-7",
-     "vq-v6-19-de"
+     "art-v6-14"
     ],
     "answers": [
+     "договор",
+     "oder",
+     "Ich bleibe zu Hause, weil ich krank bin.",
+     "резюме",
+     "helfen",
+     "aber",
+     "зарабатывать",
      "die Pause",
      "das",
-     "helfen",
-     "договор",
-     "aber",
-     "Ich lerne Deutsch, weil ich hier arbeite.",
-     "резюме",
-     "bei",
-     "der",
-     "зарабатывать"
+     "der"
     ],
-    "sha": "b4fbb3cdde5a9579c7bef446ba7a13fd2ebc07395587fda996158307d83c07f5"
+    "sha": "87439c4a4c0ab74491ad20f50ed86700f773475cf87578b5f8f479a38b924ecb"
    },
    "unit7": {
     "n": 10,
     "ids": [
-     "vq-v7-16-ru",
      "vq-v7-9-de",
-     "art-v7-2",
+     "vq-v7-16-ru",
      "vq-v7-15-de",
-     "vq-v7-6-ru",
-     "ex048",
-     "vq-v7-2-de",
+     "art-v7-5",
      "ex047",
-     "art-v7-13",
-     "ex042"
+     "ex042",
+     "vq-v7-6-ru",
+     "art-v7-14",
+     "ex044",
+     "vq-v7-2-de"
     ],
     "answers": [
-     "links",
      "банк",
-     "die",
+     "links",
      "угол",
-     "die U-Bahn",
-     "Ich fahre mit der U-Bahn.",
-     "улица",
+     "der",
      "aus",
+     "der",
+     "die U-Bahn",
      "die",
-     "der"
+     "zum",
+     "улица"
     ],
-    "sha": "af08b73f27c9d5a97ce6e22d2a9c4c56ed677c4e96368e0765ee494b00751361"
+    "sha": "8c1343321303049393b51d0d7604061f857162563c90ccb740a60960c355e461"
    },
    "unit8": {
     "n": 10,
     "ids": [
-     "art-v8-4",
-     "ex054",
-     "vq-v8-11-ru",
-     "art-v8-10",
+     "ex049",
      "vq-v8-2-de",
+     "art-v8-8",
+     "ex054",
+     "vq-v8-3-ru",
      "vq-v8-6-de",
-     "ex055",
-     "vq-v8-10-de",
-     "ex051",
-     "vq-v8-3-ru"
+     "ex050",
+     "art-v8-13",
+     "vq-v8-11-ru",
+     "vq-v8-10-de"
     ],
     "answers": [
-     "die",
-     "Ich habe Deutsch gelernt.",
-     "das Wochenende",
-     "der",
+     "am",
      "час (длительность)",
+     "der",
+     "Ich habe Deutsch gelernt.",
+     "die Minute",
      "год",
-     "getrunken",
-     "воскресенье",
-     "Im",
-     "die Minute"
+     "um",
+     "der",
+     "das Wochenende",
+     "воскресенье"
     ],
-    "sha": "ae06d2845808951a91f417086b5007300d53b2bb9d926d7fc51655764c328e6a"
+    "sha": "de2c548cec58f7f91f98673b1781fc46dbd9902506436cab7fae129529019b03"
    },
    "unit9": {
     "n": 10,
     "ids": [
-     "ex060",
-     "vq-v9-16-ru",
-     "ex056",
-     "ex058",
-     "art-v9-12",
-     "art-v9-8",
      "vq-v9-10-ru",
+     "vq-v9-4-de",
+     "ex057",
+     "art-v9-11",
+     "ex061",
      "vq-v9-6-de",
+     "vq-v9-16-ru",
      "vq-v9-13-de",
-     "vq-v9-4-de"
+     "ex060",
+     "art-v9-13"
     ],
     "answers": [
-     "Wie viel kostet das?",
-     "die Größe",
-     "für",
-     "mich",
-     "die",
-     "das",
      "die Kasse",
+     "брать",
+     "ohne",
+     "die",
+     "meine",
      "обменять",
+     "die Größe",
      "предложение, акция",
-     "брать"
+     "Wie viel kostet das?",
+     "das"
     ],
-    "sha": "112108dd7221151eba7507395d5dcade917e380122b40814e5f20e47f676f63c"
+    "sha": "0db80bbcf01b9829bc2fa0fffed12d30a4e47d4e066691efe9afc6ca4668e808"
    },
    "unit10": {
     "n": 10,
     "ids": [
-     "vq-v10-15-de",
-     "ex062",
-     "art-v10-17",
      "ex064",
-     "vq-v10-16-de",
-     "ex066",
-     "art-v10-8",
-     "vq-v10-13-ru",
      "vq-v10-17-ru",
-     "vq-v10-3-de"
+     "ex062",
+     "vq-v10-13-ru",
+     "vq-v10-3-de",
+     "ex067",
+     "vq-v10-16-de",
+     "art-v10-18",
+     "vq-v10-15-de",
+     "art-v10-8"
     ],
     "answers": [
-     "чемодан",
-     "des",
-     "das",
      "an",
-     "паспорт",
-     "das Auto von meinem Vater",
-     "die",
-     "der Flughafen",
      "das Hotel",
-     "прибывать"
+     "des",
+     "der Flughafen",
+     "прибывать",
+     "Ich bin mit dem Zug gefahren.",
+     "паспорт",
+     "die",
+     "чемодан",
+     "die"
     ],
-    "sha": "7406927f5a5fc7055e8f4baa120c9ab017df9923a50b5794be2543fe609decab"
+    "sha": "10dbe3db44c85c572026812f0534d7c175043f524206591499feb0fe23fe5e65"
    }
   },
   "conceptQuestions": {
@@ -3479,30 +3848,30 @@
   "articleDrill": {
    "n": 10,
    "ids": [
-    "art-v2-4",
-    "art-v7-12",
-    "art-v4-15",
-    "art-v4-12",
-    "art-v5-11",
-    "art-v8-13",
-    "art-v5-19",
-    "art-v7-7",
-    "art-v5-8",
-    "art-v9-15"
+    "art-v121-10",
+    "art-v1-17",
+    "art-v104-11",
+    "art-v5-3",
+    "art-v114-20",
+    "art-v102-19",
+    "art-v108-15",
+    "art-v112-7",
+    "art-v136-11",
+    "art-v138-19"
    ],
    "answers": [
     "die",
+    "das",
+    "die",
+    "das",
+    "der",
+    "der",
+    "der",
     "der",
     "die",
-    "der",
-    "das",
-    "der",
-    "der",
-    "das",
-    "der",
     "der"
    ],
-   "sha": "dbceec604ff8fab3b433d6632c4c6dc4a4dbbe61cd9166261f6d4158f9eae570"
+   "sha": "ead1304589bfb4c6948aba44b9dc5667456a03b9b374dd3a1a9795bb6b22a140"
   }
  },
  "tutor": {

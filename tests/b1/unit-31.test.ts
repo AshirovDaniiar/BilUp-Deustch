@@ -474,7 +474,7 @@ describe('vocabulary: 40 new items, none already taught', () => {
     expect(UNIT_31_VOCABULARY.every(v => v.unit === 31)).toBe(true)
     const ids = B1_CONTENT.vocabulary.map(v => v.id)
     expect(new Set(ids).size).toBe(ids.length)
-    expect(ids).toHaveLength(480)
+    expect(ids).toHaveLength(1380)
   })
   it('no lemma repeats an A1, A2 or earlier B1 headword (Amt, Antrag, Formular, Frist, Unterlagen, Widerspruch, Vertrag … are NOT repeated), and none is listed twice', () => {
     const keys = UNIT_31_VOCABULARY.flatMap(v => lemmaKeys(v.de))
@@ -1142,7 +1142,7 @@ describe('validator and assessment honesty', () => {
     ])
     expect(is.filter(i => i.where === 'grammar:b1-formelle-sprache')).toEqual([])
     expect(
-      is.filter(i => /^(reading:b1-re-31|listening:b1-li-31|writing:b1-wr-31|vocabulary:v31)/.test(i.where) && i.severity === 'review'),
+      is.filter(i => /^(reading:b1-re-31-\d{2}|listening:b1-li-31-\d{2}|writing:b1-wr-31-\d{2}|vocabulary:v31-\d+)(?:#|$)/.test(i.where) && i.severity === 'review'),
     ).toEqual([])
   })
   it('the unit never claims a CEFR level, a certificate or an exam result', () => {

@@ -183,12 +183,11 @@ describe('LIMITATIONS, measured on the real A1 German (all existing units relabe
     expect([...flagged(asStrict())].sort()).toEqual(['grammar:genitiv', 'writing:wr10'])
   })
 
-  it('the B1-tagged reading text re10 is NOT detected by any heuristic — only its declared tag reveals it', () => {
+  it('the A1 reading text re10 is checked against its owning unit using the stable curriculum-v2 id', () => {
     const b = asStrict()
-    expect([...flagged(b)].some(w => w === 'reading:re10')).toBe(false)
-    // relabel the real unit 6 as A2 and the text keeps its B1 tag: the reliable (tag) rule catches what the heuristics cannot
-    b.units = b.units.map(u => ({ ...u, level: 'A2' as const }))
-    expect(run(b).some(i => i.rule === 'cefr-too-advanced-tag' && i.where === 'reading:re10')).toBe(true)
+    b.course = b.course?.map(level => ({ ...level, extraUnitIdRanges: [[110, 110]] }))
+    expect([...flagged(b)]).toContain('reading:re10')
+    expect(run(b).some(i => i.rule === 'cefr-level-mismatch' && i.where === 'reading:re10')).toBe(true)
   })
 })
 

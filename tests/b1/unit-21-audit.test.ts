@@ -254,6 +254,7 @@ describe('educational coverage: the stated learner outcomes are all trained some
   })
   it('the unit is contained in the B1 chunk and nothing leaks into the A1/A2 modules (identity of A1/A2 content untouched)', () => {
     expect(B1_CONTENT.legacyUnits.map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
-    expect(B1_CONTENT.vocabulary.every(v => v.unit >= 21 && v.unit <= 32)).toBe(true)
+    expect(B1_CONTENT.vocabulary.filter(v => v.unit >= 21 && v.unit <= 32)).toHaveLength(480)
+    expect(B1_CONTENT.vocabulary.filter(v => v.unit >= 301 && v.unit <= 310)).toHaveLength(250)
   })
 })

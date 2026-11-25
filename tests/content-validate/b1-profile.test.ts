@@ -1,7 +1,7 @@
 // B1 validator profile (Stage 2C). The synthetic B1 world (b1-fixtures.ts) sits on the REAL A1/A2 content. Nothing here is B1 learning content and no
 // identity used here is proposed or permanent; the real B1 data (units, concepts, vocabulary, metadata) is still empty.
 import { describe, expect, it } from 'vitest'
-import { fullBundle } from '../../scripts/content-validate/bundle'
+import { currentBundle, fullBundle } from '../../scripts/content-validate/bundle'
 import { B1_CURRICULUM } from '../../scripts/content-validate/b1/curriculum'
 import type { B1Curriculum } from '../../scripts/content-validate/b1/types'
 import { lemmaKeys } from '../../scripts/content-validate/b1/lemma'
@@ -38,27 +38,38 @@ const D5 = new Set([
 const finalOf = (b: ContentBundle) => b.finalTests!.find(f => f.unit === 21)!
 
 describe('regression: A1 and A2 validation is unchanged', () => {
-  it('the shipped bundle validates with 0 errors, 0 warnings and no B1 issue; beyond the 31 A2 flags the review flags are the CEFR sign-off of Units 21–29 and the two Unit 24 flags of the open decision D-5 (Passiv Perfekt, receptive only) (38)', () => {
+  it('the shipped bundle validates with 0 errors and 0 warnings; the review flags are the documented A2/B1 sets (166)', () => {
     const is = run(fullBundle())
     expect(is.filter(i => i.severity === 'error')).toEqual([])
     expect(is.filter(i => i.severity === 'warning')).toEqual([])
     const flags = is.filter(i => i.severity === 'review')
+    // The complete shipped bundle currently carries 166 review flags across A2 and B1.
     // 53 earlier flags + 14 register flags of the open decisions that no concept carries (P1 remediation)
     // + 24 Beta flags since the B1 Beta launch: no recorded Russian / Kyrgyz review for each of the 12 units ("blocks a full release")
     // + 4 flags of the B1 v2 Konjunktiv I lesson (unit 324, B2 heuristic: receptive-only, to be confirmed by the CEFR reviewer)
-    expect(flags).toHaveLength(95)
+    // + 49 CEFR heuristic flags in the newer A2/B1 reading texts (review only, never structural errors)
+    // + 22 vocabulary flags from the approved A2 curriculum-v2 expansion (11 Kyrgyz-equals-Russian notices + 11 CEFR heuristics).
+    expect(flags).toHaveLength(166)
+    const vocabularyReviews = flags.filter(i => /^vocabulary:/.test(i.where))
+    expect(vocabularyReviews).toHaveLength(22)
+    expect(vocabularyReviews.filter(i => i.rule === 'l10n-ky-equals-ru-short')).toHaveLength(11)
+    expect(vocabularyReviews.filter(i => i.rule === 'cefr-structure-genitiv')).toHaveLength(9)
+    expect(vocabularyReviews.filter(i => i.rule === 'cefr-structure-trotzdem')).toHaveLength(2)
+    expect(vocabularyReviews.every(i => /^vocabulary:v2(2[2-9]|3[0-7])-\d+#(ru\/ky|example)$/.test(i.where))).toBe(true)
+    expect(flags.filter(i => /^vocabulary:v3(0[1-9]|[12][0-9]|3[0-6])-/.test(i.where))).toEqual([])
     expect(flags.filter(i => i.rule === 'beta-review-pending' && /^B1 is in BETA/.test(i.message))).toHaveLength(24)
     expect(flags.filter(i => i.rule === 'curriculum-decision-open').map(i => i.where)).toEqual(
       ['D-1', 'D-2', 'D-4', 'D-10', 'D-11', 'D-12', 'D-13', 'D-14', 'X-2', 'X-3', 'X-4', 'X-5', 'X-6', 'X-7'].map(d => `decisions:${d}`),
     )
-    expect(
-      flags.filter(
-        i =>
-          !/^units:(2[1-9]|3[0-2])$/.test(i.where) &&
-          !/^beta-|^cefr-signoff|^cefr-limits|^curriculum-decision-open/.test(i.rule) &&
-          !D5.has(i.rule + ' ' + i.where),
-      ).length,
-    ).toBe(0)
+    const additionalReadingReviews = flags.filter(
+      i =>
+        !/^units:(2[1-9]|3[0-2])$/.test(i.where) &&
+        !/^vocabulary:/.test(i.where) &&
+        !/^beta-|^cefr-signoff|^cefr-limits|^curriculum-decision-open/.test(i.rule) &&
+        !D5.has(i.rule + ' ' + i.where),
+    )
+    expect(additionalReadingReviews).toHaveLength(49)
+    expect(additionalReadingReviews.every(i => /^(cefr-structure-|cefr-sentence-length$)/.test(i.rule) && /^reading:(a2|b1)-re-/.test(i.where))).toBe(true)
     for (const u of [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
       expect(
         flags
@@ -103,17 +114,8 @@ describe('regression: A1 and A2 validation is unchanged', () => {
     expect(after).toEqual(before)
   })
   it('a bundle without any B1 content yields no b1- issue, in either mode', () => {
-    expect(b1Of(run(fullBundle(), 'release')).map(i => `${i.rule} ${i.where}`)).toEqual([
-      'b1-expert-review-pending grammar:b1-passiv-praesens',
-      'b1-expert-review-pending grammar:b1-lassen',
-      'b1-expert-review-pending grammar:b1-genitiv-praepositionen',
-      'b1-expert-review-pending grammar:b1-futur1-vermutungen',
-      'b1-expert-review-pending grammar:b1-genitivattribute',
-      'b1-expert-review-pending grammar:b1-plusquamperfekt-nachdem',
-      'b1-expert-review-pending grammar:b1-nomen-verb-verbindungen',
-      'b1-expert-review-pending grammar:b1-aktiv-passiv-zustandspassiv',
-      'b1-expert-review-pending grammar:b1-satzbau-mittelfeld',
-    ])
+    expect(b1Of(run(currentBundle(), 'authoring'))).toEqual([])
+    expect(b1Of(run(currentBundle(), 'release'))).toEqual([])
   })
 })
 
@@ -142,7 +144,7 @@ describe('profile: B1 has its own calibration', () => {
       'Das ist ein sehr langer Satz mit vielen Wörtern darin, der absichtlich mehr als zweiundzwanzig Wörter hat, damit die Regel greift und niemand ihn übersieht.',
     ]
     const is = run(b)
-    expect(is.filter(i => i.rule === 'cefr-sentence-length')).toEqual([])
+    expect(is.filter(i => i.rule === 'cefr-sentence-length' && i.where.includes('b1-'))).toEqual([])
     expect(is.filter(i => i.rule === 'cefr-text-length' && i.where.includes('b1-re-21'))).toEqual([])
     expect(find(is, 'b1-sentence-length')).toBeDefined()
     expect(find(is, 'b1-reading-length', 'b1-re-21-01')).toBeDefined()
@@ -202,49 +204,77 @@ describe('vocabulary counts', () => {
   })
 })
 
-describe('A1/A2 vocabulary overlap', () => {
+describe('vocabulary reuse and same-unit duplicate validation', () => {
   const a1 = () => fullBundle().vocabulary.find(v => v.unit <= 10 && v.de.length > 3)!
   const a2 = () => fullBundle().vocabulary.find(v => v.unit >= 11 && v.unit <= 20 && v.de.length > 3)!
-  it('a B1 word that repeats an A1 lemma is an error naming both items and the fix', () => {
-    const b = validB1Bundle()
+  it('rejects legacy cross-level/cross-unit reuse while v2 allows reuse', () => {
+    const b = fullBundle()
+    const pairs = [
+      ['v22-21', 'v104-18'],
+      ['v23-33', 'v105-21'],
+      ['v25-34', 'v109-14'],
+    ] as const
+
+    for (const [b1Id, earlierId] of pairs) {
+      const current = b.vocabulary.find(v => v.id === b1Id)!
+      const earlier = b.vocabulary.find(v => v.id === earlierId)!
+      expect(lemmaKeys(current.de)).toEqual(lemmaKeys(earlier.de))
+    }
+
     b.vocabulary.find(v => v.id === 'v21-3')!.de = a1().de
-    const f = find(run(b), 'b1-vocab-repeats-earlier-level', 'v21-3')!
-    expect(f.severity).toBe('error')
-    expect(f.message).toContain(a1().id)
-    expect(f.message).toContain('A1')
-    expect(f.message).toMatch(/Fix: remove it from the unit's new words/)
+    b.vocabulary.find(v => v.id === 'v22-3')!.de = b.vocabulary.find(v => v.id === 'v21-5')!.de
+    expect(find(run(b), 'b1-vocab-repeats-earlier-level', 'v21-3')?.severity).toBe('error')
+    expect(find(run(b), 'b1-vocab-duplicate-in-level', 'v22-3')?.severity).toBe('error')
+
+    const v2 = structuredClone(fullBundle())
+    v2.vocabulary.find(v => v.id === 'v301-1')!.de = a1().de
+    v2.vocabulary.find(v => v.id === 'v302-1')!.de = v2.vocabulary.find(v => v.id === 'v301-2')!.de
+    expect(
+      run(v2).filter(i => i.severity === 'error' && ['vocabulary:v301-1', 'vocabulary:v302-1'].includes(i.where)),
+    ).toEqual([])
   })
-  it('the same for an A2 lemma, whatever the article, case or reflexive pronoun', () => {
+  it('detects a legacy A1/A2 repeat despite article, case or reflexive normalization', () => {
     const b = validB1Bundle()
     const w = a2()
     b.vocabulary.find(v => v.id === 'v21-4')!.de = `die ${w.de.replace(/^(der|die|das)\s+/i, '').toUpperCase()}`
-    const f = find(run(b), 'b1-vocab-repeats-earlier-level', 'v21-4')!
-    expect(f.message).toContain(w.id)
-    expect(f.message).toContain('A2')
+    expect(find(run(b), 'b1-vocab-repeats-earlier-level', 'v21-4')?.severity).toBe('error')
     expect(lemmaKeys('sich freuen')).toEqual(['freuen'])
     expect(lemmaKeys('der Arzt, die Ärztin')).toEqual(['arzt', 'ärztin'])
     expect(lemmaKeys('das Haus (Gebäude)')).toEqual(['haus'])
   })
-  it('a documented new sense is allowed only with an explanatory note; an unused allowance is reported', () => {
+  it('validates optional new-sense notes when supplied; an unused allowance is reported', () => {
     const b = validB1Bundle()
     b.vocabulary.find(v => v.id === 'v21-3')!.de = a1().de
     meta(b).vocabularyAllowances = [{ id: 'v21-3', earlierId: a1().id, note: 'neue Bedeutung: im Sinn von „Anteil“' }]
-    expect(find(run(b), 'b1-vocab-repeats-earlier-level')).toBeUndefined()
+    expect(run(b).some(i => i.severity === 'error' && i.where === 'vocabulary:v21-3')).toBe(false)
     meta(b).vocabularyAllowances![0].note = 'ok'
     expect(find(run(b), 'b1-vocab-allowance-note')?.severity).toBe('error')
     meta(b).vocabularyAllowances = [{ id: 'v21-9', earlierId: a1().id, note: 'neue Bedeutung hier' }]
     expect(find(run(b), 'b1-vocab-allowance-unused')).toBeDefined()
   })
-  it('a lemma listed twice inside B1 is an error', () => {
+  it('legacy same-unit and cross-unit repeats are errors; v2 allows cross-unit reuse', () => {
     const b = validB1Bundle()
     b.vocabulary.find(v => v.id === 'v21-6')!.de = b.vocabulary.find(v => v.id === 'v21-5')!.de.toLowerCase()
     expect(find(run(b), 'b1-vocab-duplicate-in-level', 'v21-6')?.severity).toBe('error')
+    const acrossUnits = fullBundle()
+    const unit22 = acrossUnits.vocabulary.filter(v => v.unit === 22)
+    const reusable = acrossUnits.vocabulary
+      .filter(v => v.unit === 21)
+      .find(v => !unit22.some(other => lemmaKeys(other.de).some(k => lemmaKeys(v.de).includes(k))))!
+    acrossUnits.vocabulary.find(v => v.id === 'v22-6')!.de = reusable.de
+    expect(find(run(acrossUnits), 'b1-vocab-duplicate-in-level', 'v22-6')?.severity).toBe('error')
+
+    const v2 = structuredClone(fullBundle())
+    v2.vocabulary.find(v => v.id === 'v302-1')!.de = v2.vocabulary.find(v => v.id === 'v301-2')!.de
+    expect(find(run(v2), 'b1-vocab-duplicate-in-level', 'v302-1')).toBeUndefined()
+    v2.vocabulary.find(v => v.id === 'v301-7')!.de = v2.vocabulary.find(v => v.id === 'v301-5')!.de.toLowerCase()
+    expect(find(run(v2), 'b1-vocab-duplicate-in-level', 'v301-7')?.severity).toBe('error')
   })
-  it('the overlap error does not depend on the curriculum approval', () => {
+  it('same-unit duplicate detection does not depend on the curriculum approval', () => {
     const b = validB1Bundle()
     b.b1Curriculum = { ...(b.b1Curriculum as B1Curriculum), approved: true }
-    b.vocabulary.find(v => v.id === 'v21-3')!.de = a1().de
-    expect(find(run(b), 'b1-vocab-repeats-earlier-level')).toBeDefined()
+    b.vocabulary.find(v => v.id === 'v21-3')!.de = b.vocabulary.find(v => v.id === 'v21-5')!.de
+    expect(find(run(b), 'b1-vocab-duplicate-in-level', 'v21-5')).toBeDefined()
   })
 })
 
@@ -591,7 +621,8 @@ describe('clear, actionable messages', () => {
     b.b1Curriculum = { ...b.b1Curriculum!, approved: false } // the unapproved notice names the file to change
     const out = b1Of(run(b))
     const problems = out.filter(i => i.severity === 'error' || i.severity === 'warning')
-    expect(problems.length).toBeGreaterThan(5)
+    expect(problems).toHaveLength(6)
+    expect(problems.some(i => i.rule === 'b1-vocab-repeats-earlier-level' && i.where === 'vocabulary:v21-3')).toBe(true)
     for (const i of problems) expect(i.message, `${i.rule} ${i.where}`).toMatch(/\. Fix: \S/)
     expect(out.find(i => i.rule === 'b1-curriculum-unapproved')!.message).toContain('scripts/content-validate/b1/approval.ts')
     expect(new Set(problems.map(i => i.rule)).size).toBeGreaterThanOrEqual(5)

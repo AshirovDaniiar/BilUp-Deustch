@@ -6,7 +6,7 @@ An id is only a **name**: identity, ownership and behaviour come from explicit m
 
 ## Rules for every permanent id
 1. **Never reused, never renamed, never given a new meaning.** A removed item keeps its id retired.
-2. A unit's numeric id (21–32) is the key of progress, routes and storage; it is global and unique across levels.
+2. A unit's numeric id is the key of progress, routes and storage; it is global and unique across levels. Legacy units use 21–32; curriculum-v2 units use 301–336.
 3. A change to an approved identity (unit key/title, concept id) is a **recorded curriculum change**: dossier + `registry.ts` / `curriculum.ts` + test, together — never an accident (the frozen-identity test fails otherwise).
 4. Ids are unique across **all** levels; B1 ids carry the level prefix `b1-` (vocabulary keys carry the unit number).
 
@@ -28,6 +28,8 @@ An id is only a **name**: identity, ownership and behaviour come from explicit m
 
 An authored unit must match its plan entry exactly (`id`, `key`, `title` = the German title, `level: 'B1'`). A unit not in the plan cannot hold content.
 
+The visible curriculum-v2 units are separate containers, numbered 301–336 by display position. Their vocabulary ids use the unit's numeric id, for example `v301-1`; they do not reuse legacy ids such as `v21-1`.
+
 ## Item id conventions (unit 21 shown)
 | Kind | Form | Notes |
 | --- | --- | --- |
@@ -46,7 +48,7 @@ An authored unit must match its plan entry exactly (`id`, `key`, `title` = the G
 | Final-test question | `b1-ft-21-<nn>` | `nn` = 01 … 15 |
 | Placement item / tutor template / instruction | `b1-pl-<nn>` / `b1-tt-<kebab>` / `b1-in-<kebab>` | only if ever authored |
 
-**Vocabulary rules (keys and content):** a word is listed **once** across B1; it must not repeat an A1/A2 lemma as new (validator `b1-vocab-repeats-earlier-level`; a genuinely new sense needs a documented allowance); 38–42 new items per unit; both `ky` translations and `exampleKy` are authored, never copied from Russian.
+**Vocabulary rules (keys and content):** legacy B1 Units 21–32 reject a NEW word that repeats an A1/A2 lemma (`b1-vocab-repeats-earlier-level`, unless a `vocabularyAllowances` entry explains the new sense) and reject repeated lemmas across legacy B1; they target 38–42 new items. Curriculum-v2 Units 301–336 allow reuse across Units and CEFR levels and reject duplicate lemmas within one Unit (`b1-vocab-duplicate-in-level`); they follow their own source counts (Units 301–320 have 25 items each in the current import). Optional new-sense allowances are validated when supplied. Both `ky` translations and `exampleKy` are authored, never copied from Russian.
 
 ## The 29 approved grammar concept ids
 | Unit | Concepts | Proficiency (enforced) |
@@ -67,4 +69,4 @@ An authored unit must match its plan entry exactly (`id`, `key`, `title` = the G
 ⚑ = pending independent expert verification (decisions D-1…D-15 of the dossier). **Genitivattribute is enforced as R**: the dossier says "R-first; P-lim ⚑", and an uncertain classification is never silently upgraded; a closed productive set is the pending upgrade. Passiv Perfekt, Partizip I/II als Adjektiv, *sich lassen*, Konjunktiv II der Vergangenheit and the other receptive-only constructions are receptive and are declared per unit in the metadata (`receptiveOnly` / `constructions`).
 
 ## What is deliberately NOT defined yet
-No lesson id, no vocabulary key, no objective text, no Russian or Kyrgyz text exists. `B1_META` (authored unit metadata: objectives in German + Russian + Kyrgyz, scenario ids, strand items) stays empty until each unit is authored; the Russian and Kyrgyz texts must be written and reviewed, never invented.
+The vocabulary entries for curriculum-v2 Units 301–320 are authored separately from the legacy unit plan above; Units 321–336 have no vocabulary yet. `B1_META` (legacy unit metadata: objectives in German + Russian + Kyrgyz, scenario ids, strand items) remains scoped to the legacy units and stays unchanged until those units are authored.

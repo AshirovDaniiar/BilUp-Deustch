@@ -2,7 +2,7 @@ import type { Article, PartOfSpeech, VocabularyItem } from '../../types'
 
 /**
  * Unit 27 vocabulary — Konsum, Geld und Reklamation (B1). 40 NEW productive items (target 38–42), none of them an A1/A2 or earlier B1 headword
- * (checked by the validator rule `b1-vocab-repeats-earlier-level`). Themes: Reklamation und Rückgabe · Bank und Zahlung · Einkauf und Budget · Adjektive · Verben.
+ * (legacy rule: cross-level lemma repeats are rejected by `b1-vocab-repeats-earlier-level`; v2 Units 301–336 allow reuse across units/levels and reject only same-unit duplicates — see `docs/b1/B1_ID_CONVENTIONS.md`). Themes: Reklamation und Rückgabe · Bank und Zahlung · Einkauf und Budget · Adjektive · Verben.
  * A2 Unit 15 and earlier units already taught the basic shopping and money words (Angebot, Preis, Rechnung, Quittung, Kunde, kaufen, bestellen, umtauschen,
  * Lieferung, Paket, Konto, Bank, Geldautomat, Gehalt, kündigen, vergleichen, entscheiden …); they are REUSED in the texts as revision but not listed again.
  * `Kredit` is RECEPTIVE only (curriculum): it is glossed in one reading and is not a vocabulary item. Wortbildung strand: Verb → Nomen (reklamieren →

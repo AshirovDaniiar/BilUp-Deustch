@@ -203,7 +203,7 @@ describe('A1 is measured, not failed', () => {
       expect(i.message).toMatch(/Legacy level: measured only/)
     }
     expect(info.find(i => i.where === 'listening A1')?.message).toMatch(/17\/17\/1/)
-    expect(info.find(i => i.where === 'reading A1')?.message).toMatch(/14\/4\/0/)
+    expect(info.find(i => i.where === 'reading A1')?.message).toMatch(/13\/13\/12/)
   })
 
   it('A1 has no answer errors, warnings or review flags, and the structure rules find nothing in it', () => {

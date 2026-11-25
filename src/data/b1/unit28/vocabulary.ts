@@ -2,7 +2,7 @@ import type { Article, PartOfSpeech, VocabularyItem } from '../../types'
 
 /**
  * Unit 28 vocabulary — Bildung, Lernen und Zukunftspläne (B1). 40 NEW productive items (target 38–42), none of them an A1/A2 or earlier B1 headword
- * (checked by the validator rule `b1-vocab-repeats-earlier-level`). Themes: Schule und Studium · Kurs und Lernen · Schule und Kita (Eltern, Betreuung) ·
+ * (legacy rule: cross-level lemma repeats are rejected by `b1-vocab-repeats-earlier-level`; v2 Units 301–336 allow reuse across units/levels and reject only same-unit duplicates — see `docs/b1/B1_ID_CONVENTIONS.md`). Themes: Schule und Studium · Kurs und Lernen · Schule und Kita (Eltern, Betreuung) ·
  * Adjektive · Verben. A2 and earlier units already taught the basic education words (Schule, Unterricht, Prüfung, Abschluss, Zeugnis, Ausbildung, Praktikum,
  * Anmeldung, Entschuldigung, Ziel, Plan, Erfolg, bestehen, planen …); they are REUSED in the texts as revision but not listed again. The prepositional verbs of the
  * unit (the closed list of 20) are GRAMMAR, not vocabulary items; no other verb of this list needs a prepositional object. Wortbildung strand: Kompositum

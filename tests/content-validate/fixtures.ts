@@ -276,8 +276,9 @@ export const clone = <T>(x: T): T => structuredClone(x)
  */
 export function emptyA2Bundle(): ContentBundle {
   const b = withoutB1Content(structuredClone(fullBundle()))
-  const range = b.course?.find(c => c.id === 'A2')?.unitIdRange ?? [11, 20]
-  const outside = (unit: number) => unit < range[0] || unit > range[1]
+  const a2 = b.course?.find(c => c.id === 'A2')
+  const ranges = a2 ? [a2.unitIdRange, ...(a2.extraUnitIdRanges ?? [])] : [[11, 20] as const]
+  const outside = (unit: number) => !ranges.some(([first, last]) => unit >= first && unit <= last)
   const a2Concepts = new Set(b.grammar.filter(g => !outside(g.unit)).map(g => g.id))
   const a2Scenarios = new Set(
     Object.entries(b.speakingLevels ?? {})
@@ -313,8 +314,9 @@ export function emptyA2Bundle(): ContentBundle {
  * the real B1 content, which is validated by its own tests. The B1 unit PLAN, the course registry and the curriculum configuration stay.
  */
 export function withoutB1Content(b: ContentBundle): ContentBundle {
-  const range = b.course?.find(c => c.id === 'B1')?.unitIdRange ?? [21, 32]
-  const outside = (unit: number) => (unit < range[0] || unit > range[1]) && !(unit >= 301 && unit <= 336) // 301–336: the B1 curriculum v2 lessons (extra id range)
+  const b1 = b.course?.find(c => c.id === 'B1')
+  const ranges = b1 ? [b1.unitIdRange, ...(b1.extraUnitIdRanges ?? [])] : ([[21, 32], [301, 336]] as const)
+  const outside = (unit: number) => !ranges.some(([first, last]) => unit >= first && unit <= last)
   const b1Concepts = new Set(b.grammar.filter(g => !outside(g.unit)).map(g => g.id))
   const b1Scenarios = new Set(
     Object.entries(b.speakingLevels ?? {})

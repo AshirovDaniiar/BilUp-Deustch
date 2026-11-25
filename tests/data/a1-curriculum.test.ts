@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { A1_CURRICULUM_TITLES, A1_LEGACY_UNITS, A1_UNITS, unitNumber } from '../../src/data/a1-curriculum'
-import { allUnits, unitsOfLevel } from '../../src/data/catalog'
+import { allUnits, readingForUnit, unitsOfLevel, vocabularyForUnit } from '../../src/data/catalog'
 import { levelOfUnitId } from '../../src/data/course'
 import { SECTIONS, UNITS } from '../../src/data/units'
 import { requiredSections } from '../../src/features/progress/stats'
@@ -40,8 +40,15 @@ describe('A1 curriculum v2: 38 units × 9 sections', () => {
     expect(A1_UNITS).toHaveLength(38)
     expect(A1_UNITS.length * SECTIONS.length).toBe(342)
     for (const u of A1_UNITS.slice(1)) {
-      // no invented content: a unit either references one EXISTING grammar lesson or is completely empty
-      expect(requiredSections(u.id)).toEqual(u.grammarIds.length ? ['grammar', 'merksaetze', 'reading'] : ['merksaetze', 'reading'])
+      const hasVocabulary = vocabularyForUnit(u.id).length > 0
+      const expected = [
+        ...(hasVocabulary ? ['vocabulary'] : []),
+        ...(u.grammarIds.length ? ['grammar'] : []),
+        'merksaetze',
+        ...(readingForUnit(u.id).length ? ['reading'] : []),
+        ...(hasVocabulary ? ['review'] : []),
+      ].sort((a, b) => SECTIONS.indexOf(a as (typeof SECTIONS)[number]) - SECTIONS.indexOf(b as (typeof SECTIONS)[number]))
+      expect(requiredSections(u.id)).toEqual(expected)
       expect(u.grammarIds.length).toBeLessThanOrEqual(1)
     }
     expect(requiredSections(1)).toHaveLength(9)

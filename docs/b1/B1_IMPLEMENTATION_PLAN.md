@@ -36,7 +36,7 @@ Rules for every stage: Claude Code only; A1/A2 content, Storage/Persistence and 
 | B-8 | Beta notice wording (level-aware) | B1 Beta | open (code) |
 | **B-9** | **Misleading automated speaking/writing feedback** (score floors, A1-era patterns, Russian-only strings) | B1 Beta | open — code decision (hide scores, checklist, localise) |
 | **B-10** | **Productive vocabulary ≈ 1 080 after B1** (partial lexical syllabus) | exam-readiness wording | open — disclosure + owner decision |
-| **B-11** | Per-level validator profile and lemma-overlap check | authoring/validation | **DONE in Stage 2C** (profile, `b1-vocab-repeats-earlier-level`, B1 rules) |
+| **B-11** | Per-level validator profile and per-unit duplicate check | authoring/validation | **DONE in Stage 2C** (profile, B1 rules; cross-unit/level reuse is permitted) |
 | **B-12** | **Cross-level spaced revision** unsupported by level-scoped SRS/review | layer-2 revision | open — code decision or accept authored recycling |
 | **B-13** | CEFR reviewer decisions D-1…D-15 | the ⚑ items | open |
 
@@ -52,7 +52,7 @@ Rules for every stage: Claude Code only; A1/A2 content, Storage/Persistence and 
 
 ### Stage B1b — Validator, feedback and tooling prerequisites (code; before Unit 21)
 1. **Per-level validator profile** (`LEVEL_PROFILE`): A2 values = today's constants (A2 output byte-identical, tested); B1: reading/listening/sentence limits per the ramp (`B1_CURRICULUM.md` §5), B2+ heuristic patterns instead of the A2 "B1+" table; per-level ownership of level-wide items (`firstStrictLevel`, placement rule); level-parameterised messages. (B-11)
-2. **`lemma-repeats-earlier-level`** warning (no A1/A2 lemma as new B1 vocabulary). (B-11)
+2. **Two-family vocabulary validation:** legacy Units 21–32 keep the cross-level lemma check (`b1-vocab-repeats-earlier-level`) and reject repeated lemmas across legacy B1; curriculum-v2 Units 301–336 allow reuse across Units and CEFR levels and reject duplicate lemmas inside one Unit. (B-11)
 3. **A2 isolation baseline test** (content hashes, selector snapshot, availability, notice text) — before any change that could touch A2. (Planned in Stage 1; **not yet done**.)
 4. **Feedback decision implementation (B-9):** for B1 tasks, do not display numeric analysis scores as results; show the learner checklist and "expected words used"; localise every message in ru/ky; no CEFR label on any automated output. Needs an owner decision on whether the same disclosure is applied to A2. Keep the A1/A2 analyser behaviour unchanged unless the owner decides otherwise.
 5. **Level-aware Beta notice** (key change in ru/ky/de, A2 rendering identical) + i18n baseline update. (B-8)

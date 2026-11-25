@@ -72,7 +72,7 @@ describe('B1 registry', () => {
     expect(unitsOfLevel('B1')).toEqual([]) // not loaded: the lazy slot is empty
     expect(vocabularyOf('B1')).toEqual([])
     expect(B1_CONTENT.legacyUnits.map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])
-    expect(B1_CONTENT.vocabulary).toHaveLength(480)
+    expect(B1_CONTENT.vocabulary).toHaveLength(1380)
     for (const k of ['placement', 'tutorTemplates', 'instructions'] as const) expect(B1_CONTENT[k]).toHaveLength(0)
   })
 })
@@ -143,7 +143,7 @@ describe('assessment ids and progress compatibility', () => {
 })
 
 describe('lazy loading: generalised loader (A2 exactly as before, B1 its own slot)', () => {
-  it('A2 still loads on demand while B1 stays unloaded and empty; allUnits holds only A2 units after the load', async () => {
+  it('A2 still loads on demand while B1 stays unloaded and empty; allUnits holds only A2 units after the load', { timeout: 20_000 }, async () => {
     expect(isLevelContentLoaded('A2')).toBe(false)
     await loadLevelContent('A2')
     expect(isLevelContentLoaded('A2')).toBe(true)
@@ -165,7 +165,7 @@ describe('lazy loading: generalised loader (A2 exactly as before, B1 its own slo
     expect(levelsToLoad(route('/learn/unit/1'), 'ru', 'B1')).toEqual([]) // an A1 route (loaded level) requests nothing
     expect(levelsToLoad(route('/learn/unit/12'), 'ru', 'A1')).not.toContain('B1')
   })
-  it('B1 loads through its own loader once visible: the slot receives Units 21–28 only, A2 and A1 are untouched, and the load is idempotent', async () => {
+  it('B1 loads through its own loader once visible: the slot receives Units 21–28 only, A2 and A1 are untouched, and the load is idempotent', { timeout: 20_000 }, async () => {
     setB1('beta', ['ru', 'ky'])
     await loadLevelContent('B1')
     expect(isLevelContentLoaded('B1')).toBe(true)

@@ -78,22 +78,28 @@ describe('B1 curriculum v2: 36 units × 9 sections (structure only)', () => {
     })
     expect(B1_CURRICULUM.map(r => r.grammarTopic)).toEqual(SUPPLIED.map(r => r[1]))
   })
-  it('9 standard sections with Merksätze after Grammar; every content section except Grammar is an empty container', () => {
+  it('9 standard sections with Merksätze after Grammar; the first thirty-six units also have vocabulary and review content', () => {
     expect(SECTIONS).toEqual(['vocabulary', 'grammar', 'merksaetze', 'listening', 'reading', 'speaking', 'writing', 'review', 'test'])
     expect(SECTIONS.indexOf('merksaetze')).toBe(2)
     expect(B1_VISIBLE_UNITS).toHaveLength(36)
     expect(B1_VISIBLE_UNITS.length * SECTIONS.length).toBe(324)
     for (const u of B1_VISIBLE_UNITS) {
       expect(isPlaceholderUnit(u)).toBe(true)
-      // only the Grammar section can hold content (its lesson); a unit without a lesson requires nothing
-      expect(requiredSections(u.id)).toEqual(u.grammarIds.length ? ['grammar', 'merksaetze', 'reading'] : ['merksaetze', 'reading'])
-      expect(unitHasContent(u.id)).toBe(u.grammarIds.length > 0)
+      const hasVocabulary = u.id >= 301 && u.id <= 336
+      expect(requiredSections(u.id)).toEqual([
+        ...(hasVocabulary ? ['vocabulary'] : []),
+        ...(u.grammarIds.length ? ['grammar'] : []),
+        'merksaetze',
+        'reading',
+        ...(hasVocabulary ? ['review'] : []),
+      ])
+      expect(unitHasContent(u.id)).toBe(true)
     }
   })
-  it('empty units never become the current unit and generate no progress', () => {
+  it('curriculum units with authored content can be selected without changing stored progress', () => {
     const p = defaultProgress()
-    // the legacy units are hidden, so the level has no unit to continue in; the caller falls back to the default level
-    expect(currentUnit(p, 'B1')).toBeUndefined()
+    expect(currentUnit(p, 'B1')?.id).toBe(301)
+    expect(p.completed).toEqual([])
   })
   it('the twelve authored units 21–32 are hidden legacy, untouched and still addressable by id', () => {
     expect(B1_LEGACY_UNITS.map(u => u.id)).toEqual([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32])

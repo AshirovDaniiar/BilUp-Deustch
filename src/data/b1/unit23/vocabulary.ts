@@ -2,7 +2,7 @@ import type { Article, PartOfSpeech, VocabularyItem } from '../../types'
 
 /**
  * Unit 23 vocabulary — Arbeit, Bewerbung und Karriere (B1). 40 NEW productive items (target 38–42), none of them an A1/A2 or earlier B1 headword
- * (checked by the validator rule `b1-vocab-repeats-earlier-level`). Themes: Stelle und Bewerbung · Qualifikation und Erfahrung · Betrieb und Arbeitsklima ·
+ * (legacy rule: cross-level lemma repeats are rejected by `b1-vocab-repeats-earlier-level`; v2 Units 301–336 allow reuse across units/levels and reject only same-unit duplicates — see `docs/b1/B1_ID_CONVENTIONS.md`). Themes: Stelle und Bewerbung · Qualifikation und Erfahrung · Betrieb und Arbeitsklima ·
  * Eigenschaften · Verben der Arbeitswelt. A2 Unit 17 already taught the basic work words (Lebenslauf, Bewerbung, Arbeitsvertrag, Kündigung …), so they are
  * NOT repeated here. No verb needs a prepositional object (Unit 28); no example uses an adjective without article (Unit 24). Russian and Kyrgyz are written
  * independently; the Kyrgyz is an AI-assisted FIRST DRAFT that has not been reviewed by a native speaker.

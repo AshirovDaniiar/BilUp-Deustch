@@ -1,0 +1,4574 @@
+{
+  "1": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "der Vorfall"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "der Augenblick"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "der Zwischenfall"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Begebenheit"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Hauptfigur"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "der Erzähler"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Erzählerin"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Handlung"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "der Abschnitt"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "das Kapitel"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Szene"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "der Ablauf"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "berichten"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "schildern"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "beschreiben"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "auftauchen"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "erschrecken"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "erschöpfen"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "gelingen"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "misslingen"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "geschehen"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Zielsetzung"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Durchführung"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Betrachtung"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Einschätzung"
+    }
+  ],
+  "2": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "der Vorlauf"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Vorgeschichte"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Vorbereitungsphase"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "der Ausgangspunkt"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Zwischenzeit"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "der Vorabend"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Vorwoche"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "der Vorbesitzer"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Vorentscheidung"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Vorinformation"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "der Rückblick"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "die Rückkehr"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "der Ablaufplan"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "die Vorarbeit"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "die Vorbedingung"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "vorbereiten"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "vorhersehen"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "nachholen"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "nachweisen"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "zurückliegen"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "vorausgehen"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "zurücklassen"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "verpassen"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "verzögern"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "abschließen"
+    }
+  ],
+  "3": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "der Zeitabschnitt"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "der Zeitraum"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "der Lebensabschnitt"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Zeitspanne"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "der Zeitplan"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "der Zeitrahmen"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Entwicklungslinie"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "der Ausblick"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Veränderungsrate"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "andauern"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "fortsetzen"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "ablaufen"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "vergehen"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "bevorstehen"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "zurückblicken"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "vorausschauen"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "fortschreiten"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "sich entwickeln"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Umsetzung"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Verknüpfung"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Wahrnehmung"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Darstellung"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "verdeutlichen"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "einschätzen"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "verdecken"
+    }
+  ],
+  "4": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Prognose"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Vorhersage"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Annahme"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Tendenz"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Zukunftsforschung"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "der Klimawandel"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Digitalisierung"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Automatisierung"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die künstliche Intelligenz"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Energieversorgung"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Mobilität"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "die Bevölkerungsentwicklung"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "die Arbeitswelt"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "prognostizieren"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "vorhersagen"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "annehmen"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "vermutlich"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "voraussichtlich"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "wahrscheinlich"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "möglicherweise"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "langfristig"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "kurzfristig"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "erfordern"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "verfügen"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "umsetzen"
+    }
+  ],
+  "5": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Auseinandersetzung"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Rücksicht"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Vereinbarkeit"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Abhängigkeit"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Beteiligung"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Anerkennung"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Kritikfähigkeit"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Enttäuschung"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Erwartungshaltung"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Verabredung"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Verständigung"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "der Konflikt"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "die Annäherung"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "sich auseinandersetzen"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "sich verlassen"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "sich beziehen"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "sich einigen"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "sich gewöhnen"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "sich entschließen"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "sich beschränken"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "grundlegend"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "erheblich"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "allmählich"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "überwiegend"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "hinsichtlich"
+    }
+  ],
+  "6": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Anwendung"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Kenntnis"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Verfügung"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "Anwendung finden"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "Verantwortung übernehmen"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "eine Entscheidung treffen"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "in Betracht ziehen"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "zur Verfügung stehen"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "in Frage kommen"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "Kritik üben"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "Kenntnis nehmen"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "Maßnahmen ergreifen"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "Einfluss nehmen"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "folglich"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "die Aufgabenteilung"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Arbeitsleistung"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Arbeitsbedingung"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Arbeitsbelastung"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Entscheidungsgrundlage"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Dienstleistung"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Arbeitsanweisung"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Fristverlängerung"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "durchführen"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "gewährleisten"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Sachkenntnis"
+    }
+  ],
+  "7": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Vorbereitungszeit"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Nachbereitung"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "der Arbeitsbeginn"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "der Dienstschluss"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Übergabe"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Abreise"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Ankunft"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Zwischenstation"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Wartezeit"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Frist"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "der Zeitbedarf"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "der Anschluss"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "nachbereiten"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "abschicken"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "einreichen"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "übergeben"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "abreisen"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "fortfahren"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "erledigen"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Vorlaufzeit"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Abgabefrist"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Abgabetermin"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Dienstreise"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Dienstübergabe"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Anreise"
+    }
+  ],
+  "8": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Belastbarkeit"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Widerstandskraft"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Niederlage"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "der Rückschlag"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Unsicherheit"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Benachteiligung"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Überforderung"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Beharrlichkeit"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "der Durchhaltewille"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Entschlossenheit"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Widerstandsfähigkeit"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "die Belastungsgrenze"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "durchhalten"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "bewältigen"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "überwinden"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "allerdings"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "gleichwohl"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "standhalten"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "scheitern"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "sich behaupten"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Krisensituation"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Bewältigung"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Notlage"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Überwindung"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Entbehrung"
+    }
+  ],
+  "9": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Doppelbelastung"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Nebenbeschäftigung"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Hauptaufgabe"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Nebenaufgabe"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Schichtarbeit"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "der Arbeitsvorgang"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Betreuung"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Beaufsichtigung"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Koordination"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Gleichzeitigkeit"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Unterbrechung"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "die Konzentration"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "die Ablenkung"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "die Arbeitsphase"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "die Freizeitphase"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "parallel"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "währenddessen"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "unterdessen"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "begleiten"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "beaufsichtigen"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "koordinieren"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "konzentrieren"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Arbeitsunterbrechung"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Betreuungskraft"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Pflegearbeit"
+    }
+  ],
+  "10": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "der Wendepunkt"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Umstellung"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Eingewöhnung"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Neuorientierung"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "der Neuanfang"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Übergangsphase"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "der Lebenswandel"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Anpassung"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "der Zustand"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Stabilität"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Verbesserung"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "sich einleben"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "sich umstellen"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "sich anpassen"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "fortbestehen"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "sich festigen"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "sich verschlechtern"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Lebensphase"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Neubeginn"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Lebensumstellung"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Eingliederung"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Veränderungsbereitschaft"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Gewöhnungsphase"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Übergangszeit"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Umbruch"
+    }
+  ],
+  "11": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Verwirklichung"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Bereitschaft"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Verpflichtung"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Notwendigkeit"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Entscheidungskraft"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Selbstdisziplin"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "unterlassen"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "sich weigern"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "gelten"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "scheinen"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "drohen"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "pflegen"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "die Lernbereitschaft"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "die Eigeninitiative"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "die Zielerreichung"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Zielvorgabe"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Ehrgeiz"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Selbstmotivation"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Leistungsbereitschaft"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "sich vornehmen"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "unternehmen"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "durchsetzen"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Fachkenntnis"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Vorgehensweise"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Denkweise"
+    }
+  ],
+  "12": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "der Beweggrund"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Zielgruppe"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "der Zweck"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "der Mehrwert"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Wirksamkeit"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Strategie"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "der Lösungsweg"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "der Aufwand"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Investition"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Förderung"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "anstreben"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "bezwecken"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "fördern"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "erleichtern"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "optimieren"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "einsparen"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "unterstützen"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Zielorientierung"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Lernstrategie"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Fördermaßnahme"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Bildungsabschluss"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Berufsperspektive"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Arbeitserleichterung"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Zeitgewinn"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Kostenersparnis"
+    }
+  ],
+  "13": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Gegenüberstellung"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Auswahlmöglichkeit"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Bandbreite"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Unterscheidung"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Präferenz"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "entweder"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "weder"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "sowohl"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "als auch"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "nicht nur"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "sondern"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "einerseits"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "andererseits"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "teils"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "die Paarung"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "beziehungsweise"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Arbeitsgrundlage"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Aussagekraft"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Durchsetzung"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Vereinfachung"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Veranschaulichung"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Beschreibung"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Beurteilung"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Bewertung"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Untersuchung"
+    }
+  ],
+  "14": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Schlussfolgerung"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Begründung"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Folgerung"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Einordnung"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Erläuterung"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "der Einwand"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Widerlegung"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Perspektive"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Argumentation"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "demnach"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "infolgedessen"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "hingegen"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "außerdem"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "darüber hinaus"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "somit"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Argumentationsweise"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Gedankenkette"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Beweisführung"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Erklärungskraft"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Schlussbemerkung"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Einleitung"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Hauptteil"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Übergang"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Zusammenfassung"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Gegenargumentation"
+    }
+  ],
+  "15": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "der Mentor"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Mentorin"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "der Auftraggeber"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Auftraggeberin"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "der Geschäftspartner"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Geschäftspartnerin"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "der Vereinsvorsitzende"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Vereinsvorsitzende"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "der Ausbilder"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Ausbilderin"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "der Betreuer"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "die Betreuerin"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "der Stifter"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "die Stifterin"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "der Begünstigte"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Begünstigte"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Fachmann"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Fachfrau"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Fachkundige"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Fachkundige"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Gleichgesinnte"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Fachkollege"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Fachkollegin"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Auftragnehmer"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Auftragnehmerin"
+    }
+  ],
+  "16": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "der Gesprächsanlass"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Gesprächsgrundlage"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "der Bezugspunkt"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Grundlage"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Angelegenheit"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Sachlage"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "das Thema"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Fachrichtung"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "das Fachgebiet"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Fragestellung"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "der Schwerpunkt"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "der Bezug"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "die Wirkung"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "der Anlass"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "die Quelle"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Hintergrund"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Bezugsperson"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Mitwirkende"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Mitwirkende"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Fachberater"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Fachberaterin"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Vermittler"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Vermittlerin"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Beteiligte"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Beteiligte"
+    }
+  ],
+  "17": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "das Ereignis"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "das Wichtigste"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "das Wesentliche"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "das Entscheidende"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "das Ungewöhnliche"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "das Erstaunliche"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "das Wertvolle"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "das Alltägliche"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "der Standort"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "der Treffpunkt"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "der Zufluchtsort"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "der Geburtsort"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "der Lernort"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "der Rückzugsort"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "der Aufenthaltsort"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Ausgangsort"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Zielort"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Fundort"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "das Besondere"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "das Gemeinsame"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "das Ungeklärte"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "das Erforderliche"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "das Unvorhersehbare"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "das Mögliche"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "das Unmögliche"
+    }
+  ],
+  "18": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Herstellung"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Verarbeitung"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Produktion"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Fertigung"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Montage"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Lieferung"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Qualitätskontrolle"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "der Rohstoff"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Zutat"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "das Bauteil"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Maschine"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "die Produktionsstätte"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "das Fließband"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "herstellen"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "verarbeiten"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "fertigen"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "montieren"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "verpacken"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "liefern"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "prüfen"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "sortieren"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "lagern"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "recyceln"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Produktionsschritt"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Produktionskette"
+    }
+  ],
+  "19": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Handarbeit"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Heimarbeit"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Fabrikarbeit"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Werkstatt"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Manufaktur"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "der Handwerker"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Handwerkerin"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "der Lehrling"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Lehrwerkstatt"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "das Werkzeug"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Dampfmaschine"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "die Schreibmaschine"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "der Webstuhl"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "die Landwirtschaft"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "die Industrialisierung"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "anfertigen"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "bearbeiten"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "schmieden"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "weben"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "nähen"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "ernten"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "transportieren"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "reparieren"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "bedienen"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "verrichten"
+    }
+  ],
+  "20": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "der Wartungszustand"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Beschaffenheit"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Oberfläche"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Ausstattung"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Beschädigung"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "der Verschleiß"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Abnutzung"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Verfügbarkeit"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Zugänglichkeit"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Fertigstellung"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Instandhaltung"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "beschädigt"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "abgeschlossen"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "geöffnet"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "geschlossen"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "besetzt"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "reserviert"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "ausverkauft"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "gereinigt"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "repariert"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "installiert"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Betriebsbereitschaft"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Funktionsfähigkeit"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Gebrauchstauglichkeit"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Einsatzbereitschaft"
+    }
+  ],
+  "21": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Wunschvorstellung"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Lebensentscheidung"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Auswanderung"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die berufliche Neuorientierung"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Lebensplanung"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Erfüllung"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Vorstellungskraft"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Wunschliste"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Traumwohnung"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "sich wünschen"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "sich erträumen"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "vorziehen"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "wagen"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "ausprobieren"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "bedauern"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Lebensalternative"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Herzenswunsch"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Selbstbestimmung"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Entscheidungsfreiheit"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Entfaltung"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Zukunftsperspektive"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "sich sehnen"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "sich ausmalen"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "sich trauen"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "sich verwirklichen"
+    }
+  ],
+  "22": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "der Ratschlaggeber"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Beratungsstelle"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Handlungsmöglichkeit"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Vorsichtsmaßnahme"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Beratung"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "abraten"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "raten"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "warnen"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "beraten"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "überdenken"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "vorschlagen"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "die Lebensberatung"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "die Konfliktberatung"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "die Handlungsoption"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "die Folgenabschätzung"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Risikobewertung"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Problemlösung"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Entscheidungsfindung"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Interessenlage"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Hilfestellung"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Verhaltensweise"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "in Erwägung ziehen"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "in Betracht kommen"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "davon abraten"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "nahelegen"
+    }
+  ],
+  "23": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Aussage"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Äußerung"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Stellungnahme"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Pressemitteilung"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "der Sprecher"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Sprecherin"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "der Augenzeuge"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Augenzeugin"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Zeugenaussage"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "das Zitat"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Ankündigung"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "äußern"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "ankündigen"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "bestreiten"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "zugeben"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "zitieren"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Wortmeldung"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Nachfrage"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Gegendarstellung"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Presseerklärung"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Zurückweisung"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "wiederholen"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "präzisieren"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "einräumen"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "verneinen"
+    }
+  ],
+  "24": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Nachrichtensendung"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "der Nachrichtensprecher"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Nachrichtensprecherin"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Meldung"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Presse"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Redaktion"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Journalistin"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Presseagentur"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Schlagzeile"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "der Kommentar"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Pressekonferenz"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "die Veröffentlichung"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "die Berichterstattung"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "veröffentlichen"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "melden"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "verkünden"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "übermitteln"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "verbreiten"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "kommentieren"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "wiedergeben"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "dementieren"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Nachrichtenquelle"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Nachrichtensprache"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Liveübertragung"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Nachrichtenwert"
+    }
+  ],
+  "25": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Abstammung"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Zugehörigkeit"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Eigentümerschaft"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "der Ursprung"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Nachkommenschaft"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Verwandtschaft"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Erbschaft"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "der Familienzweig"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Ahnenreihe"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "das Familienwappen"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Besitzurkunde"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "das Vermögen"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "der Besitzstand"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "abstammen"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "entstammen"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "herrühren"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "zugehören"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "vererben"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "übertragen"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "enthalten"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "beinhalten"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Familiengeschichte"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Familienzugehörigkeit"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Abstammungslinie"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Familienname"
+    }
+  ],
+  "26": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Beschichtung"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Ausführung"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Qualität"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Haltbarkeit"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Leistungsfähigkeit"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Benutzerfreundlichkeit"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Besonderheit"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Auffälligkeit"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "robust"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "strapazierfähig"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "leistungsstark"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "pflegeleicht"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "benutzerfreundlich"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "hochwertig"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "minderwertig"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "präzise"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "zweckmäßig"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Materialqualität"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Oberflächenstruktur"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Formgebung"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Verarbeitungstechnik"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Maßgenauigkeit"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Leistungsgrenze"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Strapazierfähigkeit"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Zweckmäßigkeit"
+    }
+  ],
+  "27": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "der Bewerber"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Bewerberin"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Kundin"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Expertin"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "der Diplomat"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Diplomatin"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Lieferantin"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "der Demonstrant"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Demonstrantin"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Präsidentin"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "der Musikant"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "die Musikantin"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "die Biologin"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "der Kandidat"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "die Kandidatin"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Praktikantin"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Assistentin"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Patientin"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Beobachtung"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Feststellung"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Umgestaltung"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Erleichterung"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Entlastung"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Berechtigung"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "beurteilen"
+    }
+  ],
+  "28": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Ausstrahlung"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Erscheinung"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Haltung"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Bewegung"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "der Gesichtsausdruck"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Körperhaltung"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Atmosphäre"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Stimmung"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Beleuchtung"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Geräuschkulisse"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Menschenmenge"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "das Verhalten"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "faszinierend"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "überzeugend"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "verwirrend"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "beruhigend"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "erschreckend"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "überraschend"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "gelungen"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "misslungen"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Ausführlichkeit"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Ausdruckskraft"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Glaubwürdigkeit"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Nachdenklichkeit"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Lebhaftigkeit"
+    }
+  ],
+  "29": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Satzklammer"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "das Satzglied"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Angabe"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Betonung"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Hervorhebung"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Gewichtung"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "der Informationsschwerpunkt"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Aussageabsicht"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "der Empfänger"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "der Absender"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Verständlichkeit"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "die Gliederung"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "zunächst"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "grundsätzlich"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "insbesondere"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "ausdrücklich"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "gegebenenfalls"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "üblicherweise"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "möglichst"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "vor allem"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "im Allgemeinen"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Satzstruktur"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Satzstellung"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Informationsverteilung"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Satzmelodie"
+    }
+  ],
+  "30": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Abmeldung"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Genehmigung"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Erweiterung"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Verschlechterung"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Überprüfung"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Eröffnung"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Schließung"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Einführung"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Abschaffung"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Erneuerung"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Erhöhung"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "die Senkung"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "die Bereitstellung"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "die Bewilligung"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "die Bearbeitung"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Bescheinigung"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Umwandlung"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Umverteilung"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Neuregelung"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Festlegung"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Erfassung"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Auswertung"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Abwicklung"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Übertragung"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Freigabe"
+    }
+  ],
+  "31": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "der Schriftverkehr"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Geschäftssprache"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "der Geschäftsbrief"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Anfrage"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "das Anschreiben"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Bekanntmachung"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Geschäftsordnung"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "das Protokoll"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "der Antrag"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Korrespondenz"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Formulierung"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "formulieren"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "beantragen"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "genehmigen"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "vereinbaren"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "veranlassen"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "vermerken"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Behördenbrief"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Geschäftskorrespondenz"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Formvorschrift"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Geschäftsbedingung"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Empfangsbestätigung"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Eingangsbestätigung"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Sachbearbeitung"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Antragsstellung"
+    }
+  ],
+  "32": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "der Widerspruch"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Gegensätzlichkeit"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Gegenposition"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Abweichung"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Diskrepanz"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Unstimmigkeit"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "der Kontrast"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Widerrede"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Gegenleistung"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "obgleich"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "obschon"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "wenngleich"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "nichtsdestotrotz"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "die Unvereinbarkeit"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "die Gegenmeinung"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Ausnahmeregelung"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Gegenwirkung"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Unwahrscheinlichkeit"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Überraschungswirkung"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "bewerten"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "festlegen"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "veranschaulichen"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "erläutern"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "begründen"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "unterscheiden"
+    }
+  ],
+  "33": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Folgeerscheinung"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Begleiterscheinung"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "das Resultat"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "der Effekt"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Nebenwirkung"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "die Tragweite"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Konsequenzkette"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Folgefrage"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "daher"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "demzufolge"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "dermaßen"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "derart"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "sodass"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "weshalb"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "die Begleitwirkung"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Wirkungskette"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Ergebnislage"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Schadensfolge"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "zuordnen"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "einordnen"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "zusammenfassen"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "ergänzen"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "erweitern"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "sicherstellen"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "voraussetzen"
+    }
+  ],
+  "34": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "der Verwendungszweck"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Absichtserklärung"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "der Förderantrag"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Bewerbungsvoraussetzung"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Zielvereinbarung"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "der Bildungsweg"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Berufsausbildung"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "die Qualifikation"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Zusatzqualifikation"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "qualifizieren"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "ausbilden"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "weiterbilden"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "die Fördermöglichkeit"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "die Berufschance"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "die Ausbildungsstelle"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "der Förderplan"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Lernförderung"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Bildungsmaßnahme"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Qualifizierung"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Weiterbildungsmöglichkeit"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Karriereplanung"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Zukunftsplanung"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "zweckorientiert"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "zielbewusst"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "förderlich"
+    }
+  ],
+  "35": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Umweltbelastung"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "die Luftverschmutzung"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "die Abfallentsorgung"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "die Mülltrennung"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "die Artenvielfalt"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "der Klimaschutz"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "die Energiewende"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "der Ressourcenverbrauch"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "die Umweltpolitik"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "die Bevölkerung"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "die Ungleichheit"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "die Chancengleichheit"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "die Integration"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "der gesellschaftliche Wandel"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "angesichts"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "anlässlich"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "infolge"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "mangels"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "mithilfe"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "seitens"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "zugunsten"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "zulasten"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Umweltveränderung"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Umweltzerstörung"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "die Ressourcenknappheit"
+    }
+  ],
+  "36": [
+    {
+      "num": 1,
+      "category": "Kernwortschatz",
+      "de": "die Relevanz"
+    },
+    {
+      "num": 2,
+      "category": "Kernwortschatz",
+      "de": "worauf"
+    },
+    {
+      "num": 3,
+      "category": "Kernwortschatz",
+      "de": "woran"
+    },
+    {
+      "num": 4,
+      "category": "Kernwortschatz",
+      "de": "womit"
+    },
+    {
+      "num": 5,
+      "category": "Kernwortschatz",
+      "de": "wodurch"
+    },
+    {
+      "num": 6,
+      "category": "Kernwortschatz",
+      "de": "worüber"
+    },
+    {
+      "num": 7,
+      "category": "Kernwortschatz",
+      "de": "wovon"
+    },
+    {
+      "num": 8,
+      "category": "Kernwortschatz",
+      "de": "woraus"
+    },
+    {
+      "num": 9,
+      "category": "Kernwortschatz",
+      "de": "wofür"
+    },
+    {
+      "num": 10,
+      "category": "Kernwortschatz",
+      "de": "wogegen"
+    },
+    {
+      "num": 11,
+      "category": "Kernwortschatz",
+      "de": "wobei"
+    },
+    {
+      "num": 12,
+      "category": "Kernwortschatz",
+      "de": "die Bezugnahme"
+    },
+    {
+      "num": 13,
+      "category": "Kernwortschatz",
+      "de": "die Ausrichtung"
+    },
+    {
+      "num": 14,
+      "category": "Kernwortschatz",
+      "de": "beeinträchtigen"
+    },
+    {
+      "num": 15,
+      "category": "Kernwortschatz",
+      "de": "bewirken"
+    },
+    {
+      "num": 16,
+      "category": "Ergänzender Wortschatz",
+      "de": "demgegenüber"
+    },
+    {
+      "num": 17,
+      "category": "Ergänzender Wortschatz",
+      "de": "weitgehend"
+    },
+    {
+      "num": 18,
+      "category": "Ergänzender Wortschatz",
+      "de": "ausführlich"
+    },
+    {
+      "num": 19,
+      "category": "Ergänzender Wortschatz",
+      "de": "eindeutig"
+    },
+    {
+      "num": 20,
+      "category": "Ergänzender Wortschatz",
+      "de": "nachvollziehbar"
+    },
+    {
+      "num": 21,
+      "category": "Ergänzender Wortschatz",
+      "de": "angemessen"
+    },
+    {
+      "num": 22,
+      "category": "Ergänzender Wortschatz",
+      "de": "verbindlich"
+    },
+    {
+      "num": 23,
+      "category": "Ergänzender Wortschatz",
+      "de": "verfügbar"
+    },
+    {
+      "num": 24,
+      "category": "Ergänzender Wortschatz",
+      "de": "erforderlich"
+    },
+    {
+      "num": 25,
+      "category": "Ergänzender Wortschatz",
+      "de": "geeignet"
+    }
+  ]
+}

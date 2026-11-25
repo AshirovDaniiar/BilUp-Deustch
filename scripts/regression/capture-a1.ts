@@ -3,6 +3,8 @@
 // Re-captured for A1 curriculum v2 (38 units): only the progress.scenarios levelProgress/currentUnit values changed (legacy units 2–10 are hidden;
 // empty containers are never current). Grammar-reuse step: levelProgress changed again because 15 new units now carry an existing grammar lesson
 // (one required section each). Content hashes and selectors are unchanged.
+// Vocabulary integration for visible A1 Units 02–38 adds 925 approved entries (37 units × 25; Units 102–138);
+// Unit 01 and other learning content remain unchanged. A2 Units 201–243 are captured separately by their own tests.
 //   npx vite-node scripts/regression/capture-a1.ts
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'

@@ -13,7 +13,6 @@ import { validateContent } from '../../scripts/content-validate/validate'
 import { B1_CONTENT } from '../../src/data/b1/b1-content'
 import { B1_META } from '../../src/data/b1/meta'
 import { B1_UNIT_PLAN } from '../../src/data/b1/registry'
-import { UNIT_21_VOCABULARY } from '../../src/data/b1/unit21/vocabulary'
 import { UNIT_22_EXERCISES, UNIT_22_FINAL, UNIT_22_TEST } from '../../src/data/b1/unit22/assessment'
 import { UNIT_22_GRAMMAR, UNIT_22_WHY_NOTES } from '../../src/data/b1/unit22/grammar'
 import { UNIT_22_LISTENING, UNIT_22_READING, UNIT_22_SPEAKING, UNIT_22_WRITING } from '../../src/data/b1/unit22/texts'
@@ -214,7 +213,7 @@ describe('vocabulary: 40 new items, none already taught', () => {
     expect(UNIT_22_VOCABULARY.every(v => v.unit === 22)).toBe(true)
     const ids = B1_CONTENT.vocabulary.map(v => v.id)
     expect(new Set(ids).size).toBe(ids.length)
-    expect(ids).toHaveLength(UNIT_21_VOCABULARY.length + 440)
+    expect(ids).toHaveLength(1380)
   })
   it('no lemma repeats an A1, A2 or Unit 21 headword, and none is listed twice', () => {
     const keys = UNIT_22_VOCABULARY.flatMap(v => lemmaKeys(v.de))

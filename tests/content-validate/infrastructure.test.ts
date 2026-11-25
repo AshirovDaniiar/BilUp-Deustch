@@ -305,10 +305,17 @@ describe('every A2 module is part of the validated bundle automatically', () => 
     for (const u of A2_UNITS) expect(allUnits).toContain(u) // every authored unit is in `allUnits` (listed or hidden legacy), which the bundle validates
     // A2_GRAMMAR_TOPICS is the approved topic → existing-lesson table of the curriculum (metadata that references lessons by id), not content
     const catalogArrays = new Set([...Object.values(content), A2_LEGACY_UNITS, A2_UNITS, A2_GRAMMAR_TOPICS])
+    // An array may be wired transitively: e.g. A2_LESETEXTE is spread into A2_READING, so its items are validated even though
+    // the exported array itself is not a LevelContent value. Only arrays with at least one item outside every catalog value are missing.
+    const catalogItems = new Set(Object.values(content).flatMap(value => (Array.isArray(value) ? value : [])))
     const missing: string[] = []
     for (const [file, mod] of Object.entries(modules))
       for (const [name, value] of Object.entries(mod))
-        if (Array.isArray(value) && !catalogArrays.has(value) && !(value as unknown[]).every(x => typeof x === 'string'))
+        if (
+          Array.isArray(value) &&
+          !catalogArrays.has(value) &&
+          !(value as unknown[]).every(x => typeof x === 'string' || catalogItems.has(x))
+        )
           missing.push(`${file}:${name}`)
     expect(missing, 'an exported A2 content array is not wired into LevelContent (and so not validated)').toEqual([])
   })

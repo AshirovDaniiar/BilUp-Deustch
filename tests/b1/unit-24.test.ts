@@ -248,7 +248,7 @@ describe('vocabulary: 40 new items, none already taught', () => {
     expect(UNIT_24_VOCABULARY.every(v => v.unit === 24)).toBe(true)
     const ids = B1_CONTENT.vocabulary.map(v => v.id)
     expect(new Set(ids).size).toBe(ids.length)
-    expect(ids).toHaveLength(480)
+    expect(ids).toHaveLength(1380)
   })
   it('no lemma repeats an A1, A2 or earlier B1 headword (the basic housing words of A2 Unit 13 are NOT repeated), and none is listed twice', () => {
     const keys = UNIT_24_VOCABULARY.flatMap(v => lemmaKeys(v.de))
@@ -716,7 +716,9 @@ describe('validator and assessment honesty', () => {
       'grammar:b1-aktiv-passiv-zustandspassiv',
       'grammar:b1-satzbau-mittelfeld',
     ])
-    expect(is.filter(i => i.rule === 'cefr-structure-passiv-perfekt').map(i => i.where)).toEqual(['reading:b1-re-24-02#body[2]'])
+    expect(is.filter(i => i.rule === 'cefr-structure-passiv-perfekt' && /^reading:b1-re-24-\d{2}#/.test(i.where)).map(i => i.where)).toEqual([
+      'reading:b1-re-24-02#body[2]',
+    ])
   })
   it('the unit never claims a CEFR level, a certificate or an exam result', () => {
     const all = JSON.stringify(ALL_DATA(), (k, v) => (k === 'source' ? undefined : v))

@@ -79,14 +79,19 @@ import { LEVEL_B1_ASSESSMENT, LEVEL_B1_TEST } from './level-test'
 import type { B1LevelAssessment } from './types'
 import { B1_MERKSATZE } from './b1-merksaetze'
 import { B1_LESETEXTE } from './b1-lesetexte'
+import { B1_V2_VOCABULARY } from './v2-vocabulary-units-01-10'
+import { B1_V2_VOCABULARY_11_20 } from './v2-vocabulary-units-11-20'
+import { B1_V2_VOCABULARY_21_25 } from './v2-vocabulary-units-21-25'
+import { B1_V2_VOCABULARY_26_30 } from './v2-vocabulary-units-26-30'
+import { B1_V2_VOCABULARY_31_36 } from './v2-vocabulary-units-31-36'
 
 /**
  * The LOADABLE B1 content: every B1 collection in one module, so the bundler puts all of it (and only it) into ONE separate chunk
  * (`assets/b1-content-*.js`), exactly like the A2 level module. Nothing but the catalog may import this module, and the catalog does so only
  * through a dynamic `import()` (see `LOADERS` in `catalog.ts`). B1 is `planned`: the chunk is never requested for a learner.
  *
- * Authored so far: Units 21–32 (all of B1). Collection types are reused from the strict-level (A2) schema as TYPE-ONLY imports: this module has no runtime
- * import from any other level.
+ * Content includes the hidden legacy Units 21–32 and B1 v2 vocabulary for visible Units 01–36. Collection types are reused from the strict-level (A2)
+ * schema as TYPE-ONLY imports: this module has no runtime import from any other level.
  */
 export interface B1Content {
   units: LearningUnit[]
@@ -114,7 +119,7 @@ export interface B1Content {
 export const B1_CONTENT: B1Content = {
   units: B1_VISIBLE_UNITS,
   legacyUnits: B1_LEGACY_UNITS,
-  vocabulary: [...UNIT_21_VOCABULARY, ...UNIT_22_VOCABULARY, ...UNIT_23_VOCABULARY, ...UNIT_24_VOCABULARY, ...UNIT_25_VOCABULARY, ...UNIT_26_VOCABULARY, ...UNIT_27_VOCABULARY, ...UNIT_28_VOCABULARY, ...UNIT_29_VOCABULARY, ...UNIT_30_VOCABULARY, ...UNIT_31_VOCABULARY, ...UNIT_32_VOCABULARY],
+  vocabulary: [...UNIT_21_VOCABULARY, ...UNIT_22_VOCABULARY, ...UNIT_23_VOCABULARY, ...UNIT_24_VOCABULARY, ...UNIT_25_VOCABULARY, ...UNIT_26_VOCABULARY, ...UNIT_27_VOCABULARY, ...UNIT_28_VOCABULARY, ...UNIT_29_VOCABULARY, ...UNIT_30_VOCABULARY, ...UNIT_31_VOCABULARY, ...UNIT_32_VOCABULARY, ...B1_V2_VOCABULARY, ...B1_V2_VOCABULARY_11_20, ...B1_V2_VOCABULARY_21_25, ...B1_V2_VOCABULARY_26_30, ...B1_V2_VOCABULARY_31_36],
   grammar: [...UNIT_21_GRAMMAR, ...UNIT_22_GRAMMAR, ...UNIT_23_GRAMMAR, ...UNIT_24_GRAMMAR, ...UNIT_25_GRAMMAR, ...UNIT_26_GRAMMAR, ...UNIT_27_GRAMMAR, ...UNIT_28_GRAMMAR, ...UNIT_29_GRAMMAR, ...UNIT_30_GRAMMAR, ...UNIT_31_GRAMMAR, ...UNIT_32_GRAMMAR, ...B1_V2_GRAMMAR],
   whyNotes: [...UNIT_21_WHY_NOTES, ...UNIT_22_WHY_NOTES, ...UNIT_23_WHY_NOTES, ...UNIT_24_WHY_NOTES, ...UNIT_25_WHY_NOTES, ...UNIT_26_WHY_NOTES, ...UNIT_27_WHY_NOTES, ...UNIT_28_WHY_NOTES, ...UNIT_29_WHY_NOTES, ...UNIT_30_WHY_NOTES, ...UNIT_31_WHY_NOTES, ...UNIT_32_WHY_NOTES],
   exercises: [...UNIT_21_EXERCISES, ...UNIT_22_EXERCISES, ...UNIT_23_EXERCISES, ...UNIT_24_EXERCISES, ...UNIT_25_EXERCISES, ...UNIT_26_EXERCISES, ...UNIT_27_EXERCISES, ...UNIT_28_EXERCISES, ...UNIT_29_EXERCISES, ...UNIT_30_EXERCISES, ...UNIT_31_EXERCISES, ...UNIT_32_EXERCISES, ...B1_V2_EXERCISES],

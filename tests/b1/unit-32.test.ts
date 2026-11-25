@@ -433,13 +433,13 @@ describe('GRAMMAR COVERAGE ACROSS B1: the unit recapitulates the 27 concepts of 
 describe('vocabulary: 40 new items from the approved themes, none already taught; and the Wiederholungsblock of Units 29–31', () => {
   const b = fullBundle()
   const earlier = new Set(b.vocabulary.filter(v => v.unit <= 31).flatMap(v => lemmaKeys(v.de)))
-  it('exactly 40 items (target 38–42), ids v32-1 … v32-40, unique across the whole B1 vocabulary (480 words)', () => {
+  it('exactly 40 items (target 38–42), ids v32-1 … v32-40, unique across the whole B1 vocabulary (1380 words)', () => {
     expect(UNIT_32_VOCABULARY).toHaveLength(40)
     expect(UNIT_32_VOCABULARY.map(v => v.id)).toEqual(Array.from({ length: 40 }, (_, i) => `v32-${i + 1}`))
     expect(UNIT_32_VOCABULARY.every(v => v.unit === 32)).toBe(true)
     const ids = B1_CONTENT.vocabulary.map(v => v.id)
     expect(new Set(ids).size).toBe(ids.length)
-    expect(ids).toHaveLength(480)
+    expect(ids).toHaveLength(1380)
   })
   it('no lemma repeats an A1, A2 or earlier B1 headword (Aufgabe, Stärke, Schwäche, Argument, Standpunkt, Fortschritt, Ziel, Plan, Erfolg … are NOT repeated), and none is listed twice', () => {
     const keys = UNIT_32_VOCABULARY.flatMap(v => lemmaKeys(v.de))
@@ -1013,7 +1013,7 @@ describe('validator honesty', () => {
     ])
     expect(is.filter(i => i.where === 'grammar:b1-nebensaetze-integration')).toEqual([])
     expect(
-      is.filter(i => /^(reading:b1-re-32|listening:b1-li-32|writing:b1-wr-32|vocabulary:v32)/.test(i.where) && i.severity === 'review'),
+      is.filter(i => /^(reading:b1-re-32-\d{2}|listening:b1-li-32-\d{2}|writing:b1-wr-32-\d{2}|vocabulary:v32-\d+)(?:#|$)/.test(i.where) && i.severity === 'review'),
     ).toEqual([])
     expect(is.filter(i => i.rule === 'unit-minimum' && i.where === 'B1')).toEqual([])
   })

@@ -58,6 +58,8 @@ export interface VocabularyItem {
   article?: Article
   de: string
   plural?: string
+  /** Nouns that are used only in the plural (e.g. Eltern). */
+  pluralOnly?: boolean
   ru: string
   ky: string
   example: string

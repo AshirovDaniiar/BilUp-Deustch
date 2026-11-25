@@ -514,8 +514,9 @@ describe('unit 11 — release gates and the stage boundary', () => {
     expect(errors.some(e => e.rule === 'unit-missing' && e.where === 'units:13')).toBe(false)
     expect(errors.some(e => e.rule === 'cefr-signoff-missing' && e.where === 'units:13')).toBe(true)
   })
-  it('all ten planned units 11–20 are authored', () => {
+  it('the legacy units 11–20 and the visible curriculum units 201–243 are authored', () => {
     expect(a2AuthoredUnits().map(u => u.id)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+    const authoredA2UnitIds = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, ...Array.from({ length: 43 }, (_, i) => 201 + i)]
     for (const x of [
       ...vocabularyOf('A2'),
       ...grammarOf('A2'),
@@ -524,7 +525,7 @@ describe('unit 11 — release gates and the stage boundary', () => {
       ...readingOf('A2'),
       ...writingOf('A2'),
     ])
-      expect([11, 12, 13, 14, 15, 16, 17, 18, 19, 20]).toContain(x.unit)
+      expect(authoredA2UnitIds).toContain(x.unit)
     expect(testsOf('A2').map(t => t.id)).toEqual([
       'unit-11',
       'unit-12',

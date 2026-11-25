@@ -14,6 +14,7 @@
  *   D-1  labs scoped by unit level   → `labsByItemLevel` is recorded as the CURRENT behaviour
  *   D-4  listening/reading option order is randomised → option ORDER of `lq-*` questions is normalised (sorted) below
  *   D-3  tutor localisation          → tutor replies are recorded for ru/ky/de as they are TODAY (ky/de answers are Russian)
+ *   A1 Units 02–10 Vocabulary         → the approved source adds 225 entries; Unit 01 and all non-vocabulary content stay unchanged
  */
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'

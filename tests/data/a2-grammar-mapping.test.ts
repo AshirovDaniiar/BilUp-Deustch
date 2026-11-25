@@ -30,11 +30,19 @@ describe('A2 grammar mapping: existing lessons are REFERENCED, never created or 
       expect(g!.unit, id).toBeLessThanOrEqual(20)
     }
   })
-  it('the new units reference exactly those lessons; everything else stays empty', () => {
+  it('the new units reference exactly those lessons and keep their authored sections registered', () => {
     A2_GRAMMAR_TOPICS.forEach((t, i) => expect(A2_VISIBLE_UNITS[i].grammarIds).toEqual(t.concept ? [t.concept] : []))
     expect(A2_VISIBLE_UNITS.filter(u => u.grammarIds.length > 0)).toHaveLength(13)
     expect(A2_VISIBLE_UNITS.filter(u => u.grammarIds.length === 0)).toHaveLength(30)
-    for (const u of A2_VISIBLE_UNITS) expect(requiredSections(u.id)).toEqual(u.grammarIds.length ? ['grammar'] : [])
+    for (const u of A2_VISIBLE_UNITS) {
+      expect(requiredSections(u.id)).toEqual([
+        ...(u.id <= 243 ? ['vocabulary'] : []),
+        ...(u.grammarIds.length ? ['grammar'] : []),
+        'merksaetze',
+        'reading',
+        ...(u.id <= 243 ? ['review'] : []),
+      ])
+    }
   })
   it('combined lessons are not duplicated; partial, cross-level and duplicate topics stay unassigned', () => {
     const used = A2_VISIBLE_UNITS.flatMap(u => u.grammarIds)

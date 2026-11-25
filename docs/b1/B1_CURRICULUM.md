@@ -45,7 +45,7 @@ Companion documents: [`B1_CURRICULUM_V2_APPROVAL.md`](B1_CURRICULUM_V2_APPROVAL.
 ## 4. Vocabulary policy (v2)
 
 * **Target: 38–42 new productive items per unit** (A2 actual 36–40) with article/plural, ru, ky, example and `exampleKy`; 12 units ≈ **480**; cumulative productive ≈ 603 + 480 ≈ **1 080** — a **partial B1 lexical syllabus** (a conventional B1 inventory is of the order of 2 400 cumulative ⚑); disclosed (blocker B-10). Receptive glosses in readings/listenings are listed separately and counted for exposure, not for productive mastery.
-* **No A1/A2 lemma is listed as new**; A1/A2 words appear as ↻ or glosses (needs a validator check: *lemma-repeats-earlier-level*, B-11).
+* Lemmas may be reused across Units and CEFR levels; only duplicate lemmas within one Unit are rejected. Reused words may also be presented as ↻ items or glosses.
 * **Spaced revision (three layers):**
   1. *Leitner SRS* (existing, `services/srs.ts`): every B1 word enters the SRS; due words are practised in the unit's `review` section and the daily practice.
   2. *Authored expanding-interval recycling*: the review set of Unit N (≈ 12 items) contains ≥ 4 items from N−1, ≥ 2 from N−3 (from Unit 21 onward: A2 Units 20/18) and ≥ 2 from the unit before the last consolidation; Units 24, 28 and 32 contain a dedicated *Wiederholungsblock* (≈ 20 items from Units 21–23 / 25–27 / 29–31).

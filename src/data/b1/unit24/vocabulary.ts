@@ -2,7 +2,7 @@ import type { Article, PartOfSpeech, VocabularyItem } from '../../types'
 
 /**
  * Unit 24 vocabulary — Wohnen, Umzug und Umwelt (B1). 40 NEW productive items (target 38–42), none of them an A1/A2 or earlier B1 headword
- * (checked by the validator rule `b1-vocab-repeats-earlier-level`). Themes: Wohnung und Vertrag · Haus und Mängel · Umzug · Energie und Umwelt · Verben.
+ * (legacy rule: cross-level lemma repeats are rejected by `b1-vocab-repeats-earlier-level`; v2 Units 301–336 allow reuse across units/levels and reject only same-unit duplicates — see `docs/b1/B1_ID_CONVENTIONS.md`). Themes: Wohnung und Vertrag · Haus und Mängel · Umzug · Energie und Umwelt · Verben.
  * A2 Unit 13 already taught the basic housing words (Mietvertrag, Kaution, Nebenkosten, Hausordnung, Mülltrennung, Heizung, Nachbar …); they are REUSED in
  * the texts and exercises as revision, but not listed again. No verb needs a prepositional object (Unit 28). Russian and Kyrgyz are written independently;
  * the Kyrgyz is an AI-assisted FIRST DRAFT that has not been reviewed by a native speaker.

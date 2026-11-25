@@ -1,5 +1,5 @@
 // The content shipped in src/data, as validator input.
-//   currentBundle() — the A1 content only, with no course info: the legacy view the original skeleton validated (and still does).
+//   currentBundle() — A1 content without course policy; visible curriculum-v2 container ids still resolve content references.
 //   fullBundle()    — every level (A1 + A2 modules) with the course registry, speaking levels, review sign-offs and the allow-list:
 //                     what the CLI validates. A2 is empty today, so this validates the registry and A1.
 import { COURSE } from '../../src/data/course'
@@ -50,6 +50,7 @@ registerLevelContent('B1', B1_CONTENT)
 
 export const currentBundle = () => ({
   units: UNITS,
+  containerUnitIds: allUnits.filter(u => u.level === 'A1' && isPlaceholderUnit(u)).map(u => u.id),
   vocabulary: VOCABULARY,
   grammar: GRAMMAR,
   exercises: EXERCISES,

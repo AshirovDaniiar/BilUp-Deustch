@@ -2,7 +2,7 @@ import type { Article, PartOfSpeech, VocabularyItem } from '../../types'
 
 /**
  * Unit 30 vocabulary — Gesellschaft, Zusammenleben und Engagement (B1). 40 NEW productive items (target 38–42), none of them an A1/A2 or earlier B1 headword
- * (checked by the validator rule `b1-vocab-repeats-earlier-level`). Themes: Ehrenamt und Verein (Ehrenamt, Mitglied, Vorstand, Spende, Initiative, Engagement …) · Zusammenleben
+ * (legacy rule: cross-level lemma repeats are rejected by `b1-vocab-repeats-earlier-level`; v2 Units 301–336 allow reuse across units/levels and reject only same-unit duplicates — see `docs/b1/B1_ID_CONVENTIONS.md`). Themes: Ehrenamt und Verein (Ehrenamt, Mitglied, Vorstand, Spende, Initiative, Engagement …) · Zusammenleben
  * (Gemeinschaft, Vielfalt, Toleranz, Zusammenhalt, Integration, Gleichberechtigung, Generation, Familienmodell, Stadtteil, Anwohner …) · Verben des Engagements ·
  * Personenbeschreibung (Charakter und Aussehen). The established society words of Unit 22 (Gesellschaft, Mehrheit, Minderheit, Vorurteil, gerecht, diskutieren, unterstützen),
  * of A2 (Verein, Nachbarschaft, Spielplatz, Veranstaltung, organisieren, abstimmen, vorschlagen, hilfsbereit, zuverlässig) and of Units 23, 25 and 29 (Aufgabe, rücksichtsvoll,

@@ -2,7 +2,7 @@ import type { Article, PartOfSpeech, VocabularyItem } from '../../types'
 
 /**
  * Unit 29 vocabulary — Reisen, Kultur und Alltag im Vergleich (B1). 40 NEW productive items (target 38–42), none of them an A1/A2 or earlier B1 headword
- * (checked by the validator rule `b1-vocab-repeats-earlier-level`). Themes: Reise und Panne (Reisepanne, Entschädigung, Beschwerde, Anschluss, Zugausfall, Rezeption …) ·
+ * (legacy rule: cross-level lemma repeats are rejected by `b1-vocab-repeats-earlier-level`; v2 Units 301–336 allow reuse across units/levels and reject only same-unit duplicates — see `docs/b1/B1_ID_CONVENTIONS.md`). Themes: Reise und Panne (Reisepanne, Entschädigung, Beschwerde, Anschluss, Zugausfall, Rezeption …) ·
  * Reiseformen und Tourismus · Kultur, Bräuche und Alltag (Brauch, Tradition, Gastfreundschaft, Pünktlichkeit, Höflichkeit, Kulturschock) · Vergleich und Eindruck ·
  * Verben und Adjektive. The established travel words of A2 Unit 18 and of Units 10, 11, 16, 20, 21 and 27 (Unterkunft, Sehenswürdigkeit, Verspätung, Heimat, Fest,
  * Missverständnis, Gewohnheit, Erstattung, Panne, vergleichen, erleben …) are REUSED in the texts as revision but not listed again. Wortbildung strand: Kompositum

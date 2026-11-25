@@ -1,7 +1,7 @@
 // B1 rules (Stage 2C): the dedicated B1 validation profile. It runs ON TOP of the generic strict-level rules (identity, schema, localisation,
 // answers, references, metadata, provenance), which already apply to B1 unchanged, and adds what the approved curriculum v2 demands of B1:
 //
-//   vocabulary   38–42 new productive items per unit; a B1 word must not repeat an A1/A2 lemma (or another B1 lemma) as "new"
+//   vocabulary   38–42 items per unit; lemma reuse across levels and units is allowed, duplicates within a unit are not
 //   grammar      allocation against the curriculum (counts, load, roles; ids only once the approval is recorded); productive vs receptive
 //   texts        reading / listening length, sentence length, speaking turns and writing length per unit band (profile.ts)
 //   components   learning objectives (de + ru + ky), 2 readings / 2 listenings, final-test composition, strands, micro-tasks, revision sets
@@ -42,9 +42,11 @@ const letters = (s: string) => (s.match(/\p{L}/gu) ?? []).length
 export function b1Rules(ctx: Ctx): void {
   const { bundle } = ctx
   if (!bundle.course?.some(l => l.id === LEVEL)) return
-  // the LEGACY B1 curriculum (units 21–32, the approved 12-unit plan) is what this file audits; the curriculum-v2 units (301–336) are checked by the generic rules
+  // The legacy B1 units receive the full profile; curriculum-v2 vocabulary gets the same within-unit duplicate check.
   const legacyRange = bundle.course?.find(l => l.id === LEVEL)?.unitIdRange
   const owned = (unit: number) => ctx.levelOfUnit(unit) === LEVEL && !!legacyRange && unit >= legacyRange[0] && unit <= legacyRange[1]
+  const ownsVocabulary = (unit: number) =>
+    owned(unit) || (ctx.levelOfUnit(unit) === LEVEL && unit >= 301 && unit <= 336)
   const b1Units: LearningUnit[] = bundle.units.filter(u => owned(u.id))
   const metas = (bundle.b1Meta ?? []).slice()
   const hasItems =
@@ -105,51 +107,82 @@ export function b1Rules(ctx: Ctx): void {
   const vocabUnit = new Map(bundle.vocabulary.map(v => [v.id, v.unit]))
   const grammarById = new Map(bundle.grammar.map(g => [g.id, g]))
 
-  // ───────────── vocabulary: overlap with A1/A2 and within B1 ─────────────
+  // ───────────── vocabulary: two unit families ─────────────
+  // Legacy Units 21–32 keep the original contract: a NEW B1 word must not repeat an A1/A2 lemma unless an allowance explains
+  // the new sense, and a lemma may not repeat anywhere in legacy B1. The comparison corpus is the legacy A1/A2 range
+  // (A1 1–10, A2 11–20) the contract was authored against; the approved A1 102–138 and A2 201–243 vocabulary integrations
+  // are new curriculum material and are covered by their own tests, so they must not re-open legacy B1 content.
+  // Curriculum-v2 Units 301–336 follow the approved source policy: reuse across units and levels is allowed; only a duplicate
+  // inside one unit is rejected. The 38–42 count target is applied only to the legacy units (the per-unit loop below uses `b1Units`).
+  const isLegacyA1A2 = (unit: number) => {
+    const level = ctx.levelOfUnit(unit)
+    return (level === 'A1' && unit >= 1 && unit <= 10) || (level === 'A2' && unit >= 11 && unit <= 20)
+  }
   const earlier = new Map<string, VocabularyItem[]>()
   for (const v of bundle.vocabulary) {
-    if (owned(v.unit) || ctx.levelOfUnit(v.unit) === undefined) continue
+    if (!isLegacyA1A2(v.unit)) continue
     for (const k of lemmaKeys(v.de)) earlier.set(k, [...(earlier.get(k) ?? []), v])
   }
   const allowances = metas.flatMap(m => (m.vocabularyAllowances ?? []).map(a => ({ ...a, unit: m.unit })))
   const used = new Set<string>()
-  const firstB1 = new Map<string, VocabularyItem>()
+  const legacyFirst = new Map<string, VocabularyItem>()
+  const v2First = new Map<string, VocabularyItem>()
   for (const v of bundle.vocabulary) {
-    if (!owned(v.unit)) continue
+    const isLegacy = owned(v.unit)
+    const isV2 = !isLegacy && ownsVocabulary(v.unit)
+    if (!isLegacy && !isV2) continue
     const at = `vocabulary:${v.id}`
     const keys = lemmaKeys(v.de)
-    const hits = [...new Map(keys.flatMap(k => earlier.get(k) ?? []).map(h => [h.id, h])).values()]
-    if (hits.length > 0) {
-      const allow = allowances.find(a => a.id === v.id && hits.some(h => h.id === a.earlierId))
-      const list = hits.map(h => `${h.id} "${h.de}" (unit ${h.unit}, ${ctx.levelOfUnit(h.unit)})`).join(', ')
-      if (!allow)
-        hard(
-          'b1-vocab-repeats-earlier-level',
-          at,
-          `"${v.de}" is listed as NEW B1 vocabulary but is already taught as ${list}`,
-          "remove it from the unit's new words (revise it as a recycled item instead), or — if the B1 sense is genuinely different — add {id, earlierId, note} to the unit's vocabularyAllowances",
-        )
-      else {
-        used.add(`${allow.id}|${allow.earlierId}`)
-        if (!nonEmpty(allow.note) || allow.note.trim().length < 10)
+
+    if (isLegacy) {
+      const hits = [...new Map(keys.flatMap(k => earlier.get(k) ?? []).map(h => [h.id, h])).values()]
+      if (hits.length > 0) {
+        const allow = allowances.find(a => a.id === v.id && hits.some(h => h.id === a.earlierId))
+        const list = hits.map(h => `${h.id} "${h.de}" (unit ${h.unit}, ${ctx.levelOfUnit(h.unit)})`).join(', ')
+        if (!allow)
           hard(
-            'b1-vocab-allowance-note',
+            'b1-vocab-repeats-earlier-level',
             at,
-            `the allowance for "${v.de}" has no explanation of the new sense`,
-            'write a note (≥ 10 characters) saying how the B1 meaning differs',
+            `"${v.de}" is listed as NEW B1 vocabulary but is already taught as ${list}`,
+            "remove it from the unit's new words (revise it as a recycled item instead), or - if the B1 sense is genuinely different - add {id, earlierId, note} to the unit's vocabularyAllowances",
           )
+        else {
+          used.add(`${allow.id}|${allow.earlierId}`)
+          if (!nonEmpty(allow.note) || allow.note.trim().length < 10)
+            hard(
+              'b1-vocab-allowance-note',
+              at,
+              `the allowance for "${v.de}" has no explanation of the new sense`,
+              'write a note (≥ 10 characters) saying how the B1 meaning differs',
+            )
+        }
       }
+      for (const k of keys) {
+        const first = legacyFirst.get(k)
+        if (first && first.id !== v.id)
+          hard(
+            'b1-vocab-duplicate-in-level',
+            at,
+            `"${v.de}" repeats ${first.id} "${first.de}" (unit ${first.unit}) within legacy B1`,
+            'keep one entry; list later uses as recycled items',
+          )
+        else legacyFirst.set(k, v)
+      }
+      continue
     }
+
     for (const k of keys) {
-      const first = firstB1.get(k)
+      const duplicateKey = v.pos === 'noun' && v.article ? `${k}\u0000${v.article}` : k
+      const unitKey = `${v.unit}\u0000${duplicateKey}`
+      const first = v2First.get(unitKey)
       if (first && first.id !== v.id)
         hard(
           'b1-vocab-duplicate-in-level',
           at,
-          `"${v.de}" repeats ${first.id} "${first.de}" (unit ${first.unit}) within B1`,
-          'keep one entry; list later uses as recycled items',
+          `"${v.de}" repeats ${first.id} "${first.de}" in the same unit (${v.unit})`,
+          'keep one entry in this unit; repeats in other units are allowed',
         )
-      else firstB1.set(k, v)
+      else v2First.set(unitKey, v)
     }
   }
   for (const a of allowances)

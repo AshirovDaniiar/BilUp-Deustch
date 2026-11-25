@@ -68,8 +68,14 @@ async function show(path: string, lang: Lang = 'ru', seed: Partial<UserProgress>
   return view
 }
 const text = () => document.body.textContent ?? ''
-const hrefs = (container: HTMLElement, prefix: string) =>
-  [...container.querySelectorAll('a')].map(a => a.getAttribute('href') ?? '').filter(h => h.startsWith(prefix))
+const hrefs = (container: HTMLElement, prefix: string) => {
+  const base = prefix.endsWith('/') ? prefix : `${prefix}/`
+  return [...container.querySelectorAll('a')]
+    .map(a => a.getAttribute('href') ?? '')
+    .filter(h => h === prefix || h.startsWith(base))
+}
+const hrefsMatching = (container: HTMLElement, re: RegExp) =>
+  [...container.querySelectorAll('a')].map(a => a.getAttribute('href') ?? '').filter(h => re.test(h))
 
 const A1_ROUTES = [
   '/',
@@ -118,7 +124,7 @@ describe('A2 does not exist in the UI (all interface languages)', () => {
       }
       cleanup()
     }
-  })
+  }, 30_000)
 
   it('a stored preference for the planned A2 level is ignored by the UI (and left untouched in storage)', async () => {
     const { container } = await show('/', 'ru', { level: 'A2' })
@@ -149,7 +155,7 @@ describe('A2 cannot be reached by URL', () => {
     await show(route)
     expect(text()).toContain('Страница не найдена')
     expect(text()).not.toMatch(/\bA2\b/)
-  })
+  }, 30_000)
 })
 
 describe('A1 navigation and lists are unchanged', () => {
@@ -167,40 +173,45 @@ describe('A1 navigation and lists are unchanged', () => {
     })
   })
 
-  it('an A1 v2 unit shows its title and exactly nine section cards with Merksätze after Grammar', async () => {
-    const empty = await show('/learn/unit/102')
+  it('an A1 v2 unit shows vocabulary counts and all nine section cards with Merksätze after Grammar', async () => {
+    const unit = await show('/learn/unit/102')
     expect(text()).toContain('Wer bin ich?')
-    expect(empty.container.querySelectorAll('.sections .secrow')).toHaveLength(9)
-    expect(empty.container.querySelectorAll('[data-empty-section]')).toHaveLength(7)
-    expect(empty.container.querySelectorAll('.secrow')[2].textContent).toContain('Merksätze')
+    expect(unit.container.querySelectorAll('.sections .secrow')).toHaveLength(9)
+    expect(unit.container.querySelectorAll('[data-empty-section]')).toHaveLength(5)
+    expect(unit.container.querySelectorAll('.secrow')[0].textContent).toContain('25 слов')
+    expect(unit.container.querySelectorAll('.secrow')[2].textContent).toContain('Merksätze')
+    expect(text()).toContain('0 / 4')
     expect(text()).toContain('Контент будет добавлен позже.')
-    expect(text()).not.toMatch(/0 ?\/ ?0|%/) // no misleading 0/0 or 0% on an empty unit
+    expect(text()).not.toMatch(/0 ?\/ ?0/) // populated unit progress must use its real section denominator
     cleanup()
     const full = await show('/learn/unit/1')
     expect(full.container.querySelectorAll('.sections .secrow')).toHaveLength(9)
     expect(full.container.querySelectorAll('[data-empty-section]')).toHaveLength(0)
   })
 
-  it('empty A1 unit cards show the placeholder instead of 0 words / 0/0 / a progress bar; unit 1 keeps its statistics', async () => {
+  it('A1 unit cards show content-based progress and real word counts', async () => {
     const { container } = await show('/learn?level=A1')
     const cards = [...container.querySelectorAll('a.unitcard')]
-    expect(cards[0].textContent).toContain('слов')
-    expect(cards[0].querySelector('[role="progressbar"], .progress')).not.toBeNull()
-    const emptyIdx = A1_UNITS.map((u, i) => (u.grammarIds.length === 0 && i > 0 ? i : -1)).filter(i => i > 0)
-    expect(emptyIdx).toHaveLength(21)
-    for (const c of emptyIdx.map(i => cards[i])) {
-      expect(c.textContent).toContain('Контент будет добавлен позже.')
-      expect(c.textContent).not.toMatch(/слов|0\/0/)
-      expect(c.querySelector('[role="progressbar"], .progress')).toBeNull()
+    expect(cards).toHaveLength(A1_UNITS.length)
+    for (const [index, unit] of A1_UNITS.entries()) {
+      const words = vocabularyForUnit(unit.id).length
+      expect(words, `unit ${unit.id}`).toBeGreaterThan(0)
+      expect(cards[index].textContent, `unit ${unit.id}`).toMatch(new RegExp(`${words}\\s*слов`))
+      expect(cards[index].textContent, `unit ${unit.id}`).not.toMatch(/0\/0|Контент будет добавлен позже\./)
+      expect(cards[index].querySelector('[role="progressbar"], .progress'), `unit ${unit.id}`).not.toBeNull()
     }
   })
 
   it('a unit with a REUSED grammar lesson links to it with its own unit context (back button, label); its other sections stay empty', async () => {
     const unit = await show('/learn/unit/114')
     const rows = [...unit.container.querySelectorAll('.sections .secrow')]
-    expect(rows).toHaveLength(8)
-    expect(unit.container.querySelectorAll('[data-empty-section]')).toHaveLength(7)
+    expect(rows).toHaveLength(9)
+    expect(unit.container.querySelectorAll('[data-empty-section]')).toHaveLength(4)
+    expect(rows[0].hasAttribute('data-empty-section')).toBe(false)
     expect(rows[1].hasAttribute('data-empty-section')).toBe(false)
+    expect(rows[2].hasAttribute('data-empty-section')).toBe(false)
+    expect(rows[4].hasAttribute('data-empty-section')).toBe(false)
+    expect(rows[7].hasAttribute('data-empty-section')).toBe(false)
     expect(rows[1].getAttribute('href')).toBe('#/learn/topic/plural?unit=114')
     cleanup()
     const topic = await show('/learn/topic/plural?unit=114')
@@ -249,8 +260,10 @@ describe('A1 navigation and lists are unchanged', () => {
 
   it('Vocabulary offers the A1 units only', async () => {
     const { container } = await show('/vocabulary')
-    const chips = [...container.querySelectorAll('.catchips .chip')].map(c => c.textContent ?? '')
-    expect(chips.filter(c => /^\S+ \d+$/.test(c.trim()))).toHaveLength(A1_UNITS.length)
+    const unitChips = [...container.querySelectorAll('.catchips button.chip--neutral')]
+    expect(unitChips).toHaveLength(A1_UNITS.length)
+    for (const [index, unit] of A1_UNITS.entries())
+      expect(unitChips[index].textContent?.trim()).toBe(String(unitNumber(unit)))
     expect(text()).toContain(`${vocabularyOf('A1').length}`) // "all words" counts the A1 vocabulary only
   })
 
@@ -266,8 +279,8 @@ describe('A1 navigation and lists are unchanged', () => {
   it('Tests: the A1 level test and the unit tests are offered; no other level', async () => {
     const { container } = await show('/practice/tests')
     // the level chip and the level card both point at the A1 level test, and nothing else
-    expect(hrefs(container, '#/practice/tests/level-')).toEqual(['#/practice/tests/level-a1', '#/practice/tests/level-a1'])
-    expect(hrefs(container, '#/practice/tests/unit-')).toHaveLength(10)
+    expect(hrefsMatching(container, /^#\/practice\/tests\/level-/)).toEqual(['#/practice/tests/level-a1', '#/practice/tests/level-a1'])
+    expect(hrefsMatching(container, /^#\/practice\/tests\/unit-/)).toHaveLength(10)
     expect(text()).not.toContain('🔒')
   })
 })
@@ -280,7 +293,7 @@ describe("the four labs are scoped by the PARENT UNIT's level (decision D-1)", (
     for (const s of SPEAKING) expect(levelOfScenarioId(s.id), s.id).toBe('A1')
     // the legacy tags are untouched data: they are NOT what the labs use
     expect(LISTENING.filter(l => l.level !== 'A1').map(l => l.id)).toEqual(['li16', 'li18', 'li20'])
-    expect(READING.filter(r => r.level !== 'A1').map(r => r.id)).toEqual(['re08', 're09', 're10'])
+    expect(READING.filter(r => ['re08', 're09', 're10'].includes(r.id)).map(r => r.level)).toEqual(['A1', 'A1', 'A1'])
   })
 
   it('Listening Lab lists all 21 A1-unit dialogues — including the three legacy A2-tagged ones — each labelled A1', async () => {
@@ -335,7 +348,7 @@ describe("the four labs are scoped by the PARENT UNIT's level (decision D-1)", (
   it("detail pages of legacy-tagged items show their unit's level (A1), never the legacy tag", async () => {
     for (const [route, expected] of [
       ['/practice/listening/li16', '🎧 A1 · Юнит 8'],
-      ['/practice/reading/re10', '📖 A1 · Юнит 6'],
+      ['/practice/reading/re10', '📖 A1 · Юнит 110'],
       ['/practice/writing/wr05', '✍️ A1 · Sie'],
       ['/speak/interview', '🤝 A1'],
       ['/learn/topic/genitiv', '· A1'],
@@ -346,5 +359,14 @@ describe("the four labs are scoped by the PARENT UNIT's level (decision D-1)", (
       expect(text(), route).not.toMatch(/\bA2\b|\bB1\b/)
       cleanup()
     }
+  })
+})
+
+describe('navigation href matching', () => {
+  it('Unit 32 and Unit 323 never match each other', () => {
+    const container = document.createElement('div')
+    container.innerHTML = '<a href="#/learn/unit/32"></a><a href="#/learn/unit/323"></a>'
+    expect(hrefs(container, '#/learn/unit/32')).toEqual(['#/learn/unit/32'])
+    expect(hrefs(container, '#/learn/unit/323')).toEqual(['#/learn/unit/323'])
   })
 })

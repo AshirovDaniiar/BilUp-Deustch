@@ -2,7 +2,7 @@ import type { Article, PartOfSpeech, VocabularyItem } from '../../types'
 
 /**
  * Unit 25 vocabulary — Gesundheit, Beziehungen und Lebensstil (B1). 40 NEW productive items (target 38–42), none of them an A1/A2 or earlier B1 headword
- * (checked by the validator rule `b1-vocab-repeats-earlier-level`). Themes: Gesundheitssystem und Arzt · Lebensstil und Gesundheit · Beziehungen und Gefühle ·
+ * (legacy rule: cross-level lemma repeats are rejected by `b1-vocab-repeats-earlier-level`; v2 Units 301–336 allow reuse across units/levels and reject only same-unit duplicates — see `docs/b1/B1_ID_CONVENTIONS.md`). Themes: Gesundheitssystem und Arzt · Lebensstil und Gesundheit · Beziehungen und Gefühle ·
  * Verben. A2 Unit 14 already taught the body and illness words (Kopfschmerzen, Fieber, Praxis, Tablette, Stress, sich entspannen, trainieren …); they are
  * REUSED in the texts as revision but not listed again. Wortbildung strand: Krankenkasse (Kranken + Kasse), Behandlung / Überweisung / Ernährung (-ung),
  * ungesund (un-). No verb needs a prepositional object (Unit 28). Russian and Kyrgyz are written independently; the Kyrgyz is an AI-assisted FIRST DRAFT that

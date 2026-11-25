@@ -5,16 +5,16 @@
    "sha256": "673e6466da413c62113f826a341d1ef5025e0be195dd08161a4f8985a5181e16"
   },
   "SECTIONS": {
-   "count": 8,
-   "sha256": "5c429822d585d65d9dcb0608506e64f9ca7704a686bf6ac1378825f06a7d8fd2"
+   "count": 9,
+   "sha256": "666a5281de56eac71cb7b54e816d6f530e16d397ca952b4b7938924bd3efefe8"
   },
   "UNIT_SPEAKING": {
    "count": 10,
    "sha256": "80ee50b4f0c5ac9f7b73d51f188e8165123835ec95e3b7059ec49f36d70111a1"
   },
   "VOCABULARY": {
-   "count": 226,
-   "sha256": "173a3005dcb868bb992893990dbb3e24fc6f20598e2eaf9382ccbaaade99904c"
+   "count": 1151,
+   "sha256": "689b41dee151a4099325c2cbb50277d55e53a126a3f3d34aa17a161fdd989281"
   },
   "GRAMMAR": {
    "count": 20,
@@ -25,16 +25,16 @@
    "sha256": "2d0e6e58839668d90673c3054be6b75584c4b3efb5d609b6ba96c1afa2fbd816"
   },
   "EXERCISES": {
-   "count": 202,
-   "sha256": "dc2f1c1f988578f6da2b2368c7100180321cb4f0fa3292e221c747c7b3138a08"
+   "count": 696,
+   "sha256": "7550a188e36b06628566eb4f3b152418b477e39f0f8d9c9ab06fbff356e8f3bd"
   },
   "LISTENING": {
    "count": 21,
    "sha256": "61c753a9ef9ef7f97bad577e7fe97d814a63d2505c223077a6dc773a94203045"
   },
   "READING": {
-   "count": 10,
-   "sha256": "9bb05f3a4cf7c7f433e8db95381c4da248afad2ac1b4e07a109b081247e444bc"
+   "count": 38,
+   "sha256": "7927e8b4a0318a44e5f5355243c305618e27ce282b6ef1ee1526d0c56a5c97e5"
   },
   "SPEAKING": {
    "count": 11,
@@ -94,12 +94,12 @@
   }
  },
  "files": {
-  "src/data/units.ts": "86d85eadc5881f6c8d187e8277abcf3a78e2facd72528d487c342807dcaa96e6",
-  "src/data/vocabulary.ts": "6dafeb8295df7b718b8d666b767f0e7d37312f4b6ba8ee69b4081859f2331d54",
+  "src/data/units.ts": "e6a6ee1c02645f4f034a570c92916ca2ce9c303c7d0be48b8fb7edd2bfc1d351",
+  "src/data/vocabulary.ts": "478fb188ad674f52ce5a5fadd5992113cfbc3582052f8e31777e20016e371aeb",
   "src/data/grammar.ts": "8e01319254305ac0c522acdfff0280b095d79110c857e753b881eb05af6efafc",
   "src/data/exercises.ts": "5342a7f7d585e57fed7d46da067ee4d5ea79917cd87a04bef2af89a7ea377a11",
   "src/data/listening.ts": "fe03ba2d7d5c213a9d62e1216284455a5b9691ca891ca90efec741f134a64d31",
-  "src/data/reading.ts": "12a7b06a4c28f4c99f4e1455cd9d8e013cc42c45e9a7bd7ab1b47cc23b3d5130",
+  "src/data/reading.ts": "255a01787539156cffc14f290769f66f286e47d92ac0c906e341de864a93b06d",
   "src/data/speaking.ts": "d2b407b91d85975518d1ae1bda2173ba066ae92238a6d1de26ed210fa7c20679",
   "src/data/writing.ts": "af0c25db8527566ff8aca8fff83789759f5a076d4f3cf3d510fae67d980e507b",
   "src/data/reallife.ts": "7ab40e910a49cf7c52dce1e78cc717ab27c78dfff1bf4f2efaf59a913114eb9f",

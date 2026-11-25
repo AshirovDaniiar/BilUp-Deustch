@@ -88,6 +88,7 @@ export function WordCard({ item, onPractice, onOpen }: { item: VocabularyItem; o
           {item.example} <SpeakButton text={item.example} small />
         </div>
         <div className="muted small break">{a2 ? locStrict(item.exampleRu, item.exampleKy, lang) : item.exampleRu}</div>
+        {!a2 && item.exampleKy && <div className="muted small break">{item.exampleKy}</div>}
       </div>
 
       {item.related.length > 0 && (

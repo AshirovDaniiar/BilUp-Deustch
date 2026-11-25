@@ -228,7 +228,7 @@ describe('vocabulary: 40 new items, none already taught', () => {
     expect(UNIT_23_VOCABULARY.every(v => v.unit === 23)).toBe(true)
     const ids = B1_CONTENT.vocabulary.map(v => v.id)
     expect(new Set(ids).size).toBe(ids.length)
-    expect(ids).toHaveLength(480)
+    expect(ids).toHaveLength(1380)
   })
   it('no lemma repeats an A1, A2 or earlier B1 headword (the basic work words of A2 Unit 17 are NOT repeated), and none is listed twice', () => {
     const keys = UNIT_23_VOCABULARY.flatMap(v => lemmaKeys(v.de))

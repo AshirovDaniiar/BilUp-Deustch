@@ -48,8 +48,9 @@ Vite already warns that the chunk exceeds 500 kB.
 | D-1 | Listening/Reading/Writing labs scoped by the parent unit's level | `labsByItemLevel` in `a1-selectors.json` is the *old* behaviour; update deliberately when the labs change |
 | D-4 | Listening/reading option order randomised (A1 and A2) | **Correction (Stage 4):** `lq-*` order was normalised in the test fingerprints but NOT in the daily-challenge hash, so four daily hashes had to be re-captured — on the unchanged code, with the diff proven (see [A2_STAGE4_ANSWER_ORDER.md](A2_STAGE4_ANSWER_ORDER.md) §7). Order of `lq-*`/`rq-*` options is now normalised everywhere |
 | D-3 | Tutor localisation (A2 in Kyrgyz; Kyrgyz must not fall back to Russian) | tutor baseline records today's replies; A1 replies in `ru` must stay identical, `ky` answers will legitimately change |
+| Vocabulary | Approved source integration for visible A1 Units 02–10 (25 entries per unit; Unit 01 and non-vocabulary collections unchanged) | content hashes, selector counts/IDs, and derived progress/question baselines are deliberately recaptured |
 
-Re-capture only with `npx vite-node scripts/regression/capture-a1.ts`, and record the reason in the commit message and here.
+Re-capture only with `npx vite-node scripts/regression/capture-a1.ts`, and record the reason in the commit message and here. The Vocabulary row documents the approved re-capture for this integration.
 
 ## 5. Findings from Stage 0
 

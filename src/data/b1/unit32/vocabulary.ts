@@ -1,8 +1,8 @@
 import type { Article, PartOfSpeech, VocabularyItem } from '../../types'
 
 /**
- * Unit 32 vocabulary — Rückblick, Bilanz und Prüfungsvorbereitung (B1). 40 NEW productive items (target 38–42), none of them an A1/A2 or earlier B1 headword (checked by the validator rule
- * `b1-vocab-repeats-earlier-level`). The themes are those of the approved curriculum for Unit 32: Bilanz und Lernweg (Bilanz, Rückblick, Lerntagebuch, Selbsteinschätzung, Lernziel,
+ * Unit 32 vocabulary — Rückblick, Bilanz und Prüfungsvorbereitung (B1). 40 NEW productive items (target 38–42), none of them an A1/A2 or earlier B1 headword (legacy rule
+ * `b1-vocab-repeats-earlier-level` applies to Units 21–32; v2 Units 301–336 allow reuse across units/levels and reject only same-unit duplicates — see `docs/b1/B1_ID_CONVENTIONS.md`). The themes are those of the approved curriculum for Unit 32: Bilanz und Lernweg (Bilanz, Rückblick, Lerntagebuch, Selbsteinschätzung, Lernziel,
  * Vorsatz, Lernweg, Rückschlag, Geduld, Zeitplan, zurückblicken, einschätzen, festhalten, sich vornehmen) · Aufgabenwortschatz (Teil, Lösung, Hinweis, Auswahl, Probe, Ergebnis, ankreuzen,
  * zuordnen, ergänzen is known) · Redemittel für Vortrag und Diskussion (Vortrag, Gliederung, Einleitung, Schluss, Publikum, Stichpunkt, Zusammenfassung, Einwand, Fazit, begründen,
  * erwähnen, erläutern, zusammenfassen) · Adjektive des Urteilens (deutlich, ausführlich, knapp, realistisch, zufrieden). The words that were taught earlier (Aufgabe, Stärke, Schwäche,

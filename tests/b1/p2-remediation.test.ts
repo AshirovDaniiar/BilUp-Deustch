@@ -118,8 +118,8 @@ describe('P2-B: the reading question types are varied BEFORE Unit 32 (audit: "va
 describe('P2-C: the vocabulary-gap register CLASSIFIES, it adds nothing (audit: Medien, Grund, Folge, Wunsch, Zukunft, Gefühl …)', () => {
   const b = fullBundle()
   const lemmas = new Set(b.vocabulary.flatMap(v => lemmaKeys(v.de)))
-  it('no vocabulary was added or removed: still exactly 40 words per unit, 480 in B1, none of the registered words is a headword', () => {
-    expect(B1_CONTENT.vocabulary).toHaveLength(480)
+  it('legacy vocabulary is unchanged and the first thirty-six curriculum-v2 units add 900 words', () => {
+    expect(B1_CONTENT.vocabulary).toHaveLength(1380)
     for (let u = 21; u <= 32; u++)
       expect(
         B1_CONTENT.vocabulary.filter(v => v.unit === u),

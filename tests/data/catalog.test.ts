@@ -186,7 +186,8 @@ describe('A2 selectors return only A2 data (and are empty until content is autho
     expect(finalTestsOf('A2')).toBe(A2_FINAL_TESTS)
   })
 
-  it('A2 ships units 11–20 only: every authored item belongs to one of them, all ten planned units are authored', () => {
+  it('A2 legacy units 11–20 remain authored alongside curriculum-v2 units', () => {
+    const authoredUnitIds = [...A2_UNITS, ...A2_VISIBLE_UNITS].map(u => u.id)
     expect(A2_UNITS.map(u => u.id)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
     expect(A2_UNIT_SPEAKING).toEqual([
       'a2-sp-11-01',
@@ -203,7 +204,7 @@ describe('A2 selectors return only A2 data (and are empty until content is autho
     expect(A2_TESTS.map(t => t.unit)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
     expect(A2_FINAL_TESTS.map(t => t.unit)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
     for (const c of [A2_VOCABULARY, A2_GRAMMAR, A2_EXERCISES, A2_LISTENING, A2_READING, A2_WRITING] as { unit: number }[][])
-      for (const x of c) expect([11, 12, 13, 14, 15, 16, 17, 18, 19, 20]).toContain(x.unit)
+      for (const x of c) expect(authoredUnitIds).toContain(x.unit)
     const concepts = new Set(A2_GRAMMAR.map(g => g.id))
     for (const n of A2_WHY_NOTES) expect(concepts.has(n.conceptId)).toBe(true)
     expect(A2_SPEAKING.map(s => s.id)).toEqual([

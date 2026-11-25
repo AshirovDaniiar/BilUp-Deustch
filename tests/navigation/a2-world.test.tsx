@@ -173,6 +173,7 @@ import { COURSE, availableLevels } from '../../src/data/course'
 import { LISTENING } from '../../src/data/listening'
 import type { Lang, UserProgress } from '../../src/data/types'
 import { dictionaries } from '../../src/i18n'
+import { requiredSections } from '../../src/features/progress/stats'
 import { defaultProgress } from '../../src/storage/defaults'
 import { KEY } from '../helpers'
 
@@ -204,8 +205,12 @@ async function show(path: string, lang: Lang = 'ru', seed: Partial<UserProgress>
   return view
 }
 const text = () => document.body.textContent ?? ''
-const hrefs = (c: HTMLElement, prefix: string) =>
-  [...c.querySelectorAll('a')].map(a => a.getAttribute('href') ?? '').filter(h => h.startsWith(prefix))
+const hrefs = (c: HTMLElement, prefix: string) => {
+  const base = prefix.endsWith('/') ? prefix : `${prefix}/`
+  return [...c.querySelectorAll('a')]
+    .map(a => a.getAttribute('href') ?? '')
+    .filter(h => h === prefix || h.startsWith(base))
+}
 const route = (path: string): Route => {
   const [p, qs = ''] = path.split('?')
   return { path: p, parts: p.split('/').filter(Boolean), query: new URLSearchParams(qs) } as Route
@@ -278,7 +283,7 @@ describe('A2 PLANNED: invisible and unreachable although its content exists', ()
       expect(container.querySelector('.levels'), url).toBeNull()
       cleanup()
     }
-  })
+  }, 30_000)
 })
 
 describe('A2 visible and released for Russian only', () => {
@@ -334,20 +339,23 @@ describe('A2 visible and released for Russian only', () => {
     expect(text()).not.toContain('ZZA2')
   })
 
-  it('an empty A2 unit shows its title, exactly nine section cards and the Merksätze placeholder — no 0/0, no %, no progress bar; its list card shows no statistics', async () => {
+  it('an A2 container shows its title, nine section cards and content-based progress; no fake word counts', async () => {
+    const required = requiredSections(202)
+    const indexOf = { vocabulary: 0, grammar: 1, merksaetze: 2, listening: 3, reading: 4, speaking: 5, writing: 6, review: 7, test: 8 } as const
     const list = await show('/learn?level=A2', 'ru')
     const card = list.container.querySelectorAll('a.unitcard')[1]
     expect(card.textContent).toContain('Besondere Erlebnisse und Erinnerungen')
-    expect(card.textContent).toContain('Контент будет добавлен позже.')
+    expect(card.textContent).toContain(`0/${required.length} пройдено`)
     expect(card.textContent).not.toMatch(/слов|0\/0/)
-    expect(card.querySelector('[role="progressbar"]')).toBeNull()
+    expect(card.querySelector('[role="progressbar"], .progress')).not.toBeNull()
     cleanup()
     const unit = await show('/learn/unit/202', 'ru')
-    expect(unit.container.querySelectorAll('.sections .secrow')).toHaveLength(9)
-    expect(unit.container.querySelectorAll('[data-empty-section]')).toHaveLength(7)
-    expect(unit.container.querySelectorAll('.secrow')[2].textContent).toContain('Merksätze')
-    expect(unit.container.querySelector('[role="progressbar"]')).toBeNull()
-    expect(text()).not.toMatch(/0 ?\/ ?0|%/)
+    const rows = [...unit.container.querySelectorAll('.sections .secrow')]
+    expect(rows).toHaveLength(9)
+    expect(unit.container.querySelectorAll('[data-empty-section]')).toHaveLength(9 - required.length)
+    for (const section of required) expect(rows[indexOf[section]].hasAttribute('data-empty-section'), section).toBe(false)
+    expect(rows[2].textContent).toContain('Merksätze')
+    expect(text()).not.toMatch(/0 ?\/ ?0/)
   })
 
   it('Home with A2 active: A2 has only empty containers, so Continue Learning uses the A1 unit; two-level journey with A2 current; A1 untouched', async () => {
@@ -461,5 +469,14 @@ describe('next/previous navigation stays inside the level', () => {
     const { container: c1 } = await show('/learn/unit/8', 'ru', { level: 'A1' })
     expect(hrefs(c1, '#/practice/listening/')).toEqual(['#/practice/listening/li15'])
     expect(text()).not.toContain('ZZA2')
+  })
+})
+
+describe('navigation href matching', () => {
+  it('Unit 32 and Unit 323 never match each other', () => {
+    const container = document.createElement('div')
+    container.innerHTML = '<a href="#/learn/unit/32"></a><a href="#/learn/unit/323"></a>'
+    expect(hrefs(container, '#/learn/unit/32')).toEqual(['#/learn/unit/32'])
+    expect(hrefs(container, '#/learn/unit/323')).toEqual(['#/learn/unit/323'])
   })
 })

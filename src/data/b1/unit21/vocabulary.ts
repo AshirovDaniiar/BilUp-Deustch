@@ -2,7 +2,7 @@ import type { Article, PartOfSpeech, VocabularyItem } from '../../types'
 
 /**
  * Unit 21 vocabulary — Erlebnisse und Erinnerungen erzählen (B1). 40 NEW productive items (target 38–42), none of them an A1/A2 headword
- * (checked by the validator rule `b1-vocab-repeats-earlier-level`). Themes: Erinnerungen und Kindheit · Ereignisse und Begegnungen ·
+ * (legacy rule: cross-level lemma repeats are rejected by `b1-vocab-repeats-earlier-level`; v2 Units 301–336 allow reuse across units/levels and reject only same-unit duplicates — see `docs/b1/B1_ID_CONVENTIONS.md`). Themes: Erinnerungen und Kindheit · Ereignisse und Begegnungen ·
  * Gefühle · Zeitadverbien · Verben des Erlebens. Russian and Kyrgyz are written independently; the Kyrgyz is an AI-assisted FIRST DRAFT that
  * has not been reviewed by a native speaker. Examples use Perfekt (spoken) or Präsens, or the Präteritum of the unit's closed verb list.
  * Row: [kind, de, plural, ru, ky, example, exampleRu, exampleKy]   kind: der|die|das (noun) · v verb · a adjective · x adverb / connector

@@ -2,7 +2,7 @@ import type { Article, PartOfSpeech, VocabularyItem } from '../../types'
 
 /**
  * Unit 22 vocabulary — Meinungen äußern und diskutieren (B1). 40 NEW productive items (target 38–42), none of them an A1/A2 or Unit 21 headword
- * (checked by the validator rule `b1-vocab-repeats-earlier-level`). Themes: Meinung und Argument · Gesellschaft und Zusammenleben · Stadt, Land und
+ * (legacy rule: cross-level lemma repeats are rejected by `b1-vocab-repeats-earlier-level`; v2 Units 301–336 allow reuse across units/levels and reject only same-unit duplicates — see `docs/b1/B1_ID_CONVENTIONS.md`). Themes: Meinung und Argument · Gesellschaft und Zusammenleben · Stadt, Land und
  * Alltag · Beurteilen (Adjektive) · Diskutieren (Verben). No verb of the list needs a prepositional object (that is Unit 28). Russian and Kyrgyz are
  * written independently; the Kyrgyz is an AI-assisted FIRST DRAFT that has not been reviewed by a native speaker.
  * Row: [kind, de, plural, ru, ky, example, exampleRu, exampleKy]   kind: der|die|das (noun) · v verb · a adjective
